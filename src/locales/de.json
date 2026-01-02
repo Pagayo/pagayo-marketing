@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "docs": "Dokumentation",
+    "blog": "Blog",
+    "login": "Anmelden"
+  },
+  "hero": {
+    "title": "Die All-in-One-SaaS-Plattform für Ihr Geschäft",
+    "subtitle": "Erstellen und skalieren Sie Mandanten-Webshops, Hotels, POS-Systeme und mehr. Alles auf einer leistungsstarken Plattform.",
+    "cta_primary": "Kostenlose Testversion starten",
+    "cta_secondary": "Demo ansehen"
+  },
+  "features": {
+    "title": "Warum Pagayo?",
+    "multi_tenant": {
+      "title": "Multi-Tenant-Architektur",
+      "description": "Erstellen Sie eine Plattform, bedienen Sie Tausende von Kunden. Vollständige Isolation + gemeinsame Ressourcen."
+    },
+    "payments": {
+      "title": "Integrierte Zahlungen",
+      "description": "Stripe + Mollie out-of-the-box. Akzeptieren Sie Zahlungen in Sekunden."
+    },
+    "pos": {
+      "title": "POS-System",
+      "description": "Kasse + Online synchronisiert. Echtzeit-Bestandsverwaltung."
+    }
+  },
+  "cta": {
+    "title": "Bereit anzufangen?",
+    "subtitle": "Starten Sie noch heute mit Ihrer kostenlosen Testversion. Keine Kreditkarte erforderlich.",
+    "button": "Kostenlose Testversion starten"
+  },
+  "footer": {
+    "product": "Produkt",
+    "resources": "Ressourcen",
+    "company": "Unternehmen",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "terms": "Bedingungen"
+  }
+}

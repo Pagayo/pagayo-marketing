@@ -1,0 +1,75 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Card from '../../components/ui/Card.astro';
+---
+
+<MarketingLayout
+  title="Pagayo - Multi-Tenant SaaS Platform"
+  description="Bouw en schaal multi-tenant webshops, hotels, POS systemen en meer. Alles op één krachtig platform."
+  lang="nl"
+>
+  <!-- Hero Section -->
+  <section class="container mx-auto px-6 py-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-primary-dark mb-6 leading-tight">
+        De alles-in-één SaaS platform voor jouw business
+      </h1>
+      <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+        Bouw en schaal multi-tenant webshops, hotels, POS systemen en meer. Alles op één krachtig
+        platform.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" href="https://beheer.pagayo.com">
+          Start gratis proefperiode →
+        </Button>
+        <Button variant="secondary" href="/nl/demo">Bekijk demo</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="bg-gray-50 py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Waarom Pagayo?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <Card>
+          <div class="text-4xl mb-4">🏗️</div>
+          <h3 class="text-xl font-bold mb-2">Multi-Tenant Architectuur</h3>
+          <p class="text-gray-600">
+            Bouw één platform, bedien duizenden klanten. Volledige isolatie + shared resources.
+          </p>
+        </Card>
+        <Card>
+          <div class="text-4xl mb-4">💳</div>
+          <h3 class="text-xl font-bold mb-2">Geïntegreerde Betalingen</h3>
+          <p class="text-gray-600">
+            Stripe + Mollie out-of-the-box. Accept payments in seconden.
+          </p>
+        </Card>
+        <Card>
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-xl font-bold mb-2">POS Systeem</h3>
+          <p class="text-gray-600">
+            Kassa + online in sync. Real-time inventory management.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="container mx-auto px-6 py-20">
+    <div
+      class="bg-gradient-to-r from-primary-purple to-[#7A73FF] rounded-2xl p-12 text-center text-white"
+    >
+      <h2 class="text-3xl font-bold mb-4">Klaar om te starten?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Start vandaag nog met je gratis proefperiode. Geen creditcard vereist.
+      </p>
+      <Button variant="secondary" href="https://beheer.pagayo.com">
+        Start gratis proefperiode →
+      </Button>
+    </div>
+  </section>
+</MarketingLayout>

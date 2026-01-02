@@ -1,0 +1,195 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Card from '../../components/ui/Card.astro';
+---
+
+<MarketingLayout
+  title="Features - Pagayo Multi-Tenant SaaS Platform"
+  description="Ontdek alle krachtige features van Pagayo: multi-tenant architectuur, geïntegreerde betalingen, POS systeem, real-time analytics en meer."
+  lang="nl"
+>
+  <!-- Hero Section -->
+  <section class="container mx-auto px-6 py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-5xl font-bold text-primary-dark mb-6">
+        Alles wat je nodig hebt om te groeien
+      </h1>
+      <p class="text-xl text-gray-700 leading-relaxed">
+        Een compleet platform met enterprise-grade features. Van multi-tenant architectuur tot
+        real-time analytics.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="bg-gray-50 py-20">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Card>
+          <div class="text-4xl mb-4">🏗️</div>
+          <h3 class="text-xl font-bold mb-3">Multi-Tenant Architectuur</h3>
+          <p class="text-gray-600">
+            Bouw één platform, bedien duizenden klanten. Volledige data-isolatie met gedeelde
+            infrastructuur voor optimale performance.
+          </p>
+        </Card>
+
+        <Card>
+          <div class="text-4xl mb-4">💳</div>
+          <h3 class="text-xl font-bold mb-3">Geïntegreerde Betalingen</h3>
+          <p class="text-gray-600">
+            Stripe en Mollie out-of-the-box. Accept credit cards, iDEAL, Bancontact en meer.
+            Automatic webhook processing.
+          </p>
+        </Card>
+
+        <Card>
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-xl font-bold mb-3">POS Systeem</h3>
+          <p class="text-gray-600">
+            Kassasysteem + online shop in sync. Real-time voorraad, automatische updates, offline
+            mode support.
+          </p>
+        </Card>
+
+        <Card>
+          <div class="text-4xl mb-4">🔐</div>
+          <h3 class="text-xl font-bold mb-3">Enterprise Security</h3>
+          <p class="text-gray-600">
+            Field-level encryption, GDPR compliant, role-based access control. ISO 27001 ready.
+          </p>
+        </Card>
+
+        <Card>
+          <div class="text-4xl mb-4">📈</div>
+          <h3 class="text-xl font-bold mb-3">Real-Time Analytics</h3>
+          <p class="text-gray-600">
+            Dashboard met live sales metrics, inventory tracking, customer insights. Export naar
+            Excel/PDF.
+          </p>
+        </Card>
+
+        <Card>
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold mb-3">Lightning Fast</h3>
+          <p class="text-gray-600">
+            Edge caching via Cloudflare, Redis voor real-time data, geoptimaliseerde database
+            queries.
+          </p>
+        </Card>
+
+        <Card>
+          <div class="text-4xl mb-4">🌍</div>
+          <h3 class="text-xl font-bold mb-3">Multi-Language Support</h3>
+          <p class="text-gray-600">
+            Nederlands, Duits, Engels built-in. Custom languages toevoegen via admin panel.
+          </p>
+        </Card>
+
+        <Card>
+          <div class="text-4xl mb-4">📧</div>
+          <h3 class="text-xl font-bold mb-3">Email Automation</h3>
+          <p class="text-gray-600">
+            Transactional emails, marketing campaigns, customizable templates. SendGrid
+            geïntegreerd.
+          </p>
+        </Card>
+
+        <Card>
+          <div class="text-4xl mb-4">🔗</div>
+          <h3 class="text-xl font-bold mb-3">API-First Architecture</h3>
+          <p class="text-gray-600">
+            RESTful API met uitgebreide documentatie. Webhooks voor real-time events. Rate limiting
+            included.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Deep Dive: Multi-Tenant -->
+  <section class="container mx-auto px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">Multi-Tenant op Enterprise Niveau</h2>
+          <p class="text-lg text-gray-700 mb-6">
+            Elke tenant krijgt zijn eigen geïsoleerde omgeving: database schema, files, settings.
+            Maar deelt de infrastructuur voor optimale performance en kosten.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-primary-purple mr-2">✓</span>
+              <span>Database per tenant isolatie (Prisma schema filtering)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-purple mr-2">✓</span>
+              <span>Custom domains + SSL certificates automatisch</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-purple mr-2">✓</span>
+              <span>Tenant-specific customizations (CSS, JS, images)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-purple mr-2">✓</span>
+              <span>Usage tracking & billing per tenant</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-gray-100 rounded-lg p-8 text-center">
+          <div class="text-6xl mb-4">🏢</div>
+          <p class="text-gray-600">Architecture diagram placeholder</p>
+        </div>
+      </div>
+
+      <!-- Feature Deep Dive: Payments -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1 bg-gray-100 rounded-lg p-8 text-center">
+          <div class="text-6xl mb-4">💳</div>
+          <p class="text-gray-600">Payment flow diagram placeholder</p>
+        </div>
+        <div class="order-1 lg:order-2">
+          <h2 class="text-3xl font-bold mb-4">Betalingen die Gewoon Werken</h2>
+          <p class="text-lg text-gray-700 mb-6">
+            Stripe en Mollie pre-geïntegreerd. Webhooks fully automated. PCI compliance out of the
+            box.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-primary-purple mr-2">✓</span>
+              <span>Credit cards, iDEAL, Bancontact, PayPal</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-purple mr-2">✓</span>
+              <span>Automatic webhook verification & processing</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-purple mr-2">✓</span>
+              <span>Refund management via admin panel</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-purple mr-2">✓</span>
+              <span>Real-time payment status tracking</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="container mx-auto px-6 py-20">
+    <div
+      class="bg-gradient-to-r from-primary-purple to-[#7A73FF] rounded-2xl p-12 text-center text-white"
+    >
+      <h2 class="text-3xl font-bold mb-4">Klaar om te starten?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Probeer alle features gratis voor 14 dagen. Geen creditcard nodig.
+      </p>
+      <Button variant="secondary" href="https://beheer.pagayo.com">
+        Start gratis proefperiode →
+      </Button>
+    </div>
+  </section>
+</MarketingLayout>

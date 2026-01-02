@@ -1,0 +1,121 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import LanguageSwitcher from '../components/layout/LanguageSwitcher.astro';
+import type { Language } from '../utils/i18n';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: Language;
+}
+
+const { title, description, lang = 'nl' } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-8">
+          <a href={`/${lang}`} class="text-2xl font-bold text-primary-dark">
+            Pagayo
+          </a>
+          <div class="hidden md:flex space-x-6">
+            <a href={`/${lang}/features`} class="text-gray-700 hover:text-primary-purple">
+              {lang === 'nl' ? 'Features' : lang === 'de' ? 'Funktionen' : 'Features'}
+            </a>
+            <a href={`/${lang}/pricing`} class="text-gray-700 hover:text-primary-purple">
+              {lang === 'nl' ? 'Prijzen' : lang === 'de' ? 'Preise' : 'Pricing'}
+            </a>
+            <a href={`/${lang}/contact`} class="text-gray-700 hover:text-primary-purple">
+              {lang === 'nl' ? 'Contact' : lang === 'de' ? 'Kontakt' : 'Contact'}
+            </a>
+            <a href="/docs" class="text-gray-700 hover:text-primary-purple">
+              {lang === 'nl' ? 'Docs' : lang === 'de' ? 'Dokumentation' : 'Docs'}
+            </a>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <LanguageSwitcher currentLang={lang} currentPath={Astro.url.pathname} />
+          <a
+            href="https://beheer.pagayo.com"
+            class="px-4 py-2 text-sm font-medium text-white bg-primary-purple rounded-lg hover:shadow-glow-purple transition-all duration-200"
+          >
+            {lang === 'nl' ? 'Start gratis' : lang === 'de' ? 'Kostenlos starten' : 'Start free'}
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="bg-primary-dark text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Pagayo</h3>
+          <p class="text-gray-400">
+            {
+              lang === 'nl'
+                ? 'Multi-tenant SaaS platform voor jouw business'
+                : lang === 'de'
+                  ? 'Multi-Tenant-SaaS-Plattform für Ihr Geschäft'
+                  : 'Multi-tenant SaaS platform for your business'
+            }
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">
+            {lang === 'nl' ? 'Product' : lang === 'de' ? 'Produkt' : 'Product'}
+          </h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>
+              <a href={`/${lang}/features`} class="hover:text-white">
+                {lang === 'nl' ? 'Features' : lang === 'de' ? 'Funktionen' : 'Features'}
+              </a>
+            </li>
+            <li>
+              <a href={`/${lang}/pricing`} class="hover:text-white">
+                {lang === 'nl' ? 'Prijzen' : lang === 'de' ? 'Preise' : 'Pricing'}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">
+            {lang === 'nl' ? 'Resources' : lang === 'de' ? 'Ressourcen' : 'Resources'}
+          </h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>
+              <a href={`/${lang}/docs`} class="hover:text-white">
+                {lang === 'nl' ? 'Documentatie' : lang === 'de' ? 'Dokumentation' : 'Documentation'}
+              </a>
+            </li>
+            <li>
+              <a href={`/${lang}/blog`} class="hover:text-white">Blog</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">
+            {lang === 'nl' ? 'Bedrijf' : lang === 'de' ? 'Unternehmen' : 'Company'}
+          </h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>
+              <a href={`/${lang}/contact`} class="hover:text-white">Contact</a>
+            </li>
+            <li>
+              <a href={`/${lang}/privacy`} class="hover:text-white">Privacy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+        <p>© {new Date().getFullYear()} Pagayo. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

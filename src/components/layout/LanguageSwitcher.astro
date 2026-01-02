@@ -1,0 +1,80 @@
+---
+import { languages, switchLanguage, type Language } from '../../utils/i18n';
+
+interface Props {
+  currentLang: Language;
+  currentPath: string;
+}
+
+const { currentLang, currentPath } = Astro.props;
+---
+
+<div class="relative inline-block text-left">
+  <button
+    id="language-button"
+    type="button"
+    class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-purple transition-colors"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <span class="text-xl">{languages[currentLang].flag}</span>
+    <span class="hidden sm:inline">{languages[currentLang].label}</span>
+    <svg
+      class="w-4 h-4"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"
+      ></path>
+    </svg>
+  </button>
+
+  <div
+    id="language-menu"
+    class="hidden absolute right-0 mt-2 w-48 rounded-lg shadow-strong bg-white ring-1 ring-black ring-opacity-5 z-50"
+    role="menu"
+    aria-orientation="vertical"
+  >
+    <div class="py-1">
+      {
+        Object.values(languages).map((lang) => (
+          <a
+            href={switchLanguage(currentPath, lang.code)}
+            class={`flex items-center gap-3 px-4 py-2 text-sm transition-colors ${
+              currentLang === lang.code
+                ? 'bg-primary-light text-primary-purple font-semibold'
+                : 'text-gray-700 hover:bg-gray-50 hover:text-primary-purple'
+            }`}
+            role="menuitem"
+          >
+            <span class="text-xl">{lang.flag}</span>
+            <span>{lang.label}</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById('language-button');
+  const menu = document.getElementById('language-menu');
+
+  if (button && menu) {
+    button.addEventListener('click', () => {
+      const isHidden = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      button.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!button.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>

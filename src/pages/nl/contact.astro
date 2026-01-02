@@ -1,0 +1,262 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import Button from '../../components/ui/Button.astro';
+---
+
+<MarketingLayout
+  title="Contact - Pagayo Multi-Tenant SaaS Platform"
+  description="Neem contact op met ons team. We helpen je graag met vragen over onze multi-tenant SaaS oplossing."
+  lang="nl"
+>
+  <!-- Hero Section -->
+  <section class="container mx-auto px-6 py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-5xl font-bold text-primary-dark mb-6">Neem contact op</h1>
+      <p class="text-xl text-gray-700 leading-relaxed">
+        Vragen over Pagayo? Ons team staat klaar om je te helpen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Methods Grid -->
+  <section class="container mx-auto px-6 pb-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <!-- Email -->
+      <div class="bg-white rounded-lg p-6 shadow-soft text-center">
+        <div class="text-4xl mb-4">📧</div>
+        <h3 class="text-xl font-bold mb-2">Email</h3>
+        <p class="text-gray-600 mb-4">Meestal binnen 24 uur antwoord</p>
+        <a
+          href="mailto:hello@pagayo.com"
+          class="text-primary-purple font-medium hover:underline"
+        >
+          hello@pagayo.com
+        </a>
+      </div>
+
+      <!-- Phone -->
+      <div class="bg-white rounded-lg p-6 shadow-soft text-center">
+        <div class="text-4xl mb-4">📞</div>
+        <h3 class="text-xl font-bold mb-2">Telefoon</h3>
+        <p class="text-gray-600 mb-4">Ma-Vr 09:00-17:00 CET</p>
+        <a href="tel:+31205550123" class="text-primary-purple font-medium hover:underline">
+          +31 20 555 0123
+        </a>
+      </div>
+
+      <!-- Live Chat -->
+      <div class="bg-white rounded-lg p-6 shadow-soft text-center">
+        <div class="text-4xl mb-4">💬</div>
+        <h3 class="text-xl font-bold mb-2">Live Chat</h3>
+        <p class="text-gray-600 mb-4">Direct hulp via onze chat</p>
+        <button class="text-primary-purple font-medium hover:underline" onclick="openChat()">
+          Start chat
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="bg-gray-50 py-20">
+    <div class="container mx-auto px-6">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Stuur ons een bericht</h2>
+        <form
+          id="contact-form"
+          class="bg-white rounded-lg shadow-soft p-8"
+          action="https://beheer.pagayo.com/api/contact"
+          method="POST"
+        >
+          <div class="mb-6">
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+              Naam *
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-transparent"
+              placeholder="Jouw naam"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+              Email *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-transparent"
+              placeholder="jouw@email.nl"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+              Bedrijf
+            </label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-transparent"
+              placeholder="Jouw bedrijf (optioneel)"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+              Onderwerp *
+            </label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-transparent"
+            >
+              <option value="">Selecteer een onderwerp</option>
+              <option value="sales">Verkoop & Prijzen</option>
+              <option value="demo">Demo aanvragen</option>
+              <option value="technical">Technische vraag</option>
+              <option value="support">Support</option>
+              <option value="partnership">Partnership</option>
+              <option value="other">Anders</option>
+            </select>
+          </div>
+
+          <div class="mb-6">
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+              Bericht *
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="6"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-purple focus:border-transparent resize-none"
+              placeholder="Vertel ons waar we je mee kunnen helpen..."
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="language" value="nl" />
+          <input type="hidden" name="source" value="marketing_website" />
+
+          <Button variant="primary" type="submit" class="w-full">
+            Verstuur bericht →
+          </Button>
+
+          <p class="text-sm text-gray-600 text-center mt-4">
+            Door dit formulier te versturen ga je akkoord met onze
+            <a href="/nl/privacy" class="text-primary-purple hover:underline">privacyverklaring</a
+            >.
+          </p>
+        </form>
+
+        <div id="form-success" class="hidden bg-green-50 border border-green-200 rounded-lg p-6 mt-6">
+          <h3 class="text-green-800 font-bold mb-2">✓ Bericht verstuurd!</h3>
+          <p class="text-green-700">Bedankt voor je bericht. We nemen binnen 24 uur contact op.</p>
+        </div>
+
+        <div id="form-error" class="hidden bg-red-50 border border-red-200 rounded-lg p-6 mt-6">
+          <h3 class="text-red-800 font-bold mb-2">✗ Er ging iets mis</h3>
+          <p class="text-red-700">
+            Probeer het later opnieuw of stuur een email naar hello@pagayo.com
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Info -->
+  <section class="container mx-auto px-6 py-20">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Ons kantoor</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4">📍 Amsterdam, Nederland</h3>
+          <p class="text-gray-700 mb-2">Pagayo B.V.</p>
+          <p class="text-gray-700 mb-2">Herengracht 123</p>
+          <p class="text-gray-700 mb-4">1015 BD Amsterdam</p>
+          <p class="text-gray-700 mb-2">KVK: 12345678</p>
+          <p class="text-gray-700">BTW: NL123456789B01</p>
+        </div>
+        <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+          <p class="text-gray-600">Google Maps placeholder</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-gray-50 py-20">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Veelgestelde vragen</h2>
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg p-6 shadow-soft">
+            <h3 class="text-lg font-bold mb-2">Hoe snel krijg ik antwoord?</h3>
+            <p class="text-gray-700">
+              We streven ernaar om binnen 24 uur te reageren op alle vragen. Voor dringende zaken
+              kun je ons bellen tijdens kantooruren.
+            </p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-soft">
+            <h3 class="text-lg font-bold mb-2">Kan ik een demo aanvragen?</h3>
+            <p class="text-gray-700">
+              Ja! Selecteer "Demo aanvragen" in het formulier en we plannen binnen 2 werkdagen een
+              persoonlijke demo in.
+            </p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-soft">
+            <h3 class="text-lg font-bold mb-2">Bieden jullie support in het Nederlands?</h3>
+            <p class="text-gray-700">
+              Absoluut. Ons team spreekt Nederlands, Engels en Duits. Support is beschikbaar via
+              email, chat en telefoon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        form.classList.add('hidden');
+        successMsg?.classList.remove('hidden');
+        errorMsg?.classList.add('hidden');
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (error) {
+      errorMsg?.classList.remove('hidden');
+      successMsg?.classList.add('hidden');
+    }
+  });
+
+  function openChat() {
+    // Placeholder voor chat integration (Intercom, Crisp, etc.)
+    alert('Live chat wordt binnenkort toegevoegd!');
+  }
+</script>

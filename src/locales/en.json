@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "docs": "Documentation",
+    "blog": "Blog",
+    "login": "Login"
+  },
+  "hero": {
+    "title": "The all-in-one SaaS platform for your business",
+    "subtitle": "Build and scale multi-tenant webshops, hotels, POS systems and more. All on one powerful platform.",
+    "cta_primary": "Start free trial",
+    "cta_secondary": "View demo"
+  },
+  "features": {
+    "title": "Why Pagayo?",
+    "multi_tenant": {
+      "title": "Multi-Tenant Architecture",
+      "description": "Build one platform, serve thousands of customers. Full isolation + shared resources."
+    },
+    "payments": {
+      "title": "Integrated Payments",
+      "description": "Stripe + Mollie out-of-the-box. Accept payments in seconds."
+    },
+    "pos": {
+      "title": "POS System",
+      "description": "Register + online in sync. Real-time inventory management."
+    }
+  },
+  "cta": {
+    "title": "Ready to start?",
+    "subtitle": "Start your free trial today. No credit card required.",
+    "button": "Start free trial"
+  },
+  "footer": {
+    "product": "Product",
+    "resources": "Resources",
+    "company": "Company",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}

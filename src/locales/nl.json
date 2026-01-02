@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "features": "Features",
+    "pricing": "Prijzen",
+    "docs": "Documentatie",
+    "blog": "Blog",
+    "login": "Inloggen"
+  },
+  "hero": {
+    "title": "De alles-in-één SaaS platform voor jouw business",
+    "subtitle": "Bouw en schaal multi-tenant webshops, hotels, POS systemen en meer. Alles op één krachtig platform.",
+    "cta_primary": "Start gratis proefperiode",
+    "cta_secondary": "Bekijk demo"
+  },
+  "features": {
+    "title": "Waarom Pagayo?",
+    "multi_tenant": {
+      "title": "Multi-Tenant Architectuur",
+      "description": "Bouw één platform, bedien duizenden klanten. Volledige isolatie + shared resources."
+    },
+    "payments": {
+      "title": "Geïntegreerde Betalingen",
+      "description": "Stripe + Mollie out-of-the-box. Accept payments in seconden."
+    },
+    "pos": {
+      "title": "POS Systeem",
+      "description": "Kassa + online in sync. Real-time inventory management."
+    }
+  },
+  "cta": {
+    "title": "Klaar om te starten?",
+    "subtitle": "Start vandaag nog met je gratis proefperiode. Geen creditcard vereist.",
+    "button": "Start gratis proefperiode"
+  },
+  "footer": {
+    "product": "Product",
+    "resources": "Resources",
+    "company": "Bedrijf",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden"
+  }
+}

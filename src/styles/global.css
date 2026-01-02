@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply font-sans text-gray-900 bg-white;
+}
+
+/* Focus styles voor accessibility */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-purple;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-primary-purple text-white;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold text-primary-dark;
+}
+
+/* Links */
+a {
+  @apply text-accent-blue transition-colors duration-200;
+}
+
+a:hover {
+  @apply text-primary-purple;
+}
+
+/* Button reset */
+button {
+  @apply cursor-pointer;
+}
+
+/* Image optimization */
+img {
+  @apply max-w-full h-auto;
+}

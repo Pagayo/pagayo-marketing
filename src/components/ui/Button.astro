@@ -1,0 +1,28 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'text';
+  href?: string;
+  class?: string;
+}
+
+const { variant = 'primary', href, class: className = '' } = Astro.props;
+
+const baseStyles =
+  'inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+
+const variantStyles = {
+  primary:
+    'bg-gradient-to-b from-[#7A73FF] to-primary-purple text-white hover:shadow-glow-purple hover:-translate-y-0.5 focus:ring-primary-purple',
+  secondary:
+    'bg-white text-primary-dark border-2 border-gray-300 hover:border-primary-purple hover:text-primary-purple focus:ring-primary-purple',
+  text: 'text-primary-purple hover:text-primary-dark underline-offset-4 hover:underline',
+};
+
+const styles = `${baseStyles} ${variantStyles[variant]} ${className}`;
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag href={href} class={styles}>
+  <slot />
+</Tag>
