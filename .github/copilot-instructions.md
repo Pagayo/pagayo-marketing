@@ -4,7 +4,8 @@
 **VERBODEN MODEL: Claude Haiku mag NOOIT gebruikt worden.**
 - Claude Haiku is niet toegestaan voor dit project
 - Voor Claude modellen: gebruik minimaal Claude Sonnet 4.5
-- GPT en Codex modellen zijn toegestaan
+- GPT modellen zijn toegestaan
+- Codex modellen alleen als subagent toegestaan
 - Bij twijfel over het model: STOP en vraag Sjoerd
 
 ---

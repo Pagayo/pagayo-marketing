@@ -1,0 +1,1148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, switchLanguage, type Language } from '../../utils/i18n';
+
+const currentLang: Language = 'be';
+const currentPath = '/be';
+---
+
+<BaseLayout title="Pagayo – Jouw Webshop Platform" description="Pagayo regelt hosting, betalingen en design. Jij focust op ondernemen." lang="be">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111111;
+      --bg-card-hover: #1a1a1a;
+      --accent: #00ff88;
+      --accent-dim: #00cc6a;
+      --text: #ffffff;
+      --text-secondary: #888888;
+      --border: #222222;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    
+    .logo span {
+      color: var(--accent);
+    }
+    
+    .nav-links {
+      display: flex;
+      font-size: 1.2rem;
+      gap: 2rem;
+      list-style: none;
+      justify-self: center;
+    }
+    
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .nav-cta:hover {
+      background: var(--accent-dim);
+      transform: translateY(-2px);
+    }
+
+    /* VIDEO */
+    .video {
+      padding: 6rem 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+    }
+
+    .video-player {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      display: block;
+    }
+
+    .video-control {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s;
+    }
+
+    .video-control:hover {
+      background: var(--accent-dim);
+      transform: translateY(-2px);
+    }
+
+    .video-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    /* LANGUAGE SWITCHER */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-self: end;
+    }
+    
+    .lang-switcher {
+      position: relative;
+    }
+    
+    .lang-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    
+    .lang-button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    
+    .lang-button[aria-expanded="true"] {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    
+    .lang-flag {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    
+    .lang-icon {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.2s ease;
+    }
+    
+    .lang-button[aria-expanded="true"] .lang-icon {
+      transform: rotate(180deg);
+    }
+    
+    .lang-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      min-width: 150px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+    
+    .lang-menu.hidden {
+      display: none;
+    }
+    
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .lang-item:last-child {
+      border-bottom: none;
+    }
+    
+    .lang-item:hover {
+      background: var(--bg-card-hover);
+      color: var(--accent);
+    }
+    
+    .lang-item.active {
+      background: var(--bg-card-hover);
+      color: var(--accent);
+    }
+    
+    .lang-check {
+      width: 14px;
+      height: 14px;
+      margin-left: auto;
+      color: var(--accent);
+    }
+    
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0, 255, 136, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+    
+    .badge-dot {
+      width: 10px;
+      margin-top: 3px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.5); }
+    }
+    
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      max-width: 900px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    h1 .highlight {
+      color: var(--accent);
+      text-shadow: 0 0 40px rgba(0, 255, 136, 0.4);
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 3rem;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    
+    .btn-secondary:hover {
+      background: var(--bg-card);
+      border-color: var(--text-secondary);
+    }
+    
+    /* STATS */
+    .stats {
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .stat-item {
+      animation: scaleIn 0.6s ease-out both;
+    }
+    
+    .stat-item:nth-child(1) { animation-delay: 0.1s; }
+    .stat-item:nth-child(2) { animation-delay: 0.2s; }
+    .stat-item:nth-child(3) { animation-delay: 0.3s; }
+    .stat-item:nth-child(4) { animation-delay: 0.4s; }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* LOGOS */
+    .logos {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .logos p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .logos-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      opacity: 0.6;
+    }
+    
+    .logo-item {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      transition: all 0.3s;
+    }
+    
+    .logo-item:hover {
+      color: var(--text);
+      opacity: 1;
+    }
+    
+    /* FEATURES */
+    .features {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeInUp 0.6s ease-out both;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(255, 140, 0, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    
+    .feature-card:nth-child(1) { animation-delay: 0.1s; }
+    .feature-card:nth-child(2) { animation-delay: 0.15s; }
+    .feature-card:nth-child(3) { animation-delay: 0.2s; }
+    .feature-card:nth-child(4) { animation-delay: 0.25s; }
+    .feature-card:nth-child(5) { animation-delay: 0.3s; }
+    .feature-card:nth-child(6) { animation-delay: 0.35s; }
+    
+    .feature-card:hover {
+      background: var(--bg-card-hover);
+      border-color: transparent;
+      transform: translateY(-8px);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(0, 255, 136, 0.3),
+        0 0 30px rgba(0, 255, 136, 0.1),
+        0 0 60px rgba(255, 140, 0, 0.1);
+    }
+    
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+    
+    .feature-card:hover .feature-icon {
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.3) 0%, rgba(255, 140, 0, 0.3) 100%);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.3), 0 0 40px rgba(255, 140, 0, 0.2);
+    }
+    
+    .feature-card:hover h3 {
+      background: linear-gradient(90deg, #00ff88 0%, #ff8c00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 255, 136, 0.05) 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .feature-card:nth-child(2) .feature-icon { animation-delay: 0.5s; }
+    .feature-card:nth-child(3) .feature-icon { animation-delay: 1s; }
+    .feature-card:nth-child(4) .feature-icon { animation-delay: 1.5s; }
+    .feature-card:nth-child(5) .feature-icon { animation-delay: 2s; }
+    .feature-card:nth-child(6) .feature-icon { animation-delay: 2.5s; }
+    
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    
+    /* TESTIMONIALS */
+    .testimonials {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, var(--bg) 0%, rgba(0, 255, 136, 0.02) 50%, var(--bg) 100%);
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    
+    .testimonial-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+    
+    .testimonial-stars {
+      color: #ffd700;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .testimonial-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--bg);
+    }
+    
+    .testimonial-info h4 {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .testimonial-info p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    
+    /* PRICING */
+    .pricing {
+      padding: 6rem 2rem;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      transition: all 0.3s;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .pricing-card.featured {
+      border-color: var(--accent);
+      animation: glow 3s ease-in-out infinite;
+    }
+    
+    .pricing-card.featured::before {
+      content: 'Populair';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.25rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .pricing-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .pricing-card .price {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 1rem 0;
+    }
+    
+    .pricing-card .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+    
+    .pricing-card ul {
+      list-style: none;
+      margin: 2rem 0;
+    }
+    
+    .pricing-card li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-secondary);
+    }
+    
+    .pricing-card .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    /* CTA */
+    .cta {
+      padding: 8rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .cta h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .cta p {
+      color: var(--text-secondary);
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .cta .btn-primary {
+      position: relative;
+    }
+    
+    /* FOOTER */
+    footer {
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    
+    footer p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+      
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <nav>
+    <a href="/be" class="logo" style="text-decoration: none; color: inherit;">Pag<span>a</span>yo</a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Prijzen</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button
+          id="language-button"
+          type="button"
+          class="lang-button"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="lang-flag">{languages[currentLang].flag}</span>
+          <svg class="lang-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div
+          id="language-menu"
+          class="hidden lang-menu"
+          role="menu"
+          aria-orientation="vertical"
+        >
+          {
+            Object.values(languages).map((lang) => (
+              <a
+                href={switchLanguage(currentPath, lang.code)}
+                class={`lang-item ${currentLang === lang.code ? 'active' : ''}`}
+                role="menuitem"
+              >
+                <span class="lang-flag">{lang.flag}</span>
+                <span>{lang.label}</span>
+                {currentLang === lang.code && (
+                  <svg class="lang-check" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                )}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <a href="/admin" class="nav-cta">Start gratis →</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      artikelen, verhuren, abonnementen, digitaal, stenen winkel, etc.
+    </div>
+    <h1>E-commerce.<br><span class="highlight">Zonder gedoe.</span></h1>
+    <p class="hero-subtitle">
+      Van idee naar verkoop in minuten. Pagayo kan het allemaal. Jij focust op ondernemen. Wij op de techniek.
+    </p>
+    <div class="hero-buttons">
+      <a href="/admin" class="btn-primary">
+        Start gratis
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#features" class="btn-secondary">Bekijk features</a>
+    </div>
+  </section>
+  
+  <section class="video" id="video">
+    <div class="video-wrapper">
+      <h2 class="video-title">Anna van Pagayo</h2>
+      <div class="video-frame">
+        <video id="annaVideo" class="video-player" preload="metadata" playsinline>
+          <source src="/movies/anna-over-pagayo-nl.mp4" type="video/mp4" />
+          Je browser ondersteunt deze video niet.
+        </video>
+        <button id="annaControl" class="video-control" type="button">▶ Start</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const video = document.getElementById('annaVideo');
+    const control = document.getElementById('annaControl');
+
+    if (video && control) {
+      control.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          control.textContent = '⏸ Stop';
+        } else {
+          video.pause();
+          control.textContent = '▶ Start';
+        }
+      });
+    }
+  </script>
+
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">5000+</div>
+        <div class="stat-label">Actieve shops</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">€150M+</div>
+        <div class="stat-label">Omzet verwerkt</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">99.9%</div>
+        <div class="stat-label">Uptime</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Support</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="logos">
+    <p>Vertrouwd door ondernemers in heel Nederland</p>
+    <div class="logos-grid">
+      <div class="logo-item">iDEAL</div>
+      <div class="logo-item">Stripe</div>
+      <div class="logo-item">Bunq</div>
+      <div class="logo-item">PostNL</div>
+      <div class="logo-item">Mollie</div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="section-header">
+      <h2>Alles wat je nodig hebt</h2>
+      <p>Geen technische kennis vereist. Wij hebben aan alles gedacht.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Live in 5 minuten</h3>
+        <p>Geen ingewikkelde setup. Kies een template, voeg producten toe, en je bent online.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💳</div>
+        <h3>iDEAL & meer</h3>
+        <p>Alle Nederlandse betaalmethodes ingebouwd. Geld direct op je rekening.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Mobiel-first</h3>
+        <p>70% van je klanten shopt mobiel. Onze shops zijn daar perfect voor gemaakt.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Jouw branding</h3>
+        <p>Eigen kleuren, logo, en stijl. Jouw webshop ziet eruit zoals jij dat wilt.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Slimme inzichten</h3>
+        <p>Zie wat verkoopt, wie koopt, en waar je kunt groeien. Geen spreadsheets nodig.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Veilig & snel</h3>
+        <p>SSL, backups, en Nederlandse hosting. Altijd online, altijd beschermd.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-header">
+      <h2>Wat ondernemers zeggen</h2>
+      <p>Ontdek waarom honderden Nederlandse ondernemers voor Pagayo kiezen.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Binnen een uur had ik mijn webshop live. De iDEAL integratie werkte meteen perfect. Geen gedoe, gewoon verkopen."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MB</div>
+          <div class="testimonial-info">
+            <h4>Marieke de Boer</h4>
+            <p>Eigenaar, Bloemenwinkel Marieke</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Als bakker heb ik geen tijd voor techniek. Pagayo regelt alles en ik kan me focussen op wat ik leuk vind: bakken en verkopen."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JV</div>
+          <div class="testimonial-info">
+            <h4>Jan Visser</h4>
+            <p>Bakkerij 't Zoete Gevoel</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"De support is fantastisch. Had een vraag op zaterdagavond en kreeg binnen 10 minuten antwoord. Dat vind je nergens anders."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SK</div>
+          <div class="testimonial-info">
+            <h4>Sophie Kuiper</h4>
+            <p>Sophie's Handmade</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="section-header">
+      <h2>Simpele, schaalbare prijzen</h2>
+      <p>Betaal alleen voor je succes. Hoe meer je omzet, hoe minder je betaalt.</p>
+    </div>
+    <div class="pricing-grid" style="grid-template-columns: 1fr; max-width: 800px;">
+      <div class="pricing-card featured" style="border-color: var(--accent); animation: glow 3s ease-in-out infinite; padding: 0;">
+        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--bg); padding: 0.25rem 1rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600;">Pagayo Platform</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+          <!-- Pricing Column -->
+          <div style="padding: 2.5rem;">
+            <h4 style="color: var(--accent); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; height: 1.2rem;">Prijzen</h4>
+            
+            <div style="display: flex; flex-direction: column; gap: 0;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; font-weight: 600; color: var(--accent); line-height: 1;">1%</span>
+                <span style="color: var(--text);">tot €5.000/maand</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; font-weight: 600; color: var(--accent); line-height: 1;">0,8%</span>
+                <span style="color: var(--text);">€5.000-€10.000</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; font-weight: 600; color: var(--accent); line-height: 1;">0,6%</span>
+                <span style="color: var(--text);">€10.000-€50.000</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; font-weight: 600; color: var(--accent); line-height: 1;">0,5%</span>
+                <span style="color: var(--text);">€50.000-€100.000</span>
+              </div>
+            </div>
+            
+            <p style="color: var(--text); margin-top: 1.5rem;">Start gratis - geen proefperiode</p>
+          </div>
+          
+          <!-- Features Column -->
+          <div style="padding: 2.5rem; border-left: 1px solid var(--border);">
+            <h4 style="color: var(--accent); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; height: 1.2rem;">Wat je krijgt</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0;">
+              <li style="display: flex; align-items: center; gap: 0.75rem; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; color: var(--accent); font-weight: 600; line-height: 1;">✓</span> Onbeperkt webwinkels
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; color: var(--accent); font-weight: 600; line-height: 1;">✓</span> Onbeperkt hotels
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; color: var(--accent); font-weight: 600; line-height: 1;">✓</span> Onbeperkt abonnementen
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; color: var(--accent); font-weight: 600; line-height: 1;">✓</span> Onbeperkt verhuur
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; color: var(--accent); font-weight: 600; line-height: 1;">✓</span> Onbeperkt POS-systemen
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                <span style="font-size: 2rem; color: var(--accent); font-weight: 600; line-height: 1;">✓</span> Eigen domeinnamen
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <a href="/admin" class="btn-primary" style="width: calc(100% - 5rem); margin: 2rem 2.5rem 2.5rem; justify-content: center;">Start nu gratis</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Klaar om te starten?</h2>
+    <p>Binnen 5 minuten jouw eigen webshop. Geen creditcard nodig.</p>
+    <a href="/admin" class="btn-primary">
+      Start nu gratis
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <footer>
+    <p>© 2025 Pagayo. Made with 💚 in Nederland. <a href="/privacy">Privacy</a> · <a href="/terms">Voorwaarden</a></p>
+  </footer>
+
+  <script>
+    // Language switcher dropdown
+    const button = document.getElementById('language-button');
+    const menu = document.getElementById('language-menu');
+
+    if (button && menu) {
+      button.addEventListener('click', () => {
+        const isOpen = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        button.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!button.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+          menu.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  </script>
+</BaseLayout>

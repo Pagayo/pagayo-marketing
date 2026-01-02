@@ -9,14 +9,14 @@ import MarketingLayout from '../../layouts/MarketingLayout.astro';
   headerVariant="transparent"
 >
 
-<style is:global>
+<style>
   /* Pagayo Brand System */
   :root {
-    --primary: #1e3a5f;
-    --primary-dark: #152a45;
-    --accent: #e07850;
-    --accent-hover: #c9673f;
-    --success: #2a9d8f;
+    --primary: #2d1b69;
+    --primary-dark: #1f1348;
+    --accent: #ff7a59;
+    --accent-hover: #e05f3f;
+    --success: #1fb999;
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
     --gray-200: #e2e8f0;
@@ -26,9 +26,31 @@ import MarketingLayout from '../../layouts/MarketingLayout.astro';
   }
   
   @keyframes hero-flow {
-    0% { transform: translate3d(-5%, -5%, 0) scale(1); opacity: 0.9; }
-    50% { transform: translate3d(5%, 5%, 0) scale(1.05); opacity: 1; }
-    100% { transform: translate3d(-5%, -5%, 0) scale(1); opacity: 0.9; }
+    0% { transform: translate3d(-18%, -12%, 0) scale(1); opacity: 0.82; }
+    25% { transform: translate3d(10%, -4%, 0) scale(1.08); opacity: 0.95; }
+    50% { transform: translate3d(18%, 14%, 0) scale(1.16); opacity: 1; }
+    75% { transform: translate3d(-8%, 6%, 0) scale(1.08); opacity: 0.93; }
+    100% { transform: translate3d(-18%, -12%, 0) scale(1); opacity: 0.82; }
+  }
+
+  @keyframes hero-gradient-pan {
+    0% { background-position: 18% 24%, 82% 32%, 50% 50%; }
+    50% { background-position: 36% 10%, 64% 62%, 52% 56%; }
+    100% { background-position: 18% 24%, 82% 32%, 50% 50%; }
+  }
+  
+  .hero-glow {
+    position: absolute;
+    inset: -30% -20% auto -20%;
+    height: 120%;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 122, 89, 0.52), transparent 52%),
+                radial-gradient(circle at 30% 65%, rgba(45, 27, 105, 0.48), transparent 55%),
+                radial-gradient(circle at 50% 40%, rgba(255, 193, 149, 0.36), transparent 45%);
+    filter: blur(72px);
+    opacity: 0.95;
+    animation: hero-flow 14s ease-in-out infinite;
+    will-change: transform, opacity;
+    pointer-events: none;
   }
   
   /* Hero Section */
@@ -37,10 +59,13 @@ import MarketingLayout from '../../layouts/MarketingLayout.astro';
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 8rem 2rem 4rem;
-    background: radial-gradient(circle at 20% 20%, rgba(30, 58, 95, 0.08), transparent 40%),
-                radial-gradient(circle at 80% 30%, rgba(224, 120, 80, 0.12), transparent 45%),
-                linear-gradient(135deg, var(--gray-50) 0%, white 50%, var(--gray-100) 100%);
+    padding: 7.5rem 24px 4rem;
+    background: radial-gradient(circle at 22% 24%, rgba(255, 122, 89, 0.28), transparent 42%),
+                radial-gradient(circle at 78% 32%, rgba(45, 27, 105, 0.24), transparent 45%),
+                linear-gradient(135deg, #fff7f2 0%, #fff2fb 50%, #f6f0ff 100%);
+    background-size: 170% 170%, 170% 170%, 100% 100%;
+    background-position: 18% 24%, 82% 32%, 50% 50%;
+    animation: hero-gradient-pan 22s ease-in-out infinite;
     overflow: hidden;
   }
   
@@ -49,16 +74,18 @@ import MarketingLayout from '../../layouts/MarketingLayout.astro';
     position: absolute;
     inset: -30% -20% auto -20%;
     height: 120%;
-    background: radial-gradient(circle at 70% 30%, rgba(224, 120, 80, 0.25), transparent 50%),
-                radial-gradient(circle at 30% 60%, rgba(30, 58, 95, 0.25), transparent 55%);
-    filter: blur(60px);
-    opacity: 0.85;
-    animation: hero-flow 12s ease-in-out infinite;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 122, 89, 0.46), transparent 52%),
+                radial-gradient(circle at 25% 70%, rgba(45, 27, 105, 0.44), transparent 55%);
+    filter: blur(64px);
+    opacity: 0.9;
+    animation: hero-flow 18s ease-in-out infinite;
+    animation-delay: -7s;
+    will-change: transform, opacity;
     pointer-events: none;
   }
   
   .hero-container {
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -241,7 +268,7 @@ import MarketingLayout from '../../layouts/MarketingLayout.astro';
   
   .floating-card-1 {
     top: -20px;
-    right: -30px;
+    right: -6px;
     color: var(--success);
   }
   
@@ -393,18 +420,7 @@ import MarketingLayout from '../../layouts/MarketingLayout.astro';
 
 <!-- Hero Section -->
 <section class="hero">
-  <div style="
-    content: '';
-    position: absolute;
-    inset: -30% -20% auto -20%;
-    height: 120%;
-    background: radial-gradient(circle at 70% 30%, rgba(224, 120, 80, 0.25), transparent 50%),
-                radial-gradient(circle at 30% 60%, rgba(30, 58, 95, 0.25), transparent 55%);
-    filter: blur(60px);
-    opacity: 0.85;
-    animation: hero-flow 12s ease-in-out infinite;
-    pointer-events: none;
-  "></div>
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-container">
     <!-- Left: Content -->
     <div>
@@ -416,7 +432,7 @@ import MarketingLayout from '../../layouts/MarketingLayout.astro';
       </div>
       
       <h1 class="hero-title">
-        Bouw moderne <span class="accent">webshops</span> op één krachtig platform
+        Bouw moderne <span class="accent">e-commerce</span> op één krachtig platform
       </h1>
       
       <p class="hero-subtitle">

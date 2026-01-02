@@ -1,15 +1,17 @@
 // i18n utilities
 
-export type Language = 'nl' | 'de' | 'en';
+export type Language = 'nl' | 'de' | 'en' | 'be';
 
 export const languages: Record<Language, { code: Language; label: string; flag: string }> = {
-  nl: { code: 'nl', label: 'Nederlands', flag: '🇳🇱' },
-  de: { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
-  en: { code: 'en', label: 'English', flag: '🇺🇸' },
+  nl: { code: 'nl', label: 'Nederland', flag: '🇳🇱' },
+  de: { code: 'de', label: 'Deutschland', flag: '🇩🇪' },
+  en: { code: 'en', label: 'England', flag: '🇬🇧' },
+  be: { code: 'be', label: 'België', flag: '🇧🇪' },
 };
 
 export function detectLanguage(pathname: string): Language {
   if (pathname.startsWith('/de')) return 'de';
+  if (pathname.startsWith('/be')) return 'be';
   if (pathname.startsWith('/us') || pathname.startsWith('/en')) return 'en';
   return 'nl';
 }

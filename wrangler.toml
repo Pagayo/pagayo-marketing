@@ -1,0 +1,7 @@
+name = "pagayo-marketing"
+compatibility_date = "2026-01-02"
+pages_build_output_dir = "dist"
+
+# Note: Custom domains configured via Cloudflare Dashboard
+# Production: www.pagayo.com
+# Preview: preview.pagayo.com
