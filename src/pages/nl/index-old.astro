@@ -1,0 +1,408 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+---
+
+<MarketingLayout
+  title="Pagayo - Multi-Tenant E-commerce Platform"
+  description="Bouw en schaal moderne webshops, hotels, en POS systemen op één krachtig multi-tenant platform."
+  lang="nl"
+>
+
+<style>
+  /* Pagayo Brand System */
+  :root {
+    --primary: #1e3a5f;
+    --primary-dark: #152a45;
+    --primary-light: #2d4a6f;
+    --accent: #e07850;
+    --accent-hover: #c9673f;
+    --success: #2a9d8f;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-800: #1e293b;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 2rem 4rem;
+    background: linear-gradient(135deg, var(--gray-50) 0%, white 50%, var(--gray-100) 100%);
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(30, 58, 95, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  
+  .hero-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--gray-800);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-title .accent {
+    color: var(--accent);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 540px;
+  }
+  
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-number {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary);
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+  }
+  
+  .stripe-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .product-demo {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
+  }
+  
+  .demo-header {
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  
+  .demo-card {
+    background: #f6f9fc;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .demo-amount {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0a2540;
+    margin-bottom: 8px;
+  }
+  
+  .demo-label {
+    font-size: 14px;
+    color: #89919d;
+  }
+  
+  .stripe-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    transition: all 0.3s ease;
+    border: 1px solid #e6e9f0;
+  }
+  
+  .stripe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    border-color: #c7cdd8;
+  }
+  
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .section-title {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #0a2540;
+  }
+  
+  .section-subtitle {
+    font-size: clamp(18px, 2.5vw, 21px);
+    line-height: 1.7;
+    color: #425466;
+  }
+</style>
+
+  <!-- Hero Section -->
+  <section class="stripe-animated-bg relative min-h-screen flex items-center pt-24">
+    <div aria-hidden="true" class="absolute inset-0">
+      <div class="absolute -bottom-48 left-0 right-0 h-[70vh] bg-white -skew-y-6 origin-bottom" />
+    </div>
+    <div class="container relative mx-auto px-6 py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left: Content -->
+        <div class="relative z-10">
+          <h1 class="stripe-hero-title mb-8">
+            <span style="color: var(--color-dark-blue);">Financiële infrastructuur</span><br />
+            <span style="color: var(--color-dark-blue);">voor meer</span><br />
+            <span style="color: var(--color-primary-purple);">omzet</span>
+          </h1>
+          
+          <p class="stripe-subtitle max-w-xl mb-12">
+            Miljoenen bedrijven gebruiken Stripe al om online en fysieke betalingen te ontvangen, financiële diensten te integreren, businessmodellen op maat mogelijk te maken en de winstevendheid te vergroten.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://beheer.pagayo.com" class="stripe-btn-primary">
+              Nu starten
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 1l6 6-6 6"/>
+              </svg>
+            </a>
+            <a href="/nl/contact" class="stripe-btn-secondary">
+              Neem contact op
+            </a>
+          </div>
+
+          <p class="text-sm opacity-70" style="color: #1a1a2e;">
+            Geaccepteerd door bedrijven wereldwijd
+          </p>
+        </div>
+
+        <!-- Right: Product Demo -->
+        <div class="relative z-10 hidden lg:block">
+          <div class="product-demo">
+            <div class="demo-header">Vandaag</div>
+            
+            <div class="demo-card">
+              <div class="demo-amount">€ 3.528,72</div>
+              <div class="demo-label">Nettovolume</div>
+            </div>
+
+            <div class="flex gap-4 mb-6">
+              <div class="flex-1">
+                <div style="font-size: 20px; font-weight: 700; color: #0a2540; margin-bottom: 4px;">€ 39.274</div>
+                <div class="demo-label">Nettovolume van verkoop</div>
+              </div>
+              <div class="flex-1">
+                <div style="font-size: 20px; font-weight: 700; color: #0a2540; margin-bottom: 4px;">2.579</div>
+                <div class="demo-label">Orders</div>
+              </div>
+            </div>
+
+            <div style="background: #e6f4ea; border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 12px;">
+              <div style="width: 48px; height: 48px; background: #0cce6b; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                  <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                </svg>
+              </div>
+              <div>
+                <div style="font-size: 15px; font-weight: 600; color: #0a2540;">Betaling geslaagd</div>
+                <div style="font-size: 13px; color: #5e6470;">Vandaag bijgewerkt om 07:50</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="py-32" style="background: #f6f9fc;">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mb-20">
+        <h2 class="section-title mb-6">
+          Een volledig geïntegreerd pakket
+        </h2>
+        <p class="section-subtitle">
+          Pagayo biedt alles wat je nodig hebt om een modern online bedrijf op te bouwen, van betalingen tot uitbetalingen en alles ertussenin.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl">
+        <!-- Card 1: Payments -->
+        <div class="stripe-card group">
+          <div class="card-icon" style="background: #f0ebff;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="color: #635bff;">
+              <rect x="2" y="6" width="24" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+              <line x1="2" y1="12" x2="26" y2="12" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          
+          <h3 style="font-size: 24px; font-weight: 700; color: #0a2540; margin-bottom: 16px; letter-spacing: -0.01em;">
+            Payments
+          </h3>
+          
+          <p style="font-size: 16px; line-height: 1.7; color: #425466; margin-bottom: 20px;">
+            Een complete betalingsoplossing gebouwd voor groei. Accepteer betalingen online en persoonlijk vanuit een enkel platform.
+          </p>
+
+          <a href="/nl/features#payments" style="font-size: 16px; font-weight: 600; color: #635bff; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+            Meer informatie
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 1l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Card 2: Terminal -->
+        <div class="stripe-card group">
+          <div class="card-icon" style="background: #e6f9f0;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="color: #00d924;">
+              <rect x="4" y="4" width="20" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+              <line x1="4" y1="10" x2="24" y2="10" stroke="currentColor" stroke-width="2"/>
+              <circle cx="9" cy="17" r="1" fill="currentColor"/>
+              <circle cx="14" cy="17" r="1" fill="currentColor"/>
+              <circle cx="19" cy="17" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          
+          <h3 style="font-size: 24px; font-weight: 700; color: #0a2540; margin-bottom: 16px; letter-spacing: -0.01em;">
+            Terminal
+          </h3>
+          
+          <p style="font-size: 16px; line-height: 1.7; color: #425466; margin-bottom: 20px;">
+            Unified commerce voor online en fysieke winkels. Accepteer betalingen persoonlijk met Terminal en synchroniseer automatisch met je online platform.
+          </p>
+
+          <a href="/nl/features#terminal" style="font-size: 16px; font-weight: 600; color: #635bff; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+            Meer informatie
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 1l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Card 3: Connect -->
+        <div class="stripe-card group">
+          <div class="card-icon" style="background: #fff4e6;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="color: #ff8a00;">
+              <circle cx="7" cy="14" r="3" stroke="currentColor" stroke-width="2"/>
+              <circle cx="21" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+              <circle cx="21" cy="20" r="3" stroke="currentColor" stroke-width="2"/>
+              <line x1="10" y1="14" x2="18" y2="8" stroke="currentColor" stroke-width="2"/>
+              <line x1="10" y1="14" x2="18" y2="20" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          
+          <h3 style="font-size: 24px; font-weight: 700; color: #0a2540; margin-bottom: 16px; letter-spacing: -0.01em;">
+            Connect
+          </h3>
+          
+          <p style="font-size: 16px; line-height: 1.7; color: #425466; margin-bottom: 20px;">
+            De snelste manier om een multi-tenant platform te bouwen. Onboard klanten, faciliteer betalingen en beheer uitbetalingen vanuit één dashboard.
+          </p>
+
+          <a href="/nl/features#connect" style="font-size: 16px; font-weight: 600; color: #635bff; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+            Meer informatie
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 1l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-32" style="background: linear-gradient(135deg, #0a2540 0%, #1a3a52 100%);">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl mx-auto text-center">
+        <div>
+          <div style="font-size: 64px; font-weight: 700; color: white; margin-bottom: 12px; letter-spacing: -0.02em;">250M+</div>
+          <div style="font-size: 17px; color: rgba(255, 255, 255, 0.8); line-height: 1.6;">API-aanvragen per dag verwerkt</div>
+        </div>
+        <div>
+          <div style="font-size: 64px; font-weight: 700; color: white; margin-bottom: 12px; letter-spacing: -0.02em;">135+</div>
+          <div style="font-size: 17px; color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Valuta's en betaalmethoden ondersteund</div>
+        </div>
+        <div>
+          <div style="font-size: 64px; font-weight: 700; color: white; margin-bottom: 12px; letter-spacing: -0.02em;">99.999%</div>
+          <div style="font-size: 17px; color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Historische uptime voor Pagayo-services</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-32" style="background: white;">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="section-title mb-8">
+          Klaar om aan de slag te gaan?
+        </h2>
+        <p class="section-subtitle mb-12 max-w-2xl mx-auto">
+          Sluit je aan bij miljoenen bedrijven, van ambitieuze start-ups tot multinationals, die Pagayo gebruiken om hun bedrijf online te laten groeien.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://beheer.pagayo.com" class="stripe-btn-primary">
+            Start nu
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 1l6 6-6 6"/>
+            </svg>
+          </a>
+          <a href="/nl/contact" class="stripe-btn-secondary" style="color: #0a2540; background: white; border: 2px solid #e3e8ef;">
+            Neem contact op
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</MarketingLayout>

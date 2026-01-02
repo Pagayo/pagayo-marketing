@@ -7,6 +7,6 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://pagayo.com',
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
 });

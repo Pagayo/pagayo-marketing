@@ -7,30 +7,48 @@ interface Props {
   title: string;
   description: string;
   lang?: Language;
+  headerVariant?: 'default' | 'transparent';
 }
 
-const { title, description, lang = 'nl' } = Astro.props;
+const { title, description, lang = 'nl', headerVariant = 'default' } = Astro.props;
+
+const headerClass =
+  headerVariant === 'transparent'
+    ? 'fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/30 via-black/10 to-transparent backdrop-blur-xl border-b border-white/10'
+    : 'sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm';
+
+const navLinkClass =
+  headerVariant === 'transparent'
+    ? 'text-white/90 hover:text-white'
+    : 'text-gray-800 hover:text-primary-dark';
+
+const brandClass = headerVariant === 'transparent' ? 'text-white drop-shadow-sm' : 'text-primary-dark';
+
+const ctaClass =
+  headerVariant === 'transparent'
+    ? 'px-4 py-2 text-sm font-semibold text-white bg-white/15 rounded-full hover:bg-white/25 backdrop-blur-xl transition-all duration-200 border border-white/20'
+    : 'px-4 py-2 text-sm font-semibold text-white bg-primary-purple rounded-full hover:shadow-glow-purple transition-all duration-200';
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+  <header class={headerClass}>
     <nav class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-8">
-          <a href={`/${lang}`} class="text-2xl font-bold text-primary-dark">
+          <a href={`/${lang}`} class={`text-2xl font-bold ${brandClass}`}>
             Pagayo
           </a>
           <div class="hidden md:flex space-x-6">
-            <a href={`/${lang}/features`} class="text-gray-700 hover:text-primary-purple">
+            <a href={`/${lang}/features`} class={navLinkClass}>
               {lang === 'nl' ? 'Features' : lang === 'de' ? 'Funktionen' : 'Features'}
             </a>
-            <a href={`/${lang}/pricing`} class="text-gray-700 hover:text-primary-purple">
+            <a href={`/${lang}/pricing`} class={navLinkClass}>
               {lang === 'nl' ? 'Prijzen' : lang === 'de' ? 'Preise' : 'Pricing'}
             </a>
-            <a href={`/${lang}/contact`} class="text-gray-700 hover:text-primary-purple">
+            <a href={`/${lang}/contact`} class={navLinkClass}>
               {lang === 'nl' ? 'Contact' : lang === 'de' ? 'Kontakt' : 'Contact'}
             </a>
-            <a href="/docs" class="text-gray-700 hover:text-primary-purple">
+            <a href="/docs" class={navLinkClass}>
               {lang === 'nl' ? 'Docs' : lang === 'de' ? 'Dokumentation' : 'Docs'}
             </a>
           </div>
@@ -39,7 +57,7 @@ const { title, description, lang = 'nl' } = Astro.props;
           <LanguageSwitcher currentLang={lang} currentPath={Astro.url.pathname} />
           <a
             href="https://beheer.pagayo.com"
-            class="px-4 py-2 text-sm font-medium text-white bg-primary-purple rounded-lg hover:shadow-glow-purple transition-all duration-200"
+            class={ctaClass}
           >
             {lang === 'nl' ? 'Start gratis' : lang === 'de' ? 'Kostenlos starten' : 'Start free'}
           </a>
@@ -52,12 +70,12 @@ const { title, description, lang = 'nl' } = Astro.props;
     <slot />
   </main>
 
-  <footer class="bg-primary-dark text-white py-12">
+  <footer class="bg-gradient-to-b from-primary-dark via-primary-dark/95 to-primary-dark text-white py-14 border-t border-white/10">
     <div class="container mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         <div>
           <h3 class="text-xl font-bold mb-4">Pagayo</h3>
-          <p class="text-gray-400">
+          <p class="text-gray-300 leading-relaxed">
             {
               lang === 'nl'
                 ? 'Multi-tenant SaaS platform voor jouw business'
@@ -71,7 +89,7 @@ const { title, description, lang = 'nl' } = Astro.props;
           <h4 class="font-semibold mb-4">
             {lang === 'nl' ? 'Product' : lang === 'de' ? 'Produkt' : 'Product'}
           </h4>
-          <ul class="space-y-2 text-gray-400">
+          <ul class="space-y-2 text-gray-300">
             <li>
               <a href={`/${lang}/features`} class="hover:text-white">
                 {lang === 'nl' ? 'Features' : lang === 'de' ? 'Funktionen' : 'Features'}
@@ -88,7 +106,7 @@ const { title, description, lang = 'nl' } = Astro.props;
           <h4 class="font-semibold mb-4">
             {lang === 'nl' ? 'Resources' : lang === 'de' ? 'Ressourcen' : 'Resources'}
           </h4>
-          <ul class="space-y-2 text-gray-400">
+          <ul class="space-y-2 text-gray-300">
             <li>
               <a href={`/${lang}/docs`} class="hover:text-white">
                 {lang === 'nl' ? 'Documentatie' : lang === 'de' ? 'Dokumentation' : 'Documentation'}
@@ -103,7 +121,7 @@ const { title, description, lang = 'nl' } = Astro.props;
           <h4 class="font-semibold mb-4">
             {lang === 'nl' ? 'Bedrijf' : lang === 'de' ? 'Unternehmen' : 'Company'}
           </h4>
-          <ul class="space-y-2 text-gray-400">
+          <ul class="space-y-2 text-gray-300">
             <li>
               <a href={`/${lang}/contact`} class="hover:text-white">Contact</a>
             </li>

@@ -1,6 +1,24 @@
 @import 'tailwindcss';
 
-/* Global styles */
+/* Tailwind v4 Custom Theme */
+@theme {
+  --color-primary-purple: #635BFF;
+  --color-dark-blue: #0A2540;
+  --color-light-gray: #F6F9FC;
+  --color-medium-gray: #8898AA;
+  --color-success-green: #00D924;
+  --color-warning-orange: #FF8A00;
+  --color-error-red: #DF1B41;
+  
+  --font-family-sans: Inter, system-ui, sans-serif;
+  
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --shadow-glow-purple: 0 0 24px rgba(99, 91, 255, 0.3);
+}
+
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -17,41 +35,23 @@ body {
   @apply font-sans text-gray-900 bg-white;
 }
 
-/* Focus styles voor accessibility */
+/* Focus */
 :focus-visible {
-  @apply outline-2 outline-offset-2 outline-primary-purple;
+  outline: 2px solid var(--color-primary-purple);
+  outline-offset: 2px;
 }
 
-/* Selection color */
+/* Selection */
 ::selection {
-  @apply bg-primary-purple text-white;
+  background-color: var(--color-primary-purple);
+  color: white;
 }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-bold text-primary-dark;
-}
-
-/* Links */
-a {
-  @apply text-accent-blue transition-colors duration-200;
-}
-
-a:hover {
-  @apply text-primary-purple;
-}
-
-/* Button reset */
+/* Utility */
 button {
   @apply cursor-pointer;
 }
 
-/* Image optimization */
 img {
   @apply max-w-full h-auto;
 }
