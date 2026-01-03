@@ -1,0 +1,86 @@
+---
+// Header component - used on all pages
+---
+
+<nav>
+  <a href="/nl" class="logo">Pagayo<span>.</span></a>
+  <ul class="nav-center">
+    <li><a href="/nl/features">Features</a></li>
+    <li><a href="/nl#prijzen">Prijzen</a></li>
+    <li><a href="/nl/contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://beheer.pagayo.com" class="nav-cta">Start gratis</a>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .logo span {
+    color: var(--accent);
+  }
+
+  .nav-center {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-center a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+
+  .nav-center a:hover {
+    color: var(--accent);
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .nav-cta {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+
+  .nav-cta:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+  }
+</style>

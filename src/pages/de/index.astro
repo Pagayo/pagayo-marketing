@@ -297,37 +297,53 @@ const currentPath = '/de';
       line-height: 1.6;
     }
 
-    /* STATS */
-    .stats-section {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* SOCIAL PROOF */
+    .social-proof {
+      padding: 4rem 2rem;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      max-width: 1000px;
+    .social-proof-content {
+      max-width: 900px;
       margin: 0 auto;
-    }
-
-    .stat-item {
       text-align: center;
     }
 
-    .stat-number-large {
-      font-size: 2.5rem;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-      color: #ffffff;
+    .social-proof h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
     }
 
-    .stat-label-large {
-      font-size: 0.95rem;
-      opacity: 0.95;
-      color: rgba(255, 255, 255, 0.85);
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .trust-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
     }
 
     /* CTA */
@@ -525,24 +541,27 @@ const currentPath = '/de';
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="section stats-section">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number-large">10K+</div>
-        <div class="stat-label-large">Aktive Shops</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number-large">€500M+</div>
-        <div class="stat-label-large">Umsatz verarbeitet</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number-large">99.9%</div>
-        <div class="stat-label-large">Verfügbarkeit</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number-large">24/7</div>
-        <div class="stat-label-large">Support bereit</div>
+  <!-- SOCIAL PROOF -->
+  <section class="social-proof">
+    <div class="social-proof-content">
+      <h3>Vertraut von Hunderten E-Commerce Unternehmen</h3>
+      <div class="trust-badges">
+        <div class="trust-item">
+          <div class="trust-number">500+</div>
+          <div class="trust-label">Aktive Shops</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">€2.5M+</div>
+          <div class="trust-label">Pro Monat verarbeitet</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">99.99%</div>
+          <div class="trust-label">Uptime</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">24/7</div>
+          <div class="trust-label">Support</div>
+        </div>
       </div>
     </div>
   </section>

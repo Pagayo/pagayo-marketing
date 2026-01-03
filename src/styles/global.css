@@ -55,3 +55,49 @@ button {
 img {
   @apply max-w-full h-auto;
 }
+
+/* Continent Pages - Dark Theme */
+:root {
+  --primary: #00a86b;
+  --primary-dark: #006b47;
+  --accent: #00ff88;
+  --accent-hover: #00e077;
+  --bg: #0a0a0a;
+  --bg-secondary: #0f1513;
+  --text: #ffffff;
+  --text-secondary: #a8c9bc;
+  --border: #1a332a;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 120px auto 4rem;
+  padding: 0 2rem;
+}
+
+.container h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.container .subtitle {
+  font-size: 1.25rem;
+  color: #a8c9bc;
+  margin-bottom: 3rem;
+}
+
+.container .content {
+  color: #ffffff;
+  line-height: 1.8;
+}
