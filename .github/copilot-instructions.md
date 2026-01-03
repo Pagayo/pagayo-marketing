@@ -45,15 +45,88 @@ Pricing Table:
 
 ---
 
-## 📜 SCRIPTS-FIRST - VERPLICHT
+## ⚠️ STOP VOORDAT JE BEGINT
 
-**KRITIEK: Scripts zijn ALTIJD beter dan handmatig tools gebruiken.**
+**Bij ELKE taak, vraag jezelf af:**
+- "Begrijp ik 100% wat Sjoerd bedoelt?"
+- "Heb ik de bestaande code gelezen?"
+- "Zijn mijn aannames gevalideerd?"
 
-### Verplichte Volgorde:
-1. **Is er een script?** → Gebruik het script
-2. **Staat in README?** → Volg de docs
-3. **Moet ik zelf uitzoeken?** → Vraag eerst of er een betere manier is
-4. **Echt geen script?** → Dan pas files lezen/grep/search
+**STOP en vraag Sjoerd als:**
+- ❌ Je twijfelt of het een nieuwe pagina of sectie is
+- ❌ Je niet weet of je bestaande code moet aanpassen of nieuwe maken
+- ❌ Je 2+ manieren ziet om iets te implementeren
+- ❌ De opdracht onduidelijk is ("maak dit mooier" = te vaag)
+- ❌ Je een inconsistentie ziet in de codebase
+
+**GEEN aannames, GEEN gokken. Bij 1% twijfel = STOP.**
+
+---
+
+## 🔍 ARCHITECTURE CONSISTENCY - VERPLICHT
+
+**VOORDAT je iets codeert, check ALTIJD:**
+
+### Pre-Code Checklist (MANDATORY)
+1. **Bestaat er al een vergelijkbare component/pagina?**
+   - Zoek naar patterns: `ls src/components/`, `ls src/pages/nl/`
+   - Lees minimaal 1 vergelijkbaar bestand volledig
+   
+2. **Welke architectuur gebruikt de codebase?**
+   - Inline code of shared components?
+   - Welke layout/styling pattern?
+   - Waar komen nav/footer vandaan?
+
+3. **Is dit een nieuwe pagina of sectie op bestaande pagina?**
+   - Bij twijfel: STOP en vraag Sjoerd expliciet
+   - "Wil je een nieuwe /prijzen pagina of prijzen sectie op homepage?"
+
+4. **Zijn mijn wijzigingen consistent met bestaande code?**
+   - Gebruik ik dezelfde components als andere pages?
+   - Gebruik ik dezelfde styling approach?
+   - Breek ik een bestaand pattern?
+
+### VERBODEN Gedrag:
+❌ Direct beginnen met coden zonder bestaande code te lezen
+❌ Aannames maken over wat Sjoerd bedoelt
+❌ Nieuwe patterns introduceren zonder check
+❌ Inconsistenties creëren tussen pagina's
+
+### VERPLICHT Gedrag:
+✅ Lees minimaal 1 vergelijkbaar bestand VOLLEDIG
+✅ Vraag expliciet bij onduidelijkheid
+✅ Verifieer consistency na elke wijziging
+✅ Proactief inconsistenties signaleren
+
+---
+
+## 📜 CONTEXT GATHERING - STRIKTE VOLGORDE
+
+**ELKE taak begint met context, NIET met code:**
+
+### Fase 1: Scripts (10 sec)
+```bash
+ls scripts/              # Wat is er beschikbaar?
+cat README.md            # Wat staat in docs?
+```
+
+### Fase 2: Bestaande Code (30 sec)
+```bash
+ls src/pages/nl/         # Welke pages bestaan er?
+ls src/components/       # Welke components zijn er?
+```
+
+### Fase 3: Lezen (1-2 min)
+- Lees **VOLLEDIG** minimaal 1 vergelijkbaar bestand
+- Niet scannen, LEZEN - elke import, elke class
+- Zoek naar patterns en consistency
+
+### Fase 4: Validatie (10 sec)
+- "Begrijp ik de architectuur?"
+- "Weet ik zeker wat Sjoerd wil?"
+- NEE op 1 vraag = STOP en vraag
+
+**ALLEEN NA Fase 4 mag je beginnen met coden.**
 
 ### Key Scripts:
 ```bash
@@ -63,6 +136,31 @@ npm run preview      # Preview build
 npm run lint         # ESLint
 npm run format       # Prettier
 ```
+
+---
+
+## ✅ SELF-CHECK PROTOCOL
+
+**NA elke wijziging, verplichte checks:**
+
+### 1. Consistency Check:
+```bash
+# Check of alle pages dezelfde components gebruiken
+grep -r "<Header" src/pages/nl/
+grep -r "<Footer" src/pages/nl/
+```
+
+### 2. Pattern Check:
+- Gebruik ik dezelfde imports als andere pages?
+- Gebruik ik dezelfde styling approach?
+- Zijn mijn class names consistent?
+
+### 3. Impact Check:
+- Welke andere files gebruiken deze component?
+- Breek ik iets voor andere pages?
+- Moet ik andere pages ook updaten?
+
+**Als 1 check faalt → STOP en meld aan Sjoerd.**
 
 ---
 
@@ -301,4 +399,4 @@ src/components/
 ---
 
 **Aangemaakt:** 2 januari 2026  
-**Laatst Bijgewerkt:** 2 januari 2026
+**Laatst Bijgewerkt:** 3 januari 2026
