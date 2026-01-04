@@ -1,12 +1,37 @@
 # GitHub Copilot Instructions – Pagayo Marketing
 
-## 🤖 AI MODEL VEREISTE
-**VERBODEN MODEL: Claude Haiku mag NOOIT gebruikt worden.**
-- Claude Haiku is niet toegestaan voor dit project
-- Voor Claude modellen: gebruik minimaal Claude Sonnet 4.5
-- GPT modellen zijn toegestaan
-- Codex modellen alleen als subagent toegestaan
-- Bij twijfel over het model: STOP en vraag Sjoerd
+## 🤖 AI MODEL VEREISTE & AGENT HIËRARCHIE
+
+**KRITIEK: Agent Rolverdeling**
+- **Claude Sonnet 4.5** = HOOFDAGENT (altijd gesprekspartner van Sjoerd)
+- **Codex 5.1** = SUBAGENT ONLY (alleen voor website development taken)
+
+**Harde Regels:**
+1. ✅ Sonnet voert ALLE communicatie met Sjoerd
+2. ✅ Sonnet behoudt controle over het gehele proces
+3. ✅ Codex wordt ALLEEN ingezet via runSubagent tool voor:
+   - Nieuwe pagina's bouwen (Hero, Features, Pricing, etc.)
+   - Componenten ontwikkelen (Cards, Buttons, Forms)
+   - Styling & layout aanpassingen
+   - Stripe.com niveau design implementaties
+4. ❌ Codex mag NOOIT direct met Sjoerd communiceren
+5. ❌ Codex mag NOOIT de hoofdagent zijn
+
+**Waarom deze verdeling:**
+- Codex = excellent in website development & design
+- Sonnet = excellent in instructies volgen & communicatie
+- Beste resultaat = Sonnet als orchestrator, Codex als uitvoerder
+
+**Workflow Voorbeeld:**
+```
+Sjoerd → Sonnet → analyseert taak → runSubagent(Codex) → Sonnet → rapporteert aan Sjoerd
+```
+
+**VERBODEN MODELLEN:**
+- ❌ Claude Haiku mag NOOIT gebruikt worden
+- ❌ GPT modellen niet als hoofdagent
+
+**Bij twijfel over het model: STOP en vraag Sjoerd**
 
 ---
 
