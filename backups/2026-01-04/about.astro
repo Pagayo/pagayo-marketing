@@ -81,37 +81,7 @@ import Footer from '../../components/Footer.astro';
 		.stat-label { color: var(--text-secondary); }
 		.cta { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: linear-gradient(135deg, rgba(0,255,136,0.08), rgba(0,0,0,0.9)); text-align: center; box-shadow: 0 12px 32px rgba(0,0,0,0.25); display: flex; flex-direction: column; gap: 0.8rem; }
 		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
-		@media (max-width: 768px) { 
-			.about-page { padding: 100px 1rem 70px; gap: 2.5rem; }
-			.hero { padding: 1.75rem 1.5rem; }
-			.hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
-			.hero-actions { 
-				flex-direction: column; 
-				width: 100%;
-			}
-			.hero-actions .btn { width: 100%; }
-			.pillars { grid-template-columns: 1fr; }
-			.stats { grid-template-columns: 1fr; }
-			.cta-actions { 
-				flex-direction: column; 
-				width: 100%;
-			}
-			.cta-actions .btn { width: 100%; }
-		}
-		@media (max-width: 480px) {
-			.about-page { padding: 90px 1rem 60px; gap: 2rem; }
-			.eyebrow { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
-			.hero { padding: 1.5rem 1rem; }
-			.hero h1 { font-size: 1.75rem; }
-			.lead { font-size: 0.95rem; }
-			.btn { padding: 0.75rem 1.2rem; font-size: 0.9rem; }
-			.pillar { padding: 1.2rem; }
-			.pillar h3 { font-size: 1.1rem; }
-			.story { padding: 1.4rem; }
-			.stat { padding: 1.1rem; }
-			.stat-number { font-size: 1.75rem; }
-			.cta { padding: 1.5rem; }
-		}
+		@media (max-width: 768px) { .hero { padding: 2rem; } }
 	</style>
 	<Footer />
 </BaseLayout>

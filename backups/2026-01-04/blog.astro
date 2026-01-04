@@ -106,34 +106,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 		.btn { text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 10px; font-weight: 700; border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; }
 		.btn.primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; }
 		.btn.ghost { color: var(--text); }
-		@media (max-width: 768px) { 
-			.blog-page { padding: 100px 1rem 70px; gap: 2rem; }
-			.hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
-			.topics { gap: 0.5rem; }
-			.topic { padding: 0.5rem 0.8rem; font-size: 0.9rem; }
-			.posts { grid-template-columns: 1fr; }
-			.cta { padding: 1.75rem 1.5rem; }
-			.cta-actions { 
-				flex-direction: column; 
-				width: 100%;
-			}
-			.cta-actions .btn { width: 100%; }
-		}
-		@media (max-width: 480px) {
-			.blog-page { padding: 90px 1rem 60px; gap: 1.75rem; }
-			.eyebrow { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
-			.hero h1 { font-size: 1.75rem; }
-			.lead { font-size: 0.95rem; }
-			.topic { padding: 0.45rem 0.75rem; font-size: 0.85rem; }
-			.post { padding: 1.25rem; }
-			.badge { font-size: 0.75rem; padding: 0.25rem 0.6rem; }
-			.post h2 { font-size: 1.2rem; }
-			.post p { font-size: 0.9rem; }
-			.meta { font-size: 0.85rem; }
-			.cta { padding: 1.5rem 1rem; }
-			.cta h2 { font-size: 1.75rem; }
-			.btn { padding: 0.75rem 1.2rem; font-size: 0.9rem; }
-		}
+		@media (max-width: 768px) { .blog-page { padding-top: 100px; } }
 	</style>
 
 	<script>

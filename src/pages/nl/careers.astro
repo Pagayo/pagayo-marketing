@@ -52,7 +52,51 @@ import Footer from '../../components/Footer.astro';
 		</section>
 	</main>
 	<style>
-		.careers-page{max-width:1100px;margin:0 auto;padding:120px 1.75rem 90px;display:flex;flex-direction:column;gap:2.8rem}.eyebrow{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;border:1px solid var(--border);border-radius:999px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-secondary);font-size:.85rem}.hero{display:flex;flex-direction:column;gap:1rem;background:linear-gradient(135deg,rgba(0,255,136,.12),rgba(0,0,0,.9));border:1px solid var(--border);border-radius:18px;padding:2.5rem;box-shadow:0 14px 40px rgba(0,0,0,.35)}.hero h1{font-size:clamp(2.3rem,4vw,3.3rem);margin:0;line-height:1.12;letter-spacing:-.02em}.lead{color:var(--text-secondary);max-width:760px;line-height:1.6}.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}.btn{text-decoration:none;padding:.85rem 1.4rem;border-radius:10px;font-weight:700;border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;gap:.45rem}.btn.primary{background:linear-gradient(135deg,var(--accent) 0%,#00e077 100%);color:#06130d}.btn.ghost{color:var(--text)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.card{border:1px solid var(--border);border-radius:14px;padding:1.4rem;background:var(--bg-secondary);box-shadow:0 8px 24px rgba(0,0,0,.18)}.openings h2,.benefits h2,.cta h2{margin-bottom:.6rem}.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}.role{border:1px solid var(--border);border-radius:14px;padding:1.4rem;background:var(--bg-secondary);display:flex;flex-direction:column;gap:.5rem;box-shadow:0 10px 30px rgba(0,0,0,.22)}.badge{display:inline-flex;align-items:center;padding:.3rem .7rem;border-radius:999px;background:rgba(0,255,136,.12);color:var(--accent);font-weight:700;font-size:.85rem}.meta{color:var(--text-secondary);font-size:.95rem}.benefits ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.6rem;padding-left:1.1rem;color:var(--text-secondary)}.cta{border:1px solid var(--border);border-radius:16px;padding:1.8rem;background:linear-gradient(135deg,rgba(0,255,136,.08),rgba(0,0,0,.9));text-align:center;box-shadow:0 12px 32px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:.8rem}.cta-actions{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}@media(max-width:768px){.hero{padding:2rem}}
+		.careers-page { max-width: 1100px; margin: 0 auto; padding: 120px 1.75rem 90px; display: flex; flex-direction: column; gap: 2.8rem; }
+		.eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.9rem; border: 1px solid var(--border); border-radius: 999px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); font-size: 0.85rem; }
+		.hero { display: flex; flex-direction: column; gap: 1rem; background: linear-gradient(135deg, rgba(0,255,136,0.12), rgba(0,0,0,0.9)); border: 1px solid var(--border); border-radius: 18px; padding: 2.5rem; box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
+		.hero h1 { font-size: clamp(2.3rem, 4vw, 3.3rem); margin: 0; line-height: 1.12; letter-spacing: -0.02em; }
+		.lead { color: var(--text-secondary); max-width: 760px; line-height: 1.6; }
+		.hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+		.btn { text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 10px; font-weight: 700; border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; }
+		.btn.primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; }
+		.btn.ghost { color: var(--text); }
+		.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+		.card { border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; background: var(--bg-secondary); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+		.openings h2, .benefits h2, .cta h2 { margin-bottom: 0.6rem; }
+		.roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+		.role { border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; background: var(--bg-secondary); display: flex; flex-direction: column; gap: 0.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
+		.badge { display: inline-flex; align-items: center; padding: 0.3rem 0.7rem; border-radius: 999px; background: rgba(0,255,136,0.12); color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+		.meta { color: var(--text-secondary); font-size: 0.95rem; }
+		.benefits ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; padding-left: 1.1rem; color: var(--text-secondary); }
+		.cta { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: linear-gradient(135deg, rgba(0,255,136,0.08), rgba(0,0,0,0.9)); text-align: center; box-shadow: 0 12px 32px rgba(0,0,0,0.25); display: flex; flex-direction: column; gap: 0.8rem; }
+		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+		
+		@media (max-width: 768px) {
+			.careers-page { padding: 100px 1rem 70px; gap: 2.5rem; }
+			.hero { padding: 1.75rem 1.5rem; }
+			.hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+			.hero-actions { flex-direction: column; width: 100%; }
+			.hero-actions .btn { width: 100%; }
+			.grid { grid-template-columns: 1fr; }
+			.roles { grid-template-columns: 1fr; }
+			.benefits ul { grid-template-columns: 1fr; }
+			.cta-actions { flex-direction: column; width: 100%; }
+			.cta-actions .btn { width: 100%; }
+		}
+		
+		@media (max-width: 480px) {
+			.careers-page { padding: 90px 1rem 60px; gap: 2rem; }
+			.eyebrow { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+			.hero { padding: 1.5rem 1rem; }
+			.hero h1 { font-size: 1.75rem; }
+			.lead { font-size: 0.95rem; }
+			.btn { padding: 0.75rem 1.2rem; font-size: 0.9rem; }
+			.card { padding: 1.2rem; }
+			.role { padding: 1.2rem; }
+			.badge { font-size: 0.75rem; padding: 0.25rem 0.6rem; }
+			.cta { padding: 1.5rem 1rem; }
+		}
 	</style>
 	<Footer />
 </BaseLayout>

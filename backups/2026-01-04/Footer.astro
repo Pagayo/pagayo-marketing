@@ -29,7 +29,6 @@
       <ul class="footer-links">
         <li><a href="/nl/privacy">Privacy</a></li>
         <li><a href="/nl/terms">Voorwaarden</a></li>
-        <li><a href="/nl/verwerkersovereenkomst">Verwerkersovereenkomst</a></li>
       </ul>
     </div>
     <div class="footer-section">
@@ -118,63 +117,5 @@
     text-align: center;
     color: var(--text-secondary);
     font-size: 0.9rem;
-  }
-
-  /* Responsive breakpoints - mobile first */
-  @media (max-width: 1024px) {
-    .footer-content {
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .footer-brand {
-      grid-column: 1 / -1;
-    }
-  }
-
-  @media (max-width: 768px) {
-    footer {
-      padding: 3rem 1.5rem 1.5rem;
-    }
-
-    .footer-content {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-brand {
-      grid-column: 1 / -1;
-      margin-bottom: 1rem;
-    }
-
-    .footer-brand h3 {
-      font-size: 1.3rem;
-    }
-
-    .footer-section h4 {
-      font-size: 0.85rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    footer {
-      padding: 2.5rem 1rem 1.5rem;
-    }
-
-    .footer-content {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .footer-brand,
-    .footer-section {
-      text-align: left;
-    }
-
-    .footer-bottom {
-      font-size: 0.85rem;
-      padding-top: 1.5rem;
-    }
   }
 </style>
