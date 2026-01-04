@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const countries = [
+  { name: 'Nigeria', code: 'ng', flag: '🇳🇬' },
+  { name: 'Zuid-Afrika', code: 'za', flag: '🇿🇦' },
+  { name: 'Ghana', code: 'gh', flag: '🇬🇭' },
+  { name: 'Kenya', code: 'ke', flag: '🇰🇪' },
+  { name: 'Egypte', code: 'eg', flag: '🇪🇬' },
+  { name: 'Tanzania', code: 'tz', flag: '🇹🇿' },
+  { name: 'Uganda', code: 'ug', flag: '🇺🇬' },
+  { name: 'Zimbabwe', code: 'zw', flag: '🇿🇼' },
+  { name: 'Botswana', code: 'bw', flag: '🇧🇼' },
+  { name: 'Namibië', code: 'na', flag: '🇳🇦' },
+  { name: 'Zambia', code: 'zm', flag: '🇿🇲' },
+  { name: 'Rwanda', code: 'rw', flag: '🇷🇼' },
+  { name: 'Mauritius', code: 'mu', flag: '🇲🇺' },
+  { name: 'Seychellen', code: 'sc', flag: '🇸🇨' },
+  { name: 'Sierra Leone', code: 'sl', flag: '🇸🇱' },
+  { name: 'Liberia', code: 'lr', flag: '🇱🇷' },
+  { name: 'Gambia', code: 'gm', flag: '🇬🇲' },
+  { name: 'Lesotho', code: 'ls', flag: '🇱🇸' },
+  { name: 'Eswatini', code: 'sz', flag: '🇸🇿' },
+  { name: 'Malawi', code: 'mw', flag: '🇲🇼' },
+];
+---
+
+<BaseLayout title="Pagayo Afrika - E-commerce Platform" description="Ontdek Pagayo e-commerce diensten in Engelstalige Afrikaanse landen" lang="nl">
+  <Header />
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="section-title">Pagayo in Afrika</h1>
+        <p class="section-subtitle">
+          Wij zijn actief in Engelstalige Afrikaanse landen waar we lokale betaalmethoden, 
+          verzendopties en geoptimaliseerde checkout flows aanbieden voor jouw webshop.
+        </p>
+      </div>
+
+      <div class="countries-grid">
+        {countries.map(country => (
+          <a href={`/${country.code}/`} class="country-card">
+            <div class="country-flag">{country.flag}</div>
+            <h3 class="country-name">{country.name}</h3>
+            <p class="country-subtitle">E-commerce in {country.name}</p>
+            <div class="country-arrow">→</div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 6rem 2rem;
+  }
+
+  .section-header {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .section-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .country-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .country-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .country-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 255, 136, 0.15);
+  }
+
+  .country-card:hover::before {
+    opacity: 1;
+  }
+
+  .country-flag {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .country-card:hover .country-flag {
+    transform: scale(1.1);
+  }
+
+  .country-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .country-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .country-arrow {
+    font-size: 1.5rem;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    margin-top: auto;
+  }
+
+  .country-card:hover .country-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .countries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 4rem 1rem;
+    }
+
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .country-card {
+      padding: 1.5rem;
+    }
+
+    .country-flag {
+      font-size: 2.5rem;
+    }
+
+    .country-name {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .countries-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

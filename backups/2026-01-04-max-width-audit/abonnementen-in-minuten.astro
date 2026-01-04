@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+---
+
+<BaseLayout 
+	title="Terugkerende omzet opzetten in minuten - Pagayo Blog" 
+	description="Zet abonnementen live, beheer verlengingen en refunds en hou inzage in churn en groei. Leer hoe je predictable recurring revenue opbouwt met Pagayo." 
+	lang="nl"
+>
+	<Header />
+	<main>
+		<div class="article-container">
+			<Breadcrumbs crumbs={[
+				{ label: 'Home', href: '/nl' },
+				{ label: 'Blog', href: '/nl/blog' },
+				{ label: 'Terugkerende omzet opzetten in minuten' }
+			]} />
+		</div>
+		
+		<div class="article">
+			<article class="content">
+			<div class="article-header">
+				<div class="badge">Abonnementen</div>
+				<h1>Terugkerende omzet opzetten in minuten</h1>
+				<div class="meta">
+					<span>5 minuten leestijd</span>
+					<span>•</span>
+					<span>Services &amp; clubs</span>
+				</div>
+			</div>
+
+			<section class="intro">
+				<p class="lead">Eenmalige verkopen zijn leuk, maar voorspelbare terugkerende omzet is beter. Met abonnementen weet je maandelijks hoeveel inkomsten je kunt verwachten, kun je groei plannen en heb je stabielere cashflow. Of je nu software verkoopt, fysieke producten levert, een community runt of diensten aanbiedt – abonnementen zijn de toekomst.</p>
+				
+				<p>Pagayo maakt het opzetten van abonnementen simpel. Binnen enkele minuten kun je abonnementsplannen live zetten, automatische betalingen instellen en inzicht krijgen in churn (klanten die stoppen), groei en lifetime value. In deze gids leer je hoe.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Waarom abonnementen zo waardevol zijn</h2>
+				<p>Abonnementen bieden voorspelbaarheid. In plaats van elke maand opnieuw klanten te moeten werven voor eenmalige aankopen, betalen bestaande klanten automatisch door. Dit geeft je:</p>
+				
+				<ul>
+					<li><strong>Stabiele cashflow:</strong> Je weet van tevoren hoeveel omzet je volgende maand binnenkomt.</li>
+					<li><strong>Hogere klantwaarde (LTV):</strong> Een klant die 12 maanden blijft, genereert 12× meer omzet dan een eenmalige koper.</li>
+					<li><strong>Betere waardering:</strong> Bedrijven met recurring revenue worden door investeerders hoger gewaardeerd (vaak 5-10× ARR).</li>
+					<li><strong>Duurzame klantrelaties:</strong> Omdat klanten maandelijks betalen, blijf je top-of-mind en kun je upsells en cross-sells aanbieden.</li>
+				</ul>
+			</section>
+
+			<section class="panel">
+				<h2>Hoe zet je een abonnement op in Pagayo?</h2>
+				<p>Het opzetten van een abonnementsplan is simpel. Ga naar je dashboard → "Producten" → "Nieuw abonnement". Vul de basisgegevens in:</p>
+				
+				<ul>
+					<li><strong>Naam:</strong> Bijvoorbeeld "Premium lidmaatschap" of "Maandelijkse box".</li>
+					<li><strong>Prijs:</strong> €9,99 per maand, €99 per jaar, etc.</li>
+					<li><strong>Factureringsfrequentie:</strong> Maandelijks, jaarlijks, wekelijks of per kwartaal.</li>
+					<li><strong>Proefperiode (optioneel):</strong> 7 dagen, 14 dagen of 30 dagen gratis proberen.</li>
+					<li><strong>Setup fee (optioneel):</strong> Eenmalige kosten bij aanmelding (bijvoorbeeld €25 installatiekosten).</li>
+				</ul>
+				
+				<p>Zodra je dit hebt ingesteld, kun je de abonnementslink delen op je website, social media of via e-mail. Klanten kunnen zich direct aanmelden en betalen.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Automatische verlengingen en betalingen</h2>
+				<p>Zodra een klant zich abonneert, wordt zijn betaalmethode opgeslagen (met zijn toestemming, conform AVG). Elke maand (of jaar, week, etc.) wordt automatisch het abonnementsbedrag gedebiteerd.</p>
+				
+				<p>De klant ontvangt vooraf een herinneringsmail ("Je abonnement wordt over 3 dagen verlengd") en na betaling een bevestiging ("Je betaling van €9,99 is ontvangen").</p>
+				
+				<p>Dit gebeurt volledig automatisch. Je hoeft geen handmatige facturen te versturen, geen betalingen op te volgen en geen herinnerings-e-mails te sturen. Alles is geautomatiseerd.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Proefperiodes: laat klanten eerst proberen</h2>
+				<p>Een veelgebruikte strategie om meer klanten aan te trekken is een gratis proefperiode. Bijvoorbeeld: "7 dagen gratis proberen, daarna €9,99 per maand".</p>
+				
+				<p>Met Pagayo kun je dit eenvoudig instellen. Klanten geven hun betaalmethode op, maar worden pas na 7 dagen daadwerkelijk gedebiteerd. Als ze binnen die 7 dagen annuleren, betalen ze niets.</p>
+				
+				<p>Dit verlaagt de drempel om te starten en verhoogt conversie. Uit onderzoek blijkt dat 40-60% van proefgebruikers uiteindelijk betalend klant wordt, wat hoger is dan bij directe betalingen zonder trial.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Meerdere abonnementsniveaus (pricing tiers)</h2>
+				<p>Je kunt verschillende abonnementsniveaus aanbieden met oplopende features. Bijvoorbeeld:</p>
+				
+				<ul>
+					<li><strong>Basic:</strong> €9,99/maand – toegang tot basis features.</li>
+					<li><strong>Pro:</strong> €29,99/maand – alle features + priority support.</li>
+					<li><strong>Enterprise:</strong> Op maat – dedicated account manager, custom integraties.</li>
+				</ul>
+				
+				<p>Klanten kunnen upgraden of downgraden wanneer ze willen. Bij een upgrade betalen ze direct het verschil pro-rata (alleen voor het resterende deel van de maand). Bij een downgrade wordt het nieuwe tarief actief vanaf de volgende facturatieperiode.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Churn beheren: waarom klanten stoppen en hoe je dit voorkomt</h2>
+				<p>Churn (klanten die hun abonnement opzeggen) is de grootste vijand van recurring revenue. Pagayo geeft je inzicht in je churn-cijfers: hoeveel klanten stoppen elke maand, en waarom?</p>
+				
+				<p>Je kunt exit-surveys instellen. Als een klant zijn abonnement opzegt, verschijnt er een formulier: "Waarom stop je?" Met opties zoals: "Te duur", "Gebruik het niet genoeg", "Gevonden wat ik zocht", etc.</p>
+				
+				<p>Deze feedback is goud waard. Als veel klanten aangeven dat het te duur is, kun je een goedkoper plan introduceren. Als ze zeggen dat ze het niet gebruiken, kun je betere onboarding of educatie aanbieden.</p>
+				
+				<p><strong>Pro-tip:</strong> Bied een downgrade-optie aan in plaats van direct annuleren. Als iemand op het punt staat te vertrekken, geef dan een goedkoper plan of een tijdelijke korting. Zo behoud je de klant (met lagere omzet) in plaats van hem helemaal kwijt te raken.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Automatische retry bij mislukte betalingen</h2>
+				<p>Soms lukt een betaling niet: verlopen kaart, onvoldoende saldo, technische storing bij de bank. Dit heet "involuntary churn" – klanten die willen betalen maar niet kunnen.</p>
+				
+				<p>Pagayo probeert automatisch opnieuw te debiteren na 1, 3, 7 en 14 dagen. De klant ontvangt ondertussen e-mails met de melding: "Je betaling is mislukt – update je betaalmethode".</p>
+				
+				<p>Dit proces herstelt 30-50% van mislukte betalingen, wat directe extra omzet betekent zonder dat je er iets voor hoeft te doen.</p>
+			</section>
+
+			<section class="panel">
+				<h2>MRR, ARR en andere metrics: inzicht in je groei</h2>
+				<p>Pagayo biedt een dashboard met belangrijke abonnementsmetrics:</p>
+				
+				<ul>
+					<li><strong>MRR (Monthly Recurring Revenue):</strong> De voorspelbare maandelijkse omzet uit abonnementen.</li>
+					<li><strong>ARR (Annual Recurring Revenue):</strong> MRR × 12, gebruikt voor jaarlijkse projecties.</li>
+					<li><strong>Churn rate:</strong> Percentage klanten dat elke maand stopt.</li>
+					<li><strong>LTV (Lifetime Value):</strong> Hoeveel een gemiddelde klant waard is over zijn hele leven.</li>
+					<li><strong>CAC (Customer Acquisition Cost):</strong> Hoeveel je betaalt om een nieuwe klant te werven.</li>
+					<li><strong>LTV/CAC ratio:</strong> Idealiter >3 (je verdient 3× meer aan een klant dan hij kost om te werven).</li>
+				</ul>
+				
+				<p>Deze metrics helpen je om datagedreven beslissingen te nemen: moet je meer investeren in marketing? Moet je prijzen verhogen? Waar zitten je grootste lekken in de funnel?</p>
+			</section>
+
+			<section class="panel">
+				<h2>Voor wie is dit geschikt?</h2>
+				<p>Abonnementen werken voor tal van business modellen:</p>
+				
+				<ul>
+					<li><strong>SaaS (Software as a Service):</strong> Maandelijkse toegang tot software, apps of tools.</li>
+					<li><strong>Membership sites:</strong> Exclusieve content, cursussen of communities.</li>
+					<li><strong>Subscription boxes:</strong> Maandelijkse levering van fysieke producten (eten, cosmetica, boeken).</li>
+					<li><strong>Fitness en wellness:</strong> Maandelijkse gymabonnementen of online trainingen.</li>
+					<li><strong>Media en publishing:</strong> Tijdschriften, nieuwsbrieven, onderzoeksrapporten.</li>
+					<li><strong>Onderhoud en support:</strong> Terugkerende diensten zoals schoonmaak, tuinonderhoud, IT-support.</li>
+				</ul>
+			</section>
+
+			<section class="panel">
+				<h2>Praktijkvoorbeeld: een online cursusplatform</h2>
+				<p>Stel: je runt een platform met online cursussen over marketing. Je hebt twee opties: klanten kunnen per cursus betalen (€99 per cursus) of een abonnement nemen (€19,99/maand voor toegang tot alle cursussen).</p>
+				
+				<p>Je zet het abonnement op in Pagayo: €19,99 per maand, met 14 dagen gratis proberen. Je promoot het via je website en social media.</p>
+				
+				<p>In de eerste maand melden zich 50 klanten aan. Na 14 dagen blijven er 35 actief (70% conversie van trial naar betaald). Dat is €19,99 × 35 = €699,65 MRR.</p>
+				
+				<p>De maand erna komen er 30 nieuwe klanten bij, maar stoppen er 5. Je hebt nu 60 actieve abonnees (€1.199,40 MRR). Elke maand groeit je voorspelbare omzet, en je kunt deze trend gebruiken om groei te voorspellen en te investeren in marketing.</p>
+				
+				<p>Na een jaar heb je 250 abonnees (€4.997,50 MRR), wat neerkomt op bijna €60.000 ARR. Dit geeft je de zekerheid om personeel aan te nemen, meer cursussen te maken en je platform verder te ontwikkelen.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Integratie met boekhoudprogramma's en CRM</h2>
+				<p>Pagayo kan automatisch abonnementsdata exporteren naar je boekhoudprogramma (zoals Exact Online, Moneybird) en CRM (zoals HubSpot, Salesforce). Zo blijft al je financiële en klantdata gesynchroniseerd.</p>
+				
+				<p>Ook kun je Zapier of Make.com gebruiken om Pagayo te koppelen aan duizenden andere tools, zoals Slack (notificaties bij nieuwe abonnees) of Google Sheets (export van churn-data voor analyse).</p>
+			</section>
+
+			<section class="panel">
+				<h2>Veelgestelde vragen</h2>
+				
+				<h3>Kan ik jaarlijkse abonnementen aanbieden?</h3>
+				<p>Ja. Je kunt elke frequentie instellen: maandelijks, jaarlijks, wekelijks of zelfs per kwartaal. Veel bedrijven geven korting op jaarlijkse abonnementen (bijvoorbeeld €99/jaar in plaats van €120 voor 12 maanden).</p>
+				
+				<h3>Wat gebeurt er bij annuleringen?</h3>
+				<p>Als een klant annuleert, blijft zijn toegang actief tot het einde van de betaalde periode. Als hij op 10 januari annuleert en heeft betaald tot 31 januari, kan hij tot 31 januari gebruik blijven maken.</p>
+				
+				<h3>Kan ik kortingscodes aanbieden?</h3>
+				<p>Absoluut. Je kunt eenmalige kortingen (bijvoorbeeld €10 korting op eerste maand) of terugkerende kortingen (bijvoorbeeld 20% korting voor altijd) instellen.</p>
+				
+				<h3>Hoe zit het met BTW?</h3>
+				<p>Pagayo berekent automatisch BTW op basis van het land van de klant. Voor B2B klanten binnen de EU kun je reverse charge toepassen (als zij een geldig BTW-nummer hebben).</p>
+				
+				<h3>Kan ik metered billing doen (betalen per gebruik)?</h3>
+				<p>Ja. Je kunt usage-based pricing instellen, waarbij klanten betalen op basis van hoeveel ze gebruiken (bijvoorbeeld aantal API-calls, opslagruimte, verzonden e-mails). Dit wordt automatisch bijgehouden en gefactureerd.</p>
+			</section>
+
+			<section class="cta-panel">
+				<h2>Start vandaag met recurring revenue</h2>
+				<p>Bouw voorspelbare omzet op met abonnementen. Zet je eerste plan live in minder dan 5 minuten.</p>
+				<div class="cta-actions">
+					<a class="btn primary" href="https://beheer.pagayo.com">Start gratis</a>
+					<a class="btn ghost" href="/nl/contact">Vragen? Neem contact op</a>
+				</div>
+			</section>
+		</article>
+
+		<aside class="sidebar">
+			<div class="related-box">
+				<h3>Gerelateerde gidsen</h3>
+				<a href="/nl/blog/betalen-zonder-frictie">Betalen zonder frictie</a>
+				<a href="/nl/blog/webshop-starten-30-seconden">Webshop starten in 30 seconden</a>
+			</div>
+			
+			<div class="cta-box">
+				<h3>Direct aan de slag?</h3>
+				<p>Zet je eerste abonnement live en start met voorspelbare omzet.</p>
+				<a class="btn primary" href="https://beheer.pagayo.com">Start nu</a>
+			</div>
+		</aside>
+		</div>
+	</main>
+
+	<style>
+		.article-container { max-width: 1300px; margin: 0 auto; padding: 120px 1.75rem 0; }
+		.article { max-width: 1300px; margin: 0 auto; padding: 0 1.75rem 90px; display: grid; grid-template-columns: 1fr 280px; gap: 3rem; }
+		.content { display: flex; flex-direction: column; gap: 1.75rem; }
+		.article-header { display: flex; flex-direction: column; gap: 0.75rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+		.badge { display: inline-flex; align-items: center; width: fit-content; padding: 0.3rem 0.7rem; border-radius: 999px; background: rgba(0,255,136,0.12); color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+		.article-header h1 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; letter-spacing: -0.02em; }
+		.meta { display: flex; gap: 0.5rem; color: var(--text-secondary); font-size: 0.95rem; }
+		.intro { display: flex; flex-direction: column; gap: 1rem; }
+		.lead { font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); }
+		.panel { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+		.panel h2 { font-size: 1.6rem; line-height: 1.3; }
+		.panel h3 { font-size: 1.25rem; margin-top: 0.75rem; }
+		.panel p { line-height: 1.7; color: var(--text-secondary); }
+		.panel ul { padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+		.panel li { line-height: 1.7; color: var(--text-secondary); }
+		.panel strong { color: var(--text); font-weight: 600; }
+		.panel em { color: var(--accent); font-style: normal; }
+		.cta-panel { background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,0,0,0.9)); border: 1px solid var(--accent); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; gap: 1rem; text-align: center; box-shadow: 0 12px 32px rgba(0,255,136,0.15); }
+		.cta-panel h2 { font-size: 1.75rem; }
+		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+		.btn { text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 10px; font-weight: 700; border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; transition: all 0.2s ease; }
+		.btn.primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; border-color: var(--accent); }
+		.btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,255,136,0.3); }
+		.btn.ghost { color: var(--text); }
+		.btn.ghost:hover { border-color: var(--accent); }
+		.sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+		.related-box, .cta-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; box-shadow: 0 6px 18px rgba(0,0,0,0.2); }
+		.related-box h3, .cta-box h3 { font-size: 1.1rem; }
+		.related-box a { color: var(--text-secondary); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease; }
+		.related-box a:last-child { border-bottom: none; }
+		.related-box a:hover { color: var(--accent); }
+		.cta-box p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+		@media (max-width: 1024px) { .article { grid-template-columns: 1fr; } .sidebar { display: none; } }
+		@media (max-width: 768px) { .article { padding-top: 100px; } }
+	</style>
+
+	<Footer />
+</BaseLayout>

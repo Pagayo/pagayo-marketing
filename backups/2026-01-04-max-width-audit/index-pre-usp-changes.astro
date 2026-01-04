@@ -1,0 +1,685 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { languages, switchLanguage, type Language } from '../../utils/i18n';
+
+const currentLang: Language = 'nl';
+const currentPath = '/nl';
+---
+
+<BaseLayout title="Pagayo - Multi-Tenant E-commerce Platform" description="Bouw en schaal moderne webshops, hotels, en POS systemen op één krachtig multi-tenant platform." lang="nl">
+  <Header />
+  
+  <style>
+      /* Shared hero layout (match features/contact) */
+      .eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+      .lead { color: var(--text-secondary); line-height: 1.6; max-width: 720px; }
+      .pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(0, 255, 136, 0.05); color: var(--text); font-size: 0.85rem; }
+
+      /* SECTIONS */
+      .section {
+        padding: 6rem 2rem;
+      }
+
+    .section-header {
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* FEATURES */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(0, 255, 136, 0.15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* SOCIAL PROOF */
+    .social-proof {
+      padding: 4rem 2rem;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .social-proof-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .social-proof h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .trust-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* PRICING */
+    .pricing {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, #0a0a0a 0%, #0f1513 100%);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: linear-gradient(180deg, #0f1513 0%, #0a0a0a 100%);
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      padding: 0;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0, 255, 136, 0.1);
+    }
+
+    .pricing-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(0, 255, 136, 0.2);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%);
+      color: var(--bg);
+      padding: 0.4rem 1.5rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+    }
+
+    .pricing-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .pricing-column {
+      padding: 3rem 2.5rem;
+    }
+
+    .pricing-column.features {
+      border-left: 1px solid var(--border);
+      background: rgba(0, 255, 136, 0.02);
+    }
+
+    .pricing-column h4 {
+      color: var(--accent);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .pricing-tier {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(26, 51, 42, 0.5);
+    }
+
+    .pricing-tier:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-tier .percentage {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      min-width: 80px;
+    }
+
+    .pricing-tier .range {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .pricing-footer {
+      padding: 2.5rem 2.5rem 3rem;
+      border-top: 1px solid var(--border);
+      background: rgba(0, 255, 136, 0.02);
+    }
+
+    .pricing-footer p {
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    .pricing-footer .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 1.2rem 2rem;
+      font-size: 1.05rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--text);
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(26, 51, 42, 0.5);
+      font-size: 1rem;
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-item .checkmark {
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-weight: 700;
+      line-height: 1;
+      min-width: 24px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pricing-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-column.features {
+        border-left: none;
+        border-top: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .btn-group {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .feature-card {
+        padding: 1.5rem;
+      }
+
+      .section {
+        padding: 4rem 1.5rem;
+      }
+
+      .section-title {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+
+      .social-proof {
+        padding: 3rem 1.5rem;
+      }
+
+      .trust-badges {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .pricing {
+        padding: 4rem 1.5rem;
+      }
+
+      .pricing-card {
+        border-radius: 16px;
+      }
+
+      .pricing-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 1rem;
+      }
+
+      .pricing-column {
+        padding: 2rem 1.5rem;
+      }
+
+      .pricing-tier {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem 0;
+      }
+
+      .pricing-tier .percentage {
+        font-size: 2rem;
+        min-width: auto;
+      }
+
+      .pricing-tier .range {
+        font-size: 0.9rem;
+      }
+
+      .feature-item {
+        font-size: 0.9rem;
+        padding: 0.8rem 0;
+      }
+
+      .pricing-footer {
+        padding: 2rem 1.5rem;
+      }
+
+      .pricing-footer p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .stat-number {
+        font-size: 1.75rem;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+      }
+
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+      }
+
+      .section-header {
+        margin-bottom: 2.5rem;
+      }
+
+      .feature-card {
+        padding: 1.25rem;
+      }
+
+      .feature-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 1rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.1rem;
+      }
+
+      .feature-card p {
+        font-size: 0.9rem;
+      }
+
+      .social-proof {
+        padding: 2.5rem 1rem;
+      }
+
+      .pricing {
+        padding: 3rem 1rem;
+      }
+
+      .pricing-column {
+        padding: 1.5rem 1rem;
+      }
+
+      .pricing-tier .percentage {
+        font-size: 1.75rem;
+      }
+
+      .feature-item {
+        font-size: 0.85rem;
+        gap: 0.75rem;
+      }
+
+      .feature-item .checkmark {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+
+  <main class="page-container">
+      <!-- HERO -->
+      <section class="hero-main">
+        <div class="hero__content">
+          <p class="eyebrow">Platform</p>
+          <h1>E-commerce zonder gedoe</h1>
+          <p class="lead">
+            Start of groei je webshop, hotel of winkel zonder ingewikkelde techniek. Betalingen, kassa en
+            automatisering zitten er al bij.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="https://beheer.pagayo.com">Start gratis</a>
+            <a class="btn btn-ghost" href="/nl/pricing">Bekijk prijzen</a>
+          </div>
+          <div class="hero__meta">
+            <span class="pill">Altijd online (99,98%)</span>
+            <span class="pill">Betalingen worden automatisch opnieuw geprobeerd</span>
+            <span class="pill">Veilig betalen via Stripe of Mollie</span>
+          </div>
+        </div>
+
+        <div class="hero__panel">
+          <div class="stat-card">
+            <p class="stat-label">Aantal bedrijven per cluster</p>
+            <p class="stat-value">5.000+</p>
+            <p class="stat-footnote">Iedere klant heeft zijn eigen veilige omgeving</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-label">Snel afrekenen</p>
+            <p class="stat-value">&lt; 180 ms</p>
+            <p class="stat-footnote">Bliksemsnel laden, ook bij piekdrukte</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-label">Betalingen per dag</p>
+            <p class="stat-value">2M+</p>
+            <p class="stat-footnote">Veilig verwerkt en gecontroleerd</p>
+          </div>
+        </div>
+      </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Alles wat je nodig hebt</h2>
+      <p class="section-subtitle">Een moderne platform voor jouw groeiende business</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+            <path d="M2 10h20"/>
+          </svg>
+        </div>
+        <h3>Betalingen</h3>
+        <p>Mollie, Stripe en Bunq integraties. Automatische facturen en betalingsherinneringen. Ondersteuning voor iDEAL, creditcard en meer.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7h-9M14 3v4M6 21V10a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v11"/>
+          </svg>
+        </div>
+        <h3>Product Management</h3>
+        <p>Eenvoudig producten toevoegen, categorieën maken en prijzen beheren. Bulk imports en automatische voorraad sync.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+          </svg>
+        </div>
+        <h3>Realtime Analytics</h3>
+        <p>Krijg direct inzicht in verkoop, voorraad en klantgedrag. Exporteer rapporten naar Excel of PDF.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="6" y="6" width="12" height="12" rx="2"/>
+            <path d="M6 10h12M10 6v12"/>
+          </svg>
+        </div>
+        <h3>Inventory Management</h3>
+        <p>Houd voorraad bij over meerdere locaties. Automatische alerts bij lage voorraad en eenvoudige bijvulling.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7"/>
+            <path d="M16 21l5-5M21 21l-5-5"/>
+          </svg>
+        </div>
+        <h3>Verzending</h3>
+        <p>Integratie met PostNL, DHL en andere verzenders. Automatische trackcodes en verzendlabels.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+          </svg>
+        </div>
+        <h3>Klantenbeheer</h3>
+        <p>Centraal CRM systeem voor al je klanten. Bestelgeschiedenis, voorkeuren en loyaliteitsprogramma's.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="social-proof">
+    <div class="social-proof-content">
+      <h3>Vertrouwd door tientallen e-commerce ondernemers</h3>
+      <div class="trust-badges">
+        <div class="trust-item">
+          <div class="trust-number">50+</div>
+          <div class="trust-label">Actieve webshops</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">99.9%</div>
+          <div class="trust-label">Historische uptime</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">24/7</div>
+          <div class="trust-label">Support beschikbaar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="section-header">
+      <h2 class="section-title">Simpele, schaalbare prijzen</h2>
+      <p class="section-subtitle">Betaal alleen voor je succes. Hoe meer je omzet, hoe minder je betaalt.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-badge">Pagayo Platform</div>
+        <div class="pricing-columns">
+          <!-- Pricing Column -->
+          <div class="pricing-column">
+            <h4>Prijzen</h4>
+            <div class="pricing-tier">
+              <span class="percentage">1%</span>
+              <span class="range">tot €5.000/maand</span>
+            </div>
+            <div class="pricing-tier">
+              <span class="percentage">0,8%</span>
+              <span class="range">€5.000-€10.000</span>
+            </div>
+            <div class="pricing-tier">
+              <span class="percentage">0,6%</span>
+              <span class="range">€10.000-€50.000</span>
+            </div>
+            <div class="pricing-tier">
+              <span class="percentage">0,5%</span>
+              <span class="range">€50.000-€100.000</span>
+            </div>
+          </div>
+          
+          <!-- Features Column -->
+          <div class="pricing-column features">
+            <h4>Wat je krijgt</h4>
+            <div class="feature-item">
+              <span class="checkmark">✓</span> Onbeperkt webwinkels
+            </div>
+            <div class="feature-item">
+              <span class="checkmark">✓</span> Onbeperkt hotels
+            </div>
+            <div class="feature-item">
+              <span class="checkmark">✓</span> Onbeperkt abonnementen
+            </div>
+            <div class="feature-item">
+              <span class="checkmark">✓</span> Onbeperkt verhuur
+            </div>
+            <div class="feature-item">
+              <span class="checkmark">✓</span> Onbeperkt POS-systemen
+            </div>
+            <div class="feature-item">
+              <span class="checkmark">✓</span> Eigen domeinnamen
+            </div>
+          </div>
+        </div>
+        
+        <div class="pricing-footer">
+          <p>Start gratis - geen proefperiode</p>
+          <a href="https://beheer.pagayo.com" class="btn btn-primary">
+            Start nu gratis
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 1l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Klaar om te starten?</h2>
+      <p class="section-subtitle">
+		Start direct en je krijgt binnen 30 seconden je eigen omgeving. Hulp nodig? We staan klaar.
+      </p>
+    </div>
+    <div class="btn-group">
+      <a href="https://beheer.pagayo.com" class="btn btn-primary">
+        Start gratis
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 1l6 6-6 6"/>
+        </svg>
+      </a>
+      <a href="/nl/contact" class="btn btn-ghost">
+	Heb je vragen? Neem contact op
+	</a>
+    </div>
+  </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

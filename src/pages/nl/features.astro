@@ -11,8 +11,8 @@ import Footer from '../../components/Footer.astro';
 >
 	<Header />
 
-	<main class="features-page">
-		<section class="hero">
+	<main class="page-container">
+		<section class="hero-main">
 			<div class="hero__content">
 				<p class="eyebrow">Features</p>
 				<h1>Alles wat je nodig hebt om online te verkopen</h1>
@@ -135,6 +135,11 @@ import Footer from '../../components/Footer.astro';
 					<p>We meten continu of alles werkt. Bij storingen krijg je meteen een signaal en lossen we het snel op.</p>
 				</div>
 				<div class="feature-card">
+					<div class="feature-icon">KEY</div>
+					<h3>Tenant key per klant</h3>
+					<p>Gevoelige data wordt per tenant versleuteld met een eigen sleutel in KMS. Zonder die sleutel is het onleesbaar.</p>
+				</div>
+				<div class="feature-card">
 					<div class="feature-icon">SEC</div>
 					<h3>Beveiliging standaard</h3>
 					<p>Elke shop heeft eigen toegangssleutels. We schermen gegevens af en blokkeren misbruik automatisch.</p>
@@ -195,7 +200,6 @@ import Footer from '../../components/Footer.astro';
 	</main>
 
 	<style>
-		.features-page { max-width: 1200px; margin: 0 auto; padding: 120px 2rem 80px; }
 		.section { padding: 5rem 0; }
 		.section-header { max-width: 760px; margin: 0 auto 3rem; text-align: center; }
 		.section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
@@ -208,17 +212,6 @@ import Footer from '../../components/Footer.astro';
 		.btn-ghost { border-color: var(--border); color: var(--text); background: rgba(10, 10, 10, 0.6); }
 		.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 		.pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(0, 255, 136, 0.05); color: var(--text); font-size: 0.85rem; }
-
-		.hero { position: relative; padding: 3.5rem; border: 1px solid var(--border); border-radius: 22px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 2rem; background: radial-gradient(circle at 20% 20%, rgba(0, 255, 136, 0.12), transparent 35%), radial-gradient(circle at 80% 10%, rgba(0, 255, 136, 0.08), transparent 38%), linear-gradient(180deg, rgba(15, 21, 19, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%); overflow: hidden; box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35); }
-		.hero__content { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 0.75rem; }
-		.hero__content h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; }
-		.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0 0.5rem; }
-		.hero__meta { display: flex; gap: 0.75rem; flex-wrap: wrap; color: var(--text-secondary); }
-		.hero__panel { position: relative; z-index: 2; display: grid; gap: 1rem; align-self: stretch; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-		.stat-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; background: rgba(15, 21, 19, 0.8); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); }
-		.stat-label { color: var(--text-secondary); font-size: 0.95rem; }
-		.stat-value { font-size: 2rem; font-weight: 800; color: var(--accent); margin: 0.25rem 0; }
-		.stat-footnote { color: var(--text-secondary); font-size: 0.9rem; }
 
 		.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
 		.feature-grid--three { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
@@ -235,39 +228,14 @@ import Footer from '../../components/Footer.astro';
 		.cta__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
 
 		@media (max-width: 1024px) {
-			.features-page { padding: 100px 1.5rem 70px; }
-			.hero { grid-template-columns: 1fr; }
-			.hero__panel { grid-template-columns: 1fr; }
 			.feature-grid { grid-template-columns: repeat(2, 1fr); }
 		}
 
 		@media (max-width: 768px) {
-			.features-page { padding: 90px 1rem 60px; }
 			.section { padding: 4rem 0; }
 			.section-header { margin-bottom: 2.5rem; }
 			.hero { 
 				padding: 2rem 1.5rem; 
-				gap: 1.5rem;
-				border-radius: 18px;
-			}
-			.hero__content h1 {
-				font-size: clamp(1.8rem, 6vw, 2.4rem);
-			}
-			.hero__actions { 
-				flex-direction: column; 
-				width: 100%;
-			}
-			.hero__actions .btn {
-				width: 100%;
-			}
-			.hero__meta { 
-				flex-direction: column; 
-				gap: 0.5rem;
-			}
-			.stat-card { padding: 1.25rem; }
-			.stat-value { font-size: 1.75rem; }
-			.feature-grid { 
-				grid-template-columns: 1fr; 
 				gap: 1.25rem;
 			}
 			.feature-card { padding: 1.5rem; }
@@ -285,7 +253,6 @@ import Footer from '../../components/Footer.astro';
 		}
 
 		@media (max-width: 480px) {
-			.features-page { padding: 80px 1rem 50px; }
 			.section { padding: 3rem 0; }
 			.hero { 
 				padding: 1.5rem 1rem;

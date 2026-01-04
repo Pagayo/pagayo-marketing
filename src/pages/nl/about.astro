@@ -6,14 +6,16 @@ import Footer from '../../components/Footer.astro';
 
 <BaseLayout title="Over Pagayo" description="Leer hoe Pagayo ondernemers helpt om direct te starten en op te schalen." lang="nl">
 	<Header />
-	<main class="about-page">
-		<section class="hero">
-			<p class="eyebrow">Over Pagayo</p>
-			<h1>Gebouwd voor ondernemers die meteen willen beginnen</h1>
-			<p class="lead">Binnen 30 seconden je eigen omgeving live, zonder gesprekken of installaties. Alles wat je nodig hebt om te verkopen zit er al in.</p>
-			<div class="hero-actions">
-				<a class="btn primary" href="https://beheer.pagayo.com">Start gratis</a>
-				<a class="btn ghost" href="/nl/contact">Heb je vragen? Neem contact op</a>
+	<main class="page-container">
+		<section class="hero-main">
+			<div class="hero__content">
+				<p class="eyebrow">Over Pagayo</p>
+				<h1>Gebouwd voor ondernemers die meteen willen beginnen</h1>
+				<p class="lead">Binnen 30 seconden je eigen omgeving live, zonder gesprekken of installaties. Alles wat je nodig hebt om te verkopen zit er al in.</p>
+				<div class="hero__actions">
+					<a class="btn btn-primary" href="https://beheer.pagayo.com">Start gratis</a>
+					<a class="btn btn-ghost" href="/nl/contact">Heb je vragen? Neem contact op</a>
+				</div>
 			</div>
 		</section>
 
@@ -56,21 +58,17 @@ import Footer from '../../components/Footer.astro';
 			<h2>Klaar om te starten?</h2>
 			<p>Maak je account aan en krijg direct de link naar je eigen webshop. Geen demo of call nodig.</p>
 			<div class="cta-actions">
-				<a class="btn primary" href="https://beheer.pagayo.com">Start gratis</a>
-				<a class="btn ghost" href="/nl/contact">Hulp nodig? Neem contact op</a>
+				<a class="btn btn-primary" href="https://beheer.pagayo.com">Start gratis</a>
+				<a class="btn btn-ghost" href="/nl/contact">Hulp nodig? Neem contact op</a>
 			</div>
 		</section>
 	</main>
 	<style>
-		.about-page { max-width: 1100px; margin: 0 auto; padding: 120px 1.75rem 90px; display: flex; flex-direction: column; gap: 3rem; }
+		.pillars, .story, .stats, .cta { margin-top: 4rem; }
 		.eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.9rem; border: 1px solid var(--border); border-radius: 999px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); font-size: 0.85rem; }
-		.hero { display: flex; flex-direction: column; gap: 1rem; background: linear-gradient(135deg, rgba(0,255,136,0.12), rgba(0,0,0,0.9)); border: 1px solid var(--border); border-radius: 18px; padding: 2.5rem; box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
-		.hero h1 { font-size: clamp(2.3rem, 4vw, 3.4rem); margin: 0; line-height: 1.15; letter-spacing: -0.02em; }
 		.lead { color: var(--text-secondary); max-width: 760px; line-height: 1.6; }
 		.hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-		.btn { text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 10px; font-weight: 700; border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; }
-		.btn.primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; }
-		.btn.ghost { color: var(--text); }
+		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
 		.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
 		.pillar { border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; background: var(--bg-secondary); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
 		.story { border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem; background: var(--bg-secondary); }
@@ -81,15 +79,7 @@ import Footer from '../../components/Footer.astro';
 		.stat-label { color: var(--text-secondary); }
 		.cta { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: linear-gradient(135deg, rgba(0,255,136,0.08), rgba(0,0,0,0.9)); text-align: center; box-shadow: 0 12px 32px rgba(0,0,0,0.25); display: flex; flex-direction: column; gap: 0.8rem; }
 		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
-		@media (max-width: 768px) { 
-			.about-page { padding: 100px 1rem 70px; gap: 2.5rem; }
-			.hero { padding: 1.75rem 1.5rem; }
-			.hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
-			.hero-actions { 
-				flex-direction: column; 
-				width: 100%;
-			}
-			.hero-actions .btn { width: 100%; }
+		@media (max-width: 768px) {
 			.pillars { grid-template-columns: 1fr; }
 			.stats { grid-template-columns: 1fr; }
 			.cta-actions { 
@@ -106,10 +96,7 @@ import Footer from '../../components/Footer.astro';
 			.lead { font-size: 0.95rem; }
 			.btn { padding: 0.75rem 1.2rem; font-size: 0.9rem; }
 			.pillar { padding: 1.2rem; }
-			.pillar h3 { font-size: 1.1rem; }
-			.story { padding: 1.4rem; }
-			.stat { padding: 1.1rem; }
-			.stat-number { font-size: 1.75rem; }
+			.eyebrow { font-size: 0.75rem; padding: 0.3rem 0.71.75rem; }
 			.cta { padding: 1.5rem; }
 		}
 	</style>

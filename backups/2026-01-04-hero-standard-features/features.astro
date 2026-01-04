@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout
+	title="Features - Pagayo Multi-Tenant Platform"
+	description="Alle Pagayo capabilities in één overzicht: multi-tenant commerce, payments, POS en operations."
+	lang="nl"
+>
+	<Header />
+
+	<main class="features-page">
+		<section class="hero">
+			<div class="hero__content">
+				<p class="eyebrow">Features</p>
+				<h1>Alles wat je nodig hebt om online te verkopen</h1>
+				<p class="lead">
+					Start of groei je webshop, hotel of winkel zonder ingewikkelde techniek. Betalingen, kassa en
+					automatisering zitten er al bij.
+				</p>
+				<div class="hero__actions">
+					<a class="btn btn-primary" href="https://beheer.pagayo.com">Start gratis</a>
+					<a class="btn btn-ghost" href="/nl/pricing">Bekijk prijzen</a>
+				</div>
+				<div class="hero__meta">
+					<span class="pill">Altijd online (99,98%)</span>
+					<span class="pill">Betalingen worden automatisch opnieuw geprobeerd</span>
+					<span class="pill">Veilig betalen via Stripe of Mollie</span>
+				</div>
+			</div>
+
+			<div class="hero__panel">
+				<div class="stat-card">
+					<p class="stat-label">Aantal bedrijven per cluster</p>
+					<p class="stat-value">5.000+</p>
+					<p class="stat-footnote">Iedere klant heeft zijn eigen veilige omgeving</p>
+				</div>
+				<div class="stat-card">
+					<p class="stat-label">Snel afrekenen</p>
+					<p class="stat-value">&lt; 180 ms</p>
+					<p class="stat-footnote">Bliksemsnel laden, ook bij piekdrukte</p>
+				</div>
+				<div class="stat-card">
+					<p class="stat-label">Betalingen per dag</p>
+					<p class="stat-value">2M+</p>
+					<p class="stat-footnote">Veilig verwerkt en gecontroleerd</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-header">
+				<p class="eyebrow">Platform</p>
+				<h2 class="section-title">Eén basis voor al je shops</h2>
+				<p class="section-subtitle">
+					Alles voor producten, prijzen en voorraad zit er al in. Je kunt makkelijk meerdere landen, labels of
+					vestigingen tegelijk draaien.
+				</p>
+			</div>
+
+			<div class="feature-grid">
+				<div class="feature-card">
+					<div class="feature-icon">MT</div>
+					<h3>Meerdere shops tegelijk</h3>
+					<p>Elke klant of vestiging heeft zijn eigen veilige omgeving, terwijl jij alles centraal beheert.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">CAT</div>
+					<h3>Producten &amp; voorraad</h3>
+					<p>Beheer producten, varianten en bundels. Voorraad wordt direct bijgewerkt, online en in de winkel.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">EUR</div>
+					<h3>Prijzen &amp; acties</h3>
+					<p>Stel prijzen en kortingen per land of kanaal in. Belasting en valuta worden automatisch meegenomen.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">FUL</div>
+					<h3>Verzenden &amp; retour</h3>
+					<p>Bestellingen verzenden en retouren verwerken zonder gedoe. Pakbonnen en labels rollen er zo uit.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-header">
+				<p class="eyebrow">Checkout &amp; payments</p>
+				<h2 class="section-title">Betalen werkt altijd, online en in de winkel</h2>
+				<p class="section-subtitle">
+					Koppelingen met Stripe, Mollie en Bunq zitten er al in. Mislukte betalingen worden automatisch opnieuw
+					geprobeerd en gecontroleerd.
+				</p>
+			</div>
+
+			<div class="feature-grid">
+				<div class="feature-card">
+					<div class="feature-icon">PAY</div>
+					<h3>Stripe &amp; Mollie</h3>
+					<p>iDEAL, Bancontact, kaarten en Apple/Google Pay. Uitbetalingen gaan per winkel of merk.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">TAX</div>
+					<h3>Checkout &amp; btw</h3>
+					<p>Kies een standaard checkout of eigen design. Btw en verzendkosten worden per land juist berekend.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">API</div>
+					<h3>Betalingen volgen</h3>
+					<p>Elke stap van een betaling wordt vastgelegd. Bij storingen proberen we het opnieuw en krijg je een seintje.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">POS</div>
+					<h3>Kassa en online in sync</h3>
+					<p>Voorraad, bestellingen en retouren lopen gelijk tussen kassa en webshop. Bonnen komen automatisch mee.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-header">
+				<p class="eyebrow">Operations &amp; security</p>
+				<h2 class="section-title">Betrouwbaar en veilig uit de doos</h2>
+				<p class="section-subtitle">
+					Alles wordt gemonitord en we maken automatisch backups. Updates gaan via vaste stappen zodat je winkel
+					altijd stabiel draait.
+				</p>
+			</div>
+
+			<div class="feature-grid">
+				<div class="feature-card">
+					<div class="feature-icon">OBS</div>
+					<h3>Meldingen bij problemen</h3>
+					<p>We meten continu of alles werkt. Bij storingen krijg je meteen een signaal en lossen we het snel op.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">KEY</div>
+					<h3>Tenant key per klant</h3>
+					<p>Gevoelige data wordt per tenant versleuteld met een eigen sleutel in KMS. Zonder die sleutel is het onleesbaar.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">SEC</div>
+					<h3>Beveiliging standaard</h3>
+					<p>Elke shop heeft eigen toegangssleutels. We schermen gegevens af en blokkeren misbruik automatisch.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">BKP</div>
+					<h3>Backups elke 5 minuten</h3>
+					<p>We bewaren je data veilig en kunnen altijd terug naar een eerder moment als dat nodig is.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">AUD</div>
+					<h3>Altijd een spoor</h3>
+					<p>We houden bij wie wat verandert. Gevoelige gegevens worden afgeschermd en sleutels blijven geheim.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="section-header">
+				<p class="eyebrow">Integraties</p>
+				<h2 class="section-title">Koppelt makkelijk met je andere systemen</h2>
+				<p class="section-subtitle">
+					Verbind je webshop met kassasystemen, boekhouding of marketingtools. Data gaat veilig heen en weer
+					zonder handwerk.
+				</p>
+			</div>
+
+			<div class="feature-grid feature-grid--three">
+				<div class="feature-card">
+					<div class="feature-icon">API</div>
+					<h3>API klaar voor gebruik</h3>
+					<p>Sluit eenvoudig aan op producten, orders en betalingen. Ontwikkelaars kunnen direct aan de slag.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">EVT</div>
+					<h3>Updates in realtime</h3>
+					<p>Nieuwe bestellingen, betalingen of voorraadupdates worden direct doorgegeven aan je andere systemen.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">EDGE</div>
+					<h3>Snelle pagina's</h3>
+					<p>Afbeeldingen en pagina's laden razendsnel, ook bij veel bezoekers of grote bestanden.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta">
+			<div class="cta__content">
+				<p class="eyebrow">Next step</p>
+				<h2>Klaar om te starten?</h2>
+				<p>Maak je account aan en je krijgt direct de link naar je eigen Pagayo omgeving. Geen demo nodig.</p>
+				<div class="cta__actions">
+					<a class="btn btn-primary" href="https://beheer.pagayo.com">Start gratis</a>
+					<a class="btn btn-ghost" href="/nl/contact">Heb je vragen? Neem contact op</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<style>
+		.features-page { max-width: 1200px; margin: 0 auto; padding: 120px 2rem 80px; }
+		.section { padding: 5rem 0; }
+		.section-header { max-width: 760px; margin: 0 auto 3rem; text-align: center; }
+		.section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+		.section-subtitle { color: var(--text-secondary); line-height: 1.6; }
+		.eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+		.lead { color: var(--text-secondary); line-height: 1.6; max-width: 720px; }
+		.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.5rem; border-radius: 10px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; border: 1px solid transparent; cursor: pointer; }
+		.btn-primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; box-shadow: 0 12px 30px rgba(0, 255, 136, 0.2); }
+		.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0, 255, 136, 0.3); }
+		.btn-ghost { border-color: var(--border); color: var(--text); background: rgba(10, 10, 10, 0.6); }
+		.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+		.pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(0, 255, 136, 0.05); color: var(--text); font-size: 0.85rem; }
+
+		.hero { position: relative; padding: 3.5rem; border: 1px solid var(--border); border-radius: 22px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 2rem; background: radial-gradient(circle at 20% 20%, rgba(0, 255, 136, 0.12), transparent 35%), radial-gradient(circle at 80% 10%, rgba(0, 255, 136, 0.08), transparent 38%), linear-gradient(180deg, rgba(15, 21, 19, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%); overflow: hidden; box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35); }
+		.hero__content { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 0.75rem; }
+		.hero__content h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; }
+		.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0 0.5rem; }
+		.hero__meta { display: flex; gap: 0.75rem; flex-wrap: wrap; color: var(--text-secondary); }
+		.hero__panel { position: relative; z-index: 2; display: grid; gap: 1rem; align-self: stretch; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+		.stat-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; background: rgba(15, 21, 19, 0.8); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); }
+		.stat-label { color: var(--text-secondary); font-size: 0.95rem; }
+		.stat-value { font-size: 2rem; font-weight: 800; color: var(--accent); margin: 0.25rem 0; }
+		.stat-footnote { color: var(--text-secondary); font-size: 0.9rem; }
+
+		.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+		.feature-grid--three { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+		.feature-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: var(--bg-secondary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; gap: 0.65rem; transition: all 0.25s ease; }
+		.feature-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 255, 136, 0.14); }
+		.feature-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(0, 255, 136, 0.1); color: var(--accent); font-weight: 700; }
+		.feature-card h3 { font-size: 1.2rem; font-weight: 800; margin: 0.25rem 0; }
+		.feature-card p { color: var(--text-secondary); line-height: 1.6; }
+
+		.cta { border: 1px solid var(--border); border-radius: 18px; padding: 3rem; background: linear-gradient(135deg, rgba(0, 255, 136, 0.06), rgba(0, 0, 0, 0.9)); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3); text-align: center; margin: 2rem 0 0; }
+		.cta__content { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+		.cta h2 { font-size: clamp(2.1rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: -0.02em; }
+		.cta p { color: var(--text-secondary); max-width: 640px; }
+		.cta__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+
+		@media (max-width: 1024px) {
+			.features-page { padding: 100px 1.5rem 70px; }
+			.hero { grid-template-columns: 1fr; }
+			.hero__panel { grid-template-columns: 1fr; }
+			.feature-grid { grid-template-columns: repeat(2, 1fr); }
+		}
+
+		@media (max-width: 768px) {
+			.features-page { padding: 90px 1rem 60px; }
+			.section { padding: 4rem 0; }
+			.section-header { margin-bottom: 2.5rem; }
+			.hero { 
+				padding: 2rem 1.5rem; 
+				gap: 1.5rem;
+				border-radius: 18px;
+			}
+			.hero__content h1 {
+				font-size: clamp(1.8rem, 6vw, 2.4rem);
+			}
+			.hero__actions { 
+				flex-direction: column; 
+				width: 100%;
+			}
+			.hero__actions .btn {
+				width: 100%;
+			}
+			.hero__meta { 
+				flex-direction: column; 
+				gap: 0.5rem;
+			}
+			.stat-card { padding: 1.25rem; }
+			.stat-value { font-size: 1.75rem; }
+			.feature-grid { 
+				grid-template-columns: 1fr; 
+				gap: 1.25rem;
+			}
+			.feature-card { padding: 1.5rem; }
+			.cta { 
+				padding: 2rem 1.5rem; 
+				border-radius: 16px;
+			}
+			.cta__actions {
+				flex-direction: column;
+				width: 100%;
+			}
+			.cta__actions .btn {
+				width: 100%;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.features-page { padding: 80px 1rem 50px; }
+			.section { padding: 3rem 0; }
+			.hero { 
+				padding: 1.5rem 1rem;
+				border-radius: 14px;
+			}
+			.hero__content h1 {
+				font-size: 1.75rem;
+			}
+			.eyebrow { 
+				font-size: 0.75rem; 
+				padding: 0.3rem 0.7rem;
+			}
+			.lead { font-size: 0.95rem; }
+			.btn { 
+				padding: 0.8rem 1.25rem; 
+				font-size: 0.9rem;
+			}
+			.pill { 
+				font-size: 0.75rem; 
+				padding: 0.3rem 0.6rem;
+			}
+			.stat-card { padding: 1rem; }
+			.stat-label { font-size: 0.85rem; }
+			.stat-value { font-size: 1.5rem; }
+			.stat-footnote { font-size: 0.8rem; }
+			.feature-card { 
+				padding: 1.25rem;
+				gap: 0.5rem;
+			}
+			.feature-icon { 
+				width: 38px; 
+				height: 38px;
+			}
+			.feature-card h3 { font-size: 1.1rem; }
+			.feature-card p { font-size: 0.9rem; }
+			.cta { padding: 1.75rem 1rem; }
+			.cta h2 { font-size: 1.75rem; }
+		}
+	</style>
+
+	<Footer />
+</BaseLayout>

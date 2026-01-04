@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Verwerkersovereenkomst" description="Verwerkersovereenkomst Pagayo: afspraken over gegevensverwerking volgens AVG artikel 28 voor ons e-commerce platform." lang="nl">
+	<Header />
+	<main class="dpa-page">
+		<section class="hero">
+			<p class="eyebrow">Gegevensverwerking</p>
+			<h1>Verwerkersovereenkomst Pagayo</h1>
+			<p class="lead">Als je Pagayo gebruikt voor je webshop, horeca, verhuur of abonnementen, verwerken wij persoonsgegevens in jouw opdracht. Deze verwerkersovereenkomst (Data Processing Agreement) legt vast hoe we dat doen volgens de AVG en welke afspraken we maken over beveiliging, subverwerkers en jouw rechten.</p>
+		</section>
+
+		<section class="panel">
+			<h2>Wat is een verwerkersovereenkomst</h2>
+			<ul>
+				<li>Volgens artikel 28 AVG moet er een schriftelijke overeenkomst zijn tussen de verwerkingsverantwoordelijke (jij als merchant) en de verwerker (Pagayo) over hoe persoonsgegevens worden verwerkt.</li>
+				<li>Deze overeenkomst hoort bij je gebruik van Pagayo en vormt samen met de <a href="/nl/privacy" class="text-blue-600 hover:text-blue-800 underline">privacyverklaring</a> en <a href="/nl/terms" class="text-blue-600 hover:text-blue-800 underline">algemene voorwaarden</a> het juridische kader.</li>
+				<li>Als je specifieke wensen hebt (bijv. audit, aanvullende beveiligingsmaatregelen, eigen subverwerkers), mail dan naar legal@pagayo.com voor maatwerk.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Partijen en rollen</h2>
+			<ul>
+				<li><strong>Verwerkingsverantwoordelijke</strong>: Jij (de merchant, organisatie of particulier die Pagayo gebruikt) bepaalt welke persoonsgegevens je verwerkt, waarvoor en hoe lang. Jij bent verantwoordelijk voor naleving van privacywetgeving en informatieplicht richting jouw klanten.</li>
+				<li><strong>Verwerker</strong>: Pagayo B.V. verwerkt die gegevens alleen volgens jouw instructies via het platform (beheer, webshop, API, edge, tenant-instellingen) en volgens deze overeenkomst.</li>
+				<li>Pagayo mag geen gegevens gebruiken voor eigen doeleinden, behalve anonieme statistieken voor platformverbetering of wettelijke plichten (bijv. beveiliging, fraude, belastingen).</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Verboden landen en economische sancties</h2>
+			<ul>
+				<li><strong>Verbod op verwerking voor gesanctioneerde landen</strong>: Als verwerkingsverantwoordelijke ben je verplicht om ervoor te zorgen dat persoonsgegevens die via Pagayo worden verwerkt, niet worden gebruikt voor handel of dienstverlening aan of vanuit landen waarop internationale economische sancties van toepassing zijn.</li>
+				<li><strong>Gesanctioneerde landen</strong>: Momenteel gelden er sancties (vanuit EU, VS, VN of andere organisaties) voor: <strong>Rusland, Noord-Korea, Iran, Syrië, Cuba, Myanmar (Birma), Venezuela, Nicaragua</strong> en bepaalde regio's zoals de Krim, Donetsk en Luhansk. Deze lijst kan wijzigen; het is jouw verantwoordelijkheid om actuele sanctielijsten te raadplegen.</li>
+				<li><strong>Compliance verantwoordelijkheid</strong>: Jij draagt als verwerkingsverantwoordelijke de volledige verantwoordelijkheid voor naleving van sanctiewetgeving. Dit omvat het screenen van klanten, transacties en geografische locaties voordat je persoonsgegevens via Pagayo verwerkt.</li>
+				<li><strong>Pagayo's recht tot opschorting</strong>: Indien Pagayo vaststelt of een gerechtvaardigd vermoeden heeft dat je diensten gebruikt voor handel met gesanctioneerde landen, zijn wij verplicht de verwerking van persoonsgegevens op te schorten. Dit betekent dat alle nieuwe transacties worden geblokkeerd, maar je behoudt toegang tot je account voor data-export gedurende een periode van 14 dagen.</li>
+				<li><strong>Geen verdere verwerking na blokkering</strong>: Na blokkering wegens sanctie-overtredingen worden geen nieuwe persoonsgegevens meer verwerkt. Bestaande gegevens blijven beschikbaar voor export volgens de wettelijke bewaartermijnen. Je blijft verantwoordelijk voor het informeren van je betrokkenen (klanten) over deze situatie.</li>
+				<li><strong>Wettelijke meldplicht</strong>: Pagayo is verplicht om overtredingen van sanctiewetgeving te melden aan relevante autoriteiten indien dit wettelijk vereist is. Door gebruik te maken van Pagayo ga je hiermee akkoord.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Voorwerp en duur van de verwerking</h2>
+			<ul>
+				<li><strong>Voorwerp</strong>: Pagayo verwerkt gegevens om de dienstverlening mogelijk te maken: beheren van klanten/orders/boekingen, betalingen/uitbetalingen via Stripe/Mollie, voorraad/reserveringen, e-mail notificaties, API-toegang en edge-caching.</li>
+				<li><strong>Aard van de verwerking</strong>: Opslag, organisatie, raadpleging, wijziging, doorgifte (naar betalingsproviders, e-mailprovider), verwijdering volgens jouw instructies of wettelijke bewaartermijnen.</li>
+				<li><strong>Categorieën betrokkenen</strong>: Klanten van de merchant (kopers, huurders, abonnees, bezoekers webshop) en medewerkers/beheerders van de merchant.</li>
+				<li><strong>Soorten gegevens</strong>: NAW-gegevens, contactgegevens, bestelgegevens, betaalgegevens (metadata, geen volledige kaartgegevens), reserveringen/boekingen, IP-adressen, device/browser-informatie, communicatie via support.</li>
+				<li><strong>Duur</strong>: Zolang je Pagayo gebruikt en daarna volgens wettelijke bewaartermijnen (meestal 7 jaar voor facturatie/boekhouding) of totdat je verwijdering vraagt. Logs en back-ups worden binnen redelijke termijn gewist na beëindiging.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Verplichtingen van Pagayo als verwerker</h2>
+			<ul>
+				<li><strong>Instructies</strong>: Pagayo verwerkt alleen volgens jouw instructies via het platform. Als we denken dat een instructie in strijd is met de AVG of andere wetgeving, informeren we je daarover.</li>
+				<li><strong>Vertrouwelijkheid</strong>: Medewerkers met toegang tot gegevens zijn verplicht tot geheimhouding. Toegang wordt beperkt tot wie het nodig heeft voor de dienstverlening.</li>
+				<li><strong>Beveiliging</strong>: Pagayo neemt passende technische en organisatorische maatregelen (zie sectie Beveiliging hieronder) volgens artikel 32 AVG, rekening houdend met de stand van de techniek en verwerkingsrisico's.</li>
+				<li><strong>Subverwerkers</strong>: Pagayo gebruikt subverwerkers (zie lijst hieronder) met schriftelijke overeenkomsten die dezelfde AVG-verplichtingen opleggen. Bij nieuwe subverwerkers informeren we je vooraf (via e-mail of beheer); je kunt bezwaar maken binnen 14 dagen.</li>
+				<li><strong>Ondersteuning bij rechten betrokkenen</strong>: Als jouw klant een AVG-verzoek doet (inzage, correctie, verwijdering, bezwaar, dataportabiliteit), help je dat via de platform tools (export, verwijderen) of mail support@pagayo.com. We reageren binnen 5 werkdagen op je verzoek.</li>
+				<li><strong>Meldplicht datalekken</strong>: Bij een datalek dat persoonsgegevens treft, melden we dat binnen 24 uur aan jou via security@pagayo.com en de contactgegevens in beheer. Wij geven alle bekende informatie (aard, omvang, mogelijke gevolgen, getroffen maatregelen) zodat jij kunt beoordelen of je het moet melden bij de toezichthouder.</li>
+				<li><strong>Data Protection Impact Assessment (DPIA)</strong>: Als je een DPIA moet doen, verstrekken we redelijkerwijs beschikbare informatie over onze verwerking en beveiligingsmaatregelen.</li>
+				<li><strong>Verwijdering of retournering</strong>: Na beëindiging verwijderen of retourneren we alle gegevens volgens jouw keuze (via platform export of op verzoek), behalve wat we wettelijk moeten bewaren (facturen, transacties). Back-ups worden gewist zodra dat technisch mogelijk is.</li>
+				<li><strong>Audit en inspectie</strong>: Je mag een audit laten doen om naleving te controleren, na voorafgaande afspraak en tegen redelijke kosten. We verstrekken documentatie over beveiligingsmaatregelen en certificeringen (bijv. ISO, SOC). Bij gerechtvaardigde twijfel over naleving kunnen we een onafhankelijke audit laten uitvoeren.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Jouw rechten als verwerkingsverantwoordelijke</h2>
+			<ul>
+				<li><strong>Toegang en controle</strong>: Je behoudt volledige controle via het platform: je kunt data inzien, exporteren, wijzigen en verwijderen. Voor vragen of specifieke exports mail je support@pagayo.com.</li>
+				<li><strong>Audits</strong>: Je mag auditrechten uitoefenen (zie hierboven) om te verifiëren dat we AVG-verplichtingen naleven.</li>
+				<li><strong>Bezwaar tegen subverwerkers</strong>: Bij aankondiging van een nieuwe subverwerker kun je binnen 14 dagen bezwaar maken als je gegronde privacy- of beveiligingsbezwaren hebt. We zoeken dan samen naar een oplossing of je kunt het abonnement beëindigen zonder kosten.</li>
+				<li><strong>Instructierecht</strong>: Je geeft instructies via het platform (wat je invoert, wijzigt, verwijdert) of door specifieke verzoeken via support@pagayo.com. Voor bulk-acties of speciale verwerking kunnen we maatwerk bieden.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Subverwerkers</h2>
+			<ul>
+				<li><strong>Google Cloud Platform</strong>: Hosting en database (EU-regio's voor opslag). Google heeft passende AVG-waarborgen (SCC's, certificering). Meer info: <a href="https://cloud.google.com/privacy" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">cloud.google.com/privacy</a></li>
+				<li><strong>Cloudflare</strong>: CDN, DDoS-bescherming en edge-caching. Verkeer kan via servers buiten de EU routeren, maar Cloudflare heeft AVG-waarborgen (SCC's, DPA). Meer info: <a href="https://www.cloudflare.com/gdpr/introduction/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">cloudflare.com/gdpr</a></li>
+				<li><strong>Stripe & Mollie</strong>: Betalingsverwerking. Zij verwerken betaalgegevens volgens PCI-DSS en hebben eigen DPA's. Volledige kaartgegevens worden niet bij Pagayo opgeslagen, alleen metadata (status, bedrag, transactie-ID). Meer info: <a href="https://stripe.com/privacy" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">stripe.com/privacy</a> en <a href="https://www.mollie.com/nl/privacy" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">mollie.com/privacy</a></li>
+				<li><strong>E-mailprovider</strong>: Voor transactionele e-mails (order bevestigingen, wachtwoord resets, notificaties). We gebruiken EU-providers met AVG-waarborgen.</li>
+				<li><strong>Bunq (indien van toepassing)</strong>: Voor merchants die Bunq-integratie gebruiken voor betalingen/uitbetalingen. Bunq heeft eigen AVG-naleving en DPA. Meer info: <a href="https://www.bunq.com/privacy" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">bunq.com/privacy</a></li>
+				<li>Bij nieuwe subverwerkers informeren we je minimaal 14 dagen vooraf via e-mail of melding in beheer.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Doorgifte buiten de EU/EEA</h2>
+			<ul>
+				<li>We bewaren gegevens zoveel mogelijk binnen de EU (Google Cloud EU-regio's). Cloudflare kan verkeer via servers buiten de EU routeren voor snelheid/bescherming; zij hebben passende waarborgen (Standard Contractual Clauses, certificering).</li>
+				<li>Stripe en Mollie kunnen betaalgegevens buiten de EU verwerken; zij gebruiken SCC's en voldoen aan PCI-DSS. Volledige kaartgegevens worden niet bij Pagayo opgeslagen.</li>
+				<li>Voor overdracht buiten de EU gebruiken wij of onze subverwerkers altijd een van de volgende waarborgen: Standard Contractual Clauses (SCC's), adequaatheidsbesluit van de EU, of certificering onder een goedgekeurd mechanisme.</li>
+				<li>Als je specifieke eisen hebt over datalocatie of doorgifte, mail dan legal@pagayo.com voor maatwerk.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Beveiliging en vertrouwelijkheid</h2>
+			<ul>
+				<li><strong>Encryptie</strong>: Data in transit (TLS 1.2+) en at rest (AES-256 voor database/opslag). Wachtwoorden worden gehashed met bcrypt.</li>
+				<li><strong>Toegangscontrole</strong>: Rolgebaseerde toegang (RBAC) in het platform. Medewerkers hebben alleen toegang tot productiedata als noodzakelijk voor support of beveiliging; alle toegang wordt gelogd.</li>
+				<li><strong>Netwerkbeveiliging</strong>: Cloudflare WAF en DDoS-bescherming, rate limiting, bot-detectie, input-validatie tegen injecties, webhook signature verification.</li>
+				<li><strong>Tenant-isolatie</strong>: Elke tenant/organisatie is gescheiden in de database en applicatielaag. Geen gegevens delen tussen tenants.</li>
+				<li><strong>Monitoring en logging</strong>: We loggen belangrijke acties (logins, wijzigingen, API-calls) voor beveiliging en troubleshooting. Logs worden beperkt bewaard en bevatten geen onnodige persoonsgegevens.</li>
+				<li><strong>Back-ups</strong>: Versleutelde back-ups dagelijks, bewaard volgens wettelijke termijnen. We testen back-ups regelmatig op herstelbaarheid.</li>
+				<li><strong>Incident response</strong>: Bij een beveiligingsincident of datalek volgen we ons protocol: inschatting impact, maatregelen nemen, melding binnen 24 uur aan verwerkingsverantwoordelijken, onderzoek en rapportage. Meld beveiligingsproblemen via security@pagayo.com.</li>
+				<li><strong>Geen productiedata in test</strong>: We gebruiken geen productiegegevens in test- of ontwikkelomgevingen zonder anonimisering.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Duur en beëindiging</h2>
+			<ul>
+				<li>Deze overeenkomst geldt zolang je Pagayo gebruikt en loopt mee met je abonnement (zie <a href="/nl/terms" class="text-blue-600 hover:text-blue-800 underline">algemene voorwaarden</a>).</li>
+				<li>Na beëindiging kun je data exporteren via het platform binnen 30 dagen. Daarna verwijderen of anonimiseren we gegevens, behalve wat wettelijk moet blijven (facturen, transacties, 7 jaar).</li>
+				<li>Back-ups en logs worden gewist zodra dat technisch mogelijk is (meestal binnen 90 dagen na beëindiging).</li>
+				<li>Voor verlenging van de exportperiode of andere afspraken, neem contact op via support@pagayo.com.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Aansprakelijkheid</h2>
+			<ul>
+				<li>Pagayo is aansprakelijk voor schade door niet-naleving van AVG-verplichtingen volgens de toepasselijke wetgeving en de <a href="/nl/terms" class="text-blue-600 hover:text-blue-800 underline">algemene voorwaarden</a>.</li>
+				<li>Jij blijft als verwerkingsverantwoordelijke aansprakelijk voor naleving van de AVG richting jouw klanten (informatieplicht, rechtsgronden, bewaartermijnen, eigen privacy policy).</li>
+				<li>Bij schade door een subverwerker is Pagayo aansprakelijk alsof we het zelf deden, tenzij de subverwerker onafhankelijk handelde buiten onze instructies.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Wijzigingen</h2>
+			<ul>
+				<li>We kunnen deze verwerkersovereenkomst aanpassen als wetgeving, toezichthouders of onze diensten daartoe nopen. Belangrijke wijzigingen kondigen we vooraf aan via e-mail of melding in beheer.</li>
+				<li>Ga je niet akkoord, dan kun je je abonnement beëindigen vóór de ingangsdatum van de wijziging (zie <a href="/nl/terms" class="text-blue-600 hover:text-blue-800 underline">algemene voorwaarden</a>).</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Contactgegevens</h2>
+			<ul>
+				<li><strong>Juridische vragen of maatwerk-DPA</strong>: legal@pagayo.com</li>
+				<li><strong>Privacy- en AVG-verzoeken</strong>: privacy@pagayo.com</li>
+				<li><strong>Beveiligingsincidenten of datalekken</strong>: security@pagayo.com</li>
+				<li><strong>Support en data-export</strong>: support@pagayo.com of via beheer</li>
+				<li>Vermeld altijd je account- of tenantnaam voor snellere afhandeling.</li>
+			</ul>
+		</section>
+
+		<section class="cta">
+			<h2>Vragen over gegevensverwerking?</h2>
+			<p>Voor juridische vragen of maatwerk-overeenkomsten mail je legal@pagayo.com. Voor support en data-exports gebruik je beheer of support@pagayo.com.</p>
+			<div class="cta-actions">
+				<a class="btn primary" href="mailto:legal@pagayo.com">Mail legal@pagayo.com</a>
+				<a class="btn ghost" href="/nl/contact">Contactformulier</a>
+			</div>
+		</section>
+	</main>
+
+	<style>
+		.dpa-page { max-width: 1200px; margin: 0 auto; padding: 120px 1.75rem 90px; display: flex; flex-direction: column; gap: 2.4rem; }
+		.eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.9rem; border: 1px solid var(--border); border-radius: 999px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); font-size: 0.85rem; }
+		.hero { display: flex; flex-direction: column; gap: 1rem; }
+		.hero h1 { font-size: clamp(2.3rem, 4vw, 3.2rem); margin: 0; line-height: 1.15; letter-spacing: -0.02em; }
+		.lead { color: var(--text-secondary); max-width: 820px; line-height: 1.6; }
+		.panel { border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem 1.4rem; background: var(--bg-secondary); box-shadow: 0 8px 24px rgba(0,0,0,0.18); display: flex; flex-direction: column; gap: 0.6rem; }
+		.panel ul { color: var(--text-secondary); line-height: 1.55; display: grid; gap: 0.4rem; padding-left: 1.2rem; }
+		.panel p { color: var(--text-secondary); line-height: 1.55; }
+		.cta { border: 1px solid var(--border); border-radius: 16px; padding: 1.6rem; background: linear-gradient(135deg, rgba(0,255,136,0.08), rgba(0,0,0,0.9)); text-align: center; box-shadow: 0 12px 32px rgba(0,0,0,0.25); display: flex; flex-direction: column; gap: 0.8rem; }
+		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+		.btn { text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 10px; font-weight: 700; border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; }
+		.btn.primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; }
+		.btn.ghost { color: var(--text); }
+		@media (max-width: 768px) { 
+			.dpa-page { padding: 100px 1rem 70px; gap: 2rem; }
+			.hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+			.panel { padding: 1.2rem 1.25rem; }
+			.cta { padding: 1.5rem 1.25rem; }
+			.cta-actions { 
+				flex-direction: column; 
+				width: 100%;
+			}
+			.cta-actions .btn { width: 100%; }
+		}
+		@media (max-width: 480px) {
+			.dpa-page { padding: 90px 1rem 60px; gap: 1.75rem; }
+			.eyebrow { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+			.hero h1 { font-size: 1.75rem; }
+			.lead { font-size: 0.95rem; }
+			.panel { padding: 1rem 1.1rem; }
+			.panel h2 { font-size: 1.15rem; }
+			.panel ul, .panel p { font-size: 0.9rem; }
+			.cta { padding: 1.25rem 1rem; }
+			.cta h2 { font-size: 1.5rem; }
+			.btn { padding: 0.75rem 1.2rem; font-size: 0.9rem; }
+		}
+	</style>
+
+	<Footer />
+</BaseLayout>

@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const arabicCountries = [
+  { name: 'Verenigde Arabische Emiraten', code: 'ae', flag: '🇦🇪', language: 'Arabisch' },
+  { name: 'Saudi-Arabië', code: 'sa', flag: '🇸🇦', language: 'Arabisch' },
+  { name: 'Qatar', code: 'qa', flag: '🇶🇦', language: 'Arabisch' },
+  { name: 'Koeweit', code: 'kw', flag: '🇰🇼', language: 'Arabisch' },
+  { name: 'Bahrein', code: 'bh', flag: '🇧🇭', language: 'Arabisch' },
+  { name: 'Oman', code: 'om', flag: '🇴🇲', language: 'Arabisch' },
+  { name: 'Jordanië', code: 'jo', flag: '🇯🇴', language: 'Arabisch' },
+  { name: 'Libanon', code: 'lb', flag: '🇱🇧', language: 'Arabisch' },
+  { name: 'Irak', code: 'iq', flag: '🇮🇶', language: 'Arabisch' },
+  { name: 'Jemen', code: 'ye', flag: '🇾🇪', language: 'Arabisch' },
+];
+
+const otherLanguageCountries = [
+  { name: 'Turkije', code: 'tr', flag: '🇹🇷', language: 'Turks' },
+  { name: 'Israël', code: 'il', flag: '🇮🇱', language: 'Hebreeuws' },
+];
+---
+
+<BaseLayout title="Pagayo Midden-Oosten - E-commerce Platform" description="Ontdek Pagayo e-commerce diensten in het Midden-Oosten" lang="nl">
+  <Header />
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="section-title">Pagayo in het Midden-Oosten</h1>
+        <p class="section-subtitle">
+          Wij zijn actief in landen in het Midden-Oosten waar we lokale betaalmethoden, 
+          verzendopties en geoptimaliseerde checkout flows aanbieden voor jouw webshop.
+        </p>
+      </div>
+
+      <!-- Arabisch sprekende landen -->
+      <div class="language-section">
+        <h2 class="language-title">Arabisch sprekende landen</h2>
+        <div class="countries-grid">
+          {arabicCountries.map(country => (
+            <a href={`/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Andere talen -->
+      <div class="language-section">
+        <h2 class="language-title">Andere talen</h2>
+        <div class="countries-grid">
+          {otherLanguageCountries.map(country => (
+            <a href={`/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 6rem 2rem;
+  }
+
+  .language-section {
+    margin-bottom: 4rem;
+  }
+
+  .language-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .language-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .section-header {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .section-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .country-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .country-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .country-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 255, 136, 0.15);
+  }
+
+  .country-card:hover::before {
+    opacity: 1;
+  }
+
+  .country-flag {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .country-card:hover .country-flag {
+    transform: scale(1.1);
+  }
+
+  .country-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .country-language {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .country-arrow {
+    font-size: 1.5rem;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    margin-top: auto;
+  }
+
+  .country-card:hover .country-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .countries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 4rem 1rem;
+    }
+
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .country-card {
+      padding: 1.5rem;
+    }
+
+    .country-flag {
+      font-size: 2.5rem;
+    }
+
+    .country-name {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .countries-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
