@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Privacy" description="Privacyverklaring van Pagayo: welke gegevens we verzamelen, waarom, en hoe we deze beveiligen." lang="nl">
+	<Header />
+	<main class="privacy-page">
+		<section class="hero">
+			<p class="eyebrow">Privacy</p>
+			<h1>Privacyverklaring Pagayo</h1>
+			<p class="lead">Pagayo is een platform voor webshops, horeca en verhuur. We verwerken alleen de gegevens die nodig zijn om onze diensten te leveren, veilig te houden en te verbeteren.</p>
+		</section>
+
+		<section class="cards">
+			<div class="card"><h3>Wie zijn wij</h3><p>Pagayo B.V., offering: beheer (admin), storefronts, API, edge caching en tenant configuraties. Contact: privacy@pagayo.com.</p></div>
+			<div class="card"><h3>Welke gegevens</h3><p>Account- en contactgegevens, betaal- en transactiedata (via Stripe/Mollie), apparaat- en loggegevens, supportberichten. Geen verkoop van data.</p></div>
+			<div class="card"><h3>Waarom</h3><p>Om je account te leveren, betalingen af te handelen, fraude te voorkomen, support te bieden en platformprestaties te verbeteren.</p></div>
+			<div class="card"><h3>Rechtsgrond</h3><p>Uitvoering overeenkomst (diensten leveren), gerechtvaardigd belang (beveiliging, misbruikpreventie), wettelijke verplichting (fiscaliteit), en toestemming waar vereist.</p></div>
+		</section>
+
+		<section class="details">
+			<h2>Verwerking en bewaartermijn</h2>
+			<ul>
+				<li>Hosting & data: Google Cloud (EU regions), Cloudflare edge caching; data in Postgres/Prisma, versleuteld in transit/at rest.</li>
+				<li>Payments: Stripe of Mollie als verwerkers; PCI-compliant, tokens voor kaarten; wij bewaren geen volledige kaartgegevens.</li>
+				<li>Analytics: Plausible (cookieloos, EU), uitsluitend geaggregeerde gebruiksstatistieken.</li>
+				<li>Bewaartermijn: zo kort als mogelijk; financiële data volgens wettelijke termijn, overige data op verzoek verwijderd tenzij verplicht.</li>
+			</ul>
+		</section>
+
+		<section class="details">
+			<h2>Jouw rechten</h2>
+			<ul>
+				<li>Inzien, corrigeren, verwijderen, beperken, dataportabiliteit en bezwaar maken waar van toepassing.</li>
+				<li>Verzoeken via privacy@pagayo.com. We reageren binnen 30 dagen.</li>
+				<li>Klacht indienen bij de Autoriteit Persoonsgegevens staat altijd vrij.</li>
+			</ul>
+		</section>
+
+		<section class="details">
+			<h2>Beveiliging</h2>
+			<ul>
+				<li>Encryptie in transit (TLS) en at rest, toegang op need-to-know, audit-logging, rate limiting en webhook-signing.</li>
+				<li>Geen productie-data in test zonder anonimisering.</li>
+				<li>Continu monitoring via GCP/Cloudflare; incidentmeldingen via security@pagayo.com.</li>
+			</ul>
+		</section>
+
+		<section class="cta">
+			<h2>Vragen of verzoeken?</h2>
+			<p>Mail privacy@pagayo.com of gebruik het contactformulier. Vermeld je account- of tenant-naam zodat we snel kunnen helpen.</p>
+			<div class="cta-actions">
+				<a class="btn primary" href="mailto:privacy@pagayo.com">Mail privacy@pagayo.com</a>
+				<a class="btn ghost" href="/nl/contact">Contactformulier</a>
+			</div>
+		</section>
+	</main>
+	<style>
+		.privacy-page{max-width:1100px;margin:0 auto;padding:120px 1.75rem 90px;display:flex;flex-direction:column;gap:2.4rem}.eyebrow{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;border:1px solid var(--border);border-radius:999px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-secondary);font-size:.85rem}.hero{display:flex;flex-direction:column;gap:1rem}.hero h1{font-size:clamp(2.3rem,4vw,3.2rem);margin:0;line-height:1.15;letter-spacing:-.02em}.lead{color:var(--text-secondary);max-width:820px;line-height:1.6}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.card{border:1px solid var(--border);border-radius:14px;padding:1.3rem;background:var(--bg-secondary);box-shadow:0 8px 24px rgba(0,0,0,.18);display:flex;flex-direction:column;gap:.4rem}.details{border:1px solid var(--border);border-radius:14px;padding:1.3rem;background:var(--bg-secondary);box-shadow:0 8px 24px rgba(0,0,0,.18);display:flex;flex-direction:column;gap:.6rem}.details ul{color:var(--text-secondary);line-height:1.55;display:grid;gap:.4rem;padding-left:1.2rem}.cta{border:1px solid var(--border);border-radius:16px;padding:1.6rem;background:linear-gradient(135deg,rgba(0,255,136,.08),rgba(0,0,0,.9));text-align:center;box-shadow:0 12px 32px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:.8rem}.cta-actions{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}.btn{text-decoration:none;padding:.85rem 1.4rem;border-radius:10px;font-weight:700;border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;gap:.45rem}.btn.primary{background:linear-gradient(135deg,var(--accent) 0%,#00e077 100%);color:#06130d}.btn.ghost{color:var(--text)}@media(max-width:768px){.privacy-page{padding-top:100px}}
+	</style>
+	<Footer />
+</BaseLayout>

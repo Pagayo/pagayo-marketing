@@ -61,6 +61,11 @@ Pricing Table:
 
 **GEEN aannames, GEEN gokken. Bij 1% twijfel = STOP.**
 
+### Backups vóór elke wijziging (VERPLICHT)
+- Maak voordat je een bestand wijzigt een kopie in `backups/<datum>/` met dezelfde bestandsnaam (bijv. `backups/2026-01-03/index.astro`).
+- Werk altijd vanuit de kopie als je moet terugrollen; raak het origineel niet zonder backup.
+- Doe dit voor elk bestand dat je aanpast in deze repo, zodat design/inhoud snel hersteld kan worden.
+
 ---
 
 ## 🔍 ARCHITECTURE CONSISTENCY - VERPLICHT

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Werken bij Pagayo" description="Sluit je aan bij Pagayo en bouw mee aan het platform dat ondernemers direct live laat gaan." lang="nl">
+	<Header />
+	<main class="careers-page">
+		<section class="hero">
+			<p class="eyebrow">Careers</p>
+			<h1>Bouw mee aan direct-verkopen voor iedereen</h1>
+			<p class="lead">We bouwen een platform waar ondernemers binnen 30 seconden live gaan. Geen lange implementaties, wel miljoenen transacties per jaar. Kom bij een team dat shipping boven meetings zet.</p>
+			<div class="hero-actions">
+				<a class="btn primary" href="https://beheer.pagayo.com">Start gratis</a>
+				<a class="btn ghost" href="/nl/contact">Vraag over een rol? Neem contact op</a>
+			</div>
+		</section>
+
+		<section class="grid">
+			<div class="card"><h3>Missie</h3><p>Ondernemers verdienen tooling die meteen werkt. Wij leveren dat: van webshop tot POS tot verhuur.</p></div>
+			<div class="card"><h3>Werkwijze</h3><p>Kleine teams, snelle releases, metrics boven hiërarchie. Je shipt, meet en verbetert.</p></div>
+			<div class="card"><h3>Impact</h3><p>Elke push beïnvloedt betalingen, voorraad en boekingen van duizenden shops en hotels.</p></div>
+		</section>
+
+		<section class="openings">
+			<h2>Open rollen</h2>
+			<div class="roles">
+				<article class="role"><div class="badge">Engineering</div><h3>Senior Full-Stack Engineer</h3><p>Next.js, Node, Prisma, Stripe. Bouw flows die self-service onboarding, payments en compliance samenbrengen.</p><div class="meta">Remote-first • 4-dagen-optie</div></article>
+				<article class="role"><div class="badge">Product</div><h3>Product Manager</h3><p>Eigenaarschap over onboarding en checkout. Werk met data, geen eindeloze decks.</p><div class="meta">Remote • Direct toegang tot klanten</div></article>
+				<article class="role"><div class="badge">Design</div><h3>Product Designer</h3><p>Stripe-kwaliteit UX voor web, kassa en verhuur. Ontwerp flows die zonder uitleg te snappen zijn.</p><div class="meta">Remote • Figma + prototype ownership</div></article>
+			</div>
+		</section>
+
+		<section class="benefits">
+			<h2>Wat je krijgt</h2>
+			<ul>
+				<li>Remote-first met budget voor focusspaces</li>
+				<li>Ship-ritme: wekelijkse releases, weinig meetings</li>
+				<li>Salaris + equity + 30 vrije dagen</li>
+				<li>Hardware naar keuze en opleidingsbudget</li>
+			</ul>
+		</section>
+
+		<section class="cta">
+			<h2>Klaar om te starten?</h2>
+			<p>Stuur je profiel of portfolio. We reageren binnen 3 werkdagen, zonder lange rondes.</p>
+			<div class="cta-actions">
+				<a class="btn primary" href="mailto:careers@pagayo.com">Mail je profiel</a>
+				<a class="btn ghost" href="https://beheer.pagayo.com">Bekijk het product</a>
+			</div>
+		</section>
+	</main>
+	<style>
+		.careers-page{max-width:1100px;margin:0 auto;padding:120px 1.75rem 90px;display:flex;flex-direction:column;gap:2.8rem}.eyebrow{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;border:1px solid var(--border);border-radius:999px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-secondary);font-size:.85rem}.hero{display:flex;flex-direction:column;gap:1rem;background:linear-gradient(135deg,rgba(0,255,136,.12),rgba(0,0,0,.9));border:1px solid var(--border);border-radius:18px;padding:2.5rem;box-shadow:0 14px 40px rgba(0,0,0,.35)}.hero h1{font-size:clamp(2.3rem,4vw,3.3rem);margin:0;line-height:1.12;letter-spacing:-.02em}.lead{color:var(--text-secondary);max-width:760px;line-height:1.6}.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}.btn{text-decoration:none;padding:.85rem 1.4rem;border-radius:10px;font-weight:700;border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;gap:.45rem}.btn.primary{background:linear-gradient(135deg,var(--accent) 0%,#00e077 100%);color:#06130d}.btn.ghost{color:var(--text)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.card{border:1px solid var(--border);border-radius:14px;padding:1.4rem;background:var(--bg-secondary);box-shadow:0 8px 24px rgba(0,0,0,.18)}.openings h2,.benefits h2,.cta h2{margin-bottom:.6rem}.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}.role{border:1px solid var(--border);border-radius:14px;padding:1.4rem;background:var(--bg-secondary);display:flex;flex-direction:column;gap:.5rem;box-shadow:0 10px 30px rgba(0,0,0,.22)}.badge{display:inline-flex;align-items:center;padding:.3rem .7rem;border-radius:999px;background:rgba(0,255,136,.12);color:var(--accent);font-weight:700;font-size:.85rem}.meta{color:var(--text-secondary);font-size:.95rem}.benefits ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.6rem;padding-left:1.1rem;color:var(--text-secondary)}.cta{border:1px solid var(--border);border-radius:16px;padding:1.8rem;background:linear-gradient(135deg,rgba(0,255,136,.08),rgba(0,0,0,.9));text-align:center;box-shadow:0 12px 32px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:.8rem}.cta-actions{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}@media(max-width:768px){.hero{padding:2rem}}
+	</style>
+	<Footer />
+</BaseLayout>

@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Privacy" description="Privacyverklaring van Pagayo: welke gegevens we verzamelen, waarom, en hoe we deze beveiligen." lang="nl">
+	<Header />
+	<main class="privacy-page">
+		<section class="hero">
+			<p class="eyebrow">Privacy</p>
+			<h1>Privacyverklaring Pagayo</h1>
+			<p class="lead">Pagayo is een platform voor webshops, horeca, verhuur en abonnementen (beheer, storefront, API, edge en tenant-configuraties). Hier lees je welke gegevens we verwerken, waarom en hoe we ze beschermen onder de AVG.</p>
+		</section>
+
+		<section class="panel">
+			<h2>Wie wij zijn en scope</h2>
+			<ul>
+				<li>Verwerkingsverantwoordelijke: Pagayo B.V. (platform: beheer/admin, Pagayo-storefronts, Pagayo API stack, edge workers, tenant-configuraties).</li>
+				<li>Contact: privacy@pagayo.com voor privacyverzoeken; security@pagayo.com voor beveiligingsmeldingen.</li>
+				<li>Deze verklaring geldt voor merchants (onze klanten), hun eindklanten (bezoekers/kopers/huurders), en websitebezoekers.</li>
+				<li>Voor data die wij verwerken namens onze klanten (bijv. orders, boekingen) zijn zij verwerkingsverantwoordelijke en Pagayo verwerker; zie ook de verwerkersovereenkomst in beheer.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Welke gegevens we verwerken</h2>
+			<ul>
+				<li>Account- en bedrijfsgegevens: naam, e-mail, telefoon, bedrijfsnaam, KVK/VAT, rol, inloggegevens (hashed wachtwoord), tenant- en omgevingsinstellingen.</li>
+				<li>Operationele data: product- en assortimentgegevens, voorraad, reserveringen/boekingen, abonnementen, kassatransacties, order- en verzendgegevens.</li>
+				<li>Betaal- en transactiedata: betaalstatus, betaalmethoden, identifiers/tokens van Stripe of Mollie; we bewaren geen volledige kaartgegevens.</li>
+				<li>Gebruik en logdata: apparaat/browser-info, IP-adres, tijdstempels, request-logs, fout- en beveiligingslogs (edge + API) voor stabiliteit en misbruikpreventie.</li>
+				<li>Support en communicatie: berichten via mail, chat of formulieren, inclusief metadata die nodig is voor opvolging.</li>
+				<li>Marketing/websitebezoek: cookieloze statistieken via Plausible (EU), geen third-party advertentiecookies.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Doeleinden en rechtsgrond</h2>
+			<ul>
+				<li>Dienstverlening (beheer, storefront, API, edge, tenant): uitvoering van de overeenkomst.</li>
+				<li>Betalingen en uitbetalingen (Stripe/Mollie), facturatie en fiscale bewaarplicht: uitvoering overeenkomst + wettelijke verplichting.</li>
+				<li>Beveiliging en misbruikpreventie: rate limiting, logging, fraudedetectie, webhook-signing; gerechtvaardigd belang.</li>
+				<li>Support en communicatie: beantwoorden van vragen en incidentmeldingen; uitvoering overeenkomst of gerechtvaardigd belang.</li>
+				<li>Productverbetering en statistieken: geaggregeerde, geanonimiseerde analyses via Plausible; gerechtvaardigd belang.</li>
+				<li>Marketing (B2B): alleen gericht op zakelijke contacten; opt-out mogelijk. Nieuwsbrieven op basis van toestemming.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Verwerking voor klanten van onze klanten</h2>
+			<ul>
+				<li>Voor eindklanten (kopers/huurders/abonnee) handelen wij als verwerker; de merchant is verwerkingsverantwoordelijke.</li>
+				<li>Merchants bepalen welke klantdata zij invoeren of importeren; Pagayo gebruikt deze data alleen om de dienst te leveren en te beveiligen.</li>
+				<li>Verwerkersovereenkomst en beveiligingsmaatregelen zijn beschikbaar in beheer; aangepaste DPA op verzoek via privacy@pagayo.com.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Delen met derden</h2>
+			<ul>
+				<li>Cloud & infrastructuur: Google Cloud (EU region) voor hosting en opslag; Cloudflare voor edge-caching en DDoS-bescherming.</li>
+				<li>Betalingen: Stripe en Mollie als verwerkers voor payment processing en uitbetalingen.</li>
+				<li>E-mail en communicatie: e-mailprovider voor transactionele mails en supportantwoorden.</li>
+				<li>Analytics: Plausible (EU, cookieloos, geaggregeerd).</li>
+				<li>Autoriteiten: alleen wanneer wettelijk verplicht of om fraude/misbruik te voorkomen.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Internationale doorgifte</h2>
+			<ul>
+				<li>Data wordt primair in de EU opgeslagen (GCP EU regions).</li>
+				<li>Cloudflare kan verkeer via niet-EU edge locaties routeren; passende waarborgen via Standard Contractual Clauses (SCCs).</li>
+				<li>Stripe en Mollie kunnen data buiten de EU verwerken; zij bieden SCCs en voldoen aan PCI-DSS.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Bewaartermijnen</h2>
+			<ul>
+				<li>Account- en platformdata: zolang je klant bent en nodig voor dienstverlening.</li>
+				<li>Transactie- en facturatiedata: conform fiscale verplichtingen (meestal 7 jaar).</li>
+				<li>Log- en beveiligingsdata: kortstondig, tenzij nodig voor incidentonderzoek of fraude.</li>
+				<li>Supportdata: zolang nodig voor afhandeling en kwaliteitsborging.</li>
+				<li>Geaggregeerde/anonieme statistieken kunnen langer bewaard worden zonder herleidbaarheid.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Cookies en tracking</h2>
+			<ul>
+				<li>Plausible: cookieloos, geaggregeerde statistieken, EU-hosting, geen cross-site tracking.</li>
+				<li>Cloudflare: functionele cookies voor beveiliging en performance (bijv. bot-detectie, load balancing).</li>
+				<li>Geen advertentienetwerken of third-party marketingpixels.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Beveiliging</h2>
+			<ul>
+				<li>Encryptie: TLS in transit; encryptie at rest binnen GCP opslag en databases.</li>
+				<li>Toegang: least privilege, rolgebaseerde toegang, periodieke reviews, audit-logging.</li>
+				<li>Beveiligingslagen: Cloudflare WAF/DDoS, rate limiting, bot-detectie, webhook-signing, input-validatie.</li>
+				<li>Data-segregatie: tenant- en omgevingsscheiding; geen productie-data in test zonder anonimisering.</li>
+				<li>Monitoring & incidenten: 24/7 monitoring, alerting, en een incidentproces met melding via security@pagayo.com.</li>
+				<li>Back-ups en continuïteit: regelmatige back-ups, versleuteld opgeslagen en getest op herstel.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Jouw rechten</h2>
+			<ul>
+				<li>Recht op inzage, rectificatie, wissing, beperking, bezwaar (waar van toepassing) en dataportabiliteit.</li>
+				<li>Recht om toestemming in te trekken voor toekomstige verwerking.</li>
+				<li>Verzoek indienen via privacy@pagayo.com; we reageren binnen 30 dagen.</li>
+				<li>Klacht indienen bij de Autoriteit Persoonsgegevens staat altijd vrij.</li>
+			</ul>
+		</section>
+
+		<section class="panel">
+			<h2>Kinderen</h2>
+			<p>Pagayo richt zich niet op kinderen onder de 16 jaar. Merchants mogen geen kind- of minderjarig-specifieke data verwerken in strijd met toepasselijk recht.</p>
+		</section>
+
+		<section class="panel">
+			<h2>Wijzigingen</h2>
+			<p>We werken deze verklaring bij wanneer onze verwerking wijzigt. De meest recente versie staat altijd op deze pagina.</p>
+		</section>
+
+		<section class="cta">
+			<h2>Vragen of verzoeken?</h2>
+			<p>Mail privacy@pagayo.com of gebruik het contactformulier. Vermeld je account- of tenant-naam zodat we snel kunnen helpen.</p>
+			<div class="cta-actions">
+				<a class="btn primary" href="mailto:privacy@pagayo.com">Mail privacy@pagayo.com</a>
+				<a class="btn ghost" href="/nl/contact">Contactformulier</a>
+			</div>
+		</section>
+	</main>
+	<style>
+		.privacy-page { max-width: 1100px; margin: 0 auto; padding: 120px 1.75rem 90px; display: flex; flex-direction: column; gap: 2.4rem; }
+		.eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.9rem; border: 1px solid var(--border); border-radius: 999px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); font-size: 0.85rem; }
+		.hero { display: flex; flex-direction: column; gap: 1rem; }
+		.hero h1 { font-size: clamp(2.3rem, 4vw, 3.2rem); margin: 0; line-height: 1.15; letter-spacing: -0.02em; }
+		.lead { color: var(--text-secondary); max-width: 820px; line-height: 1.6; }
+		.panel { border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem 1.4rem; background: var(--bg-secondary); box-shadow: 0 8px 24px rgba(0,0,0,0.18); display: flex; flex-direction: column; gap: 0.6rem; }
+		.panel ul { color: var(--text-secondary); line-height: 1.55; display: grid; gap: 0.4rem; padding-left: 1.2rem; }
+		.panel p { color: var(--text-secondary); line-height: 1.55; }
+		.cta { border: 1px solid var(--border); border-radius: 16px; padding: 1.6rem; background: linear-gradient(135deg, rgba(0,255,136,0.08), rgba(0,0,0,0.9)); text-align: center; box-shadow: 0 12px 32px rgba(0,0,0,0.25); display: flex; flex-direction: column; gap: 0.8rem; }
+		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+		.btn { text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 10px; font-weight: 700; border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; }
+		.btn.primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; }
+		.btn.ghost { color: var(--text); }
+		@media (max-width: 768px) { .privacy-page { padding-top: 100px; } }
+	</style>
+	<Footer />
+</BaseLayout>

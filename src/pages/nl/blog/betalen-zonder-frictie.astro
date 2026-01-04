@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+---
+
+<BaseLayout 
+	title="Betalen zonder frictie: iDEAL, kaart en Apple Pay - Pagayo Blog" 
+	description="Activeer Stripe of Mollie in één keer, krijg uitbetalingen per vestiging en laat mislukte betalingen automatisch opnieuw proberen. Leer hoe je een frictionless betaalervaring creëert." 
+	lang="nl"
+>
+	<Header />
+	<main>
+		<div class="article-container">
+			<Breadcrumbs crumbs={[
+				{ label: 'Home', href: '/nl' },
+				{ label: 'Blog', href: '/nl/blog' },
+				{ label: 'Betalen zonder frictie: iDEAL, kaart en Apple Pay' }
+			]} />
+		</div>
+		
+		<div class="article">
+			<article class="content">
+			<div class="article-header">
+				<div class="badge">Payments</div>
+				<h1>Betalen zonder frictie: iDEAL, kaart en Apple Pay</h1>
+				<div class="meta">
+					<span>4 minuten leestijd</span>
+					<span>•</span>
+					<span>Betalingen</span>
+				</div>
+			</div>
+
+			<section class="intro">
+				<p class="lead">Een klant wil iets kopen. Hij voegt het product toe aan zijn winkelwagen, gaat naar de checkout en… stuit op een ingewikkeld betaalproces. Meerdere stappen, onduidelijke knoppen, lange laadtijden. Resultaat: hij haakt af en je verliest de verkoop. Dit heet "checkout friction" en het kost online retailers miljarden per jaar.</p>
+				
+				<p>Met Pagayo creëer je een naadloze betaalervaring. iDEAL, creditcard, Apple Pay en meer – allemaal geïntegreerd in één keer. Klanten betalen snel, veilig en zonder gedoe. In deze gids leer je hoe je dit opzet en waarom snelheid en gemak het verschil maken tussen converteren en afhaken.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Waarom betaalgemak cruciaal is voor conversie</h2>
+				<p>Onderzoek toont aan dat gemiddeld 70% van de winkelwagentjes wordt verlaten vóór betaling. De belangrijkste reden? Een te ingewikkeld of traag betalingsproces. Als een klant langer dan 3 seconden moet wachten of meer dan 3 klikken moet doen, stijgt de kans op afhaakgedrag exponentieel.</p>
+				
+				<p>Daarom is het essentieel om betalen zo simpel mogelijk te maken: minimale stappen, snelle laadtijden en bekende betaalmethodes. Pagayo integreert de populairste betaalmethodes out-of-the-box, zodat jouw klanten altijd hun favoriete manier van betalen kunnen gebruiken.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Welke betaalmethodes ondersteunt Pagayo?</h2>
+				<p>Pagayo werkt met Stripe en Mollie, twee van de meest gebruikte betaalproviders ter wereld. Via deze integraties krijg je toegang tot:</p>
+				
+				<ul>
+					<li><strong>iDEAL:</strong> De meest gebruikte betaalmethode in Nederland (verplicht voor Nederlandse webshops).</li>
+					<li><strong>Creditcard:</strong> Visa, Mastercard, American Express voor internationale klanten.</li>
+					<li><strong>Apple Pay &amp; Google Pay:</strong> One-tap betalen via mobiel, super snel en veilig.</li>
+					<li><strong>Bancontact:</strong> Populair in België.</li>
+					<li><strong>SEPA Direct Debit:</strong> Automatische incasso voor abonnementen en terugkerende betalingen.</li>
+					<li><strong>PayPal:</strong> Voor klanten die liever via PayPal afrekenen.</li>
+					<li><strong>Klarna &amp; Afterpay:</strong> Achteraf betalen of in termijnen (buy now, pay later).</li>
+				</ul>
+				
+				<p>Je hoeft niet alle methodes te activeren – kies wat past bij jouw doelgroep. Voor een Nederlandse B2C webshop is iDEAL + Apple Pay vaak voldoende. Voor internationale verkoop wil je creditcard toevoegen.</p>
+			</section>
+
+			<section class="panel">
+				<h2>In één keer activeren: Stripe of Mollie koppelen</h2>
+				<p>Het koppelen van een betaalprovider is binnen Pagayo een kwestie van enkele klikken. Ga naar "Instellingen" → "Betalingen" en klik op "Koppel Stripe" of "Koppel Mollie".</p>
+				
+				<p>Je wordt doorgestuurd naar een veilige inlogpagina van de provider, waar je je bedrijfsgegevens invult (KVK-nummer, bankrekeningnummer, etc.). Zodra dit is goedgekeurd (meestal binnen enkele minuten), kun je betalingen ontvangen.</p>
+				
+				<p>Alle technische integratie, beveiligingscertificaten (PCI-DSS compliance) en API-koppelingen worden door Pagayo afgehandeld. Jij hoeft geen code te schrijven of servers in te stellen.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Uitbetalingen per vestiging: ideaal voor multi-locatie</h2>
+				<p>Als je meerdere vestigingen hebt (bijvoorbeeld drie winkels in verschillende steden), kun je met Pagayo uitbetalingen per locatie regelen. Elke vestiging heeft zijn eigen bankrekening en ontvangt alleen de omzet die daar is gegenereerd.</p>
+				
+				<p>Dit werkt via Stripe Connect of Mollie Connect. Je kunt per vestiging een subaccount aanmaken en betalingen automatisch routeren naar het juiste account. Handig voor franchisemodellen, ketens of multi-tenant setups.</p>
+				
+				<p>Ook kun je commissies instellen. Bijvoorbeeld: hoofdkantoor neemt 5% commissie per transactie, en de rest gaat naar de vestiging. Dit wordt automatisch verrekend bij uitbetaling.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Mislukte betalingen: automatische retry-logica</h2>
+				<p>Soms lukt een betaling niet: onvoldoende saldo, verlopen kaart, technische fout bij de bank. Normaal gesproken is die verkoop dan verloren. Maar Pagayo probeert het automatisch opnieuw.</p>
+				
+				<p>Als een betaling mislukt, wordt de klant hiervan op de hoogte gesteld via e-mail met een link om opnieuw te betalen. Daarnaast probeert Pagayo (bij creditcard of SEPA) automatisch na 1, 3 en 7 dagen opnieuw te debiteren.</p>
+				
+				<p>Dit verhoogt je conversie aanzienlijk. Uit onderzoek blijkt dat 30-40% van mislukte betalingen uiteindelijk toch slaagt met een retry. Dat is pure extra omzet zonder extra werk.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Veiligheid en compliance: PCI-DSS en 3D Secure</h2>
+				<p>Betalingen zijn gevoelig. Klanten vertrouwen hun bankgegevens en creditcardnummers toe aan jouw platform. Daarom is veiligheid cruciaal.</p>
+				
+				<p>Pagayo is PCI-DSS Level 1 gecertificeerd, de hoogste beveiligingsstandaard voor online betalingen. Dit betekent dat creditcardgegevens nooit op onze servers worden opgeslagen – ze gaan direct naar Stripe of Mollie, die deze veilig verwerken.</p>
+				
+				<p>Daarnaast ondersteunt Pagayo 3D Secure (ook bekend als "Verified by Visa" of "Mastercard SecureCode"). Dit is een extra verificatiestap (bijvoorbeeld via SMS-code) die fraude voorkomt en aansprakelijkheid verschuift van jou naar de bank. Dit is verplicht in de EU sinds 2021 (PSD2).</p>
+			</section>
+
+			<section class="panel">
+				<h2>One-tap betalen: Apple Pay en Google Pay</h2>
+				<p>Een van de snelste betaalmethodes is Apple Pay (op iPhone/Mac) en Google Pay (op Android). Klanten hoeven geen gegevens in te vullen – ze klikken op "Betaal met Apple Pay", authenticeren via Face ID of vingerafdruk, en de betaling is klaar. Dit duurt letterlijk 2 seconden.</p>
+				
+				<p>Dit verhoogt conversie enorm, vooral op mobiel. Klanten hoeven niet te typen (lastig op een kleine telefoon), geen CVC-codes in te vullen en geen kaartnummers te onthouden. Het is instant en veilig.</p>
+				
+				<p>Pagayo activeert deze methodes automatisch zodra je Stripe of Mollie hebt gekoppeld. Je hoeft niets extra's te doen – het wordt vanzelf gedetecteerd en aangeboden aan klanten die deze diensten gebruiken.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Abonnementen en terugkerende betalingen</h2>
+				<p>Als je abonnementen aanbiedt (bijvoorbeeld maandelijkse toegang tot een dienst, of wekelijkse levering van producten), wil je automatische betalingen instellen. Pagayo ondersteunt dit volledig via SEPA Direct Debit of creditcard.</p>
+				
+				<p>Zodra een klant zich abonneert, wordt zijn betaalmethode opgeslagen (met zijn toestemming) en wordt er automatisch elke maand (of week, jaar, etc.) gedebiteerd. Je hoeft geen handmatige facturen te versturen of betalingen op te volgen.</p>
+				
+				<p>Als een betaling mislukt (bijvoorbeeld verlopen kaart), krijgt de klant automatisch een melding om zijn gegevens bij te werken. Je kunt ook instellen dat het abonnement tijdelijk wordt opgeschort tot betaling is ontvangen.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Voor wie is dit geschikt?</h2>
+				<p>Een frictionless betaalervaring is essentieel voor elke online onderneming:</p>
+				
+				<ul>
+					<li><strong>Webshops:</strong> Van kleine startups tot grote retailers – snelle betalingen verhogen conversie.</li>
+					<li><strong>SaaS-bedrijven:</strong> Abonnementen met automatische verlengingen en retry-logica.</li>
+					<li><strong>Horeca:</strong> Online bestellingen en reserveringen met directe betaling.</li>
+					<li><strong>Verhuur:</strong> Borgsom en huurprijs in één keer afhandelen.</li>
+					<li><strong>Hotels en B&amp;B's:</strong> Vooruitbetaling bij boeking om no-shows te voorkomen.</li>
+					<li><strong>Events en ticketing:</strong> Snel betalen om tickets veilig te stellen.</li>
+				</ul>
+			</section>
+
+			<section class="panel">
+				<h2>Praktijkvoorbeeld: een webshop met Apple Pay</h2>
+				<p>Stel: je runt een webshop die kleding verkoopt. Een klant bekijkt een T-shirt op zijn iPhone, voegt het toe aan zijn winkelwagen en gaat naar de checkout.</p>
+				
+				<p>Hij ziet de knop "Betaal met Apple Pay". Hij klikt erop, houdt zijn vinger op de Touch ID sensor (of kijkt naar Face ID) en binnen 2 seconden is de betaling compleet. Hij ontvangt direct een bevestigingsmail en jij ziet de order binnenkomen in je dashboard.</p>
+				
+				<p>Zonder Apple Pay had hij handmatig zijn adres, e-mailadres, kaartnummer, vervaldatum en CVC-code moeten invoeren. Op een kleine telefoon is dit foutgevoelig en frustrerend. De kans dat hij had afgehaakt is groot. Met Apple Pay is de verkoop binnen seconden rond.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Integratie met boekhoudprogramma's</h2>
+				<p>Pagayo kan automatisch alle betalingen exporteren naar je boekhoudprogramma (zoals Exact Online, Moneybird of Twinfield). Elke betaling wordt direct geregistreerd als inkomende betaling, zodat je administratie altijd klopt.</p>
+				
+				<p>Dit bespaart je uren aan handmatig facturen koppelen en voorkomt fouten. Alles is real-time gesynchroniseerd.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Veelgestelde vragen</h2>
+				
+				<h3>Wat zijn de kosten van betalingen?</h3>
+				<p>Dit hangt af van je provider. Stripe rekent bijvoorbeeld 1,4% + €0,25 per Europese kaart, en iDEAL kost €0,29 per transactie. Mollie heeft vergelijkbare tarieven. Pagayo zelf rekent geen extra kosten bovenop deze transactiekosten.</p>
+				
+				<h3>Hoe snel krijg ik mijn geld?</h3>
+				<p>Bij Stripe en Mollie is de standaard uitbetaling binnen 2 werkdagen. Je kunt ook kiezen voor dagelijkse uitbetalingen (handig voor cashflow).</p>
+				
+				<h3>Kan ik ook contant of via pin accepteren?</h3>
+				<p>Ja. Pagayo ondersteunt POS-terminals (via Stripe Terminal of Mollie POS). Je kunt pinbetalingen in je fysieke winkel accepteren en deze automatisch koppelen aan online voorraad.</p>
+				
+				<h3>Wat gebeurt er bij refunds?</h3>
+				<p>Je kunt refunds direct verwerken vanuit je dashboard. Het geld wordt binnen enkele werkdagen teruggestort op de rekening van de klant. Dit wordt automatisch afgehandeld via Stripe of Mollie.</p>
+				
+				<h3>Is dit AVG-proof?</h3>
+				<p>Ja. Betaalgegevens worden versleuteld opgeslagen bij Stripe of Mollie (PCI-DSS compliant). Pagayo slaat geen gevoelige betaalgegevens op. Klantgegevens (naam, adres) worden conform AVG verwerkt.</p>
+			</section>
+
+			<section class="cta-panel">
+				<h2>Start vandaag met naadloze betalingen</h2>
+				<p>Koppel Stripe of Mollie in één keer en bied je klanten een frictionless betaalervaring. Probeer Pagayo gratis.</p>
+				<div class="cta-actions">
+					<a class="btn primary" href="https://beheer.pagayo.com">Start gratis</a>
+					<a class="btn ghost" href="/nl/contact">Vragen? Neem contact op</a>
+				</div>
+			</section>
+		</article>
+
+		<aside class="sidebar">
+			<div class="related-box">
+				<h3>Gerelateerde gidsen</h3>
+				<a href="/nl/blog/webshop-starten-30-seconden">Webshop starten in 30 seconden</a>
+				<a href="/nl/blog/abonnementen-in-minuten">Abonnementen opzetten</a>
+			</div>
+			
+			<div class="cta-box">
+				<h3>Direct aan de slag?</h3>
+				<p>Activeer iDEAL, Apple Pay en meer in één keer. Start nu met Pagayo.</p>
+				<a class="btn primary" href="https://beheer.pagayo.com">Start nu</a>
+			</div>
+		</aside>
+		</div>
+	</main>
+
+	<style>
+		.article-container { max-width: 1300px; margin: 0 auto; padding: 120px 1.75rem 0; }
+		.article { max-width: 1300px; margin: 0 auto; padding: 0 1.75rem 90px; display: grid; grid-template-columns: 1fr 280px; gap: 3rem; }
+		.content { display: flex; flex-direction: column; gap: 1.75rem; }
+		.article-header { display: flex; flex-direction: column; gap: 0.75rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+		.badge { display: inline-flex; align-items: center; width: fit-content; padding: 0.3rem 0.7rem; border-radius: 999px; background: rgba(0,255,136,0.12); color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+		.article-header h1 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; letter-spacing: -0.02em; }
+		.meta { display: flex; gap: 0.5rem; color: var(--text-secondary); font-size: 0.95rem; }
+		.intro { display: flex; flex-direction: column; gap: 1rem; }
+		.lead { font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); }
+		.panel { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+		.panel h2 { font-size: 1.6rem; line-height: 1.3; }
+		.panel h3 { font-size: 1.25rem; margin-top: 0.75rem; }
+		.panel p { line-height: 1.7; color: var(--text-secondary); }
+		.panel ul { padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+		.panel li { line-height: 1.7; color: var(--text-secondary); }
+		.panel strong { color: var(--text); font-weight: 600; }
+		.panel em { color: var(--accent); font-style: normal; }
+		.cta-panel { background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,0,0,0.9)); border: 1px solid var(--accent); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; gap: 1rem; text-align: center; box-shadow: 0 12px 32px rgba(0,255,136,0.15); }
+		.cta-panel h2 { font-size: 1.75rem; }
+		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+		.btn { text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 10px; font-weight: 700; border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; transition: all 0.2s ease; }
+		.btn.primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; border-color: var(--accent); }
+		.btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,255,136,0.3); }
+		.btn.ghost { color: var(--text); }
+		.btn.ghost:hover { border-color: var(--accent); }
+		.sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+		.related-box, .cta-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; box-shadow: 0 6px 18px rgba(0,0,0,0.2); }
+		.related-box h3, .cta-box h3 { font-size: 1.1rem; }
+		.related-box a { color: var(--text-secondary); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease; }
+		.related-box a:last-child { border-bottom: none; }
+		.related-box a:hover { color: var(--accent); }
+		.cta-box p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+		@media (max-width: 1024px) { .article { grid-template-columns: 1fr; } .sidebar { display: none; } }
+		@media (max-width: 768px) { .article { padding-top: 100px; } }
+	</style>
+
+	<Footer />
+</BaseLayout>
