@@ -63,12 +63,6 @@ img {
   padding: 120px 2rem 80px;
 }
 
-@media (max-width: 768px) {
-  .page-container {
-    padding: 100px 1rem 60px;
-  }
-}
-
 /* Hero Main - Standard hero layout for all pages */
 .hero-main {
   position: relative;
@@ -175,7 +169,7 @@ img {
 
 @media (max-width: 768px) {
   .hero-main {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
     gap: 1.5rem;
     border-radius: 18px;
   }
@@ -267,7 +261,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero-standard { padding: 2rem 1rem; gap: 1.5rem; border-radius: 18px; }
+  .hero-standard { padding: 2rem 1.5rem; gap: 1.5rem; border-radius: 18px; }
   .hero-standard .hero__content h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
   .hero-standard .hero__actions { flex-direction: column; width: 100%; }
   .hero-standard .hero__actions .btn { width: 100%; }
@@ -280,13 +274,6 @@ body {
   max-width: 1200px;
   margin: 120px auto 4rem;
   padding: 0 2rem;
-}
-
-@media (max-width: 768px) {
-  .container {
-    margin: 100px auto 3rem;
-    padding: 0 1rem;
-  }
 }
 
 .container h1 {
