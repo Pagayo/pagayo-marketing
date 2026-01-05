@@ -35,6 +35,33 @@ Sjoerd → Sonnet → analyseert taak → runSubagent(Codex) → Sonnet → rapp
 
 ---
 
+## 📐 DESIGN SYSTEM — VERPLICHT LEZEN
+
+**KRITIEK: VOORDAT je iets codeert, lees ALTIJD `/DESIGN-SYSTEM.md`**
+
+**Dit bestand bevat ALLE standaarden:**
+- Container widths (1200px blog posts, 960px pricing, etc.)
+- Padding & margins (2rem desktop, 1rem mobile)
+- Typography scale (clamp() voor responsive)
+- Responsive breakpoints (1024px, 768px, 480px)
+- Button URLs (https://app.pagayo.com/register/)
+- Component patterns (blog post structure, regional pages)
+- Mobile optimizations
+- Shadows, borders, colors
+
+**Harde regel:**
+- ❌ NOOIT willekeurige max-width waarden (800px, 900px, 1000px)
+- ❌ NOOIT `app.pagayo.com` voor registratie buttons
+- ❌ NOOIT inconsistente padding zonder reden
+- ✅ CHECK design system EERST bij elke nieuwe pagina/component
+
+**Waarom dit kritiek is:**
+- Voorkomt inconsistenties (zoals 800px blog posts die 1200px moeten zijn)
+- Nieuwe sessies gebruiken dezelfde standaarden
+- Sjoerd hoeft niet telkens dezelfde dingen te corrigeren
+
+---
+
 ## 🎨 DESIGN LEIDRAAD: STRIPE.COM
 
 **KRITIEK: Elk component, elke pagina, elke styling moet Stripe.com niveau zijn.**
@@ -307,8 +334,8 @@ src/components/
 ### Form Submissions
 **ALLE forms POST naar Beheer API:**
 ```typescript
-// SignupForm → beheer.pagayo.com/api/register
-// ContactForm → beheer.pagayo.com/api/contact
+// SignupForm → app.pagayo.com/api/register
+// ContactForm → app.pagayo.com/api/contact
 ```
 
 **NOOIT:**

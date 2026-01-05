@@ -2,6 +2,7 @@
 
 /* Tailwind v4 Custom Theme */
 @theme {
+  /* Colors */
   --color-primary-purple: #635BFF;
   --color-dark-blue: #0A2540;
   --color-light-gray: #F6F9FC;
@@ -10,12 +11,37 @@
   --color-warning-orange: #FF8A00;
   --color-error-red: #DF1B41;
   
+  /* Typography */
   --font-family-sans: Inter, system-ui, sans-serif;
   
+  /* Shadows */
   --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
   --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.16);
   --shadow-glow-purple: 0 0 24px rgba(99, 91, 255, 0.3);
+  
+  /* Container Widths - See DESIGN-SYSTEM.md */
+  --container-max: 1200px;
+  --container-narrow: 960px;
+  --container-article: 800px;
+  --container-prose: 720px;
+  --container-form: 600px;
+  
+  /* Spacing */
+  --section-gap-large: 4rem;
+  --section-gap-medium: 2.5rem;
+  --section-gap-small: 1.5rem;
+  
+  /* Border Radius */
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 16px;
+  --radius-xlarge: 22px;
+  
+  /* Breakpoints (for reference in JS) */
+  --breakpoint-desktop: 1024px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-mobile: 480px;
 }
 
 /* Global Reset */
@@ -55,6 +81,42 @@ button {
 img {
   @apply max-w-full h-auto;
 }
+
+/* 
+================================================================================
+DESIGN SYSTEM QUICK REFERENCE
+See /DESIGN-SYSTEM.md for complete documentation
+================================================================================
+
+Container Widths:
+- Page container:     1200px (default for all pages)
+- Pricing/narrow:      960px (pricing tables, narrow layouts)
+- Lead/intro text:     720px (readable line length)
+- Forms:               600px (focused content)
+- Blog article:       1200px (article-container + article)
+
+Padding:
+- Desktop: 120px 2rem 80px (top, horizontal, bottom)
+- Mobile:  100px 1rem 60px
+
+Breakpoints:
+- Desktop:  1024px
+- Tablet:    768px
+- Mobile:    480px
+
+Typography (use clamp() for responsive):
+- H1: clamp(2.4rem, 5vw, 3.6rem)
+- H2: clamp(1.8rem, 4vw, 2.4rem)
+- H3: clamp(1.4rem, 3vw, 1.8rem)
+- Body: 1rem
+- Lead: 1.25rem
+
+Button URLs:
+- Registration: https://app.pagayo.com/register/
+- NEVER: beheer.pagayo.com, /admin
+
+================================================================================
+*/
 
 /* Page Container - Consistent across all pages */
 .page-container {
@@ -305,4 +367,75 @@ body {
 .container .content {
   color: #ffffff;
   line-height: 1.8;
+}
+
+/* 
+================================================================================
+UTILITY CLASSES - Design System Helpers
+See /DESIGN-SYSTEM.md for usage guidelines
+================================================================================
+*/
+
+/* Container Width Utilities */
+.container-max {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.container-article {
+  max-width: var(--container-article);
+  margin: 0 auto;
+}
+
+.container-prose {
+  max-width: var(--container-prose);
+  margin: 0 auto;
+}
+
+.container-form {
+  max-width: var(--container-form);
+  margin: 0 auto;
+}
+
+/* Section Spacing */
+.section-gap-large {
+  margin-bottom: var(--section-gap-large);
+}
+
+.section-gap-medium {
+  margin-bottom: var(--section-gap-medium);
+}
+
+.section-gap-small {
+  margin-bottom: var(--section-gap-small);
+}
+
+/* Typography Utilities */
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--color-medium-gray);
+}
+
+.text-secondary {
+  color: var(--color-medium-gray);
+}
+
+/* Panel/Card Styling */
+.panel {
+  padding: 2rem;
+  background: var(--color-light-gray);
+  border-radius: var(--radius-medium);
+  margin-bottom: var(--section-gap-medium);
+}
+
+@media (max-width: 768px) {
+  .panel {
+    padding: 1.5rem 1rem;
+  }
 }

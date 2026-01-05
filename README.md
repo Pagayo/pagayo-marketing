@@ -106,7 +106,7 @@ See `/pagayo-beheer/AI/plan/open-to-do/PAGAYO-MARKETING-MASTERPLAN.md` for compl
 ```
 Marketing Site (form)
     ↓ POST
-beheer.pagayo.com/api/register
+app.pagayo.com/api/register
     ↓
 Organization created
     ↓
@@ -117,7 +117,7 @@ Redirect to onboarding
 ```
 Marketing Site (form)
     ↓ POST
-beheer.pagayo.com/api/contact
+app.pagayo.com/api/contact
     ↓
 Email sent to Sjoerd
 ```
