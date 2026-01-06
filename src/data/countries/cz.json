@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Funkce",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Ceny",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Kontakt",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Šifrování tenanta",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Neomezené systémy",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Důvěřuje nám 5 000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "API připojení",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "API požadavky",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "O nás",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Kariéra",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,44 +77,44 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "GoPay",
-            "path": "/gopay"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -123,11 +123,11 @@
         "links": [
           {
             "label": "Money S3",
-            "path": "/money-s3"
+            "path": "#"
           },
           {
             "label": "Pohoda",
-            "path": "/pohoda"
+            "path": "#"
           }
         ]
       },
@@ -136,15 +136,15 @@
         "links": [
           {
             "label": "Česká pošta",
-            "path": "/ceska-posta"
+            "path": "#"
           },
           {
             "label": "DHL",
-            "path": "/dhl"
+            "path": "#"
           },
           {
             "label": "PPL",
-            "path": "/ppl"
+            "path": "#"
           }
         ]
       },
@@ -153,19 +153,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "links": [
           {
             "label": "Ochrana osobních údajů",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Podmínky",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Smlouva o zpracování dat",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -191,27 +191,27 @@
         "links": [
           {
             "label": "Afrika",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Asie",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Evropa",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Střední východ",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Amerika",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Oceánie",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -220,11 +220,11 @@
         "links": [
           {
             "label": "Všechny funkce",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Zákaznická podpora",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

@@ -24,10 +24,15 @@ export function getFullPath(country, path) {
 }
 
 /**
- * Replace {year} placeholder in string with current year
- * @param {string} text - Text with {year} placeholder
- * @returns {string} - Text with year replaced
+ * Replace placeholders in string
+ * @param {string} text - Text with {year} and {country} placeholders
+ * @param {Object} country - Country config object (optional)
+ * @returns {string} - Text with placeholders replaced
  */
-export function replacePlaceholders(text) {
-  return text.replace('{year}', new Date().getFullYear().toString());
+export function replacePlaceholders(text, country = null) {
+  let result = text.replace('{year}', new Date().getFullYear().toString());
+  if (country) {
+    result = result.replace('{country}', country.name);
+  }
+  return result;
 }

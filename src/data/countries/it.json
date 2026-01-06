@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Funzionalità",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Prezzi",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Contatto",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Crittografia tenant",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Sistemi illimitati",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Affidato da 5.000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "Connessioni API",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "Richieste API",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "Chi siamo",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Carriere",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,44 +77,44 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "Satispay",
-            "path": "/satispay"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -123,11 +123,11 @@
         "links": [
           {
             "label": "Fatture in Cloud",
-            "path": "/fatture-in-cloud"
+            "path": "#"
           },
           {
             "label": "TeamSystem",
-            "path": "/teamsystem"
+            "path": "#"
           }
         ]
       },
@@ -136,15 +136,15 @@
         "links": [
           {
             "label": "Poste Italiane",
-            "path": "/poste-italiane"
+            "path": "#"
           },
           {
             "label": "BRT",
-            "path": "/brt"
+            "path": "#"
           },
           {
             "label": "GLS",
-            "path": "/gls"
+            "path": "#"
           }
         ]
       },
@@ -153,19 +153,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "links": [
           {
             "label": "Privacy",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Termini",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Accordo di trattamento dati",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -191,27 +191,27 @@
         "links": [
           {
             "label": "Africa",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Asia",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Europa",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Medio Oriente",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Americhe",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Oceania",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -220,11 +220,11 @@
         "links": [
           {
             "label": "Tutte le funzionalità",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Supporto clienti",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

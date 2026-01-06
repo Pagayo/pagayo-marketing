@@ -19,11 +19,11 @@
         "links": [
           {
             "label": "ویژگی‌ها",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "قیمت",
-            "path": "/pricing"
+            "path": "#"
           }
         ]
       },
@@ -32,11 +32,11 @@
         "links": [
           {
             "label": "درباره ما",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "وبلاگ",
-            "path": "/blog"
+            "path": "#"
           }
         ]
       },
@@ -45,7 +45,7 @@
         "links": [
           {
             "label": "تماس",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -54,40 +54,40 @@
         "links": [
           {
             "label": "سیاست حفظ حریم خصوصی",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "شرایط",
-            "path": "/terms"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       }

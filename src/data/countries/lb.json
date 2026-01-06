@@ -20,15 +20,15 @@
         "links": [
           {
             "label": "الميزات",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "التسعير",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "الأمان",
-            "path": "/security"
+            "path": "#"
           }
         ]
       },
@@ -37,15 +37,15 @@
         "links": [
           {
             "label": "عن الشركة",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "المدونة",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "الوظائف",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -54,15 +54,15 @@
         "links": [
           {
             "label": "مركز المساعدة",
-            "path": "/help"
+            "path": "#"
           },
           {
             "label": "اتصل",
-            "path": "/contact"
+            "path": "#"
           },
           {
             "label": "الحالة",
-            "path": "/status"
+            "path": "#"
           }
         ]
       },
@@ -71,44 +71,44 @@
         "links": [
           {
             "label": "الخصوصية",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "الشروط",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "ملفات تعريف الارتباط",
-            "path": "/cookies"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       }

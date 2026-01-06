@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Funksjoner",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Priser",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Kontakt",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Leietaker-kryptering",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Ubegrensede systemer",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Stolt av 5 000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "API-tilkoblinger",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "API-forespørsler",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "Om oss",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blogg",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Karriere",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,44 +77,44 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "Vipps",
-            "path": "/vipps"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -123,11 +123,11 @@
         "links": [
           {
             "label": "Tripletex",
-            "path": "/tripletex"
+            "path": "#"
           },
           {
             "label": "Visma",
-            "path": "/visma"
+            "path": "#"
           }
         ]
       },
@@ -136,15 +136,15 @@
         "links": [
           {
             "label": "Posten",
-            "path": "/posten"
+            "path": "#"
           },
           {
             "label": "Bring",
-            "path": "/bring"
+            "path": "#"
           },
           {
             "label": "PostNord",
-            "path": "/postnord"
+            "path": "#"
           }
         ]
       },
@@ -153,19 +153,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "links": [
           {
             "label": "Personvern",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Vilkår",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Databehandleravtale",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -191,27 +191,27 @@
         "links": [
           {
             "label": "Afrika",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Asia",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Europa",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Midtøsten",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Amerika",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Oseania",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -220,11 +220,11 @@
         "links": [
           {
             "label": "Alle funksjoner",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Kundestøtte",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

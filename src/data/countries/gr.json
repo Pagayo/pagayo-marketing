@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Χαρακτηριστικά",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Τιμές",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Επικοινωνία",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Κρυπτογράφηση ενοικιαστή",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Απεριόριστα συστήματα",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Εμπιστεύονται 5.000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "Συνδέσεις API",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "Αιτήματα API",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "Σχετικά με εμάς",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Καριέρες",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,44 +77,44 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "Viva Wallet",
-            "path": "/viva-wallet"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -123,11 +123,11 @@
         "links": [
           {
             "label": "SingularLogic",
-            "path": "/singularlogic"
+            "path": "#"
           },
           {
             "label": "Epsilon Net",
-            "path": "/epsilon-net"
+            "path": "#"
           }
         ]
       },
@@ -136,15 +136,15 @@
         "links": [
           {
             "label": "ΕΛΤΑ",
-            "path": "/elta"
+            "path": "#"
           },
           {
             "label": "ACS",
-            "path": "/acs"
+            "path": "#"
           },
           {
             "label": "Speedex",
-            "path": "/speedex"
+            "path": "#"
           }
         ]
       },
@@ -153,19 +153,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "links": [
           {
             "label": "Απόρρητο",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Όροι",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Συμφωνία επεξεργασίας δεδομένων",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -191,27 +191,27 @@
         "links": [
           {
             "label": "Αφρική",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Ασία",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Ευρώπη",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Μέση Ανατολή",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Αμερική",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Ωκεανία",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -220,11 +220,11 @@
         "links": [
           {
             "label": "Όλα τα χαρακτηριστικά",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Υποστήριξη πελατών",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

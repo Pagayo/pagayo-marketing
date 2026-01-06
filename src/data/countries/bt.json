@@ -19,11 +19,11 @@
         "links": [
           {
             "label": "ཁྱད་ཆོས།",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "གོང་ཚད།",
-            "path": "/pricing"
+            "path": "#"
           }
         ]
       },
@@ -32,11 +32,11 @@
         "links": [
           {
             "label": "ང་ཚོའི་སྐོར།",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "བློག།",
-            "path": "/blog"
+            "path": "#"
           }
         ]
       },
@@ -45,7 +45,7 @@
         "links": [
           {
             "label": "འབྲེལ་གཏུག",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -54,40 +54,40 @@
         "links": [
           {
             "label": "གསང་དོན།",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "ཆ་རྐྱེན།",
-            "path": "/terms"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       }

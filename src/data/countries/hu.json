@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Funkciók",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Árak",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Kapcsolat",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Bérlő titkosítás",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Korlátlan rendszerek",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "5000+ ügyfél bízik bennünk",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "API kapcsolatok",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "API kérések",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "Rólunk",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Karrier",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,44 +77,44 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "Barion",
-            "path": "/barion"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -123,11 +123,11 @@
         "links": [
           {
             "label": "Számlázz.hu",
-            "path": "/szamlazz-hu"
+            "path": "#"
           },
           {
             "label": "Billingo",
-            "path": "/billingo"
+            "path": "#"
           }
         ]
       },
@@ -136,15 +136,15 @@
         "links": [
           {
             "label": "Magyar Posta",
-            "path": "/magyar-posta"
+            "path": "#"
           },
           {
             "label": "GLS",
-            "path": "/gls"
+            "path": "#"
           },
           {
             "label": "DPD",
-            "path": "/dpd"
+            "path": "#"
           }
         ]
       },
@@ -153,19 +153,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "links": [
           {
             "label": "Adatvédelem",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Feltételek",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Adatkezelési megállapodás",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -191,27 +191,27 @@
         "links": [
           {
             "label": "Afrika",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Ázsia",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Európa",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Közel-Kelet",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Amerika",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Óceánia",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -220,11 +220,11 @@
         "links": [
           {
             "label": "Összes funkció",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Ügyfélszolgálat",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

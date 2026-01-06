@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "الميزات",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "التسعير",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "اتصل",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Tenant encryption",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Unlimited stores",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Trusted by 5,000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "API connections",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "API requests",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "عنا",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "المدونة",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "وظائف",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,40 +77,40 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -119,11 +119,11 @@
         "links": [
           {
             "label": "Xero",
-            "path": "/xero"
+            "path": "#"
           },
           {
             "label": "QuickBooks",
-            "path": "/quickbooks"
+            "path": "#"
           }
         ]
       },
@@ -132,15 +132,15 @@
         "links": [
           {
             "label": "National Post",
-            "path": "/national-post"
+            "path": "#"
           },
           {
             "label": "DHL",
-            "path": "/dhl"
+            "path": "#"
           },
           {
             "label": "FedEx",
-            "path": "/fedex"
+            "path": "#"
           }
         ]
       },
@@ -149,19 +149,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -170,15 +170,15 @@
         "links": [
           {
             "label": "الخصوصية",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "الشروط",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "اتفاقية معالجة البيانات",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -187,27 +187,27 @@
         "links": [
           {
             "label": "Africa",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Asia",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Europe",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Middle East",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Oceania",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -216,11 +216,11 @@
         "links": [
           {
             "label": "جميع الميزات",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "دعم العملاء",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

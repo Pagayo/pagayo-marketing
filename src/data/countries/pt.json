@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Funcionalidades",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Preços",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Contacto",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Encriptação de inquilino",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Sistemas ilimitados",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Confiado por 5.000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "Conexões API",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "Pedidos API",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "Sobre nós",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Carreiras",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,44 +77,44 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "MB WAY",
-            "path": "/mb-way"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -123,11 +123,11 @@
         "links": [
           {
             "label": "Sage",
-            "path": "/sage"
+            "path": "#"
           },
           {
             "label": "PHC",
-            "path": "/phc"
+            "path": "#"
           }
         ]
       },
@@ -136,15 +136,15 @@
         "links": [
           {
             "label": "CTT",
-            "path": "/ctt"
+            "path": "#"
           },
           {
             "label": "DPD",
-            "path": "/dpd"
+            "path": "#"
           },
           {
             "label": "MRW",
-            "path": "/mrw"
+            "path": "#"
           }
         ]
       },
@@ -153,19 +153,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "links": [
           {
             "label": "Privacidade",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Termos",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Acordo de processamento de dados",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -191,27 +191,27 @@
         "links": [
           {
             "label": "África",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Ásia",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Europa",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Médio Oriente",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Américas",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Oceânia",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -220,11 +220,11 @@
         "links": [
           {
             "label": "Todas as funcionalidades",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Suporte ao cliente",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

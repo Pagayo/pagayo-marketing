@@ -22,7 +22,7 @@ const displaySections = sections; // Show all sections
   <div class="footer-content">
     <div class="footer-brand">
       <h3>Pagayo<span>.</span></h3>
-      <p>{replacePlaceholders(country.footer.tagline)}</p>
+      <p>{replacePlaceholders(country.footer.tagline, country)}</p>
     </div>
     
     {displaySections.map(section => (
@@ -38,7 +38,7 @@ const displaySections = sections; // Show all sections
   </div>
   
   <div class="footer-bottom">
-    {replacePlaceholders(country.footer.copyright)}
+    {replacePlaceholders(country.footer.copyright, country)}
   </div>
 </footer>
 

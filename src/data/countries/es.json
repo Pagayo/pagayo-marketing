@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Características",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Precios",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Contacto",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Encriptación de inquilinos",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Sistemas ilimitados",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Confiado por 5.000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "Conexiones API",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "Solicitudes API",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "Sobre nosotros",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Carreras",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,44 +77,44 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "Redsys",
-            "path": "/redsys"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -123,11 +123,11 @@
         "links": [
           {
             "label": "Holded",
-            "path": "/holded"
+            "path": "#"
           },
           {
             "label": "Sage",
-            "path": "/sage"
+            "path": "#"
           }
         ]
       },
@@ -136,15 +136,15 @@
         "links": [
           {
             "label": "Correos",
-            "path": "/correos"
+            "path": "#"
           },
           {
             "label": "SEUR",
-            "path": "/seur"
+            "path": "#"
           },
           {
             "label": "MRW",
-            "path": "/mrw"
+            "path": "#"
           }
         ]
       },
@@ -153,19 +153,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "links": [
           {
             "label": "Privacidad",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Términos",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Acuerdo de procesamiento de datos",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -191,27 +191,27 @@
         "links": [
           {
             "label": "África",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Asia",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Europa",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Medio Oriente",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "América",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Oceanía",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -220,11 +220,11 @@
         "links": [
           {
             "label": "Todas las características",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Soporte al cliente",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

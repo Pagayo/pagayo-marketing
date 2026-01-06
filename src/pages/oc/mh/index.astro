@@ -16,12 +16,12 @@ const structuredData = [
       name: 'Pagayo',
       url: 'https://pagayo.com',
       logo: 'https://pagayo.com/og-image.svg',
-      description: 'Professional e-commerce platform for {country}. Localized payments, shipping, and support.',
+      description: `Professional e-commerce platform for ${country.name}. Localized payments, shipping, and support.`,
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'Customer Service',
         email: 'support@pagayo.com',
-        availableLanguage: ['undefined']
+        availableLanguage: ['en']
       }
     }
   },
@@ -32,17 +32,17 @@ const structuredData = [
       '@type': 'WebSite',
       name: 'Pagayo',
       url: 'https://pagayo.com',
-      description: 'Professional e-commerce platform for {country}. Localized payments, shipping, and support.',
-      inLanguage: 'undefined'
+      description: `Professional e-commerce platform for ${country.name}. Localized payments, shipping, and support.`,
+      inLanguage: 'en'
     }
   }
 ];
 ---
 
 <BaseLayout 
-  title="Pagayo {country} - E-commerce Platform" 
-  description="Professional e-commerce platform for {country}. Localized payments, shipping, and support." 
-  lang="undefined"
+  title={`Pagayo ${country.name} - E-commerce Platform`}
+  description={`Professional e-commerce platform for ${country.name}. Localized payments, shipping, and support.`}
+  lang="en"
   structuredData={structuredData}
 >
   <HeaderDynamic country={country} />
@@ -434,8 +434,8 @@ const structuredData = [
     <section class="hero-main">
       <div class="hero__content">
         <p class="eyebrow">Platform</p>
-        <h1>Pagayo {country} - E-commerce Platform</h1>
-        <p class="lead">Professional e-commerce platform for {country}. Localized payments, shipping, and support.</p>
+        <h1>Pagayo {country.name} - E-commerce Platform</h1>
+        <p class="lead">Professional e-commerce platform for {country.name}. Localized payments, shipping, and support.</p>
         <div class="hero__actions">
           <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start free</a>
           <a class="btn btn-ghost" href="/oc/mh/pricing">Pricing</a>

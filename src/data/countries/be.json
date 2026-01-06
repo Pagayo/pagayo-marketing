@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Features",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Prijzen",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Contact",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Tenant encryptie",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Onbeperkt systemen",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Vertrouwd door 5.000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "API verbindingen",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "API aanvragen",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "Over ons",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Carrières",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,48 +77,48 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "Mollie",
-            "path": "/mollie"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "Bancontact",
-            "path": "/bancontact"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -127,11 +127,11 @@
         "links": [
           {
             "label": "Exact",
-            "path": "/exact"
+            "path": "#"
           },
           {
             "label": "Yuki",
-            "path": "/yuki"
+            "path": "#"
           }
         ]
       },
@@ -140,15 +140,15 @@
         "links": [
           {
             "label": "bpost",
-            "path": "/bpost"
+            "path": "#"
           },
           {
             "label": "DHL",
-            "path": "/dhl"
+            "path": "#"
           },
           {
             "label": "DPD",
-            "path": "/dpd"
+            "path": "#"
           }
         ]
       },
@@ -157,19 +157,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -178,15 +178,15 @@
         "links": [
           {
             "label": "Privacy",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Voorwaarden",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Verwerkersovereenkomst",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -195,11 +195,11 @@
         "links": [
           {
             "label": "Alle features",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Klant Support",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

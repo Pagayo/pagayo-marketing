@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Ominaisuudet",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Hinnoittelu",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Yhteystiedot",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Vuokralaisen salaus",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Rajattomat järjestelmät",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Luottaa 5 000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "API-yhteydet",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "API-pyynnöt",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "Tietoa meistä",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blogi",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Ura",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,44 +77,44 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "MobilePay",
-            "path": "/mobilepay"
+            "path": "#"
           }
         ]
       },
       {
-        "title": "Internationaal",
+        "title": "International",
         "links": [
           {
-            "label": "Afrika",
-            "path": "/africa"
+            "label": "Africa",
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
+            "label": "Asia",
+            "path": "#"
           },
           {
-            "label": "Europa",
-            "path": "/europe"
+            "label": "Europe",
+            "path": "#"
+          },
+          {
+            "label": "Middle East",
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "label": "Oceania",
+            "path": "#"
           }
         ]
       },
@@ -123,11 +123,11 @@
         "links": [
           {
             "label": "Procountor",
-            "path": "/procountor"
+            "path": "#"
           },
           {
             "label": "Netvisor",
-            "path": "/netvisor"
+            "path": "#"
           }
         ]
       },
@@ -136,15 +136,15 @@
         "links": [
           {
             "label": "Posti",
-            "path": "/posti"
+            "path": "#"
           },
           {
             "label": "Matkahuolto",
-            "path": "/matkahuolto"
+            "path": "#"
           },
           {
             "label": "DHL",
-            "path": "/dhl"
+            "path": "#"
           }
         ]
       },
@@ -153,19 +153,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -174,15 +174,15 @@
         "links": [
           {
             "label": "Tietosuoja",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Ehdot",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Tietojenkäsittelysopimus",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -191,27 +191,27 @@
         "links": [
           {
             "label": "Afrikka",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Aasia",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Eurooppa",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Lähi-itä",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Amerikka",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Oseania",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -220,11 +220,11 @@
         "links": [
           {
             "label": "Kaikki ominaisuudet",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Asiakastuki",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

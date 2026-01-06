@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Features",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Pricing",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Contact",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Tenant encryption",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Unlimited stores",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Trusted by 5,000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "API connections",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "API requests",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "About us",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Careers",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,40 +77,11 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
-          }
-        ]
-      },
-      {
-        "title": "Internationaal",
-        "links": [
-          {
-            "label": "Afrika",
-            "path": "/africa"
-          },
-          {
-            "label": "Azië",
-            "path": "/asia"
-          },
-          {
-            "label": "Europa",
-            "path": "/europe"
-          },
-          {
-            "label": "Americas",
-            "path": "/americas"
-          },
-          {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "path": "#"
           }
         ]
       },
@@ -119,11 +90,11 @@
         "links": [
           {
             "label": "Xero",
-            "path": "/xero"
+            "path": "#"
           },
           {
             "label": "QuickBooks",
-            "path": "/quickbooks"
+            "path": "#"
           }
         ]
       },
@@ -132,15 +103,15 @@
         "links": [
           {
             "label": "ZimPost",
-            "path": "/zimpost"
+            "path": "#"
           },
           {
             "label": "DHL",
-            "path": "/dhl"
+            "path": "#"
           },
           {
             "label": "FedEx",
-            "path": "/fedex"
+            "path": "#"
           }
         ]
       },
@@ -149,19 +120,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -170,15 +141,15 @@
         "links": [
           {
             "label": "Privacy",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "Terms",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Data Processing Agreement",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -187,27 +158,27 @@
         "links": [
           {
             "label": "Africa",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Asia",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Europe",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Middle East",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Oceania",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -216,11 +187,11 @@
         "links": [
           {
             "label": "All features",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Customer Support",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }

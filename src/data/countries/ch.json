@@ -18,15 +18,15 @@
         "links": [
           {
             "label": "Features",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Preise",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Kontakt",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +35,23 @@
         "links": [
           {
             "label": "Mandanten-Verschlüsselung",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Unbegrenzte Systeme",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Vertraut von 5.000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "API-Verbindungen",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "API-Anfragen",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +60,15 @@
         "links": [
           {
             "label": "Über uns",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Karriere",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,44 +77,15 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
+            "path": "#"
           },
           {
             "label": "TWINT",
-            "path": "/twint"
-          }
-        ]
-      },
-      {
-        "title": "Internationaal",
-        "links": [
-          {
-            "label": "Afrika",
-            "path": "/africa"
-          },
-          {
-            "label": "Azië",
-            "path": "/asia"
-          },
-          {
-            "label": "Europa",
-            "path": "/europe"
-          },
-          {
-            "label": "Americas",
-            "path": "/americas"
-          },
-          {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
+            "path": "#"
           }
         ]
       },
@@ -123,11 +94,11 @@
         "links": [
           {
             "label": "Bexio",
-            "path": "/bexio"
+            "path": "#"
           },
           {
             "label": "Run my Accounts",
-            "path": "/run-my-accounts"
+            "path": "#"
           }
         ]
       },
@@ -136,15 +107,15 @@
         "links": [
           {
             "label": "Die Post",
-            "path": "/die-post"
+            "path": "#"
           },
           {
             "label": "DHL",
-            "path": "/dhl"
+            "path": "#"
           },
           {
             "label": "DPD",
-            "path": "/dpd"
+            "path": "#"
           }
         ]
       },
@@ -153,19 +124,19 @@
         "links": [
           {
             "label": "Booking.com",
-            "path": "/booking-com"
+            "path": "#"
           },
           {
             "label": "Facebook",
-            "path": "/facebook"
+            "path": "#"
           },
           {
             "label": "Instagram",
-            "path": "/instagram"
+            "path": "#"
           },
           {
             "label": "TikTok",
-            "path": "/tiktok"
+            "path": "#"
           }
         ]
       },
@@ -174,15 +145,15 @@
         "links": [
           {
             "label": "Datenschutz",
-            "path": "/privacy"
+            "path": "#"
           },
           {
             "label": "AGB",
-            "path": "/terms"
+            "path": "#"
           },
           {
             "label": "Auftragsverarbeitungsvertrag",
-            "path": "/data-processing-agreement"
+            "path": "#"
           }
         ]
       },
@@ -191,27 +162,27 @@
         "links": [
           {
             "label": "Afrika",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Asien",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Europa",
-            "path": "/europe"
+            "path": "#"
           },
           {
             "label": "Naher Osten",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Amerika",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Ozeanien",
-            "path": "/oceania"
+            "path": "#"
           }
         ]
       },
@@ -220,11 +191,11 @@
         "links": [
           {
             "label": "Alle Features",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Kundensupport",
-            "path": "/support"
+            "path": "#"
           }
         ]
       }
