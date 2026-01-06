@@ -6,10 +6,22 @@
   "currency": "GBP",
   "language": "English",
   "nav": {
-    "features": "Features",
-    "pricing": "Pricing",
-    "contact": "Contact",
-    "cta": "Start free"
+    "features": {
+      "label": "Features",
+      "path": "#"
+    },
+    "pricing": {
+      "label": "Pricing",
+      "path": "#"
+    },
+    "contact": {
+      "label": "Contact",
+      "path": "#"
+    },
+    "cta": {
+      "label": "Start free",
+      "path": "#"
+    }
   },
   "footer": {
     "sections": [
@@ -18,15 +30,15 @@
         "links": [
           {
             "label": "Features",
-            "path": "/features"
+            "path": "#"
           },
           {
             "label": "Pricing",
-            "path": "/pricing"
+            "path": "#"
           },
           {
             "label": "Contact",
-            "path": "/contact"
+            "path": "#"
           }
         ]
       },
@@ -35,23 +47,23 @@
         "links": [
           {
             "label": "Tenant encryption",
-            "path": "/tenant-encryption"
+            "path": "#"
           },
           {
             "label": "Unlimited systems",
-            "path": "/unlimited-stores"
+            "path": "#"
           },
           {
             "label": "Trusted by 5,000+",
-            "path": "/trusted-by"
+            "path": "#"
           },
           {
             "label": "API connections",
-            "path": "/api-connections"
+            "path": "#"
           },
           {
             "label": "API requests",
-            "path": "/api-request"
+            "path": "#"
           }
         ]
       },
@@ -60,15 +72,15 @@
         "links": [
           {
             "label": "About us",
-            "path": "/about"
+            "path": "#"
           },
           {
             "label": "Blog",
-            "path": "/blog"
+            "path": "#"
           },
           {
             "label": "Careers",
-            "path": "/careers"
+            "path": "#"
           }
         ]
       },
@@ -77,108 +89,19 @@
         "links": [
           {
             "label": "Stripe",
-            "path": "/stripe"
+            "path": "#"
+          },
+          {
+            "label": "Mollie",
+            "path": "#"
           },
           {
             "label": "PayPal",
-            "path": "/paypal"
-          }
-        ]
-      },
-      {
-        "title": "Internationaal",
-        "links": [
-          {
-            "label": "Afrika",
-            "path": "/africa"
+            "path": "#"
           },
           {
-            "label": "Azië",
-            "path": "/asia"
-          },
-          {
-            "label": "Europa",
-            "path": "/europe"
-          },
-          {
-            "label": "Americas",
-            "path": "/americas"
-          },
-          {
-            "label": "Oceanië",
-            "path": "/oceania"
-          },
-          {
-            "label": "Midden-Oosten",
-            "path": "/middle-east"
-          }
-        ]
-      },
-      {
-        "title": "Accounting",
-        "links": [
-          {
-            "label": "Xero",
-            "path": "/xero"
-          },
-          {
-            "label": "QuickBooks",
-            "path": "/quickbooks"
-          }
-        ]
-      },
-      {
-        "title": "Shipping",
-        "links": [
-          {
-            "label": "Royal Mail",
-            "path": "/royal-mail"
-          },
-          {
-            "label": "DHL",
-            "path": "/dhl"
-          },
-          {
-            "label": "DPD",
-            "path": "/dpd"
-          }
-        ]
-      },
-      {
-        "title": "API connections",
-        "links": [
-          {
-            "label": "Booking.com",
-            "path": "/booking-com"
-          },
-          {
-            "label": "Facebook",
-            "path": "/facebook"
-          },
-          {
-            "label": "Instagram",
-            "path": "/instagram"
-          },
-          {
-            "label": "TikTok",
-            "path": "/tiktok"
-          }
-        ]
-      },
-      {
-        "title": "Legal",
-        "links": [
-          {
-            "label": "Privacy Policy",
-            "path": "/privacy"
-          },
-          {
-            "label": "Terms & Conditions",
-            "path": "/terms"
-          },
-          {
-            "label": "Data Processing Agreement",
-            "path": "/data-processing-agreement"
+            "label": "Buckaroo",
+            "path": "#"
           }
         ]
       },
@@ -187,40 +110,27 @@
         "links": [
           {
             "label": "Africa",
-            "path": "/africa"
+            "path": "#"
           },
           {
             "label": "Asia",
-            "path": "/asia"
+            "path": "#"
           },
           {
             "label": "Europe",
-            "path": "/europe"
-          },
-          {
-            "label": "Middle East",
-            "path": "/middle-east"
+            "path": "#"
           },
           {
             "label": "Americas",
-            "path": "/americas"
+            "path": "#"
           },
           {
             "label": "Oceania",
-            "path": "/oceania"
-          }
-        ]
-      },
-      {
-        "title": "Features",
-        "links": [
-          {
-            "label": "All features",
-            "path": "/features"
+            "path": "#"
           },
           {
-            "label": "Customer Support",
-            "path": "/support"
+            "label": "Middle East",
+            "path": "#"
           }
         ]
       }

@@ -2,36 +2,76 @@
 
 ## 🤖 AI MODEL VEREISTE & AGENT HIËRARCHIE
 
-**KRITIEK: Agent Rolverdeling**
-- **Claude Sonnet 4.5** = HOOFDAGENT (altijd gesprekspartner van Sjoerd)
-- **Codex 5.1** = SUBAGENT ONLY (alleen voor website development taken)
+**KRITIEK: SONNET PROGRAMMEERT NOOIT ZELF!**
 
-**Harde Regels:**
-1. ✅ Sonnet voert ALLE communicatie met Sjoerd
-2. ✅ Sonnet behoudt controle over het gehele proces
-3. ✅ Codex wordt ALLEEN ingezet via runSubagent tool voor:
+**Agent Rolverdeling:**
+- **Claude Sonnet 4.5** = HOOFDAGENT (ALLEEN communicatie + planning + orchestratie)
+- **Codex 5.1** = UITVOERDER (ALLE programmeerwerk + onderzoek)
+
+**WAT SONNET DOET:**
+1. ✅ Communicatie met Sjoerd (vragen stellen, rapporteren, bevestigen)
+2. ✅ Taak analyseren (wat moet er gebeuren?)
+3. ✅ Context verzamelen via read_file/grep_search (bestanden lezen, patronen zoeken)
+4. ✅ Planning maken (stappen bepalen, dependencies identificeren)
+5. ✅ Codex inschakelen via runSubagent met precieze instructies
+6. ✅ Resultaat van Codex valideren en aan Sjoerd rapporteren
+
+**WAT SONNET NOOIT DOET:**
+❌ Zelf code schrijven (geen replace_string_in_file, geen create_file)
+❌ Zelf componenten maken
+❌ Zelf styling aanpassen
+❌ Zelf pagina's bouwen
+❌ Direct implementeren zonder Codex
+
+**WAT CODEX DOET (via runSubagent):**
+1. ✅ ALLE programmeerwerk:
    - Nieuwe pagina's bouwen (Hero, Features, Pricing, etc.)
    - Componenten ontwikkelen (Cards, Buttons, Forms)
    - Styling & layout aanpassingen
    - Stripe.com niveau design implementaties
-4. ❌ Codex mag NOOIT direct met Sjoerd communiceren
-5. ❌ Codex mag NOOIT de hoofdagent zijn
+   - Bug fixes en code refactoring
+   - Component conversies (Header → HeaderDynamic)
+   
+2. ✅ ALLE onderzoek:
+   - Codebase exploratie (grep searches, file reads)
+   - Architectuur analyse (hoe werkt bestaande code?)
+   - Dependency checks (welke files gebruiken component X?)
+   - Pattern discovery (welke pagina's gebruiken oude Header?)
 
-**Waarom deze verdeling:**
-- Codex = excellent in website development & design
-- Sonnet = excellent in instructies volgen & communicatie
-- Beste resultaat = Sonnet als orchestrator, Codex als uitvoerder
+**WORKFLOW (VERPLICHT):**
+```
+1. Sjoerd geeft opdracht → Sonnet
+2. Sonnet analyseert: "Wat moet er gebeuren?"
+3. Sonnet verzamelt minimale context (lees config, check structuur)
+4. Sonnet maakt plan: "Codex moet X, Y, Z doen"
+5. Sonnet roept runSubagent(Codex) aan met gedetailleerde instructie
+6. Codex voert uit en rapporteert terug
+7. Sonnet rapporteert resultaat aan Sjoerd
+```
 
-**Workflow Voorbeeld:**
+**VOORBEELD - GOED:**
 ```
-Sjoerd → Sonnet → analyseert taak → runSubagent(Codex) → Sonnet → rapporteert aan Sjoerd
+Sjoerd: "GB index moet HeaderDynamic gebruiken"
+Sonnet: *leest GB index.astro* → "Gebruikt nog oude Header"
+Sonnet: *roept Codex* → "Converteer GB index.astro naar HeaderDynamic + FooterDynamic, zelfde patroon als NL"
+Codex: *voert conversie uit*
+Sonnet → Sjoerd: "✅ GB geconverteerd, gebruikt nu GB JSON config"
 ```
+
+**VOORBEELD - FOUT:**
+```
+Sjoerd: "GB index moet HeaderDynamic gebruiken"
+Sonnet: *gebruikt replace_string_in_file zelf* ❌ STOP! Roep Codex!
+```
+
+**HARDE REGEL:**
+**Als Sonnet zelf begint te programmeren = FOUT. STOP. Roep Codex.**
 
 **VERBODEN MODELLEN:**
 - ❌ Claude Haiku mag NOOIT gebruikt worden
 - ❌ GPT modellen niet als hoofdagent
 
-**Bij twijfel over het model: STOP en vraag Sjoerd**
+**Bij twijfel: STOP en vraag Sjoerd**
 
 ---
 

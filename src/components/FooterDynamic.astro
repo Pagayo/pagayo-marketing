@@ -13,9 +13,9 @@ interface Props {
 
 const { country } = Astro.props;
 
-// Get sections (max 4 for grid layout)
+// Get all sections
 const sections = country.footer.sections || [];
-const displaySections = sections.slice(0, 4);
+const displaySections = sections; // Show all sections
 ---
 
 <footer>
