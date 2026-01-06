@@ -1,0 +1,125 @@
+{
+  "code": "la",
+  "name": "Laos",
+  "region": "as",
+  "currency": "LAK",
+  "locale": "lo-LA",
+  "language": "lo",
+  "nav": {
+    "features": "ຄຸນສົມບັດ",
+    "pricing": "ລາຄາ",
+    "blog": "ບລັອກ",
+    "contact": "ຕິດຕໍ່",
+    "cta": "ເລີ່ມຟຣີ"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "ຄຸນສົມບັດ",
+        "links": [
+          {
+            "label": "ຄຸນສົມບັດ",
+            "path": "/features"
+          },
+          {
+            "label": "ລາຄາ",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "ກ່ຽວກັບພວກເຮົາ",
+        "links": [
+          {
+            "label": "ກ່ຽວກັບພວກເຮົາ",
+            "path": "/about"
+          },
+          {
+            "label": "ບລັອກ",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "ຕິດຕໍ່",
+        "links": [
+          {
+            "label": "ຕິດຕໍ່",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ",
+        "links": [
+          {
+            "label": "ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ",
+            "path": "/privacy"
+          },
+          {
+            "label": "ເງື່ອນໄຂ",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Laos",
+    "copyright": "ລິຂະສິດ {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Laos - E-commerce Platform",
+    "description": "Professional e-commerce platform for Laos. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Lao Post",
+      "DHL"
+    ],
+    "cities": [
+      "Vientiane",
+      "Luang Prabang",
+      "Pakse"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

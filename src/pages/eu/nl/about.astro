@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout title="Over Pagayo" description="Leer hoe Pagayo ondernemers helpt om direct te starten en op te schalen." lang="nl">
+	<HeaderDynamic country={country} />
+	<main class="page-container">
+		<section class="hero-main">
+			<div class="hero__content">
+				<p class="eyebrow">Over Pagayo</p>
+				<h1>Gebouwd voor ondernemers die meteen willen beginnen</h1>
+				<p class="lead">Binnen 30 seconden je eigen omgeving live, zonder gesprekken of installaties. Alles wat je nodig hebt om te verkopen zit er al in.</p>
+				<div class="hero__actions">
+					<a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+					<a class="btn btn-ghost" href="/eu/nl/contact">Heb je vragen? Neem contact op</a>
+				</div>
+			</div>
+
+			<div class="hero__panel">
+				<div class="stat-card">
+					<p class="stat-label">Live in</p>
+					<p class="stat-value">30 sec</p>
+					<p class="stat-footnote">Van klik naar eigen webshop</p>
+				</div>
+				<div class="stat-card">
+					<p class="stat-label">Setup</p>
+					<p class="stat-value">0 gesprekken</p>
+					<p class="stat-footnote">Geen demo's of wachttijd</p>
+				</div>
+				<div class="stat-card">
+					<p class="stat-label">Platform</p>
+					<p class="stat-value">Alles in 1</p>
+					<p class="stat-footnote">Webshop, kassa, verhuur & abonnementen</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="pillars">
+			<div class="pillar">
+				<h3>Direct live</h3>
+				<p>Account aanmaken, wachtwoord kiezen en je webshop staat klaar met je eigen link.</p>
+			</div>
+			<div class="pillar">
+				<h3>Eén platform</h3>
+				<p>Webshop, abonnementen, kassa en verhuur in dezelfde omgeving. Geen losse systemen.</p>
+			</div>
+			<div class="pillar">
+				<h3>Groei zonder gedoe</h3>
+				<p>Betaal minder procent naarmate je meer omzet draait en schaal door zonder limieten.</p>
+			</div>
+		</section>
+
+		<section class="story">
+			<h2>Waarom we Pagayo bouwden</h2>
+			<p>Ondernemers verloren tijd aan gesprekken, implementaties en losse tools. Daarom hebben we een platform gemaakt dat direct werkt: je klikt op Start gratis en je hebt binnen een halve minuut je eigen omgeving. Geen wachttijd, geen onboardingkosten.</p>
+		</section>
+
+		<section class="stats">
+			<div class="stat">
+				<span class="stat-number">30s</span>
+				<span class="stat-label">van signup naar live</span>
+			</div>
+			<div class="stat">
+				<span class="stat-number">5000+</span>
+				<span class="stat-label">omgevingen actief</span>
+			</div>
+			<div class="stat">
+				<span class="stat-number">99,98%</span>
+				<span class="stat-label">beschikbaarheid</span>
+			</div>
+		</section>
+
+		<section class="cta">
+			<h2>Klaar om te starten?</h2>
+			<p>Maak je account aan en krijg direct de link naar je eigen webshop. Geen demo of call nodig.</p>
+			<div class="cta-actions">
+			<a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+				<a class="btn btn-ghost" href="/eu/nl/contact">Hulp nodig? Neem contact op</a>
+			</div>
+		</section>
+	</main>
+	<style>
+		/* Page-specific styles - gemeenschappelijke styles in global.css */
+		.pillars, .story, .stats, .cta { margin-top: 4rem; }
+		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+		.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+		.pillar { border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; background: var(--bg-secondary); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+		.story { border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem; background: var(--bg-secondary); }
+		.story h2 { margin-bottom: 0.6rem; }
+		.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+		.stat { border: 1px solid var(--border); border-radius: 12px; padding: 1.3rem; background: rgba(0,255,136,0.05); text-align: center; }
+		.stat-number { display: block; font-size: 2rem; font-weight: 800; color: var(--accent); }
+		.stat-label { color: var(--text-secondary); }
+		@media (max-width: 768px) {
+			.pillars { grid-template-columns: 1fr; }
+			.stats { grid-template-columns: 1fr; }
+			.cta-actions { flex-direction: column; width: 100%; }
+			.cta-actions .btn { width: 100%; }
+		}
+	</style>
+        <FooterDynamic country={country} />

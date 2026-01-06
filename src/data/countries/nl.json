@@ -1,0 +1,221 @@
+{
+  "code": "nl",
+  "region": "eu",
+  "name": "Nederland",
+  "locale": "nl-NL",
+  "currency": "EUR",
+  "language": "Nederlands",
+  "nav": {
+    "features": "Features",
+    "pricing": "Prijzen",
+    "contact": "Contact",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Platform",
+        "links": [
+          {
+            "label": "Features",
+            "path": "/features"
+          },
+          {
+            "label": "Prijzen",
+            "path": "/pricing"
+          },
+          {
+            "label": "Contact",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Algemeen",
+        "links": [
+          {
+            "label": "Tenant encryptie",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Onbeperkt systemen",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Vertrouwd door 5.000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "API verbindingen",
+            "path": "/api-connections"
+          },
+          {
+            "label": "API aanvragen",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Bedrijf",
+        "links": [
+          {
+            "label": "Over ons",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Carrières",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Betalingen",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "Mollie",
+            "path": "/mollie"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "Buckaroo",
+            "path": "/buckaroo"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Boekhouding",
+        "links": [
+          {
+            "label": "Exact",
+            "path": "/exact"
+          },
+          {
+            "label": "SnelStart",
+            "path": "/snelstart"
+          },
+          {
+            "label": "Boekhouden.nl",
+            "path": "/boekhouden"
+          }
+        ]
+      },
+      {
+        "title": "Verzending",
+        "links": [
+          {
+            "label": "PostNL",
+            "path": "/postnl"
+          },
+          {
+            "label": "DHL",
+            "path": "/dhl"
+          },
+          {
+            "label": "SendCloud",
+            "path": "/sendcloud"
+          },
+          {
+            "label": "MyParcel",
+            "path": "/myparcel"
+          }
+        ]
+      },
+      {
+        "title": "API verbindingen",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Juridisch",
+        "links": [
+          {
+            "label": "Privacy",
+            "path": "/privacy"
+          },
+          {
+            "label": "Voorwaarden",
+            "path": "/terms"
+          },
+          {
+            "label": "Verwerkersovereenkomst",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "Features",
+        "links": [
+          {
+            "label": "Alle features",
+            "path": "/features"
+          },
+          {
+            "label": "Klant Support",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Multi-tenant e-commerce platform voor moderne ondernemers.",
+    "copyright": "© {year} Pagayo. Alle rechten voorbehouden."
+  },
+  "meta": {
+    "tagline": "Multi-tenant e-commerce platform voor moderne ondernemers."
+  }
+}

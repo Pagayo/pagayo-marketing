@@ -1,0 +1,126 @@
+{
+  "code": "ht",
+  "name": "Haiti",
+  "region": "am",
+  "currency": "HTG",
+  "locale": "fr-HT",
+  "language": "fr",
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Commencer gratuitement"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Fonctionnalités",
+        "links": [
+          {
+            "label": "Fonctionnalités",
+            "path": "/features"
+          },
+          {
+            "label": "Tarifs",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "À propos",
+        "links": [
+          {
+            "label": "À propos",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Contact",
+        "links": [
+          {
+            "label": "Contact",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Confidentialité",
+        "links": [
+          {
+            "label": "Confidentialité",
+            "path": "/privacy"
+          },
+          {
+            "label": "Conditions",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Haiti",
+    "copyright": "Tous droits réservés {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Haiti - E-commerce Platform",
+    "description": "Professional e-commerce platform for Haiti. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe",
+      "PayPal"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "La Poste d'Haïti",
+      "DHL"
+    ],
+    "cities": [
+      "Port-au-Prince",
+      "Cap-Haïtien",
+      "Gonaïves"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

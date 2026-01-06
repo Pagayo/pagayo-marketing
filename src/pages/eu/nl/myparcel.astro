@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="MyParcel integratie - Pagayo"
+    description="Koppel Pagayo met MyParcel voor automatische verzendlabels, tracking en retourafhandeling via PostNL, DHL en DPD."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">MyParcel</p>
+                <h1>Automatisch verzenden met MyParcel</h1>
+                <p class="lead">
+                    Pagayo integreert met MyParcel voor automatische labels, tracking en retouren via PostNL, DHL en DPD.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">PostNL, DHL, DPD</span>
+                    <span class="pill">Auto labels</span>
+                    <span class="pill">Realtime tracking</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Setup tijd</p>
+                    <p class="stat-value">30 min</p>
+                    <p class="stat-footnote">Volledig operationeel</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Label generatie</p>
+                    <p class="stat-value">< 10 sec</p>
+                    <p class="stat-footnote">Per order</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Tracking</p>
+                    <p class="stat-value">Realtime</p>
+                    <p class="stat-footnote">Via webhooks</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom MyParcel</p>
+                <h2 class="section-title">Nederlands, simpel, snel</h2>
+                <p class="section-subtitle">
+                    MyParcel is de Nederlandse standaard voor webshop verzending. Pagayo koppelt orders automatisch en synchroniseert tracking.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Automatische labels</h3>
+                    <p>Verzendlabels worden automatisch aangemaakt zodra een order betaald is.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Multi-carrier</h3>
+                    <p>PostNL, DHL, DPD – kies per zending of via verzendregels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Track & trace</h3>
+                    <p>Tracking codes direct naar klant, status updates realtime in Pagayo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Retouren</h3>
+                    <p>Retourlabels automatisch genereren en klant per email sturen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Carriers</p>
+                <h2 class="section-title">PostNL, DHL en DPD</h2>
+                <p class="section-subtitle">
+                    MyParcel ondersteunt de drie grootste vervoerders in Nederland en België.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">📮</div>
+                    <h3>PostNL</h3>
+                    <p>Brievenbuspakjes, pakketten, avond en weekend levering.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>DHL</h3>
+                    <p>DHL Parcel en Express voor nationaal en internationaal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>DPD</h3>
+                    <p>DPD Predict voor Nederlandse en Belgische zendingen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">In 30 minuten operationeel</h2>
+                <p class="section-subtitle">
+                    Koppel je MyParcel account, kies je carriers en wij zorgen voor automatische labelgeneratie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>API koppeling</h3>
+                    <p>MyParcel API key toevoegen, wij bewaren veilig in KMS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Carrier setup</h3>
+                    <p>Kies PostNL, DHL of DPD en definieer verzendopties.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Test & Go</h3>
+                    <p>Testorder, validatie, daarna volledig automatisch.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Verzendopties</p>
+                <h2 class="section-title">Alle PostNL services</h2>
+                <p class="section-subtitle">
+                    Brievenbuspakjes, afhaalpunten, avondlevering, handtekening – volledig geautomatiseerd.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">📮</div>
+                    <h3>Brievenbuspakje</h3>
+                    <p>Kleine zendingen automatisch als brievenbuspakje versturen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏪</div>
+                    <h3>Afhaalpunten</h3>
+                    <p>Klant kiest PostNL punt, adres automatisch in label.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Avondlevering</h3>
+                    <p>Premium optie voor avond of weekend levering.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Handtekening</h3>
+                    <p>Handtekening voor ontvangst bij waardevolle zendingen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Tracking & retouren</p>
+                <h2 class="section-title">Klanten altijd op de hoogte</h2>
+                <p class="section-subtitle">
+                    Automatische tracking emails en eenvoudige retourafhandeling via MyParcel portaal.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Tracking emails</h3>
+                    <p>Verzonden, onderweg, afgeleverd – automatisch naar klant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔙</div>
+                    <h3>Retourlabels</h3>
+                    <p>Genereer retourlabel en stuur naar klant, automatisch verwerken.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Realtime status</h3>
+                    <p>Webhook updates van MyParcel direct in Pagayo dashboard.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Verzendanalyse</h3>
+                    <p>Inzicht in leverperformance en retourpercentages per carrier.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Support & beveiliging</p>
+                <h2 class="section-title">Veilig en ondersteund</h2>
+                <p class="section-subtitle">
+                    API keys in KMS, webhook monitoring en Nederlandstalige support voor implementatie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>API beveiliging</h3>
+                    <p>MyParcel keys veilig in KMS, automatische rotatie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Audit trail</h3>
+                    <p>Elke verzending en retour wordt gelogd voor controle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlandse support</h3>
+                    <p>Ons team helpt bij setup en carrier configuratie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Monitoring</h3>
+                    <p>Webhook monitoring en alerts bij mislukte labelgeneraties.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met MyParcel op Pagayo</h2>
+                <p>Activeer MyParcel in je Pagayo omgeving en automatiseer je verzendproces vanaf dag één.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

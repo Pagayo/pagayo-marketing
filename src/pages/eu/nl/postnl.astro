@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="PostNL verzending - Pagayo"
+    description="Hoe Pagayo PostNL inzet voor betrouwbare verzending in Nederland en België met automatische track & trace."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">PostNL</p>
+                <h1>Verzenden met PostNL</h1>
+                <p class="lead">
+                    Pagayo integreert volledig met PostNL voor automatische verzendlabels, track & trace en retouren. Je klanten krijgen updates, jij hebt volledige controle.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">Automatische verzendlabels</span>
+                    <span class="pill">Real-time track & trace</span>
+                    <span class="pill">Retourportal</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Verzendtijd</p>
+                    <p class="stat-value">&lt; 5 sec</p>
+                    <p class="stat-footnote">Van order naar verzendlabel</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Tracking updates</p>
+                    <p class="stat-value">Realtime</p>
+                    <p class="stat-footnote">Automatisch in klantaccount</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Retourpercentage</p>
+                    <p class="stat-value">-15%</p>
+                    <p class="stat-footnote">Door slimme portal</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom PostNL bij Pagayo</p>
+                <h2 class="section-title">Verzenden zonder gedoe</h2>
+                <p class="section-subtitle">
+                    We automatiseren het hele verzendproces: van orderpicking tot track & trace e-mails en retourverwerking.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Automatische labels</h3>
+                    <p>Zodra een order betaald is, genereren we het verzendlabel. Print of stuur naar je fulfillment partner.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Track & trace</h3>
+                    <p>Klanten ontvangen automatisch tracking updates per e-mail en kunnen hun pakket live volgen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Retourportal</h3>
+                    <p>Klanten regelen retouren zelf via een portal. Retourlabel wordt automatisch gemaild.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Verzendrapportages</h3>
+                    <p>Inzicht in verzendkosten, levertijden en afwijkingen per product of bestemming.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">Koppeling binnen een dag</h2>
+                <p class="section-subtitle">
+                    Koppel je PostNL account, stel verzendregels in en je bent klaar. Wij regelen de API verbinding en webhooks.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>PostNL account koppelen</h3>
+                    <p>Voer je Customer Code en Customer Number in. Wij configureren de API verbinding.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Verzendregels instellen</h3>
+                    <p>Kies standaard pakketformaten, verzendopties en afzenderadressen per merk of locatie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Automatisering activeren</h3>
+                    <p>Schakel automatische labelgeneratie in. Orders worden direct omgezet naar zendingen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Verzendopties</p>
+                <h2 class="section-title">Alle PostNL services beschikbaar</h2>
+                <p class="section-subtitle">
+                    Brievenbuspakje, standaardpakket, avondlevering of zaterdag: je kiest wat past bij je product.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">📬</div>
+                    <h3>Brievenbuspakje</h3>
+                    <p>Voor kleine items tot 32mm dik. Past door de brievenbus, geen handtekening nodig.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Standaardpakket</h3>
+                    <p>Tot 10kg, aflevering bij afwezig buren of PostNL punt. Inclusief track & trace.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Avondlevering</h3>
+                    <p>Bezorging tussen 18:00-22:00 voor klanten die overdag niet thuis zijn.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Zaterdag bezorgen</h3>
+                    <p>Extra service voor spoedbestellingen. Klant betaalt meerprijs bij checkout.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Handtekening voor ontvangst</h3>
+                    <p>Voor waardevolle pakketten. PostNL vraagt handtekening bij aflevering.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Afhaalpunt bezorging</h3>
+                    <p>Klant kiest PostNL punt bij checkout. Pakket blijft langer beschikbaar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Automatisering</p>
+                <h2 class="section-title">Minder handwerk, meer schaalgroei</h2>
+                <p class="section-subtitle">
+                    Van bulkprints tot automatische retouren: we nemen repetitief werk uit handen.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🖨️</div>
+                    <h3>Bulklabels printen</h3>
+                    <p>Print alle labels van vandaag in één keer. Of stuur ze naar je warehouse systeem via API.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Tracking e-mails</h3>
+                    <p>Klanten krijgen automatisch e-mails bij verzending, onderweg updates en bezorging.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Retourautomatisering</h3>
+                    <p>Klant vraagt retour aan, label wordt gemaild. Zodra PostNL het scant, krijg je een signaal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Track & trace widget</h3>
+                    <p>Klanten zien live waar hun pakket is zonder naar PostNL site te gaan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Retouren</p>
+                <h2 class="section-title">Soepele retourverwerking</h2>
+                <p class="section-subtitle">
+                    Klanten regelen retouren zelf via een portal. Jij ziet direct welke producten terugkomen en kunt voorraad bijwerken.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Retourportal</h3>
+                    <p>Klant logt in, selecteert items en krijgt direct een retourlabel per e-mail.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Refund na ontvangst</h3>
+                    <p>Zodra PostNL de retour scant, kun je de refund verwerken met één klik.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Voorraad automatisch bij</h3>
+                    <p>Geretourneerde producten worden automatisch weer op voorraad gezet na inspectie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Retouranalyse</h3>
+                    <p>Zie per product waarom klanten retourneren en verbeter je assortiment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Internationaal verzenden</p>
+                <h2 class="section-title">Ook naar het buitenland</h2>
+                <p class="section-subtitle">
+                    PostNL levert in heel Europa. Wij regelen douanedocumenten en tarieven automatisch per land.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Europese verzending</h3>
+                    <p>Verzend naar alle EU-landen met automatische tariefberekening en track & trace.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Douanedocumenten</h3>
+                    <p>CN23 formulieren worden automatisch gegenereerd voor niet-EU landen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💶</div>
+                    <h3>Verzendkosten berekenen</h3>
+                    <p>Klanten zien verzendkosten per land bij checkout. Geen verrassingen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Levertijden communiceren</h3>
+                    <p>Toon realistische levertijden per land zodat klanten weten waar ze aan toe zijn.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Integraties</p>
+                <h2 class="section-title">Koppelt met je fulfillment proces</h2>
+                <p class="section-subtitle">
+                    PostNL data loopt door naar je warehouse, ERP of andere systemen via onze API.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🏭</div>
+                    <h3>Warehouse systemen</h3>
+                    <p>Stuur orders automatisch door naar je WMS. Labels komen terug voor printen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Fulfillment partners</h3>
+                    <p>Werk met externe fulfillment? Orders gaan automatisch naar hun systeem.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Klantenservice</h3>
+                    <p>Zie verzendstatus en tracking info direct naast het klantgesprek.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>API & webhooks</h3>
+                    <p>Alle verzend events beschikbaar: labels gemaakt, onderweg, bezorgd, retour ontvangen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Kosten & rapportage</p>
+                <h2 class="section-title">Inzicht in verzendkosten</h2>
+                <p class="section-subtitle">
+                    Zie precies wat je uitgeeft per zending, productgroep of bestemming. Optimaliseer je tarieven en verpakkingen.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Kosten per order</h3>
+                    <p>Zie direct wat elke verzending kost, inclusief opties zoals avondlevering.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Verzendrapportages</h3>
+                    <p>Analyseer verzendkosten per productgroep, regio of periode.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Verpakkingsoptimalisatie</h3>
+                    <p>Zie welke verpakkingen je het meest gebruikt en waar je kunt besparen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Tariefadvies</h3>
+                    <p>We waarschuwen als je gebruik kunt maken van goedkopere verzendopties.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met PostNL op Pagayo</h2>
+                <p>Activeer PostNL verzending in je Pagayo omgeving en automatiseer je hele verzendproces.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

@@ -1,0 +1,125 @@
+{
+  "code": "np",
+  "name": "Nepal",
+  "region": "as",
+  "currency": "NPR",
+  "locale": "ne-NP",
+  "language": "ne",
+  "nav": {
+    "features": "विशेषताहरू",
+    "pricing": "मूल्य",
+    "blog": "ब्लग",
+    "contact": "सम्पर्क",
+    "cta": "नि:शुल्क सुरु गर्नुहोस्"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "विशेषताहरू",
+        "links": [
+          {
+            "label": "विशेषताहरू",
+            "path": "/features"
+          },
+          {
+            "label": "मूल्य",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "हाम्रो बारेमा",
+        "links": [
+          {
+            "label": "हाम्रो बारेमा",
+            "path": "/about"
+          },
+          {
+            "label": "ब्लग",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "सम्पर्क",
+        "links": [
+          {
+            "label": "सम्पर्क",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "गोपनीयता नीति",
+        "links": [
+          {
+            "label": "गोपनीयता नीति",
+            "path": "/privacy"
+          },
+          {
+            "label": "सर्तहरू",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Nepal",
+    "copyright": "प्रतिलिपि अधिकार {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Nepal - E-commerce Platform",
+    "description": "Professional e-commerce platform for Nepal. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Nepal Postal Service",
+      "DHL"
+    ],
+    "cities": [
+      "Kathmandu",
+      "Pokhara",
+      "Lalitpur"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

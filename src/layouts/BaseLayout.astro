@@ -5,11 +5,16 @@ interface Props {
   title: string;
   description: string;
   lang?: 'nl' | 'de' | 'en';
+  alternates?: Array<{ lang: string; hreflang: string; href: string }>;
+  structuredData?: Array<{ type: 'Organization' | 'WebSite' | 'BlogPosting' | 'BreadcrumbList'; data: Record<string, any> }>;
 }
 
-const { title, description, lang = 'nl' } = Astro.props;
+const { title, description, lang = 'nl', alternates = [], structuredData = [] } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Import StructuredData component dynamically
+import StructuredData from '../components/StructuredData.astro';
 ---
 
 <!doctype html>
@@ -31,7 +36,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL('/og-image.jpg', Astro.site)} />
+    <meta property="og:image" content={new URL('/og-image.svg', Astro.site)} />
     <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : lang === 'de' ? 'de_DE' : 'en_US'} />
 
     <!-- Twitter -->
@@ -39,7 +44,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL('/og-image.jpg', Astro.site)} />
+    <meta property="twitter:image" content={new URL('/og-image.svg', Astro.site)} />
+
+    <!-- Alternate language versions (hreflang) -->
+    {alternates.map(alt => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
+    {alternates.length > 0 && (
+      <link rel="alternate" hreflang="x-default" href={alternates[0]?.href || canonicalURL} />
+    )}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,6 +61,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured Data (Schema.org) -->
+    {structuredData.map(schema => (
+      <StructuredData type={schema.type} data={schema.data} />
+    ))}
   </head>
   <body>
     <slot />

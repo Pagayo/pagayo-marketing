@@ -1,0 +1,238 @@
+{
+  "code": "hu",
+  "region": "eu",
+  "name": "Magyarország",
+  "locale": "hu-HU",
+  "currency": "HUF",
+  "language": "Magyar",
+  "nav": {
+    "features": "Funkciók",
+    "pricing": "Árak",
+    "contact": "Kapcsolat",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Platform",
+        "links": [
+          {
+            "label": "Funkciók",
+            "path": "/features"
+          },
+          {
+            "label": "Árak",
+            "path": "/pricing"
+          },
+          {
+            "label": "Kapcsolat",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Általános",
+        "links": [
+          {
+            "label": "Bérlő titkosítás",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Korlátlan rendszerek",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "5000+ ügyfél bízik bennünk",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "API kapcsolatok",
+            "path": "/api-connections"
+          },
+          {
+            "label": "API kérések",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Vállalat",
+        "links": [
+          {
+            "label": "Rólunk",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Karrier",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Fizetések",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "Barion",
+            "path": "/barion"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Számvitel",
+        "links": [
+          {
+            "label": "Számlázz.hu",
+            "path": "/szamlazz-hu"
+          },
+          {
+            "label": "Billingo",
+            "path": "/billingo"
+          }
+        ]
+      },
+      {
+        "title": "Szállítás",
+        "links": [
+          {
+            "label": "Magyar Posta",
+            "path": "/magyar-posta"
+          },
+          {
+            "label": "GLS",
+            "path": "/gls"
+          },
+          {
+            "label": "DPD",
+            "path": "/dpd"
+          }
+        ]
+      },
+      {
+        "title": "API kapcsolatok",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Jogi információk",
+        "links": [
+          {
+            "label": "Adatvédelem",
+            "path": "/privacy"
+          },
+          {
+            "label": "Feltételek",
+            "path": "/terms"
+          },
+          {
+            "label": "Adatkezelési megállapodás",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "Nemzetközi",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Ázsia",
+            "path": "/asia"
+          },
+          {
+            "label": "Európa",
+            "path": "/europe"
+          },
+          {
+            "label": "Közel-Kelet",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Amerika",
+            "path": "/americas"
+          },
+          {
+            "label": "Óceánia",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Funkciók",
+        "links": [
+          {
+            "label": "Összes funkció",
+            "path": "/features"
+          },
+          {
+            "label": "Ügyfélszolgálat",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Több-bérlős e-kereskedelmi platform modern vállalkozók számára.",
+    "copyright": "© {year} Pagayo. Minden jog fenntartva."
+  },
+  "meta": {
+    "tagline": "Több-bérlős e-kereskedelmi platform modern vállalkozók számára."
+  }
+}

@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="Booking.com API integratie - Pagayo"
+    description="Koppel Pagayo met Booking.com API voor realtime beschikbaarheid, prijzen en reserveringen synchronisatie."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">Booking.com API</p>
+                <h1>Booking.com verbinding</h1>
+                <p class="lead">
+                    Pagayo integreert met Booking.com API voor realtime beschikbaarheid, prijssynchronisatie en automatische reserveringen import.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">Realtime sync</span>
+                    <span class="pill">Automatische prijzen</span>
+                    <span class="pill">Beschikbaarheid</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Sync frequentie</p>
+                    <p class="stat-value">< 5 min</p>
+                    <p class="stat-footnote">Beschikbaarheid</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Reserveringen</p>
+                    <p class="stat-value">Automatisch</p>
+                    <p class="stat-footnote">Import & bevestiging</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Overboeking</p>
+                    <p class="stat-value">0%</p>
+                    <p class="stat-footnote">Dankzij realtime sync</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom Booking.com API</p>
+                <h2 class="section-title">Channel management zonder gedoe</h2>
+                <p class="section-subtitle">
+                    Synchroniseer beschikbaarheid, prijzen en reserveringen automatisch tussen Pagayo en Booking.com.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Beschikbaarheid</h3>
+                    <p>Realtime beschikbaarheid synchronisatie voorkomt dubbele boekingen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Prijssynchronisatie</h3>
+                    <p>Dynamische prijzen automatisch doorvoeren naar Booking.com.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>Reserveringen import</h3>
+                    <p>Nieuwe boekingen automatisch importeren in Pagayo systeem.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Bidirectioneel</h3>
+                    <p>Wijzigingen in Pagayo of Booking.com direct gesynchroniseerd.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Features</p>
+                <h2 class="section-title">Complete channel management</h2>
+                <p class="section-subtitle">
+                    Van beschikbaarheid tot reviews – alles geautomatiseerd via de Booking.com Connectivity API.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">🏨</div>
+                    <h3>Accommodatie data</h3>
+                    <p>Kamertypes, faciliteiten en foto's synchroon houden.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Rate plans</h3>
+                    <p>Verschillende tarieven en speciale aanbiedingen automatisch.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚫</div>
+                    <h3>Restrictions</h3>
+                    <p>Minimum verblijf, stop-verkoop en andere restricties synchroniseren.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">In één dag operationeel</h2>
+                <p class="section-subtitle">
+                    Koppel je Booking.com account, map je kamers en wij zorgen voor realtime synchronisatie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>API credentials</h3>
+                    <p>Booking.com API key en property ID toevoegen, veilig in KMS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Mapping</h3>
+                    <p>Kamer types en rate plans koppelen tussen systemen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Test & Go live</h3>
+                    <p>Test reservering, validatie, daarna automatische sync aan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Reserveringsbeheer</p>
+                <h2 class="section-title">Automatische reserveringen verwerking</h2>
+                <p class="section-subtitle">
+                    Nieuwe boekingen, wijzigingen en annuleringen automatisch verwerken in Pagayo.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Nieuwe boekingen</h3>
+                    <p>Reserveringen direct importeren met gast- en betalingsgegevens.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✏️</div>
+                    <h3>Wijzigingen</h3>
+                    <p>Datumwijzigingen en modificaties automatisch doorvoeren.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❌</div>
+                    <h3>Annuleringen</h3>
+                    <p>Annuleringen verwerken en beschikbaarheid direct vrijgeven.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Bevestigingen</h3>
+                    <p>Automatische bevestigingsmails naar gasten via Booking.com.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Pricing & revenue</p>
+                <h2 class="section-title">Dynamische prijsstrategie</h2>
+                <p class="section-subtitle">
+                    Implementeer dynamische prijzen, last-minute deals en seizoenstariefen via één centrale plek.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Dynamische prijzen</h3>
+                    <p>Prijzen automatisch aanpassen op basis van bezetting en seizoen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Last minute</h3>
+                    <p>Automatische kortingen bij lege kamers kort voor aankomst.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Speciale aanbiedingen</h3>
+                    <p>Early bird, lange verblijf en andere deals synchroniseren.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💶</div>
+                    <h3>Commissie management</h3>
+                    <p>Booking.com commissie automatisch verwerken in kostprijzen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Support & beveiliging</p>
+                <h2 class="section-title">Veilig en ondersteund</h2>
+                <p class="section-subtitle">
+                    API keys in KMS, webhook monitoring en support voor Booking.com certificering.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>API beveiliging</h3>
+                    <p>Booking.com credentials veilig in KMS, automatische rotatie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Audit trail</h3>
+                    <p>Elke sync en reservering wordt gelogd voor controle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlandse support</h3>
+                    <p>Ons team helpt bij setup en mapping van kamers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Monitoring</h3>
+                    <p>Realtime monitoring van API calls en sync status met alerts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met Booking.com API op Pagayo</h2>
+                <p>Activeer de Booking.com integratie en automatiseer je channel management vanaf dag één.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

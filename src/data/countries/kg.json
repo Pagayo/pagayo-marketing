@@ -1,0 +1,125 @@
+{
+  "code": "kg",
+  "name": "Kyrgyzstan",
+  "region": "as",
+  "currency": "KGS",
+  "locale": "ky-KG",
+  "language": "ky",
+  "nav": {
+    "features": "Мүмкүнчүлүктөр",
+    "pricing": "Баа",
+    "blog": "Блог",
+    "contact": "Байланыш",
+    "cta": "Акысыз баштоо"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Мүмкүнчүлүктөр",
+        "links": [
+          {
+            "label": "Мүмкүнчүлүктөр",
+            "path": "/features"
+          },
+          {
+            "label": "Баа",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Биз жөнүндө",
+        "links": [
+          {
+            "label": "Биз жөнүндө",
+            "path": "/about"
+          },
+          {
+            "label": "Блог",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Байланыш",
+        "links": [
+          {
+            "label": "Байланыш",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Купуялык саясаты",
+        "links": [
+          {
+            "label": "Купуялык саясаты",
+            "path": "/privacy"
+          },
+          {
+            "label": "Шарттар",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Kyrgyzstan",
+    "copyright": "Автордук укук {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Kyrgyzstan - E-commerce Platform",
+    "description": "Professional e-commerce platform for Kyrgyzstan. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Kyrgyz Post",
+      "DHL"
+    ],
+    "cities": [
+      "Bishkek",
+      "Osh",
+      "Jalal-Abad"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

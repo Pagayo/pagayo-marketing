@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+
+const englishCountries = [
+  { name: 'India', code: 'in', flag: '🇮🇳', language: 'Engels' },
+  { name: 'Singapore', code: 'sg', flag: '🇸🇬', language: 'Engels', airwallex: true },
+  { name: 'Filipijnen', code: 'ph', flag: '🇵🇭', language: 'Engels' },
+  { name: 'Pakistan', code: 'pk', flag: '🇵🇰', language: 'Engels' },
+  { name: 'Maleisië', code: 'my', flag: '🇲🇾', language: 'Engels' },
+  { name: 'Hong Kong', code: 'hk', flag: '🇭🇰', language: 'Engels', airwallex: true },
+  { name: 'Sri Lanka', code: 'lk', flag: '🇱🇰', language: 'Engels' },
+  { name: 'Bangladesh', code: 'bd', flag: '🇧🇩', language: 'Engels' },
+  { name: 'Brunei', code: 'bn', flag: '🇧🇳', language: 'Engels' },
+  { name: 'Maldiven', code: 'mv', flag: '🇲🇻', language: 'Engels' },
+];
+
+const otherLanguageCountries = [
+  { name: 'Japan', code: 'jp', flag: '🇯🇵', language: 'Japans' },
+  { name: 'Zuid-Korea', code: 'kr', flag: '🇰🇷', language: 'Koreaans' },
+  { name: 'Taiwan', code: 'tw', flag: '🇹🇼', language: 'Mandarijn' },
+  { name: 'Thailand', code: 'th', flag: '🇹🇭', language: 'Thai' },
+  { name: 'Vietnam', code: 'vn', flag: '🇻🇳', language: 'Vietnamees' },
+  { name: 'Indonesië', code: 'id', flag: '🇮🇩', language: 'Indonesisch' },
+  { name: 'Cambodja', code: 'kh', flag: '🇰🇭', language: 'Khmer' },
+  { name: 'Laos', code: 'la', flag: '🇱🇦', language: 'Laotiaans' },
+  { name: 'Mongolië', code: 'mn', flag: '🇲🇳', language: 'Mongools' },
+  { name: 'Nepal', code: 'np', flag: '🇳🇵', language: 'Nepalees' },
+  { name: 'Afghanistan', code: 'af', flag: '🇦🇫', language: 'Dari/Pashto' },
+  { name: 'Bhutan', code: 'bt', flag: '🇧🇹', language: 'Dzongkha' },
+  { name: 'Kazachstan', code: 'kz', flag: '🇰🇿', language: 'Kazachs' },
+  { name: 'Kirgizië', code: 'kg', flag: '🇰🇬', language: 'Kirgizisch' },
+  { name: 'Macao', code: 'mo', flag: '🇲🇴', language: 'Chinees' },
+  { name: 'Oezbekistan', code: 'uz', flag: '🇺🇿', language: 'Oezbeeks' },
+  { name: 'Tadzjikistan', code: 'tj', flag: '🇹🇯', language: 'Tadzjieks' },
+  { name: 'Oost-Timor', code: 'tl', flag: '🇹🇱', language: 'Tetum' },
+  { name: 'Turkmenistan', code: 'tm', flag: '🇹🇲', language: 'Turkmeens' },
+  { name: 'Armenië', code: 'am', flag: '🇦🇲', language: 'Armeens' },
+  { name: 'Azerbeidzjan', code: 'az', flag: '🇦🇿', language: 'Azerbeidzjaans' },
+];
+---
+
+<BaseLayout title="Pagayo Azië - E-commerce Platform" description="Ontdek Pagayo e-commerce diensten in Engelstalige Aziatische landen" lang="nl">
+  <HeaderDynamic country={country} />
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="section-title">Pagayo in Azië</h1>
+        <p class="section-subtitle">
+          Wij zijn actief in Aziatische landen waar we lokale betaalmethoden, 
+          verzendopties en geoptimaliseerde checkout flows aanbieden voor jouw webshop.
+        </p>
+      </div>
+
+      <!-- Engelstalige landen -->
+      <div class="language-section">
+        <h2 class="language-title">Engelstalige landen</h2>
+        <div class="countries-grid">
+          {englishCountries.map(country => (
+            <a href={`/as/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              {country.airwallex && <p class="country-payment">Airwallex</p>}
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Andere talen -->
+      <div class="language-section">
+        <h2 class="language-title">Andere talen</h2>
+        <div class="countries-grid">
+          {otherLanguageCountries.map(country => (
+            <a href={`/as/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              {country.airwallex && <p class="country-payment">Airwallex</p>}
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FooterDynamic country={country} />
+</BaseLayout>
+

@@ -1,0 +1,147 @@
+{
+  "code": "ni",
+  "name": "Nicaragua",
+  "region": "am",
+  "currency": "NIO",
+  "locale": "es-NI",
+  "language": "es",
+  "nav": {
+    "features": "Funcionalidades",
+    "pricing": "Precios",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "cta": "Empezar gratis"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Producto",
+        "links": [
+          {
+            "label": "Funcionalidades",
+            "path": "/features"
+          },
+          {
+            "label": "Precios",
+            "path": "/pricing"
+          },
+          {
+            "label": "Seguridad",
+            "path": "/security"
+          }
+        ]
+      },
+      {
+        "title": "Empresa",
+        "links": [
+          {
+            "label": "Acerca de",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Carreras",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Soporte",
+        "links": [
+          {
+            "label": "Centro de ayuda",
+            "path": "/help"
+          },
+          {
+            "label": "Contacto",
+            "path": "/contact"
+          },
+          {
+            "label": "Estado",
+            "path": "/status"
+          }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          {
+            "label": "Privacidad",
+            "path": "/privacy"
+          },
+          {
+            "label": "Términos",
+            "path": "/terms"
+          },
+          {
+            "label": "Cookies",
+            "path": "/cookies"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "Comercio electrónico simple para Nicaragua",
+    "copyright": "© {year} Pagayo. Todos los derechos reservados."
+  },
+  "meta": {
+    "title": "Pagayo Nicaragua - Plataforma de Comercio Electrónico",
+    "description": "Plataforma profesional de comercio electrónico para Nicaragua. Pagos, envíos y soporte localizados."
+  },
+  "payment": {
+    "providers": [
+      "Stripe",
+      "PayPal"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Correos de Nicaragua",
+      "DHL",
+      "FedEx"
+    ],
+    "cities": [
+      "Managua",
+      "León",
+      "Masaya"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "code": "af",
+  "name": "Afghanistan",
+  "region": "as",
+  "currency": "AFN",
+  "locale": "fa-AF",
+  "language": "fa",
+  "nav": {
+    "features": "ویژگی‌ها",
+    "pricing": "قیمت",
+    "blog": "وبلاگ",
+    "contact": "تماس",
+    "cta": "شروع رایگان"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "ویژگی‌ها",
+        "links": [
+          {
+            "label": "ویژگی‌ها",
+            "path": "/features"
+          },
+          {
+            "label": "قیمت",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "درباره ما",
+        "links": [
+          {
+            "label": "درباره ما",
+            "path": "/about"
+          },
+          {
+            "label": "وبلاگ",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "تماس",
+        "links": [
+          {
+            "label": "تماس",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "سیاست حفظ حریم خصوصی",
+        "links": [
+          {
+            "label": "سیاست حفظ حریم خصوصی",
+            "path": "/privacy"
+          },
+          {
+            "label": "شرایط",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Afghanistan",
+    "copyright": "حق نشر {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Afghanistan - E-commerce Platform",
+    "description": "Professional e-commerce platform for Afghanistan. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Afghan Post",
+      "DHL"
+    ],
+    "cities": [
+      "Kabul",
+      "Herat",
+      "Kandahar"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

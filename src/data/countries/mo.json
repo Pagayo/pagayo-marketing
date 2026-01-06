@@ -1,0 +1,125 @@
+{
+  "code": "mo",
+  "name": "Macao",
+  "region": "as",
+  "currency": "MOP",
+  "locale": "zh-MO",
+  "language": "zh",
+  "nav": {
+    "features": "功能",
+    "pricing": "價格",
+    "blog": "部落格",
+    "contact": "聯絡我們",
+    "cta": "免费开始"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "功能",
+        "links": [
+          {
+            "label": "功能",
+            "path": "/features"
+          },
+          {
+            "label": "價格",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "關於我們",
+        "links": [
+          {
+            "label": "關於我們",
+            "path": "/about"
+          },
+          {
+            "label": "部落格",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "聯絡我們",
+        "links": [
+          {
+            "label": "聯絡我們",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "隱私政策",
+        "links": [
+          {
+            "label": "隱私政策",
+            "path": "/privacy"
+          },
+          {
+            "label": "條款",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Macao",
+    "copyright": "版權所有 {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Macao - E-commerce Platform",
+    "description": "Professional e-commerce platform for Macao. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Macao Post",
+      "DHL"
+    ],
+    "cities": [
+      "Macao",
+      "Taipa",
+      "Coloane"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

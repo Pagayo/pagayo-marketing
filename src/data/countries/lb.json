@@ -1,0 +1,147 @@
+{
+  "code": "lb",
+  "name": "Lebanon",
+  "region": "me",
+  "currency": "LBP",
+  "locale": "ar-LB",
+  "language": "ar",
+  "direction": "rtl",
+  "nav": {
+    "features": "الميزات",
+    "pricing": "التسعير",
+    "blog": "المدونة",
+    "contact": "اتصل",
+    "cta": "ابدأ مجاناً"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "المنتج",
+        "links": [
+          {
+            "label": "الميزات",
+            "path": "/features"
+          },
+          {
+            "label": "التسعير",
+            "path": "/pricing"
+          },
+          {
+            "label": "الأمان",
+            "path": "/security"
+          }
+        ]
+      },
+      {
+        "title": "الشركة",
+        "links": [
+          {
+            "label": "عن الشركة",
+            "path": "/about"
+          },
+          {
+            "label": "المدونة",
+            "path": "/blog"
+          },
+          {
+            "label": "الوظائف",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "الدعم",
+        "links": [
+          {
+            "label": "مركز المساعدة",
+            "path": "/help"
+          },
+          {
+            "label": "اتصل",
+            "path": "/contact"
+          },
+          {
+            "label": "الحالة",
+            "path": "/status"
+          }
+        ]
+      },
+      {
+        "title": "قانوني",
+        "links": [
+          {
+            "label": "الخصوصية",
+            "path": "/privacy"
+          },
+          {
+            "label": "الشروط",
+            "path": "/terms"
+          },
+          {
+            "label": "ملفات تعريف الارتباط",
+            "path": "/cookies"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "التجارة الإلكترونية المبسطة لـLebanon",
+    "copyright": "© {year} Pagayo. جميع الحقوق محفوظة."
+  },
+  "meta": {
+    "title": "Pagayo Lebanon - منصة التجارة الإلكترونية",
+    "description": "منصة تجارة إلكترونية احترافية لـLebanon. مدفوعات وشحن ودعم محلي."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "LibanPost",
+      "DHL",
+      "Aramex"
+    ],
+    "cities": [
+      "Beirut",
+      "Tripoli",
+      "Sidon"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

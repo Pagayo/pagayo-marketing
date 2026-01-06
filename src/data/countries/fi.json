@@ -1,0 +1,238 @@
+{
+  "code": "fi",
+  "region": "eu",
+  "name": "Suomi",
+  "locale": "fi-FI",
+  "currency": "EUR",
+  "language": "Suomi",
+  "nav": {
+    "features": "Ominaisuudet",
+    "pricing": "Hinnoittelu",
+    "contact": "Yhteystiedot",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Alusta",
+        "links": [
+          {
+            "label": "Ominaisuudet",
+            "path": "/features"
+          },
+          {
+            "label": "Hinnoittelu",
+            "path": "/pricing"
+          },
+          {
+            "label": "Yhteystiedot",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Yleistä",
+        "links": [
+          {
+            "label": "Vuokralaisen salaus",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Rajattomat järjestelmät",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Luottaa 5 000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "API-yhteydet",
+            "path": "/api-connections"
+          },
+          {
+            "label": "API-pyynnöt",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Yritys",
+        "links": [
+          {
+            "label": "Tietoa meistä",
+            "path": "/about"
+          },
+          {
+            "label": "Blogi",
+            "path": "/blog"
+          },
+          {
+            "label": "Ura",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Maksut",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "MobilePay",
+            "path": "/mobilepay"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Kirjanpito",
+        "links": [
+          {
+            "label": "Procountor",
+            "path": "/procountor"
+          },
+          {
+            "label": "Netvisor",
+            "path": "/netvisor"
+          }
+        ]
+      },
+      {
+        "title": "Toimitus",
+        "links": [
+          {
+            "label": "Posti",
+            "path": "/posti"
+          },
+          {
+            "label": "Matkahuolto",
+            "path": "/matkahuolto"
+          },
+          {
+            "label": "DHL",
+            "path": "/dhl"
+          }
+        ]
+      },
+      {
+        "title": "API-yhteydet",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Oikeudelliset",
+        "links": [
+          {
+            "label": "Tietosuoja",
+            "path": "/privacy"
+          },
+          {
+            "label": "Ehdot",
+            "path": "/terms"
+          },
+          {
+            "label": "Tietojenkäsittelysopimus",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "Kansainvälinen",
+        "links": [
+          {
+            "label": "Afrikka",
+            "path": "/africa"
+          },
+          {
+            "label": "Aasia",
+            "path": "/asia"
+          },
+          {
+            "label": "Eurooppa",
+            "path": "/europe"
+          },
+          {
+            "label": "Lähi-itä",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Amerikka",
+            "path": "/americas"
+          },
+          {
+            "label": "Oseania",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Ominaisuudet",
+        "links": [
+          {
+            "label": "Kaikki ominaisuudet",
+            "path": "/features"
+          },
+          {
+            "label": "Asiakastuki",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Monivuokrainen verkkokauppa-alusta modernille yrittäjälle.",
+    "copyright": "© {year} Pagayo. Kaikki oikeudet pidätetään."
+  },
+  "meta": {
+    "tagline": "Monivuokrainen verkkokauppa-alusta modernille yrittäjälle."
+  }
+}

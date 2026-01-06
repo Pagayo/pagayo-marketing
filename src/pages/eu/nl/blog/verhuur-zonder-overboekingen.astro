@@ -1,0 +1,234 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+---
+
+<BaseLayout 
+	title="Verhuur zonder overboekingen - Pagago Blog" 
+	description="Plan, prijs en factureer verhuuritems met automatische blokkades en betalingen per periode. Leer hoe je verhuur van materiaal, voertuigen en events efficiënt automatiseert." 
+	lang="nl"
+>
+	<Header />
+	<main>
+		<div class="article-container">
+			<Breadcrumbs crumbs={[
+				{ label: 'Home', href: '/nl' },
+				{ label: 'Blog', href: '/nl/blog' },
+				{ label: 'Verhuur zonder overboekingen' }
+			]} />
+		</div>
+		
+		<div class="article">
+			<article class="content">
+			<div class="article-header">
+				<div class="badge">Verhuur</div>
+				<h1>Verhuur zonder overboekingen</h1>
+				<div class="meta">
+					<span>4 minuten leestijd</span>
+					<span>•</span>
+					<span>Materiaal &amp; events</span>
+				</div>
+			</div>
+
+			<section class="intro">
+				<p class="lead">Als je fietsen, boten, evenementenmateriaal of andere items verhuurt, is planning cruciaal. Niets is vervelender dan per ongeluk twee klanten dezelfde fiets beloven voor hetzelfde weekend. Het resulteert in gefrustreerde klanten, gemiste inkomsten en een hoop administratief gedoe om het op te lossen.</p>
+				
+				<p>Met Pagayo automatiseer je het hele verhuurproces: van beschikbaarheidscontrole tot betaling en retour. Je kunt items per uur, dag, week of maand verhuren, prijzen instellen per periode en automatische blokkades activeren zodat overboekingen onmogelijk zijn. In deze gids leer je hoe.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Waarom verhuur anders is dan normale verkoop</h2>
+				<p>Bij een webshop verkoop je een product en het is weg. Bij verhuur verkoop je toegang tot een product voor een bepaalde periode, waarna het terugkomt en opnieuw verhuurd kan worden. Dat betekent dat je moet bijhouden:</p>
+				
+				<ul>
+					<li><strong>Beschikbaarheid per periode:</strong> Wanneer is het item vrij? Wanneer is het verhuurd?</li>
+					<li><strong>Prijzen per duur:</strong> Een fiets kost anders per uur, dag of week.</li>
+					<li><strong>Retourmomenten:</strong> Wanneer komt het item terug? Is het op tijd?</li>
+					<li><strong>Staat van het item:</strong> Is het beschadigd? Moet het schoongemaakt worden?</li>
+				</ul>
+				
+				<p>Pagayo is gebouwd met verhuurlogica in de kern, zodat je deze complexiteit niet handmatig hoeft te beheren.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Automatische blokkades: zo voorkom je overboekingen</h2>
+				<p>Zodra een klant een item boekt en betaalt, wordt dat item automatisch geblokkeerd voor de gekozen periode. Andere klanten kunnen het niet meer boeken voor dezelfde dagen, maar wel ervoor of erna.</p>
+				
+				<p>Voorbeeld: je verhuurt een boot. Klant A boekt de boot van 10 tot 12 juni. Klant B bezoekt je website en selecteert dezelfde boot – het systeem laat zien dat deze boot alleen beschikbaar is vóór 10 juni of na 12 juni. Klant B kan niet per ongeluk boeken voor 11 juni, omdat dit automatisch wordt geblokkeerd.</p>
+				
+				<p>Dit werkt ook voor meerdere exemplaren. Als je 5 fietsen hebt en er zijn 3 verhuurd, dan zijn er nog 2 beschikbaar. Zodra alle 5 zijn verhuurd voor een bepaalde periode, wordt die periode automatisch geblokkeerd.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Flexibele prijsstellingen: per uur, dag, week of maand</h2>
+				<p>Verhuurprijzen zijn vaak afhankelijk van de duur. Een fiets huren voor 1 uur kost €5, voor een hele dag €20 en voor een week €100. Pagayo ondersteunt deze flexibele prijsstructuren.</p>
+				
+				<p>Je kunt per item verschillende tarieven instellen:</p>
+				
+				<ul>
+					<li><strong>Uurtarief:</strong> €5 per uur (voor kortdurende verhuur)</li>
+					<li><strong>Dagtarief:</strong> €20 per dag (meerwaarde voor langere duur)</li>
+					<li><strong>Weektarief:</strong> €100 per week (korting bij langere verhuur)</li>
+					<li><strong>Maandtarief:</strong> €300 per maand (voor lange-termijn verhuur)</li>
+				</ul>
+				
+				<p>Klanten zien automatisch de beste prijs op basis van hun gekozen duur. Als ze 7 dagen selecteren, krijgen ze automatisch het weektarief te zien (dat goedkoper is dan 7x het dagtarief).</p>
+			</section>
+
+			<section class="panel">
+				<h2>Borgsommen en schade-afhandeling</h2>
+				<p>Bij verhuur wil je vaak een borgsom vragen om schade of verlies te dekken. Met Pagayo kun je dit automatiseren. Zodra een klant boekt, wordt een borgsom (bijvoorbeeld €50 of €100) gereserveerd op zijn betaalmethode.</p>
+				
+				<p>Bij retour check je het item. Is het onbeschadigd? Dan wordt de borgsom automatisch vrijgegeven. Is er schade? Dan kun je (een deel van) de borgsom inhouden en dit communiceren naar de klant met foto's en toelichting.</p>
+				
+				<p>Dit proces is volledig transparant en voorkomt discussies. De klant weet van tevoren dat er een borgsom wordt gevraagd en ziet direct wanneer deze wordt teruggestort.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Realtime beschikbaarheidskalender</h2>
+				<p>Op je website zien klanten een kalender waarin ze direct kunnen zien wanneer items beschikbaar zijn. Geblokkeerde periodes zijn grijs of rood, beschikbare periodes groen. Dit geeft duidelijkheid en voorkomt vragen.</p>
+				
+				<p>Je kunt ook handmatig blokkades toevoegen. Bijvoorbeeld: je wilt een fiets voor onderhoud uit de roulatie halen, of je hebt een event waarbij bepaalde items intern gebruikt worden. Deze blokkades zijn direct zichtbaar in de kalender, zodat klanten deze periodes niet kunnen boeken.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Herinneringen en notificaties</h2>
+				<p>Pagayo stuurt automatisch herinneringen naar klanten en naar jou. Bijvoorbeeld:</p>
+				
+				<ul>
+					<li><strong>24 uur voor ophaling:</strong> "Je reservering begint morgen – vergeet niet het item op te halen."</li>
+					<li><strong>24 uur voor retour:</strong> "Breng het item morgen terug om extra kosten te voorkomen."</li>
+					<li><strong>Te late retour:</strong> "Het item is nog niet teruggebracht – neem contact op."</li>
+				</ul>
+				
+				<p>Dit vermindert het aantal no-shows, vergeten retours en administratieve opvolging. Alles gebeurt automatisch via e-mail of SMS.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Verlengingen en vroege retours</h2>
+				<p>Soms wil een klant langer huren dan gepland. Met Pagayo kan hij direct een verlenging aanvragen via zijn account. Hij ziet of het item beschikbaar is voor een langere periode, betaalt het verschil en de reservering wordt automatisch verlengd.</p>
+				
+				<p>Ook bij vroege retours kun je flexibiliteit bieden. Als een klant een item eerder terugbrengt dan gepland, kun je instellen of hij een terugbetaling krijgt (pro-rata) of dat de volledige huurprijs behouden blijft. Dit is helemaal naar jouw beleid.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Voor wie is dit geschikt?</h2>
+				<p>Verhuurlogica is essentieel voor tal van branches:</p>
+				
+				<ul>
+					<li><strong>Fietsverhuur:</strong> Stadsfietsen, elektrische fietsen, mountainbikes per uur of dag.</li>
+					<li><strong>Bootenverhuur:</strong> Sloepen, kano's, zeilboten per dag of week.</li>
+					<li><strong>Evenementenmateriaal:</strong> Tenten, stoelen, tafels, geluidsapparatuur per event of dag.</li>
+					<li><strong>Bouwmateriaal:</strong> Steigers, gereedschap, machines per week of maand.</li>
+					<li><strong>Auto- en transportverhuur:</strong> Bestelwagens, trailers, campers per dag of week.</li>
+					<li><strong>Sportverhuur:</strong> Skimateriaal, surfboards, duikuitrusting per dag.</li>
+					<li><strong>Techniek verhuur:</strong> Laptops, beamers, camera's voor events of producties.</li>
+				</ul>
+			</section>
+
+			<section class="panel">
+				<h2>Praktijkvoorbeeld: een fietsverhuur aan de kust</h2>
+				<p>Stel: je runt een fietsverhuur bij een populaire kustplaats. Je hebt 20 fietsen die je verhuurt per uur of per dag. In het hoogseizoen zijn ze constant uitverhuurd, en handmatige planning is chaotisch.</p>
+				
+				<p>Je zet Pagayo op: elke fiets krijgt een profiel met foto's, specificaties (elektrisch of normaal, maat frame) en prijzen (€5 per uur, €20 per dag). Klanten kunnen online boeken via je website.</p>
+				
+				<p>Een gezin boekt 4 fietsen voor een hele dag (zaterdag 15 juli). Ze betalen online (€80 totaal) en krijgen een bevestigingsmail met instructies. Op 15 juli komen ze langs, tonen hun boeking op hun telefoon en krijgen de fietsen.</p>
+				
+				<p>Op datzelfde moment boekt iemand anders 2 fietsen voor dezelfde dag. Het systeem laat zien dat er nog 14 fietsen beschikbaar zijn en de boeking gaat door. Maar als iemand probeert te boeken terwijl alle 20 fietsen al verhuurd zijn, ziet hij: "Helaas, voor deze datum zijn alle fietsen verhuurd. Kies een andere datum."</p>
+				
+				<p>Aan het eind van de dag brengt het gezin de fietsen terug. Je checkt ze, alles is in orde, en de fietsen worden automatisch weer beschikbaar voor de volgende dag. Geen handmatig bijhouden, geen overboekingen, geen stress.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Integratie met bestaande systemen</h2>
+				<p>Als je al een boekingssysteem of planningtool gebruikt, kun je Pagayo hiermee koppelen via API's. Boekingen die via Pagayo binnenkomen worden automatisch doorgegeven aan je planning, en vice versa.</p>
+				
+				<p>Ook kun je Pagayo koppelen aan je boekhoudprogramma, zodat facturen en omzet automatisch worden geëxporteerd. Dat scheelt handmatig invoeren en voorkomt fouten.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Veelgestelde vragen</h2>
+				
+				<h3>Kan ik verschillende prijzen per seizoen instellen?</h3>
+				<p>Ja. Je kunt prijzen aanpassen per datum of periode. Zo kun je hogere prijzen hanteren in het hoogseizoen en lagere prijzen in rustige maanden.</p>
+				
+				<h3>Wat als een klant een item beschadigd terugbrengt?</h3>
+				<p>Je kunt de borgsom (gedeeltelijk) inhouden. Dit registreer je in het systeem, met foto's en toelichting. De klant ontvangt hiervan automatisch een melding.</p>
+				
+				<h3>Kan ik ook levering en ophalen aanbieden?</h3>
+				<p>Absoluut. Je kunt bezorgopties toevoegen met een extra toeslag. Bijvoorbeeld: "Levering aan huis voor €10 extra".</p>
+				
+				<h3>Werkt dit ook voor meerdere locaties?</h3>
+				<p>Ja. Als je meerdere vestigingen hebt, kun je voorraad per locatie bijhouden en klanten laten kiezen waar ze willen ophalen/terugbrengen.</p>
+				
+				<h3>Hoe zit het met verzekeringen?</h3>
+				<p>Je kunt optionele verzekeringen toevoegen tijdens het boekingsproces. Bijvoorbeeld: "Schadeverzekering voor €5 per dag". Dit geeft klanten gemoedsrust en jou extra inkomsten.</p>
+			</section>
+
+			<section class="cta-panel">
+				<h2>Start vandaag met geautomatiseerde verhuur</h2>
+				<p>Geen overboekingen meer, geen handmatige planning, geen administratief gedoe. Probeer Pagayo gratis.</p>
+				<div class="cta-actions">
+					<a class="btn primary" href="https://app.pagayo.com/register/">Start gratis</a>
+					<a class="btn ghost" href="/eu/nl/contact">Vragen? Neem contact op</a>
+				</div>
+			</section>
+		</article>
+
+		<aside class="sidebar">
+			<div class="related-box">
+				<h3>Gerelateerde gidsen</h3>
+				<a href="/eu/nl/blog/hotelboekingen-en-betalingen">Hotelboekingen en betalingen</a>
+				<a href="/eu/nl/blog/betalen-zonder-frictie">Betalen zonder frictie</a>
+			</div>
+			
+			<div class="cta-box">
+				<h3>Direct aan de slag?</h3>
+				<p>Automatiseer je verhuur en voorkom overboekingen. Start nu met Pagayo.</p>
+				<a class="btn primary" href="https://app.pagayo.com">Start nu</a>
+			</div>
+		</aside>
+		</div>
+	</main>
+
+	<style>
+		.article-container { max-width: 1200px; margin: 0 auto; padding: 120px 1.75rem 0; }
+		.article { max-width: 1200px; margin: 0 auto; padding: 0 1.75rem 90px; display: grid; grid-template-columns: 1fr 280px; gap: 3rem; }
+		.content { display: flex; flex-direction: column; gap: 1.75rem; }
+		.article-header { display: flex; flex-direction: column; gap: 0.75rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+		.badge { display: inline-flex; align-items: center; width: fit-content; padding: 0.3rem 0.7rem; border-radius: 999px; background: rgba(0,255,136,0.12); color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+		.article-header h1 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; letter-spacing: -0.02em; }
+		.meta { display: flex; gap: 0.5rem; color: var(--text-secondary); font-size: 0.95rem; }
+		.intro { display: flex; flex-direction: column; gap: 1rem; }
+		.lead { font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); }
+		.panel { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+		.panel h2 { font-size: 1.6rem; line-height: 1.3; }
+		.panel h3 { font-size: 1.25rem; margin-top: 0.75rem; }
+		.panel p { line-height: 1.7; color: var(--text-secondary); }
+		.panel ul { padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+		.panel li { line-height: 1.7; color: var(--text-secondary); }
+		.panel strong { color: var(--text); font-weight: 600; }
+		.panel em { color: var(--accent); font-style: normal; }
+		.cta-panel { background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,0,0,0.9)); border: 1px solid var(--accent); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; gap: 1rem; text-align: center; box-shadow: 0 12px 32px rgba(0,255,136,0.15); }
+		.cta-panel h2 { font-size: 1.75rem; }
+		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+		.btn { text-decoration: none; padding: 0.85rem 1.4rem; border-radius: 10px; font-weight: 700; border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; transition: all 0.2s ease; }
+		.btn.primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; border-color: var(--accent); }
+		.btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,255,136,0.3); }
+		.btn.ghost { color: var(--text); }
+		.btn.ghost:hover { border-color: var(--accent); }
+		.sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+		.related-box, .cta-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; box-shadow: 0 6px 18px rgba(0,0,0,0.2); }
+		.related-box h3, .cta-box h3 { font-size: 1.1rem; }
+		.related-box a { color: var(--text-secondary); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease; }
+		.related-box a:last-child { border-bottom: none; }
+		.related-box a:hover { color: var(--accent); }
+		.cta-box p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+		@media (max-width: 1024px) { .article { grid-template-columns: 1fr; } .sidebar { display: none; } }
+		@media (max-width: 768px) { .article { padding-top: 100px; } }
+	</style>
+
+	<Footer />
+</BaseLayout>

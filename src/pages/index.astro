@@ -1,4 +1,5 @@
 ---
-// Redirect root to /nl (default language)
-return Astro.redirect('/nl', 302);
+// Redirect root to /eu/nl (default region and language)
+// TODO: Implement Cloudflare Worker for geo-based redirect
+return Astro.redirect('/eu/nl', 302);
 ---

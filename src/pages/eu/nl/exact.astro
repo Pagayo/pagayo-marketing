@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="Exact integratie - Pagayo"
+    description="Hoe Pagayo koppelt met Exact voor realtime boekhouding, btw-aangifte en reconciliatie van betalingen."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">Exact</p>
+                <h1>Realtime koppeling met Exact</h1>
+                <p class="lead">
+                    Pagayo synchroniseert orders, betalingen en voorraad direct met Exact. Minder handwerk, minder fouten en altijd actuele cijfers.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">Automatische journaalposten</span>
+                    <span class="pill">BTW-ready</span>
+                    <span class="pill">Reconciliatie op orderniveau</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Realtime sync</p>
+                    <p class="stat-value">< 5 min</p>
+                    <p class="stat-footnote">Orders en betalingen</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Foutenreductie</p>
+                    <p class="stat-value">-90%</p>
+                    <p class="stat-footnote">Automatisch boeken</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Btw aangifte</p>
+                    <p class="stat-value">Klaar</p>
+                    <p class="stat-footnote">Per periode export</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom Exact bij Pagayo</p>
+                <h2 class="section-title">Boekhouding zonder handwerk</h2>
+                <p class="section-subtitle">
+                    We koppelen betalingen, orders, verzendkosten en refunds direct aan je grootboek. Minder exporteren, meer inzicht.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Journaalposten</h3>
+                    <p>Automatisch boeken per order, inclusief btw, verzendkosten en kortingen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Reconciliatie</h3>
+                    <p>Betalingen uit Stripe/Mollie koppelen we aan orders. Geen losse spreadsheets meer.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧾</div>
+                    <h3>Facturatie</h3>
+                    <p>Facturen en creditnota's automatisch doorgezet. Klantdata blijft in sync.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Rapportages</h3>
+                    <p>Omzet, kosten en marges per kanaal direct zichtbaar in Exact dashboards.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">In één dag live</h2>
+                <p class="section-subtitle">
+                    Koppel je Exact omgeving, kies je grootboekrekeningen en btw-codes. Wij doen de rest.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>Exact token</h3>
+                    <p>Log in met Exact, wij slaan je token veilig op in KMS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Mapping</h3>
+                    <p>Kies grootboek voor omzet, btw, verzendkosten en betaalproviders.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Test & go live</h3>
+                    <p>We posten testorders, controleren en zetten dan alles live.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Btw & compliance</p>
+                <h2 class="section-title">Altijd btw-klare cijfers</h2>
+                <p class="section-subtitle">
+                    Btw wordt per land en tarief verwerkt. Exporteer per periode en dien in zonder extra werk.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">💶</div>
+                    <h3>Btw per tarief</h3>
+                    <p>Hoog, laag en vrijgesteld automatisch gesplitst in Exact.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>OSS/ICL</h3>
+                    <p>Ondersteunt EU OSS en intracommunautaire leveringen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <h3>Periodieke export</h3>
+                    <p>Exporteer btw-overzicht per maand/kwartaal direct naar Exact.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Voorraad & inkoop</p>
+                <h2 class="section-title">Altijd kloppende voorraad</h2>
+                <p class="section-subtitle">
+                    Voorraadbewegingen en inkoopfacturen kunnen direct in Exact worden verwerkt.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Voorraadmutaties</h3>
+                    <p>Verkoop en retouren updaten voorraad direct in Exact.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧾</div>
+                    <h3>Inkoopfacturen</h3>
+                    <p>Koppel leveranciers en boek inkoopfacturen per productgroep.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Margerapportage</h3>
+                    <p>Marge per product en kanaal inzichtelijk dankzij correcte kostprijzen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Automatische koppeling</h3>
+                    <p>Geen handmatige CSV's: alles loopt via API en webhooks.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Support & beveiliging</p>
+                <h2 class="section-title">Veilig en ondersteund</h2>
+                <p class="section-subtitle">
+                    Sleutels in KMS, audit logging per boeking en Nederlandstalige support.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Sleutelbeheer</h3>
+                    <p>Exact tokens veilig in KMS, automatische rotatie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Audit trail</h3>
+                    <p>Elke boeking en sync stap wordt gelogd voor controle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlandse support</h3>
+                    <p>Ons team helpt bij mapping en foutmeldingen in het Nederlands.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Monitoring</h3>
+                    <p>We monitoren webhooks en API-calls, met alerts bij fouten.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met Exact op Pagayo</h2>
+                <p>Activeer Exact in je Pagayo omgeving en automatiseer je boekhouding vanaf dag één.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

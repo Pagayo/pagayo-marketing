@@ -1,0 +1,234 @@
+{
+  "code": "mr",
+  "region": "af",
+  "name": "موريتانيا",
+  "locale": "ar-MR",
+  "currency": "MRU",
+  "language": "العربية",
+  "nav": {
+    "features": "الميزات",
+    "pricing": "التسعير",
+    "contact": "اتصل",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "المنصة",
+        "links": [
+          {
+            "label": "الميزات",
+            "path": "/features"
+          },
+          {
+            "label": "التسعير",
+            "path": "/pricing"
+          },
+          {
+            "label": "اتصل",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "عام",
+        "links": [
+          {
+            "label": "Tenant encryption",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Unlimited stores",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Trusted by 5,000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "API connections",
+            "path": "/api-connections"
+          },
+          {
+            "label": "API requests",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "الشركة",
+        "links": [
+          {
+            "label": "عنا",
+            "path": "/about"
+          },
+          {
+            "label": "المدونة",
+            "path": "/blog"
+          },
+          {
+            "label": "وظائف",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "المدفوعات",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "المحاسبة",
+        "links": [
+          {
+            "label": "Xero",
+            "path": "/xero"
+          },
+          {
+            "label": "QuickBooks",
+            "path": "/quickbooks"
+          }
+        ]
+      },
+      {
+        "title": "الشحن",
+        "links": [
+          {
+            "label": "National Post",
+            "path": "/national-post"
+          },
+          {
+            "label": "DHL",
+            "path": "/dhl"
+          },
+          {
+            "label": "FedEx",
+            "path": "/fedex"
+          }
+        ]
+      },
+      {
+        "title": "اتصالات API",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "قانوني",
+        "links": [
+          {
+            "label": "الخصوصية",
+            "path": "/privacy"
+          },
+          {
+            "label": "الشروط",
+            "path": "/terms"
+          },
+          {
+            "label": "اتفاقية معالجة البيانات",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "دولي",
+        "links": [
+          {
+            "label": "Africa",
+            "path": "/africa"
+          },
+          {
+            "label": "Asia",
+            "path": "/asia"
+          },
+          {
+            "label": "Europe",
+            "path": "/europe"
+          },
+          {
+            "label": "Middle East",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceania",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "الميزات",
+        "links": [
+          {
+            "label": "جميع الميزات",
+            "path": "/features"
+          },
+          {
+            "label": "دعم العملاء",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Multi-tenant e-commerce platform for modern entrepreneurs.",
+    "copyright": "© {year} Pagayo. All rights reserved."
+  },
+  "meta": {
+    "tagline": "Multi-tenant e-commerce platform for modern entrepreneurs."
+  }
+}

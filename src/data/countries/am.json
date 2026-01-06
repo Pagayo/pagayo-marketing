@@ -1,0 +1,125 @@
+{
+  "code": "am",
+  "name": "Armenia",
+  "region": "as",
+  "currency": "AMD",
+  "locale": "hy-AM",
+  "language": "hy",
+  "nav": {
+    "features": "Հատկություններ",
+    "pricing": "Գնորոշում",
+    "blog": "Բլոգ",
+    "contact": "Կապ",
+    "cta": "Սկսել անվճար"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Հատկություններ",
+        "links": [
+          {
+            "label": "Հատկություններ",
+            "path": "/features"
+          },
+          {
+            "label": "Գնորոշում",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Մեր մասին",
+        "links": [
+          {
+            "label": "Մեր մասին",
+            "path": "/about"
+          },
+          {
+            "label": "Բլոգ",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Կապ",
+        "links": [
+          {
+            "label": "Կապ",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Գաղտնիության քաղաքականություն",
+        "links": [
+          {
+            "label": "Գաղտնիության քաղաքականություն",
+            "path": "/privacy"
+          },
+          {
+            "label": "Պայմաններ",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Armenia",
+    "copyright": "Հեղինակային իրավունք {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Armenia - E-commerce Platform",
+    "description": "Professional e-commerce platform for Armenia. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "HayPost",
+      "DHL"
+    ],
+    "cities": [
+      "Yerevan",
+      "Gyumri",
+      "Vanadzor"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

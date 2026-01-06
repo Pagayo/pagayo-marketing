@@ -1,0 +1,238 @@
+{
+  "code": "ch",
+  "region": "eu",
+  "name": "Schweiz",
+  "locale": "de-CH",
+  "currency": "CHF",
+  "language": "Deutsch",
+  "nav": {
+    "features": "Features",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Plattform",
+        "links": [
+          {
+            "label": "Features",
+            "path": "/features"
+          },
+          {
+            "label": "Preise",
+            "path": "/pricing"
+          },
+          {
+            "label": "Kontakt",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Allgemein",
+        "links": [
+          {
+            "label": "Mandanten-Verschlüsselung",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Unbegrenzte Systeme",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Vertraut von 5.000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "API-Verbindungen",
+            "path": "/api-connections"
+          },
+          {
+            "label": "API-Anfragen",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Unternehmen",
+        "links": [
+          {
+            "label": "Über uns",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Karriere",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Zahlungen",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "TWINT",
+            "path": "/twint"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Buchhaltung",
+        "links": [
+          {
+            "label": "Bexio",
+            "path": "/bexio"
+          },
+          {
+            "label": "Run my Accounts",
+            "path": "/run-my-accounts"
+          }
+        ]
+      },
+      {
+        "title": "Versand",
+        "links": [
+          {
+            "label": "Die Post",
+            "path": "/die-post"
+          },
+          {
+            "label": "DHL",
+            "path": "/dhl"
+          },
+          {
+            "label": "DPD",
+            "path": "/dpd"
+          }
+        ]
+      },
+      {
+        "title": "API-Verbindungen",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Rechtliches",
+        "links": [
+          {
+            "label": "Datenschutz",
+            "path": "/privacy"
+          },
+          {
+            "label": "AGB",
+            "path": "/terms"
+          },
+          {
+            "label": "Auftragsverarbeitungsvertrag",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "International",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Asien",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Naher Osten",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Amerika",
+            "path": "/americas"
+          },
+          {
+            "label": "Ozeanien",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Features",
+        "links": [
+          {
+            "label": "Alle Features",
+            "path": "/features"
+          },
+          {
+            "label": "Kundensupport",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Multi-Tenant E-Commerce-Plattform für moderne Unternehmer.",
+    "copyright": "© {year} Pagayo. Alle Rechte vorbehalten."
+  },
+  "meta": {
+    "tagline": "Multi-Tenant E-Commerce-Plattform für moderne Unternehmer."
+  }
+}

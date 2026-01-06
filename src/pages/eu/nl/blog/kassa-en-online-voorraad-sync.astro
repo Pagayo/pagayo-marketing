@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+---
+
+<BaseLayout 
+	title="Kassa en online voorraad automatisch in sync - Pagayo Blog" 
+	description="Hoe je winkelvoorraad realtime koppelt aan online orders, zodat je nooit dubbel verkoopt. Praktische gids voor retailers met fysieke en online verkoop." 
+	lang="nl"
+>
+	<Header />
+	<main>
+		<div class="article-container">
+			<Breadcrumbs crumbs={[
+				{ label: 'Home', href: '/nl' },
+				{ label: 'Blog', href: '/nl/blog' },
+				{ label: 'Kassa en online voorraad automatisch in sync' }
+			]} />
+		</div>
+		
+		<div class="article">
+			<article class="content">
+			<div class="article-header">
+				<div class="badge">POS</div>
+				<h1>Kassa en online voorraad automatisch in sync</h1>
+				<div class="meta">
+					<span>3 minuten leestijd</span>
+					<span>•</span>
+					<span>Retail</span>
+				</div>
+			</div>
+
+			<section class="intro">
+				<p class="lead">Je verkoopt een artikel in de winkel via je kassasysteem. Tegelijkertijd bestelt iemand datzelfde artikel online. Probleem: je hebt nog maar één exemplaar op voorraad. De online klant betaalt, maar krijgt later te horen dat het product niet meer beschikbaar is. Gefrustreerd en een slechte review. Dit is het klassieke voorraadprobleem van retailers die zowel fysiek als online verkopen.</p>
+				
+				<p>Met Pagayo synchroniseer je je voorraad realtime tussen je kassa en je webshop. Zodra je iets verkoopt in de winkel, wordt de online voorraad direct aangepast. En andersom: online verkopen worden automatisch afgetrokken van je fysieke voorraad. Zo voorkom je dubbelverkoop en teleurstellingen.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Waarom voorraadsynchronisatie cruciaal is</h2>
+				<p>Voor veel retailers is omnichannel verkopen inmiddels standaard: klanten kopen zowel in de winkel als online, en verwachten dat alles klopt. Als je website laat zien dat een product op voorraad is, maar dit blijkt niet te kloppen, verlies je klanten en vertrouwen.</p>
+				
+				<p>Het handmatig bijhouden van voorraad op meerdere plekken is onhoudbaar. Je bent constant bezig met tellen, checken en aanpassen. En de kans op fouten is groot. Voorraadsynchronisatie automatiseert dit proces volledig.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Hoe werkt realtime voorraadbeheer?</h2>
+				<p>Bij Pagayo werkt het als volgt: elke keer dat je een transactie doet (fysiek of online), wordt de voorraad direct bijgewerkt in de centrale database. Dit gebeurt binnen milliseconden, zodat alle verkoopkanalen altijd actuele informatie hebben.</p>
+				
+				<p>Voorbeeld: je verkoopt een paar sneakers in je winkel. De kassamedewerker scant het product, de klant betaalt en direct wordt de voorraad met -1 aangepast. Op datzelfde moment is dit product niet meer zichtbaar (of heeft lagere voorraad) in je webshop. Geen handmatige updates, geen tijdvertraging.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Instellingen voor voorraadmeldingen</h2>
+				<p>Je kunt in Pagayo drempelwaarden instellen. Bijvoorbeeld: als de voorraad onder de 5 stuks komt, krijg je een melding. Of: als een product niet meer op voorraad is, wordt het automatisch verborgen in de webshop (of getoond als "niet leverbaar").</p>
+				
+				<p>Dit voorkomt dat klanten producten bestellen die je niet kunt leveren. Je kunt ook instellen dat een product in plaats van volledig te verdwijnen, wordt gemarkeerd als "bijna op" of "nog 3 stuks beschikbaar". Dit creëert urgentie en kan juist verkoop stimuleren.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Multi-locatie voorraadbeheer</h2>
+				<p>Heb je meerdere vestigingen? Dan kun je voorraad per locatie bijhouden. Stel dat je drie winkels hebt in verschillende steden. Elke winkel heeft zijn eigen voorraadniveau.</p>
+				
+				<p>Met Pagayo kun je instellen dat online bestellingen automatisch worden toegewezen aan de vestiging met voorraad, of aan de vestiging die het dichtst bij de klant ligt. Zo optimaliseer je verzendkosten en levertijden.</p>
+				
+				<p>Ook kun je voorraad verplaatsen tussen vestigingen. Als één winkel weinig voorraad heeft en de andere veel, kun je dit handmatig of automatisch herverdelen.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Voorraadreserveringen tijdens het afrekenproces</h2>
+				<p>Een slimme functie is voorraadreservering tijdens checkout. Zodra een klant een product in zijn winkelwagen stopt, wordt dit tijdelijk gereserveerd (bijvoorbeeld voor 15 minuten). Andere klanten kunnen dit product dan niet meer bestellen.</p>
+				
+				<p>Als de klant niet afrekent binnen die tijd, wordt de reservering vrijgegeven en kan iemand anders het product kopen. Dit voorkomt dat meerdere klanten tegelijk hetzelfde product proberen te bestellen, terwijl er maar één op voorraad is.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Terugboekingen bij retours en annuleringen</h2>
+				<p>Wat als een klant iets terugbrengt? Dan moet de voorraad weer omhoog. Pagayo doet dit automatisch. Zodra je een retour verwerkt in het systeem, wordt het product weer op voorraad gezet en is het direct beschikbaar voor nieuwe verkopen.</p>
+				
+				<p>Hetzelfde geldt voor annuleringen. Als een online bestelling wordt geannuleerd voordat het product is verzonden, wordt de voorraad automatisch teruggedraaid.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Voorraadinzicht en rapportages</h2>
+				<p>Met Pagayo heb je altijd volledig inzicht in je voorraad. Je ziet in één dashboard hoeveel je van elk product op voorraad hebt, hoeveel er verkocht is (online en offline), en wat de verwachte levertijd is voor nieuwe voorraad.</p>
+				
+				<p>Je kunt ook historische data bekijken: welke producten verkopen het snelst, welke blijven liggen, en wanneer moet je nieuwe voorraad bestellen? Dit helpt je bij inkoop- en voorraadbeslissingen.</p>
+				
+				<p><strong>Pro-tip:</strong> Gebruik de "low stock alerts" om automatisch notificaties te krijgen wanneer producten bijna op zijn. Zo kun je tijdig bijbestellen en mis je geen verkopen.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Voor wie is dit geschikt?</h2>
+				<p>Voorraadsynchronisatie is essentieel voor elke retailer die zowel fysiek als online verkoopt:</p>
+				
+				<ul>
+					<li><strong>Kledingwinkels:</strong> Je verkoopt in de winkel en online, met meerdere maten en kleuren per product.</li>
+					<li><strong>Electronicawinkels:</strong> Dure producten met beperkte voorraad, waar dubbele verkoop direct omzetverlies betekent.</li>
+					<li><strong>Sport- en outdoor shops:</strong> Seizoensgebonden producten die snel uitverkopen.</li>
+					<li><strong>Boekenhandels:</strong> Grote catalogi met soms beperkte voorraad per titel.</li>
+					<li><strong>Speelgoedwinkels:</strong> Populaire items die snel uitverkopen, vooral rond feestdagen.</li>
+				</ul>
+			</section>
+
+			<section class="panel">
+				<h2>Praktijkvoorbeeld: een kledingwinkel met webshop</h2>
+				<p>Stel: je runt een kledingwinkel en verkoopt ook online. Je hebt 3 exemplaren van een populair T-shirt op voorraad (maat M). Een klant komt binnen en koopt er twee. De kassamedewerker scant het artikel, en direct wordt de online voorraad aangepast: nog 1 op voorraad.</p>
+				
+				<p>Een paar minuten later bestelt iemand online datzelfde T-shirt. De betaling wordt verwerkt, het product wordt uit voorraad gehaald en de webshop laat nu zien: "uitverkocht". Tegelijkertijd krijg jij een melding: "T-shirt maat M bijna op – bestel nieuwe voorraad".</p>
+				
+				<p>Zonder Pagayo zou je handmatig moeten bijhouden hoeveel je verkocht hebt in de winkel, en dit vervolgens moeten aanpassen in je webshop. Dat kost tijd en leidt tot fouten. Nu gebeurt dit allemaal automatisch.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Integratie met bestaande kassasystemen</h2>
+				<p>Pagayo kan integreren met veel populaire kassasystemen, zoals Lightspeed, Shopify POS, Square en meer. Als je al een kassasysteem hebt, hoef je dit niet te vervangen – Pagayo koppelt er gewoon aan.</p>
+				
+				<p>De integratie werkt via API's: zodra je een transactie doet in je kassa, wordt dit doorgegeven aan Pagayo en wordt de voorraad gesynchroniseerd. Dit gebeurt in real-time, zodat er geen vertraging is.</p>
+				
+				<p>Als je nog geen kassasysteem hebt, kun je Pagayo zelf als kassasysteem gebruiken. Het heeft ingebouwde POS-functionaliteit, inclusief barcode-scanning, bonprinters en betaalterminals.</p>
+			</section>
+
+			<section class="panel">
+				<h2>Veelgestelde vragen</h2>
+				
+				<h3>Wat gebeurt er als mijn internet uitvalt?</h3>
+				<p>Pagayo heeft een offline modus. Transacties worden lokaal opgeslagen en zodra de verbinding hersteld is, worden ze automatisch gesynchroniseerd met de cloud.</p>
+				
+				<h3>Kan ik voorraad handmatig aanpassen?</h3>
+				<p>Ja. Als je bijvoorbeeld een telling hebt gedaan en er is verschil, kun je voorraad handmatig bijstellen via je dashboard.</p>
+				
+				<h3>Werkt dit ook met varianten (maten, kleuren)?</h3>
+				<p>Absoluut. Elke variant heeft zijn eigen voorraadniveau. Als je een rood T-shirt maat M verkoopt, wordt alleen die specifieke variant aangepast – niet de blauwe of maat L.</p>
+				
+				<h3>Kan ik voorraad importeren vanuit mijn oude systeem?</h3>
+				<p>Ja. Je kunt voorraaddata importeren via CSV. Pagayo leest je bestand in en zet alles klaar in het systeem.</p>
+				
+				<h3>Hoe zit het met backorders?</h3>
+				<p>Je kunt instellen dat producten die niet op voorraad zijn toch besteld kunnen worden (pre-orders of backorders). Klanten zien dan: "Leverbaar over 2 weken" en kunnen alvast bestellen.</p>
+			</section>
+
+			<section class="cta-panel">
+				<h2>Nooit meer dubbel verkopen</h2>
+				<p>Synchroniseer je kassa en webshop in één systeem. Start vandaag nog met Pagayo.</p>
+				<div class="cta-actions">
+					<a class="btn primary" href="https://app.pagayo.com/register/">Start gratis</a>
+					<a class="btn ghost" href="/eu/nl/contact">Vragen? Neem contact op</a>
+				</div>
+			</section>
+		</article>
+
+		<aside class="sidebar">
+			<div class="related-box">
+				<h3>Gerelateerde gidsen</h3>
+				<a href="/eu/nl/blog/webshop-starten-30-seconden">Webshop starten in 30 seconden</a>
+				<a href="/eu/nl/blog/hotelboekingen-en-betalingen">Hotelboekingen en betalingen</a>
+			</div>
+			
+			<div class="cta-box">
+				<h3>Direct aan de slag?</h3>
+				<p>Koppel je kassa en webshop in één keer. Geen gedoe, geen dubbele verkoop.</p>
+				<a class="btn primary" href="https://app.pagayo.com">Start nu</a>
+			</div>
+		</aside>
+		</div>
+	</main>
+
+	<style>
+		/* Blog-specific layout */
+		.article-container { max-width: 1200px; margin: 0 auto; padding: 120px 1.75rem 0; }
+		.article { max-width: 1200px; margin: 0 auto; padding: 0 1.75rem 90px; display: grid; grid-template-columns: 1fr 280px; gap: 3rem; }
+		.content { display: flex; flex-direction: column; gap: 1.75rem; }
+		.article-header { display: flex; flex-direction: column; gap: 0.75rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+		.article-header h1 { font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.2; letter-spacing: -0.02em; }
+		.badge { display: inline-flex; align-items: center; width: fit-content; padding: 0.3rem 0.7rem; border-radius: 999px; background: rgba(0,255,136,0.12); color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+		.meta { display: flex; gap: 0.5rem; color: var(--text-secondary); font-size: 0.95rem; }
+		.intro { display: flex; flex-direction: column; gap: 1rem; }
+		
+		/* Blog-specific panel extensions */
+		.panel strong { color: var(--text); font-weight: 600; }
+		.panel em { color: var(--accent); font-style: normal; }
+		
+		/* Blog-specific CTA */
+		.cta-panel { background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,0,0,0.9)); border: 1px solid var(--accent); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; gap: 1rem; text-align: center; box-shadow: 0 12px 32px rgba(0,255,136,0.15); }
+		.cta-panel h2 { font-size: 1.75rem; }
+		.cta-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+		
+		/* Sidebar */
+		.sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+		.related-box, .cta-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; box-shadow: 0 6px 18px rgba(0,0,0,0.2); }
+		.related-box h3, .cta-box h3 { font-size: 1.1rem; }
+		.related-box a { color: var(--text-secondary); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border); transition: color 0.2s ease; }
+		.related-box a:last-child { border-bottom: none; }
+		.related-box a:hover { color: var(--accent); }
+		.cta-box p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+		
+		@media (max-width: 1024px) { .article { grid-template-columns: 1fr; } .sidebar { display: none; } }
+		@media (max-width: 768px) { .article { padding-top: 100px; } }
+	</style>
+
+	<Footer />
+</BaseLayout>

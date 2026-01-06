@@ -1,0 +1,125 @@
+{
+  "code": "kz",
+  "name": "Kazakhstan",
+  "region": "as",
+  "currency": "KZT",
+  "locale": "kk-KZ",
+  "language": "kk",
+  "nav": {
+    "features": "Мүмкіндіктер",
+    "pricing": "Баға",
+    "blog": "Блог",
+    "contact": "Байланыс",
+    "cta": "Тегін бастау"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Мүмкіндіктер",
+        "links": [
+          {
+            "label": "Мүмкіндіктер",
+            "path": "/features"
+          },
+          {
+            "label": "Баға",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Біз туралы",
+        "links": [
+          {
+            "label": "Біз туралы",
+            "path": "/about"
+          },
+          {
+            "label": "Блог",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Байланыс",
+        "links": [
+          {
+            "label": "Байланыс",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Құпиялық саясаты",
+        "links": [
+          {
+            "label": "Құпиялық саясаты",
+            "path": "/privacy"
+          },
+          {
+            "label": "Шарттар",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Kazakhstan",
+    "copyright": "Авторлық құқық {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Kazakhstan - E-commerce Platform",
+    "description": "Professional e-commerce platform for Kazakhstan. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Kazpost",
+      "DHL"
+    ],
+    "cities": [
+      "Almaty",
+      "Astana",
+      "Shymkent"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

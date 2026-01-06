@@ -1,0 +1,238 @@
+{
+  "code": "gr",
+  "region": "eu",
+  "name": "Ελλάδα",
+  "locale": "el-GR",
+  "currency": "EUR",
+  "language": "Ελληνικά",
+  "nav": {
+    "features": "Χαρακτηριστικά",
+    "pricing": "Τιμές",
+    "contact": "Επικοινωνία",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Πλατφόρμα",
+        "links": [
+          {
+            "label": "Χαρακτηριστικά",
+            "path": "/features"
+          },
+          {
+            "label": "Τιμές",
+            "path": "/pricing"
+          },
+          {
+            "label": "Επικοινωνία",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Γενικά",
+        "links": [
+          {
+            "label": "Κρυπτογράφηση ενοικιαστή",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Απεριόριστα συστήματα",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Εμπιστεύονται 5.000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "Συνδέσεις API",
+            "path": "/api-connections"
+          },
+          {
+            "label": "Αιτήματα API",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Εταιρεία",
+        "links": [
+          {
+            "label": "Σχετικά με εμάς",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Καριέρες",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Πληρωμές",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "Viva Wallet",
+            "path": "/viva-wallet"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Λογιστική",
+        "links": [
+          {
+            "label": "SingularLogic",
+            "path": "/singularlogic"
+          },
+          {
+            "label": "Epsilon Net",
+            "path": "/epsilon-net"
+          }
+        ]
+      },
+      {
+        "title": "Αποστολή",
+        "links": [
+          {
+            "label": "ΕΛΤΑ",
+            "path": "/elta"
+          },
+          {
+            "label": "ACS",
+            "path": "/acs"
+          },
+          {
+            "label": "Speedex",
+            "path": "/speedex"
+          }
+        ]
+      },
+      {
+        "title": "Συνδέσεις API",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Νομικά",
+        "links": [
+          {
+            "label": "Απόρρητο",
+            "path": "/privacy"
+          },
+          {
+            "label": "Όροι",
+            "path": "/terms"
+          },
+          {
+            "label": "Συμφωνία επεξεργασίας δεδομένων",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "Διεθνή",
+        "links": [
+          {
+            "label": "Αφρική",
+            "path": "/africa"
+          },
+          {
+            "label": "Ασία",
+            "path": "/asia"
+          },
+          {
+            "label": "Ευρώπη",
+            "path": "/europe"
+          },
+          {
+            "label": "Μέση Ανατολή",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Αμερική",
+            "path": "/americas"
+          },
+          {
+            "label": "Ωκεανία",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Χαρακτηριστικά",
+        "links": [
+          {
+            "label": "Όλα τα χαρακτηριστικά",
+            "path": "/features"
+          },
+          {
+            "label": "Υποστήριξη πελατών",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Πλατφόρμα ηλεκτρονικού εμπορίου πολλαπλών ενοικιαστών για σύγχρονους επιχειρηματίες.",
+    "copyright": "© {year} Pagayo. Με επιφύλαξη παντός δικαιώματος."
+  },
+  "meta": {
+    "tagline": "Πλατφόρμα ηλεκτρονικού εμπορίου πολλαπλών ενοικιαστών για σύγχρονους επιχειρηματίες."
+  }
+}

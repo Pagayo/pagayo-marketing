@@ -1,0 +1,125 @@
+{
+  "code": "tl",
+  "name": "Timor-Leste",
+  "region": "as",
+  "currency": "USD",
+  "locale": "tet-TL",
+  "language": "tet",
+  "nav": {
+    "features": "Karaterístika",
+    "pricing": "Presu",
+    "blog": "Blog",
+    "contact": "Kontaktu",
+    "cta": "Hahú ba livre"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Karaterístika",
+        "links": [
+          {
+            "label": "Karaterístika",
+            "path": "/features"
+          },
+          {
+            "label": "Presu",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Kona-ba ami",
+        "links": [
+          {
+            "label": "Kona-ba ami",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Kontaktu",
+        "links": [
+          {
+            "label": "Kontaktu",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Polítika Privasidade",
+        "links": [
+          {
+            "label": "Polítika Privasidade",
+            "path": "/privacy"
+          },
+          {
+            "label": "Termus",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Timor-Leste",
+    "copyright": "Direitus Autór {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Timor-Leste - E-commerce Platform",
+    "description": "Professional e-commerce platform for Timor-Leste. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "CTT Timor Post",
+      "DHL"
+    ],
+    "cities": [
+      "Dili",
+      "Baucau",
+      "Maliana"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

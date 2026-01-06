@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+
+const arabicCountries = [
+  { name: 'Verenigde Arabische Emiraten', code: 'ae', flag: '🇦🇪', language: 'Arabisch' },
+  { name: 'Saudi-Arabië', code: 'sa', flag: '🇸🇦', language: 'Arabisch' },
+  { name: 'Qatar', code: 'qa', flag: '🇶🇦', language: 'Arabisch' },
+  { name: 'Koeweit', code: 'kw', flag: '🇰🇼', language: 'Arabisch' },
+  { name: 'Bahrein', code: 'bh', flag: '🇧🇭', language: 'Arabisch' },
+  { name: 'Oman', code: 'om', flag: '🇴🇲', language: 'Arabisch' },
+  { name: 'Jordanië', code: 'jo', flag: '🇯🇴', language: 'Arabisch' },
+  { name: 'Libanon', code: 'lb', flag: '🇱🇧', language: 'Arabisch' },
+  { name: 'Irak', code: 'iq', flag: '🇮🇶', language: 'Arabisch' },
+  { name: 'Jemen', code: 'ye', flag: '🇾🇪', language: 'Arabisch' },
+  { name: 'Palestina', code: 'ps', flag: '🇵🇸', language: 'Arabisch' },
+];
+
+const otherLanguageCountries = [
+  { name: 'Turkije', code: 'tr', flag: '🇹🇷', language: 'Turks' },
+  { name: 'Israël', code: 'il', flag: '🇮🇱', language: 'Hebreeuws' },
+];
+---
+
+<BaseLayout title="Pagayo Midden-Oosten - E-commerce Platform" description="Ontdek Pagayo e-commerce diensten in het Midden-Oosten" lang="nl">
+  <HeaderDynamic country={country} />
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="section-title">Pagayo in het Midden-Oosten</h1>
+        <p class="section-subtitle">
+          Wij zijn actief in landen in het Midden-Oosten waar we lokale betaalmethoden, 
+          verzendopties en geoptimaliseerde checkout flows aanbieden voor jouw webshop.
+        </p>
+      </div>
+
+      <!-- Arabisch sprekende landen -->
+      <div class="language-section">
+        <h2 class="language-title">Arabisch sprekende landen</h2>
+        <div class="countries-grid">
+          {arabicCountries.map(country => (
+            <a href={`/me/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Andere talen -->
+      <div class="language-section">
+        <h2 class="language-title">Andere talen</h2>
+        <div class="countries-grid">
+          {otherLanguageCountries.map(country => (
+            <a href={`/me/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FooterDynamic country={country} />
+</BaseLayout>
+
+<style>
+  .section-header {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .section-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+</style>

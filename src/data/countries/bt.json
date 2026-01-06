@@ -1,0 +1,125 @@
+{
+  "code": "bt",
+  "name": "Bhutan",
+  "region": "as",
+  "currency": "BTN",
+  "locale": "dz-BT",
+  "language": "dz",
+  "nav": {
+    "features": "ཁྱད་ཆོས།",
+    "pricing": "གོང་ཚད།",
+    "blog": "བློག།",
+    "contact": "འབྲེལ་གཏུག",
+    "cta": "རང་དབང་ལེན་འགོ་འཚུགས།"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "ཁྱད་ཆོས།",
+        "links": [
+          {
+            "label": "ཁྱད་ཆོས།",
+            "path": "/features"
+          },
+          {
+            "label": "གོང་ཚད།",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "ང་ཚོའི་སྐོར།",
+        "links": [
+          {
+            "label": "ང་ཚོའི་སྐོར།",
+            "path": "/about"
+          },
+          {
+            "label": "བློག།",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "འབྲེལ་གཏུག",
+        "links": [
+          {
+            "label": "འབྲེལ་གཏུག",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "གསང་དོན།",
+        "links": [
+          {
+            "label": "གསང་དོན།",
+            "path": "/privacy"
+          },
+          {
+            "label": "ཆ་རྐྱེན།",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Bhutan",
+    "copyright": "འདྲ་བཤུས་ཐོབ་ཐང་། {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Bhutan - E-commerce Platform",
+    "description": "Professional e-commerce platform for Bhutan. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Bhutan Post",
+      "DHL"
+    ],
+    "cities": [
+      "Thimphu",
+      "Phuentsholing",
+      "Punakha"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

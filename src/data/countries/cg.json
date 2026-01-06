@@ -1,0 +1,234 @@
+{
+  "code": "cg",
+  "region": "af",
+  "name": "Congo-Brazzaville",
+  "locale": "fr-CG",
+  "currency": "XAF",
+  "language": "Français",
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "contact": "Contact",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Plateforme",
+        "links": [
+          {
+            "label": "Fonctionnalités",
+            "path": "/features"
+          },
+          {
+            "label": "Tarifs",
+            "path": "/pricing"
+          },
+          {
+            "label": "Contact",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Général",
+        "links": [
+          {
+            "label": "Tenant encryption",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Unlimited stores",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Trusted by 5,000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "API connections",
+            "path": "/api-connections"
+          },
+          {
+            "label": "API requests",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Entreprise",
+        "links": [
+          {
+            "label": "À propos",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Carrières",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Paiements",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Comptabilité",
+        "links": [
+          {
+            "label": "Xero",
+            "path": "/xero"
+          },
+          {
+            "label": "QuickBooks",
+            "path": "/quickbooks"
+          }
+        ]
+      },
+      {
+        "title": "Livraison",
+        "links": [
+          {
+            "label": "National Post",
+            "path": "/national-post"
+          },
+          {
+            "label": "DHL",
+            "path": "/dhl"
+          },
+          {
+            "label": "FedEx",
+            "path": "/fedex"
+          }
+        ]
+      },
+      {
+        "title": "Connexions API",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Juridique",
+        "links": [
+          {
+            "label": "Confidentialité",
+            "path": "/privacy"
+          },
+          {
+            "label": "Conditions",
+            "path": "/terms"
+          },
+          {
+            "label": "Accord de traitement des données",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "International",
+        "links": [
+          {
+            "label": "Africa",
+            "path": "/africa"
+          },
+          {
+            "label": "Asia",
+            "path": "/asia"
+          },
+          {
+            "label": "Europe",
+            "path": "/europe"
+          },
+          {
+            "label": "Middle East",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceania",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Fonctionnalités",
+        "links": [
+          {
+            "label": "Toutes les fonctionnalités",
+            "path": "/features"
+          },
+          {
+            "label": "Support client",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Multi-tenant e-commerce platform for modern entrepreneurs.",
+    "copyright": "© {year} Pagayo. All rights reserved."
+  },
+  "meta": {
+    "tagline": "Multi-tenant e-commerce platform for modern entrepreneurs."
+  }
+}

@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+
+const englishCountries = [
+  { name: 'Nigeria', code: 'ng', flag: '🇳🇬', language: 'Engels', flutterwave: true },
+  { name: 'Zuid-Afrika', code: 'za', flag: '🇿🇦', language: 'Engels', flutterwave: true },
+  { name: 'Ghana', code: 'gh', flag: '🇬🇭', language: 'Engels', flutterwave: true },
+  { name: 'Kenya', code: 'ke', flag: '🇰🇪', language: 'Engels', flutterwave: true },
+  { name: 'Tanzania', code: 'tz', flag: '🇹🇿', language: 'Engels', flutterwave: true },
+  { name: 'Uganda', code: 'ug', flag: '🇺🇬', language: 'Engels', flutterwave: true },
+  { name: 'Zimbabwe', code: 'zw', flag: '🇿🇼', language: 'Engels' },
+  { name: 'Botswana', code: 'bw', flag: '🇧🇼', language: 'Engels' },
+  { name: 'Namibië', code: 'na', flag: '🇳🇦', language: 'Engels' },
+  { name: 'Zambia', code: 'zm', flag: '🇿🇲', language: 'Engels', flutterwave: true },
+  { name: 'Rwanda', code: 'rw', flag: '🇷🇼', language: 'Engels', flutterwave: true },
+  { name: 'Mauritius', code: 'mu', flag: '🇲🇺', language: 'Engels' },
+  { name: 'Seychellen', code: 'sc', flag: '🇸🇨', language: 'Engels' },
+  { name: 'Sierra Leone', code: 'sl', flag: '🇸🇱', language: 'Engels' },
+  { name: 'Liberia', code: 'lr', flag: '🇱🇷', language: 'Engels' },
+  { name: 'Gambia', code: 'gm', flag: '🇬🇲', language: 'Engels' },
+  { name: 'Lesotho', code: 'ls', flag: '🇱🇸', language: 'Engels' },
+  { name: 'Eswatini', code: 'sz', flag: '🇸🇿', language: 'Engels' },
+  { name: 'Malawi', code: 'mw', flag: '🇲🇼', language: 'Engels' },
+  { name: 'Zuid-Soedan', code: 'ss', flag: '🇸🇸', language: 'Engels' },
+];
+
+const frenchCountries = [
+  { name: 'Senegal', code: 'sn', flag: '🇸🇳', language: 'Frans' },
+  { name: 'Ivoorkust', code: 'ci', flag: '🇨🇮', language: 'Frans' },
+  { name: 'Kameroen', code: 'cm', flag: '🇨🇲', language: 'Frans' },
+  { name: 'Madagaskar', code: 'mg', flag: '🇲🇬', language: 'Frans' },
+  { name: 'Mali', code: 'ml', flag: '🇲🇱', language: 'Frans' },
+  { name: 'Burkina Faso', code: 'bf', flag: '🇧🇫', language: 'Frans' },
+  { name: 'Niger', code: 'ne', flag: '🇳🇪', language: 'Frans' },
+  { name: 'Benin', code: 'bj', flag: '🇧🇯', language: 'Frans' },
+  { name: 'Togo', code: 'tg', flag: '🇹🇬', language: 'Frans' },
+  { name: 'Guinee', code: 'gn', flag: '🇬🇳', language: 'Frans' },
+  { name: 'Tsjaad', code: 'td', flag: '🇹🇩', language: 'Frans' },
+  { name: 'Congo-Brazzaville', code: 'cg', flag: '🇨🇬', language: 'Frans' },
+  { name: 'DR Congo', code: 'cd', flag: '🇨🇩', language: 'Frans' },
+  { name: 'Gabon', code: 'ga', flag: '🇬🇦', language: 'Frans' },
+  { name: 'Djibouti', code: 'dj', flag: '🇩🇯', language: 'Frans' },
+  { name: 'Centraal-Afrikaanse Republiek', code: 'cf', flag: '🇨🇫', language: 'Frans' },
+  { name: 'Burundi', code: 'bi', flag: '🇧🇮', language: 'Frans' },
+];
+
+const arabicCountries = [
+  { name: 'Egypte', code: 'eg', flag: '🇪🇬', language: 'Arabisch' },
+  { name: 'Marokko', code: 'ma', flag: '🇲🇦', language: 'Arabisch' },
+  { name: 'Algerije', code: 'dz', flag: '🇩🇿', language: 'Arabisch' },
+  { name: 'Tunesië', code: 'tn', flag: '🇹🇳', language: 'Arabisch' },
+  { name: 'Libië', code: 'ly', flag: '🇱🇾', language: 'Arabisch' },
+  { name: 'Soedan', code: 'sd', flag: '🇸🇩', language: 'Arabisch' },
+  { name: 'Mauritanië', code: 'mr', flag: '🇲🇷', language: 'Arabisch' },
+  { name: 'Comoren', code: 'km', flag: '🇰🇲', language: 'Arabisch' },
+  { name: 'Somalië', code: 'so', flag: '🇸🇴', language: 'Arabisch' },
+];
+
+const portugueseCountries = [
+  { name: 'Angola', code: 'ao', flag: '🇦🇴', language: 'Portugees' },
+  { name: 'Mozambique', code: 'mz', flag: '🇲🇿', language: 'Portugees' },
+  { name: 'Kaapverdië', code: 'cv', flag: '🇨🇻', language: 'Portugees' },
+  { name: 'São Tomé en Príncipe', code: 'st', flag: '🇸🇹', language: 'Portugees' },
+  { name: 'Guinea-Bissau', code: 'gw', flag: '🇬🇼', language: 'Portugees' },
+];
+
+const otherLanguageCountries = [
+  { name: 'Ethiopië', code: 'et', flag: '🇪🇹', language: 'Amhaars' },
+  { name: 'Eritrea', code: 'er', flag: '🇪🇷', language: 'Tigrinya' },
+  { name: 'Equatoriaal-Guinea', code: 'gq', flag: '🇬🇶', language: 'Spaans' },
+];
+---
+
+<BaseLayout title="Pagayo Afrika - E-commerce Platform" description="Ontdek Pagayo e-commerce diensten in Afrikaanse landen" lang="nl">
+  <HeaderDynamic country={country} />
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="section-title">Pagayo in Afrika</h1>
+        <p class="section-subtitle">
+          Wij zijn actief in Afrikaanse landen waar we lokale betaalmethoden, 
+          verzendopties en geoptimaliseerde checkout flows aanbieden voor jouw webshop.
+        </p>
+      </div>
+
+      <!-- Engelstalige landen -->
+      <div class="language-section">
+        <h2 class="language-title">Engelstalige landen</h2>
+        <div class="countries-grid">
+          {englishCountries.map(country => (
+            <a href={`/af/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              {country.flutterwave && <p class="country-payment">Flutterwave</p>}
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Franstalige landen -->
+      <div class="language-section">
+        <h2 class="language-title">Franstalige landen</h2>
+        <div class="countries-grid">
+          {frenchCountries.map(country => (
+            <a href={`/af/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              {country.flutterwave && <p class="country-payment">Flutterwave</p>}
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Arabisch sprekende landen -->
+      <div class="language-section">
+        <h2 class="language-title">Arabisch sprekende landen</h2>
+        <div class="countries-grid">
+          {arabicCountries.map(country => (
+            <a href={`/af/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              {country.flutterwave && <p class="country-payment">Flutterwave</p>}
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Portugeestalige landen -->
+      <div class="language-section">
+        <h2 class="language-title">Portugeestalige landen</h2>
+        <div class="countries-grid">
+          {portugueseCountries.map(country => (
+            <a href={`/af/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              {country.flutterwave && <p class="country-payment">Flutterwave</p>}
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Andere talen -->
+      <div class="language-section">
+        <h2 class="language-title">Andere talen</h2>
+        <div class="countries-grid">
+          {otherLanguageCountries.map(country => (
+            <a href={`/af/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              {country.flutterwave && <p class="country-payment">Flutterwave</p>}
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FooterDynamic country={country} />
+</BaseLayout>

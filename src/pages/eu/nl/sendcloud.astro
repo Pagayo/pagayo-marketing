@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="SendCloud integratie - Pagayo"
+    description="Koppel Pagayo met SendCloud voor multi-carrier verzending, automatische labels en tracking naar 30+ vervoerders."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">SendCloud</p>
+                <h1>Multi-carrier verzending via SendCloud</h1>
+                <p class="lead">
+                    Pagayo integreert met SendCloud voor automatische verzendlabels, tracking en retourafhandeling via 30+ carriers.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">30+ vervoerders</span>
+                    <span class="pill">Automatische labels</span>
+                    <span class="pill">Tracking & retouren</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Carriers</p>
+                    <p class="stat-value">30+</p>
+                    <p class="stat-footnote">PostNL, DHL, DPD, UPS</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Labelgeneratie</p>
+                    <p class="stat-value">Automatisch</p>
+                    <p class="stat-footnote">Per order</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Tracking updates</p>
+                    <p class="stat-value">Realtime</p>
+                    <p class="stat-footnote">Via webhooks</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom SendCloud</p>
+                <h2 class="section-title">Eén platform, alle carriers</h2>
+                <p class="section-subtitle">
+                    SendCloud aggregeert 30+ vervoerders. Pagayo koppelt orders automatisch en synchroniseert tracking bidirectioneel.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Auto labels</h3>
+                    <p>Verzendlabels automatisch genereren zodra een order betaald is.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Carrier keuze</h3>
+                    <p>Automatische carrierselectie op basis van gewicht, bestemming en kosten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Track & trace</h3>
+                    <p>Tracking codes direct naar klant, status updates in Pagayo dashboard.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Retourportaal</h3>
+                    <p>Klanten kunnen zelf retouren aanmaken via SendCloud portaal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Carriers & bereik</p>
+                <h2 class="section-title">Verzend wereldwijd</h2>
+                <p class="section-subtitle">
+                    SendCloud ondersteunt 30+ carriers voor nationaal en internationaal verzenden.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederland</h3>
+                    <p>PostNL, DHL, DPD, Budbee, Homerr en meer.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇪🇺</div>
+                    <h3>Europa</h3>
+                    <p>GLS, DPD, Colissimo, Correos en lokale partners.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Wereldwijd</h3>
+                    <p>UPS, FedEx, DHL Express voor internationale zendingen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">Binnen een uur live</h2>
+                <p class="section-subtitle">
+                    Koppel je SendCloud account, kies je carriers en wij zorgen voor automatische labelgeneratie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>API koppeling</h3>
+                    <p>SendCloud API key toevoegen, wij slaan veilig op in KMS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Carrier setup</h3>
+                    <p>Kies je voorkeurscarriers en definieer verzendregels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Automatisering</h3>
+                    <p>Testorder, validatie, daarna volledig automatisch.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Shipping rules</p>
+                <h2 class="section-title">Slimme verzendregels</h2>
+                <p class="section-subtitle">
+                    Definieer regels per land, gewicht, orderwaarde en producttype voor optimale carrierkeuze.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Gewichtsklassen</h3>
+                    <p>Kies carrier op basis van pakketgewicht (< 2kg, 2-5kg, 5kg+).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Gratis verzending</h3>
+                    <p>Automatisch premium carrier bij orders boven drempelwaarde.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Per land</h3>
+                    <p>Verschillende carriers voor NL, BE, DE en rest van wereld.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Producttype</h3>
+                    <p>Kwetsbare producten altijd via premium carrier met verzekering.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Retouren & customer service</p>
+                <h2 class="section-title">Retourportaal en tracking</h2>
+                <p class="section-subtitle">
+                    SendCloud biedt klanten een retourportaal en branded tracking pages voor betere customer experience.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔙</div>
+                    <h3>Retourportaal</h3>
+                    <p>Klanten maken zelf retourlabel aan, sync naar Pagayo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Email notificaties</h3>
+                    <p>Branded emails met tracking link, verzonden/onderweg/afgeleverd.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Branded tracking</h3>
+                    <p>Tracking pagina in jouw huisstijl met upsell mogelijkheden.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Shipping analytics</h3>
+                    <p>Inzicht in leverperformance, retourpercentages en kosten per carrier.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Support & beveiliging</p>
+                <h2 class="section-title">Veilig en ondersteund</h2>
+                <p class="section-subtitle">
+                    API keys in KMS, webhook monitoring en Nederlandstalige support voor implementatie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>API beveiliging</h3>
+                    <p>SendCloud keys veilig in KMS, automatische rotatie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Audit trail</h3>
+                    <p>Elke verzending en retour wordt gelogd voor controle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlandse support</h3>
+                    <p>Ons team helpt bij setup en carrierkeuze.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Monitoring</h3>
+                    <p>Webhook monitoring en alerts bij mislukte labelgeneraties.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met SendCloud op Pagayo</h2>
+                <p>Activeer SendCloud in je Pagayo omgeving en automatiseer je verzendproces vanaf dag één.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

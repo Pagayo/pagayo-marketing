@@ -1,0 +1,126 @@
+{
+  "code": "sr",
+  "name": "Suriname",
+  "region": "am",
+  "currency": "SRD",
+  "locale": "nl-SR",
+  "language": "nl",
+  "nav": {
+    "features": "Functies",
+    "pricing": "Prijzen",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Start gratis"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Functies",
+        "links": [
+          {
+            "label": "Functies",
+            "path": "/features"
+          },
+          {
+            "label": "Prijzen",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Over ons",
+        "links": [
+          {
+            "label": "Over ons",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Contact",
+        "links": [
+          {
+            "label": "Contact",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Privacy",
+        "links": [
+          {
+            "label": "Privacy",
+            "path": "/privacy"
+          },
+          {
+            "label": "Voorwaarden",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Suriname",
+    "copyright": "Alle rechten voorbehouden {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Suriname - E-commerce Platform",
+    "description": "Professional e-commerce platform for Suriname. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe",
+      "PayPal"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Post Suriname",
+      "DHL"
+    ],
+    "cities": [
+      "Paramaribo",
+      "Lelydorp",
+      "Nieuw Nickerie"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

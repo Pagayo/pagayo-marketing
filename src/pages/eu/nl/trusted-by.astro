@@ -1,0 +1,337 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+  title="Vertrouwd door 5.000+ bedrijven | Pagayo"
+  description="Meer dan 5.000 webshops, hotels, verhuurders en winkels gebruiken Pagayo. Ontdek waarom bedrijven kiezen voor ons betrouwbare platform met 99,9% uptime en uitstekende support."
+  lang="nl"
+>
+  <HeaderDynamic country={country} />
+
+  <main class="page-container">
+    <section class="hero-main">
+      <div class="hero__content">
+        <p class="eyebrow">Vertrouwd door duizenden</p>
+        <h1>5.000+ bedrijven verkopen met Pagayo</h1>
+        <p class="lead">Van kleine startups tot grote ketens - duizenden ondernemers vertrouwen op Pagayo voor hun webshop, hotel, verhuurbedrijf of kassa. Betrouwbaar, snel en altijd bereikbaar.</p>
+        <div class="hero__actions">
+          <a class="btn btn-primary" href="/eu/nl/contact">Start gratis</a>
+          <a class="btn btn-ghost" href="/eu/nl/features">Bekijk wat Pagayo kan</a>
+        </div>
+        <div class="hero__meta">
+          <span class="pill">5.000+ actieve bedrijven</span>
+          <span class="pill">99,9% uptime</span>
+          <span class="pill">Support binnen 2 uur</span>
+        </div>
+      </div>
+
+      <div class="hero__panel">
+        <div class="stat-card">
+          <p class="stat-label">Actieve klanten</p>
+          <p class="stat-value">5.000+</p>
+          <p class="stat-footnote">En groeiende elke dag</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Gemiddelde uptime</p>
+          <p class="stat-value">99,9%</p>
+          <p class="stat-footnote">Bijna altijd online</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Support reactie</p>
+          <p class="stat-value">&lt; 2 uur</p>
+          <p class="stat-footnote">Meestal veel sneller</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+          <p class="eyebrow">Klantvertrouwen</p>
+          <h2>Waarom bedrijven voor Pagayo kiezen</h2>
+          <p class="section-sub">We werken hard om elke dag betrouwbaar te zijn. Niet met mooie praatjes, maar met daadwerkelijke resultaten waar je bedrijf op kan bouwen.</p>
+        </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Altijd snel en stabiel</h3>
+            <p>Je webshop of kassasysteem werkt altijd vlot. Geen trage laadtijden tijdens piekdrukte. Geen crashes als je klanten willen betalen. Gewoon betrouwbaar snel, dag in dag uit.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+            <h3>Veilig voor jouw klanten</h3>
+            <p>Alle klantgegevens zijn versleuteld opgeslagen. Betalingen lopen via officiële partners zoals Stripe en Mollie. Je klanten kunnen met een gerust hart bestellen of boeken bij jou.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+            <h3>Hulp wanneer je het nodig hebt</h3>
+            <p>Zit je ergens mee? Ons support team helpt je graag. Meestal binnen een paar uur, soms zelfs binnen 30 minuten. We spreken gewoon Nederlands en geen moeilijke taal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+          <p class="eyebrow">Verschillende sectoren</p>
+          <h2>Van webshop tot hotel - voor elk bedrijf</h2>
+          <p class="section-sub">Pagayo wordt gebruikt door heel verschillende soorten bedrijven. Allemaal met hun eigen wensen, maar allemaal tevreden met ons platform.</p>
+        </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛒</div>
+          <h3>Webshops en online winkels</h3>
+            <p>Van kleine hobbywebshops tot grote online retailers. Ze verkopen kleding, speelgoed, boeken, electronica, voeding en nog veel meer. Allemaal met Pagayo als basis voor hun online verkopen.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏨</div>
+            <h3>Hotels en bed & breakfasts</h3>
+            <p>Kleine B&B's met 3 kamers, maar ook grotere hotels met 50+ kamers. Ze beheren hun boekingen, gasten en prijzen allemaal in Pagayo. Online boeken is zo makkelijk voor hun gasten.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚗</div>
+            <h3>Verhuurbedrijven</h3>
+            <p>Auto's, fietsen, boten, vakantiehuizen, feesttenten, gereedschap - als je het kunt verhuren, is er wel iemand die het doet met Pagayo. Reserveren, betalen en plannen allemaal op één plek.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏪</div>
+          <h3>Fysieke winkels met kassa</h3>
+            <p>Speelgoedwinkels, kledingzaken, boekhandels en conceptstores. Ze verkopen niet alleen online, maar ook gewoon in hun winkel. Met de Pagayo kassa gaat alles digitaal en blijft de voorraad automatisch bij.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+            <h3>Cursussen en trainingen</h3>
+            <p>Yogalessen, taalcursussen, kooklessen, workshops - allemaal eenvoudig te boeken en te betalen via Pagayo. Cursisten krijgen automatisch een bevestiging en herinnering.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎫</div>
+            <h3>Tickets en evenementen</h3>
+            <p>Kleine evenementen zoals theater voorstellingen, maar ook grotere festivals. Bezoekers kopen hun ticket online, scannen bij de ingang en klaar. Geen gedoe met papieren bonnen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+          <p class="eyebrow">Succesverhalen</p>
+          <h2>Bedrijven die groeiden met Pagayo</h2>
+          <p class="section-sub">Veel klanten begonnen klein en groeiden uit tot grotere ondernemingen. Pagayo groeide mee, zonder dat ze hoefden te wisselen van systeem.</p>
+        </div>
+        <ol class="steps">
+          <li><strong>Van hobby naar fulltime:</strong> Een start-up begon met een kleine webshop vanuit huis. Verkocht handgemaakte spullen aan familie en vrienden. Binnen 2 jaar groeide het uit tot een volledig bedrijf met 10.000+ klanten per jaar. Pagayo schaalde automatisch mee zonder extra kosten of ingewikkelde upgrades.</li>
+          <li><strong>Uitbreiding naar meerdere winkels:</strong> Een kledingwinkel in Amsterdam startte met één fysieke zaak en een kleine webshop. Nu hebben ze filialen in 5 steden, allemaal verbonden met Pagayo. Voorraad blijft synchroon, verkopen komen samen in één dashboard. De eigenaar heeft overzicht en kan makkelijk bijsturen.</li>
+          <li><strong>Van 1 naar 12 vakantiehuizen:</strong> Een verhuurder begon met één vakantiehuis. Boekingen liepen via mail en Excel. Onhandig en veel foutjes. Na de overstap naar Pagayo ging alles online en automatisch. Nu beheert hij 12 huizen zonder extra administratie. Gasten boeken zelf, betalen online en krijgen automatisch de toegangscode.</li>
+          <li><strong>Online én offline samenvoegen:</strong> Een speelgoedwinkel had eerst een webshop op platform A en een kassa in de winkel op systeem B. Voorraad klopte nooit en orders raakten zoek. Met Pagayo kwam alles samen: één systeem voor online én offline. Klanten kunnen nu online bestellen en in de winkel ophalen. Of kopen in de winkel en thuis laten bezorgen. Alles werkt naadloos samen.</li>
+          <li><strong>Internationaal groeien:</strong> Een webshop verkocht eerst alleen in Nederland. Daarna kwamen België, Duitsland en Frankrijk erbij. Voor elk land een aparte webshop binnen hetzelfde Pagayo account. Producten delen waar nodig, prijzen en talen per land instellen. Alle verkopen komen samen in één overzicht. Internationaal groeien was nog nooit zo makkelijk.</li>
+        </ol>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Betrouwbaarheid</p>
+        <h2>Wat maakt Pagayo zo betrouwbaar?</h2>
+        <p class="section-sub">Betrouwbaarheid bestaat uit veel kleine dingen die samen het verschil maken. Dit zijn de belangrijkste redenen waarom bedrijven Pagayo vertrouwen.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+            <h3>Bijna nooit offline</h3>
+            <p>Onze systemen hebben een uptime van 99,9%. Dat betekent dat je webshop of kassa bijna altijd werkt. Zelfs als er ergens iets kapot gaat, hebben we back-up systemen die automatisch overnemen. Jouw klanten merken er niks van.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Razendsnel laden</h3>
+            <p>Een trage website verliest klanten. Daarom draait Pagayo op snelle servers verspreid over heel Europa. Je webshop laadt in een fractie van een seconde. Ook tijdens piekdrukte of Black Friday blijft alles snel werken.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Goed beveiligd</h3>
+          <p>We nemen beveiliging serieus. Alle klantgegevens zijn versleuteld. Betalingen lopen via officiële partners. Onze systemen worden regelmatig gecontroleerd op zwakke plekken. Jouw bedrijf en klanten zijn veilig bij ons.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💾</div>
+            <h3>Automatische back-ups</h3>
+            <p>Elke dag maken we automatisch een veilige kopie van al je gegevens. Mocht er ooit iets mis gaan (gebeurt vrijwel nooit), dan kunnen we alles terugzetten. Je verliest nooit orders, klantgegevens of producten.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📞</div>
+            <h3>Bereikbare support</h3>
+            <p>Heb je een vraag of probleem? Stuur een mailtje of chat met ons. Meestal reageren we binnen een paar uur, vaak zelfs binnen 30 minuten. We helpen je graag verder in gewoon Nederlands.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Regelmatige updates</h3>
+          <p>We blijven Pagayo verbeteren. Nieuwe functies worden toegevoegd, kleine bugs worden opgelost, beveiliging wordt aangescherpt. Alles gebeurt automatisch op de achtergrond. Jij hoeft niks te doen en profiteert meteen van verbeteringen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+          <p class="eyebrow">Overstappen</p>
+          <h2>Van ander systeem naar Pagayo</h2>
+          <p class="section-sub">Veel bedrijven kwamen bij ons omdat hun vorige systeem te traag, te duur of te ingewikkeld was. De overstap viel mee en ze zijn blij met hun keuze.</p>
+        </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>Producten en klanten overnemen</h3>
+            <p>Je hoeft niet alles opnieuw in te voeren. We kunnen je producten, klantgegevens en ordergeschiedenis overnemen van je oude systeem. Dat scheelt enorm veel werk. Binnen een dag of paar kan je live gaan.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+            <h3>Hulp bij de overstap</h3>
+            <p>We laten je niet in de steek. Tijdens de overstap kun je altijd vragen stellen. We helpen je met het instellen van je webshop of kassa. En we checken of alles goed werkt voordat je live gaat.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+            <h3>Eerlijke prijzen zonder verrassingen</h3>
+            <p>Geen verborgen kosten of plotselinge prijsverhogingen. Je betaalt een klein percentage van je omzet. Hoe meer je verkoopt, hoe meer je verdient. Wij groeien mee zonder je te melken met hoge vaste kosten.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+          <p class="eyebrow">Klantfeedback</p>
+          <h2>Wat klanten over ons zeggen</h2>
+          <p class="section-sub">We houden niet van overdreven marketing praatjes. Dit zijn echte redenen waarom bedrijven tevreden zijn over Pagayo. Simpel en eerlijk.</p>
+        </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Het werkt gewoon</h3>
+            <p>De meest gehoorde feedback: "Het werkt gewoon zoals het moet." Geen crashes, geen rare foutmeldingen, geen gedoe. Orders komen binnen, klanten kunnen betalen, voorraad blijft bij. Soms is saai betrouwbaar precies wat een ondernemer nodig heeft.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+            <h3>Eindelijk overzicht</h3>
+            <p>Veel ondernemers hadden eerst meerdere systemen: één voor webshop, één voor kassa, één voor boekhouding. Met Pagayo komt alles samen. Ze zien in één oogopslag hoe hun bedrijf draait. Dat geeft rust en maakt bijsturen makkelijker.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💚</div>
+            <h3>Fijne support</h3>
+            <p>Support die reageert, meedenkt en gewoon helpt zonder moeilijk te doen. Dat waarderen klanten enorm. Geen ingewikkelde ticket systemen of urenlang in de wacht. Gewoon snel geholpen worden door iemand die begrijpt wat je vraag is.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Groeit mee met mijn bedrijf</h3>
+            <p>Klanten starten klein en groeien door zonder dat ze hoeven te wisselen van platform. Van 10 orders per maand naar 1000 per week? Geen probleem. Van 1 winkel naar 5 filialen? Gewoon toevoegen. Pagayo schaalt automatisch mee.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💡</div>
+            <h3>Simpel te begrijpen</h3>
+            <p>Je hoeft geen IT studie te hebben gedaan om Pagayo te kunnen gebruiken. Alles is logisch en duidelijk. Nieuwe medewerkers snappen het binnen een uurtje. Dat scheelt tijd en frustratie bij het inwerken van personeel.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3>Losse functies</h3>
+          <p>Niet alles gebruiken is geen probleem. Sommige klanten gebruiken alleen de webshop. Anderen alleen de kassa. Weer anderen combineren alles. Je betaalt alleen voor wat je gebruikt en activeert functies wanneer je ze nodig hebt.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+          <p class="eyebrow">Toekomstbestendig</p>
+          <h2>Een platform waar je lang mee vooruit kunt</h2>
+          <p class="section-sub">Bij het kiezen van een systeem wil je er zeker van zijn dat het over 5 jaar nog steeds bestaat en werkt. Pagayo wordt continu doorontwikkeld en groeit mee met technologie.</p>
+        </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔮</div>
+          <h3>We blijven ontwikkelen</h3>
+            <p>Elke maand komen er nieuwe functies bij. We luisteren naar feedback van klanten en bouwen wat ze nodig hebben. Zo blijft Pagayo relevant en up-to-date met wat ondernemers verwachten.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+            <h3>Klaar voor internationaal</h3>
+            <p>Wil je later ook in België, Duitsland of andere landen verkopen? Dat kan. Pagayo ondersteunt meerdere talen, valuta's en betalingsmethoden. Internationale groei wordt zo veel makkelijker.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔌</div>
+            <h3>Koppelingen met andere tools</h3>
+            <p>Pagayo werkt samen met andere systemen die je misschien gebruikt. Boekhouding software, e-mail marketing tools, verzendpartners - we hebben koppelingen met de belangrijkste diensten. En er komen er steeds meer bij.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <div class="section-header">
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Vragen over Pagayo als platform</h2>
+        <p class="section-sub">De belangrijkste vragen die potentiële klanten stellen voordat ze kiezen voor Pagayo. Eerlijk beantwoord.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Wat kost Pagayo eigenlijk?</h3>
+            <p>Je betaalt een klein percentage van je omzet. Geen dure maandabonnementen of verborgen kosten. Verkoop je veel? Dan betaal je wat meer, maar verdien je ook meer. Start je net? Dan betaal je bijna niks. Zo simpel is het.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⏱️</div>
+          <h3>Hoe snel kan ik starten?</h3>
+            <p>Als je begint vanaf nul, kun je binnen een dag live. Je maakt een account aan, voegt je eerste producten toe, koppelt een betaalmethode en klaar. Kom je van een ander systeem? Dan duurt het wat langer omdat we je gegevens moeten overnemen.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <h3>Moet ik technisch zijn om Pagayo te gebruiken?</h3>
+          <p>Nee, helemaal niet. Als je kunt mailen en browsen, kun je Pagayo gebruiken. Alles is zo simpel mogelijk gemaakt. En als je ergens niet uitkomt, helpt onze support je graag verder.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Hoe zit het met de beveiliging?</h3>
+          <p>Alle data wordt versleuteld opgeslagen. Betalingen gaan via officiële partners zoals Stripe en Mollie (niet via ons). We maken dagelijks back-ups. En onze systemen worden regelmatig gecontroleerd op kwetsbaarheden. Jouw bedrijf is veilig bij ons.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Werkt het ook op mijn telefoon of tablet?</h3>
+          <p>Ja, alles werkt op elk apparaat. Het beheerpaneel past zich automatisch aan. Thuis op je laptop, in de winkel op een tablet of onderweg op je telefoon - overal kun je Pagayo gebruiken.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Kan ik eerst uitproberen voordat ik betaal?</h3>
+          <p>Jazeker. Je kunt gratis beginnen en alles uitproberen. Pas als je echt live gaat en je eerste verkopen hebt, betaal je een percentage. Geen risico, geen verplichtingen. Gewoon eerst kijken of het bij je past.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FooterDynamic country={country} />
+</BaseLayout>
+
+<style>
+  .section, .cta { margin-top: 4rem; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+  h1 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em; }
+  .lead { color: var(--text-secondary); line-height: 1.6; max-width: 820px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.4rem; border-radius: 10px; font-weight: 700; text-decoration: none; border: 1px solid transparent; transition: all 0.25s ease; cursor: pointer; }
+  .btn-primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; box-shadow: 0 12px 30px rgba(0,255,136,0.2); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text); background: rgba(10,10,10,0.6); }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .pill { display: inline-flex; align-items: center; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(0,255,136,0.08); color: var(--text); font-size: 0.85rem; }
+  .section { display: flex; flex-direction: column; gap: 1.5rem; }
+  .section-header { max-width: 780px; display: flex; flex-direction: column; gap: 0.5rem; }
+  .section-sub { color: var(--text-secondary); }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .feature-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: var(--bg-secondary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; gap: 0.65rem; transition: all 0.25s ease; }
+  .feature-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 255, 136, 0.14); }
+  .feature-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(0, 255, 136, 0.1); color: var(--accent); font-weight: 700; font-size: 1.5rem; }
+  .feature-card h3 { font-size: 1.2rem; font-weight: 800; margin: 0.25rem 0; }
+  .feature-card p { color: var(--text-secondary); line-height: 1.6; }
+  .steps { display: grid; gap: 0.8rem; padding-left: 1rem; color: var(--text-secondary); }
+  .steps strong { color: var(--text); }
+  .cta { border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; background: linear-gradient(135deg, rgba(0,255,136,0.08), rgba(0,0,0,0.9)); text-align: center; display: grid; place-items: center; box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
+  .cta__content { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; max-width: 720px; }
+  .cta__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+  @media (max-width: 1024px) {
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .feature-grid { grid-template-columns: 1fr; }
+  }
+</style>

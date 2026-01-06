@@ -1,0 +1,238 @@
+{
+  "code": "pl",
+  "region": "eu",
+  "name": "Polska",
+  "locale": "pl-PL",
+  "currency": "PLN",
+  "language": "Polski",
+  "nav": {
+    "features": "Funkcje",
+    "pricing": "Cennik",
+    "contact": "Kontakt",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Platforma",
+        "links": [
+          {
+            "label": "Funkcje",
+            "path": "/features"
+          },
+          {
+            "label": "Cennik",
+            "path": "/pricing"
+          },
+          {
+            "label": "Kontakt",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Ogólne",
+        "links": [
+          {
+            "label": "Szyfrowanie najemcy",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Nieograniczone systemy",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Zaufało nam 5000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "Połączenia API",
+            "path": "/api-connections"
+          },
+          {
+            "label": "Zapytania API",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Firma",
+        "links": [
+          {
+            "label": "O nas",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Kariera",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Płatności",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "Przelewy24",
+            "path": "/przelewy24"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Księgowość",
+        "links": [
+          {
+            "label": "Wfirma",
+            "path": "/wfirma"
+          },
+          {
+            "label": "inFakt",
+            "path": "/infakt"
+          }
+        ]
+      },
+      {
+        "title": "Wysyłka",
+        "links": [
+          {
+            "label": "Poczta Polska",
+            "path": "/poczta-polska"
+          },
+          {
+            "label": "InPost",
+            "path": "/inpost"
+          },
+          {
+            "label": "DPD",
+            "path": "/dpd"
+          }
+        ]
+      },
+      {
+        "title": "Połączenia API",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Prawne",
+        "links": [
+          {
+            "label": "Prywatność",
+            "path": "/privacy"
+          },
+          {
+            "label": "Warunki",
+            "path": "/terms"
+          },
+          {
+            "label": "Umowa przetwarzania danych",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "Międzynarodowe",
+        "links": [
+          {
+            "label": "Afryka",
+            "path": "/africa"
+          },
+          {
+            "label": "Azja",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Bliski Wschód",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Ameryki",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceania",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Funkcje",
+        "links": [
+          {
+            "label": "Wszystkie funkcje",
+            "path": "/features"
+          },
+          {
+            "label": "Wsparcie klienta",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Wielodostępna platforma e-commerce dla nowoczesnych przedsiębiorców.",
+    "copyright": "© {year} Pagayo. Wszelkie prawa zastrzeżone."
+  },
+  "meta": {
+    "tagline": "Wielodostępna platforma e-commerce dla nowoczesnych przedsiębiorców."
+  }
+}

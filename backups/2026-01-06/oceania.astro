@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const englishCountries = [
+  { name: 'Australië', code: 'au', flag: '🇦🇺', language: 'Engels' },
+  { name: 'Nieuw-Zeeland', code: 'nz', flag: '🇳🇿', language: 'Engels' },
+  { name: 'Fiji', code: 'fj', flag: '🇫🇯', language: 'Engels' },
+  { name: 'Papua-Nieuw-Guinea', code: 'pg', flag: '🇵🇬', language: 'Engels' },
+  { name: 'Samoa', code: 'ws', flag: '🇼🇸', language: 'Engels' },
+  { name: 'Vanuatu', code: 'vu', flag: '🇻🇺', language: 'Engels' },
+  { name: 'Tonga', code: 'to', flag: '🇹🇴', language: 'Engels' },
+  { name: 'Kiribati', code: 'ki', flag: '🇰🇮', language: 'Engels' },
+  { name: 'Marshalleilanden', code: 'mh', flag: '🇲🇭', language: 'Engels' },
+  { name: 'Micronesië', code: 'fm', flag: '🇫🇲', language: 'Engels' },
+  { name: 'Palau', code: 'pw', flag: '🇵🇼', language: 'Engels' },
+  { name: 'Nauru', code: 'nr', flag: '🇳🇷', language: 'Engels' },
+  { name: 'Salomonseilanden', code: 'sb', flag: '🇸🇧', language: 'Engels' },
+  { name: 'Tuvalu', code: 'tv', flag: '🇹🇻', language: 'Engels' },
+];
+
+const otherLanguageCountries = [
+  { name: 'Frans-Polynesië', code: 'pf', flag: '🇵🇫', language: 'Frans' },
+  { name: 'Nieuw-Caledonië', code: 'nc', flag: '🇳🇨', language: 'Frans' },
+];
+---
+
+<BaseLayout title="Pagayo Oceanië - E-commerce Platform" description="Ontdek Pagayo e-commerce diensten in Oceanië" lang="nl">
+  <Header />
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="section-title">Pagayo in Oceanië</h1>
+        <p class="section-subtitle">
+          Wij zijn actief in landen en eilanden in Oceanië waar we lokale betaalmethoden, 
+          verzendopties en geoptimaliseerde checkout flows aanbieden voor jouw webshop.
+        </p>
+      </div>
+
+      <!-- Engelstalige landen -->
+      <div class="language-section">
+        <h2 class="language-title">Engelstalige landen</h2>
+        <div class="countries-grid">
+          {englishCountries.map(country => (
+            <a href={`/oc/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Andere talen -->
+      <div class="language-section">
+        <h2 class="language-title">Andere talen</h2>
+        <div class="countries-grid">
+          {otherLanguageCountries.map(country => (
+            <a href={`/oc/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Page-specific styles - gemeenschappelijke styles in global.css */
+  
+  .language-section {
+    margin-bottom: 4rem;
+  }
+
+  .language-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .language-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .section-header {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .section-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .country-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .country-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .country-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 255, 136, 0.15);
+  }
+
+  .country-card:hover::before {
+    opacity: 1;
+  }
+
+  .country-flag {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .country-card:hover .country-flag {
+    transform: scale(1.1);
+  }
+
+  .country-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .country-language {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .country-arrow {
+    font-size: 1.5rem;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    margin-top: auto;
+  }
+
+  .country-card:hover .country-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .countries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 4rem 1rem;
+    }
+
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .country-card {
+      padding: 1.5rem;
+    }
+
+    .country-flag {
+      font-size: 2.5rem;
+    }
+
+    .country-name {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .countries-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

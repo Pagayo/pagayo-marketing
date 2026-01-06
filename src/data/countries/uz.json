@@ -1,0 +1,125 @@
+{
+  "code": "uz",
+  "name": "Uzbekistan",
+  "region": "as",
+  "currency": "UZS",
+  "locale": "uz-UZ",
+  "language": "uz",
+  "nav": {
+    "features": "Xususiyatlar",
+    "pricing": "Narx",
+    "blog": "Blog",
+    "contact": "Aloqa",
+    "cta": "Bepul boshlash"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Xususiyatlar",
+        "links": [
+          {
+            "label": "Xususiyatlar",
+            "path": "/features"
+          },
+          {
+            "label": "Narx",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Biz haqimizda",
+        "links": [
+          {
+            "label": "Biz haqimizda",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Aloqa",
+        "links": [
+          {
+            "label": "Aloqa",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Maxfiylik siyosati",
+        "links": [
+          {
+            "label": "Maxfiylik siyosati",
+            "path": "/privacy"
+          },
+          {
+            "label": "Shartlar",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Uzbekistan",
+    "copyright": "Mualliflik huquqi {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Uzbekistan - E-commerce Platform",
+    "description": "Professional e-commerce platform for Uzbekistan. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Uzbekistan Post",
+      "DHL"
+    ],
+    "cities": [
+      "Tashkent",
+      "Samarkand",
+      "Bukhara"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

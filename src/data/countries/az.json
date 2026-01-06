@@ -1,0 +1,125 @@
+{
+  "code": "az",
+  "name": "Azerbaijan",
+  "region": "as",
+  "currency": "AZN",
+  "locale": "az-AZ",
+  "language": "az",
+  "nav": {
+    "features": "Xüsusiyyətlər",
+    "pricing": "Qiymət",
+    "blog": "Bloq",
+    "contact": "Əlaqə",
+    "cta": "Pulsuz başla"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Xüsusiyyətlər",
+        "links": [
+          {
+            "label": "Xüsusiyyətlər",
+            "path": "/features"
+          },
+          {
+            "label": "Qiymət",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Haqqımızda",
+        "links": [
+          {
+            "label": "Haqqımızda",
+            "path": "/about"
+          },
+          {
+            "label": "Bloq",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Əlaqə",
+        "links": [
+          {
+            "label": "Əlaqə",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Məxfilik siyasəti",
+        "links": [
+          {
+            "label": "Məxfilik siyasəti",
+            "path": "/privacy"
+          },
+          {
+            "label": "Şərtlər",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Azerbaijan",
+    "copyright": "Müəllif hüququ {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Azerbaijan - E-commerce Platform",
+    "description": "Professional e-commerce platform for Azerbaijan. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Azerpost",
+      "DHL"
+    ],
+    "cities": [
+      "Baku",
+      "Ganja",
+      "Sumqayit"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

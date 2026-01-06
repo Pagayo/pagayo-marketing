@@ -1,0 +1,147 @@
+{
+  "code": "iq",
+  "name": "Iraq",
+  "region": "me",
+  "currency": "IQD",
+  "locale": "ar-IQ",
+  "language": "ar",
+  "direction": "rtl",
+  "nav": {
+    "features": "الميزات",
+    "pricing": "التسعير",
+    "blog": "المدونة",
+    "contact": "اتصل",
+    "cta": "ابدأ مجاناً"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "المنتج",
+        "links": [
+          {
+            "label": "الميزات",
+            "path": "/features"
+          },
+          {
+            "label": "التسعير",
+            "path": "/pricing"
+          },
+          {
+            "label": "الأمان",
+            "path": "/security"
+          }
+        ]
+      },
+      {
+        "title": "الشركة",
+        "links": [
+          {
+            "label": "عن الشركة",
+            "path": "/about"
+          },
+          {
+            "label": "المدونة",
+            "path": "/blog"
+          },
+          {
+            "label": "الوظائف",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "الدعم",
+        "links": [
+          {
+            "label": "مركز المساعدة",
+            "path": "/help"
+          },
+          {
+            "label": "اتصل",
+            "path": "/contact"
+          },
+          {
+            "label": "الحالة",
+            "path": "/status"
+          }
+        ]
+      },
+      {
+        "title": "قانوني",
+        "links": [
+          {
+            "label": "الخصوصية",
+            "path": "/privacy"
+          },
+          {
+            "label": "الشروط",
+            "path": "/terms"
+          },
+          {
+            "label": "ملفات تعريف الارتباط",
+            "path": "/cookies"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "التجارة الإلكترونية المبسطة لـIraq",
+    "copyright": "© {year} Pagayo. جميع الحقوق محفوظة."
+  },
+  "meta": {
+    "title": "Pagayo Iraq - منصة التجارة الإلكترونية",
+    "description": "منصة تجارة إلكترونية احترافية لـIraq. مدفوعات وشحن ودعم محلي."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Iraqi Company for Post",
+      "DHL",
+      "Aramex"
+    ],
+    "cities": [
+      "Baghdad",
+      "Basra",
+      "Mosul"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

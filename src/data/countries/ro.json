@@ -1,0 +1,238 @@
+{
+  "code": "ro",
+  "region": "eu",
+  "name": "România",
+  "locale": "ro-RO",
+  "currency": "RON",
+  "language": "Română",
+  "nav": {
+    "features": "Caracteristici",
+    "pricing": "Prețuri",
+    "contact": "Contact",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Platformă",
+        "links": [
+          {
+            "label": "Caracteristici",
+            "path": "/features"
+          },
+          {
+            "label": "Prețuri",
+            "path": "/pricing"
+          },
+          {
+            "label": "Contact",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "General",
+        "links": [
+          {
+            "label": "Criptare chiriași",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Sisteme nelimitate",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Încredere de la 5.000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "Conexiuni API",
+            "path": "/api-connections"
+          },
+          {
+            "label": "Cereri API",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Companie",
+        "links": [
+          {
+            "label": "Despre noi",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Cariere",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Plăți",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "Netopia",
+            "path": "/netopia"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Contabilitate",
+        "links": [
+          {
+            "label": "SmartBill",
+            "path": "/smartbill"
+          },
+          {
+            "label": "FGO",
+            "path": "/fgo"
+          }
+        ]
+      },
+      {
+        "title": "Livrare",
+        "links": [
+          {
+            "label": "Poșta Română",
+            "path": "/posta-romana"
+          },
+          {
+            "label": "FAN Courier",
+            "path": "/fan-courier"
+          },
+          {
+            "label": "DPD",
+            "path": "/dpd"
+          }
+        ]
+      },
+      {
+        "title": "Conexiuni API",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          {
+            "label": "Confidențialitate",
+            "path": "/privacy"
+          },
+          {
+            "label": "Termeni",
+            "path": "/terms"
+          },
+          {
+            "label": "Acord de procesare date",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "Internațional",
+        "links": [
+          {
+            "label": "Africa",
+            "path": "/africa"
+          },
+          {
+            "label": "Asia",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Orientul Mijlociu",
+            "path": "/middle-east"
+          },
+          {
+            "label": "America",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceania",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Caracteristici",
+        "links": [
+          {
+            "label": "Toate caracteristicile",
+            "path": "/features"
+          },
+          {
+            "label": "Suport clienți",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Platformă e-commerce multi-tenant pentru antreprenori moderni.",
+    "copyright": "© {year} Pagayo. Toate drepturile rezervate."
+  },
+  "meta": {
+    "tagline": "Platformă e-commerce multi-tenant pentru antreprenori moderni."
+  }
+}

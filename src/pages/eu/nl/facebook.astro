@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="Facebook API integratie - Pagayo"
+    description="Koppel Pagayo met Facebook API voor automatische productfeeds, advertenties en Facebook Shop synchronisatie."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">Facebook API</p>
+                <h1>Facebook Shop & Ads integratie</h1>
+                <p class="lead">
+                    Pagayo integreert met Facebook API voor automatische productfeeds, Facebook Shop sync en advertentie-optimalisatie.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">Facebook Shop</span>
+                    <span class="pill">Product feeds</span>
+                    <span class="pill">Ads tracking</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Sync frequentie</p>
+                    <p class="stat-value">15 min</p>
+                    <p class="stat-footnote">Producten & voorraad</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Conversie tracking</p>
+                    <p class="stat-value">Automatisch</p>
+                    <p class="stat-footnote">Via Pixel</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Facebook Shop</p>
+                    <p class="stat-value">Realtime</p>
+                    <p class="stat-footnote">Bestelling sync</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom Facebook API</p>
+                <h2 class="section-title">Verkoop waar je klanten zijn</h2>
+                <p class="section-subtitle">
+                    Synchroniseer producten, voorraad en bestellingen automatisch met Facebook Shop en Instagram Shopping.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3>Facebook Shop</h3>
+                    <p>Automatische productsync naar je Facebook winkel met realtime voorraad.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Product feeds</h3>
+                    <p>Dynamische productfeeds voor Facebook Ads en Dynamic Ads.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Bestellingen</h3>
+                    <p>Facebook Shop orders automatisch importeren in Pagayo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Pixel tracking</h3>
+                    <p>Facebook Pixel events voor nauwkeurige conversie-tracking.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Facebook Commerce</p>
+                <h2 class="section-title">Complete Facebook verkoop</h2>
+                <p class="section-subtitle">
+                    Van productcatalogus tot checkout – alles gesynchroniseerd via de Facebook Commerce API.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Product catalogs</h3>
+                    <p>Foto's, beschrijvingen en prijzen automatisch naar Facebook.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Prijssynchronisatie</h3>
+                    <p>Dynamische prijzen en kortingen direct doorvoeren.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📉</div>
+                    <h3>Voorraad updates</h3>
+                    <p>Realtime voorraad updates voorkomt uitverkocht producten tonen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">In één middag operationeel</h2>
+                <p class="section-subtitle">
+                    Koppel je Facebook Business account, map je catalogus en wij zorgen voor realtime synchronisatie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>Facebook Business</h3>
+                    <p>Login via Facebook Business Manager, wij bewaren tokens in KMS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Catalogus mapping</h3>
+                    <p>Koppel je producten aan Facebook catalogus met categorieën.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Pixel setup</h3>
+                    <p>Facebook Pixel automatisch geïnstalleerd voor tracking.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Facebook Ads</p>
+                <h2 class="section-title">Optimaliseer je advertenties</h2>
+                <p class="section-subtitle">
+                    Dynamische productadvertenties en retargeting met realtime productdata uit Pagayo.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Dynamic Ads</h3>
+                    <p>Automatische product ads met realtime prijzen en beschikbaarheid.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Retargeting</h3>
+                    <p>Bezoekers retargeten met producten die ze bekeken hebben.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Conversie API</h3>
+                    <p>Server-side tracking voor nauwkeurige conversie data ondanks iOS 14+.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>ROAS optimization</h3>
+                    <p>Realtime conversie data voor automatische bid optimization.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Tracking & Analytics</p>
+                <h2 class="section-title">Volledige conversie-inzicht</h2>
+                <p class="section-subtitle">
+                    Facebook Pixel, Conversie API en event tracking voor nauwkeurige ROI-berekening.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Facebook Pixel</h3>
+                    <p>ViewContent, AddToCart, Purchase events automatisch verzonden.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Conversie API</h3>
+                    <p>Server-side tracking voor iOS 14+ privacy compliance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Attribution</h3>
+                    <p>Exacte toewijzing van bestellingen aan Facebook campagnes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>ROAS tracking</h3>
+                    <p>Return on ad spend per campagne, ad set en advertentie.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Support & beveiliging</p>
+                <h2 class="section-title">Veilig en ondersteund</h2>
+                <p class="section-subtitle">
+                    API tokens in KMS, webhook monitoring en support voor Facebook certificering.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>API beveiliging</h3>
+                    <p>Facebook tokens veilig in KMS, automatische refresh.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Audit trail</h3>
+                    <p>Elke sync en API call wordt gelogd voor controle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlandse support</h3>
+                    <p>Ons team helpt bij setup en catalog configuratie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Monitoring</h3>
+                    <p>Realtime monitoring van API calls en sync status met alerts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met Facebook API op Pagayo</h2>
+                <p>Activeer de Facebook integratie en begin vandaag nog met verkopen via Facebook Shop.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .section { padding: 5rem 0; }
+        .section-alt { background: linear-gradient(180deg, rgba(0, 255, 136, 0.04), rgba(0, 0, 0, 0.12)); }
+        .section-header { max-width: 760px; margin: 0 auto 3rem; text-align: center; }
+        .section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+        .section-subtitle { color: var(--text-secondary); line-height: 1.6; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+        .lead { color: var(--text-secondary); line-height: 1.6; max-width: 720px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.5rem; border-radius: 10px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; border: 1px solid transparent; cursor: pointer; }
+        .btn-primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; box-shadow: 0 12px 30px rgba(0, 255, 136, 0.2); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0, 255, 136, 0.3); }
+        .btn-ghost { border-color: var(--border); color: var(--text); background: rgba(10, 10, 10, 0.6); }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+        .pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(0, 255, 136, 0.05); color: var(--text); font-size: 0.85rem; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+        .feature-grid--three { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .feature-grid--two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        .feature-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: var(--bg-secondary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; gap: 0.65rem; transition: all 0.25s ease; }
+        .feature-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 255, 136, 0.14); }
+        .feature-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(0, 255, 136, 0.1); color: var(--accent); font-weight: 700; }
+        .feature-card h3 { font-size: 1.2rem; font-weight: 800; margin: 0.25rem 0; }
+        .feature-card p { color: var(--text-secondary); line-height: 1.6; }
+
+        .cta { border: 1px solid var(--border); border-radius: 18px; padding: 3rem; background: linear-gradient(135deg, rgba(0, 255, 136, 0.06), rgba(0, 0, 0, 0.9)); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3); text-align: center; margin: 2rem 0 0; }
+        .cta__content { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+        .cta h2 { font-size: clamp(2.1rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: -0.02em; }
+        .cta p { color: var(--text-secondary); max-width: 640px; }
+        .cta__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+
+        @media (max-width: 1024px) {
+            .feature-grid { grid-template-columns: repeat(2, 1fr); }
+            .feature-grid--two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 4rem 0; }
+            .section-header { margin-bottom: 2.5rem; }
+            .feature-card { padding: 1.5rem; }
+            .cta { padding: 2rem 1.5rem; border-radius: 16px; }
+            .cta__actions { flex-direction: column; width: 100%; }
+            .cta__actions .btn { width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .section { padding: 3rem 0; }
+            .eyebrow { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+            .lead { font-size: 0.95rem; }
+            .btn { padding: 0.8rem 1.25rem; font-size: 0.9rem; }
+            .pill { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
+            .feature-card { padding: 1.25rem; gap: 0.5rem; }
+            .feature-icon { width: 38px; height: 38px; }
+            .feature-card h3 { font-size: 1.1rem; }
+            .feature-card p { font-size: 0.9rem; }
+            .cta { padding: 1.75rem 1rem; }
+            .cta h2 { font-size: 1.75rem; }
+        }
+    </style>
+
+    <FooterDynamic country={country} />
+</BaseLayout>

@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+
+const englishCountries = [
+  { name: 'Australië', code: 'au', flag: '🇦🇺', language: 'Engels' },
+  { name: 'Nieuw-Zeeland', code: 'nz', flag: '🇳🇿', language: 'Engels' },
+  { name: 'Fiji', code: 'fj', flag: '🇫🇯', language: 'Engels' },
+  { name: 'Papua-Nieuw-Guinea', code: 'pg', flag: '🇵🇬', language: 'Engels' },
+  { name: 'Samoa', code: 'ws', flag: '🇼🇸', language: 'Engels' },
+  { name: 'Vanuatu', code: 'vu', flag: '🇻🇺', language: 'Engels' },
+  { name: 'Tonga', code: 'to', flag: '🇹🇴', language: 'Engels' },
+  { name: 'Kiribati', code: 'ki', flag: '🇰🇮', language: 'Engels' },
+  { name: 'Marshalleilanden', code: 'mh', flag: '🇲🇭', language: 'Engels' },
+  { name: 'Micronesië', code: 'fm', flag: '🇫🇲', language: 'Engels' },
+  { name: 'Palau', code: 'pw', flag: '🇵🇼', language: 'Engels' },
+  { name: 'Nauru', code: 'nr', flag: '🇳🇷', language: 'Engels' },
+  { name: 'Salomonseilanden', code: 'sb', flag: '🇸🇧', language: 'Engels' },
+  { name: 'Tuvalu', code: 'tv', flag: '🇹🇻', language: 'Engels' },
+];
+
+const otherLanguageCountries = [
+  { name: 'Frans-Polynesië', code: 'pf', flag: '🇵🇫', language: 'Frans' },
+  { name: 'Nieuw-Caledonië', code: 'nc', flag: '🇳🇨', language: 'Frans' },
+];
+---
+
+<BaseLayout title="Pagayo Oceanië - E-commerce Platform" description="Ontdek Pagayo e-commerce diensten in Oceanië" lang="nl">
+  <HeaderDynamic country={country} />
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="section-title">Pagayo in Oceanië</h1>
+        <p class="section-subtitle">
+          Wij zijn actief in landen en eilanden in Oceanië waar we lokale betaalmethoden, 
+          verzendopties en geoptimaliseerde checkout flows aanbieden voor jouw webshop.
+        </p>
+      </div>
+
+      <!-- Engelstalige landen -->
+      <div class="language-section">
+        <h2 class="language-title">Engelstalige landen</h2>
+        <div class="countries-grid">
+          {englishCountries.map(country => (
+            <a href={`/oc/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Andere talen -->
+      <div class="language-section">
+        <h2 class="language-title">Andere talen</h2>
+        <div class="countries-grid">
+          {otherLanguageCountries.map(country => (
+            <a href={`/oc/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FooterDynamic country={country} />
+</BaseLayout>
+
+<style>
+  .section-header {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .section-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+</style>

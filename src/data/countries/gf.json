@@ -1,0 +1,126 @@
+{
+  "code": "gf",
+  "name": "French Guiana",
+  "region": "am",
+  "currency": "EUR",
+  "locale": "fr-GF",
+  "language": "fr",
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Commencer gratuitement"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Fonctionnalités",
+        "links": [
+          {
+            "label": "Fonctionnalités",
+            "path": "/features"
+          },
+          {
+            "label": "Tarifs",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "À propos",
+        "links": [
+          {
+            "label": "À propos",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Contact",
+        "links": [
+          {
+            "label": "Contact",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Confidentialité",
+        "links": [
+          {
+            "label": "Confidentialité",
+            "path": "/privacy"
+          },
+          {
+            "label": "Conditions",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for French Guiana",
+    "copyright": "Tous droits réservés {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo French Guiana - E-commerce Platform",
+    "description": "Professional e-commerce platform for French Guiana. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe",
+      "PayPal"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "La Poste",
+      "DHL"
+    ],
+    "cities": [
+      "Cayenne",
+      "Saint-Laurent-du-Maroni",
+      "Kourou"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

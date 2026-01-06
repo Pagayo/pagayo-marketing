@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="Instagram API integratie - Pagayo"
+    description="Koppel Pagayo met Instagram API voor Instagram Shopping, productfeeds en shoppable posts synchronisatie."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">Instagram API</p>
+                <h1>Instagram Shopping integratie</h1>
+                <p class="lead">
+                    Pagayo integreert met Instagram API voor automatische productfeeds, Instagram Shopping en shoppable posts.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">Instagram Shopping</span>
+                    <span class="pill">Shoppable posts</span>
+                    <span class="pill">Product tags</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Sync frequentie</p>
+                    <p class="stat-value">15 min</p>
+                    <p class="stat-footnote">Producten & voorraad</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Product tags</p>
+                    <p class="stat-value">Automatisch</p>
+                    <p class="stat-footnote">In posts & stories</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Shop</p>
+                    <p class="stat-value">Realtime</p>
+                    <p class="stat-footnote">Catalogus sync</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom Instagram API</p>
+                <h2 class="section-title">Verkoop via visuele content</h2>
+                <p class="section-subtitle">
+                    Synchroniseer producten automatisch met Instagram Shopping en maak elke post shoppable.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3>Instagram Shop</h3>
+                    <p>Automatische productsync naar je Instagram winkel met realtime voorraad.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>Product tags</h3>
+                    <p>Tag producten in je posts en stories voor directe aankopen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Bestellingen</h3>
+                    <p>Instagram Shopping orders automatisch importeren in Pagayo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics</h3>
+                    <p>Inzicht in product views, clicks en conversies via Instagram.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Instagram Commerce</p>
+                <h2 class="section-title">Van inspiratie naar aankoop</h2>
+                <p class="section-subtitle">
+                    Maak elke post shoppable en laat klanten direct kopen via Instagram Shopping.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Product catalogs</h3>
+                    <p>Foto's, beschrijvingen en prijzen automatisch naar Instagram.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Prijssynchronisatie</h3>
+                    <p>Dynamische prijzen en kortingen direct doorvoeren.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📉</div>
+                    <h3>Voorraad updates</h3>
+                    <p>Realtime voorraad updates voorkomt uitverkocht producten tonen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">In één middag operationeel</h2>
+                <p class="section-subtitle">
+                    Koppel je Instagram Business account, map je catalogus en wij zorgen voor realtime synchronisatie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>Instagram Business</h3>
+                    <p>Koppel via Facebook Business Manager, wij bewaren tokens in KMS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Catalogus mapping</h3>
+                    <p>Koppel je producten aan Instagram catalogus met categorieën.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Shopping setup</h3>
+                    <p>Instagram Shopping automatisch geactiveerd en geconfigureerd.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Shoppable content</p>
+                <h2 class="section-title">Maak elke post verkoopbaar</h2>
+                <p class="section-subtitle">
+                    Tag producten in posts, stories en reels voor naadloze shopping experience.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Shoppable posts</h3>
+                    <p>Tag tot 5 producten per post voor directe productpagina link.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Stories</h3>
+                    <p>Product stickers in stories voor snelle aankopen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>Reels</h3>
+                    <p>Tag producten in reels voor virale verkoop mogelijkheden.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📺</div>
+                    <h3>Live Shopping</h3>
+                    <p>Verkoop producten tijdens Instagram Live sessies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Product discovery</p>
+                <h2 class="section-title">Bereik nieuwe klanten</h2>
+                <p class="section-subtitle">
+                    Instagram Shop tab, Explore en Shopping tags zorgen voor organische product discovery.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🏪</div>
+                    <h3>Shop tab</h3>
+                    <p>Jouw producten zichtbaar in Instagram Shop voor ontdekking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Explore</h3>
+                    <p>Producten verschijnen in Explore feed voor nieuwe doelgroepen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>Shopping tags</h3>
+                    <p>Gebruikers vinden je producten via tags en zoekfunctie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>DM Shopping</h3>
+                    <p>Klanten kunnen producten delen en kopen via Direct Messages.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Support & beveiliging</p>
+                <h2 class="section-title">Veilig en ondersteund</h2>
+                <p class="section-subtitle">
+                    API tokens in KMS, webhook monitoring en support voor Instagram Shopping certificering.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>API beveiliging</h3>
+                    <p>Instagram tokens veilig in KMS, automatische refresh.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Audit trail</h3>
+                    <p>Elke sync en API call wordt gelogd voor controle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlandse support</h3>
+                    <p>Ons team helpt bij setup en catalog configuratie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Monitoring</h3>
+                    <p>Realtime monitoring van API calls en sync status met alerts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met Instagram Shopping op Pagayo</h2>
+                <p>Activeer de Instagram integratie en begin vandaag nog met verkopen via Instagram Shopping.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .section { padding: 5rem 0; }
+        .section-alt { background: linear-gradient(180deg, rgba(0, 255, 136, 0.04), rgba(0, 0, 0, 0.12)); }
+        .section-header { max-width: 760px; margin: 0 auto 3rem; text-align: center; }
+        .section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+        .section-subtitle { color: var(--text-secondary); line-height: 1.6; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+        .lead { color: var(--text-secondary); line-height: 1.6; max-width: 720px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.5rem; border-radius: 10px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; border: 1px solid transparent; cursor: pointer; }
+        .btn-primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; box-shadow: 0 12px 30px rgba(0, 255, 136, 0.2); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0, 255, 136, 0.3); }
+        .btn-ghost { border-color: var(--border); color: var(--text); background: rgba(10, 10, 10, 0.6); }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+        .pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(0, 255, 136, 0.05); color: var(--text); font-size: 0.85rem; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+        .feature-grid--three { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .feature-grid--two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        .feature-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: var(--bg-secondary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; gap: 0.65rem; transition: all 0.25s ease; }
+        .feature-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 255, 136, 0.14); }
+        .feature-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(0, 255, 136, 0.1); color: var(--accent); font-weight: 700; }
+        .feature-card h3 { font-size: 1.2rem; font-weight: 800; margin: 0.25rem 0; }
+        .feature-card p { color: var(--text-secondary); line-height: 1.6; }
+
+        .cta { border: 1px solid var(--border); border-radius: 18px; padding: 3rem; background: linear-gradient(135deg, rgba(0, 255, 136, 0.06), rgba(0, 0, 0, 0.9)); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3); text-align: center; margin: 2rem 0 0; }
+        .cta__content { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+        .cta h2 { font-size: clamp(2.1rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: -0.02em; }
+        .cta p { color: var(--text-secondary); max-width: 640px; }
+        .cta__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+
+        @media (max-width: 1024px) {
+            .feature-grid { grid-template-columns: repeat(2, 1fr); }
+            .feature-grid--two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 4rem 0; }
+            .section-header { margin-bottom: 2.5rem; }
+            .feature-card { padding: 1.5rem; }
+            .cta { padding: 2rem 1.5rem; border-radius: 16px; }
+            .cta__actions { flex-direction: column; width: 100%; }
+            .cta__actions .btn { width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .section { padding: 3rem 0; }
+            .eyebrow { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+            .lead { font-size: 0.95rem; }
+            .btn { padding: 0.8rem 1.25rem; font-size: 0.9rem; }
+            .pill { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
+            .feature-card { padding: 1.25rem; gap: 0.5rem; }
+            .feature-icon { width: 38px; height: 38px; }
+            .feature-card h3 { font-size: 1.1rem; }
+            .feature-card p { font-size: 0.9rem; }
+            .cta { padding: 1.75rem 1rem; }
+            .cta h2 { font-size: 1.75rem; }
+        }
+    </style>
+
+    <FooterDynamic country={country} />
+</BaseLayout>

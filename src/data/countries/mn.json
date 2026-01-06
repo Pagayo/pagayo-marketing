@@ -1,0 +1,125 @@
+{
+  "code": "mn",
+  "name": "Mongolia",
+  "region": "as",
+  "currency": "MNT",
+  "locale": "mn-MN",
+  "language": "mn",
+  "nav": {
+    "features": "Онцлог",
+    "pricing": "Үнэ",
+    "blog": "Блог",
+    "contact": "Холбоо барих",
+    "cta": "Үнэгүй эхлэх"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Онцлог",
+        "links": [
+          {
+            "label": "Онцлог",
+            "path": "/features"
+          },
+          {
+            "label": "Үнэ",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Бидний тухай",
+        "links": [
+          {
+            "label": "Бидний тухай",
+            "path": "/about"
+          },
+          {
+            "label": "Блог",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Холбоо барих",
+        "links": [
+          {
+            "label": "Холбоо барих",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Нууцлалын бодлого",
+        "links": [
+          {
+            "label": "Нууцлалын бодлого",
+            "path": "/privacy"
+          },
+          {
+            "label": "Нөхцөл",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Mongolia",
+    "copyright": "Зохиогчийн эрх {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Mongolia - E-commerce Platform",
+    "description": "Professional e-commerce platform for Mongolia. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Mongol Post",
+      "DHL"
+    ],
+    "cities": [
+      "Ulaanbaatar",
+      "Erdenet",
+      "Darkhan"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

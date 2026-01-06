@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="DHL verzending - Pagayo"
+    description="Hoe Pagayo DHL inzet voor snelle internationale verzending met DHL Express en DHL Parcel."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">DHL</p>
+                <h1>Internationaal verzenden met DHL</h1>
+                <p class="lead">
+                    Pagayo integreert met DHL Express en DHL Parcel voor betrouwbare wereldwijde verzending. Snelle douane afhandeling, realtime tracking en premium service.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">DHL Express & Parcel</span>
+                    <span class="pill">220+ landen</span>
+                    <span class="pill">Automatische douane</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Landen</p>
+                    <p class="stat-value">220+</p>
+                    <p class="stat-footnote">Wereldwijde dekking</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Levertijd wereldwijd</p>
+                    <p class="stat-value">1-3 dagen</p>
+                    <p class="stat-footnote">DHL Express service</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Tracking</p>
+                    <p class="stat-value">Realtime</p>
+                    <p class="stat-footnote">Elke scan zichtbaar</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom DHL bij Pagayo</p>
+                <h2 class="section-title">Wereldwijd verzenden zonder gedoe</h2>
+                <p class="section-subtitle">
+                    DHL Express voor spoedzendingen, DHL Parcel voor standaard. Wij regelen douanedocumenten en tarieven automatisch.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✈️</div>
+                    <h3>Express verzending</h3>
+                    <p>DHL Express levert wereldwijd binnen 1-3 werkdagen. Ideaal voor B2B en premium consument.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Parcel verzending</h3>
+                    <p>DHL Parcel voor standaard internationale zendingen binnen Europa tegen scherpe tarieven.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Wereldwijde dekking</h3>
+                    <p>Verzend naar 220+ landen en gebieden. Van Verenigde Staten tot Australië en Japan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Realtime tracking</h3>
+                    <p>Elke scan wordt direct doorgegeven. Klanten zien precies waar hun pakket is.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">Koppeling binnen een dag</h2>
+                <p class="section-subtitle">
+                    Koppel je DHL account, stel verzendregels in per bestemming en je bent klaar voor wereldwijde verzending.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>DHL account koppelen</h3>
+                    <p>Voer je DHL credentials in. Wij configureren de API voor Express en/of Parcel.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Verzendregels per land</h3>
+                    <p>Stel in welke service je per land aanbiedt: Express, Parcel of beide.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Douane configureren</h3>
+                    <p>Wij genereren automatisch douanedocumenten met correcte HS-codes en waarden.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">DHL Services</p>
+                <h2 class="section-title">Kies de juiste service per zending</h2>
+                <p class="section-subtitle">
+                    Van budget verzending binnen Europa tot spoedlevering naar Azië: DHL heeft de juiste optie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>DHL Express Worldwide</h3>
+                    <p>1-3 werkdagen wereldwijd. Inclusief douane clearance en premium tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>DHL Express 12:00</h3>
+                    <p>Levering voor 12:00 volgende werkdag in grote steden wereldwijd.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>DHL Parcel Europa</h3>
+                    <p>Standaard verzending binnen Europa tegen scherpe tarieven. 3-5 werkdagen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>ServicePoint delivery</h3>
+                    <p>Levering bij DHL ServicePoint voor flexibele afhaal momenten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Handtekening service</h3>
+                    <p>Voor waardevolle zendingen. DHL vraagt handtekening bij aflevering.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Bulkverzending</h3>
+                    <p>Speciale tarieven voor grote volumes. Automatische pickup bij jou of fulfillment partner.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Douane & compliance</p>
+                <h2 class="section-title">Probleemloos door de douane</h2>
+                <p class="section-subtitle">
+                    Wij genereren alle benodigde douanedocumenten automatisch. Correcte HS-codes, waarden en commercial invoices.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Automatische documenten</h3>
+                    <p>Commercial invoices en CN23/CN22 formulieren worden automatisch gegenereerd per zending.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔢</div>
+                    <h3>HS-codes</h3>
+                    <p>Wij koppelen automatisch de juiste HS-codes aan je producten voor snelle douane clearance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Invoerrechten berekenen</h3>
+                    <p>Klanten zien bij checkout een schatting van invoerrechten per land (DDP mogelijk).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Douane communicatie</h3>
+                    <p>Bij vragen van de douane krijgen klant en jij automatisch een notificatie.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Tracking & communicatie</p>
+                <h2 class="section-title">Klanten altijd op de hoogte</h2>
+                <p class="section-subtitle">
+                    Realtime tracking updates per e-mail en in klantaccount. Van verzending tot bezorging inclusief douane status.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Track & trace widget</h3>
+                    <p>Klanten zien live waar hun zending is zonder naar DHL site te gaan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Automatische e-mails</h3>
+                    <p>Updates bij verzending, in transit, douane clearance en bezorging.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛃</div>
+                    <h3>Douane status</h3>
+                    <p>Transparante updates wanneer zending in douane is en wat de geschatte vrijgave is.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Levertijd communicatie</h3>
+                    <p>Realistische levertijden per land en service level bij checkout.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Retouren internationaal</p>
+                <h2 class="section-title">Ook retouren uit het buitenland</h2>
+                <p class="section-subtitle">
+                    DHL regelt internationale retouren. Klanten krijgen een retourlabel, jij ziet wanneer het onderweg is.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Retourlabels genereren</h3>
+                    <p>Maak retourlabels voor internationale klanten. Douane declaratie wordt automatisch toegevoegd.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Retour tracking</h3>
+                    <p>Zie wanneer de retour onderweg is en wanneer deze bij jou of je warehouse aankomt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Kosten transparant</h3>
+                    <p>Kies of klant retourkosten betaalt of dat je deze zelf draagt. Duidelijk bij retourlabel generatie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Retour analyse</h3>
+                    <p>Zie per land en product wat je retourpercentage is en optimaliseer waar nodig.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Premium features</p>
+                <h2 class="section-title">Extra service voor jouw klanten</h2>
+                <p class="section-subtitle">
+                    DHL biedt premium opties voor betere customer experience en minder klachten.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🕐</div>
+                    <h3>Afspraak levering</h3>
+                    <p>Klant kiest een tijdslot voor bezorging. Vermindert mislukte leveringen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3>Bericht voor levering</h3>
+                    <p>DHL stuurt SMS of e-mail vlak voor levering zodat klant thuis kan zijn.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>B2B delivery</h3>
+                    <p>Speciale business services met handtekening en directe escalatie bij problemen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Verzekering</h3>
+                    <p>Automatische verzekering tot bepaald bedrag. Extra verzekering mogelijk voor waardevolle zendingen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Kosten & rapportage</p>
+                <h2 class="section-title">Inzicht in internationale verzendkosten</h2>
+                <p class="section-subtitle">
+                    Zie precies wat je uitgeeft per land, service level en productgroep. Optimaliseer je internationale strategie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Kosten per zending</h3>
+                    <p>Zie directe kosten inclusief brandstoftoeslag en eventuele douane handling fees.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Landvergelijking</h3>
+                    <p>Analyseer welke landen het meest winstgevend zijn qua verzendkosten vs orderwaarde.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Volume kortingen</h3>
+                    <p>Bij hogere volumes kunnen we betere DHL tarieven onderhandelen voor jou.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Service optimalisatie</h3>
+                    <p>We adviseren wanneer Parcel goedkoper is dan Express zonder klanttevredenheid te verliezen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met DHL op Pagayo</h2>
+                <p>Activeer DHL verzending in je Pagayo omgeving en begin met verkopen naar de hele wereld.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

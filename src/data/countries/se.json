@@ -1,0 +1,242 @@
+{
+  "code": "se",
+  "region": "eu",
+  "name": "Sverige",
+  "locale": "sv-SE",
+  "currency": "SEK",
+  "language": "Svenska",
+  "nav": {
+    "features": "Funktioner",
+    "pricing": "Priser",
+    "contact": "Kontakt",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Plattform",
+        "links": [
+          {
+            "label": "Funktioner",
+            "path": "/features"
+          },
+          {
+            "label": "Priser",
+            "path": "/pricing"
+          },
+          {
+            "label": "Kontakt",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Allmänt",
+        "links": [
+          {
+            "label": "Hyresgästkryptering",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Obegränsade system",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Betrodd av 5 000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "API-anslutningar",
+            "path": "/api-connections"
+          },
+          {
+            "label": "API-förfrågningar",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Företag",
+        "links": [
+          {
+            "label": "Om oss",
+            "path": "/about"
+          },
+          {
+            "label": "Blogg",
+            "path": "/blog"
+          },
+          {
+            "label": "Karriär",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Betalningar",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "Swish",
+            "path": "/swish"
+          },
+          {
+            "label": "Klarna",
+            "path": "/klarna"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Redovisning",
+        "links": [
+          {
+            "label": "Fortnox",
+            "path": "/fortnox"
+          },
+          {
+            "label": "Visma",
+            "path": "/visma"
+          }
+        ]
+      },
+      {
+        "title": "Frakt",
+        "links": [
+          {
+            "label": "PostNord",
+            "path": "/postnord"
+          },
+          {
+            "label": "DHL",
+            "path": "/dhl"
+          },
+          {
+            "label": "Bring",
+            "path": "/bring"
+          }
+        ]
+      },
+      {
+        "title": "API-anslutningar",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Juridiskt",
+        "links": [
+          {
+            "label": "Integritet",
+            "path": "/privacy"
+          },
+          {
+            "label": "Villkor",
+            "path": "/terms"
+          },
+          {
+            "label": "Databehandlingsavtal",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "Internationellt",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Asien",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Mellanöstern",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Amerika",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanien",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Funktioner",
+        "links": [
+          {
+            "label": "Alla funktioner",
+            "path": "/features"
+          },
+          {
+            "label": "Kundsupport",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Multi-tenant e-handelsplattform för moderna företagare.",
+    "copyright": "© {year} Pagayo. Alla rättigheter förbehållna."
+  },
+  "meta": {
+    "tagline": "Multi-tenant e-handelsplattform för moderna företagare."
+  }
+}

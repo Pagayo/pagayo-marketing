@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="Mollie betalingen - Pagayo"
+    description="Hoe Pagayo Mollie inzet voor iDEAL, Bancontact en andere lokale betaalmethoden in Nederland en België."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">Mollie</p>
+                <h1>Lokale betalingen met Mollie</h1>
+                <p class="lead">
+                    Pagayo gebruikt Mollie voor iDEAL, Bancontact, Sofort en andere populaire Europese betaalmethoden. Je krijgt een betrouwbare kassa die je klanten herkennen en vertrouwen.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">iDEAL, Bancontact, Sofort, Giropay</span>
+                    <span class="pill">Directe bevestiging</span>
+                    <span class="pill">Nederlandse support</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Conversie</p>
+                    <p class="stat-value">+4-7%</p>
+                    <p class="stat-footnote">Bekende Nederlandse interface</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Betaalmethoden</p>
+                    <p class="stat-value">15+</p>
+                    <p class="stat-footnote">Inclusief SEPA en vouchers</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Beschikbaarheid</p>
+                    <p class="stat-value">99.9%</p>
+                    <p class="stat-footnote">Stabiel Nederlands platform</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom Mollie bij Pagayo</p>
+                <h2 class="section-title">Vertrouwd voor Nederlandse klanten</h2>
+                <p class="section-subtitle">
+                    Mollie is de populairste betaalprovider in Nederland. We combineren Mollie met onze checkout voor optimale conversie en duidelijke rapportages.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlands platform</h3>
+                    <p>Mollie spreekt de taal van je klanten. iDEAL en andere methoden werken zoals ze gewend zijn.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Directe bevestiging</h3>
+                    <p>Betalingen worden direct bevestigd, orders gaan meteen in behandeling zonder vertraging.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛰️</div>
+                    <h3>Monitoring</h3>
+                    <p>We meten elke betaling en webhook. Bij storingen krijg je meteen een melding.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Rapportage per merk</h3>
+                    <p>Splits transacties, fees en uitbetalingen per winkel of label voor heldere cijfers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">Direct klaar voor gebruik</h2>
+                <p class="section-subtitle">
+                    Koppel je Mollie account, kies betaalmethoden en je bent live. Wij regelen webhooks en logging voor je.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>Account koppelen</h3>
+                    <p>Voer je Mollie API key in en selecteer de betaalmethoden die je wilt aanbieden.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Betaalmethoden kiezen</h3>
+                    <p>Activeer iDEAL, Bancontact, creditcards, Klarna of andere methoden per land.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Webhooks automatisch</h3>
+                    <p>Webhooks worden automatisch ingesteld. Orders en refunds blijven altijd gesynchroniseerd.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Lokale betaalmethoden</p>
+                <h2 class="section-title">Alle populaire opties beschikbaar</h2>
+                <p class="section-subtitle">
+                    iDEAL voor Nederland, Bancontact voor België, Sofort voor Duitsland. Alles via één integratie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">🏦</div>
+                    <h3>iDEAL</h3>
+                    <p>De populairste betaalmethode in Nederland. Direct bevestigd, geen chargebacks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇧🇪</div>
+                    <h3>Bancontact</h3>
+                    <p>Standaard voor België. Klanten betalen direct via hun bank zonder creditcard.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Creditcards</h3>
+                    <p>Visa, Mastercard en American Express voor internationale klanten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3>Klarna</h3>
+                    <p>Achteraf betalen en gespreid betalen voor hogere conversie bij grotere bedragen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Apple Pay</h3>
+                    <p>Snelle checkout voor mobiele bezoekers met hun iPhone of iPad.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>SEPA</h3>
+                    <p>Automatische incasso voor abonnementen en terugkerende betalingen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Checkout optimalisatie</p>
+                <h2 class="section-title">Hogere conversie door slimme volgorde</h2>
+                <p class="section-subtitle">
+                    We tonen de meest relevante betaalmethoden bovenaan, gebaseerd op land en device van je klant.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Slimme volgorde</h3>
+                    <p>iDEAL bovenaan voor Nederland, Bancontact voor België. Automatisch per land.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobiel eerst</h3>
+                    <p>Apple Pay en Google Pay prominent op mobiel voor snelle checkout.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Nederlandse taal</h3>
+                    <p>Alle teksten en foutmeldingen in correct Nederlands voor vertrouwde ervaring.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Retries automatisch</h3>
+                    <p>Mislukte betalingen worden opnieuw geprobeerd met duidelijke instructies voor klant.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Refunds &amp; retouren</p>
+                <h2 class="section-title">Terugbetalingen zonder gedoe</h2>
+                <p class="section-subtitle">
+                    Verwerk refunds direct vanuit Pagayo. Klanten krijgen hun geld automatisch terug op dezelfde manier als ze betaald hebben.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3>Volledige of gedeeltelijke refunds</h3>
+                    <p>Kies het bedrag dat je terug wilt betalen. Mollie verwerkt het automatisch.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Automatische notificaties</h3>
+                    <p>Klant krijgt een e-mail zodra de refund verwerkt is. Verminder support vragen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Volledige historie</h3>
+                    <p>Zie alle refunds per order, inclusief datum, bedrag en reden voor audit trail.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Support integratie</h3>
+                    <p>Verwerk refunds direct vanuit de klantenservice interface zonder tussen systemen te wisselen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Security</p>
+                <h2 class="section-title">Veilig en compliant</h2>
+                <p class="section-subtitle">
+                    Mollie regelt PCI compliance en data beveiliging. Gevoelige gegevens blijven bij Mollie en worden nooit lokaal opgeslagen.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>PCI compliant</h3>
+                    <p>Mollie is gecertificeerd. Jij hoeft geen eigen PCI audit te doen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔑</div>
+                    <h3>API keys veilig</h3>
+                    <p>API keys worden versleuteld opgeslagen in onze KMS en automatisch geroteerd.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Fraudepreventie</h3>
+                    <p>Mollie's ingebouwde fraudedetectie beschermt tegen verdachte transacties.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Audit logging</h3>
+                    <p>Elke betaling, webhook en refund wordt gelogd voor compliance en support.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Uitbetalingen</p>
+                <h2 class="section-title">Transparante geldstromen</h2>
+                <p class="section-subtitle">
+                    Mollie betaalt dagelijks uit naar je bankrekening. Alle transacties, fees en refunds zijn duidelijk terug te vinden.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Dagelijkse uitbetalingen</h3>
+                    <p>Ontvang je geld elke werkdag. Splits uitbetalingen per merk als je dat wilt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Reconciliatie</h3>
+                    <p>Automatische koppeling tussen order, betaling en uitbetaling voor je boekhouding.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📑</div>
+                    <h3>Exports</h3>
+                    <p>Exporteer transacties en fees per periode voor je accountant of ERP systeem.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Inzichten</h3>
+                    <p>Zie per betaalmethode welke het beste converteert en waar klanten afhaken.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Support</p>
+                <h2 class="section-title">Nederlandse support wanneer je het nodig hebt</h2>
+                <p class="section-subtitle">
+                    Mollie en Pagayo support werken samen. Bij problemen krijg je snel antwoord in het Nederlands.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlands support team</h3>
+                    <p>Communiceer in je eigen taal met mensen die de lokale markt begrijpen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Snelle response</h3>
+                    <p>Bij storingen of vragen krijg je direct de juiste logregels en kunnen we snel schakelen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Documentatie</h3>
+                    <p>Duidelijke handleidingen voor setup, betaalmethoden en troubleshooting in het Nederlands.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Proactieve monitoring</h3>
+                    <p>We monitoren de Mollie integratie continu en waarschuwen je bij afwijkingen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met Mollie op Pagayo</h2>
+                <p>Activeer Mollie in je Pagayo omgeving en bied je klanten hun favoriete betaalmethoden aan.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

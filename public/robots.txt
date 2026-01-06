@@ -1,0 +1,14 @@
+# Pagayo Marketing Site - Robots.txt
+# Updated: 6 januari 2026
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://pagayo.com/sitemap-index.xml
+
+# Crawl rate optimization for Cloudflare
+Crawl-delay: 1
+
+# Block old/test pages
+Disallow: /index-old

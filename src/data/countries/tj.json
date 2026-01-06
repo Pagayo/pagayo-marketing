@@ -1,0 +1,125 @@
+{
+  "code": "tj",
+  "name": "Tajikistan",
+  "region": "as",
+  "currency": "TJS",
+  "locale": "tg-TJ",
+  "language": "tg",
+  "nav": {
+    "features": "Хусусиятҳо",
+    "pricing": "Нарх",
+    "blog": "Блог",
+    "contact": "Тамос",
+    "cta": "Ройгон оғоз кунед"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Хусусиятҳо",
+        "links": [
+          {
+            "label": "Хусусиятҳо",
+            "path": "/features"
+          },
+          {
+            "label": "Нарх",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Дар бораи мо",
+        "links": [
+          {
+            "label": "Дар бораи мо",
+            "path": "/about"
+          },
+          {
+            "label": "Блог",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Тамос",
+        "links": [
+          {
+            "label": "Тамос",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Сиёсати махфият",
+        "links": [
+          {
+            "label": "Сиёсати махфият",
+            "path": "/privacy"
+          },
+          {
+            "label": "Шартҳо",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Tajikistan",
+    "copyright": "Ҳуқуқи муаллиф {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Tajikistan - E-commerce Platform",
+    "description": "Professional e-commerce platform for Tajikistan. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Tajik Post",
+      "DHL"
+    ],
+    "cities": [
+      "Dushanbe",
+      "Khujand",
+      "Kulob"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

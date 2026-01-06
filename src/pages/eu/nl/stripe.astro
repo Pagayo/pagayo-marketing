@@ -1,0 +1,310 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="Stripe betalingen - Pagayo"
+    description="Hoe Pagayo Stripe inzet voor snelle betalingen, hogere conversie en minder mislukte transacties."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">Stripe</p>
+                <h1>Snelle, zekere betalingen met Stripe</h1>
+                <p class="lead">
+                    Pagayo gebruikt Stripe voor iDEAL, Bancontact, kaarten en wallets. Je krijgt een kassa die altijd werkt,
+                    probeert mislukte betalingen opnieuw en toont minder frictie aan de kassa.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">iDEAL, Bancontact, kaarten, wallets</span>
+                    <span class="pill">Automatisch opnieuw proberen</span>
+                    <span class="pill">Minder frauderisico</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Autorisatie</p>
+                    <p class="stat-value">+6-9%</p>
+                    <p class="stat-footnote">Slimme retries en dunning</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Checkout snelheid</p>
+                    <p class="stat-value">&lt; 180 ms</p>
+                    <p class="stat-footnote">Geoptimaliseerd per land en device</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Beschikbare betaalmethoden</p>
+                    <p class="stat-value">12+</p>
+                    <p class="stat-footnote">Inclusief Apple Pay &amp; Google Pay</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom Stripe bij Pagayo</p>
+                <h2 class="section-title">Meer betalingen die slagen</h2>
+                <p class="section-subtitle">
+                    We combineren Stripe met onze eigen checkout. Daardoor krijg je minder storingen, betere conversies en
+                    duidelijke rapportages per merk of land.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Hogere conversie</h3>
+                    <p>Slimme knoppen per land: iDEAL en Bancontact voor Benelux, kaarten en wallets wereldwijd.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔁</div>
+                    <h3>Automatische retries</h3>
+                    <p>Mislukte betalingen proberen we opnieuw met de juiste kaart of wallet, zodat je minder omzet mist.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛰️</div>
+                    <h3>Monitoring</h3>
+                    <p>We meten elke stap: klant, betaalstroom, acquirer. Storingen worden gelogd en gerapporteerd.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Snelle kassabeleving</h3>
+                    <p>Auto-fill, kaartherkenning en lokale talen. Minder typen, meer geslaagde betalingen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">Binnen een dag live</h2>
+                <p class="section-subtitle">
+                    Kies betaalmethoden per land, zet je branding en domein erop, en activeer webhooks. Wij regelen keys en
+                    beveiliging voor je.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>Branding &amp; domein</h3>
+                    <p>Eigen logo, kleuren en subdomein. Klanten herkennen je kassa meteen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Betaalmethoden kiezen</h3>
+                    <p>Activeer iDEAL, Bancontact, kaarten, Apple Pay, Google Pay en meer per land.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Webhooks &amp; logging</h3>
+                    <p>Webhooks staan klaar voor orderstatus, refunds en abonnementen. Wij loggen alles voor support.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Betalen zonder frictie</p>
+                <h2 class="section-title">Geoptimaliseerd per land en device</h2>
+                <p class="section-subtitle">
+                    De checkout past zich aan: mobiele wallets bovenaan, SEPA en iDEAL voor Nederland, kaarten voor internationaal.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Wallet-first</h3>
+                    <p>Apple Pay en Google Pay staan bovenaan voor mobiel. Minder velden, hogere conversie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Lokale voorkeuren</h3>
+                    <p>iDEAL en Bancontact zichtbaar in Benelux, kaarten en Klarna elders. Automatisch per land.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Optimalisaties</h3>
+                    <p>A/B-testen op knoppen en volgorde. We kiezen automatisch de winnaar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Disputes</h3>
+                    <p>Duidelijke bestelinfo wordt meegestuurd zodat chargebacks dalen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Abonnementen</h3>
+                    <p>Automatische incasso's met slimme retries en e-mails bij expirerende kaarten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3>Refunds &amp; returns</h3>
+                    <p>Refunds regel je vanuit Pagayo. De status komt terug in de klantenservice inbox.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Security &amp; compliance</p>
+                <h2 class="section-title">Veilig betalen zonder gedoe</h2>
+                <p class="section-subtitle">
+                    Wij regelen PCI, tokens en sleutelbeheer. Gevoelige data blijft bij Stripe en wordt nooit lokaal opgeslagen.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>PCI uitbesteed</h3>
+                    <p>Stripe verwerkt kaartgegevens. Wij tonen alleen tokens en status, geen raw kaarten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔑</div>
+                    <h3>Sleutels veilig</h3>
+                    <p>API-keys en webhooksleutels bewaren we in KMS en draaien we regelmatig.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕵️</div>
+                    <h3>Fraudecontrole</h3>
+                    <p>Gebruik Stripe Radar. Extra checks mogelijk op land, device of bedrag.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Audit &amp; logging</h3>
+                    <p>Volledige logs per betaling, inclusief retries, zodat support snel kan handelen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Uitbetalingen &amp; rapportage</p>
+                <h2 class="section-title">Helder zicht op geldstromen</h2>
+                <p class="section-subtitle">
+                    We splitsen rapportage per merk of winkel. Uitbetalingen, fees en refunds zijn direct te koppelen aan orders.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Uitbetalingen</h3>
+                    <p>Uitbetalingen per merk of vestiging. Jij kiest de frequentie en rekening.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Reconciliatie</h3>
+                    <p>Automatische koppeling tussen betaling, order en uitbetaling. Minder handwerk in de boekhouding.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📑</div>
+                    <h3>Exports</h3>
+                    <p>Exporteer transacties, refunds en kosten per periode. Klaar voor accountant of BI.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Notificaties</h3>
+                    <p>Signalen bij stijgende weigeringen of chargebacks. Je ziet meteen welke winkel geraakt wordt.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Integraties</p>
+                <h2 class="section-title">Koppelt met je bestaande stack</h2>
+                <p class="section-subtitle">
+                    Gebruik Stripe samen met marketing, logistiek en finance tools. Data loopt automatisch door dankzij webhooks en API.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">📇</div>
+                    <h3>CRM &amp; marketing</h3>
+                    <p>Stuur betaalstatussen naar HubSpot of Klaviyo voor automatische e-mails en segmentatie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Logistiek</h3>
+                    <p>Order- en betaalstatus lopen gelijk, zodat fulfilment direct kan verzenden.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Klantenservice</h3>
+                    <p>Betalingsstatus naast het gesprek. Refunds en statusvragen los je in één scherm op.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>API &amp; webhooks</h3>
+                    <p>Alle events beschikbaar voor je eigen systemen. Inclusief dunning, refunds en abonnementen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Praktisch</p>
+                <h2 class="section-title">Klaar voor groei</h2>
+                <p class="section-subtitle">
+                    Pagayo + Stripe groeit mee met piekdrukte. Of je nu 100 of 100.000 transacties per dag hebt, de checkout blijft snel en veilig.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Schaal</h3>
+                    <p>Auto-scaling en caching houden de checkout snel, ook bij grote lanceringen of sales.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛟</div>
+                    <h3>Support</h3>
+                    <p>Ons team kijkt mee bij storingen en chargebacks. Je krijgt direct de juiste logregels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Documentatie</h3>
+                    <p>Heldere API- en webhookdocs. Voorbeeldrequests staan klaar zodat je snel kunt testen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❓</div>
+                    <h3>Veelgestelde vragen</h3>
+                    <p>Antwoorden op PSP-koppeling, refunds, BTW en uitbetalingen. Minder tijd kwijt aan zoeken.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met Stripe op Pagayo</h2>
+                <p>Activeer Stripe in je Pagayo omgeving. Je krijgt direct de juiste betaalmethoden, retries en logging.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

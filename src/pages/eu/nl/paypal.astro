@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="PayPal betalingen - Pagayo"
+    description="Hoe Pagayo PayPal inzet voor internationale betalingen met buyer protection en wereldwijde acceptatie."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">PayPal</p>
+                <h1>Vertrouwd betalen met PayPal</h1>
+                <p class="lead">
+                    Pagayo integreert volledig met PayPal voor internationale betalingen. Je klanten betalen veilig en jij profiteert van hogere conversie bij cross-border verkoop.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">PayPal & PayPal Checkout</span>
+                    <span class="pill">Buyer Protection</span>
+                    <span class="pill">200+ markten</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Marktaandeel internationaal</p>
+                    <p class="stat-value">70%</p>
+                    <p class="stat-footnote">Internationale klanten</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Conversie verbetering</p>
+                    <p class="stat-value">+8-12%</p>
+                    <p class="stat-footnote">Door vertrouwde checkout</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Markten</p>
+                    <p class="stat-value">200+</p>
+                    <p class="stat-footnote">Wereldwijde acceptatie</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom PayPal bij Pagayo</p>
+                <h2 class="section-title">Vertrouwd door internationale klanten</h2>
+                <p class="section-subtitle">
+                    PayPal is de standaard voor cross-border e-commerce. Wij integreren PayPal met slimme valuta conversie en buyer protection.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Wereldwijde acceptatie</h3>
+                    <p>PayPal wordt geaccepteerd in 200+ markten. Ideaal voor internationale verkoop.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Buyer Protection</h3>
+                    <p>Klanten voelen zich veiliger met PayPal bescherming. Hogere conversie, vooral bij nieuwe merken.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Ook zonder PayPal account</h3>
+                    <p>Klanten kunnen betalen met creditcard via PayPal zonder account aan te maken.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>One Touch checkout</h3>
+                    <p>Terugkerende klanten betalen met één klik. Minder velden, hogere conversie.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">Direct klaar voor gebruik</h2>
+                <p class="section-subtitle">
+                    Koppel je PayPal Business account en activeer betaalmethoden. Wij regelen webhooks en IPN notificaties.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>PayPal Business account</h3>
+                    <p>Koppel je Business account. Wij configureren de REST API en webhook endpoints.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Checkout configureren</h3>
+                    <p>Kies PayPal Express, PayPal Credit of beide. Pas branding aan in PayPal checkout.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Automatisering activeren</h3>
+                    <p>Webhooks worden automatisch ingesteld. Orders en refunds blijven gesynchroniseerd.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">PayPal producten</p>
+                <h2 class="section-title">Alle PayPal opties beschikbaar</h2>
+                <p class="section-subtitle">
+                    Van standaard PayPal tot PayPal Credit en Buy Now Pay Later: kies wat past bij je klantgroep.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>PayPal Express</h3>
+                    <p>Snelle checkout met PayPal account. Adres en betaalinfo worden automatisch overgenomen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>PayPal Checkout zonder account</h3>
+                    <p>Klanten kunnen met creditcard betalen via PayPal zonder account te maken.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>PayPal One Touch</h3>
+                    <p>Terugkerende klanten betalen met één tik. Geen wachtwoord invoeren meer.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>PayPal Credit</h3>
+                    <p>Achteraf betalen voor klanten in VS en UK. Verhoogt orderwaarde met 30-50%.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3>Pay in 4</h3>
+                    <p>Gespreid betalen in 4 termijnen. Beschikbaar in steeds meer markten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💵</div>
+                    <h3>Multi-currency</h3>
+                    <p>Klanten betalen in hun eigen valuta. Wij regelen conversie en settlements.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Checkout optimalisatie</p>
+                <h2 class="section-title">Hogere conversie door vertrouwd proces</h2>
+                <p class="section-subtitle">
+                    PayPal checkout is geoptimaliseerd voor conversie. Wij tonen het op het juiste moment voor maximaal effect.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Payment Buttons</h3>
+                    <p>PayPal knoppen passen zich aan per land, device en klantgeschiedenis voor beste conversie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobiel geoptimaliseerd</h3>
+                    <p>PayPal checkout werkt perfect op mobiel. Klanten blijven in je webshop.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Lokalisatie</h3>
+                    <p>PayPal checkout verschijnt automatisch in de taal van de klant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Retries automatisch</h3>
+                    <p>Bij mislukte betalingen proberen we het opnieuw met duidelijke instructies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Fraud & security</p>
+                <h2 class="section-title">Veilig betalen met bescherming</h2>
+                <p class="section-subtitle">
+                    PayPal regelt fraud detectie en buyer protection. Jij bent beschermd tegen chargebacks (onder voorwaarden).
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Seller Protection</h3>
+                    <p>PayPal beschermt je tegen frauduleuze chargebacks als je aan de voorwaarden voldoet.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Buyer Protection</h3>
+                    <p>Klanten voelen zich veiliger, vooral bij nieuwe webshops. Verhoogt vertrouwen en conversie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕵️</div>
+                    <h3>Fraud detectie</h3>
+                    <p>PayPal's systemen scannen elke transactie op fraude. Verdachte transacties worden geblokkeerd.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Tracking verplicht</h3>
+                    <p>Voor Seller Protection moet je tracking info uploaden. Wij doen dit automatisch bij verzending.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Refunds & disputes</p>
+                <h2 class="section-title">Soepele afhandeling van retouren</h2>
+                <p class="section-subtitle">
+                    Refunds regel je direct vanuit Pagayo. Bij disputes krijg je melding en kun je bewijs uploaden.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3>Volledige of gedeeltelijke refunds</h3>
+                    <p>Kies het bedrag en PayPal verwerkt de refund automatisch binnen 1-3 werkdagen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Automatische notificaties</h3>
+                    <p>Klant krijgt melding zodra refund verwerkt is. Vermindert support vragen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Dispute management</h3>
+                    <p>Bij claims of disputes krijg je melding. Upload bewijs direct vanuit Pagayo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Volledige historie</h3>
+                    <p>Alle transacties, refunds en disputes in één overzicht voor audit en analyse.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Uitbetalingen & fees</p>
+                <h2 class="section-title">Transparante geldstromen</h2>
+                <p class="section-subtitle">
+                    PayPal betaalt uit naar je bankrekening. Alle transacties, fees en valuta conversies zijn duidelijk terug te vinden.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Uitbetalingen</h3>
+                    <p>Ontvang je geld dagelijks of wekelijks. Splits uitbetalingen per merk als je dat wilt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💱</div>
+                    <h3>Valuta conversie</h3>
+                    <p>Klant betaalt in eigen valuta, jij ontvangt in jouw valuta. PayPal regelt conversie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Fee overzichten</h3>
+                    <p>Zie precies welke fees PayPal rekent per transactie en per land.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Reconciliatie</h3>
+                    <p>Automatische koppeling tussen order, betaling en uitbetaling voor je boekhouding.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Internationaal</p>
+                <h2 class="section-title">Perfect voor cross-border verkoop</h2>
+                <p class="section-subtitle">
+                    PayPal maakt internationale verkoop eenvoudig. Geen gedoe met lokale betaalmethoden of valuta conversie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>200+ markten</h3>
+                    <p>Verkoop naar bijna elk land ter wereld. PayPal is overal geaccepteerd.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💵</div>
+                    <h3>25+ valuta's</h3>
+                    <p>Klanten betalen in hun eigen valuta. Jij ontvangt in EUR, USD of andere valuta.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Geen extra compliance</h3>
+                    <p>PayPal regelt KYC en fraud checks per land. Jij hoeft geen aparte vergunningen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Snelle expansie</h3>
+                    <p>Activeer nieuwe markten zonder nieuwe betaalproviders. PayPal werkt overal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met PayPal op Pagayo</h2>
+                <p>Activeer PayPal in je Pagayo omgeving en begin met internationale verkoop zonder gedoe.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

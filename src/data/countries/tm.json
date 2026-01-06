@@ -1,0 +1,125 @@
+{
+  "code": "tm",
+  "name": "Turkmenistan",
+  "region": "as",
+  "currency": "TMT",
+  "locale": "tk-TM",
+  "language": "tk",
+  "nav": {
+    "features": "Aýratynlyklar",
+    "pricing": "Bahasy",
+    "blog": "Blog",
+    "contact": "Habarlaşmak",
+    "cta": "Mugt başla"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Aýratynlyklar",
+        "links": [
+          {
+            "label": "Aýratynlyklar",
+            "path": "/features"
+          },
+          {
+            "label": "Bahasy",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Biz barada",
+        "links": [
+          {
+            "label": "Biz barada",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "Habarlaşmak",
+        "links": [
+          {
+            "label": "Habarlaşmak",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Gizlinlik syýasaty",
+        "links": [
+          {
+            "label": "Gizlinlik syýasaty",
+            "path": "/privacy"
+          },
+          {
+            "label": "Şertler",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Turkmenistan",
+    "copyright": "Awtorlyk hukugy {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Turkmenistan - E-commerce Platform",
+    "description": "Professional e-commerce platform for Turkmenistan. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Turkmenpost",
+      "DHL"
+    ],
+    "cities": [
+      "Ashgabat",
+      "Turkmenabat",
+      "Dashoguz"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "code": "kh",
+  "name": "Cambodia",
+  "region": "as",
+  "currency": "KHR",
+  "locale": "km-KH",
+  "language": "km",
+  "nav": {
+    "features": "លក្ខណៈពិសេស",
+    "pricing": "តម្លៃ",
+    "blog": "ប្លុក",
+    "contact": "ទំនាក់ទំនង",
+    "cta": "ចាប់ផ្តើមឥតគិតថ្លៃ"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "លក្ខណៈពិសេស",
+        "links": [
+          {
+            "label": "លក្ខណៈពិសេស",
+            "path": "/features"
+          },
+          {
+            "label": "តម្លៃ",
+            "path": "/pricing"
+          }
+        ]
+      },
+      {
+        "title": "អំពីយើង",
+        "links": [
+          {
+            "label": "អំពីយើង",
+            "path": "/about"
+          },
+          {
+            "label": "ប្លុក",
+            "path": "/blog"
+          }
+        ]
+      },
+      {
+        "title": "ទំនាក់ទំនង",
+        "links": [
+          {
+            "label": "ទំនាក់ទំនង",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "គោលការណ៍ភាពឯកជន",
+        "links": [
+          {
+            "label": "គោលការណ៍ភាពឯកជន",
+            "path": "/privacy"
+          },
+          {
+            "label": "លក្ខខណ្ឌ",
+            "path": "/terms"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for Cambodia",
+    "copyright": "រក្សាសិទ្ធិ {year} Pagayo"
+  },
+  "meta": {
+    "title": "Pagayo Cambodia - E-commerce Platform",
+    "description": "Professional e-commerce platform for Cambodia. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Cambodia Post",
+      "DHL"
+    ],
+    "cities": [
+      "Phnom Penh",
+      "Siem Reap",
+      "Battambang"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero"
+    ]
+  }
+}

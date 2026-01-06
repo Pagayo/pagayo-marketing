@@ -1,0 +1,217 @@
+---
+/**
+ * HeaderDynamic component - country-specific navigation
+ * Accepts country config to render localized header
+ */
+
+import { getBasePath, getFullPath } from '../utils/country.js';
+
+interface Props {
+  country: any; // Country config from JSON
+}
+
+const { country } = Astro.props;
+const basePath = getBasePath(country);
+---
+
+<nav>
+  <a href={basePath} class="logo">Pagayo<span>.</span></a>
+  <button class="mobile-menu-toggle" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-center">
+    <li><a href={getFullPath(country, '/features')}>{country.nav.features}</a></li>
+    <li><a href={getFullPath(country, '/pricing')}>{country.nav.pricing}</a></li>
+    <li><a href={getFullPath(country, '/contact')}>{country.nav.contact}</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://app.pagayo.com/register/" class="nav-cta">{country.nav.cta || 'Start free'}</a>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 10, 10, 0.98);
+    border-bottom: 1px solid var(--border);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    text-decoration: none;
+    z-index: 101;
+  }
+
+  .logo span {
+    color: var(--accent);
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+  }
+
+  .mobile-menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    transition: all 0.3s;
+  }
+
+  .nav-center {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-center a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+
+  .nav-center a:hover,
+  .nav-center a[aria-current="page"] {
+    color: var(--accent);
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .nav-cta {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+  }
+
+  /* Responsive breakpoints */
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem 1.5rem;
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .nav-center {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(25px);
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+    .nav-center.active {
+      max-height: 300px;
+    }
+
+    .nav-center li {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-center li:last-child {
+      border-bottom: none;
+    }
+
+    .nav-center a {
+      display: block;
+      padding: 1.2rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    .nav-right {
+      gap: 1rem;
+    }
+
+    .nav-cta {
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      padding: 1rem 1rem;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+    }
+
+    .nav-cta {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const navCenter = document.querySelector('.nav-center');
+    
+    if (toggle && navCenter) {
+      toggle.addEventListener('click', () => {
+        navCenter.classList.toggle('active');
+      });
+
+      // Close menu when clicking a link
+      const links = navCenter.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          navCenter.classList.remove('active');
+        });
+      });
+    }
+  });
+</script>

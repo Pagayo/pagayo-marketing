@@ -1,0 +1,148 @@
+{
+  "code": "gd",
+  "name": "Grenada",
+  "region": "am",
+  "currency": "XCD",
+  "locale": "en-GD",
+  "language": "en",
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Product",
+        "links": [
+          {
+            "label": "Features",
+            "path": "/features"
+          },
+          {
+            "label": "Pricing",
+            "path": "/pricing"
+          },
+          {
+            "label": "Security",
+            "path": "/security"
+          }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          {
+            "label": "About",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Careers",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Support",
+        "links": [
+          {
+            "label": "Help Center",
+            "path": "/help"
+          },
+          {
+            "label": "Contact",
+            "path": "/contact"
+          },
+          {
+            "label": "Status",
+            "path": "/status"
+          }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          {
+            "label": "Privacy",
+            "path": "/privacy"
+          },
+          {
+            "label": "Terms",
+            "path": "/terms"
+          },
+          {
+            "label": "Cookies",
+            "path": "/cookies"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      }
+    ],
+    "tagline": "E-commerce made simple for {country}",
+    "copyright": "© {year} Pagayo. All rights reserved."
+  },
+  "meta": {
+    "title": "Pagayo {country} - E-commerce Platform",
+    "description": "Professional e-commerce platform for {country}. Localized payments, shipping, and support."
+  },
+  "payment": {
+    "providers": [
+      "Stripe",
+      "PayPal"
+    ],
+    "localMethods": []
+  },
+  "shipping": {
+    "carriers": [
+      "Grenada Postal Corporation",
+      "DHL",
+      "FedEx"
+    ],
+    "cities": [
+      "St. Georges",
+      "Gouyave",
+      "Grenville"
+    ]
+  },
+  "accounting": {
+    "software": [
+      "QuickBooks",
+      "Xero",
+      "FreshBooks"
+    ]
+  }
+}

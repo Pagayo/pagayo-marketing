@@ -1,0 +1,238 @@
+{
+  "code": "dk",
+  "region": "eu",
+  "name": "Danmark",
+  "locale": "da-DK",
+  "currency": "DKK",
+  "language": "Dansk",
+  "nav": {
+    "features": "Funktioner",
+    "pricing": "Priser",
+    "contact": "Kontakt",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Platform",
+        "links": [
+          {
+            "label": "Funktioner",
+            "path": "/features"
+          },
+          {
+            "label": "Priser",
+            "path": "/pricing"
+          },
+          {
+            "label": "Kontakt",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Generelt",
+        "links": [
+          {
+            "label": "Tenant-kryptering",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Ubegrænsede systemer",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Betroet af 5.000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "API-forbindelser",
+            "path": "/api-connections"
+          },
+          {
+            "label": "API-anmodninger",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Virksomhed",
+        "links": [
+          {
+            "label": "Om os",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Karriere",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Betalinger",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "MobilePay",
+            "path": "/mobilepay"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Bogføring",
+        "links": [
+          {
+            "label": "e-conomic",
+            "path": "/e-conomic"
+          },
+          {
+            "label": "Dinero",
+            "path": "/dinero"
+          }
+        ]
+      },
+      {
+        "title": "Forsendelse",
+        "links": [
+          {
+            "label": "PostNord",
+            "path": "/postnord"
+          },
+          {
+            "label": "GLS",
+            "path": "/gls"
+          },
+          {
+            "label": "DAO",
+            "path": "/dao"
+          }
+        ]
+      },
+      {
+        "title": "API-forbindelser",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Juridisk",
+        "links": [
+          {
+            "label": "Privatlivspolitik",
+            "path": "/privacy"
+          },
+          {
+            "label": "Vilkår",
+            "path": "/terms"
+          },
+          {
+            "label": "Databehandleraftale",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "Internationalt",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Asien",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Mellemøsten",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Amerika",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanien",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Funktioner",
+        "links": [
+          {
+            "label": "Alle funktioner",
+            "path": "/features"
+          },
+          {
+            "label": "Kundesupport",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Multi-tenant e-handelsplatform til moderne iværksættere.",
+    "copyright": "© {year} Pagayo. Alle rettigheder forbeholdes."
+  },
+  "meta": {
+    "tagline": "Multi-tenant e-handelsplatform til moderne iværksættere."
+  }
+}

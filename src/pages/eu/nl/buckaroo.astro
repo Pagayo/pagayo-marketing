@@ -1,0 +1,388 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="Buckaroo betalingen - Pagayo"
+    description="Hoe Pagayo Buckaroo inzet voor breed aanbod aan betaalmethoden met sterke Nederlandse roots."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">Buckaroo</p>
+                <h1>Compleet betaalplatform met Buckaroo</h1>
+                <p class="lead">
+                    Pagayo integreert met Buckaroo voor toegang tot 25+ betaalmethoden via één koppeling. Nederlandse support, stabiele platform en uitgebreide rapportage.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">25+ betaalmethoden</span>
+                    <span class="pill">Nederlandse support</span>
+                    <span class="pill">KvK & ING trust</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Betaalmethoden</p>
+                    <p class="stat-value">25+</p>
+                    <p class="stat-footnote">Via één integratie</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Uptime</p>
+                    <p class="stat-value">99.95%</p>
+                    <p class="stat-footnote">Stabiel Nederlands platform</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Nederlandse support</p>
+                    <p class="stat-value">24/7</p>
+                    <p class="stat-footnote">Direct bereikbaar</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom Buckaroo bij Pagayo</p>
+                <h2 class="section-title">Alle betaalmethoden via één partner</h2>
+                <p class="section-subtitle">
+                    Buckaroo geeft toegang tot iDEAL, creditcards, Klarna, Afterpay en meer. Wij integreren alles voor rapportage en reconciliatie.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏦</div>
+                    <h3>Breed aanbod</h3>
+                    <p>iDEAL, Bancontact, creditcards, Klarna, Afterpay, Apple Pay en meer via één koppeling.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlands bedrijf</h3>
+                    <p>Buckaroo is onderdeel van ING Groep. Vertrouwd door duizenden Nederlandse webshops.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Uitgebreide rapportage</h3>
+                    <p>Gedetailleerde transactie rapporten, analytics en reconciliatie tools inbegrepen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Snelle onboarding</h3>
+                    <p>KvK check en contract tekenen. Binnen 1-2 werkdagen ben je live.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">Snel aan de slag</h2>
+                <p class="section-subtitle">
+                    Koppel je Buckaroo account, activeer gewenste betaalmethoden en je bent klaar. Wij regelen webhooks en logging.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>Buckaroo account</h3>
+                    <p>Vraag Buckaroo account aan via KvK. ING Groep regelt de verificatie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Betaalmethoden kiezen</h3>
+                    <p>Activeer iDEAL, creditcards, Klarna en andere methoden per land.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Push notificaties</h3>
+                    <p>Wij configureren push URLs automatisch. Orders blijven realtime gesynchroniseerd.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Betaalmethoden</p>
+                <h2 class="section-title">Complete dekking Nederlands & internationaal</h2>
+                <p class="section-subtitle">
+                    Van iDEAL tot Alipay: Buckaroo ondersteunt alle relevante betaalmethoden voor Nederlandse webshops.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">🏦</div>
+                    <h3>iDEAL</h3>
+                    <p>Standaard voor Nederland. Direct bevestigd en geen chargebacks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Creditcards</h3>
+                    <p>Visa, Mastercard, American Express en Maestro voor internationale klanten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇧🇪</div>
+                    <h3>Bancontact</h3>
+                    <p>Populairste methode in België. Direct bevestigd via hun bank.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3>Klarna</h3>
+                    <p>Achteraf betalen en gespreid betalen. Verhoogt conversie bij hogere bedragen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Afterpay</h3>
+                    <p>Populair in Nederland voor achteraf betalen. Jij krijgt direct uitbetaald.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Apple & Google Pay</h3>
+                    <p>Snelle checkout voor mobiele bezoekers. Minder velden invullen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇩🇪</div>
+                    <h3>Sofort & Giropay</h3>
+                    <p>Populaire online bankieren methoden in Duitsland en Oostenrijk.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>SEPA incasso</h3>
+                    <p>Voor abonnementen en terugkerende betalingen. Automatische afschrijving.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌏</div>
+                    <h3>Alipay & WeChat Pay</h3>
+                    <p>Voor Chinese toeristen en expats. Betalen zoals ze gewend zijn.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Checkout optimalisatie</p>
+                <h2 class="section-title">Slimme volgorde verhoogt conversie</h2>
+                <p class="section-subtitle">
+                    We tonen de meest relevante betaalmethoden bovenaan per land en klantsegment.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Dynamische volgorde</h3>
+                    <p>iDEAL bovenaan voor Nederland, creditcards voor internationaal. Automatisch per klant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>A/B testing</h3>
+                    <p>Test verschillende volgordes en kies automatisch de winnaar per segment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Nederlandse interface</h3>
+                    <p>Alle teksten, foutmeldingen en buttons in correct Nederlands voor vertrouwde ervaring.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Retry logica</h3>
+                    <p>Bij mislukte betalingen proberen we het opnieuw met duidelijke instructies voor klant.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Fraud & security</p>
+                <h2 class="section-title">Beschermd tegen fraude</h2>
+                <p class="section-subtitle">
+                    Buckaroo biedt uitgebreide fraud tools en 3D Secure 2.0 voor veilige transacties.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>3D Secure 2.0</h3>
+                    <p>Moderne authenticatie voor creditcards. Minder frictie, betere security.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Fraud screening</h3>
+                    <p>Real-time checks op IP, device, order patterns. Verdachte transacties worden geblokkeerd.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>PCI DSS compliant</h3>
+                    <p>Buckaroo is volledig gecertificeerd. Jij hoeft geen eigen PCI audit te doen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔑</div>
+                    <h3>Tokenization</h3>
+                    <p>Kaartgegevens worden direct getokenized. Gevoelige data blijft bij Buckaroo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Refunds & chargebacks</p>
+                <h2 class="section-title">Soepele afhandeling retouren</h2>
+                <p class="section-subtitle">
+                    Refunds regel je direct vanuit Pagayo. Buckaroo verwerkt het automatisch per betaalmethode.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3>Volledige of gedeeltelijke refunds</h3>
+                    <p>Kies het bedrag en Buckaroo verwerkt de refund binnen 1-5 werkdagen per methode.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Automatische notificaties</h3>
+                    <p>Klant krijgt melding zodra refund verwerkt is. Status updates in klantaccount.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Chargeback management</h3>
+                    <p>Bij chargebacks krijg je melding en kun je bewijs uploaden via Buckaroo Plaza.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Fraud analyse</h3>
+                    <p>Zie welke transacties verdacht waren en optimaliseer je fraud regels.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Rapportage & reconciliatie</p>
+                <h2 class="section-title">Helder inzicht in geldstromen</h2>
+                <p class="section-subtitle">
+                    Buckaroo Plaza biedt uitgebreide rapportage. Wij koppelen dit aan je orders voor complete reconciliatie.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Uitbetalingen</h3>
+                    <p>Ontvang je geld dagelijks of wekelijks. Duidelijke specificaties per uitbetaling.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Transactie rapporten</h3>
+                    <p>Exporteer alle transacties met fees, refunds en status per periode.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics dashboard</h3>
+                    <p>Zie conversie, weigeringspercentage en gemiddelde orderwaarde per betaalmethode.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Automatische reconciliatie</h3>
+                    <p>Wij koppelen Buckaroo transacties automatisch aan orders voor je boekhouding.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Support & integraties</p>
+                <h2 class="section-title">Nederlandse support en sterke integraties</h2>
+                <p class="section-subtitle">
+                    Buckaroo en Pagayo support werken samen. Bij vragen krijg je snel antwoord in het Nederlands.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🇳🇱</div>
+                    <h3>Nederlands support team</h3>
+                    <p>24/7 support in het Nederlands. Mensen die de lokale markt begrijpen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Uitgebreide documentatie</h3>
+                    <p>Buckaroo Plaza met handleidingen, API docs en best practices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>API & webhooks</h3>
+                    <p>Push notificaties voor elke betaalstatus. Koppel met je eigen systemen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Accounting integraties</h3>
+                    <p>Export naar Exact, Twinfield en andere Nederlandse boekhoudpakketten.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Subscription billing</p>
+                <h2 class="section-title">Perfect voor abonnementen</h2>
+                <p class="section-subtitle">
+                    Buckaroo ondersteunt terugkerende betalingen met SEPA incasso en creditcards. Inclusief retry logica en notificaties.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🔁</div>
+                    <h3>SEPA mandaten</h3>
+                    <p>Klant geeft eenmalig machtiging. Daarna automatisch afschrijven per periode.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Card-on-file</h3>
+                    <p>Bewaar creditcard tokens voor terugkerende betalingen. PCI compliant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Automatische retries</h3>
+                    <p>Bij mislukte betalingen proberen we het automatisch opnieuw met slimme timing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Dunning management</h3>
+                    <p>Automatische e-mails bij mislukte betalingen met link om betaalmethode bij te werken.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met Buckaroo op Pagayo</h2>
+                <p>Activeer Buckaroo in je Pagayo omgeving en krijg toegang tot 25+ betaalmethoden via één koppeling.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

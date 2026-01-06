@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+
+const englishCountries = [
+  { name: 'Verenigde Staten', code: 'us', flag: '🇺🇸', language: 'Engels' },
+  { name: 'Canada', code: 'ca', flag: '🇨🇦', language: 'Engels' },
+  { name: 'Jamaica', code: 'jm', flag: '🇯🇲', language: 'Engels' },
+  { name: 'Trinidad en Tobago', code: 'tt', flag: '🇹🇹', language: 'Engels' },
+  { name: 'Belize', code: 'bz', flag: '🇧🇿', language: 'Engels' },
+  { name: 'Guyana', code: 'gy', flag: '🇬🇾', language: 'Engels' },
+  { name: 'Bahamas', code: 'bs', flag: '🇧🇸', language: 'Engels' },
+  { name: 'Barbados', code: 'bb', flag: '🇧🇧', language: 'Engels' },
+  { name: 'Grenada', code: 'gd', flag: '🇬🇩', language: 'Engels' },
+  { name: 'Saint Lucia', code: 'lc', flag: '🇱🇨', language: 'Engels' },
+  { name: 'Saint Vincent en de Grenadines', code: 'vc', flag: '🇻🇨', language: 'Engels' },
+  { name: 'Antigua en Barbuda', code: 'ag', flag: '🇦🇬', language: 'Engels' },
+  { name: 'Dominica', code: 'dm', flag: '🇩🇲', language: 'Engels' },
+  { name: 'Saint Kitts en Nevis', code: 'kn', flag: '🇰🇳', language: 'Engels' },
+];
+
+const spanishCountries = [
+  { name: 'Mexico', code: 'mx', flag: '🇲🇽', language: 'Spaans' },
+  { name: 'Argentinië', code: 'ar', flag: '🇦🇷', language: 'Spaans' },
+  { name: 'Chili', code: 'cl', flag: '🇨🇱', language: 'Spaans' },
+  { name: 'Colombia', code: 'co', flag: '🇨🇴', language: 'Spaans' },
+  { name: 'Costa Rica', code: 'cr', flag: '🇨🇷', language: 'Spaans' },
+  { name: 'Ecuador', code: 'ec', flag: '🇪🇨', language: 'Spaans' },
+  { name: 'El Salvador', code: 'sv', flag: '🇸🇻', language: 'Spaans' },
+  { name: 'Guatemala', code: 'gt', flag: '🇬🇹', language: 'Spaans' },
+  { name: 'Honduras', code: 'hn', flag: '🇭🇳', language: 'Spaans' },
+  { name: 'Panama', code: 'pa', flag: '🇵🇦', language: 'Spaans' },
+  { name: 'Paraguay', code: 'py', flag: '🇵🇾', language: 'Spaans' },
+  { name: 'Peru', code: 'pe', flag: '🇵🇪', language: 'Spaans' },
+  { name: 'Uruguay', code: 'uy', flag: '🇺🇾', language: 'Spaans' },
+  { name: 'Bolivia', code: 'bo', flag: '🇧🇴', language: 'Spaans' },
+  { name: 'Dominicaanse Republiek', code: 'do', flag: '🇩🇴', language: 'Spaans' },
+];
+
+const portugueseCountries = [
+  { name: 'Brazilië', code: 'br', flag: '🇧🇷', language: 'Portugees' },
+];
+
+const otherLanguageCountries = [
+  { name: 'Suriname', code: 'sr', flag: '🇸🇷', language: 'Nederlands' },
+  { name: 'Haïti', code: 'ht', flag: '🇭🇹', language: 'Frans/Creools' },
+  { name: 'Frans-Guyana', code: 'gf', flag: '🇬🇫', language: 'Frans' },
+];
+---
+
+<BaseLayout title="Pagayo Amerika - E-commerce Platform" description="Ontdek Pagayo e-commerce diensten in alle Amerikaanse landen" lang="nl">
+  <HeaderDynamic country={country} />
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="section-title">Pagayo in Amerika</h1>
+        <p class="section-subtitle">
+          Wij zijn actief in Amerikaanse landen waar we lokale betaalmethoden, 
+          verzendopties en geoptimaliseerde checkout flows aanbieden voor jouw webshop.
+        </p>
+      </div>
+
+      <!-- Engelstalige landen -->
+      <div class="language-section">
+        <h2 class="language-title">Engelstalige landen</h2>
+        <div class="countries-grid">
+          {englishCountries.map(country => (
+            <a href={`/am/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Spaanstalige landen -->
+      <div class="language-section">
+        <h2 class="language-title">Spaanstalige landen</h2>
+        <div class="countries-grid">
+          {spanishCountries.map(country => (
+            <a href={`/am/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Portugeestalige landen -->
+      <div class="language-section">
+        <h2 class="language-title">Portugeestalige landen</h2>
+        <div class="countries-grid">
+          {portugueseCountries.map(country => (
+            <a href={`/am/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Andere talen -->
+      <div class="language-section">
+        <h2 class="language-title">Andere talen</h2>
+        <div class="countries-grid">
+          {otherLanguageCountries.map(country => (
+            <a href={`/am/${country.code}/`} class="country-card">
+              <div class="country-flag">{country.flag}</div>
+              <h3 class="country-name">{country.name}</h3>
+              <p class="country-language">{country.language}</p>
+              <div class="country-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FooterDynamic country={country} />
+</BaseLayout>
+

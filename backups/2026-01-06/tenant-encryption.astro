@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Data-encryptie per klantomgeving | Pagayo"
+  description="Uitleg voor organisaties: hoe Pagayo data per klantomgeving versleutelt met eigen sleutels en auditable toegang."
+  lang="nl"
+>
+  <Header />
+
+  <main class="page-container">
+    <section class="hero-main">
+      <div class="hero__content">
+        <p class="eyebrow">Security</p>
+        <h1>Eigen sleutel per klantomgeving, altijd versleuteld</h1>
+        <p class="lead">Pagayo versleutelt gevoelige gegevens per klantomgeving met een eigen sleutel in Google KMS. Zonder die sleutel kan niemand meelezen, ook wij niet.</p>
+        <div class="hero__meta">
+          <span class="pill">Eigen KMS-sleutel per klantomgeving</span>
+          <span class="pill">Encryptie met aparte datasleutel</span>
+          <span class="pill">Logboek wie ontsleutelt</span>
+        </div>
+      </div>
+
+      <div class="hero__panel">
+        <div class="stat-card">
+          <p class="stat-label">Extra beschermd</p>
+          <p class="stat-value">Dubbel slot</p>
+          <p class="stat-footnote">Zelfs wij kunnen niet meekijken</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Werkt vanzelf</p>
+          <p class="stat-value">0 acties</p>
+          <p class="stat-footnote">Jij hoeft niets te doen</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Altijd traceerbaar</p>
+          <p class="stat-value">Logboek</p>
+          <p class="stat-footnote">We zien wie wanneer keek</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+          <p class="eyebrow">Bescherming</p>
+          <h2>Jouw klantgegevens dubbel op slot</h2>
+          <p class="section-sub">Alle gevoelige gegevens van jouw klanten worden versleuteld opgeslagen. Zonder jouw unieke sleutel kan niemand ze lezen - ook wij niet.</p>
+        </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Extra beveiligd tegen inbraak</h3>
+            <p>Ook als iemand toegang krijgt tot onze database, blijven alle klantgegevens onleesbaar. Zonder jouw speciale sleutel is het slechts wartaal. Elke toegangspoging wordt automatisch bijgehouden.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+            <h3>Werkt automatisch op de achtergrond</h3>
+            <p>Jij hoeft helemaal niets te doen of te regelen. De versleuteling werkt vanzelf zodra je Pagayo gebruikt. Jouw klanten merken er niks van, maar hun gegevens zijn wel extra beschermd.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+            <h3>Volledig inzicht in toegang</h3>
+            <p>In een overzichtelijk logboek zie je precies wie wanneer klantgegevens heeft bekeken. Geen verrassingen, alles is traceerbaar. Handig voor audits of bij vragen over privacy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+          <p class="eyebrow">Hoe werkt het</p>
+          <h2>Data versleuteling in 3 simpele stappen</h2>
+          <p class="section-sub">Pagayo gebruikt professionele versleuteling voor alle gevoelige klantgegevens in jouw webshop, hotel of verhuurbedrijf.</p>
+        </div>
+        <ol class="steps">
+          <li><strong>Opslaan:</strong> Zodra je klantgegevens invoert (naam, e-mail, telefoonnummer), worden deze automatisch versleuteld met een unieke sleutel. We bewaren alleen de versleutelde versie.</li>
+          <li><strong>Bekijken:</strong> Wanneer jij klantgegevens wilt zien in jouw beheerpaneel, vraagt Pagayo toestemming aan het beveiligingssysteem om de gegevens tijdelijk te ontcijferen. Dit gebeurt razendsnel en volledig automatisch.</li>
+          <li><strong>Loggen:</strong> Elke keer dat klantgegevens worden bekeken, wordt dit geregistreerd. Zo kun je altijd zien wie wanneer toegang had tot welke gegevens. Perfect voor privacycontroles.</li>
+        </ol>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Voordelen</p>
+        <h2>Wat betekent dit voor jou?</h2>
+        <p class="section-sub">Extra beveiliging zonder extra werk. Dat is de kracht van automatische data-encryptie bij Pagayo.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+            <h3>Blijft gewoon snel werken</h3>
+            <p>De eerste keer dat je klantgegevens bekijkt duurt iets langer (enkele milliseconden). Daarna werkt alles razendsnel. Je merkt in de praktijk geen verschil met een niet-versleuteld systeem.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💾</div>
+          <h3>Back-ups zijn waardeloos voor hackers</h3>
+            <p>Als iemand onze back-ups in handen krijgt, kunnen ze er niks mee. Zonder jouw unieke versleutelingssleutel zijn het slechts onleesbare codes. Jouw klantgegevens blijven altijd veilig.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Gemakkelijk bij te werken</h3>
+          <p>Als we de beveiligingssleutels moeten verversen voor extra veiligheid, gebeurt dit automatisch. Je verliest geen enkele klantgegevens en je hoeft zelf niks te doen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Voor wie</p>
+        <h2>Ideaal voor bedrijven die privacy serieus nemen</h2>
+        <p class="section-sub">Of je nu een webshop, hotel, verhuurbedrijf of abonnementsdienst runt - klantgegevens beschermen is verplicht én belangrijk.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛒</div>
+          <h3>Webshops & retail</h3>
+            <p>Bescherm namen, adressen en bestelgeschiedenis van jouw klanten. Voldoe aan privacywetgeving (AVG/GDPR) en bouw vertrouwen op bij je bezoekers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏨</div>
+            <h3>Hotels & accommodaties</h3>
+            <p>Gastgegevens, ID-kopieën en reserveringen blijven versleuteld opgeslagen. Perfect voor audits en veilige administratie van boekingen.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔑</div>
+            <h3>Verhuur & abonnementen</h3>
+            <p>Of je nu auto's, vakantiehuizen of abonnementen verhuurt - klantgegevens verdienen dezelfde bescherming als je eigen bankgegevens.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <div class="section-header">
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Alles over data-encryptie bij Pagayo</h2>
+        <p class="section-sub">De belangrijkste vragen over versleuteling van klantgegevens eenvoudig uitgelegd.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">👀</div>
+          <h3>Kunnen jullie bij Pagayo mijn klantgegevens zien?</h3>
+            <p>Nee, niet zonder jouw toestemming. Alle gevoelige gegevens zijn versleuteld met een sleutel die alleen in jouw omgeving werkt. Iedere keer dat wij klantgegevens moeten inzien (bijvoorbeeld voor support), wordt dit gelogd en kun je het terugzien.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Wordt mijn systeem hierdoor trager?</h3>
+            <p>Nee, je merkt er niks van. De eerste keer dat gegevens worden opgevraagd duurt een fractie langer (niet zichtbaar), maar daarna worden ze tijdelijk onthouden zodat alles bliksemsnel blijft.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>Welke gegevens worden precies versleuteld?</h3>
+          <p>Alle persoonlijke gegevens zoals voor- en achternaam, e-mailadres, telefoonnummer, adres en geboortedatum. Betalingsgegevens (zoals creditcardnummers) worden nooit bij ons opgeslagen maar direct verwerkt bij Stripe of Mollie.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Wat als ik meer klanten krijg?</h3>
+          <p>De versleuteling schaalt automatisch mee. Of je nu 10 of 10.000 klanten hebt, de beveiliging blijft hetzelfde. Er komen geen extra kosten of instellingen bij kijken.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚖️</div>
+          <h3>Is dit verplicht volgens de AVG?</h3>
+          <p>De AVG vereist "passende technische en organisatorische maatregelen" om persoonsgegevens te beschermen. Data-encryptie is een van de sterkste maatregelen die je kunt nemen en wordt door privacytoezichthouders aanbevolen.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <h3>Kan ik dit uitzetten als ik het niet wil?</h3>
+          <p>Deze extra beveiligingslaag is standaard ingeschakeld voor alle Pagayo-klanten. Je kunt het niet uitzetten, maar dat hoeft ook niet - het kost je geen extra tijd of geld en draait volledig automatisch.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section, .cta { margin-top: 4rem; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+  h1 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em; }
+  .lead { color: var(--text-secondary); line-height: 1.6; max-width: 820px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.4rem; border-radius: 10px; font-weight: 700; text-decoration: none; border: 1px solid transparent; transition: all 0.25s ease; cursor: pointer; }
+  .btn-primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; box-shadow: 0 12px 30px rgba(0,255,136,0.2); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text); background: rgba(10,10,10,0.6); }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .pill { display: inline-flex; align-items: center; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(0,255,136,0.08); color: var(--text); font-size: 0.85rem; }
+  .section { display: flex; flex-direction: column; gap: 1.5rem; }
+  .section-header { max-width: 780px; display: flex; flex-direction: column; gap: 0.5rem; }
+  .section-sub { color: var(--text-secondary); }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .feature-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: var(--bg-secondary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; gap: 0.65rem; transition: all 0.25s ease; }
+  .feature-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 255, 136, 0.14); }
+  .feature-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(0, 255, 136, 0.1); color: var(--accent); font-weight: 700; font-size: 1.5rem; }
+  .feature-card h3 { font-size: 1.2rem; font-weight: 800; margin: 0.25rem 0; }
+  .feature-card p { color: var(--text-secondary); line-height: 1.6; }
+  .steps { display: grid; gap: 0.8rem; padding-left: 1rem; color: var(--text-secondary); }
+  .steps strong { color: var(--text); }
+  .cta { border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; background: linear-gradient(135deg, rgba(0,255,136,0.08), rgba(0,0,0,0.9)); text-align: center; display: grid; place-items: center; box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
+  .cta__content { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; max-width: 720px; }
+  .cta__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+  @media (max-width: 1024px) {
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .feature-grid { grid-template-columns: 1fr; }
+  }
+</style>

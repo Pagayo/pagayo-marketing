@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="SnelStart integratie - Pagayo"
+    description="Koppel Pagayo met SnelStart voor automatische boekingen, btw-verwerking en reconciliatie van betalingen."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">SnelStart</p>
+                <h1>Automatisch boeken naar SnelStart</h1>
+                <p class="lead">
+                    Pagayo stuurt orders, betalingen en btw automatisch naar SnelStart. Geen exportbestanden, maar realtime inzicht.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">Automatische boekingen</span>
+                    <span class="pill">BTW & grootboek mapping</span>
+                    <span class="pill">Sync < 5 min</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Setup</p>
+                    <p class="stat-value">1 dag</p>
+                    <p class="stat-footnote">Volledig ingericht</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Handwerk besparing</p>
+                    <p class="stat-value">-8 uur/wk</p>
+                    <p class="stat-footnote">Gemiddelde klant</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Reconciliatie</p>
+                    <p class="stat-value">Automatisch</p>
+                    <p class="stat-footnote">Per betaalprovider</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom SnelStart</p>
+                <h2 class="section-title">Boekhouden zonder exports</h2>
+                <p class="section-subtitle">
+                    We sturen omzet, btw, verzendkosten en refunds direct door naar SnelStart. Minder fouten, sneller rapporteren.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Journaalposten</h3>
+                    <p>Automatische posten per order, inclusief verzendkosten en kortingen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Reconciliatie</h3>
+                    <p>Stripe, Mollie en PayPal betalingen koppelen we direct aan je orders.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧾</div>
+                    <h3>Facturen</h3>
+                    <p>Facturen en creditnota's synchroon, zodat klanten en btw kloppen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Rapportages</h3>
+                    <p>Omzet per kanaal en productgroep beschikbaar in SnelStart dashboards.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">In een middag live</h2>
+                <p class="section-subtitle">
+                    Verbind je SnelStart licentie, kies grootboekrekeningen en test direct met een paar orders.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>Koppelen</h3>
+                    <p>Login via SnelStart API, wij bewaren tokens veilig in KMS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Mapping</h3>
+                    <p>Grootboek voor omzet, btw, kortingen en verzendkosten inrichten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Test & Go</h3>
+                    <p>Testorders, validatie en daarna automatische sync aan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">BTW & compliance</p>
+                <h2 class="section-title">Altijd btw-ready</h2>
+                <p class="section-subtitle">
+                    We boeken btw per tarief en land en ondersteunen OSS/ICL zodat aangiftes sneller klaar zijn.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">💶</div>
+                    <h3>Tarief-splitsing</h3>
+                    <p>Hoog/laag/vrijgesteld automatisch gesplitst in boekingen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>OSS/ICL</h3>
+                    <p>EU verkoop en intracommunautair leveren volgens de regels verwerkt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>Periodieke export</h3>
+                    <p>Per maand/kwartaal exporteren voor je aangifte in SnelStart.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">MKB-first</p>
+                <h2 class="section-title">Gemaakt voor het mkb</h2>
+                <p class="section-subtitle">
+                    Geen complexe setup, maar directe koppelingen die voor webshops werken.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Kosten splitsen</h3>
+                    <p>Transactiekosten en refunds apart inzichtelijk.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Voorraad</h3>
+                    <p>Voorraadmutaties doorverkend zodat marges kloppen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Monitoring</h3>
+                    <p>Alerts bij mislukte syncs of ontbrekende mappings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Support</h3>
+                    <p>Nederlandstalige support voor boekhouding en techniek.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met SnelStart op Pagayo</h2>
+                <p>Activeer SnelStart, koppel je grootboeken en laat Pagayo de boekingen doen.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alle gemeenschappelijke styles in global.css -->
+
+    <FooterDynamic country={country} />
+</BaseLayout>

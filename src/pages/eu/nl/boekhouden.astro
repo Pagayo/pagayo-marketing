@@ -1,0 +1,250 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+import nlCountry from '../../../data/countries/nl.json';
+
+const country = nlCountry;
+---
+
+<BaseLayout
+    title="Boekhouden.nl integratie - Pagayo"
+    description="Koppel Pagayo met Boekhouden.nl voor automatische boekingen, btw en reconciliatie van betalingen."
+    lang="nl"
+>
+    <HeaderDynamic country={country} />
+
+    <main class="page-container">
+        <section class="hero-main">
+            <div class="hero__content">
+                <p class="eyebrow">Boekhouden.nl</p>
+                <h1>Pagayo + Boekhouden.nl</h1>
+                <p class="lead">
+                    Synchroniseer orders, betalingen en btw rechtstreeks met Boekhouden.nl. Minder handwerk, altijd bijgewerkt.
+                </p>
+                <div class="hero__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+                <div class="hero__meta">
+                    <span class="pill">Realtime sync</span>
+                    <span class="pill">Automatische btw</span>
+                    <span class="pill">Reconciliatie</span>
+                </div>
+            </div>
+
+            <div class="hero__panel">
+                <div class="stat-card">
+                    <p class="stat-label">Sync tijd</p>
+                    <p class="stat-value">< 5 min</p>
+                    <p class="stat-footnote">Orders en betalingen</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Handwerk</p>
+                    <p class="stat-value">-90%</p>
+                    <p class="stat-footnote">Boekingen automatisch</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Btw</p>
+                    <p class="stat-value">Klaar</p>
+                    <p class="stat-footnote">Per tarief</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">Waarom Boekhouden.nl</p>
+                <h2 class="section-title">Boekhouden zonder CSV's</h2>
+                <p class="section-subtitle">
+                    Pagayo stuurt omzet, btw, verzendkosten en refunds automatisch door. Alles direct zichtbaar in Boekhouden.nl.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Journaalposten</h3>
+                    <p>Automatische boekingen per order, inclusief btw en kortingen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Reconciliatie</h3>
+                    <p>Stripe, Mollie, PayPal en Bancontact koppelen we aan orders.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧾</div>
+                    <h3>Facturen</h3>
+                    <p>Facturen en creditnota's synchroon, zodat debiteuren kloppen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Rapportages</h3>
+                    <p>Omzet per kanaal en productgroep in Boekhouden.nl rapportages.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">Implementatie</p>
+                <h2 class="section-title">Binnen één dag ingericht</h2>
+                <p class="section-subtitle">
+                    Koppel je Boekhouden.nl account, kies grootboeken en btw-codes en test direct met een paar orders.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3>Koppelen</h3>
+                    <p>Login via Boekhouden.nl API, tokens veilig in KMS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3>Mapping</h3>
+                    <p>Grootboek voor omzet, btw, verzendkosten en transactiekosten instellen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3>Test & Go</h3>
+                    <p>Testorders controleren, daarna volautomatisch boeken.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <p class="eyebrow">BTW & compliance</p>
+                <h2 class="section-title">Btw altijd juist</h2>
+                <p class="section-subtitle">
+                    Tarief-splitsing, OSS/ICL en periodieke exports zodat aangiftes snel klaar zijn.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--three">
+                <div class="feature-card">
+                    <div class="feature-icon">💶</div>
+                    <h3>Tarief-splitsing</h3>
+                    <p>Hoog, laag, vrijgesteld automatisch verwerkt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>OSS/ICL</h3>
+                    <p>EU verkoop en intracommunautair leveren ondersteund.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>Periodieke export</h3>
+                    <p>Per maand of kwartaal export voor je btw-aangifte.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-header">
+                <p class="eyebrow">MKB & webshops</p>
+                <h2 class="section-title">Gemaakt voor groei</h2>
+                <p class="section-subtitle">
+                    Webshop-first features, realtime monitoring en Nederlandstalige support.
+                </p>
+            </div>
+
+            <div class="feature-grid feature-grid--two">
+                <div class="feature-card">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Kosten inzicht</h3>
+                    <p>Transactiekosten, refunds en verzendkosten apart geboekt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Voorraad</h3>
+                    <p>Voorraadmutaties en retouren worden doorgegeven.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Monitoring</h3>
+                    <p>Alerts bij mislukte syncs of ontbrekende mappings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Support</h3>
+                    <p>Nederlandstalige support voor boekhouding en techniek.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta__content">
+                <p class="eyebrow">Next step</p>
+                <h2>Start met Boekhouden.nl op Pagayo</h2>
+                <p>Activeer de koppeling, rond je mapping af en laat Pagayo de boekingen doen.</p>
+                <div class="cta__actions">
+                    <a class="btn btn-primary" href="https://app.pagayo.com/register/">Start gratis</a>
+                    <a class="btn btn-ghost" href="/eu/nl/contact">Plan een demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .section { padding: 5rem 0; }
+        .section-alt { background: linear-gradient(180deg, rgba(0, 255, 136, 0.04), rgba(0, 0, 0, 0.12)); }
+        .section-header { max-width: 760px; margin: 0 auto 3rem; text-align: center; }
+        .section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+        .section-subtitle { color: var(--text-secondary); line-height: 1.6; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+        .lead { color: var(--text-secondary); line-height: 1.6; max-width: 720px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.5rem; border-radius: 10px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; border: 1px solid transparent; cursor: pointer; }
+        .btn-primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; box-shadow: 0 12px 30px rgba(0, 255, 136, 0.2); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0, 255, 136, 0.3); }
+        .btn-ghost { border-color: var(--border); color: var(--text); background: rgba(10, 10, 10, 0.6); }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+        .pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(0, 255, 136, 0.05); color: var(--text); font-size: 0.85rem; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+        .feature-grid--three { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .feature-grid--two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        .feature-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: var(--bg-secondary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; gap: 0.65rem; transition: all 0.25s ease; }
+        .feature-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 255, 136, 0.14); }
+        .feature-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(0, 255, 136, 0.1); color: var(--accent); font-weight: 700; }
+        .feature-card h3 { font-size: 1.2rem; font-weight: 800; margin: 0.25rem 0; }
+        .feature-card p { color: var(--text-secondary); line-height: 1.6; }
+
+        .cta { border: 1px solid var(--border); border-radius: 18px; padding: 3rem; background: linear-gradient(135deg, rgba(0, 255, 136, 0.06), rgba(0, 0, 0, 0.9)); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3); text-align: center; margin: 2rem 0 0; }
+        .cta__content { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+        .cta h2 { font-size: clamp(2.1rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: -0.02em; }
+        .cta p { color: var(--text-secondary); max-width: 640px; }
+        .cta__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+
+        @media (max-width: 1024px) {
+            .feature-grid { grid-template-columns: repeat(2, 1fr); }
+            .feature-grid--two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 4rem 0; }
+            .section-header { margin-bottom: 2.5rem; }
+            .feature-card { padding: 1.5rem; }
+            .cta { padding: 2rem 1.5rem; border-radius: 16px; }
+            .cta__actions { flex-direction: column; width: 100%; }
+            .cta__actions .btn { width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .section { padding: 3rem 0; }
+            .eyebrow { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+            .lead { font-size: 0.95rem; }
+            .btn { padding: 0.8rem 1.25rem; font-size: 0.9rem; }
+            .pill { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
+            .feature-card { padding: 1.25rem; gap: 0.5rem; }
+            .feature-icon { width: 38px; height: 38px; }
+            .feature-card h3 { font-size: 1.1rem; }
+            .feature-card p { font-size: 0.9rem; }
+            .cta { padding: 1.75rem 1rem; }
+            .cta h2 { font-size: 1.75rem; }
+        }
+    </style>
+
+    <FooterDynamic country={country} />
+</BaseLayout>

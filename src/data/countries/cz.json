@@ -1,0 +1,238 @@
+{
+  "code": "cz",
+  "region": "eu",
+  "name": "Česká republika",
+  "locale": "cs-CZ",
+  "currency": "CZK",
+  "language": "Čeština",
+  "nav": {
+    "features": "Funkce",
+    "pricing": "Ceny",
+    "contact": "Kontakt",
+    "cta": "Start free"
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Platforma",
+        "links": [
+          {
+            "label": "Funkce",
+            "path": "/features"
+          },
+          {
+            "label": "Ceny",
+            "path": "/pricing"
+          },
+          {
+            "label": "Kontakt",
+            "path": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Obecné",
+        "links": [
+          {
+            "label": "Šifrování tenanta",
+            "path": "/tenant-encryption"
+          },
+          {
+            "label": "Neomezené systémy",
+            "path": "/unlimited-stores"
+          },
+          {
+            "label": "Důvěřuje nám 5 000+",
+            "path": "/trusted-by"
+          },
+          {
+            "label": "API připojení",
+            "path": "/api-connections"
+          },
+          {
+            "label": "API požadavky",
+            "path": "/api-request"
+          }
+        ]
+      },
+      {
+        "title": "Společnost",
+        "links": [
+          {
+            "label": "O nás",
+            "path": "/about"
+          },
+          {
+            "label": "Blog",
+            "path": "/blog"
+          },
+          {
+            "label": "Kariéra",
+            "path": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Platby",
+        "links": [
+          {
+            "label": "Stripe",
+            "path": "/stripe"
+          },
+          {
+            "label": "PayPal",
+            "path": "/paypal"
+          },
+          {
+            "label": "GoPay",
+            "path": "/gopay"
+          }
+        ]
+      },
+      {
+        "title": "Internationaal",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Azië",
+            "path": "/asia"
+          },
+          {
+            "label": "Europa",
+            "path": "/europe"
+          },
+          {
+            "label": "Americas",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceanië",
+            "path": "/oceania"
+          },
+          {
+            "label": "Midden-Oosten",
+            "path": "/middle-east"
+          }
+        ]
+      },
+      {
+        "title": "Účetnictví",
+        "links": [
+          {
+            "label": "Money S3",
+            "path": "/money-s3"
+          },
+          {
+            "label": "Pohoda",
+            "path": "/pohoda"
+          }
+        ]
+      },
+      {
+        "title": "Doprava",
+        "links": [
+          {
+            "label": "Česká pošta",
+            "path": "/ceska-posta"
+          },
+          {
+            "label": "DHL",
+            "path": "/dhl"
+          },
+          {
+            "label": "PPL",
+            "path": "/ppl"
+          }
+        ]
+      },
+      {
+        "title": "API připojení",
+        "links": [
+          {
+            "label": "Booking.com",
+            "path": "/booking-com"
+          },
+          {
+            "label": "Facebook",
+            "path": "/facebook"
+          },
+          {
+            "label": "Instagram",
+            "path": "/instagram"
+          },
+          {
+            "label": "TikTok",
+            "path": "/tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Právní",
+        "links": [
+          {
+            "label": "Ochrana osobních údajů",
+            "path": "/privacy"
+          },
+          {
+            "label": "Podmínky",
+            "path": "/terms"
+          },
+          {
+            "label": "Smlouva o zpracování dat",
+            "path": "/data-processing-agreement"
+          }
+        ]
+      },
+      {
+        "title": "Mezinárodní",
+        "links": [
+          {
+            "label": "Afrika",
+            "path": "/africa"
+          },
+          {
+            "label": "Asie",
+            "path": "/asia"
+          },
+          {
+            "label": "Evropa",
+            "path": "/europe"
+          },
+          {
+            "label": "Střední východ",
+            "path": "/middle-east"
+          },
+          {
+            "label": "Amerika",
+            "path": "/americas"
+          },
+          {
+            "label": "Oceánie",
+            "path": "/oceania"
+          }
+        ]
+      },
+      {
+        "title": "Funkce",
+        "links": [
+          {
+            "label": "Všechny funkce",
+            "path": "/features"
+          },
+          {
+            "label": "Zákaznická podpora",
+            "path": "/support"
+          }
+        ]
+      }
+    ],
+    "tagline": "Multi-tenant e-commerce platforma pro moderní podnikatele.",
+    "copyright": "© {year} Pagayo. Všechna práva vyhrazena."
+  },
+  "meta": {
+    "tagline": "Multi-tenant e-commerce platforma pro moderní podnikatele."
+  }
+}
