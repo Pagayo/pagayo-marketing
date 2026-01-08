@@ -1,0 +1,21 @@
+---
+pagination:
+  data: countries
+  size: 1
+  alias: country
+permalink: "{{ country.region }}/{{ country.code }}/pricing/"
+layout: layouts/base.njk
+title: "Prijzen - Pagayo"
+description: "Simpele, schaalbare prijzen. Betaal alleen voor je succes."
+---
+
+<section class="section">
+  <div class="section-header">
+    <h1 class="section-title">{{ country.pricing.title }}</h1>
+    <p class="section-subtitle">{{ country.pricing.subtitle }}</p>
+  </div>
+</section>
+
+{% include "partials/pricing.njk" %}
+{% include "partials/social-proof.njk" %}
+{% include "partials/cta.njk" %}

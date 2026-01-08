@@ -1,0 +1,122 @@
+---
+/**
+ * BaseLayout - Pagayo Marketing Site
+ */
+
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  region?: string;
+  country?: string;
+  lang?: string;
+  nav?: Array<{ label: string; href: string }>;
+  footerColumns?: Array<{
+    title: string;
+    links: Array<{ label: string; href: string }>;
+  }>;
+}
+
+const {
+  title,
+  description = 'Het moderne platform voor webshop verhuur en e-commerce.',
+  ogImage = '/og-image.png',
+  region = 'eu',
+  country = 'nl',
+  lang = 'nl',
+  nav = [
+    { label: 'Features', href: '/features' },
+    { label: 'Prijzen', href: '/pricing' },
+    { label: 'Contact', href: '/contact' },
+  ],
+  footerColumns = [
+    {
+      title: 'Product',
+      links: [
+        { label: 'Features', href: '/features' },
+        { label: 'Prijzen', href: '/pricing' },
+        { label: 'Integraties', href: '/integrations' },
+      ],
+    },
+    {
+      title: 'Bedrijf',
+      links: [
+        { label: 'Over ons', href: '/about' },
+        { label: 'Contact', href: '/contact' },
+        { label: 'Blog', href: '/blog' },
+      ],
+    },
+    {
+      title: 'Support',
+      links: [
+        { label: 'Helpcentrum', href: '/help' },
+        { label: 'Documentatie', href: '/docs' },
+        { label: 'Status', href: '/status' },
+      ],
+    },
+  ],
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://pagayo.com');
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO -->
+    <title>{title} | Pagayo</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <Header 
+      nav={nav}
+      region={region}
+      country={country}
+      ctaButton={{ text: 'Start gratis', href: 'https://app.pagayo.com/register' }}
+    />
+    
+    <main>
+      <slot />
+    </main>
+    
+    <Footer 
+      columns={footerColumns}
+      region={region}
+      country={country}
+      social={[
+        { platform: 'LinkedIn', href: 'https://linkedin.com/company/pagayo', icon: 'linkedin' },
+        { platform: 'Twitter', href: 'https://twitter.com/pagayo', icon: 'twitter' },
+      ]}
+    />
+  </body>
+</html>

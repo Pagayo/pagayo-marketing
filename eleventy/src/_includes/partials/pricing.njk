@@ -1,0 +1,45 @@
+<section class="pricing" id="pricing">
+  <div class="section-header">
+    <h2 class="section-title">{{ country.pricing.title }}</h2>
+    <p class="section-subtitle">{{ country.pricing.subtitle }}</p>
+  </div>
+  
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-badge">{{ country.pricing.badge }}</div>
+      
+      <div class="pricing-columns">
+        <!-- Pricing Column -->
+        <div class="pricing-column">
+          <h4>{{ country.pricing.tiersTitle }}</h4>
+          {% for tier in country.pricing.tiers %}
+          <div class="pricing-tier">
+            <span class="percentage">{{ tier.percentage }}</span>
+            <span class="range">{{ tier.range }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        
+        <!-- Features Column -->
+        <div class="pricing-column features">
+          <h4>{{ country.pricing.featuresTitle }}</h4>
+          {% for feature in country.pricing.features %}
+          <div class="feature-item">
+            <span class="checkmark">✓</span> {{ feature }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <div class="pricing-footer">
+        <p>{{ country.pricing.footer }}</p>
+        <a href="{{ country.pricing.cta.url }}" class="btn btn-primary">
+          {{ country.pricing.cta.text }}
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 1l6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

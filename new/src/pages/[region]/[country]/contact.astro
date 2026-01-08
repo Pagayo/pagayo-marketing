@@ -1,0 +1,269 @@
+---
+/**
+ * Contact page
+ */
+
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Button from '../../../components/ui/Button.astro';
+import Card from '../../../components/ui/Card.astro';
+import Icon from '../../../components/ui/Icon.astro';
+
+import nlConfig from '../../../content/countries/nl.json';
+import deConfig from '../../../content/countries/de.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { region: 'eu', country: 'nl' } },
+    { params: { region: 'eu', country: 'de' } },
+  ];
+}
+
+const { region, country } = Astro.params;
+
+const countryConfigs: Record<string, any> = {
+  nl: nlConfig,
+  de: deConfig,
+};
+
+const config = countryConfigs[country] || nlConfig;
+const t = config.translations;
+
+const nav = [
+  { label: t.nav.features, href: '/features' },
+  { label: t.nav.pricing, href: '/pricing' },
+  { label: t.nav.contact, href: '/contact' },
+];
+
+const contactInfo = country === 'nl' ? {
+  title: 'Neem contact op',
+  subtitle: 'Heb je vragen of wil je meer weten over Pagayo? We helpen je graag.',
+  email: 'info@pagayo.com',
+  phone: '+31 (0)20 123 4567',
+  address: 'Amsterdam, Nederland',
+  formLabels: {
+    name: 'Naam',
+    email: 'E-mail',
+    company: 'Bedrijf',
+    message: 'Bericht',
+    submit: 'Verstuur bericht',
+  },
+} : {
+  title: 'Kontakt aufnehmen',
+  subtitle: 'Haben Sie Fragen oder möchten Sie mehr über Pagayo erfahren? Wir helfen Ihnen gerne.',
+  email: 'info@pagayo.com',
+  phone: '+31 (0)20 123 4567',
+  address: 'Amsterdam, Niederlande',
+  formLabels: {
+    name: 'Name',
+    email: 'E-Mail',
+    company: 'Unternehmen',
+    message: 'Nachricht',
+    submit: 'Nachricht senden',
+  },
+};
+---
+
+<BaseLayout 
+  title={contactInfo.title}
+  description={contactInfo.subtitle}
+  region={region}
+  country={country}
+  lang={config.lang}
+  nav={nav}
+  footerColumns={t.footer.columns}
+>
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-header">
+        <h1 class="contact-title">{contactInfo.title}</h1>
+        <p class="contact-subtitle">{contactInfo.subtitle}</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <Card variant="outlined" padding="lg">
+            <div class="info-item">
+              <Icon name="mail" size={24} />
+              <div>
+                <h3>Email</h3>
+                <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+              </div>
+            </div>
+          </Card>
+
+          <Card variant="outlined" padding="lg">
+            <div class="info-item">
+              <Icon name="phone" size={24} />
+              <div>
+                <h3>Telefoon</h3>
+                <a href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}>{contactInfo.phone}</a>
+              </div>
+            </div>
+          </Card>
+
+          <Card variant="outlined" padding="lg">
+            <div class="info-item">
+              <Icon name="globe" size={24} />
+              <div>
+                <h3>Locatie</h3>
+                <p>{contactInfo.address}</p>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <!-- Contact Form -->
+        <Card variant="elevated" padding="lg" class="contact-form-card">
+          <form class="contact-form" action="/api/contact" method="POST">
+            <div class="form-group">
+              <label for="name">{contactInfo.formLabels.name}</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">{contactInfo.formLabels.email}</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="company">{contactInfo.formLabels.company}</label>
+              <input type="text" id="company" name="company" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">{contactInfo.formLabels.message}</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <Button type="submit" variant="primary" fullWidth>
+              {contactInfo.formLabels.submit}
+            </Button>
+          </form>
+        </Card>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-section {
+    padding: var(--space-20) var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .contact-section {
+      padding: var(--space-24) var(--space-8);
+    }
+  }
+
+  .contact-container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+  }
+
+  .contact-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-12);
+  }
+
+  .contact-title {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+  }
+
+  .contact-grid {
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .info-item :global(svg) {
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .info-item h3 {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+
+  .info-item a,
+  .info-item p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .info-item a:hover {
+    color: var(--color-accent);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .form-group label {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    transition: border-color var(--transition-fast);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+</style>

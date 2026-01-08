@@ -1,0 +1,21 @@
+---
+pagination:
+  data: countries
+  size: 1
+  alias: country
+permalink: "{{ country.region }}/{{ country.code }}/features/"
+layout: layouts/base.njk
+title: "Features - Pagayo"
+description: "Alles wat je nodig hebt voor een succesvolle e-commerce business."
+---
+
+<section class="section">
+  <div class="section-header">
+    <h1 class="section-title">{{ country.features.title }}</h1>
+    <p class="section-subtitle">{{ country.features.subtitle }}</p>
+  </div>
+</section>
+
+{% include "partials/features.njk" %}
+{% include "partials/social-proof.njk" %}
+{% include "partials/cta.njk" %}

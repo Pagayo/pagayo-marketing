@@ -1,0 +1,114 @@
+---
+/**
+ * Badge Component - Pagayo Design System
+ * 
+ * @prop color - 'default' | 'success' | 'warning' | 'danger' | 'info' | 'purple' | 'pink' (default: 'default')
+ * @prop size - 'sm' | 'md' (default: 'md')
+ * @prop dot - Show a status dot before text
+ * @prop pill - Full rounded corners
+ */
+
+interface Props {
+  color?: 'default' | 'success' | 'warning' | 'danger' | 'info' | 'purple' | 'pink';
+  size?: 'sm' | 'md';
+  dot?: boolean;
+  pill?: boolean;
+  class?: string;
+}
+
+const {
+  color = 'default',
+  size = 'md',
+  dot = false,
+  pill = false,
+  class: className = '',
+} = Astro.props;
+
+const classes = [
+  'badge',
+  `badge-${color}`,
+  `badge-${size}`,
+  pill ? 'badge-pill' : '',
+  className
+].filter(Boolean).join(' ');
+---
+
+<span class={classes}>
+  {dot && <span class="badge-dot" />}
+  <slot />
+</span>
+
+<style>
+  /* Base Badge Styles */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+  }
+
+  /* Size Variants */
+  .badge-sm {
+    padding: 0.125rem 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  .badge-md {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  /* Pill Shape */
+  .badge-pill {
+    border-radius: var(--radius-full);
+  }
+
+  /* Color Variants - GitHub Dark */
+  .badge-default {
+    background: #21262d;
+    color: #8b949e;
+  }
+
+  .badge-success {
+    background: rgba(0, 255, 136, 0.15);
+    color: #00ff88;
+  }
+
+  .badge-warning {
+    background: rgba(210, 153, 34, 0.15);
+    color: #d29922;
+  }
+
+  .badge-danger {
+    background: rgba(248, 81, 73, 0.15);
+    color: #f85149;
+  }
+
+  .badge-info {
+    background: rgba(0, 255, 136, 0.15);
+    color: #00ff88;
+  }
+
+  .badge-purple {
+    background: rgba(163, 113, 247, 0.15);
+    color: #a371f7;
+  }
+
+  .badge-pink {
+    background: rgba(219, 97, 162, 0.15);
+    color: #db61a2;
+  }
+
+  /* Status Dot */
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+</style>

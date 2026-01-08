@@ -1,0 +1,438 @@
+---
+/**
+ * PricingTable Component - Pagayo Design System
+ */
+
+import Button from '../ui/Button.astro';
+import Badge from '../ui/Badge.astro';
+import Icon from '../ui/Icon.astro';
+
+interface PlanFeature {
+  text: string;
+  included: boolean;
+  tooltip?: string;
+}
+
+interface PricingPlan {
+  name: string;
+  description?: string;
+  price: {
+    monthly: number | string;
+    yearly?: number | string;
+  };
+  currency?: string;
+  period?: string;
+  features: (string | PlanFeature)[];
+  cta: {
+    text: string;
+    href: string;
+  };
+  popular?: boolean;
+  badge?: string;
+}
+
+interface Props {
+  plans: PricingPlan[];
+  title?: string;
+  subtitle?: string;
+  variant?: 'cards' | 'comparison';
+  billingToggle?: boolean;
+  class?: string;
+}
+
+const {
+  plans,
+  title,
+  subtitle,
+  variant = 'cards',
+  billingToggle = false,
+  class: className = '',
+} = Astro.props;
+
+const formatPrice = (price: number | string): string => {
+  if (typeof price === 'string') return price;
+  return price.toLocaleString('nl-NL');
+};
+
+const normalizeFeature = (feature: string | PlanFeature): PlanFeature => {
+  if (typeof feature === 'string') {
+    return { text: feature, included: true };
+  }
+  return feature;
+};
+---
+
+<section class:list={['pricing-section', className]}>
+  {(title || subtitle) && (
+    <div class="pricing-header">
+      {title && <h2 class="pricing-title">{title}</h2>}
+      {subtitle && <p class="pricing-subtitle">{subtitle}</p>}
+    </div>
+  )}
+
+  {billingToggle && (
+    <div class="billing-toggle">
+      <span class="billing-option active" data-period="monthly">Maandelijks</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="billing-toggle" />
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="billing-option" data-period="yearly">
+        Jaarlijks
+        <Badge color="success" size="sm">-20%</Badge>
+      </span>
+    </div>
+  )}
+
+  <div class:list={['pricing-grid', `pricing-${variant}`, `pricing-count-${plans.length}`]}>
+    {plans.map((plan, index) => (
+      <div 
+        class:list={['pricing-card', { 'pricing-card-popular': plan.popular }]}
+        style={`animation-delay: ${index * 100}ms;`}
+      >
+        {plan.popular && (
+          <div class="popular-ribbon">
+            <Badge color="purple">{plan.badge || 'Populair'}</Badge>
+          </div>
+        )}
+        
+        <div class="pricing-card-header">
+          <h3 class="plan-name">{plan.name}</h3>
+          {plan.description && (
+            <p class="plan-description">{plan.description}</p>
+          )}
+        </div>
+
+        <div class="pricing-card-price">
+          <div class="price-amount">
+            <span class="price-currency">{plan.currency || '€'}</span>
+            <span class="price-value" data-monthly={plan.price.monthly} data-yearly={plan.price.yearly || plan.price.monthly}>
+              {formatPrice(plan.price.monthly)}
+            </span>
+          </div>
+          <span class="price-period">/{plan.period || 'maand'}</span>
+        </div>
+
+        <ul class="pricing-features">
+          {plan.features.map((feature) => {
+            const f = normalizeFeature(feature);
+            return (
+              <li class:list={['pricing-feature', { 'feature-excluded': !f.included }]}>
+                <Icon 
+                  name={f.included ? 'check' : 'x'} 
+                  size={18} 
+                  class={f.included ? 'feature-icon-check' : 'feature-icon-x'}
+                />
+                <span>{f.text}</span>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div class="pricing-card-footer">
+          <Button 
+            variant={plan.popular ? 'primary' : 'secondary'} 
+            href={plan.cta.href}
+            fullWidth
+            size="lg"
+          >
+            {plan.cta.text}
+          </Button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* Section */
+  .pricing-section {
+    padding: var(--space-20) var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .pricing-section {
+      padding: var(--space-24) var(--space-8);
+    }
+  }
+
+  /* Header - GitHub Dark */
+  .pricing-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .pricing-title {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: #c9d1d9;
+    margin-bottom: var(--space-4);
+  }
+
+  .pricing-subtitle {
+    font-size: var(--text-lg);
+    color: #8b949e;
+    line-height: 1.6;
+  }
+
+  /* Billing Toggle - GitHub Dark */
+  .billing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-12);
+  }
+
+  .billing-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: #8b949e;
+    transition: color var(--transition-fast);
+  }
+
+  .billing-option.active {
+    color: #c9d1d9;
+  }
+
+  .toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 26px;
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #21262d;
+    border-radius: var(--radius-full);
+    transition: background var(--transition-fast);
+  }
+
+  .toggle-slider::before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    bottom: 3px;
+    background: #c9d1d9;
+    border-radius: 50%;
+    transition: transform var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .toggle-switch input:checked + .toggle-slider {
+    background: #00ff88;
+  }
+
+  .toggle-switch input:checked + .toggle-slider::before {
+    transform: translateX(22px);
+    background: #0d1117;
+  }
+
+  /* Grid */
+  .pricing-grid {
+    display: grid;
+    gap: var(--space-6);
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    align-items: stretch;
+  }
+
+  .pricing-count-2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+
+  .pricing-count-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pricing-count-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 1024px) {
+    .pricing-count-3,
+    .pricing-count-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+  }
+
+  /* Card - GitHub Dark */
+  .pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+    transition: all 0.3s ease;
+  }
+
+  .pricing-card:hover {
+    border-color: #00ff88;
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 255, 136, 0.2);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .pricing-card-popular {
+    border: 2px solid #00ff88;
+    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.25);
+    transform: scale(1.02);
+  }
+
+  .pricing-card-popular:hover {
+    transform: scale(1.02) translateY(-8px);
+  }
+
+  .popular-ribbon {
+    position: absolute;
+    top: calc(var(--space-4) * -1);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Card Header - GitHub Dark */
+  .pricing-card-header {
+    text-align: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .plan-name {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: #c9d1d9;
+  }
+
+  .plan-description {
+    font-size: var(--text-sm);
+    color: #8b949e;
+    margin-top: var(--space-2);
+  }
+
+  /* Price - GitHub Dark */
+  .pricing-card-price {
+    text-align: center;
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid #30363d;
+  }
+
+  .price-amount {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-1);
+  }
+
+  .price-currency {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: #8b949e;
+    margin-top: var(--space-2);
+  }
+
+  .price-value {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    color: #00ff88;
+    line-height: 1;
+  }
+
+  .price-period {
+    font-size: var(--text-sm);
+    color: #8b949e;
+    display: block;
+    margin-top: var(--space-2);
+  }
+
+  /* Features - GitHub Dark */
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-8);
+    flex: 1;
+  }
+
+  .pricing-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    font-size: var(--text-sm);
+    color: #c9d1d9;
+  }
+
+  .feature-excluded {
+    color: #8b949e;
+    text-decoration: line-through;
+  }
+
+  .feature-icon-check {
+    color: #00ff88;
+  }
+
+  .feature-icon-x {
+    color: #8b949e;
+  }
+
+  /* Footer */
+  .pricing-card-footer {
+    margin-top: auto;
+  }
+</style>
+
+<script>
+  // Billing toggle functionality
+  const toggle = document.getElementById('billing-toggle');
+  const options = document.querySelectorAll('.billing-option');
+  const priceValues = document.querySelectorAll('.price-value');
+
+  toggle?.addEventListener('change', (e) => {
+    const isYearly = (e.target as HTMLInputElement).checked;
+    
+    options.forEach((option) => {
+      option.classList.toggle('active', 
+        (isYearly && option.getAttribute('data-period') === 'yearly') ||
+        (!isYearly && option.getAttribute('data-period') === 'monthly')
+      );
+    });
+
+    priceValues.forEach((el) => {
+      const monthly = el.getAttribute('data-monthly');
+      const yearly = el.getAttribute('data-yearly');
+      el.textContent = isYearly ? yearly : monthly;
+    });
+  });
+</script>

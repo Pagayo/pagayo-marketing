@@ -1,0 +1,16 @@
+---
+pagination:
+  data: countries
+  size: 1
+  alias: country
+permalink: "{{ country.region }}/{{ country.code }}/"
+layout: layouts/base.njk
+title: "Pagayo - Multi-Tenant E-commerce Platform"
+description: "Bouw en schaal moderne webshops, hotels, en POS systemen op één krachtig multi-tenant platform."
+---
+
+{% include "partials/hero.njk" %}
+{% include "partials/features.njk" %}
+{% include "partials/social-proof.njk" %}
+{% include "partials/pricing.njk" %}
+{% include "partials/cta.njk" %}

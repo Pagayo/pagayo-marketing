@@ -1,0 +1,132 @@
+---
+/**
+ * Dynamic country landing page
+ */
+
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeroSection from '../../../components/sections/HeroSection.astro';
+import FeaturesGrid from '../../../components/sections/FeaturesGrid.astro';
+import PricingTiers from '../../../components/sections/PricingTiers.astro';
+import FAQAccordion from '../../../components/sections/FAQAccordion.astro';
+import CTASection from '../../../components/sections/CTASection.astro';
+import SocialProof from '../../../components/sections/SocialProof.astro';
+
+// Import country configs
+import nlConfig from '../../../content/countries/nl.json';
+import deConfig from '../../../content/countries/de.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { region: 'eu', country: 'nl' } },
+    { params: { region: 'eu', country: 'de' } },
+  ];
+}
+
+const { region, country } = Astro.params;
+
+// Get country config
+const countryConfigs: Record<string, any> = {
+  nl: nlConfig,
+  de: deConfig,
+};
+
+const config = countryConfigs[country] || nlConfig;
+const t = config.translations;
+
+// Navigation items
+const nav = [
+  { label: t.nav.features, href: '/features' },
+  { label: t.nav.pricing, href: '/pricing' },
+  { label: t.nav.contact, href: '/contact' },
+];
+---
+
+<BaseLayout 
+  title={`${t.hero.headline} ${t.hero.headlineAccent}`}
+  description={t.hero.subtitle}
+  region={region}
+  country={country}
+  lang={config.lang}
+  nav={nav}
+  footerColumns={t.footer.columns}
+>
+  <!-- Hero Section -->
+  <HeroSection 
+    data={{
+      badge: t.hero.badge,
+      headline: t.hero.headline,
+      headlineAccent: t.hero.headlineAccent,
+      subtitle: t.hero.subtitle,
+      primaryCta: {
+        text: t.hero.primaryCta,
+        url: 'https://app.pagayo.com/register/',
+      },
+      secondaryCta: {
+        text: t.hero.secondaryCta,
+        url: `/${region}/${country}/pricing`,
+      },
+      pills: t.hero.pills,
+      cards: t.hero.cards,
+      stats: t.hero.stats,
+    }}
+    variant="gradient"
+  />
+
+  <!-- Social Proof -->
+  <SocialProof 
+    variant="badges"
+    badges={[
+      { icon: 'shield-check', text: 'PCI-DSS Compliant' },
+      { icon: 'lock', text: 'SSL Encrypted' },
+      { icon: 'zap', text: '99.9% Uptime' },
+      { icon: 'users', text: '500+ Klanten' },
+    ]}
+  />
+
+  <!-- Features Grid -->
+  <FeaturesGrid 
+    title={t.features.title}
+    subtitle={t.features.subtitle}
+    features={t.features.items}
+    columns={3}
+    variant="cards"
+  />
+
+  <!-- Pricing Tiers -->
+  <PricingTiers 
+    title={t.pricing.title}
+    subtitle={t.pricing.subtitle}
+    badge={t.pricing.badge}
+    tiers={t.pricing.tiers}
+    features={t.pricing.features}
+    footer={t.pricing.footer}
+    cta={{
+      text: t.pricing.cta,
+      href: 'https://app.pagayo.com/register/',
+    }}
+  />
+
+  <!-- FAQ -->
+  <FAQAccordion 
+    title={t.faq.title}
+    subtitle={t.faq.subtitle}
+    items={t.faq.items}
+    variant="bordered"
+  />
+
+  <!-- CTA Section -->
+  <CTASection 
+    title={t.cta.title}
+    subtitle={t.cta.subtitle}
+    primaryCta={{
+      text: t.cta.primaryCta,
+      href: 'https://app.pagayo.com/register/',
+      icon: '→',
+    }}
+    secondaryCta={{
+      text: t.cta.secondaryCta,
+      href: `/${region}/${country}/contact`,
+    }}
+    variant="gradient"
+  />
+</BaseLayout>

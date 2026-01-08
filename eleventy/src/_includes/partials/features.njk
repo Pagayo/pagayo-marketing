@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">{{ country.features.title }}</h2>
+    <p class="section-subtitle">{{ country.features.subtitle }}</p>
+  </div>
+  
+  <div class="feature-grid">
+    {% for feature in country.features.items %}
+    <div class="feature-card">
+      <div class="feature-icon">{{ feature.icon }}</div>
+      <h3>{{ feature.title }}</h3>
+      <p>
+        {{ feature.description }}
+        {% if feature.link %}
+        <a href="{{ feature.link.href }}">{{ feature.link.text }}</a>.
+        {% endif %}
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+</section>

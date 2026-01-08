@@ -1,0 +1,160 @@
+---
+/**
+ * Badge Component - Pagayo Design System
+ * 
+ * @prop color - 'default' | 'success' | 'warning' | 'danger' | 'info' | 'purple' | 'pink' (default: 'default')
+ * @prop size - 'sm' | 'md' (default: 'md')
+ * @prop dot - Show a status dot before text
+ * @prop pill - Full rounded corners
+ */
+
+interface Props {
+  color?: 'default' | 'success' | 'warning' | 'danger' | 'info' | 'purple' | 'pink';
+  size?: 'sm' | 'md';
+  dot?: boolean;
+  pill?: boolean;
+  class?: string;
+}
+
+const {
+  color = 'default',
+  size = 'md',
+  dot = false,
+  pill = false,
+  class: className = '',
+} = Astro.props;
+
+const classes = [
+  'badge',
+  `badge-${color}`,
+  `badge-${size}`,
+  pill ? 'badge-pill' : '',
+  className
+].filter(Boolean).join(' ');
+---
+
+<span class={classes}>
+  {dot && <span class="badge-dot" />}
+  <slot />
+</span>
+
+<style>
+  /* Base Badge Styles */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+  }
+
+  /* Size Variants */
+  .badge-sm {
+    padding: 0.125rem 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  .badge-md {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  /* Pill Shape */
+  .badge-pill {
+    border-radius: var(--radius-full);
+  }
+
+  /* Color Variants */
+  .badge-default {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-muted);
+  }
+
+  .badge-success {
+    background: rgba(26, 127, 55, 0.15);
+    color: var(--color-success);
+  }
+
+  .badge-warning {
+    background: rgba(154, 103, 0, 0.15);
+    color: var(--color-warning);
+  }
+
+  .badge-danger {
+    background: rgba(207, 34, 46, 0.15);
+    color: var(--color-danger);
+  }
+
+  .badge-info {
+    background: rgba(9, 105, 218, 0.15);
+    color: var(--color-accent);
+  }
+
+  .badge-purple {
+    background: rgba(130, 80, 223, 0.15);
+    color: var(--color-purple);
+  }
+
+  .badge-pink {
+    background: rgba(191, 57, 137, 0.15);
+    color: var(--color-pink);
+  }
+
+  /* Status Dot */
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  /* Animated Dot (pulse) */
+  .badge-success .badge-dot {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* Dark Mode Adjustments */
+  [data-theme="dark"] .badge-default {
+    background: var(--color-bg-tertiary);
+  }
+
+  [data-theme="dark"] .badge-success {
+    background: rgba(63, 185, 80, 0.2);
+    color: #3fb950;
+  }
+
+  [data-theme="dark"] .badge-warning {
+    background: rgba(210, 153, 34, 0.2);
+    color: #d29922;
+  }
+
+  [data-theme="dark"] .badge-danger {
+    background: rgba(248, 81, 73, 0.2);
+    color: #f85149;
+  }
+
+  [data-theme="dark"] .badge-info {
+    background: rgba(88, 166, 255, 0.2);
+    color: #58a6ff;
+  }
+
+  [data-theme="dark"] .badge-purple {
+    background: rgba(163, 113, 247, 0.2);
+    color: #a371f7;
+  }
+
+  [data-theme="dark"] .badge-pink {
+    background: rgba(247, 120, 186, 0.2);
+    color: #f778ba;
+  }
+</style>

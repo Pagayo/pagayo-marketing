@@ -1,0 +1,45 @@
+<section class="hero-main">
+  <div class="hero__content">
+    <p class="eyebrow">{{ country.hero.badge }}</p>
+    <h1>{{ country.hero.headline }} <span class="accent">{{ country.hero.headlineAccent }}</span></h1>
+    <p class="lead">{{ country.hero.subtitle }}</p>
+    
+    <div class="hero__actions">
+      <a class="btn btn-primary" href="{{ country.hero.primaryCta.url }}">
+        {{ country.hero.primaryCta.text }}
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 1l6 6-6 6"/>
+        </svg>
+      </a>
+      <a class="btn btn-ghost" href="{{ country.hero.secondaryCta.url }}">{{ country.hero.secondaryCta.text }}</a>
+    </div>
+    
+    <div class="hero__meta">
+      {% for pill in country.hero.pills %}
+      <span class="pill">{{ pill }}</span>
+      {% endfor %}
+    </div>
+    
+    <!-- First card in content area -->
+    {% set apiCard = country.hero.cards[3] %}
+    <div class="stat-card">
+      <p class="stat-label">{{ apiCard.label }}</p>
+      <p class="stat-value">{{ apiCard.value }}</p>
+      <p class="stat-footnote">{{ apiCard.description }}</p>
+      <a href="{{ apiCard.link.href }}" class="stat-link">{{ apiCard.link.text }}</a>
+    </div>
+  </div>
+  
+  <div class="hero__panel">
+    {% for card in country.hero.cards %}
+    {% if loop.index0 < 3 %}
+    <div class="stat-card">
+      <p class="stat-label">{{ card.label }}</p>
+      <p class="stat-value">{{ card.value }}</p>
+      <p class="stat-footnote">{{ card.description }}</p>
+      <a href="{{ card.link.href }}" class="stat-link">{{ card.link.text }}</a>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>

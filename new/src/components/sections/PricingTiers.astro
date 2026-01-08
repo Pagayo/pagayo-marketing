@@ -1,0 +1,255 @@
+---
+/**
+ * PricingTiers Component - Pagayo Design System
+ * Percentage-based pricing for e-commerce platforms
+ */
+
+import Button from '../ui/Button.astro';
+
+interface PricingTier {
+  percentage: string;
+  range: string;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  badge: string;
+  tiers: PricingTier[];
+  features: string[];
+  footer: string;
+  cta: {
+    text: string;
+    href: string;
+  };
+  class?: string;
+}
+
+const {
+  title,
+  subtitle,
+  badge,
+  tiers,
+  features,
+  footer,
+  cta,
+  class: className = '',
+} = Astro.props;
+---
+
+<section class:list={['pricing', className]} id="pricing">
+  <div class="pricing-container">
+    <div class="section-header">
+      <h2 class="pricing-title">{title}</h2>
+      <p class="pricing-subtitle">{subtitle}</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-badge">{badge}</div>
+        
+        <div class="pricing-columns">
+          <!-- Left: Pricing Tiers -->
+          <div class="pricing-column">
+            <h4 class="column-title">Prijzen</h4>
+            {tiers.map((tier) => (
+              <div class="pricing-tier">
+                <span class="percentage">{tier.percentage}</span>
+                <span class="range">{tier.range}</span>
+              </div>
+            ))}
+          </div>
+
+          <!-- Right: Features -->
+          <div class="pricing-column features">
+            <h4 class="column-title">Wat je krijgt</h4>
+            {features.map((feature) => (
+              <div class="feature-item">
+                <span class="checkmark">✓</span>
+                <span>{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pricing-footer">
+          <p class="footer-text">{footer}</p>
+          <Button 
+            variant="primary" 
+            size="lg" 
+            href={cta.href}
+            icon="→"
+          >
+            {cta.text}
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, #0a0a0a 0%, #0f1513 100%);
+  }
+
+  .pricing-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  .pricing-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #c9d1d9;
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+  }
+
+  .pricing-subtitle {
+    font-size: var(--text-xl);
+    color: #8b949e;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Card */
+  .pricing-grid {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pricing-card {
+    background: linear-gradient(180deg, #0f1513 0%, #0a0a0a 100%);
+    border: 2px solid #30363d;
+    border-radius: 20px;
+    padding: var(--space-8);
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.1);
+    transition: all 0.4s ease;
+  }
+
+  .pricing-card:hover {
+    border-color: #00ff88;
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 255, 136, 0.2);
+  }
+
+  /* Badge */
+  .pricing-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #00ff88 0%, #00e077 100%);
+    color: #0d1117;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    padding: var(--space-2) var(--space-4);
+    border-radius: 999px;
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Columns Layout */
+  .pricing-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 640px) {
+    .pricing-columns {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+    }
+  }
+
+  .pricing-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .column-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: #c9d1d9;
+    margin-bottom: var(--space-2);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid #30363d;
+  }
+
+  /* Pricing Tiers */
+  .pricing-tier {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+  }
+
+  .percentage {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #00ff88;
+    line-height: 1;
+  }
+
+  .range {
+    font-size: var(--text-base);
+    color: #8b949e;
+  }
+
+  /* Features */
+  .features {
+    gap: var(--space-3);
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: #c9d1d9;
+    padding: var(--space-2) 0;
+  }
+
+  .checkmark {
+    color: #00ff88;
+    font-size: var(--text-lg);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Footer */
+  .pricing-footer {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid #30363d;
+    text-align: center;
+  }
+
+  .footer-text {
+    font-size: var(--text-base);
+    color: #8b949e;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Enterprise Note */
+  @media (max-width: 639px) {
+    .pricing-card {
+      padding: var(--space-6);
+    }
+
+    .percentage {
+      font-size: 2rem;
+    }
+  }
+</style>

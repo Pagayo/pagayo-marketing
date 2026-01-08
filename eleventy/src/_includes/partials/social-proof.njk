@@ -1,0 +1,13 @@
+<section class="social-proof">
+  <div class="social-proof-content">
+    <h3>{{ country.socialProof.title }}</h3>
+    <div class="trust-badges">
+      {% for stat in country.socialProof.stats %}
+      <div class="trust-item">
+        <div class="trust-number">{{ stat.value }}</div>
+        <div class="trust-label">{{ stat.label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

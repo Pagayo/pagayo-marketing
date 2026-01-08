@@ -5,7 +5,7 @@
  * @prop variant - 'primary' | 'secondary' | 'ghost' | 'danger' (default: 'primary')
  * @prop size - 'sm' | 'md' | 'lg' (default: 'md')
  * @prop href - Optional link URL (renders as <a> instead of <button>)
- * @prop icon - Optional icon name to show after text
+ * @prop icon - Optional icon to show after text
  * @prop iconPosition - 'left' | 'right' (default: 'right')
  * @prop fullWidth - Makes button full width
  * @prop disabled - Disables the button
@@ -38,18 +38,12 @@ const {
 
 const Tag = href ? 'a' : 'button';
 
-const baseClasses = 'btn';
-const variantClasses = `btn-${variant}`;
-const sizeClasses = `btn-${size}`;
-const widthClasses = fullWidth ? 'btn-full' : '';
-const disabledClasses = disabled ? 'btn-disabled' : '';
-
 const classes = [
-  baseClasses,
-  variantClasses,
-  sizeClasses,
-  widthClasses,
-  disabledClasses,
+  'btn',
+  `btn-${variant}`,
+  `btn-${size}`,
+  fullWidth ? 'btn-full' : '',
+  disabled ? 'btn-disabled' : '',
   className
 ].filter(Boolean).join(' ');
 ---
@@ -116,51 +110,55 @@ const classes = [
     font-size: var(--text-lg);
   }
 
-  /* Primary Variant - Gradient */
+  /* Primary Variant - GitHub Dark with Accent */
   .btn-primary {
-    background: var(--gradient-primary);
-    background-size: 200% 200%;
-    color: white;
+    background: linear-gradient(135deg, #00ff88 0%, #00e077 100%);
+    color: #0d1117;
     border: none;
+    font-weight: 700;
   }
 
   .btn-primary:hover:not(.btn-disabled) {
-    background-position: 100% 50%;
-    box-shadow: 0 4px 20px -4px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.3), 0 0 30px -5px rgba(0, 255, 136, 0.4);
+    transform: translateY(-2px);
   }
 
-  /* Secondary Variant */
+  /* Secondary Variant - GitHub Dark */
   .btn-secondary {
-    background: var(--color-bg-secondary);
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
+    background: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
   }
 
   .btn-secondary:hover:not(.btn-disabled) {
-    background: var(--color-bg-tertiary);
-    border-color: var(--color-accent);
+    background: #21262d;
+    border-color: #00ff88;
+    color: #00ff88;
   }
 
-  /* Ghost Variant */
+  /* Ghost Variant - GitHub Dark */
   .btn-ghost {
     background: transparent;
-    color: var(--color-text);
-    border: none;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
   }
 
   .btn-ghost:hover:not(.btn-disabled) {
-    background: var(--color-bg-secondary);
+    background: rgba(0, 255, 136, 0.1);
+    border-color: #00ff88;
+    color: #00ff88;
   }
 
-  /* Danger Variant */
+  /* Danger Variant - GitHub Dark */
   .btn-danger {
-    background: var(--color-danger);
+    background: #f85149;
     color: white;
     border: none;
   }
 
   .btn-danger:hover:not(.btn-disabled) {
-    background: #b91c1c;
+    background: #da3633;
+    box-shadow: 0 8px 24px rgba(248, 81, 73, 0.3);
   }
 
   /* Full Width */
@@ -179,14 +177,13 @@ const classes = [
   .btn-icon {
     display: inline-flex;
     align-items: center;
-    transition: transform var(--transition-fast);
   }
 
-  .btn:hover:not(.btn-disabled) .btn-icon-right {
-    transform: translateX(2px);
+  .btn-icon-left {
+    margin-right: var(--space-1);
   }
 
-  .btn:hover:not(.btn-disabled) .btn-icon-left {
-    transform: translateX(-2px);
+  .btn-icon-right {
+    margin-left: var(--space-1);
   }
 </style>

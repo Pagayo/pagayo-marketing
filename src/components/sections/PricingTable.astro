@@ -1,0 +1,464 @@
+---
+/**
+ * PricingTable Component - Pagayo Design System
+ * 
+ * Stripe-style pricing table with tier comparison.
+ * 
+ * @prop plans - Array of pricing plans from YAML
+ * @prop title - Section title
+ * @prop subtitle - Section subtitle
+ * @prop variant - 'cards' | 'comparison' (default: 'cards')
+ * @prop billingToggle - Show monthly/yearly toggle
+ */
+
+import Button from '../ui/Button.astro';
+import Badge from '../ui/Badge.astro';
+import Icon from '../ui/Icon.astro';
+
+interface PlanFeature {
+  text: string;
+  included: boolean;
+  tooltip?: string;
+}
+
+interface PricingPlan {
+  name: string;
+  description?: string;
+  price: {
+    monthly: number | string;
+    yearly?: number | string;
+  };
+  currency?: string;
+  period?: string;
+  features: (string | PlanFeature)[];
+  cta: {
+    text: string;
+    href: string;
+  };
+  popular?: boolean;
+  badge?: string;
+}
+
+interface Props {
+  plans: PricingPlan[];
+  title?: string;
+  subtitle?: string;
+  variant?: 'cards' | 'comparison';
+  billingToggle?: boolean;
+  class?: string;
+}
+
+const {
+  plans,
+  title,
+  subtitle,
+  variant = 'cards',
+  billingToggle = false,
+  class: className = '',
+} = Astro.props;
+
+// Helper to format price
+const formatPrice = (price: number | string): string => {
+  if (typeof price === 'string') return price;
+  return price.toLocaleString('nl-NL');
+};
+
+// Normalize feature to PlanFeature
+const normalizeFeature = (feature: string | PlanFeature): PlanFeature => {
+  if (typeof feature === 'string') {
+    return { text: feature, included: true };
+  }
+  return feature;
+};
+---
+
+<section class:list={['pricing-section', className]}>
+  {(title || subtitle) && (
+    <div class="pricing-header">
+      {title && <h2 class="pricing-title">{title}</h2>}
+      {subtitle && <p class="pricing-subtitle">{subtitle}</p>}
+    </div>
+  )}
+
+  {billingToggle && (
+    <div class="billing-toggle">
+      <span class="billing-option active" data-period="monthly">Maandelijks</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="billing-toggle" />
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="billing-option" data-period="yearly">
+        Jaarlijks
+        <Badge color="success" size="sm">-20%</Badge>
+      </span>
+    </div>
+  )}
+
+  <div class:list={['pricing-grid', `pricing-${variant}`, `pricing-count-${plans.length}`]}>
+    {plans.map((plan, index) => (
+      <div 
+        class:list={['pricing-card', { 'pricing-card-popular': plan.popular }]}
+        style={`animation-delay: ${index * 100}ms;`}
+        data-animate
+      >
+        {plan.popular && (
+          <div class="popular-ribbon">
+            <Badge color="purple">{plan.badge || 'Populair'}</Badge>
+          </div>
+        )}
+        
+        <div class="pricing-card-header">
+          <h3 class="plan-name">{plan.name}</h3>
+          {plan.description && (
+            <p class="plan-description">{plan.description}</p>
+          )}
+        </div>
+
+        <div class="pricing-card-price">
+          <div class="price-amount">
+            <span class="price-currency">{plan.currency || '€'}</span>
+            <span class="price-value" data-monthly={plan.price.monthly} data-yearly={plan.price.yearly || plan.price.monthly}>
+              {formatPrice(plan.price.monthly)}
+            </span>
+          </div>
+          <span class="price-period">/{plan.period || 'maand'}</span>
+        </div>
+
+        <ul class="pricing-features">
+          {plan.features.map((feature) => {
+            const f = normalizeFeature(feature);
+            return (
+              <li class:list={['pricing-feature', { 'feature-excluded': !f.included }]}>
+                <Icon 
+                  name={f.included ? 'check' : 'x'} 
+                  size={18} 
+                  class={f.included ? 'feature-icon-check' : 'feature-icon-x'}
+                />
+                <span>{f.text}</span>
+                {f.tooltip && (
+                  <span class="feature-tooltip" title={f.tooltip}>
+                    <Icon name="info" size={14} />
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+
+        <div class="pricing-card-footer">
+          <Button 
+            variant={plan.popular ? 'primary' : 'secondary'} 
+            href={plan.cta.href}
+            fullWidth
+            size="lg"
+          >
+            {plan.cta.text}
+          </Button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* Section */
+  .pricing-section {
+    padding: var(--space-20) var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .pricing-section {
+      padding: var(--space-24) var(--space-8);
+    }
+  }
+
+  /* Header */
+  .pricing-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .pricing-title {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+  }
+
+  .pricing-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  /* Billing Toggle */
+  .billing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-12);
+  }
+
+  .billing-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .billing-option.active {
+    color: var(--color-text);
+  }
+
+  .toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 26px;
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+    transition: background var(--transition-fast);
+  }
+
+  .toggle-slider::before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: transform var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .toggle-switch input:checked + .toggle-slider {
+    background: var(--color-accent);
+  }
+
+  .toggle-switch input:checked + .toggle-slider::before {
+    transform: translateX(22px);
+  }
+
+  /* Grid */
+  .pricing-grid {
+    display: grid;
+    gap: var(--space-6);
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    align-items: stretch;
+  }
+
+  .pricing-count-2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+
+  .pricing-count-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pricing-count-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 1024px) {
+    .pricing-count-3,
+    .pricing-count-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+  }
+
+  /* Card */
+  .pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .pricing-card-popular {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 1px var(--color-accent), var(--shadow-xl);
+    transform: scale(1.02);
+    z-index: 1;
+  }
+
+  .pricing-card-popular::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.03), rgba(118, 75, 162, 0.03));
+    border-radius: var(--radius-xl);
+    pointer-events: none;
+  }
+
+  .popular-ribbon {
+    position: absolute;
+    top: calc(-1 * var(--space-3));
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Card Header */
+  .pricing-card-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .plan-name {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+  }
+
+  .plan-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  /* Price */
+  .pricing-card-price {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-1);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .price-amount {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .price-currency {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: 0.25em;
+  }
+
+  .price-value {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  .price-period {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+  }
+
+  /* Features */
+  .pricing-features {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-8);
+  }
+
+  .pricing-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .feature-excluded {
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+  }
+
+  .feature-icon-check {
+    color: var(--color-success);
+    flex-shrink: 0;
+  }
+
+  .feature-icon-x {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .feature-tooltip {
+    margin-left: auto;
+    color: var(--color-text-muted);
+    cursor: help;
+  }
+
+  /* Footer */
+  .pricing-card-footer {
+    margin-top: auto;
+  }
+
+  /* Dark Mode */
+  [data-theme="dark"] .pricing-card {
+    background: var(--color-bg-secondary);
+  }
+
+  [data-theme="dark"] .pricing-card-popular::before {
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.05), rgba(163, 113, 247, 0.05));
+  }
+</style>
+
+<script>
+  // Billing toggle functionality
+  const toggle = document.getElementById('billing-toggle') as HTMLInputElement;
+  const options = document.querySelectorAll('.billing-option') as NodeListOf<HTMLElement>;
+  const priceValues = document.querySelectorAll('.price-value') as NodeListOf<HTMLElement>;
+
+  toggle?.addEventListener('change', () => {
+    const isYearly = toggle.checked;
+    
+    options.forEach(opt => {
+      opt.classList.toggle('active', 
+        isYearly ? opt.dataset.period === 'yearly' : opt.dataset.period === 'monthly'
+      );
+    });
+
+    priceValues.forEach(el => {
+      const price = isYearly ? el.dataset.yearly : el.dataset.monthly;
+      if (price) el.textContent = price;
+    });
+  });
+</script>

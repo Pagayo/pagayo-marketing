@@ -1,0 +1,262 @@
+---
+/**
+ * Header Component - Pagayo Design System
+ */
+
+import Icon from '../ui/Icon.astro';
+import Button from '../ui/Button.astro';
+
+interface NavItem {
+  label: string;
+  href: string;
+  isExternal?: boolean;
+}
+
+interface Props {
+  logo?: string;
+  logoAlt?: string;
+  nav: NavItem[];
+  ctaButton?: {
+    text: string;
+    href: string;
+  };
+  region?: string;
+  country?: string;
+  class?: string;
+}
+
+const {
+  logo = '/logo.svg',
+  logoAlt = 'Pagayo',
+  nav,
+  ctaButton,
+  region = 'eu',
+  country = 'nl',
+  class: className = '',
+} = Astro.props;
+
+const basePath = `/${region}/${country}`;
+---
+
+<header class:list={['header', className]}>
+  <div class="header-container">
+    <a href={basePath} class="header-logo">
+      <img src={logo} alt={logoAlt} width="120" height="32" />
+    </a>
+
+    <nav class="header-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        {nav.map((item) => (
+          <li>
+            <a 
+              href={item.isExternal ? item.href : `${basePath}${item.href}`}
+              class="nav-link"
+              target={item.isExternal ? '_blank' : undefined}
+              rel={item.isExternal ? 'noopener noreferrer' : undefined}
+            >
+              {item.label}
+              {item.isExternal && <Icon name="external-link" size={14} />}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    {ctaButton && (
+      <div class="header-cta">
+        <Button variant="primary" size="sm" href={ctaButton.href}>
+          {ctaButton.text}
+        </Button>
+      </div>
+    )}
+
+    <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <Icon name="menu" size={24} />
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" hidden>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-list">
+        {nav.map((item) => (
+          <li>
+            <a 
+              href={item.isExternal ? item.href : `${basePath}${item.href}`}
+              class="mobile-nav-link"
+              target={item.isExternal ? '_blank' : undefined}
+              rel={item.isExternal ? 'noopener noreferrer' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      {ctaButton && (
+        <Button variant="primary" fullWidth href={ctaButton.href} class="mobile-cta">
+          {ctaButton.text}
+        </Button>
+      )}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background: rgba(13, 17, 23, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #30363d;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .header-container {
+      padding: var(--space-4) var(--space-8);
+    }
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-logo img {
+    height: 32px;
+    width: auto;
+  }
+
+  /* Desktop Navigation */
+  .header-nav {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .header-nav {
+      display: block;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    gap: var(--space-8);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: #c9d1d9;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: #00ff88;
+  }
+
+  /* CTA Button */
+  .header-cta {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .header-cta {
+      display: block;
+    }
+  }
+
+  /* Mobile Menu Toggle - GitHub Dark */
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #c9d1d9;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-menu-toggle {
+      display: none;
+    }
+  }
+
+  /* Mobile Menu - GitHub Dark */
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0d1117;
+    border-bottom: 1px solid #30363d;
+    padding: var(--space-4);
+  }
+
+  .mobile-menu[hidden] {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-menu {
+      display: none !important;
+    }
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: var(--space-3) 0;
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: #c9d1d9;
+    text-decoration: none;
+    border-bottom: 1px solid #30363d;
+  }
+
+  .mobile-nav-link:hover {
+    color: #00ff88;
+  }
+
+  .mobile-cta {
+    margin-top: var(--space-4);
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.querySelector('.mobile-menu');
+
+  toggle?.addEventListener('click', () => {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+    
+    if (isExpanded) {
+      menu?.setAttribute('hidden', '');
+    } else {
+      menu?.removeAttribute('hidden');
+    }
+  });
+</script>

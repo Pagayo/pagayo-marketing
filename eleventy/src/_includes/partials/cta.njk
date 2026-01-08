@@ -1,0 +1,17 @@
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">{{ country.cta.title }}</h2>
+    <p class="section-subtitle">{{ country.cta.subtitle }}</p>
+  </div>
+  <div class="btn-group">
+    <a href="{{ country.cta.primaryCta.url }}" class="btn btn-primary">
+      {{ country.cta.primaryCta.text }}
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 1l6 6-6 6"/>
+      </svg>
+    </a>
+    <a href="{{ country.cta.secondaryCta.url }}" class="btn btn-ghost">
+      {{ country.cta.secondaryCta.text }}
+    </a>
+  </div>
+</section>

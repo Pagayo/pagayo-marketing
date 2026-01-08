@@ -1,0 +1,209 @@
+{
+  "region": "eu",
+  "code": "nl",
+  "name": "Nederland",
+  "lang": "nl",
+  "locale": "nl-NL",
+  "currency": "EUR",
+  "hero": {
+    "badge": "Platform",
+    "headline": "E-commerce",
+    "headlineAccent": "zonder gedoe",
+    "subtitle": "Start of groei je webshop, hotel of winkel zonder ingewikkelde techniek. Betalingen, kassa en automatisering zitten er al bij.",
+    "primaryCta": {
+      "text": "Start gratis",
+      "url": "https://app.pagayo.com/register/"
+    },
+    "secondaryCta": {
+      "text": "Bekijk prijzen",
+      "url": "/eu/nl/pricing"
+    },
+    "pills": [
+      "Altijd online (99,98%)",
+      "Super snel! Order afhandeling onder de 150MS"
+    ],
+    "cards": [
+      {
+        "label": "Onbeperkte systemen",
+        "value": "Jouw bedrijf",
+        "description": "Zoveel webshops, hotels, winkels en kassa's als je wilt",
+        "link": {
+          "text": "Lees meer →",
+          "href": "/eu/nl/unlimited-stores"
+        }
+      },
+      {
+        "label": "Mis je een koppeling?",
+        "value": "API aanvragen",
+        "description": "Vraag gratis jouw favoriete API aan",
+        "link": {
+          "text": "Dien aanvraag in →",
+          "href": "/eu/nl/api-request"
+        }
+      },
+      {
+        "label": "Vertrouwd door",
+        "value": "5.000+",
+        "description": "Bedrijven gebruiken Pagayo iedere dag",
+        "link": {
+          "text": "Lees meer →",
+          "href": "/eu/nl/trusted-by"
+        }
+      },
+      {
+        "label": "API verbindingen met alles",
+        "value": "Pagayo API",
+        "description": "Pagayo heeft GRATIS API verbindingen met honderden partijen. Zoals; PostNL, iDEAL, Stripe, PayPal, Mollie, Buckaroo, Multisafepay, Google, Facebook, TikTok, Exact, Snelstart en nog veel meer.",
+        "link": {
+          "text": "Lees meer →",
+          "href": "/eu/nl/api-connections"
+        }
+      }
+    ]
+  },
+  "features": {
+    "title": "Alles wat je nodig hebt",
+    "subtitle": "Een modern platform voor jouw groeiende business",
+    "items": [
+      {
+        "icon": "💳",
+        "title": "Stripe betalingen",
+        "description": "iDEAL, Bancontact, kaarten en wallets met slimme retries.",
+        "link": {
+          "text": "Lees meer",
+          "href": "/eu/nl/stripe"
+        }
+      },
+      {
+        "icon": "🪙",
+        "title": "Mollie betalingen",
+        "description": "Populaire betaalmethoden actief in één keer, inclusief lokale voorkeuren en rapportages per merk."
+      },
+      {
+        "icon": "🧮",
+        "title": "Checkout & btw",
+        "description": "Kies een standaard checkout of eigen design. Btw en verzendkosten worden per land juist berekend."
+      },
+      {
+        "icon": "📡",
+        "title": "Betalingen volgen",
+        "description": "Elke stap van een betaling wordt vastgelegd. Bij storingen proberen we het opnieuw en krijg je een seintje."
+      },
+      {
+        "icon": "🧾",
+        "title": "Kassa en online in sync",
+        "description": "Voorraad, bestellingen en retouren lopen gelijk tussen kassa en webshop. Bonnen komen automatisch mee."
+      }
+    ]
+  },
+  "socialProof": {
+    "title": "Vertrouwd door tientallen e-commerce ondernemers",
+    "stats": [
+      {
+        "value": "50+",
+        "label": "Actieve webshops"
+      },
+      {
+        "value": "99.9%",
+        "label": "Historische uptime"
+      },
+      {
+        "value": "24/7",
+        "label": "Support beschikbaar"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Simpele, schaalbare prijzen",
+    "subtitle": "Betaal alleen voor je succes. Hoe meer je omzet, hoe minder je betaalt.",
+    "badge": "Pagayo Platform",
+    "tiersTitle": "Prijzen",
+    "tiers": [
+      {
+        "percentage": "1%",
+        "range": "tot €5.000/maand"
+      },
+      {
+        "percentage": "0,8%",
+        "range": "€5.000-€10.000"
+      },
+      {
+        "percentage": "0,6%",
+        "range": "€10.000-€50.000"
+      },
+      {
+        "percentage": "0,5%",
+        "range": "€50.000-€100.000"
+      }
+    ],
+    "featuresTitle": "Wat je krijgt",
+    "features": [
+      "Onbeperkt webwinkels",
+      "Onbeperkt hotels",
+      "Onbeperkt abonnementen",
+      "Onbeperkt verhuur",
+      "Onbeperkt POS-systemen",
+      "Eigen domeinnamen"
+    ],
+    "footer": "Start gratis - geen proefperiode",
+    "cta": {
+      "text": "Start nu gratis",
+      "url": "https://app.pagayo.com/register/"
+    }
+  },
+  "cta": {
+    "title": "Klaar om te starten?",
+    "subtitle": "Start direct en je krijgt binnen 30 seconden je eigen omgeving. Hulp nodig? We staan klaar.",
+    "primaryCta": {
+      "text": "Start gratis",
+      "url": "https://app.pagayo.com/register/"
+    },
+    "secondaryCta": {
+      "text": "Heb je vragen? Neem contact op",
+      "url": "/eu/nl/contact"
+    }
+  },
+  "nav": {
+    "features": "Features",
+    "pricing": "Prijzen",
+    "contact": "Contact",
+    "login": "Inloggen",
+    "startFree": "Start gratis"
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Platform",
+        "links": [
+          { "label": "Features", "href": "/eu/nl/features" },
+          { "label": "Prijzen", "href": "/eu/nl/pricing" },
+          { "label": "Contact", "href": "/eu/nl/contact" }
+        ]
+      },
+      {
+        "title": "Algemeen",
+        "links": [
+          { "label": "Onbeperkt systemen", "href": "/eu/nl/unlimited-stores" },
+          { "label": "Vertrouwd door 5.000+", "href": "/eu/nl/trusted-by" },
+          { "label": "API verbindingen", "href": "/eu/nl/api-connections" }
+        ]
+      },
+      {
+        "title": "Bedrijf",
+        "links": [
+          { "label": "Over ons", "href": "/eu/nl/about" },
+          { "label": "Blog", "href": "/eu/nl/blog" },
+          { "label": "Carrières", "href": "/eu/nl/careers" }
+        ]
+      },
+      {
+        "title": "Juridisch",
+        "links": [
+          { "label": "Privacy", "href": "/eu/nl/privacy" },
+          { "label": "Voorwaarden", "href": "/eu/nl/terms" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 Pagayo. Alle rechten voorbehouden."
+  }
+}

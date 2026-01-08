@@ -1,0 +1,333 @@
+---
+/**
+ * SocialProof Component - Pagayo Design System
+ */
+
+import Icon from '../ui/Icon.astro';
+
+interface StatItem {
+  value: string;
+  label: string;
+  icon?: string;
+  suffix?: string;
+}
+
+interface TestimonialItem {
+  quote: string;
+  author: string;
+  role?: string;
+  company?: string;
+  avatar?: string;
+  rating?: number;
+}
+
+interface BadgeItem {
+  icon: string;
+  text: string;
+}
+
+interface Props {
+  variant?: 'stats' | 'testimonials' | 'badges' | 'combined';
+  stats?: StatItem[];
+  testimonials?: TestimonialItem[];
+  badges?: BadgeItem[];
+  title?: string;
+  subtitle?: string;
+  class?: string;
+}
+
+const {
+  variant = 'stats',
+  stats = [],
+  testimonials = [],
+  badges = [],
+  title,
+  subtitle,
+  class: className = '',
+} = Astro.props;
+
+const renderStars = (rating: number) => {
+  return Array.from({ length: 5 }, (_, i) => i < rating);
+};
+---
+
+<section class:list={['social-proof-section', `social-proof-${variant}`, className]}>
+  {(title || subtitle) && (
+    <div class="social-proof-header">
+      {title && <h2 class="social-proof-title">{title}</h2>}
+      {subtitle && <p class="social-proof-subtitle">{subtitle}</p>}
+    </div>
+  )}
+
+  {/* Stats Variant */}
+  {(variant === 'stats' || variant === 'combined') && stats.length > 0 && (
+    <div class="stats-grid">
+      {stats.map((stat, index) => (
+        <div 
+          class="stat-item" 
+          style={`animation-delay: ${index * 100}ms;`}
+        >
+          {stat.icon && (
+            <div class="stat-icon">
+              <Icon name={stat.icon as any} size={24} />
+            </div>
+          )}
+          <div class="stat-value">
+            {stat.value}
+            {stat.suffix && <span class="stat-suffix">{stat.suffix}</span>}
+          </div>
+          <div class="stat-label">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  {/* Testimonials Variant */}
+  {(variant === 'testimonials' || variant === 'combined') && testimonials.length > 0 && (
+    <div class="testimonials-grid">
+      {testimonials.map((testimonial, index) => (
+        <div 
+          class="testimonial-card" 
+          style={`animation-delay: ${index * 150}ms;`}
+        >
+          {testimonial.rating && (
+            <div class="testimonial-rating">
+              {renderStars(testimonial.rating).map((filled) => (
+                <Icon 
+                  name="star" 
+                  size={16} 
+                  class={filled ? 'star-filled' : 'star-empty'}
+                />
+              ))}
+            </div>
+          )}
+          <blockquote class="testimonial-quote">
+            "{testimonial.quote}"
+          </blockquote>
+          <div class="testimonial-author">
+            {testimonial.avatar && (
+              <img 
+                src={testimonial.avatar} 
+                alt={testimonial.author}
+                class="testimonial-avatar"
+                loading="lazy"
+              />
+            )}
+            <div class="testimonial-info">
+              <div class="testimonial-name">{testimonial.author}</div>
+              {(testimonial.role || testimonial.company) && (
+                <div class="testimonial-role">
+                  {testimonial.role}{testimonial.role && testimonial.company && ' bij '}{testimonial.company}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  {/* Badges Variant */}
+  {(variant === 'badges' || variant === 'combined') && badges.length > 0 && (
+    <div class="badges-row">
+      {badges.map((badge) => (
+        <div class="badge-item">
+          <Icon name={badge.icon as any} size={20} />
+          <span>{badge.text}</span>
+        </div>
+      ))}
+    </div>
+  )}
+</section>
+
+<style>
+  /* Section - GitHub Dark */
+  .social-proof-section {
+    padding: var(--space-16) var(--space-4);
+    background: #161b22;
+    position: relative;
+    z-index: 10;
+  }
+
+  @media (min-width: 768px) {
+    .social-proof-section {
+      padding: var(--space-20) var(--space-8);
+    }
+  }
+
+  /* Header - GitHub Dark */
+  .social-proof-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-12);
+  }
+
+  .social-proof-title {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: #c9d1d9;
+    margin-bottom: var(--space-4);
+  }
+
+  .social-proof-subtitle {
+    font-size: var(--text-lg);
+    color: #8b949e;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-8);
+    max-width: var(--container-lg);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .stat-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: var(--radius-lg);
+    margin: 0 auto var(--space-4);
+    color: #00ff88;
+  }
+
+  .stat-value {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: #00ff88;
+    line-height: 1;
+  }
+
+  .stat-suffix {
+    font-size: var(--text-2xl);
+  }
+
+  .stat-label {
+    font-size: var(--text-sm);
+    color: #8b949e;
+    margin-top: var(--space-2);
+  }
+
+  /* Testimonials Grid - GitHub Dark */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    max-width: var(--container-xl);
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    border-color: #00ff88;
+    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.1);
+  }
+
+  .testimonial-rating {
+    display: flex;
+    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+  }
+
+  .star-filled {
+    color: #00ff88;
+    fill: #00ff88;
+  }
+
+  .star-empty {
+    color: #30363d;
+  }
+
+  .testimonial-quote {
+    font-size: var(--text-base);
+    color: #c9d1d9;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: var(--space-6);
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .testimonial-name {
+    font-weight: 600;
+    color: #c9d1d9;
+  }
+
+  .testimonial-role {
+    font-size: var(--text-sm);
+    color: #8b949e;
+  }
+
+  /* Badges Row - GitHub Dark */
+  .badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-6);
+    max-width: var(--container-lg);
+    margin: 0 auto;
+  }
+
+  .badge-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: #c9d1d9;
+    transition: all 0.3s ease;
+  }
+
+  .badge-item:hover {
+    border-color: #00ff88;
+    box-shadow: 0 4px 12px rgba(0, 255, 136, 0.1);
+  }
+
+  .badge-item :global(svg) {
+    color: #00ff88;
+  }
+</style>

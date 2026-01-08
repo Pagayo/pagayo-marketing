@@ -1,0 +1,13 @@
+{
+  "name": "pagayo-marketing-11ty",
+  "version": "1.0.0",
+  "description": "Pagayo Marketing Site - Eleventy",
+  "scripts": {
+    "dev": "eleventy --serve --port=4327",
+    "build": "eleventy",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

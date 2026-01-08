@@ -7,36 +7,53 @@ interface Props {
   lang?: 'nl' | 'de' | 'en';
   alternates?: Array<{ lang: string; hreflang: string; href: string }>;
   structuredData?: Array<{ type: 'Organization' | 'WebSite' | 'BlogPosting' | 'BreadcrumbList'; data: Record<string, any> }>;
+  ogImage?: string;
+  noIndex?: boolean;
 }
 
-const { title, description, lang = 'nl', alternates = [], structuredData = [] } = Astro.props;
+const { 
+  title, 
+  description, 
+  lang = 'nl', 
+  alternates = [], 
+  structuredData = [],
+  ogImage = '/og-image.svg',
+  noIndex = false,
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullOgImage = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site);
 
 // Import StructuredData component dynamically
 import StructuredData from '../components/StructuredData.astro';
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#667eea" />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL('/og-image.svg', Astro.site)} />
+    <meta property="og:image" content={fullOgImage} />
     <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : lang === 'de' ? 'de_DE' : 'en_US'} />
 
     <!-- Twitter -->
@@ -44,7 +61,7 @@ import StructuredData from '../components/StructuredData.astro';
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL('/og-image.svg', Astro.site)} />
+    <meta property="twitter:image" content={fullOgImage} />
 
     <!-- Alternate language versions (hreflang) -->
     {alternates.map(alt => (
@@ -66,8 +83,67 @@ import StructuredData from '../components/StructuredData.astro';
     {structuredData.map(schema => (
       <StructuredData type={schema.type} data={schema.data} />
     ))}
+    
+    <!-- Theme Toggle Script (runs before render to prevent flash) -->
+    <script is:inline>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    
+    <!-- Analytics (Plausible - privacy-friendly) -->
+    <script defer data-domain="pagayo.com" src="https://plausible.io/js/script.js"></script>
+    
+    <!-- Slot for additional head content -->
+    <slot name="head" />
   </head>
   <body>
     <slot />
+    
+    <!-- Theme Toggle Logic -->
+    <script>
+      class ThemeToggle {
+        private currentTheme: string;
+
+        constructor() {
+          this.currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          this.init();
+        }
+
+        private init(): void {
+          // Listen for theme toggle buttons
+          document.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            const toggleBtn = target.closest('[data-theme-toggle]');
+            if (toggleBtn) {
+              this.toggle();
+            }
+          });
+
+          // Listen for system preference changes
+          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+              this.setTheme(e.matches ? 'dark' : 'light');
+            }
+          });
+        }
+
+        private toggle(): void {
+          const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+          this.setTheme(newTheme);
+          localStorage.setItem('theme', newTheme);
+        }
+
+        private setTheme(theme: string): void {
+          this.currentTheme = theme;
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+      }
+
+      new ThemeToggle();
+    </script>
   </body>
 </html>

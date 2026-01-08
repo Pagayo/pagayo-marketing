@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="header__container">
+    <a href="/{{ country.region }}/{{ country.code }}/" class="header__logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="#00ff88"/>
+        <text x="8" y="22" font-family="Inter" font-weight="900" font-size="16" fill="#0a0a0a">P</text>
+      </svg>
+      <span class="header__logo-text">Pagayo</span>
+    </a>
+    
+    <nav class="header__nav">
+      <a href="/{{ country.region }}/{{ country.code }}/features" class="header__nav-link">{{ country.nav.features }}</a>
+      <a href="/{{ country.region }}/{{ country.code }}/pricing" class="header__nav-link">{{ country.nav.pricing }}</a>
+      <a href="/{{ country.region }}/{{ country.code }}/contact" class="header__nav-link">{{ country.nav.contact }}</a>
+    </nav>
+    
+    <div class="header__actions">
+      <a href="https://app.pagayo.com/login" class="header__login">{{ country.nav.login }}</a>
+      <a href="https://app.pagayo.com/register/" class="btn btn-primary btn-sm">{{ country.nav.startFree }}</a>
+    </div>
+  </div>
+</header>

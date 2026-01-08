@@ -1,0 +1,731 @@
+---
+/**
+ * PageLayout - Pagayo Design System
+ * 
+ * Page wrapper that includes Header, Footer, and main content area.
+ * Extends BaseLayout with page-level structure.
+ * 
+ * @prop title - Page title (passed to BaseLayout)
+ * @prop description - Meta description (passed to BaseLayout)
+ * @prop lang - Language code
+ * @prop header - Header configuration from YAML
+ * @prop footer - Footer configuration from YAML  
+ * @prop breadcrumbs - Optional breadcrumb items
+ * @prop alternates - hreflang alternates
+ * @prop structuredData - Schema.org data
+ */
+
+import BaseLayout from './BaseLayout.astro';
+
+interface NavItem {
+  label: string;
+  href: string;
+  children?: NavItem[];
+}
+
+interface FooterColumn {
+  title: string;
+  links: Array<{ label: string; href: string }>;
+}
+
+interface FooterConfig {
+  columns: FooterColumn[];
+  bottomLinks?: Array<{ label: string; href: string }>;
+  copyright?: string;
+  socials?: Array<{ platform: string; href: string }>;
+}
+
+interface HeaderConfig {
+  logo?: {
+    src: string;
+    alt: string;
+    href: string;
+  };
+  nav: NavItem[];
+  cta?: {
+    label: string;
+    href: string;
+  };
+}
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: 'nl' | 'de' | 'en';
+  header?: HeaderConfig;
+  footer?: FooterConfig;
+  breadcrumbs?: BreadcrumbItem[];
+  alternates?: Array<{ lang: string; hreflang: string; href: string }>;
+  structuredData?: Array<{ type: 'Organization' | 'WebSite' | 'BlogPosting' | 'BreadcrumbList'; data: Record<string, any> }>;
+  ogImage?: string;
+  noIndex?: boolean;
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  lang = 'nl',
+  header,
+  footer,
+  breadcrumbs,
+  alternates = [],
+  structuredData = [],
+  ogImage,
+  noIndex = false,
+  class: className = '',
+} = Astro.props;
+
+// Default header if not provided
+const defaultHeader: HeaderConfig = {
+  logo: {
+    src: '/logo.svg',
+    alt: 'Pagayo',
+    href: `/${lang}/`,
+  },
+  nav: [
+    { label: 'Features', href: `/${lang}/features` },
+    { label: 'Prijzen', href: `/${lang}/prijzen` },
+    { label: 'Over ons', href: `/${lang}/over-ons` },
+    { label: 'Contact', href: `/${lang}/contact` },
+  ],
+  cta: {
+    label: 'Start gratis',
+    href: 'https://app.pagayo.com/register/',
+  },
+};
+
+const headerConfig = header || defaultHeader;
+
+// Default footer if not provided
+const defaultFooter: FooterConfig = {
+  columns: [
+    {
+      title: 'Product',
+      links: [
+        { label: 'Features', href: `/${lang}/features` },
+        { label: 'Prijzen', href: `/${lang}/prijzen` },
+        { label: 'Integraties', href: `/${lang}/integraties` },
+      ],
+    },
+    {
+      title: 'Bedrijf',
+      links: [
+        { label: 'Over ons', href: `/${lang}/over-ons` },
+        { label: 'Contact', href: `/${lang}/contact` },
+        { label: 'Blog', href: `/${lang}/blog` },
+      ],
+    },
+    {
+      title: 'Support',
+      links: [
+        { label: 'Helpcentrum', href: `/${lang}/help` },
+        { label: 'API Docs', href: `/${lang}/api` },
+        { label: 'Status', href: 'https://status.pagayo.com' },
+      ],
+    },
+  ],
+  bottomLinks: [
+    { label: 'Privacy', href: `/${lang}/privacy` },
+    { label: 'Voorwaarden', href: `/${lang}/voorwaarden` },
+    { label: 'Cookies', href: `/${lang}/cookies` },
+  ],
+  copyright: `© ${new Date().getFullYear()} Pagayo B.V. Alle rechten voorbehouden.`,
+  socials: [
+    { platform: 'linkedin', href: 'https://linkedin.com/company/pagayo' },
+    { platform: 'twitter', href: 'https://twitter.com/pagayo' },
+  ],
+};
+
+const footerConfig = footer || defaultFooter;
+
+// Import Icon component for socials
+import Icon from '../components/ui/Icon.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<BaseLayout 
+  title={title} 
+  description={description} 
+  lang={lang}
+  alternates={alternates}
+  structuredData={structuredData}
+  ogImage={ogImage}
+  noIndex={noIndex}
+>
+  <div class:list={['page-wrapper', className]}>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href={headerConfig.logo?.href || '/'} class="header-logo">
+          <img src={headerConfig.logo?.src || '/logo.svg'} alt={headerConfig.logo?.alt || 'Pagayo'} />
+        </a>
+        
+        <nav class="header-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            {headerConfig.nav.map((item) => (
+              <li class="nav-item">
+                {item.children ? (
+                  <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-trigger" aria-expanded="false">
+                      {item.label}
+                      <Icon name="chevron-down" size={16} />
+                    </button>
+                    <ul class="nav-dropdown-menu">
+                      {item.children.map((child) => (
+                        <li>
+                          <a href={child.href} class="nav-dropdown-link">{child.label}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <a href={item.href} class="nav-link">{item.label}</a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+            <Icon name="sun" size={20} class="theme-icon-light" />
+            <Icon name="moon" size={20} class="theme-icon-dark" />
+          </button>
+          
+          {headerConfig.cta && (
+            <Button variant="primary" href={headerConfig.cta.href} size="sm">
+              {headerConfig.cta.label}
+            </Button>
+          )}
+          
+          <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
+            <Icon name="menu" size={24} />
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" hidden>
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            {headerConfig.nav.map((item) => (
+              <li>
+                <a href={item.href} class="mobile-nav-link">{item.label}</a>
+              </li>
+            ))}
+          </ul>
+          {headerConfig.cta && (
+            <Button variant="primary" href={headerConfig.cta.href} fullWidth>
+              {headerConfig.cta.label}
+            </Button>
+          )}
+        </nav>
+      </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          {breadcrumbs.map((crumb, index) => (
+            <li class="breadcrumb-item">
+              {index > 0 && <Icon name="chevron-right" size={14} class="breadcrumb-separator" />}
+              {crumb.href ? (
+                <a href={crumb.href} class="breadcrumb-link">{crumb.label}</a>
+              ) : (
+                <span class="breadcrumb-current" aria-current="page">{crumb.label}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Logo & Description -->
+          <div class="footer-brand">
+            <a href={`/${lang}/`} class="footer-logo">
+              <img src="/logo.svg" alt="Pagayo" />
+            </a>
+            <p class="footer-tagline">
+              De webshop software voor afvalcontainer verhuur
+            </p>
+            {footerConfig.socials && (
+              <div class="footer-socials">
+                {footerConfig.socials.map((social) => (
+                  <a 
+                    href={social.href} 
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.platform}
+                  >
+                    <Icon name={social.platform as any} size={20} />
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <!-- Link Columns -->
+          {footerConfig.columns.map((column) => (
+            <div class="footer-column">
+              <h4 class="footer-column-title">{column.title}</h4>
+              <ul class="footer-links">
+                {column.links.map((link) => (
+                  <li>
+                    <a href={link.href} class="footer-link">{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+          <p class="footer-copyright">{footerConfig.copyright}</p>
+          {footerConfig.bottomLinks && (
+            <ul class="footer-bottom-links">
+              {footerConfig.bottomLinks.map((link) => (
+                <li>
+                  <a href={link.href} class="footer-bottom-link">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Page Wrapper */
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(12px);
+    background: rgba(var(--color-bg-rgb, 255, 255, 255), 0.8);
+  }
+
+  [data-theme="dark"] .site-header {
+    background: rgba(13, 17, 23, 0.8);
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .header-logo img {
+    height: 32px;
+    width: auto;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .header-nav {
+      display: block;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: var(--color-text);
+    background: var(--color-bg-secondary);
+  }
+
+  /* Dropdown */
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    padding: var(--space-2);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+    list-style: none;
+    margin: var(--space-2) 0 0;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown-trigger[aria-expanded="true"] + .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-dropdown-link {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast), color var(--transition-fast);
+  }
+
+  .nav-dropdown-link:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-text);
+  }
+
+  /* Header Actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    transition: background var(--transition-fast), color var(--transition-fast);
+  }
+
+  .theme-toggle:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-text);
+  }
+
+  .theme-icon-dark {
+    display: none;
+  }
+
+  [data-theme="dark"] .theme-icon-light {
+    display: none;
+  }
+
+  [data-theme="dark"] .theme-icon-dark {
+    display: block;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-menu-toggle {
+      display: none;
+    }
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .mobile-menu[hidden] {
+    display: none;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    margin: 0 0 var(--space-4);
+    padding: 0;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: var(--space-3) 0;
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* Breadcrumbs */
+  .breadcrumbs {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumb-link {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--color-accent);
+  }
+
+  .breadcrumb-current {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+  }
+
+  /* Main Content */
+  .main-content {
+    flex: 1;
+  }
+
+  /* Footer */
+  .site-footer {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+  }
+
+  .footer-container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-6) var(--space-8);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: var(--space-12);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-logo img {
+    height: 28px;
+    width: auto;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-tagline {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    max-width: 280px;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: var(--space-3);
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .social-link:hover {
+    color: var(--color-accent);
+    background: var(--color-bg-tertiary);
+  }
+
+  .footer-column-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-link {
+    display: block;
+    padding: var(--space-1) 0;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-link:hover {
+    color: var(--color-text);
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-copyright {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-bottom-link {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-bottom-link:hover {
+    color: var(--color-text);
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement | null;
+
+  menuToggle?.addEventListener('click', () => {
+    if (!mobileMenu) return;
+    const isOpen = !mobileMenu.hidden;
+    mobileMenu.hidden = isOpen;
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Close mobile menu on resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && mobileMenu) {
+      mobileMenu.hidden = true;
+      menuToggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

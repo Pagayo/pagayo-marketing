@@ -41,30 +41,30 @@ const classes = [
 </Tag>
 
 <style>
-  /* Base Card Styles */
+  /* Base Card Styles - GitHub Dark */
   .card {
     display: block;
     border-radius: var(--radius-lg);
-    background: var(--color-bg);
+    background: #161b22;
     transition: 
       transform var(--transition-base),
       box-shadow var(--transition-base),
       border-color var(--transition-base);
   }
 
-  /* Variant: Elevated */
+  /* Variant: Elevated - GitHub Dark */
   .card-elevated {
-    box-shadow: var(--shadow-md);
-    border: 1px solid transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border: 1px solid #30363d;
   }
 
-  /* Variant: Outlined */
+  /* Variant: Outlined - GitHub Dark */
   .card-outlined {
-    border: 1px solid var(--color-border);
+    border: 1px solid #30363d;
     box-shadow: none;
   }
 
-  /* Variant: Ghost */
+  /* Variant: Ghost - GitHub Dark */
   .card-ghost {
     background: transparent;
     border: 1px solid transparent;
@@ -88,43 +88,29 @@ const classes = [
     padding: var(--space-8);
   }
 
-  /* Hoverable State */
+  /* Hoverable State - GitHub Dark */
   .card-hoverable {
     cursor: pointer;
   }
 
   .card-hoverable:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+    border-color: #00ff88;
+    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.15);
   }
 
-  .card-hoverable.card-outlined:hover {
-    border-color: var(--color-accent);
-    box-shadow: var(--shadow-lg);
+  .card-outlined.card-hoverable:hover {
+    border-color: #00ff88;
   }
 
-  .card-hoverable.card-ghost:hover {
-    background: var(--color-bg-secondary);
-  }
-
-  /* Link Card */
+  /* Link State - GitHub Dark */
   .card-link {
     text-decoration: none;
     color: inherit;
   }
 
-  .card-link:hover {
-    color: inherit;
-  }
-
-  /* Focus State */
-  .card:focus-visible {
-    outline: 2px solid var(--color-accent);
+  .card-link:focus-visible {
+    outline: 2px solid #00ff88;
     outline-offset: 2px;
-  }
-
-  /* Dark Mode Adjustments */
-  [data-theme="dark"] .card-elevated {
-    background: var(--color-bg-secondary);
   }
 </style>

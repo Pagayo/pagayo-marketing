@@ -1,0 +1,191 @@
+{
+  "region": "eu",
+  "code": "nl",
+  "name": "Nederland",
+  "lang": "nl",
+  "currency": "EUR",
+  "currencySymbol": "€",
+  "translations": {
+    "nav": {
+      "features": "Features",
+      "pricing": "Prijzen",
+      "contact": "Contact",
+      "login": "Inloggen",
+      "startFree": "Start gratis"
+    },
+    "hero": {
+      "badge": "Platform",
+      "headline": "E-commerce",
+      "headlineAccent": "zonder gedoe",
+      "subtitle": "Start of groei je webshop, hotel of winkel zonder ingewikkelde techniek. Betalingen, kassa en automatisering zitten er al bij.",
+      "primaryCta": "Start gratis",
+      "secondaryCta": "Bekijk prijzen",
+      "pills": [
+        "Altijd online (99,98%)",
+        "Super snel! Order afhandeling onder de 150MS"
+      ],
+      "stats": [
+        { "value": "50+", "label": "Actieve webshops" },
+        { "value": "99.9%", "label": "Historische uptime" },
+        { "value": "24/7", "label": "Support beschikbaar" }
+      ],
+      "cards": [
+        {
+          "title": "Onbeperkte systemen",
+          "subtitle": "Jouw bedrijf",
+          "description": "Zoveel webshops, hotels, winkels en kassa's als je wilt"
+        },
+        {
+          "title": "Mis je een koppeling?",
+          "subtitle": "API aanvragen",
+          "description": "Vraag gratis jouw favoriete API aan"
+        },
+        {
+          "title": "Vertrouwd door",
+          "value": "5.000+",
+          "description": "Bedrijven gebruiken Pagayo iedere dag"
+        },
+        {
+          "title": "API verbindingen met alles",
+          "subtitle": "Pagayo API",
+          "description": "Pagayo heeft GRATIS API verbindingen met honderden partijen. Zoals; PostNL, iDEAL, Stripe, PayPal, Mollie, Buckaroo, Multisafepay, Google, Facebook, TikTok, Exact, Snelstart en nog veel meer."
+        }
+      ]
+    },
+    "features": {
+      "title": "Alles wat je nodig hebt",
+      "subtitle": "Een modern platform voor jouw groeiende business",
+      "items": [
+        {
+          "icon": "💳",
+          "title": "Stripe betalingen",
+          "description": "iDEAL, Bancontact, kaarten en wallets met slimme retries."
+        },
+        {
+          "icon": "🪙",
+          "title": "Mollie betalingen",
+          "description": "Populaire betaalmethoden actief in één keer, inclusief lokale voorkeuren en rapportages per merk."
+        },
+        {
+          "icon": "🧮",
+          "title": "Checkout & btw",
+          "description": "Kies een standaard checkout of eigen design. Btw en verzendkosten worden per land juist berekend."
+        },
+        {
+          "icon": "📡",
+          "title": "Betalingen volgen",
+          "description": "Elke stap van een betaling wordt vastgelegd. Bij storingen proberen we het opnieuw en krijg je een seintje."
+        },
+        {
+          "icon": "🧾",
+          "title": "Kassa en online in sync",
+          "description": "Voorraad, bestellingen en retouren lopen gelijk tussen kassa en webshop. Bonnen komen automatisch mee."
+        }
+      ]
+    },
+    "socialProof": {
+      "title": "Vertrouwd door tientallen e-commerce ondernemers",
+      "stats": [
+        { "value": "50+", "label": "Actieve webshops" },
+        { "value": "99.9%", "label": "Historische uptime" },
+        { "value": "24/7", "label": "Support beschikbaar" }
+      ]
+    },
+    "pricing": {
+      "title": "Simpele, schaalbare prijzen",
+      "subtitle": "Betaal alleen voor je succes. Hoe meer je omzet, hoe minder je betaalt.",
+      "badge": "Pagayo Platform",
+      "tiers": [
+        { "percentage": "1%", "range": "tot €5.000/maand" },
+        { "percentage": "0,8%", "range": "€5.000-€10.000" },
+        { "percentage": "0,6%", "range": "€10.000-€50.000" },
+        { "percentage": "0,5%", "range": "€50.000-€100.000" }
+      ],
+      "features": [
+        "Onbeperkt webwinkels",
+        "Onbeperkt hotels",
+        "Onbeperkt abonnementen",
+        "Onbeperkt verhuur",
+        "Onbeperkt POS-systemen",
+        "Eigen domeinnamen"
+      ],
+      "footer": "Start gratis - geen proefperiode",
+      "cta": "Start nu gratis",
+      "plans": [
+        {
+          "name": "Platform",
+          "description": "Betaal alleen voor je succes",
+          "price": { "monthly": "1%", "yearly": "1%" },
+          "period": "van omzet",
+          "features": [
+            "Onbeperkt webwinkels",
+            "Onbeperkt hotels",
+            "Onbeperkt abonnementen",
+            "Onbeperkt verhuur",
+            "Onbeperkt POS-systemen",
+            "Eigen domeinnamen"
+          ],
+          "popular": true,
+          "badge": "Pagayo Platform",
+          "cta": { "text": "Start nu gratis", "href": "https://app.pagayo.com/register" }
+        }
+      ]
+    },
+    "cta": {
+      "title": "Klaar om te starten?",
+      "subtitle": "Start direct en je krijgt binnen 30 seconden je eigen omgeving. Hulp nodig? We staan klaar.",
+      "primaryCta": "Start gratis",
+      "secondaryCta": "Heb je vragen? Neem contact op"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "subtitle": "Heb je nog vragen? Neem gerust contact op.",
+      "items": [
+        {
+          "question": "Hoe lang duurt het opzetten van een webshop?",
+          "answer": "Met Pagayo kun je binnen 5 minuten je eerste webshop live hebben. Kies een template, pas je branding aan, en je bent klaar om te verkopen."
+        },
+        {
+          "question": "Welke betaalmethoden worden ondersteund?",
+          "answer": "We ondersteunen alle populaire betaalmethoden: iDEAL, creditcards (Visa, Mastercard, Amex), Bancontact, PayPal, en meer. Nieuwe methoden worden continu toegevoegd."
+        },
+        {
+          "question": "Kan ik mijn eigen domein gebruiken?",
+          "answer": "Ja, je kunt altijd je eigen domein koppelen. We regelen automatisch het SSL certificaat."
+        },
+        {
+          "question": "Wat gebeurt er als ik stop met Pagayo?",
+          "answer": "Je data blijft altijd van jou. Je kunt op elk moment een volledige export maken van je producten, klanten, en bestellingen."
+        }
+      ]
+    },
+    "footer": {
+      "columns": [
+        {
+          "title": "Product",
+          "links": [
+            { "label": "Features", "href": "/features" },
+            { "label": "Prijzen", "href": "/pricing" },
+            { "label": "Integraties", "href": "/integrations" }
+          ]
+        },
+        {
+          "title": "Bedrijf",
+          "links": [
+            { "label": "Over ons", "href": "/about" },
+            { "label": "Contact", "href": "/contact" },
+            { "label": "Blog", "href": "/blog" }
+          ]
+        },
+        {
+          "title": "Support",
+          "links": [
+            { "label": "Helpcentrum", "href": "/help" },
+            { "label": "Documentatie", "href": "/docs" },
+            { "label": "Status", "href": "/status" }
+          ]
+        }
+      ]
+    }
+  }
+}

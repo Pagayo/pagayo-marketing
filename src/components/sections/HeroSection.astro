@@ -1,0 +1,317 @@
+---
+/**
+ * HeroSection Component - Pagayo Design System
+ * 
+ * The main hero section for landing pages. Supports multiple visual variants.
+ * 
+ * @prop data - Hero content from YAML (badge, headline, headlineAccent, subtitle, CTAs, stats)
+ * @prop variant - 'gradient' | 'dark' | 'light' (default: 'gradient')
+ * @prop showStats - Whether to show stats below CTAs
+ */
+
+import Button from '../ui/Button.astro';
+import Badge from '../ui/Badge.astro';
+
+interface HeroData {
+  badge?: string;
+  headline: string;
+  headlineAccent: string;
+  subtitle: string;
+  primaryCta: {
+    text: string;
+    url: string;
+  };
+  secondaryCta?: {
+    text: string;
+    url: string;
+  };
+  stats?: Array<{
+    value: string;
+    label: string;
+  }>;
+}
+
+interface Props {
+  data: HeroData;
+  variant?: 'gradient' | 'dark' | 'light';
+  showStats?: boolean;
+  class?: string;
+}
+
+const {
+  data,
+  variant = 'gradient',
+  showStats = true,
+  class: className = '',
+} = Astro.props;
+---
+
+<section class:list={['hero', `hero-${variant}`, className]}>
+  <div class="hero-bg">
+    <div class="hero-gradient" />
+    <div class="hero-grid" />
+  </div>
+  
+  <div class="hero-content">
+    {data.badge && (
+      <Badge color="info" pill class="hero-badge animate-fadeInUp">
+        {data.badge}
+      </Badge>
+    )}
+    
+    <h1 class="hero-headline animate-fadeInUp" style="animation-delay: 100ms;">
+      {data.headline}
+      <span class="hero-accent">{data.headlineAccent}</span>
+    </h1>
+    
+    <p class="hero-subtitle animate-fadeInUp" style="animation-delay: 200ms;">
+      {data.subtitle}
+    </p>
+    
+    <div class="hero-actions animate-fadeInUp" style="animation-delay: 300ms;">
+      <Button 
+        variant="primary" 
+        size="lg" 
+        href={data.primaryCta.url}
+        icon="→"
+      >
+        {data.primaryCta.text}
+      </Button>
+      
+      {data.secondaryCta && (
+        <Button 
+          variant="secondary" 
+          size="lg" 
+          href={data.secondaryCta.url}
+        >
+          {data.secondaryCta.text}
+        </Button>
+      )}
+    </div>
+    
+    {showStats && data.stats && data.stats.length > 0 && (
+      <div class="hero-stats animate-fadeInUp" style="animation-delay: 400ms;">
+        {data.stats.map((stat) => (
+          <div class="hero-stat">
+            <span class="hero-stat-value">{stat.value}</span>
+            <span class="hero-stat-label">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  /* Base Hero Styles */
+  .hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-24) var(--space-4);
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding: var(--space-24) var(--space-8);
+    }
+  }
+
+  /* Background */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 70%, transparent 100%);
+  }
+
+  /* Variant: Gradient (Premium/Linear style) */
+  .hero-gradient .hero-gradient {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 30%, #2d1b4e 60%, #1a1a3e 100%);
+  }
+
+  .hero-gradient {
+    color: #fff;
+  }
+
+  .hero-gradient .hero-accent {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f953c6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Variant: Dark (GitHub Dark style) */
+  .hero-dark .hero-gradient {
+    background: var(--color-bg);
+  }
+
+  .hero-dark {
+    color: var(--color-text);
+  }
+
+  .hero-dark .hero-accent {
+    color: var(--color-accent);
+  }
+
+  /* Variant: Light */
+  .hero-light .hero-gradient {
+    background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+  }
+
+  .hero-light {
+    color: var(--color-text);
+  }
+
+  .hero-light .hero-accent {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-light .hero-grid {
+    background-image: 
+      linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  }
+
+  /* Content */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-headline {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-accent {
+    display: block;
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto var(--space-8);
+  }
+
+  /* Actions */
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+  }
+
+  /* Stats */
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-light .hero-stats {
+    border-top-color: var(--color-border);
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .hero-stat-value {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+  }
+
+  .hero-gradient .hero-stat-value {
+    background: linear-gradient(135deg, #667eea 0%, #f953c6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-stat-label {
+    font-size: var(--text-sm);
+    opacity: 0.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 70vh;
+      padding-top: calc(var(--space-16) + 80px); /* Account for header */
+    }
+
+    .hero-headline {
+      font-size: var(--text-4xl);
+    }
+
+    .hero-subtitle {
+      font-size: var(--text-lg);
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-stats {
+      gap: var(--space-6);
+    }
+
+    .hero-stat-value {
+      font-size: var(--text-xl);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-headline {
+      font-size: var(--text-3xl);
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+</style>

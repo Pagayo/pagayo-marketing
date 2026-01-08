@@ -1,0 +1,286 @@
+---
+/**
+ * CTASection Component - Pagayo Design System
+ * 
+ * Full-width call-to-action section with gradient backgrounds.
+ * 
+ * @prop title - Main headline
+ * @prop subtitle - Supporting text
+ * @prop primaryCta - Primary button config
+ * @prop secondaryCta - Optional secondary button
+ * @prop variant - 'gradient' | 'solid' | 'outlined' (default: 'gradient')
+ * @prop align - 'center' | 'left' (default: 'center')
+ */
+
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+
+interface CTAButton {
+  text: string;
+  href: string;
+  icon?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  primaryCta: CTAButton;
+  secondaryCta?: CTAButton;
+  variant?: 'gradient' | 'solid' | 'outlined';
+  align?: 'center' | 'left';
+  class?: string;
+}
+
+const {
+  title,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+  variant = 'gradient',
+  align = 'center',
+  class: className = '',
+} = Astro.props;
+---
+
+<section class:list={['cta-section', `cta-${variant}`, `cta-align-${align}`, className]}>
+  <div class="cta-background">
+    <div class="cta-gradient-orb cta-orb-1"></div>
+    <div class="cta-gradient-orb cta-orb-2"></div>
+    {variant === 'gradient' && (
+      <div class="cta-grid-pattern"></div>
+    )}
+  </div>
+  
+  <div class="cta-content">
+    <h2 class="cta-title">{title}</h2>
+    {subtitle && <p class="cta-subtitle">{subtitle}</p>}
+    
+    <div class="cta-buttons">
+      <Button 
+        variant="primary" 
+        href={primaryCta.href}
+        size="lg"
+        class="cta-primary-btn"
+      >
+        {primaryCta.text}
+        {primaryCta.icon && <Icon name={primaryCta.icon as any} size={18} />}
+      </Button>
+      
+      {secondaryCta && (
+        <Button 
+          variant={variant === 'gradient' ? 'ghost' : 'secondary'} 
+          href={secondaryCta.href}
+          size="lg"
+          class="cta-secondary-btn"
+        >
+          {secondaryCta.text}
+          {secondaryCta.icon && <Icon name={secondaryCta.icon as any} size={18} />}
+        </Button>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Base Section */
+  .cta-section {
+    position: relative;
+    padding: var(--space-20) var(--space-4);
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .cta-section {
+      padding: var(--space-24) var(--space-8);
+    }
+  }
+
+  /* Background */
+  .cta-background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .cta-gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+  }
+
+  .cta-orb-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-accent);
+    top: -200px;
+    left: -100px;
+  }
+
+  .cta-orb-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-accent-secondary);
+    bottom: -150px;
+    right: -50px;
+  }
+
+  .cta-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Gradient Variant */
+  .cta-gradient {
+    background: linear-gradient(135deg, 
+      var(--color-bg-secondary) 0%, 
+      rgba(102, 126, 234, 0.1) 50%,
+      rgba(118, 75, 162, 0.1) 100%
+    );
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cta-gradient .cta-title {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cta-gradient .cta-secondary-btn {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .cta-gradient .cta-secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Solid Variant */
+  .cta-solid {
+    background: var(--gradient-primary);
+  }
+
+  .cta-solid .cta-title,
+  .cta-solid .cta-subtitle {
+    color: white;
+  }
+
+  .cta-solid .cta-primary-btn {
+    background: white;
+    color: var(--color-accent);
+  }
+
+  .cta-solid .cta-primary-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .cta-solid .cta-gradient-orb {
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0.3;
+  }
+
+  /* Outlined Variant */
+  .cta-outlined {
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    margin: var(--space-8);
+    max-width: var(--container-lg);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-outlined .cta-gradient-orb {
+    opacity: 0.2;
+  }
+
+  /* Content */
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-md);
+    margin: 0 auto;
+  }
+
+  .cta-align-center .cta-content {
+    text-align: center;
+  }
+
+  .cta-align-left .cta-content {
+    text-align: left;
+  }
+
+  .cta-title {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .cta-title {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .cta-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+    max-width: 600px;
+  }
+
+  .cta-align-center .cta-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Buttons */
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .cta-align-center .cta-buttons {
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-buttons :global(a),
+    .cta-buttons :global(button) {
+      width: 100%;
+    }
+  }
+
+  /* Dark Mode */
+  [data-theme="dark"] .cta-gradient {
+    background: linear-gradient(135deg, 
+      rgba(13, 17, 23, 1) 0%, 
+      rgba(88, 166, 255, 0.1) 50%,
+      rgba(163, 113, 247, 0.1) 100%
+    );
+  }
+
+  [data-theme="dark"] .cta-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+
+  [data-theme="dark"] .cta-outlined {
+    background: var(--color-bg-secondary);
+  }
+</style>

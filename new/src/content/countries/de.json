@@ -1,0 +1,183 @@
+{
+  "region": "eu",
+  "code": "de",
+  "name": "Deutschland",
+  "lang": "de",
+  "currency": "EUR",
+  "currencySymbol": "€",
+  "translations": {
+    "nav": {
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "contact": "Kontakt",
+      "login": "Anmelden",
+      "startFree": "Kostenlos starten"
+    },
+    "hero": {
+      "badge": "Plattform",
+      "headline": "E-Commerce",
+      "headlineAccent": "ohne Stress",
+      "subtitle": "Starten oder erweitern Sie Ihren Webshop, Hotel oder Geschäft ohne komplizierte Technik. Zahlungen, Kasse und Automatisierung sind bereits enthalten.",
+      "primaryCta": "Kostenlos starten",
+      "secondaryCta": "Preise ansehen",
+      "pills": [
+        "Immer online (99,98%)",
+        "Superschnell! Auftragsabwicklung unter 150MS"
+      ],
+      "stats": [
+        { "value": "50+", "label": "Aktive Webshops" },
+        { "value": "99.9%", "label": "Historische Verfügbarkeit" },
+        { "value": "24/7", "label": "Support verfügbar" }
+      ],
+      "cards": [
+        {
+          "title": "Unbegrenzte Systeme",
+          "subtitle": "Ihr Unternehmen",
+          "description": "So viele Webshops, Hotels, Geschäfte und Kassen wie Sie möchten"
+        },
+        {
+          "title": "Fehlt eine Verbindung?",
+          "subtitle": "API anfordern",
+          "description": "Fordern Sie kostenlos Ihre bevorzugte API an"
+        },
+        {
+          "title": "Vertraut von",
+          "value": "5.000+",
+          "description": "Unternehmen nutzen Pagayo täglich"
+        },
+        {
+          "title": "API-Verbindungen mit allem",
+          "subtitle": "Pagayo API",
+          "description": "Pagayo hat KOSTENLOSE API-Verbindungen mit Hunderten von Partnern. Wie: PostNL, iDEAL, Stripe, PayPal, Mollie, Buckaroo, Multisafepay, Google, Facebook, TikTok, Exact, Snelstart und viele mehr."
+        }
+      ]
+    },
+    "features": {
+      "title": "Alles was Sie brauchen",
+      "subtitle": "Eine moderne Plattform für Ihr wachsendes Unternehmen",
+      "items": [
+        {
+          "icon": "💳",
+          "title": "Stripe-Zahlungen",
+          "description": "iDEAL, Bancontact, Karten und Wallets mit intelligenten Wiederholungsversuchen."
+        },
+        {
+          "icon": "🪙",
+          "title": "Mollie-Zahlungen",
+          "description": "Beliebte Zahlungsmethoden sofort aktiviert, einschließlich lokaler Präferenzen und Berichte pro Marke."
+        },
+        {
+          "icon": "🧮",
+          "title": "Checkout & MwSt.",
+          "description": "Wählen Sie einen Standard-Checkout oder ein eigenes Design. MwSt. und Versandkosten werden pro Land korrekt berechnet."
+        },
+        {
+          "icon": "📡",
+          "title": "Zahlungen verfolgen",
+          "description": "Jeder Schritt einer Zahlung wird protokolliert. Bei Störungen versuchen wir es erneut und Sie werden benachrichtigt."
+        },
+        {
+          "icon": "🧾",
+          "title": "Kasse und Online synchron",
+          "description": "Bestand, Bestellungen und Retouren sind zwischen Kasse und Webshop synchronisiert. Quittungen werden automatisch erstellt."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Einfache, skalierbare Preise",
+      "subtitle": "Zahlen Sie nur für Ihren Erfolg. Je mehr Umsatz, desto weniger zahlen Sie.",
+      "badge": "Pagayo Plattform",
+      "tiers": [
+        { "percentage": "1%", "range": "bis €5.000/Monat" },
+        { "percentage": "0,8%", "range": "€5.000-€10.000" },
+        { "percentage": "0,6%", "range": "€10.000-€50.000" },
+        { "percentage": "0,5%", "range": "€50.000-€100.000" }
+      ],
+      "features": [
+        "Unbegrenzt Webshops",
+        "Unbegrenzt Hotels",
+        "Unbegrenzt Abonnements",
+        "Unbegrenzt Vermietung",
+        "Unbegrenzt POS-Systeme",
+        "Eigene Domains"
+      ],
+      "footer": "Kostenlos starten - keine Probezeit",
+      "cta": "Jetzt kostenlos starten",
+      "plans": [
+        {
+          "name": "Plattform",
+          "description": "Zahlen Sie nur für Ihren Erfolg",
+          "price": { "monthly": "1%", "yearly": "1%" },
+          "period": "vom Umsatz",
+          "features": [
+            "Unbegrenzt Webshops",
+            "Unbegrenzt Hotels",
+            "Unbegrenzt Abonnements",
+            "Unbegrenzt Vermietung",
+            "Unbegrenzt POS-Systeme",
+            "Eigene Domains"
+          ],
+          "popular": true,
+          "badge": "Pagayo Plattform",
+          "cta": { "text": "Jetzt kostenlos starten", "href": "https://app.pagayo.com/register" }
+        }
+      ]
+    },
+    "cta": {
+      "title": "Bereit zu starten?",
+      "subtitle": "Testen Sie Pagayo 14 Tage kostenlos. Keine Kreditkarte erforderlich.",
+      "primaryCta": "Kostenlos testen",
+      "secondaryCta": "Demo planen"
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "subtitle": "Haben Sie noch Fragen? Kontaktieren Sie uns gerne.",
+      "items": [
+        {
+          "question": "Wie lange dauert die Einrichtung eines Webshops?",
+          "answer": "Mit Pagayo können Sie Ihren ersten Webshop in nur 5 Minuten live schalten. Wählen Sie ein Template, passen Sie Ihr Branding an, und Sie sind bereit zu verkaufen."
+        },
+        {
+          "question": "Welche Zahlungsmethoden werden unterstützt?",
+          "answer": "Wir unterstützen alle gängigen Zahlungsmethoden: Kreditkarten (Visa, Mastercard, Amex), PayPal, SEPA-Lastschrift und mehr. Neue Methoden werden kontinuierlich hinzugefügt."
+        },
+        {
+          "question": "Kann ich meine eigene Domain verwenden?",
+          "answer": "Ja, ab dem Professional Plan können Sie Ihre eigene Domain verbinden. Wir kümmern uns automatisch um das SSL-Zertifikat."
+        },
+        {
+          "question": "Was passiert, wenn ich Pagayo kündige?",
+          "answer": "Ihre Daten gehören immer Ihnen. Sie können jederzeit einen vollständigen Export Ihrer Produkte, Kunden und Bestellungen erstellen."
+        }
+      ]
+    },
+    "footer": {
+      "columns": [
+        {
+          "title": "Produkt",
+          "links": [
+            { "label": "Funktionen", "href": "/features" },
+            { "label": "Preise", "href": "/pricing" },
+            { "label": "Integrationen", "href": "/integrations" }
+          ]
+        },
+        {
+          "title": "Unternehmen",
+          "links": [
+            { "label": "Über uns", "href": "/about" },
+            { "label": "Kontakt", "href": "/contact" },
+            { "label": "Blog", "href": "/blog" }
+          ]
+        },
+        {
+          "title": "Support",
+          "links": [
+            { "label": "Hilfecenter", "href": "/help" },
+            { "label": "Dokumentation", "href": "/docs" },
+            { "label": "Status", "href": "/status" }
+          ]
+        }
+      ]
+    }
+  }
+}

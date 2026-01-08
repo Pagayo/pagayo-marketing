@@ -1,0 +1,238 @@
+---
+/**
+ * CTASection Component - Pagayo Design System
+ */
+
+import Button from '../ui/Button.astro';
+
+interface CTAButton {
+  text: string;
+  href: string;
+  icon?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  primaryCta: CTAButton;
+  secondaryCta?: CTAButton;
+  variant?: 'gradient' | 'solid' | 'outlined';
+  align?: 'center' | 'left';
+  class?: string;
+}
+
+const {
+  title,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+  variant = 'gradient',
+  align = 'center',
+  class: className = '',
+} = Astro.props;
+---
+
+<section class:list={['cta-section', `cta-${variant}`, `cta-align-${align}`, className]}>
+  <div class="cta-background">
+    <div class="cta-gradient-orb cta-orb-1"></div>
+    <div class="cta-gradient-orb cta-orb-2"></div>
+    {variant === 'gradient' && (
+      <div class="cta-grid-pattern"></div>
+    )}
+  </div>
+  
+  <div class="cta-content">
+    <h2 class="cta-title">{title}</h2>
+    {subtitle && <p class="cta-subtitle">{subtitle}</p>}
+    
+    <div class="cta-buttons">
+      <Button 
+        variant="primary" 
+        href={primaryCta.href}
+        size="lg"
+        icon={primaryCta.icon}
+      >
+        {primaryCta.text}
+      </Button>
+      
+      {secondaryCta && (
+        <Button 
+          variant={variant === 'gradient' ? 'ghost' : 'secondary'} 
+          href={secondaryCta.href}
+          size="lg"
+          icon={secondaryCta.icon}
+          class="cta-secondary-btn"
+        >
+          {secondaryCta.text}
+        </Button>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Base Section */
+  .cta-section {
+    position: relative;
+    padding: var(--space-20) var(--space-4);
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .cta-section {
+      padding: var(--space-24) var(--space-8);
+    }
+  }
+
+  /* Background */
+  .cta-background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .cta-gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+  }
+
+  .cta-orb-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-accent);
+    top: -200px;
+    left: -100px;
+  }
+
+  .cta-orb-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-purple);
+    bottom: -150px;
+    right: -50px;
+  }
+
+  .cta-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Gradient Variant - GitHub Dark */
+  .cta-gradient {
+    background: #161b22;
+    color: #c9d1d9;
+  }
+
+  .cta-gradient .cta-title,
+  .cta-gradient .cta-subtitle {
+    color: #c9d1d9;
+  }
+
+  .cta-gradient .cta-subtitle {
+    color: #8b949e;
+  }
+
+  .cta-gradient .cta-secondary-btn {
+    color: #c9d1d9;
+    border-color: #30363d;
+  }
+
+  .cta-gradient .cta-secondary-btn:hover {
+    background: rgba(0, 255, 136, 0.1);
+    border-color: #00ff88;
+    color: #00ff88;
+  }
+
+  .cta-gradient .cta-gradient-orb {
+    opacity: 0.2;
+  }
+
+  .cta-gradient .cta-orb-1 {
+    background: #00ff88;
+  }
+
+  .cta-gradient .cta-orb-2 {
+    background: #00cc6a;
+  }
+
+  /* Solid Variant - GitHub Dark */
+  .cta-solid {
+    background: linear-gradient(135deg, #00ff88 0%, #00e077 100%);
+  }
+
+  .cta-solid .cta-title,
+  .cta-solid .cta-subtitle {
+    color: #0d1117;
+  }
+
+  .cta-solid .cta-gradient-orb {
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0.3;
+  }
+
+  /* Outlined Variant - GitHub Dark */
+  .cta-outlined {
+    background: #0d1117;
+    border: 2px solid #30363d;
+    border-radius: var(--radius-2xl);
+    margin: var(--space-8);
+    max-width: var(--container-lg);
+    margin-left: auto;
+    margin-right: auto;
+    transition: border-color 0.3s ease;
+  }
+
+  .cta-outlined:hover {
+    border-color: #00ff88;
+  }
+
+  .cta-outlined .cta-gradient-orb {
+    opacity: 0.15;
+  }
+
+  /* Content - GitHub Dark */
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-md);
+    margin: 0 auto;
+  }
+
+  .cta-align-center .cta-content {
+    text-align: center;
+  }
+
+  .cta-align-left .cta-content {
+    text-align: left;
+  }
+
+  .cta-title {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: #c9d1d9;
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-subtitle {
+    font-size: var(--text-lg);
+    color: #8b949e;
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .cta-align-center .cta-buttons {
+    justify-content: center;
+  }
+</style>

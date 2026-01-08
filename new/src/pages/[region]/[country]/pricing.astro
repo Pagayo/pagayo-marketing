@@ -1,0 +1,75 @@
+---
+/**
+ * Pricing page
+ */
+
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PricingTable from '../../../components/sections/PricingTable.astro';
+import FAQAccordion from '../../../components/sections/FAQAccordion.astro';
+import CTASection from '../../../components/sections/CTASection.astro';
+
+import nlConfig from '../../../content/countries/nl.json';
+import deConfig from '../../../content/countries/de.json';
+
+export function getStaticPaths() {
+  return [
+    { params: { region: 'eu', country: 'nl' } },
+    { params: { region: 'eu', country: 'de' } },
+  ];
+}
+
+const { region, country } = Astro.params;
+
+const countryConfigs: Record<string, any> = {
+  nl: nlConfig,
+  de: deConfig,
+};
+
+const config = countryConfigs[country] || nlConfig;
+const t = config.translations;
+
+const nav = [
+  { label: t.nav.features, href: '/features' },
+  { label: t.nav.pricing, href: '/pricing' },
+  { label: t.nav.contact, href: '/contact' },
+];
+---
+
+<BaseLayout 
+  title={t.pricing.title}
+  description={t.pricing.subtitle}
+  region={region}
+  country={country}
+  lang={config.lang}
+  nav={nav}
+  footerColumns={t.footer.columns}
+>
+  <!-- Pricing Table -->
+  <div style="padding-top: var(--space-16);">
+    <PricingTable 
+      title={t.pricing.title}
+      subtitle={t.pricing.subtitle}
+      plans={t.pricing.plans}
+      billingToggle={true}
+    />
+  </div>
+
+  <!-- FAQ -->
+  <FAQAccordion 
+    title={t.faq.title}
+    subtitle={t.faq.subtitle}
+    items={t.faq.items}
+    variant="bordered"
+  />
+
+  <!-- CTA -->
+  <CTASection 
+    title={t.cta.title}
+    subtitle={t.cta.subtitle}
+    primaryCta={{
+      text: t.cta.primaryCta,
+      href: 'https://app.pagayo.com/register',
+    }}
+    variant="gradient"
+  />
+</BaseLayout>
