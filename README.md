@@ -1,8 +1,11 @@
 # 🌟 Pagayo Marketing Site
 
-**Enterprise marketing website voor www.pagayo.com**
+> **Pagayo** is a multi-tenant, Order-First SaaS platform for e-commerce and hospitality.
+> Quality benchmark: Stripe. Enterprise-grade code only.
 
-Static site gebouwd met Astro 4.x, geoptimaliseerd voor performance en SEO. Multi-language support (NL, DE, US) met Stripe.com-geïnspireerd design.
+**Enterprise marketing website for www.pagayo.com**
+
+Static site built with Astro 4.x, optimized for performance and SEO. Multi-language support (NL, DE, US) with Stripe.com-inspired design.
 
 ---
 
