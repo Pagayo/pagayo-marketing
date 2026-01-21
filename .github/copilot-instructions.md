@@ -1,4 +1,84 @@
+## 📚 AGENTS
+
+### ⚠️ VERPLICHT: Agent-instructies lezen VOORDAT je begint
+**Elke agent MOET eerst het bijbehorende `.agent.md` bestand volledig lezen.**
+**Als je dit niet doet: STOP DIRECT. Geen code, geen actie, geen output.**
+
+| Agent | Wanneer gebruiken | Verplicht lezen |
+|-------|-------------------|-----------------|
+| **Developer** | Programmeerwerk (Opus + Codex workflow) | `.github/agents/Developer.agent.md` |
+| **CodeReview** | Code kwaliteit reviewen | `.github/agents/CodeReview.agent.md` |
+| **Planner** | Taak breakdown, werkvoorbereiding | `.github/agents/Planner.agent.md` |
+| **DevOps** | Docker, builds, deployment | `.github/agents/DevOps.agent.md` |
+| **DatabaseReview** | Schema's, migrations | `.github/agents/DatabaseReview.agent.md` |
+| **SecurityAudit** | Security, tenant isolatie | `.github/agents/SecurityAudit.agent.md` |
+| **ArchitectureGuard** | Order-First, e-commerce | `.github/agents/ArchitectureGuard.agent.md` |
+| **IntegrationAudit** | Stripe, Mollie, PostNL | `.github/agents/IntegrationAudit.agent.md` |
+| **DocWriter** | Documentatie | `.github/agents/DocWriter.agent.md` |
+
+---
+
 # GitHub Copilot Instructions – Pagayo Marketing
+
+---
+
+## 🎯 WAT IS PAGAYO — VERPLICHTE CONTEXT
+
+### Platform Definitie
+**Pagayo = Multi-tenant, Order-First SaaS platform voor e-commerce en hospitality**
+
+### 📦 ORDER-FIRST ARCHITECTUUR — KERNPRINCIPE
+
+**Dit moet je begrijpen om de juiste marketing copy te schrijven:**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    ORDER-FIRST BETEKENT:                        │
+│                                                                 │
+│   Eén universeel ORDER model voor ALLE verkoopcontexten         │
+│                                                                 │
+│   Webshop, POS, WhatsApp, TikTok, Cash — allemaal hetzelfde     │
+│   platform, allemaal dezelfde orderflow, volledig geïntegreerd  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Verkoopkanalen (Order.source):**
+- `WEB` — Webshop checkout
+- `POS` — Kassasysteem
+- `WHATSAPP` — Social selling
+- `TIKTOK`, `FACEBOOK`, `INSTAGRAM` — Social commerce
+- `CASH` — Contante verkoop
+- `QR` — QR-code bestellingen
+
+### 🏗️ HIËRARCHIE: PAGAYO → ORGANIZATION → TENANT
+
+```
+PAGAYO (het platform dat we verkopen)
+    │
+    └── ORGANIZATION (onze klant - betaalt de factuur)
+            │
+            ├── TENANT 1 (hun webshop)
+            ├── TENANT 2 (hun kassasysteem)
+            └── TENANT 3 (hun catering site)
+```
+
+**PAGAYO** = Het platform dat we verkopen op deze marketing site
+**ORGANIZATION** = Potentiële klant (particulier, bedrijf, vereniging, stichting)
+**TENANT** = Wat de klant krijgt: webshop, POS, QR-bestelpunt, etc.
+
+### 🎯 MARKETING-SPECIFIEK
+
+**USP's om te benadrukken:**
+- **Order-First**: Alle kanalen in één dashboard, geen aparte systemen
+- **Multi-tenant**: Meerdere shops/POS vanuit één account
+- **Percentage pricing**: 1% (→0.3%), geen vaste maandkosten, €500 CAP
+- **Gratis starten**: €0 met contant/betaallinks
+
+**Doelgroepen:**
+- NL/EU: Webshops, retail, horeca, verenigingen
+- Emerging markets: Social sellers, WhatsApp commerce
+
+---
 
 ## 📐 DESIGN SYSTEM — VERPLICHT LEZEN
 
