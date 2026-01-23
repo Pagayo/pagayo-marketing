@@ -470,12 +470,28 @@ src/components/
 
 ---
 
-## 🧭 GIT WORKFLOW
+## 🚧 GIT WORKFLOW
 
 - Branches: `feature/<onderwerp>` of `fix/<onderwerp>`
 - Elke wijziging via PR
 - PR bevat: screenshots, Lighthouse scores, mobile demo
 - Commits: atomic, Nederlandse messages
+
+---
+
+## 🔒 GIT OPERATIES — STRIKTE BEPERKING
+
+**Zie `/pagayo-beheer/.github/copilot-instructions.md` voor volledige regels.**
+
+**⛔ VERBODEN voor alle agents (behalve Deployer):**
+- `git checkout`, `git switch`, `git reset`
+- `git commit`, `git push`, `git merge`
+- `git stash`, `git rebase`, `git clean`
+
+**✅ TOEGESTAAN (alleen lezen):**
+- `git status`, `git log`, `git diff`, `git show`
+
+**Voor git operaties → gebruik @workspace /deployer**
 
 ---
 
