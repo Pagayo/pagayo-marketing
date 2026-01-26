@@ -4,17 +4,29 @@
 **Elke agent MOET eerst het bijbehorende `.agent.md` bestand volledig lezen.**
 **Als je dit niet doet: STOP DIRECT. Geen code, geen actie, geen output.**
 
+### Neutrale Agents (model-onafhankelijk)
 | Agent | Wanneer gebruiken | Verplicht lezen |
 |-------|-------------------|-----------------|
-| **Developer** | Programmeerwerk (Opus + Codex workflow) | `.github/agents/Developer.agent.md` |
-| **CodeReview** | Code kwaliteit reviewen | `.github/agents/CodeReview.agent.md` |
-| **Planner** | Taak breakdown, werkvoorbereiding | `.github/agents/Planner.agent.md` |
-| **DevOps** | Docker, builds, deployment | `.github/agents/DevOps.agent.md` |
-| **DatabaseReview** | Schema's, migrations | `.github/agents/DatabaseReview.agent.md` |
-| **SecurityAudit** | Security, tenant isolatie | `.github/agents/SecurityAudit.agent.md` |
-| **ArchitectureGuard** | Order-First, e-commerce | `.github/agents/ArchitectureGuard.agent.md` |
-| **IntegrationAudit** | Stripe, Mollie, PostNL | `.github/agents/IntegrationAudit.agent.md` |
-| **DocWriter** | Documentatie | `.github/agents/DocWriter.agent.md` |
+| **FrontendDev** | UI/UX implementatie, React/Preact componenten | `.github/agents/FrontendDev.agent.md` |
+
+### GPT Agents (implementatie & praktische taken)
+| Agent | Wanneer gebruiken | Verplicht lezen |
+| **BackendDev-GPT** | API endpoints, services, database queries | `.github/agents/BackendDev-GPT.agent.md` |
+| **DevOps-GPT** | Docker, builds, deployment | `.github/agents/DevOps-GPT.agent.md` |
+| **IntegrationAudit-GPT** | Stripe, Mollie, PostNL integratie checks | `.github/agents/IntegrationAudit-GPT.agent.md` |
+| **Deployer-GPT** | Git commits, pushes, releases | `.github/agents/Deployer-GPT.agent.md` |
+
+### Opus Agents (analyse, planning & review)
+| Agent | Wanneer gebruiken | Verplicht lezen |
+|-------|-------------------|-----------------|
+| **FeaturePlanner-Opus** | Nieuwe features uitdenken, impact analyse | `.github/agents/FeaturePlanner-Opus.agent.md` |
+| **CodeReview-Opus** | Code kwaliteit reviewen | `.github/agents/CodeReview-Opus.agent.md` |
+| **Planner-Opus** | Taak breakdown, werkvoorbereiding | `.github/agents/Planner-Opus.agent.md` |
+| **DatabaseReview-Opus** | Schema's, migrations | `.github/agents/DatabaseReview-Opus.agent.md` |
+| **SecurityAudit-Opus** | Security, tenant isolatie | `.github/agents/SecurityAudit-Opus.agent.md` |
+| **ArchitectureGuard-Opus** | Order-First, e-commerce | `.github/agents/ArchitectureGuard-Opus.agent.md` |
+| **DocWriter-Opus** | Documentatie | `.github/agents/DocWriter-Opus.agent.md` |
+| **Design-Opus** | UI/UX review, planning | `.github/agents/Design-Opus.agent.md` |
 
 ---
 
