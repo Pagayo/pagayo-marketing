@@ -483,6 +483,32 @@ src/components/
 
 ---
 
+## 🤖 AGENT-BESTANDEN — CENTRALE LOCATIE
+**Alle agent-configuraties staan CENTRAAL in pagayo-beheer:**
+
+```
+/pagayo-beheer/.github/agents/
+├── ArchitectureGuard-Opus.agent.md
+├── BackendDev-GPT.agent.md
+├── CodeReview-Opus.agent.md
+├── DatabaseReview-Opus.agent.md
+├── Deployer-GPT.agent.md
+├── Design-Opus.agent.md
+├── DevOps-GPT.agent.md
+├── DocWriter-Opus.agent.md
+├── FeaturePlanner-Opus.agent.md
+├── FrontendDev.agent.md
+├── GitHubOps-GPT.agent.md
+├── IntegrationAudit-GPT.agent.md
+├── Planner-Opus.agent.md
+├── SecurityAudit-Opus.agent.md
+└── TaskDispatcher.agent.md
+```
+
+**Bij agent-gerelateerde taken: lees ALTIJD het relevante `.agent.md` bestand in `/pagayo-beheer/.github/agents/`**
+
+---
+
 ## 🚫 WAT IK NOOIT DOE
 
 - Server-side logic in static site
