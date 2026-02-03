@@ -59,8 +59,6 @@ PAGAYO (het platform dat we verkopen)
 **USP's om te benadrukken:**
 - **Order-First**: Alle kanalen in één dashboard, geen aparte systemen
 - **Multi-tenant**: Meerdere shops/POS vanuit één account
-- **Percentage pricing**: 1% (→0.3%), geen vaste maandkosten, €500 CAP
-- **Gratis starten**: €0 met contant/betaallinks
 
 **Doelgroepen:**
 - NL/EU: Webshops, retail, horeca, verenigingen
@@ -518,6 +516,35 @@ src/components/
 - Doorwerken bij twijfel over design
 - Nieuwe directories zonder opdracht
 - Shortcuts ten koste van kwaliteit
+
+---
+
+## 🔧 TOOL PRIORITEIT — VS CODE TOOLS BOVEN TERMINAL
+
+**Voor bestandsbewerkingen: ALTIJD VS Code tools gebruiken, NOOIT terminal.**
+
+| ✅ GEBRUIK | ❌ VERMIJD |
+|------------|-----------|
+| `createFile` | `echo "..." > file` |
+| `editFiles` / `replace_string_in_file` | `sed -i`, `awk`, `perl -pi` |
+| `readFile` | `cat file` (voor editing context) |
+
+**Waarom:**
+- VS Code tools hebben betere error handling
+- Exacte string matching voorkomt onbedoelde wijzigingen
+- Integratie met VS Code's undo system
+- Geen quoting/escaping problemen
+
+**Terminal WEL gebruiken voor:**
+- Commands uitvoeren (`npm run`, `wrangler`, `git status`)
+- Logs bekijken
+- Processen starten/stoppen
+- File listings (`ls`, `find`, `grep` voor zoeken)
+
+**Terminal NIET gebruiken voor:**
+- Bestanden aanmaken of bewerken
+- Code schrijven via `echo` of `cat`
+- Tekst vervangen via `sed`
 
 ---
 
