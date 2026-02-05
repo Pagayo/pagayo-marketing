@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagayo Prijsmodel v3 — Fair Use + Supporter</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --success: #3fb950;
+            --warning: #d29922;
+            --danger: #f85149;
+            --purple: #a371f7;
+            --pink: #db61a2;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 1rem; }
+        
+        h1 { color: var(--purple); margin-bottom: 0.5rem; }
+        h2 { color: var(--text); margin: 2rem 0 1rem; }
+        h3 { color: var(--accent); margin: 1.5rem 0 1rem; }
+        
+        .meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--card);
+            border-radius: 6px;
+            border-left: 4px solid var(--purple);
+        }
+        
+        .idea-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .idea-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .idea-number {
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .idea-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .idea-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        
+        .idea-content {
+            padding: 1.5rem;
+        }
+        
+        .idea-section {
+            margin: 1.5rem 0;
+        }
+        
+        .idea-section h4 {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-weight: 500;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        
+        .badge-green { background: rgba(63,185,80,0.2); color: var(--success); }
+        .badge-blue { background: rgba(88,166,255,0.2); color: var(--accent); }
+        .badge-purple { background: rgba(163,113,247,0.2); color: var(--purple); }
+        .badge-yellow { background: rgba(210,153,34,0.2); color: var(--warning); }
+        .badge-pink { background: rgba(219,97,162,0.2); color: var(--pink); }
+        
+        .flow-diagram {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        
+        .highlight-box {
+            background: rgba(163,113,247,0.1);
+            border: 1px solid rgba(163,113,247,0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .highlight-box.green {
+            background: rgba(63,185,80,0.1);
+            border-color: rgba(63,185,80,0.3);
+        }
+        
+        .highlight-box.blue {
+            background: rgba(88,166,255,0.1);
+            border-color: rgba(88,166,255,0.3);
+        }
+        
+        .highlight-box.yellow {
+            background: rgba(210,153,34,0.1);
+            border-color: rgba(210,153,34,0.3);
+        }
+        
+        ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.4rem 0; }
+        
+        .status-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        
+        .status-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .status-value {
+            font-weight: 600;
+            color: var(--success);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            color: var(--text-muted);
+            font-weight: 500;
+            background: var(--bg);
+        }
+        
+        td.check { color: var(--success); text-align: center; }
+        td.cross { color: var(--danger); text-align: center; }
+        
+        .tier-card {
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .tier-card ul {
+            margin: 0.5rem 0 0.5rem 1.2rem;
+        }
+        
+        .tier-card li {
+            margin: 0.3rem 0;
+        }
+        
+        .tier-card.free { border-color: var(--success); }
+        .tier-card.supporter { border-color: var(--warning); }
+        .tier-card.enterprise { border-color: var(--accent); }
+        
+        .tier-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tier-icon {
+            font-size: 2rem;
+        }
+        
+        .tier-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .tier-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--purple);
+        }
+        
+        .tier-price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+        
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        @media (max-width: 1100px) {
+            .price-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .price-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Collapsible sections */
+        details.idea-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        details.idea-card summary {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+        }
+        
+        details.idea-card summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        details.idea-card summary::after {
+            content: "▶";
+            margin-left: auto;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            transition: transform 0.2s ease;
+        }
+        
+        details.idea-card[open] summary::after {
+            transform: rotate(90deg);
+        }
+        
+        details.idea-card summary:hover {
+            background: rgba(255,255,255,0.02);
+        }
+        
+        details.idea-card[open] summary {
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .quote {
+            font-style: italic;
+            color: var(--text-muted);
+            border-left: 3px solid var(--purple);
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Pagayo Prijsmodel v3</h1>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">Fair Use + Supporter — Ethisch, transparant, schaalbaar</p>
+        
+        <div class="meta">
+            <strong>📝 Over dit document:</strong><br>
+            Dit document beschrijft het nieuwe prijsmodel voor Pagayo: weg van percentage-based pricing, 
+            naar een fair use model met optionele Supporter tier. Inclusief feature matrix, NGO-overwegingen,
+            en financiële berekeningen.<br><br>
+            <strong>Status:</strong> ✅ Besloten<br>
+            <strong>Laatst bijgewerkt:</strong> 5 februari 2026<br>
+            <strong>Gebaseerd op:</strong> ID14 uit pagayo-ideeen.html + Architecture Guard analyse
+        </div>
+
+        <!-- ==================== SECTIE 1: KERNFILOSOFIE ==================== -->
+        <details class="idea-card" open>
+            <summary class="idea-header">
+                <span class="idea-number">1</span>
+                <div>
+                    <div class="idea-title">💡 Kernfilosofie: Weg van Percentages</div>
+                    <div class="idea-subtitle">Waarom het oude model niet werkte en wat het nieuwe beter maakt</div>
+                </div>
+            </summary>
+            
+            <div class="idea-content">
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                    <span class="badge badge-green">💚 Ethisch Fundament</span>
+                    <span class="badge badge-blue">🆓 Fair Use Gratis</span>
+                    <span class="badge badge-yellow">💛 Supporter Model</span>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>❌ Problemen met het Oude Model (1% → 0.3%)</h4>
+                    <ul>
+                        <li><strong>Straf bij succes</strong> — hoe meer je verkoopt, hoe meer je betaalt</li>
+                        <li><strong>Complex</strong> — schijven, percentages, caps</li>
+                        <li><strong>Minder ethisch</strong> — NGO's en kleine verkopers in emerging markets betalen ook mee</li>
+                        <li><strong>Moeilijk uit te leggen</strong> — "1% tot €5000, dan 0.8%..." vs "€19 per jaar"</li>
+                    </ul>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>✅ Het Nieuwe Principe</h4>
+                    <div class="highlight-box green">
+                        <strong>Pagayo is gratis voor iedereen die start.</strong><br>
+                        Je betaalt pas als je meer comfort, rust of schaal wilt — niet als "straf" voor succes.
+                    </div>
+                    
+                    <div class="quote">
+                        "Jouw data is van jou. Altijd exporteerbaar, altijd mee te nemen — ongeacht je tier."
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- ==================== SECTIE 2: PRIJZEN ==================== -->
+        <details class="idea-card" open>
+            <summary class="idea-header">
+                <span class="idea-number">2</span>
+                <div>
+                    <div class="idea-title">💵 De Vier Tiers</div>
+                    <div class="idea-subtitle">Free, Supporter, Professional, Advanced — simpel en transparant</div>
+                </div>
+            </summary>
+            
+            <div class="idea-content">
+                <div class="price-grid">
+                    <!-- FREE -->
+                    <div class="tier-card free">
+                        <div class="tier-header">
+                            <span class="tier-icon">🟢</span>
+                            <div>
+                                <div class="tier-name">Free</div>
+                                <div class="tier-price">€0 <small>altijd</small></div>
+                            </div>
+                        </div>
+                        <p style="color: var(--success); font-weight: 500; margin-bottom: 0.5rem;">Fair Use</p>
+                        <ul>
+                            <li>50 producten</li>
+                            <li>100 orders/maand (soft)</li>
+                            <li>1 gebruiker</li>
+                            <li>100 MB media</li>
+                            <li>12 maanden historie</li>
+                            <li>Alle basis verkoopkanalen</li>
+                            <li>Volledige export mogelijkheid</li>
+                            <li>Email support</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- SUPPORTER -->
+                    <div class="tier-card supporter">
+                        <div class="tier-header">
+                            <span class="tier-icon">🟡</span>
+                            <div>
+                                <div class="tier-name">Supporter</div>
+                                <div class="tier-price">€19 <small>/jaar</small></div>
+                            </div>
+                        </div>
+                        <p style="color: var(--warning); font-weight: 500; margin-bottom: 0.5rem;">€1,58/maand</p>
+                        <ul>
+                            <li>+ Alles van Free</li>
+                            <li>200 producten</li>
+                            <li>500 orders/maand (soft)</li>
+                            <li>2 gebruikers</li>
+                            <li>500 MB media</li>
+                            <li>24 maanden historie</li>
+                            <li>+ Webshop</li>
+                            <li>+ POS functionaliteit</li>
+                            <li>+ Custom domein</li>
+                            <li>+ Geen fair-use nudges</li>
+                            <li>+ "Powered by" optioneel</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- PROFESSIONAL -->
+                    <div class="tier-card" style="border-color: var(--purple); background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(168, 85, 247, 0.02) 100%);">
+                        <div class="tier-header">
+                            <span class="tier-icon">🟠</span>
+                            <div>
+                                <div class="tier-name">Professional</div>
+                                <div class="tier-price">€120 <small>/jaar</small></div>
+                            </div>
+                        </div>
+                        <p style="color: #f97316; font-weight: 500; margin-bottom: 0.5rem;">€10/maand</p>
+                        <ul>
+                            <li>500 producten</li>
+                            <li>2.000 orders/maand (soft)</li>
+                            <li>5 gebruikers</li>
+                            <li>2 GB media</li>
+                            <li>36 maanden historie</li>
+                            <li>+ Alles van Supporter</li>
+                            <li>+ Hogere performance guarantees</li>
+                            <li>+ Prioriteit support</li>
+                            <li>+ Geen nudges, geen "Powered by"</li>
+                            <li>+ "This business supports Pagayo" badge (optioneel)</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+                            Met deze tier maak je het mogelijk dat Pagayo gratis kan blijven voor starters, NGO's en emerging markets.
+                        </p>
+                    </div>
+                    
+                    <!-- ADVANCED -->
+                    <div class="tier-card enterprise">
+                        <div class="tier-header">
+                            <span class="tier-icon">🔵</span>
+                            <div>
+                                <div class="tier-name">Advanced</div>
+                                <div class="tier-price">€200 <small>/jaar</small></div>
+                            </div>
+                        </div>
+                        <p style="color: var(--accent); font-weight: 500; margin-bottom: 0.5rem;">€20/maand</p>
+                        <ul>
+                            <li>+ Alles van Professional</li>
+                            <li>Ongelimiteerd producten</li>
+                            <li>Ongelimiteerd orders</li>
+                            <li>10+ gebruikers</li>
+                            <li>10 GB media</li>
+                            <li>Ongelimiteerde historie</li>
+                            <li>+ INVOICE (B2B facturen)</li>
+                            <li>+ RENTAL (verhuur/hotels)</li>
+                            <li>+ Recurring/Abonnementen</li>
+                            <li>+ API toegang & Webhooks</li>
+                            <li>+ Multi-locatie</li>
+                            <li>+ Geen "Powered by"</li>
+                            <li>+ Dedicated support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- ALLES WAT PAGAYO BIEDT -->
+                <div class="all-features-box" style="margin-top: 2rem; border: 2px solid var(--success); border-radius: 12px; padding: 1.5rem; background: rgba(63,185,80,0.05);">
+                    <h3 style="color: var(--success); margin: 0 0 1rem 0; font-size: 1.2rem;">✨ Alles wat Pagayo te bieden heeft</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                        
+                        <!-- Verkoopkanalen -->
+                        <div>
+                            <h4 style="color: var(--text); font-size: 0.95rem; margin: 0 0 0.75rem 0; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">📱 Verkoopkanalen</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> � WhatsApp Commerce</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 📲 TikTok Shop</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 📷 Instagram Shopping</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 👤 Facebook Shop</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 🔗 Payment Links</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 💵 Contante verkoop</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--warning);">🟡</span> 🛒 Webshop</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--warning);">🟡</span> 🖥️ POS / Kassa</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Betalingen -->
+                        <div>
+                            <h4 style="color: var(--text); font-size: 0.95rem; margin: 0 0 0.75rem 0; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">💳 Betalingen <small style="color: var(--success);">(allemaal gratis)</small></h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 💶 iDEAL</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 💳 Creditcard (Visa/MC)</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 🏦 Bancontact</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 📱 Apple Pay / Google Pay</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 🔄 PayPal</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 🏛️ SEPA Incasso</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 🔗 Stripe / Mollie</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Business Types -->
+                        <div>
+                            <h4 style="color: var(--text); font-size: 0.95rem; margin: 0 0 0.75rem 0; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">🏢 Business Types</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 🛍️ E-commerce</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 🎨 Dienstverleners</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--warning);">🟡</span> 🍽️ Restaurants & Horeca</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--warning);">🟡</span> 🏪 Retail & Winkels</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--accent);">🔵</span> 🏨 Hotels & B&B's</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--accent);">🔵</span> 🚗 Verhuur & Rental</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--accent);">🔵</span> 🔄 Abonnementen</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--accent);">🔵</span> 📦 B2B Leveranciers</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Platform Features -->
+                        <div>
+                            <h4 style="color: var(--text); font-size: 0.95rem; margin: 0 0 0.75rem 0; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">⚡ Platform</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 📊 Dashboard & Analytics</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 📦 Voorraadbeheer</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 🏷️ Kortingscodes</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 📧 Email notificaties</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--success);">🟢</span> 📤 CSV/PDF Export</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--warning);">🟡</span> 🌐 Custom domein</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: #f97316;">🟠</span> 👥 Team management</li>
+                                <li style="margin: 0.4rem 0;"><span style="color: var(--accent);">🔵</span> 🔌 API & Webhooks</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    
+                    <div style="margin-top: 1.25rem; padding-top: 0.75rem; border-top: 1px solid var(--border); display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--text-muted);">
+                        <span><span style="color: var(--success);">🟢</span> Free</span>
+                        <span><span style="color: var(--warning);">🟡</span> Supporter</span>
+                        <span><span style="color: #f97316;">🟠</span> Professional</span>
+                        <span><span style="color: var(--accent);">🔵</span> Advanced</span>
+                    </div>
+                </div>
+                
+            </div>
+        </details>
+
+        <!-- ==================== SECTIE 3: FEATURE MATRIX ==================== -->
+        <details class="idea-card" open>
+            <summary class="idea-header">
+                <span class="idea-number">3</span>
+                <div>
+                    <div class="idea-title">📊 Feature Matrix</div>
+                    <div class="idea-subtitle">Volledig overzicht van wat elke tier biedt</div>
+                </div>
+            </summary>
+            
+            <div class="idea-content">
+                <!-- Basis Features -->
+                <div class="idea-section">
+                    <h4>🏗️ Basis Features</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Free</th>
+                                <th>Supporter</th>
+                                <th>Pro</th>
+                                <th>Advanced</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Producten</strong></td>
+                                <td>50</td>
+                                <td>200</td>
+                                <td>500</td>
+                                <td>Ongelimiteerd</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Orders/maand</strong></td>
+                                <td>100 (soft)</td>
+                                <td>500 (soft)</td>
+                                <td>2.000 (soft)</td>
+                                <td>Ongelimiteerd</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gebruikers</strong></td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>10+</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Media storage</strong></td>
+                                <td>100 MB</td>
+                                <td>500 MB</td>
+                                <td>2 GB</td>
+                                <td>10 GB</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Historie</strong></td>
+                                <td>12 maanden</td>
+                                <td>24 maanden</td>
+                                <td>36 maanden</td>
+                                <td>Ongelimiteerd</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Exports (CSV/PDF/Backup)</strong></td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Verkoopkanalen -->
+                <div class="idea-section">
+                    <h4>📱 Verkoopkanalen (Order.source)</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kanaal</th>
+                                <th>Free</th>
+                                <th>Supporter</th>
+                                <th>Pro</th>
+                                <th>Advanced</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>WEB</strong> (Webshop/Link)</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>WHATSAPP</strong></td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TIKTOK / INSTAGRAM / FACEBOOK</strong></td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CASH</strong> (Contant)</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MANUAL</strong> (Handmatig)</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>POS</strong> (Kassasysteem)</td>
+                                <td class="cross">❌</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Geavanceerde Order Types -->
+                <div class="idea-section">
+                    <h4>🔄 Geavanceerde Order Types</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order Type</th>
+                                <th>Free</th>
+                                <th>Supporter</th>
+                                <th>Pro</th>
+                                <th>Advanced</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>INVOICE</strong> (B2B Factuurverkoop)</td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>RENTAL</strong> (Verhuur: hotels, apparatuur)</td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Recurring/Abonnementen</strong></td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="check">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
+                        <em>INVOICE, RENTAL en Recurring zijn complexe business-modellen die extra infrastructuur vereisen.</em>
+                    </p>
+                </div>
+                
+                <!-- Platform Features -->
+                <div class="idea-section">
+                    <h4>⚙️ Platform Features</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Free</th>
+                                <th>Supporter</th>
+                                <th>Pro</th>
+                                <th>Advanced</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Custom domein</strong></td>
+                                <td class="cross">❌</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>API toegang</strong></td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Webhooks</strong></td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Multi-locatie</strong></td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="cross">❌</td>
+                                <td class="check">✅</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fair-use nudges</strong></td>
+                                <td>Ja</td>
+                                <td>Nee</td>
+                                <td>Nee</td>
+                                <td>Nee</td>
+                            </tr>
+                            <tr>
+                                <td><strong>"Powered by Pagayo"</strong></td>
+                                <td>Verplicht</td>
+                                <td>Optioneel</td>
+                                <td>Nee</td>
+                                <td>Nee</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Support</strong></td>
+                                <td>Community</td>
+                                <td>Email</td>
+                                <td>Prioriteit</td>
+                                <td>Dedicated</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Performance guarantees</strong></td>
+                                <td>Best effort</td>
+                                <td>Best effort</td>
+                                <td>SLA 99.5%</td>
+                                <td>SLA 99.9%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </details>
+
+        <!-- ==================== SECTIE 4: EXPORTS & EXIT ==================== -->
+        <details class="idea-card" open>
+            <summary class="idea-header">
+                <span class="idea-number">4</span>
+                <div>
+                    <div class="idea-title">📤 Exports & Exit-Strategie</div>
+                    <div class="idea-subtitle">Jouw data is van jou — altijd</div>
+                </div>
+            </summary>
+            
+            <div class="idea-content">
+                <div class="highlight-box green">
+                    <strong>🔓 Transparantie Belofte</strong><br>
+                    Ongeacht welke tier je hebt, je kunt ALTIJD je volledige data exporteren en meenemen.
+                    Er is geen vendor lock-in.
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Export Type</th>
+                            <th>Free</th>
+                            <th>Supporter</th>
+                            <th>Pro</th>
+                            <th>Advanced</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Orders CSV</strong></td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Producten CSV</strong></td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Klanten CSV</strong></td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Volledige backup (ZIP)</strong></td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Media export</strong></td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                            <td class="check">✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <!-- ==================== SECTIE 5: NGO PARTNERS ==================== -->
+        <details class="idea-card" open>
+            <summary class="idea-header">
+                <span class="idea-number">5</span>
+                <div>
+                    <div class="idea-title">🌍 NGO Partners & Ondernemers</div>
+                    <div class="idea-subtitle">Hoe het model werkt voor NGO-begeleide ondernemers</div>
+                </div>
+            </summary>
+            
+            <div class="idea-content">
+                <div class="idea-section">
+                    <h4>🏗️ Architectuur: NGO als Partner Laag</h4>
+                    <div class="flow-diagram">┌─────────────────────────────────────────────────────────────────────────┐
+│                         PAGAYO PARTNER STRUCTUUR                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  PAGAYO (platform)                                                       │
+│      │                                                                   │
+│      ├── PARTNER: NGO "GambiaConnect" (type: NGO)                       │
+│      │       │                                                           │
+│      │       │   ┌─────────────────────────────────────────────┐        │
+│      │       │   │  🌍 NGO IMPACT DASHBOARD                    │        │
+│      │       │   │  Aggregaat view — betaald door NGO          │        │
+│      │       │   └─────────────────────────────────────────────┘        │
+│      │       │                                                           │
+│      │       ├── ORGANIZATION: Fatou's Taxi Service (FREE)              │
+│      │       ├── ORGANIZATION: Aminata's Food Stall (FREE)              │
+│      │       └── ORGANIZATION: Ousman's Phone Repair (FREE → SUPPORTER) │
+│      │                                                                   │
+│      └── ORGANIZATION: Directe klant (geen partner)                     │
+│              └── Gewoon Pagayo klant                                     │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘</div>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>💡 Kernprincipe</h4>
+                    <div class="highlight-box blue">
+                        <strong>Ondernemers zijn volwaardige Organizations.</strong><br>
+                        Ze zijn geen "lite" gebruikers. De NGO is een Partner-laag die daar bovenop zit 
+                        voor aggregatie en impact tracking. De ondernemer merkt daar niets van.
+                    </div>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>📈 Groeipad NGO-Ondernemer</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Situatie</th>
+                                <th>Tier</th>
+                                <th>Wie betaalt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Starter (klein)</td>
+                                <td style="color: var(--success);">Free</td>
+                                <td>Niemand (€0)</td>
+                            </tr>
+                            <tr>
+                                <td>Groeit, blijft binnen Free limieten</td>
+                                <td style="color: var(--success);">Free</td>
+                                <td>Niemand (€0)</td>
+                            </tr>
+                            <tr>
+                                <td>Groeit voorbij Free limieten</td>
+                                <td style="color: var(--warning);">Supporter</td>
+                                <td>Ondernemer zelf óf NGO sponsort</td>
+                            </tr>
+                            <tr>
+                                <td>Wil RENTAL/INVOICE/Recurring</td>
+                                <td style="color: var(--accent);">Advanced</td>
+                                <td>Ondernemer zelf óf NGO sponsort</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>✨ Speciale NGO-linked Voordelen</h4>
+                    <div class="highlight-box">
+                        <table style="margin: 0;">
+                            <tr>
+                                <td><strong>Historie</strong></td>
+                                <td><strong>Ongelimiteerd</strong> — NGO meet langetermijn impact</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limieten</strong></td>
+                                <td><strong>Soft</strong> — nooit blokkeren, alleen nudges</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Exports</strong></td>
+                                <td>Altijd beschikbaar (ondernemer houdt eigen data)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <p style="margin-top: 1rem; color: var(--text-muted);">
+                        <em>Een ondernemer die onder een NGO begint en uitgroeit tot een hotel met verhuur en abonnementen, 
+                        moet gewoon Advanced worden. Dit is een succesverhaal, geen probleem.</em>
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <!-- ==================== SECTIE 6: UPGRADE TRIGGERS ==================== -->
+        <details class="idea-card">
+            <summary class="idea-header">
+                <span class="idea-number">6</span>
+                <div>
+                    <div class="idea-title">🚦 Upgrade Triggers & Limieten</div>
+                    <div class="idea-subtitle">Wanneer en hoe nudgen we naar upgrade</div>
+                </div>
+            </summary>
+            
+            <div class="idea-content">
+                <div class="idea-section">
+                    <h4>📊 Upgrade Triggers</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Van → Naar</th>
+                                <th>Trigger</th>
+                                <th>Nudge Tekst</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Free → Supporter</td>
+                                <td>>50 producten</td>
+                                <td>"Je groeit! Meer ruimte vanaf €19/jaar"</td>
+                            </tr>
+                            <tr>
+                                <td>Free → Supporter</td>
+                                <td>Wil custom domein</td>
+                                <td>"Eigen domein vanaf Supporter"</td>
+                            </tr>
+                            <tr>
+                                <td>Free → Supporter</td>
+                                <td>Wil POS</td>
+                                <td>"Kassasysteem vanaf Supporter"</td>
+                            </tr>
+                            <tr>
+                                <td>Supporter → Pro</td>
+                                <td>>200 producten of >500 orders</td>
+                                <td>"Je draait serieus! Professional voor €10/maand"</td>
+                            </tr>
+                            <tr>
+                                <td>Supporter → Pro</td>
+                                <td>>2 teamleden</td>
+                                <td>"Meer teamleden? Professional vanaf €120/jaar"</td>
+                            </tr>
+                            <tr>
+                                <td>Supporter → Pro</td>
+                                <td>Wil performance garanties</td>
+                                <td>"SLA en prioriteit support in Professional"</td>
+                            </tr>
+                            <tr>
+                                <td>Pro → Advanced</td>
+                                <td>>500 producten</td>
+                                <td>"Grote catalogus? Advanced vanaf €200/jaar"</td>
+                            </tr>
+                            <tr>
+                                <td>Pro → Advanced</td>
+                                <td>Wil API/Webhooks</td>
+                                <td>"API toegang in Advanced"</td>
+                            </tr>
+                            <tr>
+                                <td>Pro → Advanced</td>
+                                <td>Wil RENTAL/INVOICE</td>
+                                <td>"Verhuur en facturatie in Advanced"</td>
+                            </tr>
+                            <tr>
+                                <td>Pro → Advanced</td>
+                                <td>>5 teamleden of Multi-locatie</td>
+                                <td>"Team groeit? Advanced voor €200/jaar"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>⚠️ Hard vs Soft Limieten</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Limiet</th>
+                                <th>Type</th>
+                                <th>Gedrag</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Producten</strong></td>
+                                <td style="color: var(--danger);">Hard</td>
+                                <td>Kan niet meer toevoegen</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Orders</strong></td>
+                                <td style="color: var(--success);">Soft</td>
+                                <td>Nudge, maar nooit blokkeren</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Storage</strong></td>
+                                <td style="color: var(--danger);">Hard</td>
+                                <td>Kan niet meer uploaden</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gebruikers</strong></td>
+                                <td style="color: var(--danger);">Hard</td>
+                                <td>Kan niet meer uitnodigen</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Historie</strong></td>
+                                <td style="color: var(--success);">Soft</td>
+                                <td>Oude data gearchiveerd, wel exporteerbaar</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="highlight-box yellow" style="margin-top: 1rem;">
+                        <strong>🔑 Kernregel: Orders worden NOOIT geblokkeerd.</strong><br>
+                        Een verkoper moet altijd kunnen verkopen. We nudgen, we blokkeren niet.
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- ==================== SECTIE 7: FINANCIËLE BEREKENING ==================== -->
+        <details class="idea-card">
+            <summary class="idea-header">
+                <span class="idea-number">7</span>
+                <div>
+                    <div class="idea-title">📈 Financiële Berekening</div>
+                    <div class="idea-subtitle">Kosten, opbrengsten en break-even analyse</div>
+                </div>
+            </summary>
+            
+            <div class="idea-content">
+                <div class="idea-section">
+                    <h4>🎯 Aannames</h4>
+                    <ul>
+                        <li><strong>Supporter conversie:</strong> 0.5% (believers, bijdragers)</li>
+                        <li><strong>Professional conversie:</strong> 0.2% (professionele dagelijkse gebruikers)</li>
+                        <li><strong>Advanced conversie:</strong> 0.05% (complexe business models)</li>
+                        <li><strong>Klantverdeling:</strong> 90% dormant, 8% light, 1.5% active, 0.5% heavy</li>
+                        <li><strong>Edge-Native architectuur:</strong> 97% via cache, 3% database</li>
+                    </ul>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>💰 Schaalberekening (4 Tiers)</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Schaal</th>
+                                <th>Tenants</th>
+                                <th>Kosten/mnd</th>
+                                <th>S (0.5%)</th>
+                                <th>SP (0.2%)</th>
+                                <th>E (0.05%)</th>
+                                <th>Opbrengst/mnd</th>
+                                <th>Resultaat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Start</td>
+                                <td>100</td>
+                                <td>€10</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>€0</td>
+                                <td style="color: var(--danger);">-€10</td>
+                            </tr>
+                            <tr>
+                                <td>Early</td>
+                                <td>1.000</td>
+                                <td>€30</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>€28</td>
+                                <td style="color: var(--danger);">-€2</td>
+                            </tr>
+                            <tr>
+                                <td>Growth</td>
+                                <td>5.000</td>
+                                <td>€50</td>
+                                <td>25</td>
+                                <td>10</td>
+                                <td>2</td>
+                                <td>€173</td>
+                                <td style="color: var(--success);">+€123</td>
+                            </tr>
+                            <tr style="background: rgba(34, 197, 94, 0.1);">
+                                <td><strong>Break-even</strong></td>
+                                <td><strong>~1.500</strong></td>
+                                <td>€35</td>
+                                <td>7</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>€41</td>
+                                <td style="color: var(--warning);">≈€0</td>
+                            </tr>
+                            <tr>
+                                <td>Scale</td>
+                                <td>10.000</td>
+                                <td>€90</td>
+                                <td>50</td>
+                                <td>20</td>
+                                <td>5</td>
+                                <td>€362</td>
+                                <td style="color: var(--success);">+€272</td>
+                            </tr>
+                            <tr>
+                                <td>Large</td>
+                                <td>100.000</td>
+                                <td>€350</td>
+                                <td>500</td>
+                                <td>200</td>
+                                <td>50</td>
+                                <td>€3.625</td>
+                                <td style="color: var(--success);"><strong>+€3.275</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Massive</td>
+                                <td>1.000.000</td>
+                                <td>€1.700</td>
+                                <td>5.000</td>
+                                <td>2.000</td>
+                                <td>500</td>
+                                <td>€36.250</td>
+                                <td style="color: var(--success);"><strong>+€34.550</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
+                        <em>Opbrengst/mnd = (S×€19 + SP×€120 + E×€200) ÷ 12</em>
+                    </p>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>💳 Stripe Transaction Fees</h4>
+                    <div class="highlight-box yellow">
+                        <strong>⚠️ Stripe neemt ~2.8% + €0,25 per transactie</strong><br>
+                        Daarom alleen jaarlijkse facturatie — geen maandelijks bij lage bedragen.
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tier</th>
+                                <th>Bruto</th>
+                                <th>Stripe fee</th>
+                                <th>Netto</th>
+                                <th>Verlies %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Supporter (jaarlijks)</td>
+                                <td>€19,00</td>
+                                <td>€0,78</td>
+                                <td>€18,22</td>
+                                <td>4.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Professional (jaarlijks)</td>
+                                <td>€120,00</td>
+                                <td>€3,61</td>
+                                <td>€116,39</td>
+                                <td>3.0%</td>
+                            </tr>
+                            <tr>
+                                <td>Advanced (jaarlijks)</td>
+                                <td>€200,00</td>
+                                <td>€5,85</td>
+                                <td>€194,15</td>
+                                <td>2.9%</td>
+                            </tr>
+                            <tr>
+                                <td>Advanced (2-jaarlijks)</td>
+                                <td>€360,00</td>
+                                <td>€10,33</td>
+                                <td>€349,67</td>
+                                <td>2.9%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>📊 Break-even Samenvatting</h4>
+                    <div class="highlight-box green">
+                        <table style="margin: 0;">
+                            <tr>
+                                <td><strong>Break-even punt</strong></td>
+                                <td><strong>~1.500 tenants</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Gemiddelde opbrengst per tenant</td>
+                                <td>~€0,027/maand</td>
+                            </tr>
+                            <tr>
+                                <td>Kosten per tenant</td>
+                                <td>~€0,023/maand</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="highlight-box" style="margin-top: 1rem;">
+                        <h5 style="margin: 0 0 0.5rem 0;">🎯 Jaarlijkse omzet bij schaal:</h5>
+                        <table style="margin: 0;">
+                            <tr>
+                                <td>10.000 tenants</td>
+                                <td><strong>~€4.350/jaar</strong></td>
+                            </tr>
+                            <tr>
+                                <td>100.000 tenants</td>
+                                <td><strong>~€43.500/jaar</strong></td>
+                            </tr>
+                            <tr>
+                                <td>1.000.000 tenants</td>
+                                <td><strong>~€435.000/jaar</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p style="margin-top: 1rem;">
+                        <strong>Conclusie:</strong> Met 4 tiers en hogere Advanced prijs is break-even 
+                        nu al bij ~1.500 tenants. De Professional tier (€120/jaar) levert het meeste op 
+                        per gebruiker en trekt professionele gebruikers aan.
+                    </p>
+                </div>
+            </div>
+        </details>
+
+        <!-- ==================== SECTIE 8: TECHNISCHE IMPACT ==================== -->
+        <details class="idea-card">
+            <summary class="idea-header">
+                <span class="idea-number">8</span>
+                <div>
+                    <div class="idea-title">🏗️ Technische Implementatie</div>
+                    <div class="idea-subtitle">Wat moet er gebouwd worden</div>
+                </div>
+            </summary>
+            
+            <div class="idea-content">
+                <div class="idea-section">
+                    <h4>📦 Database Schema</h4>
+                    <div class="flow-diagram">enum SubscriptionTier {
+  FREE
+  SUPPORTER
+  PROFESSIONAL
+  ADVANCED
+}
+
+model Organization {
+  id                String            @id
+  tier              SubscriptionTier  @default(FREE)
+  tierExpiresAt     DateTime?         // null = FREE, datum = betaald
+  linkedPartnerId   String?           // NGO partner link
+  
+  // Feature flags (overschrijven tier defaults)
+  featureOverrides  Json?             // {"unlimitedHistory": true}
+  
+  // Usage tracking
+  productCount      Int               @default(0)
+  orderCountMonth   Int               @default(0)
+  storageUsedMb     Int               @default(0)
+}</div>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>🔧 Te Bouwen Componenten</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Repo</th>
+                                <th>Prioriteit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Subscription management UI (4 tiers)</td>
+                                <td>pagayo-beheer</td>
+                                <td style="color: var(--danger);">Hoog</td>
+                            </tr>
+                            <tr>
+                                <td>Fair-use counters & nudges</td>
+                                <td>pagayo-storefront</td>
+                                <td style="color: var(--danger);">Hoog</td>
+                            </tr>
+                            <tr>
+                                <td>Stripe Billing integratie (€19/€120/€200)</td>
+                                <td>pagayo-api-stack</td>
+                                <td style="color: var(--danger);">Hoog</td>
+                            </tr>
+                            <tr>
+                                <td>Tier-based feature gating</td>
+                                <td>pagayo-storefront</td>
+                                <td style="color: var(--warning);">Medium</td>
+                            </tr>
+                            <tr>
+                                <td>Usage tracking (products, orders, storage)</td>
+                                <td>pagayo-edge</td>
+                                <td style="color: var(--warning);">Medium</td>
+                            </tr>
+                            <tr>
+                                <td>"This business supports Pagayo" badge</td>
+                                <td>pagayo-storefront</td>
+                                <td style="color: var(--success);">Later</td>
+                            </tr>
+                            <tr>
+                                <td>NGO Partner dashboard link</td>
+                                <td>pagayo-beheer</td>
+                                <td style="color: var(--success);">Later</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="idea-section">
+                    <h4>🚨 Marketing Site Update</h4>
+                    <div class="highlight-box yellow">
+                        <strong>⚠️ 142 landenpagina's bevatten nog oud prijsmodel</strong><br>
+                        De "1% → 0.8% → 0.6%" staffel moet verwijderd worden uit alle pagina's in 
+                        <code>pagayo-marketing/src/pages/</code>.
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- ==================== STATUS BAR ==================== -->
+        <div class="status-bar" style="margin-top: 2rem; border-radius: 8px; border: 1px solid var(--border);">
+            <span class="status-label">Document Status:</span>
+            <span class="status-value">✅ Besloten</span>
+            <span class="status-label" style="margin-left: auto;">Versie:</span>
+            <span style="color: var(--text);">3.0</span>
+            <span class="status-label">Datum:</span>
+            <span style="color: var(--text);">5 februari 2026</span>
+        </div>
+        
+    </div>
+</body>
+</html>
