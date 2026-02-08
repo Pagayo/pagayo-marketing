@@ -502,7 +502,8 @@ src/components/
 ├── NeonOps.agent.md
 ├── Planner.agent.md
 ├── SecurityAudit.agent.md
-└── TaskDispatcher.agent.md
+├── TaskDispatcher.agent.md
+└── Tester.agent.md
 ```
 
 **Bij agent-gerelateerde taken: lees ALTIJD het relevante `.agent.md` bestand in `/pagayo-beheer/.github/agents/`**
