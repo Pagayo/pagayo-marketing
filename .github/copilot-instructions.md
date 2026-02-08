@@ -486,20 +486,22 @@ src/components/
 
 ```
 /pagayo-beheer/.github/agents/
-├── ArchitectureGuard-Opus.agent.md
-├── BackendDev-GPT.agent.md
-├── CodeReview-Opus.agent.md
-├── DatabaseReview-Opus.agent.md
-├── Deployer-GPT.agent.md
-├── Design-Opus.agent.md
-├── DevOps-GPT.agent.md
-├── DocWriter-Opus.agent.md
-├── FeaturePlanner-Opus.agent.md
+├── ArchitectureGuard.agent.md
+├── BackendDev.agent.md
+├── CloudflareOps.agent.md
+├── CodeReview.agent.md
+├── DatabaseReview.agent.md
+├── Deployer.agent.md
+├── Design.agent.md
+├── DevOps.agent.md
+├── DocWriter.agent.md
+├── FeaturePlanner.agent.md
 ├── FrontendDev.agent.md
-├── GitHubOps-GPT.agent.md
-├── IntegrationAudit-GPT.agent.md
-├── Planner-Opus.agent.md
-├── SecurityAudit-Opus.agent.md
+├── GitHubOps.agent.md
+├── IntegrationAudit.agent.md
+├── NeonOps.agent.md
+├── Planner.agent.md
+├── SecurityAudit.agent.md
 └── TaskDispatcher.agent.md
 ```
 
@@ -554,6 +556,16 @@ src/components/
 - **Design Inspiration:** https://stripe.com
 - **Astro Docs:** https://docs.astro.build
 - **Tailwind Docs:** https://tailwindcss.com
+
+---
+
+## 📚 VOLLEDIGE CONTEXT — PAGAYO-NIVEAU.md
+
+**Voor uitgebreide architectuur, database schemas, Cloudflare setup, en design system:**
+
+→ Lees `/pagayo-vault/PAGAYO-NIVEAU.md`
+
+Dit is het centrale referentie-document voor Pagayo platform architectuur.
 
 ---
 
