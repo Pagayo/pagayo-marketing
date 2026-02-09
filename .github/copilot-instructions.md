@@ -6,6 +6,33 @@ Geen aannames, geen shortcuts. Antwoord altijd in het Nederlands.
 
 ---
 
+## 🎯 KWALITEITSBENCHMARK — CLOUDFLARE MINDSET
+
+**Cloudflare = onze kwaliteitsbenchmark.** NIET omdat we infrastructure bouwen, maar omdat we dezelfde MINDSET willen.
+
+| Cloudflare Principe | Pagayo Toepassing |
+|---------------------|-------------------|
+| Performance first | Edge-native, geen onnodige DB calls |
+| Developer experience | Clean APIs, voorspelbare responses |
+| Reliability over features | Eerst robuust, dan uitbreiden |
+| Minimal, no cruft | Geen code die je niet nodig hebt |
+
+### ⛔ GEEN ENTERPRISE THEATER
+
+**Enterprise theater = complexiteit zonder concrete waarde.**
+
+| ❌ VERBODEN | ✅ WEL DOEN |
+|-------------|-------------|
+| Abstractions voor de abstractie | Direct, leesbare code |
+| Microservices waar een functie volstaat | Eén Worker die het werk doet |
+| Design patterns zonder concreet probleem | Pattern alleen als het een echt probleem oplost |
+| "Scalable" oplossingen voor problemen die niet bestaan | Eerst werkend, dan optimaliseren |
+| 5-layer architectuur "voor later" | Minimale lagen, maximaal resultaat |
+
+**Vraag jezelf altijd:** "Lost dit een ECHT probleem op, of is dit theater?"
+
+---
+
 # GitHub Copilot Instructions – Pagayo Marketing
 
 ---
