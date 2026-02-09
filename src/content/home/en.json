@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "title": "Pagayo - Multi-Tenant E-commerce Platform",
+    "description": "Build and scale modern webshops, hotels, and POS systems on one powerful multi-tenant platform."
+  },
+  "hero": {
+    "eyebrow": "Platform",
+    "title": "E-commerce\nWithout the hassle",
+    "subtitle": "Sell products, rentals, or subscriptions without complicated tech. Online or POS. All in one.",
+    "cta_primary": "Start free",
+    "cta_secondary": "View pricing",
+    "badges": [
+      "Always online (99.98%)",
+      "Super fast! Order processing under 150ms"
+    ],
+    "stats": [
+      {
+        "label": "API connections with everything",
+        "value": "Pagayo API",
+        "description": "Pagayo offers FREE API connections with hundreds of partners. Like: FedEx, Stripe, PayPal, Square, Google, Facebook, TikTok, QuickBooks, and many more.",
+        "link": "/us/en/api-connections",
+        "linkText": "Learn more →"
+      },
+      {
+        "label": "Unlimited systems",
+        "value": "Your business",
+        "description": "As many webshops, hotels, stores, and POS as you want",
+        "link": "/us/en/unlimited-stores",
+        "linkText": "Learn more →"
+      },
+      {
+        "label": "Missing a connection?",
+        "value": "Request API",
+        "description": "Request your favorite API for free",
+        "link": "/us/en/api-request",
+        "linkText": "Submit request →"
+      },
+      {
+        "label": "Trusted by",
+        "value": "50,000+",
+        "description": "Businesses use Pagayo every day",
+        "link": "/us/en/trusted-by",
+        "linkText": "Learn more →"
+      }
+    ]
+  },
+  "features": {
+    "title": "Everything you need",
+    "subtitle": "A modern platform for your growing business",
+    "items": [
+      {
+        "icon": "💳",
+        "title": "Stripe payments",
+        "description": "Cards, ACH, Apple Pay, and wallets with smart retries.",
+        "link": "/us/en/stripe",
+        "linkText": "Learn more"
+      },
+      {
+        "icon": "🪙",
+        "title": "Multiple payment providers",
+        "description": "Popular payment methods activated at once, including local preferences and reports per brand."
+      },
+      {
+        "icon": "🧮",
+        "title": "Checkout & tax",
+        "description": "Choose a standard checkout or custom design. Tax and shipping are calculated correctly per state."
+      },
+      {
+        "icon": "📡",
+        "title": "Track payments",
+        "description": "Every step of a payment is recorded. If issues occur, we retry automatically and notify you."
+      },
+      {
+        "icon": "🧾",
+        "title": "POS and online in sync",
+        "description": "Inventory, orders, and returns sync between POS and webshop. Receipts are automatically included."
+      }
+    ]
+  },
+  "socialProof": {
+    "title": "Trusted by thousands of e-commerce entrepreneurs",
+    "items": [
+      { "number": "50,000+", "label": "Active webshops" },
+      { "number": "99.9%", "label": "Historical uptime" },
+      { "number": "24/7", "label": "Support available" }
+    ]
+  },
+  "pricing": {
+    "title": "Simple, scalable pricing",
+    "subtitle": "Pay only for your success. The more revenue, the less you pay.",
+    "badge": "Pagayo Platform",
+    "tiers_title": "Pricing",
+    "features_title": "What you get",
+    "tiers": [
+      { "percentage": "1%", "range": "up to $5,000/month" },
+      { "percentage": "0.8%", "range": "$5,000-$10,000" },
+      { "percentage": "0.6%", "range": "$10,000-$50,000" },
+      { "percentage": "0.5%", "range": "$50,000-$100,000" }
+    ],
+    "features": [
+      "Unlimited webshops",
+      "Unlimited hotels",
+      "Unlimited subscriptions",
+      "Unlimited rentals",
+      "Unlimited POS systems",
+      "Custom domain names"
+    ],
+    "cta_text": "Start free - no trial period",
+    "cta_button": "Start free now"
+  },
+  "cta": {
+    "title": "Ready to start?",
+    "subtitle": "Start now and get your own environment within 30 seconds. Need help? We're ready.",
+    "primary": "Start free",
+    "secondary": "Have questions? Contact us",
+    "secondary_link": "/us/en/contact"
+  }
+}

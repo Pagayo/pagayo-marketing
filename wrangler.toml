@@ -5,3 +5,8 @@ pages_build_output_dir = "dist"
 # Note: Custom domains configured via Cloudflare Dashboard
 # Production: www.pagayo.com
 # Preview: preview.pagayo.com
+
+# KV namespace for Astro sessions (required by @astrojs/cloudflare)
+[[kv_namespaces]]
+binding = "SESSION"
+id = "SESSION_KV_PLACEHOLDER"

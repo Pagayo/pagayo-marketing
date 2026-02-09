@@ -3,7 +3,6 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import HeaderDynamic from '../../../components/HeaderDynamic.astro';
 import FooterDynamic from '../../../components/FooterDynamic.astro';
 import nlCountry from '../../../data/countries/nl.json';
-import '../../../styles/pages/eu-nl-contact.css';
 
 const country = nlCountry;
 ---
@@ -14,7 +13,7 @@ const country = nlCountry;
 >
   <HeaderDynamic country={country} />
 
-  <main class="page-container contact-page">
+  <main class="page-container">
     <!-- Hero Section -->
     <section class="hero-main">
       <div class="hero__content">
@@ -66,9 +65,9 @@ const country = nlCountry;
         </p>
       </div>
 
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">↗</div>
+      <div class="channel-grid">
+        <div class="channel-card">
+          <div class="card-icon">↗</div>
           <h3>Sales & implementatie</h3>
           <p>Voor nieuwe tenants, migraties en RFP's.</p>
           <ul>
@@ -82,8 +81,8 @@ const country = nlCountry;
           </div>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
+        <div class="channel-card">
+          <div class="card-icon">⚡</div>
           <h3>Support & incidenten</h3>
           <p>Productievragen, webhooks of checkout monitoring.</p>
           <ul>
@@ -97,8 +96,8 @@ const country = nlCountry;
           </div>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-icon">🤝</div>
+        <div class="channel-card">
+          <div class="card-icon">🤝</div>
           <h3>Partnerships</h3>
           <p>Integratiepartners, bureaus en payment providers.</p>
           <ul>
@@ -168,8 +167,8 @@ const country = nlCountry;
         <p class="section-subtitle">We ontmoeten je graag onsite of remote. Secure access via Cloudflare Zero Trust.</p>
       </div>
 
-      <div class="feature-grid feature-grid--two">
-        <div class="feature-card">
+      <div class="office-grid">
+        <div class="office-card">
           <h3>Amsterdam, Nederland</h3>
           <p>Pagayo B.V.</p>
           <p>Herengracht 123</p>
@@ -205,71 +204,57 @@ const country = nlCountry;
         <p class="section-subtitle">Transparant over responstijden, demo's en talen.</p>
       </div>
 
-      <div class="feature-grid">
-        <div class="feature-card">
+      <div class="faq-grid">
+        <div class="faq-card">
           <h3>Hoe snel krijg ik antwoord?</h3>
           <p>We reageren binnen kantooruren in minder dan 4 uur. Incidenten met impact krijgen prioriteit.</p>
         </div>
-        <div class="feature-card">
+        <div class="faq-card">
           <h3>Kan ik een demo aanvragen?</h3>
           <p>Selecteer "Demo aanvragen" in het formulier. We plannen binnen 2 werkdagen een persoonlijke sessie met product + engineering.</p>
         </div>
-        <div class="feature-card">
+        <div class="faq-card">
           <h3>In welke talen bieden jullie support?</h3>
           <p>Nederlands, Engels en Duits. We stemmen de documentatie af op jouw team en regio.</p>
         </div>
       </div>
     </section>
 
-  </main>
-  <FooterDynamic country={country} />
-</BaseLayout>
-
-<script>
-  const formEl = document.getElementById('contact-form');
-  if (!(formEl instanceof HTMLFormElement)) {
-    console.warn('[contact] contact-form element ontbreekt of is geen <form>.');
-  } else {
-    const successMsg = document.getElementById('form-success');
-    const errorMsg = document.getElementById('form-error');
-
-    formEl.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(formEl);
-      const data = Object.fromEntries(formData);
-
-      try {
-        const response = await fetch(formEl.action, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
-
-        if (!response.ok) throw new Error('Server error');
-
-        successMsg?.classList.remove('hidden');
-        errorMsg?.classList.add('hidden');
-        formEl.reset();
-        formEl.querySelectorAll('button, input, textarea, select').forEach((el) => {
-          if (
-            el instanceof HTMLButtonElement ||
-            el instanceof HTMLInputElement ||
-            el instanceof HTMLTextAreaElement ||
-            el instanceof HTMLSelectElement
-          ) {
-            el.disabled = true;
-          }
-        });
-      } catch (error) {
-        console.warn('[contact] submit failed', error);
-        errorMsg?.classList.remove('hidden');
-        successMsg?.classList.add('hidden');
-      }
-    });
-  }
-
-  function openChat() {
-    alert('Live chat wordt binnenkort toegevoegd!');
-  }
-</script>
+    <style>
+      .section { padding: 5rem 0; }
+      .section-header { max-width: 760px; margin: 0 auto 3rem; text-align: center; }
+      .section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 1rem; }
+      .section-subtitle { color: var(--text-secondary); line-height: 1.6; }
+      .eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.8rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+      .lead { color: var(--text-secondary); line-height: 1.6; max-width: 720px; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.5rem; border-radius: 10px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; border: 1px solid transparent; cursor: pointer; }
+      .btn-primary { background: linear-gradient(135deg, var(--accent) 0%, #00e077 100%); color: #06130d; box-shadow: 0 12px 30px rgba(0, 255, 136, 0.2); }
+      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0, 255, 136, 0.3); }
+      .btn-ghost { border-color: var(--border); color: var(--text); background: rgba(10, 10, 10, 0.6); }
+      .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+      .btn-full { width: 100%; justify-content: center; }
+      .pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(0, 255, 136, 0.05); color: var(--text); font-size: 0.85rem; }
+      .pill-soft { background: rgba(0, 255, 136, 0.08); color: var(--accent); }
+      .accent-inline { color: var(--accent); }
+      .hero { position: relative; padding: 3.5rem; border: 1px solid var(--border); border-radius: 22px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 2rem; background: radial-gradient(circle at 20% 20%, rgba(0, 255, 136, 0.12), transparent 35%), radial-gradient(circle at 80% 10%, rgba(0, 255, 136, 0.08), transparent 38%), linear-gradient(180deg, rgba(15, 21, 19, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%); overflow: hidden; box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35); }
+      .hero::before { content: ''; position: absolute; inset: -20% -30% auto -30%; background: radial-gradient(circle, rgba(0, 255, 136, 0.08), transparent 50%); filter: blur(60px); opacity: 0.8; }
+      .hero::after { content: ''; position: absolute; inset: auto -20% -30% -20%; background: radial-gradient(circle, rgba(0, 255, 136, 0.06), transparent 50%); filter: blur(70px); opacity: 0.7; }
+      .hero__content { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 0.5rem; }
+      .hero__content h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; }
+      .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0 0.5rem; }
+      .hero__meta { display: flex; gap: 0.75rem; flex-wrap: wrap; color: var(--text-secondary); }
+      .hero__panel { position: relative; z-index: 2; display: grid; gap: 1rem; align-self: stretch; }
+      .stat-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; background: rgba(15, 21, 19, 0.8); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); }
+      .stat-label { color: var(--text-secondary); font-size: 0.95rem; }
+      .stat-value { font-size: 2rem; font-weight: 800; color: var(--accent); margin: 0.25rem 0; }
+      .stat-footnote { color: var(--text-secondary); font-size: 0.9rem; }
+      .channel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+      .channel-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: var(--bg-secondary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+      .channel-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 255, 136, 0.14); }
+      .card-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: rgba(0, 255, 136, 0.1); color: var(--accent); font-weight: 700; }
+      .channel-card h3 { font-size: 1.25rem; font-weight: 800; margin: 0.25rem 0; }
+      .channel-card p { color: var(--text-secondary); }
+      .channel-card ul { list-style: none; padding: 0; margin: 0.25rem 0 0; display: flex; flex-direction: column; gap: 0.35rem; color: var(--text-secondary); }
+      .card-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; margin-top: auto; }
+      .link { color: var(--accent); text-decoration: none; font-weight: 700; background: none; border: none; padding: 0; }
+      .link:hover { text-decoration: underline; }

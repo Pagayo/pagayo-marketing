@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import HeaderDynamic from '../../../components/HeaderDynamic.astro';
+import FooterDynamic from '../../../components/FooterDynamic.astro';
+
+import enHome from '../../../content/home/en.json';
+import nlHome from '../../../content/home/nl.json';
+import deHome from '../../../content/home/de.json';
+
+type NavItem = string | { label: string; path: string };
+
+type CountryData = {
+  code: string;
+  region: string;
+  name: string;
+  locale?: string;
+  nav?: {
+    features?: NavItem;
+    pricing?: NavItem;
+    contact?: NavItem;
+    cta?: NavItem;
+  };
+};
+
+type PricingTier = { percentage: string; range: string };
+
+type HomeContent = {
+  pricing: {
+    title: string;
+    subtitle: string;
+    badge: string;
+    tiers_title: string;
+    features_title: string;
+    tiers: PricingTier[];
+    features: string[];
+    cta_text: string;
+    cta_button: string;
+  };
+  cta: {
+    title: string;
+    subtitle: string;
+    primary: string;
+    secondary: string;
+    secondary_link: string;
+  };
+};
+
+function getBaseLang(locale: string | undefined): string {
+  if (!locale) return 'en';
+  const [base] = locale.split('-');
+  return base || 'en';
+}
+
+function getLangAttribute(baseLang: string): string {
+  // Bewust: matcht bestaand gedrag in de oude landpagina's.
+  if (baseLang === 'es') return 'en';
+  if (baseLang === 'ar') return 'en';
+  return baseLang || 'en';
+}
+
+function getNavLabel(item: NavItem | undefined, fallback: string): string {
+  if (!item) return fallback;
+  return typeof item === 'string' ? item : item.label;
+}
+
+function pickHomeContent(baseLang: string): HomeContent {
+  if (baseLang === 'nl') return nlHome as HomeContent;
+  if (baseLang === 'de') return deHome as HomeContent;
+  return enHome as HomeContent;
+}
+
+export async function getStaticPaths() {
+  const normalizeCountry = (data: unknown): CountryData => {
+    const record = data as { default?: unknown };
+    return (record.default ?? data) as CountryData;
+  };
+
+  const countryModules = import.meta.glob('../../../data/countries/*.json', { eager: true });
+  const countries = Object.values(countryModules).map((module) => normalizeCountry(module));
+
+  return countries
+    .filter((country) => !(country.region === 'eu' && country.code === 'nl'))
+    .map((country) => ({
+      params: { region: country.region, country: country.code },
+      props: { country }
+    }));
+}
+
+const { region, country: countryCode } = Astro.params;
+const country = Astro.props.country as CountryData;
+
+const basePath = `/${region}/${countryCode}`;
+const baseLang = getBaseLang(country.locale);
+const langAttr = getLangAttribute(baseLang);
+
+const home = pickHomeContent(baseLang);
+const title = `${getNavLabel(country.nav?.pricing, 'Pricing')} - Pagayo ${country.name}`;
+const description = home.pricing.subtitle;
+
+const structuredData = [
+  {
+    type: 'WebPage',
+    data: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: title,
+      description,
+      inLanguage: langAttr,
+      url: `https://pagayo.com${basePath}/pricing`
+    }
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={langAttr} structuredData={structuredData}>
+  <HeaderDynamic country={country} />
+
+  <main class="page-container container-narrow">
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">{getNavLabel(country.nav?.pricing, 'Pricing')}</p>
+        <h1 class="section-title">{home.pricing.title}</h1>
+        <p class="section-subtitle">{home.pricing.subtitle}</p>
+      </div>
+
+      <div class="feature-grid feature-grid--two">
+        <div class="feature-card">
+          <h3>{home.pricing.tiers_title}</h3>
+          <div>
+            {home.pricing.tiers.map((tier) => (
+              <p>
+                <strong>{tier.percentage}</strong> {tier.range}
+              </p>
+            ))}
+          </div>
+          <p>{home.pricing.cta_text}</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>{home.pricing.features_title}</h3>
+          <div>
+            {home.pricing.features.map((feature) => (
+              <p>{feature}</p>
+            ))}
+          </div>
+          <div class="cta__actions" style="margin-top: auto;">
+            <a href="https://app.pagayo.com/register/" class="btn btn-primary">
+              {getNavLabel(country.nav?.cta, home.pricing.cta_button)}
+            </a>
+            <a class="btn btn-ghost" href={`${basePath}/contact`}>
+              {getNavLabel(country.nav?.contact, home.cta.secondary)}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta__content">
+        <h2>{home.cta.title}</h2>
+        <p>{home.cta.subtitle}</p>
+        <div class="cta__actions">
+          <a class="btn btn-primary" href="https://app.pagayo.com/register/">
+            {getNavLabel(country.nav?.cta, home.cta.primary)}
+          </a>
+          <a class="btn btn-ghost" href={`${basePath}/features`}>
+            {getNavLabel(country.nav?.features, 'Features')}
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FooterDynamic country={country} />
+</BaseLayout>
