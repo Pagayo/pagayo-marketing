@@ -2,7 +2,7 @@
  * Pagayo Design System - Admin (revolutionary)
  * Tenant Admin Dashboard
  * Theme: Dark + Gold Accent
- * Generated: 2026-02-11T10:48:16.156Z
+ * Generated: 2026-02-11T13:32:51.819Z
  * (c) 2026 Pagayo
  *
  * CSS @layer order: reset → tokens → base → components → contexts → utilities → tenant
@@ -283,7 +283,7 @@ table {
  * Dark-first design met gold accent - het signature Pagayo theme
  * 
  * Mode: dark
- * Generated: 2026-02-11T10:48:16.155Z
+ * Generated: 2026-02-11T13:32:51.819Z
  * 
  * AI-NOTE: Dit bestand is GEGENEREERD. Wijzig niet handmatig.
  * Wijzig src/themes/revolutionary.json en run `npm run build`.
@@ -340,62 +340,8 @@ table {
 }
 
 @layer components {
-/**
- * COMPONENT INDEX
- * Importeert alle component CSS bestanden
- * 
- * AI-NOTE: Dit bestand wordt door build.js gebruikt om alle
- * component styling in te laden. De volgorde is belangrijk:
- * 1. Basis components (buttons, cards, badges, alerts)
- * 2. Form components
- * 3. Layout components (headers, footers, navigation)
- * 4. Complex components (tables, modals)
- * 
- * Elk component folder heeft:
- * - _base.css (gedeelde styling)
- * - [variant].css (per variant)
- */
-
-/* ===== BASIS COMPONENTS ===== */
-@import './buttons/_base.css';
-@import './buttons/primary.css';
-@import './buttons/secondary.css';
-@import './buttons/ghost.css';
-@import './buttons/destructive.css';
-
-@import './cards/_base.css';
-@import './cards/elevated.css';
-@import './cards/bordered.css';
-@import './cards/glass.css';
-
-@import './badges/_base.css';
-@import './alerts/_base.css';
-
-/* ===== FORM COMPONENTS ===== */
-@import './forms/_base.css';
-@import './forms/checkboxes.css';
-@import './forms/switch.css';
-
-/* ===== LAYOUT COMPONENTS ===== */
-@import './headers/_base.css';
-@import './headers/minimal.css';
-@import './headers/full.css';
-@import './headers/centered.css';
-@import './headers/split.css';
-
-@import './footers/_base.css';
-@import './footers/simple.css';
-@import './footers/detailed.css';
-@import './footers/links.css';
-@import './footers/minimal.css';
-
-@import './navigation/_base.css';
-
-/* ===== COMPLEX COMPONENTS ===== */
-@import './tables/_base.css';
-@import './modals/_base.css';
-
-/* Component: buttons */
+/* ===== Component: buttons ===== */
+/* buttons/_base.css */
 /**
  * COMPONENT: Buttons - Base
  * Gedeelde button styling voor alle varianten
@@ -551,7 +497,129 @@ table {
   height: 20px;
 }
 
-/* Component: cards */
+/* buttons/destructive.css */
+/**
+ * COMPONENT: Button - Destructive
+ * Button voor destructieve acties (delete, remove, etc.)
+ * 
+ * AI-NOTE: Destructive buttons zijn voor acties die niet ongedaan kunnen worden.
+ * Gebruik rood/error kleur. Vaak met confirm dialog.
+ */
+
+.btn--destructive {
+  background: var(--error);
+  color: #fff;
+  border-color: var(--error);
+}
+
+.btn--destructive:hover:not(:disabled) {
+  background: var(--error-light);
+  border-color: var(--error-light);
+  box-shadow: 0 0 10px rgba(248, 113, 113, 0.25);
+}
+
+.btn--destructive:active:not(:disabled) {
+  background: #dc2626;
+  border-color: #dc2626;
+  transform: scale(0.98);
+}
+
+/* Outline variant */
+.btn--destructive-outline {
+  background: transparent;
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.btn--destructive-outline:hover:not(:disabled) {
+  background: var(--error-dim);
+}
+
+.btn--destructive-outline:active:not(:disabled) {
+  background: rgba(248, 113, 113, 0.2);
+  transform: scale(0.98);
+}
+
+/* buttons/ghost.css */
+/**
+ * COMPONENT: Button - Ghost
+ * Subtiele button zonder border of achtergrond
+ * 
+ * AI-NOTE: Ghost buttons zijn voor tertiaire acties of icon-only buttons.
+ * Minimale visuele impact, maar wel interactief.
+ */
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: transparent;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.btn--ghost:active:not(:disabled) {
+  background: var(--bg-active);
+  transform: scale(0.98);
+}
+
+/* buttons/primary.css */
+/**
+ * COMPONENT: Button - Primary
+ * De hoofd call-to-action button
+ * 
+ * AI-NOTE: Primary buttons zijn voor de belangrijkste actie op een pagina.
+ * Gebruik spaarzaam - max 1-2 per view. Heeft glow effect op hover.
+ */
+
+.btn--primary {
+  background: var(--tenant-accent, var(--accent));
+  color: var(--bg-deep);
+  border-color: var(--tenant-accent, var(--accent));
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--tenant-accent-light, var(--accent-light));
+  border-color: var(--tenant-accent-light, var(--accent-light));
+  box-shadow: var(--shadow-glow-sm);
+}
+
+.btn--primary:active:not(:disabled) {
+  background: var(--tenant-accent-dim, var(--accent-dim));
+  border-color: var(--tenant-accent-dim, var(--accent-dim));
+  transform: scale(0.98);
+}
+
+/* buttons/secondary.css */
+/**
+ * COMPONENT: Button - Secondary
+ * Secundaire actie button met outline stijl
+ * 
+ * AI-NOTE: Secondary buttons zijn voor minder belangrijke acties.
+ * Vaak naast een primary button gebruikt (Cancel, Back, etc.)
+ */
+
+.btn--secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
+}
+
+.btn--secondary:active:not(:disabled) {
+  background: var(--bg-active);
+  transform: scale(0.98);
+}
+
+
+/* ===== Component: cards ===== */
+/* cards/_base.css */
 /**
  * COMPONENT: Cards - Base
  * Gedeelde card styling voor alle varianten
@@ -661,7 +729,1084 @@ table {
   gap: var(--space-4);
 }
 
-/* Component: forms */
+/* cards/bordered.css */
+/**
+ * COMPONENT: Card - Bordered
+ * Card met duidelijke border (geen shadow)
+ * 
+ * AI-NOTE: Bordered cards zijn subtiel maar afgebakend.
+ * Gebruik in lijsten of als je veel cards hebt.
+ */
+
+.card--bordered {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  box-shadow: none;
+}
+
+.card--bordered.card--interactive:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-hover);
+}
+
+/* cards/elevated.css */
+/**
+ * COMPONENT: Card - Elevated
+ * Card met shadow (zweeft boven de pagina)
+ * 
+ * AI-NOTE: Elevated cards zijn prominent en trekken aandacht.
+ * Gebruik voor belangrijke content of feature highlights.
+ */
+
+.card--elevated {
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-md);
+}
+
+.card--elevated.card--interactive:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card--elevated.card--selected {
+  box-shadow: 
+    var(--shadow-lg),
+    0 0 0 1px var(--tenant-accent, var(--accent));
+}
+
+/* cards/glass.css */
+/**
+ * COMPONENT: Card - Glass
+ * Glassmorphism card met blur effect
+ * 
+ * AI-NOTE: Glass cards zijn modern en premium.
+ * Werkt best op dark themes met subtiele achtergrond.
+ * Let op: backdrop-filter kan performance kosten.
+ */
+
+.card--glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card--glass.card--interactive:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.card--glass.card--selected {
+  border-color: var(--tenant-accent, var(--accent));
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  .card--glass {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+  
+  .card--glass.card--interactive:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.12);
+  }
+}
+
+
+/* ===== Component: badges ===== */
+/* badges/_base.css */
+/**
+ * COMPONENT: Badges - Base
+ * Status indicators en labels
+ * 
+ * AI-NOTE: Badges tonen status of categorieën.
+ * Compact, kleurgecodeerd, vaak in tabellen of kaarten.
+ * 
+ * COLORS: default, success, warning, error, info, accent
+ */
+
+/* ===== BASE BADGE ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  
+  padding: var(--space-1) var(--space-2);
+  
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  line-height: 1;
+  white-space: nowrap;
+  
+  border-radius: var(--radius-full);
+  
+  /* Default: neutral */
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+}
+
+/* ===== COLOR VARIANTS ===== */
+.badge--success {
+  background: var(--success-dim);
+  color: var(--success);
+}
+
+.badge--warning {
+  background: var(--warning-dim);
+  color: var(--warning);
+}
+
+.badge--error {
+  background: var(--error-dim);
+  color: var(--error);
+}
+
+.badge--info {
+  background: var(--info-dim);
+  color: var(--info);
+}
+
+.badge--accent {
+  background: var(--accent-glow);
+  color: var(--tenant-accent, var(--accent));
+}
+
+/* ===== SOLID VARIANTS ===== */
+.badge--solid {
+  color: var(--bg-deep);
+}
+
+.badge--solid.badge--success {
+  background: var(--success);
+}
+
+.badge--solid.badge--warning {
+  background: var(--warning);
+}
+
+.badge--solid.badge--error {
+  background: var(--error);
+}
+
+.badge--solid.badge--info {
+  background: var(--info);
+}
+
+.badge--solid.badge--accent {
+  background: var(--tenant-accent, var(--accent));
+}
+
+/* ===== OUTLINE VARIANTS ===== */
+.badge--outline {
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+/* ===== SIZE VARIANTS ===== */
+.badge--sm {
+  padding: 2px var(--space-1);
+  font-size: 10px;
+}
+
+.badge--lg {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+/* ===== DOT BADGE ===== */
+.badge--dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: var(--radius-full);
+}
+
+.badge--dot.badge--success { background: var(--success); }
+.badge--dot.badge--warning { background: var(--warning); }
+.badge--dot.badge--error { background: var(--error); }
+.badge--dot.badge--info { background: var(--info); }
+.badge--dot.badge--accent { background: var(--tenant-accent, var(--accent)); }
+
+/* ===== WITH ICON ===== */
+.badge__icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* ===== ORDER STATUS BADGES (semantic) ===== */
+.badge--pending {
+  background: var(--warning-dim);
+  color: var(--warning);
+}
+
+.badge--processing {
+  background: var(--info-dim);
+  color: var(--info);
+}
+
+.badge--completed {
+  background: var(--success-dim);
+  color: var(--success);
+}
+
+.badge--cancelled {
+  background: var(--error-dim);
+  color: var(--error);
+}
+
+.badge--refunded {
+  background: var(--bg-hover);
+  color: var(--text-muted);
+}
+
+
+/* ===== Component: alerts ===== */
+/* alerts/_base.css */
+/**
+ * COMPONENT: Alerts - Base
+ * Notification messages en feedback
+ * 
+ * AI-NOTE: Alerts communiceren status, fouten, of bevestigingen.
+ * Kan inline, banner, of toast zijn.
+ * 
+ * VARIANTS: inline, banner, toast
+ * TYPES: success, warning, error, info
+ */
+
+/* ===== BASE ALERT ===== */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  
+  padding: var(--space-3) var(--space-4);
+  
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.alert__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.alert__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.alert__title {
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.alert__message {
+  color: inherit;
+  opacity: 0.9;
+}
+
+.alert__dismiss {
+  flex-shrink: 0;
+  padding: var(--space-1);
+  margin: calc(-1 * var(--space-1));
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.alert__dismiss:hover {
+  opacity: 1;
+}
+
+/* ===== TYPE VARIANTS ===== */
+.alert--success {
+  background: var(--success-dim);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.alert--warning {
+  background: var(--warning-dim);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.alert--error {
+  background: var(--error-dim);
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.alert--info {
+  background: var(--info-dim);
+  border-color: var(--info);
+  color: var(--info);
+}
+
+/* ===== BANNER VARIANT ===== */
+.alert--banner {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-width: 2px;
+}
+
+/* ===== TOAST VARIANT ===== */
+.alert--toast {
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.alert--toast.alert--success {
+  border-left: 3px solid var(--success);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.alert--toast.alert--error {
+  border-left: 3px solid var(--error);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.alert--toast.alert--warning {
+  border-left: 3px solid var(--warning);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.alert--toast.alert--info {
+  border-left: 3px solid var(--info);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+/* ===== TOAST CONTAINER ===== */
+.toast-container {
+  position: fixed;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  pointer-events: none;
+}
+
+.toast-container--top-right {
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+.toast-container--bottom-right {
+  bottom: var(--space-4);
+  right: var(--space-4);
+}
+
+.toast-container--top-center {
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-container .alert--toast {
+  pointer-events: auto;
+  animation: slide-in-up var(--duration-normal) var(--ease-out);
+}
+
+/* ===== INLINE (in forms) ===== */
+.alert--inline {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+}
+
+/* alerts/banner.css */
+/**
+ * ALERTS: Banner
+ * 
+ * Full-width banners voor belangrijke aankondigingen.
+ * Gebruik bovenaan de pagina voor site-wide berichten.
+ * 
+ * AI-NOTE: Banners zijn persistent en vereisen expliciete interactie
+ * om te sluiten. Gebruik voor belangrijke mededelingen, onderhoud, etc.
+ * 
+ * STRUCTURE:
+ * <div class="banner banner--info">
+ *   <div class="banner__content">
+ *     <span class="banner__icon">ℹ</span>
+ *     <p class="banner__message">Scheduled maintenance tonight at 22:00</p>
+ *     <a href="#" class="banner__link">Learn more</a>
+ *   </div>
+ *   <button class="banner__close">×</button>
+ * </div>
+ */
+
+/* =================================================================
+   BANNER BASE
+   ================================================================= */
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--info-subtle);
+  color: var(--info);
+  width: 100%;
+}
+
+/* =================================================================
+   BANNER VARIANTS
+   ================================================================= */
+
+.banner--info {
+  background: var(--info-subtle);
+  color: var(--info);
+}
+
+.banner--success {
+  background: var(--success-subtle);
+  color: var(--success);
+}
+
+.banner--warning {
+  background: var(--warning-subtle);
+  color: var(--warning);
+}
+
+.banner--error {
+  background: var(--error-subtle);
+  color: var(--error);
+}
+
+.banner--promo {
+  background: linear-gradient(135deg, var(--accent-subtle) 0%, var(--surface-secondary) 100%);
+  color: var(--text-primary);
+}
+
+/* =================================================================
+   BANNER CONTENT
+   ================================================================= */
+
+.banner__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.banner__icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.banner__message {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.banner__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.banner__link:hover {
+  opacity: 0.8;
+}
+
+/* =================================================================
+   BANNER CLOSE
+   ================================================================= */
+
+.banner__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: currentColor;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.banner__close:hover {
+  opacity: 1;
+}
+
+/* =================================================================
+   BANNER ACTIONS
+   ================================================================= */
+
+.banner__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.banner__action {
+  padding: var(--space-1) var(--space-3);
+  background: currentColor;
+  border: none;
+  border-radius: var(--radius-full);
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.banner__action:hover {
+  transform: scale(1.02);
+}
+
+/* =================================================================
+   BANNER POSITIONED (fixed)
+   ================================================================= */
+
+.banner--fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-banner);
+}
+
+.banner--fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-banner);
+}
+
+/* =================================================================
+   BANNER COMPACT
+   ================================================================= */
+
+.banner--compact {
+  padding: var(--space-2) var(--space-4);
+}
+
+.banner--compact .banner__message {
+  font-size: var(--font-size-xs);
+}
+
+/* =================================================================
+   BANNER DISMISSING ANIMATION
+   ================================================================= */
+
+.banner--dismissing {
+  animation: banner-dismiss 0.3s ease-out forwards;
+}
+
+@keyframes banner-dismiss {
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* alerts/inline.css */
+/**
+ * ALERTS: Inline
+ * 
+ * Context-specifieke alerts die inline in content verschijnen.
+ * Gebruik voor form validation, sectie-specifieke berichten, etc.
+ * 
+ * AI-NOTE: Inline alerts zijn deel van de content flow.
+ * Gebruik voor berichten die direct gerelateerd zijn aan nabije content.
+ * 
+ * STRUCTURE:
+ * <div class="alert-inline alert-inline--warning">
+ *   <span class="alert-inline__icon">⚠</span>
+ *   <div class="alert-inline__content">
+ *     <p class="alert-inline__title">Low stock warning</p>
+ *     <p class="alert-inline__message">Only 3 items left in inventory</p>
+ *   </div>
+ *   <button class="alert-inline__action">Restock</button>
+ * </div>
+ */
+
+/* =================================================================
+   INLINE ALERT BASE
+   ================================================================= */
+
+.alert-inline {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+/* =================================================================
+   INLINE ALERT VARIANTS
+   ================================================================= */
+
+.alert-inline--info {
+  background: var(--info-subtle);
+  border-color: var(--info);
+}
+
+.alert-inline--info .alert-inline__icon,
+.alert-inline--info .alert-inline__title {
+  color: var(--info);
+}
+
+.alert-inline--success {
+  background: var(--success-subtle);
+  border-color: var(--success);
+}
+
+.alert-inline--success .alert-inline__icon,
+.alert-inline--success .alert-inline__title {
+  color: var(--success);
+}
+
+.alert-inline--warning {
+  background: var(--warning-subtle);
+  border-color: var(--warning);
+}
+
+.alert-inline--warning .alert-inline__icon,
+.alert-inline--warning .alert-inline__title {
+  color: var(--warning);
+}
+
+.alert-inline--error {
+  background: var(--error-subtle);
+  border-color: var(--error);
+}
+
+.alert-inline--error .alert-inline__icon,
+.alert-inline--error .alert-inline__title {
+  color: var(--error);
+}
+
+/* =================================================================
+   INLINE ALERT ELEMENTS
+   ================================================================= */
+
+.alert-inline__icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: var(--space-1);
+}
+
+.alert-inline__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.alert-inline__title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.alert-inline__message {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.alert-inline__action {
+  flex-shrink: 0;
+  padding: var(--space-1) var(--space-3);
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.alert-inline__action:hover {
+  background: var(--surface-hover);
+}
+
+.alert-inline__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-tertiary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.alert-inline__close:hover {
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+}
+
+/* =================================================================
+   INLINE ALERT SIZES
+   ================================================================= */
+
+.alert-inline--sm {
+  padding: var(--space-2) var(--space-3);
+  gap: var(--space-2);
+}
+
+.alert-inline--sm .alert-inline__icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.alert-inline--sm .alert-inline__title,
+.alert-inline--sm .alert-inline__message {
+  font-size: var(--font-size-xs);
+}
+
+.alert-inline--lg {
+  padding: var(--space-4) var(--space-5);
+  gap: var(--space-4);
+}
+
+.alert-inline--lg .alert-inline__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.alert-inline--lg .alert-inline__title {
+  font-size: var(--font-size-base);
+}
+
+.alert-inline--lg .alert-inline__message {
+  font-size: var(--font-size-sm);
+}
+
+/* =================================================================
+   INLINE ALERT WITH LIST
+   ================================================================= */
+
+.alert-inline__list {
+  margin: var(--space-2) 0 0;
+  padding-left: var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.alert-inline__list li {
+  margin-bottom: var(--space-1);
+}
+
+.alert-inline__list li:last-child {
+  margin-bottom: 0;
+}
+
+/* =================================================================
+   INLINE ALERT BORDERED (left border only)
+   ================================================================= */
+
+.alert-inline--bordered {
+  border: none;
+  border-left: 3px solid var(--border-default);
+  border-radius: 0;
+  background: var(--surface-primary);
+}
+
+.alert-inline--bordered.alert-inline--info {
+  border-left-color: var(--info);
+}
+
+.alert-inline--bordered.alert-inline--success {
+  border-left-color: var(--success);
+}
+
+.alert-inline--bordered.alert-inline--warning {
+  border-left-color: var(--warning);
+}
+
+.alert-inline--bordered.alert-inline--error {
+  border-left-color: var(--error);
+}
+
+/* alerts/toast.css */
+/**
+ * ALERTS: Toast
+ * 
+ * Notifications die tijdelijk verschijnen en automatisch verdwijnen.
+ * Gebruikt voor succesmeldingen, errors, of informatieve berichten.
+ * 
+ * AI-NOTE: Toasts worden gepositioneerd in een toast container.
+ * Gebruik voor korte, niet-kritieke berichten die geen interactie vereisen.
+ * 
+ * STRUCTURE:
+ * <div class="toast-container">
+ *   <div class="toast toast--success">
+ *     <span class="toast__icon">✓</span>
+ *     <div class="toast__content">
+ *       <p class="toast__message">Order saved successfully</p>
+ *     </div>
+ *     <button class="toast__close">×</button>
+ *   </div>
+ * </div>
+ */
+
+/* =================================================================
+   TOAST CONTAINER
+   ================================================================= */
+
+.toast-container {
+  position: fixed;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  pointer-events: none;
+  max-width: min(400px, calc(100vw - var(--space-4)));
+}
+
+/* Position variants */
+.toast-container--top-right {
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+.toast-container--top-left {
+  top: var(--space-4);
+  left: var(--space-4);
+}
+
+.toast-container--top-center {
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-container--bottom-right {
+  bottom: var(--space-4);
+  right: var(--space-4);
+}
+
+.toast-container--bottom-left {
+  bottom: var(--space-4);
+  left: var(--space-4);
+}
+
+.toast-container--bottom-center {
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* =================================================================
+   TOAST
+   ================================================================= */
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  animation: toast-slide-in 0.3s ease-out;
+}
+
+@keyframes toast-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast--exiting {
+  animation: toast-slide-out 0.2s ease-in forwards;
+}
+
+@keyframes toast-slide-out {
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* =================================================================
+   TOAST VARIANTS
+   ================================================================= */
+
+.toast--success {
+  border-left: 3px solid var(--success);
+}
+
+.toast--success .toast__icon {
+  color: var(--success);
+}
+
+.toast--error {
+  border-left: 3px solid var(--error);
+}
+
+.toast--error .toast__icon {
+  color: var(--error);
+}
+
+.toast--warning {
+  border-left: 3px solid var(--warning);
+}
+
+.toast--warning .toast__icon {
+  color: var(--warning);
+}
+
+.toast--info {
+  border-left: 3px solid var(--info);
+}
+
+.toast--info .toast__icon {
+  color: var(--info);
+}
+
+/* =================================================================
+   TOAST ELEMENTS
+   ================================================================= */
+
+.toast__icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: var(--space-1);
+}
+
+.toast__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.toast__title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.toast__message {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.toast__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-tertiary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.toast__close:hover {
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+}
+
+/* =================================================================
+   TOAST WITH ACTIONS
+   ================================================================= */
+
+.toast__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.toast__action {
+  padding: var(--space-1) var(--space-2);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.toast__action:hover {
+  background: var(--accent-subtle);
+}
+
+/* =================================================================
+   TOAST WITH PROGRESS
+   ================================================================= */
+
+.toast__progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--surface-tertiary);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  overflow: hidden;
+}
+
+.toast__progress-bar {
+  height: 100%;
+  background: var(--accent);
+  animation: toast-progress 5s linear forwards;
+}
+
+@keyframes toast-progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+
+/* ===== Component: forms ===== */
+/* forms/_base.css */
 /**
  * COMPONENT: Forms - Base
  * Gedeelde form styling voor alle form elementen
@@ -844,670 +1989,259 @@ table {
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
-/* Component: tables */
+/* forms/checkboxes.css */
 /**
- * COMPONENT: Tables - Base
- * Data table styling voor admin interfaces
+ * COMPONENT: Forms - Checkboxes & Radio
+ * Custom checkbox en radio button styling
  * 
- * AI-NOTE: Tables zijn voor data-heavy admin views.
- * Sorteerbaar, filterbaar, responsive.
- * 
- * VARIANTS: data-table, simple-table
+ * AI-NOTE: Custom checkboxes en radios voor consistente look.
+ * Native inputs zijn hidden maar blijven accessible.
  */
 
-/* ===== BASE TABLE ===== */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: var(--text-sm);
-}
-
-/* ===== TABLE HEADER ===== */
-.table th {
-  padding: var(--space-3) var(--space-4);
-  text-align: left;
-  font-weight: var(--font-medium);
-  color: var(--text-muted);
-  background: var(--bg-surface);
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
-}
-
-/* Sortable header */
-.table th.sortable {
+/* ===== CHECKBOX ===== */
+.form-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   cursor: pointer;
+}
+
+.form-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.form-checkbox__box {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.form-checkbox__box::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a0a0f' stroke-width='3'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+  background-size: contain;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: 
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Checked state */
+.form-checkbox__input:checked + .form-checkbox__box {
+  background: var(--tenant-accent, var(--accent));
+  border-color: var(--tenant-accent, var(--accent));
+}
+
+.form-checkbox__input:checked + .form-checkbox__box::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Focus state */
+.form-checkbox__input:focus-visible + .form-checkbox__box {
+  outline: 2px solid var(--tenant-accent, var(--accent));
+  outline-offset: 2px;
+}
+
+/* Disabled */
+.form-checkbox__input:disabled + .form-checkbox__box {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-checkbox__label {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
   user-select: none;
 }
 
-.table th.sortable:hover {
-  color: var(--text-primary);
-}
-
-.table th.sorted {
-  color: var(--tenant-accent, var(--accent));
-}
-
-/* ===== TABLE BODY ===== */
-.table td {
-  padding: var(--space-3) var(--space-4);
-  border-bottom: 1px solid var(--border);
-  color: var(--text-primary);
-  vertical-align: middle;
-}
-
-/* ===== ROW STATES ===== */
-.table tbody tr {
-  transition: background-color var(--transition-fast);
-}
-
-.table tbody tr:hover {
-  background: var(--bg-hover);
-}
-
-.table tbody tr.selected {
-  background: var(--accent-glow);
-}
-
-/* Clickable row */
-.table tbody tr.clickable {
+/* ===== RADIO ===== */
+.form-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   cursor: pointer;
 }
 
-/* ===== TABLE WRAPPER ===== */
-.table-wrapper {
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+.form-radio__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.table-wrapper .table th:first-child,
-.table-wrapper .table td:first-child {
-  padding-left: var(--space-5);
-}
-
-.table-wrapper .table th:last-child,
-.table-wrapper .table td:last-child {
-  padding-right: var(--space-5);
-}
-
-/* ===== DATA TABLE (with actions) ===== */
-.data-table {
-  background: var(--bg-surface);
-}
-
-.data-table .table-actions {
-  display: flex;
-  gap: var(--space-2);
-  opacity: 0.6;
-  transition: opacity var(--transition-fast);
-}
-
-.data-table tr:hover .table-actions {
-  opacity: 1;
-}
-
-/* ===== SIMPLE TABLE (minimal) ===== */
-.simple-table {
-  border: none;
-}
-
-.simple-table th {
+.form-radio__circle {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-full);
   background: transparent;
-  border-bottom: 2px solid var(--border);
-}
-
-.simple-table tr:last-child td {
-  border-bottom: none;
-}
-
-/* ===== TABLE PAGINATION ===== */
-.table-pagination {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: var(--space-3) var(--space-4);
-  background: var(--bg-surface);
-  border-top: 1px solid var(--border);
+  justify-content: center;
+  transition: 
+    border-color var(--transition-fast);
+}
+
+.form-radio__circle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--tenant-accent, var(--accent));
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transform: scale(0);
+  transition: 
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Checked state */
+.form-radio__input:checked + .form-radio__circle {
+  border-color: var(--tenant-accent, var(--accent));
+}
+
+.form-radio__input:checked + .form-radio__circle::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Focus state */
+.form-radio__input:focus-visible + .form-radio__circle {
+  outline: 2px solid var(--tenant-accent, var(--accent));
+  outline-offset: 2px;
+}
+
+/* Disabled */
+.form-radio__input:disabled + .form-radio__circle {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-radio__label {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: var(--text-primary);
+  user-select: none;
 }
 
-.table-pagination__info {
-  /* "Showing 1-10 of 100" */
-}
-
-.table-pagination__controls {
+/* ===== RADIO GROUP ===== */
+.form-radio-group {
   display: flex;
+  flex-direction: column;
   gap: var(--space-2);
 }
 
-/* ===== EMPTY STATE ===== */
-.table-empty {
-  text-align: center;
-  padding: var(--space-8) var(--space-4);
-  color: var(--text-muted);
+.form-radio-group--horizontal {
+  flex-direction: row;
+  gap: var(--space-4);
 }
 
-.table-empty__icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto var(--space-3);
-  opacity: 0.5;
-}
-
-/* Component: modals */
+/* forms/switch.css */
 /**
- * COMPONENT: Modals - Base
- * Overlay dialogs voor acties en content
+ * COMPONENT: Forms - Toggle Switch
+ * iOS-style toggle switch
  * 
- * AI-NOTE: Modals onderbreken de workflow voor belangrijke acties.
- * Gebruik spaarzaam. Zorg voor goede focus trap en escape handling.
- * 
- * VARIANTS: dialog, drawer, confirm
+ * AI-NOTE: Toggle switches voor on/off states.
+ * Beter dan checkbox voor settings die direct effect hebben.
  */
 
-/* ===== MODAL BACKDROP ===== */
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: var(--z-modal-backdrop);
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  
-  opacity: 0;
-  transition: opacity var(--duration-normal) var(--ease-out);
-}
-
-.modal-backdrop.is-open {
-  opacity: 1;
-}
-
-/* ===== BASE MODAL ===== */
-.modal {
-  position: fixed;
-  z-index: var(--z-modal);
-  
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
-  
-  max-height: calc(100vh - var(--space-8));
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  
-  /* Animation */
-  opacity: 0;
-  transform: scale(0.95) translateY(10px);
-  transition: 
-    opacity var(--duration-normal) var(--ease-out),
-    transform var(--duration-normal) var(--ease-out);
-}
-
-.modal.is-open {
-  opacity: 1;
-  transform: scale(1) translateY(0);
-}
-
-/* ===== MODAL POSITIONING ===== */
-.modal--center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.95);
-}
-
-.modal--center.is-open {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-/* ===== SIZE VARIANTS ===== */
-.modal--sm {
-  width: 90%;
-  max-width: 400px;
-}
-
-.modal--md {
-  width: 90%;
-  max-width: 560px;
-}
-
-.modal--lg {
-  width: 90%;
-  max-width: 800px;
-}
-
-.modal--full {
-  width: calc(100% - var(--space-8));
-  height: calc(100% - var(--space-8));
-  max-width: 1200px;
-}
-
-/* ===== MODAL SECTIONS ===== */
-.modal__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-4) var(--space-5);
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-}
-
-.modal__title {
-  font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
-  color: var(--text-primary);
-}
-
-.modal__close {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-md);
-  color: var(--text-muted);
-  transition: 
-    background-color var(--transition-fast),
-    color var(--transition-fast);
-}
-
-.modal__close:hover {
-  background: var(--bg-hover);
-  color: var(--text-primary);
-}
-
-.modal__body {
-  padding: var(--space-5);
-  overflow-y: auto;
-  flex: 1;
-}
-
-.modal__footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-5);
-  border-top: 1px solid var(--border);
-  flex-shrink: 0;
-}
-
-/* ===== DRAWER VARIANT ===== */
-.modal--drawer {
-  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 90%;
-  max-width: 480px;
-  max-height: none;
-  
-  transform: translateX(100%);
-}
-
-.modal--drawer.is-open {
-  transform: translateX(0);
-}
-
-.modal--drawer-left {
-  border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
-  left: 0;
-  right: auto;
-  
-  transform: translateX(-100%);
-}
-
-.modal--drawer-left.is-open {
-  transform: translateX(0);
-}
-
-/* ===== CONFIRM DIALOG ===== */
-.modal--confirm {
-  text-align: center;
-}
-
-.modal--confirm .modal__body {
-  padding: var(--space-6);
-}
-
-.modal--confirm .modal__icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto var(--space-4);
-  color: var(--warning);
-}
-
-.modal--confirm .modal__message {
-  color: var(--text-secondary);
-  margin-top: var(--space-2);
-}
-
-.modal--confirm .modal__footer {
-  justify-content: center;
-}
-
-/* ===== MODAL WITH FORM ===== */
-.modal--form .modal__body {
-  padding: 0;
-}
-
-.modal--form .form {
-  padding: var(--space-5);
-}
-
-/* Component: alerts */
-/**
- * COMPONENT: Alerts - Base
- * Notification messages en feedback
- * 
- * AI-NOTE: Alerts communiceren status, fouten, of bevestigingen.
- * Kan inline, banner, of toast zijn.
- * 
- * VARIANTS: inline, banner, toast
- * TYPES: success, warning, error, info
- */
-
-/* ===== BASE ALERT ===== */
-.alert {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  
-  padding: var(--space-3) var(--space-4);
-  
-  border-radius: var(--radius-md);
-  border: 1px solid transparent;
-  
-  font-size: var(--text-sm);
-  line-height: var(--leading-normal);
-}
-
-.alert__icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.alert__content {
-  flex: 1;
-  min-width: 0;
-}
-
-.alert__title {
-  font-weight: var(--font-semibold);
-  margin-bottom: var(--space-1);
-}
-
-.alert__message {
-  color: inherit;
-  opacity: 0.9;
-}
-
-.alert__dismiss {
-  flex-shrink: 0;
-  padding: var(--space-1);
-  margin: calc(-1 * var(--space-1));
-  opacity: 0.6;
-  transition: opacity var(--transition-fast);
-}
-
-.alert__dismiss:hover {
-  opacity: 1;
-}
-
-/* ===== TYPE VARIANTS ===== */
-.alert--success {
-  background: var(--success-dim);
-  border-color: var(--success);
-  color: var(--success);
-}
-
-.alert--warning {
-  background: var(--warning-dim);
-  border-color: var(--warning);
-  color: var(--warning);
-}
-
-.alert--error {
-  background: var(--error-dim);
-  border-color: var(--error);
-  color: var(--error);
-}
-
-.alert--info {
-  background: var(--info-dim);
-  border-color: var(--info);
-  color: var(--info);
-}
-
-/* ===== BANNER VARIANT ===== */
-.alert--banner {
-  border-radius: 0;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  border-bottom-width: 2px;
-}
-
-/* ===== TOAST VARIANT ===== */
-.alert--toast {
-  box-shadow: var(--shadow-lg);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  min-width: 300px;
-  max-width: 400px;
-}
-
-.alert--toast.alert--success {
-  border-left: 3px solid var(--success);
-  background: var(--bg-elevated);
-  color: var(--text-primary);
-}
-
-.alert--toast.alert--error {
-  border-left: 3px solid var(--error);
-  background: var(--bg-elevated);
-  color: var(--text-primary);
-}
-
-.alert--toast.alert--warning {
-  border-left: 3px solid var(--warning);
-  background: var(--bg-elevated);
-  color: var(--text-primary);
-}
-
-.alert--toast.alert--info {
-  border-left: 3px solid var(--info);
-  background: var(--bg-elevated);
-  color: var(--text-primary);
-}
-
-/* ===== TOAST CONTAINER ===== */
-.toast-container {
-  position: fixed;
-  z-index: var(--z-toast);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  pointer-events: none;
-}
-
-.toast-container--top-right {
-  top: var(--space-4);
-  right: var(--space-4);
-}
-
-.toast-container--bottom-right {
-  bottom: var(--space-4);
-  right: var(--space-4);
-}
-
-.toast-container--top-center {
-  top: var(--space-4);
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.toast-container .alert--toast {
-  pointer-events: auto;
-  animation: slide-in-up var(--duration-normal) var(--ease-out);
-}
-
-/* ===== INLINE (in forms) ===== */
-.alert--inline {
-  padding: var(--space-2) var(--space-3);
-  font-size: var(--text-xs);
-}
-
-/* Component: badges */
-/**
- * COMPONENT: Badges - Base
- * Status indicators en labels
- * 
- * AI-NOTE: Badges tonen status of categorieën.
- * Compact, kleurgecodeerd, vaak in tabellen of kaarten.
- * 
- * COLORS: default, success, warning, error, info, accent
- */
-
-/* ===== BASE BADGE ===== */
-.badge {
+/* ===== SWITCH ===== */
+.form-switch {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
-  
-  padding: var(--space-1) var(--space-2);
-  
-  font-size: var(--text-xs);
-  font-weight: var(--font-medium);
-  line-height: 1;
-  white-space: nowrap;
-  
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.form-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.form-switch__track {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: var(--bg-active);
   border-radius: var(--radius-full);
-  
-  /* Default: neutral */
-  background: var(--bg-hover);
-  color: var(--text-secondary);
+  transition: background-color var(--transition-normal);
 }
 
-/* ===== COLOR VARIANTS ===== */
-.badge--success {
-  background: var(--success-dim);
-  color: var(--success);
+.form-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--text-muted);
+  border-radius: var(--radius-full);
+  transition: 
+    transform var(--transition-normal),
+    background-color var(--transition-normal);
 }
 
-.badge--warning {
-  background: var(--warning-dim);
-  color: var(--warning);
-}
-
-.badge--error {
-  background: var(--error-dim);
-  color: var(--error);
-}
-
-.badge--info {
-  background: var(--info-dim);
-  color: var(--info);
-}
-
-.badge--accent {
-  background: var(--accent-glow);
-  color: var(--tenant-accent, var(--accent));
-}
-
-/* ===== SOLID VARIANTS ===== */
-.badge--solid {
-  color: var(--bg-deep);
-}
-
-.badge--solid.badge--success {
-  background: var(--success);
-}
-
-.badge--solid.badge--warning {
-  background: var(--warning);
-}
-
-.badge--solid.badge--error {
-  background: var(--error);
-}
-
-.badge--solid.badge--info {
-  background: var(--info);
-}
-
-.badge--solid.badge--accent {
+/* Checked state */
+.form-switch__input:checked + .form-switch__track {
   background: var(--tenant-accent, var(--accent));
 }
 
-/* ===== OUTLINE VARIANTS ===== */
-.badge--outline {
-  background: transparent;
-  border: 1px solid currentColor;
+.form-switch__input:checked + .form-switch__track .form-switch__thumb {
+  transform: translateX(20px);
+  background: var(--bg-deep);
 }
 
-/* ===== SIZE VARIANTS ===== */
-.badge--sm {
-  padding: 2px var(--space-1);
-  font-size: 10px;
+/* Focus state */
+.form-switch__input:focus-visible + .form-switch__track {
+  outline: 2px solid var(--tenant-accent, var(--accent));
+  outline-offset: 2px;
 }
 
-.badge--lg {
-  padding: var(--space-2) var(--space-3);
+/* Disabled */
+.form-switch__input:disabled + .form-switch__track {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-switch__label {
   font-size: var(--text-sm);
+  color: var(--text-primary);
+  user-select: none;
 }
 
-/* ===== DOT BADGE ===== */
-.badge--dot {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border-radius: var(--radius-full);
+/* ===== SMALL SWITCH ===== */
+.form-switch--sm .form-switch__track {
+  width: 36px;
+  height: 20px;
 }
 
-.badge--dot.badge--success { background: var(--success); }
-.badge--dot.badge--warning { background: var(--warning); }
-.badge--dot.badge--error { background: var(--error); }
-.badge--dot.badge--info { background: var(--info); }
-.badge--dot.badge--accent { background: var(--tenant-accent, var(--accent)); }
-
-/* ===== WITH ICON ===== */
-.badge__icon {
-  width: 12px;
-  height: 12px;
+.form-switch--sm .form-switch__thumb {
+  width: 16px;
+  height: 16px;
 }
 
-/* ===== ORDER STATUS BADGES (semantic) ===== */
-.badge--pending {
-  background: var(--warning-dim);
-  color: var(--warning);
+.form-switch--sm .form-switch__input:checked + .form-switch__track .form-switch__thumb {
+  transform: translateX(16px);
 }
 
-.badge--processing {
-  background: var(--info-dim);
-  color: var(--info);
-}
 
-.badge--completed {
-  background: var(--success-dim);
-  color: var(--success);
-}
-
-.badge--cancelled {
-  background: var(--error-dim);
-  color: var(--error);
-}
-
-.badge--refunded {
-  background: var(--bg-hover);
-  color: var(--text-muted);
-}
-
-/* Component: headers */
+/* ===== Component: headers ===== */
+/* headers/_base.css */
 /**
  * HEADERS - Base Styles
  * 
@@ -1730,7 +2464,330 @@ table {
   flex: 1;
 }
 
-/* Component: footers */
+/* headers/centered.css */
+/**
+ * HEADER VARIANT: Centered
+ * 
+ * Logo gecentreerd met navigatie links en rechts.
+ * Ideaal voor: fashion brands, luxury shops, portfolios.
+ * 
+ * STRUCTURE:
+ * <header class="header header--centered" data-header-variant="centered">
+ *   <nav class="header__nav header__nav--left">
+ *     <a class="header__nav-link">Shop</a>
+ *     <a class="header__nav-link">Collecties</a>
+ *   </nav>
+ *   <a class="header__logo">BRAND</a>
+ *   <nav class="header__nav header__nav--right">
+ *     <a class="header__nav-link">Account</a>
+ *     <a class="header__nav-link">Winkelwagen</a>
+ *   </nav>
+ *   <button class="header__mobile-toggle">☰</button>
+ * </header>
+ */
+
+.header--centered {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Logo in het midden */
+.header--centered .header__logo {
+  justify-self: center;
+  text-align: center;
+}
+
+.header--centered .header__logo-text {
+  font-size: var(--font-size-2xl);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Nav links uitlijnen */
+.header--centered .header__nav--left {
+  justify-self: start;
+}
+
+.header--centered .header__nav--right {
+  justify-self: end;
+}
+
+/* Mobile: 2-koloms layout */
+@media (max-width: 768px) {
+  .header--centered {
+    grid-template-columns: auto 1fr auto;
+  }
+  
+  .header--centered .header__nav--left,
+  .header--centered .header__nav--right {
+    display: none;
+  }
+  
+  .header--centered .header__logo {
+    grid-column: 2;
+  }
+  
+  .header--centered .header__mobile-toggle {
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  /* Actions aan de rechterkant */
+  .header--centered .header__actions {
+    grid-column: 3;
+  }
+}
+
+/* Desktop: alles zichtbaar */
+@media (min-width: 769px) {
+  .header--centered .header__mobile-toggle {
+    display: none;
+  }
+}
+
+/* headers/full.css */
+/**
+ * HEADER VARIANT: Full
+ * 
+ * Complete header met alle elementen.
+ * Ideaal voor: webshops, dashboards, content-rijke sites.
+ * 
+ * STRUCTURE:
+ * <header class="header header--full" data-header-variant="full">
+ *   <a class="header__logo">Logo</a>
+ *   <nav class="header__nav">
+ *     <a class="header__nav-link">Link</a>
+ *   </nav>
+ *   <div class="header__spacer"></div>
+ *   <div class="header__search">
+ *     <input class="header__search-input">
+ *   </div>
+ *   <div class="header__actions">
+ *     <button class="header__action-btn">🔔</button>
+ *     <button class="header__action-btn">🛒</button>
+ *     <img class="header__avatar">
+ *   </div>
+ *   <button class="header__mobile-toggle">☰</button>
+ * </header>
+ */
+
+.header--full {
+  gap: var(--space-4);
+}
+
+/* Logo krijgt vaste breedte */
+.header--full .header__logo {
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+
+/* Nav neemt beschikbare ruimte */
+.header--full .header__nav {
+  flex: 0 0 auto;
+}
+
+/* Search neemt flexibele ruimte */
+.header--full .header__search {
+  flex: 1;
+  max-width: 400px;
+}
+
+/* Actions rechts */
+.header--full .header__actions {
+  flex: 0 0 auto;
+}
+
+/* Desktop: alles zichtbaar */
+@media (min-width: 1024px) {
+  .header--full .header__mobile-toggle {
+    display: none;
+  }
+  
+  .header--full .header__nav,
+  .header--full .header__search {
+    display: flex;
+  }
+}
+
+/* Tablet: search verborgen */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header--full .header__search {
+    display: none;
+  }
+  
+  .header--full .header__nav {
+    display: flex;
+  }
+}
+
+/* Mobile: alleen logo, actions en toggle */
+@media (max-width: 767px) {
+  .header--full .header__nav,
+  .header--full .header__search {
+    display: none;
+  }
+  
+  .header--full .header__mobile-toggle {
+    display: flex;
+  }
+}
+
+/* headers/minimal.css */
+/**
+ * HEADER VARIANT: Minimal
+ * 
+ * Eenvoudige header met alleen logo en hamburger menu.
+ * Ideaal voor: landing pages, checkout flows, mobile-first.
+ * 
+ * STRUCTURE:
+ * <header class="header header--minimal" data-header-variant="minimal">
+ *   <a class="header__logo">Logo</a>
+ *   <div class="header__spacer"></div>
+ *   <button class="header__mobile-toggle">☰</button>
+ * </header>
+ */
+
+.header--minimal {
+  --header-height: var(--space-14);
+  justify-content: space-between;
+}
+
+.header--minimal .header__logo {
+  flex: 0 0 auto;
+}
+
+/* Mobile toggle altijd zichtbaar in minimal */
+.header--minimal .header__mobile-toggle {
+  display: flex;
+}
+
+/* Optionele CTA button rechts */
+.header--minimal .header__cta {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header--minimal .header__cta {
+    display: flex;
+    margin-left: var(--space-4);
+  }
+  
+  /* Op desktop kan toggle verborgen als er geen nav is */
+  .header--minimal[data-has-nav="false"] .header__mobile-toggle {
+    display: none;
+  }
+}
+
+/* headers/split.css */
+/**
+ * HEADER VARIANT: Split
+ * 
+ * Strikte scheiding tussen logo/nav links en actions rechts.
+ * Ideaal voor: SaaS apps, admin panels, professional services.
+ * 
+ * STRUCTURE:
+ * <header class="header header--split" data-header-variant="split">
+ *   <div class="header__left">
+ *     <a class="header__logo">Logo</a>
+ *     <nav class="header__nav">
+ *       <a class="header__nav-link">Dashboard</a>
+ *       <a class="header__nav-link">Orders</a>
+ *     </nav>
+ *   </div>
+ *   <div class="header__right">
+ *     <div class="header__search">...</div>
+ *     <div class="header__actions">...</div>
+ *   </div>
+ *   <button class="header__mobile-toggle">☰</button>
+ * </header>
+ */
+
+.header--split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left section: logo + nav */
+.header--split .header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* Right section: search + actions */
+.header--split .header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Divider tussen links en rechts */
+.header--split .header__divider {
+  width: 1px;
+  height: 1.5rem;
+  background: var(--border-subtle);
+  margin: 0 var(--space-2);
+}
+
+/* Nav styling voor split */
+.header--split .header__nav {
+  border-left: 1px solid var(--border-subtle);
+  padding-left: var(--space-4);
+  margin-left: var(--space-2);
+}
+
+/* Compact search in split header */
+.header--split .header__search {
+  min-width: 180px;
+  max-width: 280px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .header--split .header__mobile-toggle {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header--split .header__search {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .header--split .header__left,
+  .header--split .header__right {
+    display: none;
+  }
+  
+  /* Simplified mobile layout */
+  .header--split {
+    justify-content: space-between;
+  }
+  
+  .header--split .header__logo {
+    display: flex;
+  }
+  
+  .header--split .header__mobile-toggle {
+    display: flex;
+  }
+  
+  .header--split .header__actions {
+    display: flex;
+  }
+}
+
+
+/* ===== Component: footers ===== */
+/* footers/_base.css */
 /**
  * FOOTERS - Base Styles
  * 
@@ -2003,7 +3060,353 @@ table {
   }
 }
 
-/* Component: navigation */
+/* footers/detailed.css */
+/**
+ * FOOTER VARIANT: Detailed
+ * 
+ * Uitgebreide footer met meerdere kolommen, newsletter en social.
+ * Ideaal voor: grote webshops, enterprise sites, marketplaces.
+ * 
+ * STRUCTURE:
+ * <footer class="footer footer--detailed" data-footer-variant="detailed">
+ *   <div class="footer__container">
+ *     <div class="footer__top">
+ *       <div class="footer__brand">...</div>
+ *       <div class="footer__columns">
+ *         <div class="footer__column">
+ *           <h4 class="footer__column-title">Products</h4>
+ *           <div class="footer__links">...</div>
+ *         </div>
+ *         <!-- More columns -->
+ *       </div>
+ *       <div class="footer__newsletter">...</div>
+ *     </div>
+ *     <div class="footer__bottom">...</div>
+ *   </div>
+ * </footer>
+ */
+
+.footer--detailed {
+  --footer-padding-y: var(--space-16);
+}
+
+.footer--detailed .footer__top {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: var(--space-12);
+}
+
+.footer--detailed .footer__brand {
+  grid-column: 1;
+}
+
+.footer--detailed .footer__columns {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.footer--detailed .footer__newsletter {
+  grid-column: 3;
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer--detailed .footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer--detailed .footer__brand {
+    grid-column: 1;
+  }
+  
+  .footer--detailed .footer__newsletter {
+    grid-column: 2;
+  }
+  
+  .footer--detailed .footer__columns {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer--detailed .footer__top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  
+  .footer--detailed .footer__columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer--detailed .footer__brand {
+    text-align: center;
+  }
+  
+  .footer--detailed .footer__description {
+    max-width: 100%;
+  }
+  
+  .footer--detailed .footer__social {
+    justify-content: center;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .footer--detailed .footer__columns {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer--detailed .footer__links {
+    align-items: center;
+  }
+}
+
+/* footers/links.css */
+/**
+ * FOOTER VARIANT: Links
+ * 
+ * Focus op linklijsten in meerdere kolommen.
+ * Ideaal voor: content sites, documentatie, corporate sites.
+ * 
+ * STRUCTURE:
+ * <footer class="footer footer--links" data-footer-variant="links">
+ *   <div class="footer__container">
+ *     <div class="footer__columns">
+ *       <div class="footer__column">
+ *         <h4 class="footer__column-title">Category</h4>
+ *         <div class="footer__links">...</div>
+ *       </div>
+ *       <!-- 4-6 columns -->
+ *     </div>
+ *     <div class="footer__bottom">...</div>
+ *   </div>
+ * </footer>
+ */
+
+.footer--links {
+  --footer-padding-y: var(--space-12);
+}
+
+.footer--links .footer__columns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-6);
+}
+
+.footer--links .footer__column-title {
+  color: var(--text-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-4);
+}
+
+.footer--links .footer__link {
+  padding: var(--space-1) 0;
+}
+
+/* Large desktop: 5 columns */
+@media (min-width: 1200px) {
+  .footer--links .footer__columns {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Desktop: 4 columns */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .footer--links .footer__columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet: 3 columns */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer--links .footer__columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: 2 columns */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer--links .footer__columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small mobile: 1 column */
+@media (max-width: 480px) {
+  .footer--links .footer__columns {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer--links .footer__links {
+    align-items: center;
+  }
+}
+
+/* footers/minimal.css */
+/**
+ * FOOTER VARIANT: Minimal
+ * 
+ * Alleen copyright en essentiële legal links.
+ * Ideaal voor: checkout flows, apps, landing pages.
+ * 
+ * STRUCTURE:
+ * <footer class="footer footer--minimal" data-footer-variant="minimal">
+ *   <div class="footer__container footer__bottom">
+ *     <p class="footer__copyright">© 2026 Bedrijfsnaam</p>
+ *     <div class="footer__legal-links">
+ *       <a class="footer__legal-link">Privacy</a>
+ *       <a class="footer__legal-link">Voorwaarden</a>
+ *     </div>
+ *   </div>
+ * </footer>
+ */
+
+.footer--minimal {
+  --footer-padding-y: var(--space-6);
+  --footer-bg: transparent;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footer--minimal .footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2) var(--space-6);
+}
+
+.footer--minimal .footer__bottom {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: none;
+}
+
+.footer--minimal .footer__copyright {
+  font-size: var(--font-size-xs);
+}
+
+.footer--minimal .footer__legal-links {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.footer--minimal .footer__legal-link {
+  font-size: var(--font-size-xs);
+}
+
+/* Separator dot between links */
+.footer--minimal .footer__legal-links .footer__legal-link:not(:last-child)::after {
+  content: "·";
+  margin-left: var(--space-4);
+  color: var(--text-tertiary);
+}
+
+/* Mobile: stack vertical */
+@media (max-width: 480px) {
+  .footer--minimal .footer__container {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .footer--minimal .footer__legal-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* footers/simple.css */
+/**
+ * FOOTER VARIANT: Simple
+ * 
+ * Eenvoudige footer met logo, korte beschrijving en links.
+ * Ideaal voor: kleine webshops, startups, service pages.
+ * 
+ * STRUCTURE:
+ * <footer class="footer footer--simple" data-footer-variant="simple">
+ *   <div class="footer__container">
+ *     <div class="footer__main">
+ *       <div class="footer__brand">
+ *         <a class="footer__logo">Logo</a>
+ *         <p class="footer__description">...</p>
+ *         <div class="footer__social">...</div>
+ *       </div>
+ *       <nav class="footer__nav">
+ *         <a class="footer__link">Link</a>
+ *       </nav>
+ *     </div>
+ *     <div class="footer__bottom">
+ *       <p class="footer__copyright">© 2026</p>
+ *     </div>
+ *   </div>
+ * </footer>
+ */
+
+.footer--simple {
+  --footer-padding-y: var(--space-10);
+}
+
+.footer--simple .footer__main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.footer--simple .footer__brand {
+  flex: 0 0 auto;
+  max-width: 300px;
+}
+
+.footer--simple .footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.footer--simple .footer__bottom {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer--simple .footer__main {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer--simple .footer__brand {
+    max-width: 100%;
+  }
+  
+  .footer--simple .footer__description {
+    max-width: 100%;
+  }
+  
+  .footer--simple .footer__social {
+    justify-content: center;
+  }
+  
+  .footer--simple .footer__nav {
+    justify-content: center;
+  }
+}
+
+
+/* ===== Component: navigation ===== */
+/* navigation/_base.css */
 /**
  * COMPONENT: Navigation - Base
  * Navigation patterns voor alle contexten
@@ -2267,6 +3670,1733 @@ table {
 .breadcrumbs__current {
   color: var(--text-primary);
 }
+
+/* navigation/mobile-menu.css */
+/**
+ * NAVIGATION: Mobile Menu
+ * 
+ * Full-screen mobile navigatiemenu.
+ * Slide-in van links of overlay.
+ * 
+ * AI-NOTE: Gebruik voor mobile header navigatie.
+ * Trigger via hamburger button in header.
+ * 
+ * STRUCTURE:
+ * <div class="mobile-menu" data-open="false">
+ *   <div class="mobile-menu__overlay"></div>
+ *   <div class="mobile-menu__panel">
+ *     <div class="mobile-menu__header">
+ *       <a class="mobile-menu__logo">Logo</a>
+ *       <button class="mobile-menu__close">×</button>
+ *     </div>
+ *     <nav class="mobile-menu__nav">
+ *       <a class="mobile-menu__link">Home</a>
+ *       <a class="mobile-menu__link active">Products</a>
+ *       <div class="mobile-menu__accordion">
+ *         <button class="mobile-menu__accordion-trigger">Categories</button>
+ *         <div class="mobile-menu__accordion-content">
+ *           <a class="mobile-menu__sublink">Category 1</a>
+ *         </div>
+ *       </div>
+ *     </nav>
+ *     <div class="mobile-menu__footer">
+ *       <button class="btn btn--primary btn--full">Login</button>
+ *     </div>
+ *   </div>
+ * </div>
+ */
+
+/* =================================================================
+   MOBILE MENU CONTAINER
+   ================================================================= */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mobile-menu[data-open="true"] {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =================================================================
+   OVERLAY
+   ================================================================= */
+
+.mobile-menu__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.mobile-menu[data-open="true"] .mobile-menu__overlay {
+  opacity: 1;
+}
+
+/* =================================================================
+   PANEL
+   ================================================================= */
+
+.mobile-menu__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(320px, 85vw);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-primary);
+  transform: translateX(-100%);
+  transition: transform var(--transition-normal);
+  overflow: hidden;
+}
+
+.mobile-menu[data-open="true"] .mobile-menu__panel {
+  transform: translateX(0);
+}
+
+/* Right slide variant */
+.mobile-menu--right .mobile-menu__panel {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+
+.mobile-menu--right[data-open="true"] .mobile-menu__panel {
+  transform: translateX(0);
+}
+
+/* =================================================================
+   HEADER
+   ================================================================= */
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-menu__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.mobile-menu__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu__close:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+/* =================================================================
+   NAVIGATION
+   ================================================================= */
+
+.mobile-menu__nav {
+  flex: 1;
+  padding: var(--space-4);
+  overflow-y: auto;
+}
+
+.mobile-menu__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-2);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu__link:hover {
+  background: var(--surface-hover);
+}
+
+.mobile-menu__link.active {
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.mobile-menu__link-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--text-secondary);
+}
+
+/* =================================================================
+   ACCORDION (Nested menu)
+   ================================================================= */
+
+.mobile-menu__accordion {
+  margin: var(--space-1) 0;
+}
+
+.mobile-menu__accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-3) var(--space-2);
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu__accordion-trigger:hover {
+  background: var(--surface-hover);
+}
+
+.mobile-menu__accordion-trigger::after {
+  content: "›";
+  font-size: 1.25rem;
+  color: var(--text-tertiary);
+  transition: transform var(--transition-fast);
+}
+
+.mobile-menu__accordion[data-open="true"] .mobile-menu__accordion-trigger::after {
+  transform: rotate(90deg);
+}
+
+.mobile-menu__accordion-content {
+  display: none;
+  padding-left: var(--space-4);
+}
+
+.mobile-menu__accordion[data-open="true"] .mobile-menu__accordion-content {
+  display: block;
+}
+
+.mobile-menu__sublink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu__sublink:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+/* =================================================================
+   FOOTER
+   ================================================================= */
+
+.mobile-menu__footer {
+  padding: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.mobile-menu__footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.mobile-menu__footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+}
+
+.mobile-menu__footer-link:hover {
+  color: var(--text-primary);
+}
+
+/* navigation/sidebar.css */
+/**
+ * NAVIGATION: Sidebar
+ * 
+ * Admin/dashboard sidebar navigatie.
+ * Collapsible op tablet/mobile.
+ * 
+ * AI-NOTE: Gebruik voor admin panels en dashboards.
+ * Combineert met admin-layout voor volledige layout.
+ * 
+ * STRUCTURE:
+ * <aside class="sidebar">
+ *   <div class="sidebar__header">
+ *     <a class="sidebar__logo">Logo</a>
+ *     <button class="sidebar__collapse">←</button>
+ *   </div>
+ *   <nav class="sidebar__nav">
+ *     <a class="sidebar__link">Dashboard</a>
+ *     <a class="sidebar__link sidebar__link--active">Orders</a>
+ *     <div class="sidebar__group">
+ *       <span class="sidebar__group-title">Settings</span>
+ *       <a class="sidebar__link">General</a>
+ *     </div>
+ *   </nav>
+ *   <div class="sidebar__footer">
+ *     <a class="sidebar__link">Logout</a>
+ *   </div>
+ * </aside>
+ */
+
+/* =================================================================
+   SIDEBAR CONTAINER
+   ================================================================= */
+
+.sidebar {
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 64px;
+  --sidebar-bg: var(--surface-primary);
+  --sidebar-border: var(--border-subtle);
+  
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  transition: width var(--transition-normal);
+  overflow: hidden;
+}
+
+.sidebar--collapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+.sidebar--collapsed .sidebar__text,
+.sidebar--collapsed .sidebar__group-title {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* =================================================================
+   SIDEBAR HEADER
+   ================================================================= */
+
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--sidebar-border);
+  min-height: var(--space-16);
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.sidebar__logo-icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.sidebar__collapse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sidebar__collapse:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.sidebar--collapsed .sidebar__collapse {
+  transform: rotate(180deg);
+}
+
+/* =================================================================
+   SIDEBAR NAVIGATION
+   ================================================================= */
+
+.sidebar__nav {
+  flex: 1;
+  padding: var(--space-3);
+  overflow-y: auto;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  margin-bottom: var(--space-1);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.sidebar__link:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+.sidebar__link--active {
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.sidebar__link--active:hover {
+  background: var(--accent-subtle);
+}
+
+.sidebar__link-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.sidebar__link-badge {
+  margin-left: auto;
+  padding: var(--space-1) var(--space-2);
+  background: var(--accent);
+  color: var(--text-on-accent);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-full);
+}
+
+/* =================================================================
+   SIDEBAR GROUPS
+   ================================================================= */
+
+.sidebar__group {
+  margin-top: var(--space-4);
+}
+
+.sidebar__group-title {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--text-tertiary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: opacity var(--transition-fast);
+}
+
+/* =================================================================
+   SIDEBAR FOOTER
+   ================================================================= */
+
+.sidebar__footer {
+  padding: var(--space-3);
+  border-top: 1px solid var(--sidebar-border);
+}
+
+.sidebar__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.sidebar__user-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.sidebar__user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar__user-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__user-role {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+}
+
+/* =================================================================
+   MOBILE OVERLAY
+   ================================================================= */
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-overlay);
+}
+
+@media (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: var(--z-modal);
+    transform: translateX(-100%);
+  }
+  
+  .sidebar--open {
+    transform: translateX(0);
+  }
+  
+  .sidebar--open + .sidebar-overlay {
+    display: block;
+  }
+}
+
+/* navigation/topbar.css */
+/**
+ * NAVIGATION: Topbar
+ * 
+ * Horizontale navigatiebalk, vaak onder de header.
+ * Voor secundaire navigatie of tabs.
+ * 
+ * AI-NOTE: Gebruik voor category filters, tab navigatie,
+ * of secundaire menu's binnen een pagina.
+ * 
+ * STRUCTURE:
+ * <nav class="topbar">
+ *   <div class="topbar__nav">
+ *     <a class="topbar__link active">All</a>
+ *     <a class="topbar__link">Pending</a>
+ *     <a class="topbar__link">Completed</a>
+ *   </div>
+ *   <div class="topbar__actions">
+ *     <button class="btn btn--sm">Filter</button>
+ *   </div>
+ * </nav>
+ */
+
+/* =================================================================
+   TOPBAR CONTAINER
+   ================================================================= */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--surface-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.topbar--sticky {
+  position: sticky;
+  top: var(--space-16); /* Below header */
+  z-index: var(--z-sticky);
+}
+
+/* =================================================================
+   TOPBAR NAVIGATION
+   ================================================================= */
+
+.topbar__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.topbar__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.topbar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.topbar__link:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+.topbar__link.active,
+.topbar__link[aria-current="page"] {
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.topbar__link-count {
+  padding: var(--space-1) var(--space-2);
+  background: var(--surface-tertiary);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-full);
+}
+
+.topbar__link.active .topbar__link-count {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+/* =================================================================
+   TOPBAR ACTIONS
+   ================================================================= */
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+/* =================================================================
+   TOPBAR VARIANTS
+   ================================================================= */
+
+/* Pills style */
+.topbar--pills .topbar__link {
+  border-radius: var(--radius-full);
+}
+
+/* Underline style */
+.topbar--underline {
+  border-bottom: none;
+}
+
+.topbar--underline .topbar__link {
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  padding-bottom: var(--space-3);
+  margin-bottom: -2px;
+}
+
+.topbar--underline .topbar__link.active {
+  background: transparent;
+  border-bottom-color: var(--accent);
+}
+
+/* Compact */
+.topbar--compact {
+  padding: var(--space-1) var(--space-2);
+}
+
+.topbar--compact .topbar__link {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+/* =================================================================
+   RESPONSIVE
+   ================================================================= */
+
+@media (max-width: 767px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .topbar__nav {
+    order: 2;
+    width: 100%;
+  }
+  
+  .topbar__actions {
+    order: 1;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+
+/* ===== Component: tables ===== */
+/* tables/_base.css */
+/**
+ * COMPONENT: Tables - Base
+ * Data table styling voor admin interfaces
+ * 
+ * AI-NOTE: Tables zijn voor data-heavy admin views.
+ * Sorteerbaar, filterbaar, responsive.
+ * 
+ * VARIANTS: data-table, simple-table
+ */
+
+/* ===== BASE TABLE ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+/* ===== TABLE HEADER ===== */
+.table th {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-weight: var(--font-medium);
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+/* Sortable header */
+.table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.table th.sortable:hover {
+  color: var(--text-primary);
+}
+
+.table th.sorted {
+  color: var(--tenant-accent, var(--accent));
+}
+
+/* ===== TABLE BODY ===== */
+.table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+/* ===== ROW STATES ===== */
+.table tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.table tbody tr:hover {
+  background: var(--bg-hover);
+}
+
+.table tbody tr.selected {
+  background: var(--accent-glow);
+}
+
+/* Clickable row */
+.table tbody tr.clickable {
+  cursor: pointer;
+}
+
+/* ===== TABLE WRAPPER ===== */
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.table-wrapper .table th:first-child,
+.table-wrapper .table td:first-child {
+  padding-left: var(--space-5);
+}
+
+.table-wrapper .table th:last-child,
+.table-wrapper .table td:last-child {
+  padding-right: var(--space-5);
+}
+
+/* ===== DATA TABLE (with actions) ===== */
+.data-table {
+  background: var(--bg-surface);
+}
+
+.data-table .table-actions {
+  display: flex;
+  gap: var(--space-2);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.data-table tr:hover .table-actions {
+  opacity: 1;
+}
+
+/* ===== SIMPLE TABLE (minimal) ===== */
+.simple-table {
+  border: none;
+}
+
+.simple-table th {
+  background: transparent;
+  border-bottom: 2px solid var(--border);
+}
+
+.simple-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== TABLE PAGINATION ===== */
+.table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.table-pagination__info {
+  /* "Showing 1-10 of 100" */
+}
+
+.table-pagination__controls {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* ===== EMPTY STATE ===== */
+.table-empty {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  color: var(--text-muted);
+}
+
+.table-empty__icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-3);
+  opacity: 0.5;
+}
+
+
+/* ===== Component: modals ===== */
+/* modals/_base.css */
+/**
+ * COMPONENT: Modals - Base
+ * Overlay dialogs voor acties en content
+ * 
+ * AI-NOTE: Modals onderbreken de workflow voor belangrijke acties.
+ * Gebruik spaarzaam. Zorg voor goede focus trap en escape handling.
+ * 
+ * VARIANTS: dialog, drawer, confirm
+ */
+
+/* ===== MODAL BACKDROP ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal-backdrop);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+}
+
+/* ===== BASE MODAL ===== */
+.modal {
+  position: fixed;
+  z-index: var(--z-modal);
+  
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  
+  max-height: calc(100vh - var(--space-8));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  /* Animation */
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  transition: 
+    opacity var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+}
+
+.modal.is-open {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* ===== MODAL POSITIONING ===== */
+.modal--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.modal--center.is-open {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ===== SIZE VARIANTS ===== */
+.modal--sm {
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal--md {
+  width: 90%;
+  max-width: 560px;
+}
+
+.modal--lg {
+  width: 90%;
+  max-width: 800px;
+}
+
+.modal--full {
+  width: calc(100% - var(--space-8));
+  height: calc(100% - var(--space-8));
+  max-width: 1200px;
+}
+
+/* ===== MODAL SECTIONS ===== */
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.modal__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+.modal__close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  transition: 
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.modal__close:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.modal__body {
+  padding: var(--space-5);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* ===== DRAWER VARIANT ===== */
+.modal--drawer {
+  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  max-width: 480px;
+  max-height: none;
+  
+  transform: translateX(100%);
+}
+
+.modal--drawer.is-open {
+  transform: translateX(0);
+}
+
+.modal--drawer-left {
+  border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  left: 0;
+  right: auto;
+  
+  transform: translateX(-100%);
+}
+
+.modal--drawer-left.is-open {
+  transform: translateX(0);
+}
+
+/* ===== CONFIRM DIALOG ===== */
+.modal--confirm {
+  text-align: center;
+}
+
+.modal--confirm .modal__body {
+  padding: var(--space-6);
+}
+
+.modal--confirm .modal__icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-4);
+  color: var(--warning);
+}
+
+.modal--confirm .modal__message {
+  color: var(--text-secondary);
+  margin-top: var(--space-2);
+}
+
+.modal--confirm .modal__footer {
+  justify-content: center;
+}
+
+/* ===== MODAL WITH FORM ===== */
+.modal--form .modal__body {
+  padding: 0;
+}
+
+.modal--form .form {
+  padding: var(--space-5);
+}
+
+/* modals/confirm.css */
+/**
+ * MODAL: Confirm
+ * 
+ * Simpele bevestigingsdialoog.
+ * Voor delete, logout, destructieve acties.
+ * 
+ * AI-NOTE: Gebruik voor simpele ja/nee beslissingen.
+ * Niet voor complexe formulieren (gebruik dialog).
+ * 
+ * VARIANTS:
+ * - default: Neutraal bevestigen
+ * - danger: Destructieve actie (rood)
+ * - warning: Waarschuwing (oranje)
+ * 
+ * STRUCTURE:
+ * <div class="confirm confirm--danger" data-open="false">
+ *   <div class="confirm__overlay"></div>
+ *   <div class="confirm__panel">
+ *     <div class="confirm__icon">⚠️</div>
+ *     <h2 class="confirm__title">Delete Order?</h2>
+ *     <p class="confirm__message">This action cannot be undone.</p>
+ *     <div class="confirm__actions">
+ *       <button class="btn">Cancel</button>
+ *       <button class="btn btn--destructive">Delete</button>
+ *     </div>
+ *   </div>
+ * </div>
+ */
+
+/* =================================================================
+   CONFIRM CONTAINER
+   ================================================================= */
+
+.confirm {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.confirm[data-open="true"] {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =================================================================
+   OVERLAY
+   ================================================================= */
+
+.confirm__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.confirm[data-open="true"] .confirm__overlay {
+  opacity: 1;
+}
+
+/* =================================================================
+   PANEL
+   ================================================================= */
+
+.confirm__panel {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-6);
+  background: var(--surface-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all var(--transition-normal);
+}
+
+.confirm[data-open="true"] .confirm__panel {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* =================================================================
+   ICON
+   ================================================================= */
+
+.confirm__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto var(--space-4);
+  background: var(--surface-secondary);
+  border-radius: var(--radius-full);
+  font-size: 1.5rem;
+}
+
+/* Danger variant */
+.confirm--danger .confirm__icon {
+  background: var(--error-subtle);
+  color: var(--error);
+}
+
+/* Warning variant */
+.confirm--warning .confirm__icon {
+  background: var(--warning-subtle);
+  color: var(--warning);
+}
+
+/* Success variant */
+.confirm--success .confirm__icon {
+  background: var(--success-subtle);
+  color: var(--success);
+}
+
+/* Info variant */
+.confirm--info .confirm__icon {
+  background: var(--info-subtle);
+  color: var(--info);
+}
+
+/* =================================================================
+   CONTENT
+   ================================================================= */
+
+.confirm__title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.confirm__message {
+  margin: 0 0 var(--space-5);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+/* =================================================================
+   ACTIONS
+   ================================================================= */
+
+.confirm__actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.confirm__actions .btn {
+  flex: 1;
+  max-width: 140px;
+}
+
+/* Stacked actions */
+.confirm--stacked .confirm__actions {
+  flex-direction: column;
+}
+
+.confirm--stacked .confirm__actions .btn {
+  max-width: none;
+}
+
+/* =================================================================
+   LOADING STATE
+   ================================================================= */
+
+.confirm--loading .confirm__panel {
+  pointer-events: none;
+}
+
+.confirm--loading .confirm__actions .btn {
+  opacity: 0.6;
+}
+
+/* =================================================================
+   RESPONSIVE
+   ================================================================= */
+
+@media (max-width: 479px) {
+  .confirm__panel {
+    padding: var(--space-5);
+  }
+  
+  .confirm__actions {
+    flex-direction: column;
+  }
+  
+  .confirm__actions .btn {
+    max-width: none;
+  }
+}
+
+/* modals/dialog.css */
+/**
+ * MODAL: Dialog
+ * 
+ * Centered modal dialoog voor formulieren, content, etc.
+ * Met overlay backdrop.
+ * 
+ * AI-NOTE: Gebruik voor formulieren, confirmaties met veel content,
+ * of complexe interacties die focus vereisen.
+ * 
+ * STRUCTURE:
+ * <div class="dialog" data-open="false">
+ *   <div class="dialog__overlay"></div>
+ *   <div class="dialog__container">
+ *     <div class="dialog__panel">
+ *       <div class="dialog__header">
+ *         <h2 class="dialog__title">Title</h2>
+ *         <button class="dialog__close">×</button>
+ *       </div>
+ *       <div class="dialog__body">Content</div>
+ *       <div class="dialog__footer">
+ *         <button class="btn">Cancel</button>
+ *         <button class="btn btn--primary">Save</button>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ */
+
+/* =================================================================
+   DIALOG CONTAINER
+   ================================================================= */
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dialog[data-open="true"] {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =================================================================
+   OVERLAY
+   ================================================================= */
+
+.dialog__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.dialog[data-open="true"] .dialog__overlay {
+  opacity: 1;
+}
+
+/* =================================================================
+   CONTAINER (Scrollable wrapper)
+   ================================================================= */
+
+.dialog__container {
+  position: relative;
+  max-height: 100vh;
+  max-width: 100vw;
+  padding: var(--space-4);
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =================================================================
+   PANEL
+   ================================================================= */
+
+.dialog__panel {
+  width: 100%;
+  max-width: 500px;
+  background: var(--surface-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all var(--transition-normal);
+}
+
+.dialog[data-open="true"] .dialog__panel {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Size variants */
+.dialog--sm .dialog__panel {
+  max-width: 400px;
+}
+
+.dialog--lg .dialog__panel {
+  max-width: 700px;
+}
+
+.dialog--xl .dialog__panel {
+  max-width: 900px;
+}
+
+.dialog--full .dialog__panel {
+  max-width: calc(100vw - var(--space-8));
+  max-height: calc(100vh - var(--space-8));
+}
+
+/* =================================================================
+   HEADER
+   ================================================================= */
+
+.dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dialog__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.dialog__subtitle {
+  margin: var(--space-1) 0 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.dialog__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.dialog__close:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+/* =================================================================
+   BODY
+   ================================================================= */
+
+.dialog__body {
+  padding: var(--space-5);
+  color: var(--text-primary);
+}
+
+.dialog__body--scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* =================================================================
+   FOOTER
+   ================================================================= */
+
+.dialog__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--surface-secondary);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.dialog__footer--split {
+  justify-content: space-between;
+}
+
+/* =================================================================
+   RESPONSIVE
+   ================================================================= */
+
+@media (max-width: 639px) {
+  .dialog__container {
+    padding: var(--space-2);
+    align-items: flex-end;
+  }
+  
+  .dialog__panel {
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  
+  .dialog__body {
+    padding: var(--space-4);
+  }
+  
+  .dialog__footer {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .dialog__footer .btn {
+    width: 100%;
+  }
+}
+
+/* modals/drawer.css */
+/**
+ * MODAL: Drawer
+ * 
+ * Slide-in panel van de zijkant.
+ * Voor settings, filters, cart, etc.
+ * 
+ * AI-NOTE: Gebruik voor secundaire content die niet
+ * de volle focus nodig heeft. Cart drawer, filter panel, etc.
+ * 
+ * STRUCTURE:
+ * <div class="drawer" data-open="false" data-position="right">
+ *   <div class="drawer__overlay"></div>
+ *   <div class="drawer__panel">
+ *     <div class="drawer__header">
+ *       <h2 class="drawer__title">Shopping Cart</h2>
+ *       <button class="drawer__close">×</button>
+ *     </div>
+ *     <div class="drawer__body">Content</div>
+ *     <div class="drawer__footer">
+ *       <button class="btn btn--primary btn--full">Checkout</button>
+ *     </div>
+ *   </div>
+ * </div>
+ */
+
+/* =================================================================
+   DRAWER CONTAINER
+   ================================================================= */
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.drawer[data-open="true"] {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =================================================================
+   OVERLAY
+   ================================================================= */
+
+.drawer__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.drawer[data-open="true"] .drawer__overlay {
+  opacity: 1;
+}
+
+/* =================================================================
+   PANEL
+   ================================================================= */
+
+.drawer__panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(400px, 90vw);
+  background: var(--surface-primary);
+  box-shadow: var(--shadow-xl);
+  transition: transform var(--transition-normal);
+}
+
+/* Right position (default) */
+.drawer[data-position="right"] .drawer__panel,
+.drawer:not([data-position]) .drawer__panel {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.drawer[data-position="right"][data-open="true"] .drawer__panel,
+.drawer:not([data-position])[data-open="true"] .drawer__panel {
+  transform: translateX(0);
+}
+
+/* Left position */
+.drawer[data-position="left"] .drawer__panel {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.drawer[data-position="left"][data-open="true"] .drawer__panel {
+  transform: translateX(0);
+}
+
+/* Bottom position (mobile-friendly) */
+.drawer[data-position="bottom"] .drawer__panel {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-height: 90vh;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transform: translateY(100%);
+}
+
+.drawer[data-position="bottom"][data-open="true"] .drawer__panel {
+  transform: translateY(0);
+}
+
+/* Size variants */
+.drawer--sm .drawer__panel {
+  width: min(320px, 90vw);
+}
+
+.drawer--lg .drawer__panel {
+  width: min(600px, 90vw);
+}
+
+.drawer--xl .drawer__panel {
+  width: min(800px, 90vw);
+}
+
+/* =================================================================
+   HEADER
+   ================================================================= */
+
+.drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.drawer__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.drawer__subtitle {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.drawer__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.drawer__close:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+/* =================================================================
+   BODY
+   ================================================================= */
+
+.drawer__body {
+  flex: 1;
+  padding: var(--space-4);
+  overflow-y: auto;
+}
+
+.drawer__body--no-padding {
+  padding: 0;
+}
+
+/* =================================================================
+   FOOTER
+   ================================================================= */
+
+.drawer__footer {
+  padding: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--surface-secondary);
+  flex-shrink: 0;
+}
+
+.drawer__footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.drawer__footer-row:last-child {
+  margin-bottom: 0;
+}
+
+.drawer__footer-label {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.drawer__footer-value {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.drawer__footer-total {
+  font-size: var(--font-size-lg);
+}
+
+/* =================================================================
+   DRAG HANDLE (for bottom drawer)
+   ================================================================= */
+
+.drawer__drag-handle {
+  display: none;
+  width: 36px;
+  height: 4px;
+  margin: var(--space-2) auto;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+}
+
+.drawer[data-position="bottom"] .drawer__drag-handle {
+  display: block;
+}
+
 
 
 }
