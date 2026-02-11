@@ -1,0 +1,313 @@
+---
+/**
+ * IE Features Page - /ie/features
+ * Loads content from src/content/pages/en/features.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import featuresContent from '../../content/pages/en/features.json';
+import headerContent from '../../content/header.json';
+import footerContent from '../../content/footer.json';
+---
+
+<BaseLayout 
+  title={featuresContent.title}
+  description={featuresContent.description}
+  lang="en"
+  alternates={featuresContent.seo.alternates}
+  ogImage={featuresContent.seo.ogImage}
+  ogType={featuresContent.seo.ogType}
+  twitterCard={featuresContent.seo.twitterCard}
+  noIndex={featuresContent.seo.noIndex}
+  structuredData={[{ type: featuresContent.seo.structuredData.type as 'WebPage', data: { name: featuresContent.seo.structuredData.name, url: featuresContent.seo.structuredData.url } }]}
+>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="/ie/" class="logo">{headerContent.logo}</a>
+      <nav class="nav">
+        {headerContent.nav.en.map(item => (
+          <a href={item.url} class="nav-link">{item.label}</a>
+        ))}
+      </nav>
+      <a href={headerContent.cta.en.url} class="header-cta">
+        {headerContent.cta.en.label}
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-container">
+        <h1>{featuresContent.hero.headline}</h1>
+        <p class="subheadline">{featuresContent.hero.subheadline}</p>
+      </div>
+    </section>
+
+    <!-- Feature Groups -->
+    {featuresContent.featureGroups.map((group, index) => (
+      <section class={`feature-group ${index % 2 === 1 ? 'alt' : ''}`}>
+        <div class="feature-group-container">
+          <div class="group-header">
+            <h2>{group.title}</h2>
+            <p>{group.description}</p>
+          </div>
+          <div class="features-grid">
+            {group.features.map(feature => (
+              <div class="feature-card">
+                <span class="feature-icon">{feature.icon}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-container">
+        <h2>{featuresContent.cta.headline}</h2>
+        <p>{featuresContent.cta.description}</p>
+        <a href="https://app.pagayo.com/register" class="btn btn-primary">
+          {featuresContent.cta.buttonLabel}
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-tagline">{footerContent.tagline.en}</p>
+      <p class="footer-copyright">{footerContent.copyright.en}</p>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+    text-decoration: none;
+  }
+
+  .nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: #667eea;
+  }
+
+  .header-cta {
+    background: #667eea;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .header-cta:hover {
+    background: #5a67d8;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 10rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(180deg, #f8fafc 0%, white 100%);
+  }
+
+  .hero-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 1rem;
+  }
+
+  .subheadline {
+    font-size: 1.25rem;
+    color: #4a5568;
+  }
+
+  /* Feature Groups */
+  .feature-group {
+    padding: 5rem 2rem;
+  }
+
+  .feature-group.alt {
+    background: #f8fafc;
+  }
+
+  .feature-group-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .group-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .group-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+  }
+
+  .group-header p {
+    color: #4a5568;
+    font-size: 1.125rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s;
+  }
+
+  .feature-group.alt .feature-card {
+    background: white;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card p {
+    color: #4a5568;
+    line-height: 1.6;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .cta-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #667eea;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Footer */
+  .footer {
+    padding: 3rem 2rem;
+    background: #1a202c;
+    text-align: center;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-copyright {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav { display: none; }
+  }
+</style>

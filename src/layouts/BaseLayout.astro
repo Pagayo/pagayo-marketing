@@ -4,22 +4,37 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
-  lang?: 'nl' | 'de' | 'en';
+  lang?: string;
   alternates?: Array<{ lang: string; hreflang: string; href: string }>;
-  structuredData?: Array<{ type: 'Organization' | 'WebSite' | 'BlogPosting' | 'BreadcrumbList'; data: Record<string, any> }>;
+  structuredData?: Array<{ type: 'Organization' | 'WebSite' | 'BlogPosting' | 'BreadcrumbList' | 'WebPage'; data: Record<string, unknown> }>;
   ogImage?: string;
+  ogType?: string;
+  twitterCard?: string;
   noIndex?: boolean;
 }
 
 const { 
   title, 
   description, 
-  lang = 'nl', 
+  lang = 'en', 
   alternates = [], 
   structuredData = [],
   ogImage = '/og-image.svg',
+  ogType = 'website',
+  twitterCard = 'summary_large_image',
   noIndex = false,
 } = Astro.props;
+
+const localeMap: Record<string, string> = {
+  en: 'en_IE',
+  nl: 'nl_NL',
+  de: 'de_DE',
+  fr: 'fr_FR',
+  es: 'es_ES',
+  pt: 'pt_PT',
+  it: 'it_IT',
+};
+const ogLocale = localeMap[lang] || 'en_IE';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const fullOgImage = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site);
@@ -39,7 +54,7 @@ import StructuredData from '../components/StructuredData.astro';
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#667eea" />
+    <meta name="theme-color" content="#f5a623" />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
@@ -49,15 +64,15 @@ import StructuredData from '../components/StructuredData.astro';
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={fullOgImage} />
-    <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : lang === 'de' ? 'de_DE' : 'en_US'} />
+    <meta property="og:locale" content={ogLocale} />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:card" content={twitterCard} />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />

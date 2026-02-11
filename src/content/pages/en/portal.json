@@ -1,0 +1,65 @@
+{
+  "slug": "portal",
+  "title": "Pagayo - Commerce Platform",
+  "description": "The Order-First Commerce Platform. Login, register, or learn more.",
+  "lang": "en",
+  "countryFlag": "🇮🇪",
+  "tagline": {
+    "before": "Sell anywhere",
+    "separator": "—",
+    "after": "one dashboard."
+  },
+  "actions": {
+    "createOrder": {
+      "label": "Create Order",
+      "url": "https://app.pagayo.com/order/create"
+    },
+    "signIn": {
+      "label": "Sign In",
+      "url": "https://app.pagayo.com/login"
+    },
+    "createAccount": {
+      "label": "Create Account",
+      "url": "https://app.pagayo.com/register"
+    },
+    "learnMore": {
+      "label": "Learn More →",
+      "url": "/ie/"
+    }
+  },
+  "themeToggle": {
+    "ariaLabel": "Toggle dark/light mode"
+  },
+  "footer": {
+    "helpText": "You can always change this later.",
+    "helpLink": {
+      "label": "Need help?",
+      "url": "/ie/"
+    },
+    "brand": "The Order-First Commerce Platform",
+    "copyright": "© 2026 Pagayo. All rights reserved."
+  },
+  "languages": {
+    "flags": ["🇬🇧", "🇫🇷", "🇳🇱", "🇩🇪", "🇪🇸", "🇸🇳"],
+    "moreLabel": "+50"
+  },
+  "seo": {
+    "ogImage": "/og-portal.svg",
+    "ogType": "website",
+    "twitterCard": "summary_large_image",
+    "noIndex": false,
+    "canonicalPath": "/",
+    "alternates": [
+      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/" },
+      { "lang": "nl", "hreflang": "nl-NL", "href": "https://www.pagayo.com/" },
+      { "lang": "de", "hreflang": "de-DE", "href": "https://www.pagayo.com/" },
+      { "lang": "fr", "hreflang": "fr-FR", "href": "https://www.pagayo.com/" },
+      { "lang": "es", "hreflang": "es-ES", "href": "https://www.pagayo.com/" }
+    ],
+    "structuredData": {
+      "type": "WebSite",
+      "name": "Pagayo",
+      "url": "https://www.pagayo.com"
+    }
+  }
+}

@@ -2,20 +2,25 @@
 /**
  * Footer component - country-specific
  * Accepts country config to render localized footer
- * Uses new sections[] structure
+ * Minimal footer (tagline + copyright)
  */
 
 import { getFullPath, replacePlaceholders } from '../utils/country.js';
 
 interface Props {
-  country: any; // Country config from JSON
+  country: {
+    name: string;
+    region: string;
+    code: string;
+    footer: {
+      tagline: string;
+      copyright: string;
+    };
+  };
 }
 
 const { country } = Astro.props;
 
-// Get all sections
-const sections = country.footer.sections || [];
-const displaySections = sections; // Show all sections
 ---
 
 <footer>
@@ -24,17 +29,6 @@ const displaySections = sections; // Show all sections
       <h3>Pagayo<span>.</span></h3>
       <p>{replacePlaceholders(country.footer.tagline, country)}</p>
     </div>
-    
-    {displaySections.map(section => (
-      <div class="footer-section">
-        <h4>{section.title}</h4>
-        <ul class="footer-links">
-          {section.links.map(link => (
-            <li><a href={getFullPath(country, link.path)}>{link.label}</a></li>
-          ))}
-        </ul>
-      </div>
-    ))}
   </div>
   
   <div class="footer-bottom">

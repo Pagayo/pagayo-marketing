@@ -1,0 +1,376 @@
+---
+/**
+ * IE Contact Page - /ie/contact
+ * Loads content from src/content/pages/en/contact.json
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import contactContent from '../../content/pages/en/contact.json';
+import headerContent from '../../content/header.json';
+import footerContent from '../../content/footer.json';
+---
+
+<BaseLayout 
+  title={contactContent.title}
+  description={contactContent.description}
+  lang="en"
+  alternates={contactContent.seo.alternates}
+  ogImage={contactContent.seo.ogImage}
+  ogType={contactContent.seo.ogType}
+  twitterCard={contactContent.seo.twitterCard}
+  noIndex={contactContent.seo.noIndex}
+  structuredData={[{ type: contactContent.seo.structuredData.type as 'WebPage', data: { name: contactContent.seo.structuredData.name, url: contactContent.seo.structuredData.url } }]}
+>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="/ie/" class="logo">{headerContent.logo}</a>
+      <nav class="nav">
+        {headerContent.nav.en.map(item => (
+          <a href={item.url} class="nav-link">{item.label}</a>
+        ))}
+      </nav>
+      <a href={headerContent.cta.en.url} class="header-cta">
+        {headerContent.cta.en.label}
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-container">
+        <h1>{contactContent.hero.headline}</h1>
+        <p class="subheadline">{contactContent.hero.subheadline}</p>
+      </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <!-- Contact Methods -->
+        <div class="contact-methods">
+          {contactContent.contactMethods.map(method => (
+            <div class="contact-method">
+              <span class="method-icon">{method.icon}</span>
+              <h3>{method.title}</h3>
+              <p class="method-description">{method.description}</p>
+              <a href={`mailto:${method.value}`} class="method-value">{method.value}</a>
+            </div>
+          ))}
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2>{contactContent.form.title}</h2>
+          <form class="contact-form" action="#" method="POST">
+            {contactContent.form.fields.map(field => (
+              <div class="form-group">
+                <label for={field.name}>{field.label}</label>
+                {field.type === 'textarea' ? (
+                  <textarea 
+                    id={field.name} 
+                    name={field.name} 
+                    required={field.required}
+                    rows="5"
+                  ></textarea>
+                ) : field.type === 'select' ? (
+                  <select id={field.name} name={field.name} required={field.required}>
+                    <option value="">Select...</option>
+                    {field.options?.map(option => (
+                      <option value={option}>{option}</option>
+                    ))}
+                  </select>
+                ) : (
+                  <input 
+                    type={field.type} 
+                    id={field.name} 
+                    name={field.name} 
+                    required={field.required}
+                  />
+                )}
+              </div>
+            ))}
+            <button type="submit" class="btn btn-primary">
+              {contactContent.form.submitLabel}
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Office Info -->
+    <section class="office-section">
+      <div class="office-container">
+        <h2>{contactContent.office.title}</h2>
+        <p class="office-address">{contactContent.office.address}</p>
+        <p class="office-note">{contactContent.office.note}</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-tagline">{footerContent.tagline.en}</p>
+      <p class="footer-copyright">{footerContent.copyright.en}</p>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+    text-decoration: none;
+  }
+
+  .nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: #667eea;
+  }
+
+  .header-cta {
+    background: #667eea;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .header-cta:hover {
+    background: #5a67d8;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 10rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(180deg, #f8fafc 0%, white 100%);
+  }
+
+  .hero-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 1rem;
+  }
+
+  .subheadline {
+    font-size: 1.25rem;
+    color: #4a5568;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: 4rem 2rem 6rem;
+  }
+
+  .contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+  }
+
+  /* Contact Methods */
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-method {
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 12px;
+  }
+
+  .method-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-method h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.25rem;
+  }
+
+  .method-description {
+    color: #4a5568;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .method-value {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .method-value:hover {
+    text-decoration: underline;
+  }
+
+  /* Contact Form */
+  .contact-form-wrapper h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 500;
+    color: #1a202c;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.875rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: #667eea;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #5a67d8;
+  }
+
+  /* Office Section */
+  .office-section {
+    padding: 4rem 2rem;
+    background: #f8fafc;
+    text-align: center;
+  }
+
+  .office-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .office-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .office-address {
+    font-size: 1.25rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+  }
+
+  .office-note {
+    color: #4a5568;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 3rem 2rem;
+    background: #1a202c;
+    text-align: center;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-copyright {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav { display: none; }
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

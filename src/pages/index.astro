@@ -1,5 +1,397 @@
 ---
-// Redirect root to /eu/nl (default region and language)
-// TODO: Implement Cloudflare Worker for geo-based redirect
-return Astro.redirect('/eu/nl', 302);
+/**
+ * Root Portal - pagayo.com
+ * Minimale portal met login, registratie, en link naar meer informatie
+ * Theme: revolutionary (dark + gold accent from pagayo-design)
+ * 
+ * i18n-ready: Alle teksten komen uit content/pages/en/portal.json
+ * Voor nieuwe taal: maak content/pages/{lang}/portal.json + pages/{lang-route}/index.astro
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import portalContent from '../content/pages/en/portal.json';
+
+const { title, description, lang, countryFlag, tagline, actions, themeToggle, footer, languages, seo } = portalContent;
 ---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  lang={lang}
+  alternates={seo.alternates}
+  ogImage={seo.ogImage}
+  ogType={seo.ogType}
+  twitterCard={seo.twitterCard}
+  noIndex={seo.noIndex}
+  structuredData={[{ type: seo.structuredData.type as 'WebSite', data: { name: seo.structuredData.name, url: seo.structuredData.url } }]}
+>
+  <main class="portal" data-theme="dark">
+    <div class="portal-container">
+      <!-- Country flag -->
+      <span class="country-flag">{countryFlag}</span>
+
+      <!-- Theme toggle -->
+      <button class="theme-toggle" id="themeToggle" aria-label={themeToggle.ariaLabel}>
+        <span class="toggle-icon sun">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+        </span>
+        <span class="toggle-icon moon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+      </button>
+
+      <div class="portal-logo">
+        <h1><span class="logo-p">P</span>agayo<span class="logo-dot">.</span></h1>
+      </div>
+
+      <p class="portal-tagline">"{tagline.before}<span class="tagline-separator">{tagline.separator}</span>{tagline.after}"</p>
+
+      <!-- Gradient card (like onboarding "Fastest Way") -->
+      <div class="portal-card">
+        <span class="card-badge">100% free</span>
+        <div class="portal-actions">
+          <a href={actions.createOrder.url} class="btn btn-primary">
+            {actions.createOrder.label}
+          </a>
+          <a href={actions.signIn.url} class="btn btn-secondary">
+            {actions.signIn.label}
+          </a>
+          <a href={actions.createAccount.url} class="btn btn-secondary">
+            {actions.createAccount.label}
+          </a>
+          <a href={actions.learnMore.url} class="btn btn-text">
+            {actions.learnMore.label}
+          </a>
+        </div>
+      </div>
+
+      <!-- Language flags -->
+      <div class="languages">
+        {languages.flags.map(flag => (
+          <span class="lang">{flag}</span>
+        ))}
+        <span class="lang-more">{languages.moreLabel}</span>
+      </div>
+
+      <footer class="portal-footer">
+        <p>{footer.helpText} <a href={footer.helpLink.url}>{footer.helpLink.label}</a></p>
+        <div class="portal-footer-brand">
+          <p>{footer.brand}</p>
+          <p>{footer.copyright}</p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const portal = document.querySelector('.portal');
+  
+  // Read saved preference
+  const saved = localStorage.getItem('portal-theme') || 'dark';
+  portal?.setAttribute('data-theme', saved);
+  
+  toggle?.addEventListener('click', () => {
+    const current = portal?.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    portal?.setAttribute('data-theme', next);
+    localStorage.setItem('portal-theme', next);
+  });
+</script>
+
+<style is:global>
+  /* Override global styles for portal page */
+  body:has(.portal) {
+    background: #0a0a0f !important;
+  }
+  body:has(.portal[data-theme="light"]) {
+    background: #f5f5f7 !important;
+  }
+</style>
+
+<style>
+  /* Revolutionary Theme Tokens — DARK (default) */
+  .portal {
+    --bg-deep: #0a0a0f;
+    --bg-surface: #0e0e14;
+    --bg-elevated: #111118;
+    --bg-hover: #1a1a23;
+    --accent: #f5a623;
+    --accent-light: #ffbe3f;
+    --accent-dim: #c48a1a;
+    --accent-glow: rgb(245 166 35 / 0.15);
+    --text-primary: #f0f0f5;
+    --text-secondary: rgb(240 240 245 / 0.7);
+    --text-muted: #606070;
+    --border: rgb(240 240 245 / 0.06);
+    --border-light: rgb(255 255 255 / 0.1);
+  }
+
+  /* LIGHT theme overrides */
+  .portal[data-theme="light"] {
+    --bg-deep: #f5f5f7;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f0f0f2;
+    --bg-hover: #e8e8ec;
+    --accent: #e8951a;
+    --accent-light: #f5a623;
+    --accent-dim: #c47d10;
+    --accent-glow: rgb(232 149 26 / 0.12);
+    --text-primary: #1a1a2e;
+    --text-secondary: rgb(26 26 46 / 0.6);
+    --text-muted: #8a8a9a;
+    --border: rgb(26 26 46 / 0.08);
+    --border-light: rgb(26 26 46 / 0.12);
+  }
+
+  .portal {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-deep) !important;
+    padding: 2rem;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .portal-container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+  }
+
+  /* ─── Country Flag ─── */
+  .country-flag {
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    font-size: 20px;
+    line-height: 1;
+    z-index: 10;
+  }
+
+  /* ─── Theme Toggle ─── */
+  .theme-toggle {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 10;
+  }
+
+  .toggle-icon {
+    display: flex;
+    align-items: center;
+    color: var(--accent);
+    transition: opacity 0.2s;
+  }
+
+  .toggle-icon { opacity: 1; }
+
+  .toggle-track {
+    width: 36px;
+    height: 20px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    transform: translateX(16px);
+  }
+
+  .portal[data-theme="light"] .toggle-thumb {
+    transform: translateX(0);
+  }
+
+  /* ─── Logo ─── */
+  .portal-logo {
+    margin-bottom: 0.5rem;
+  }
+
+  .portal-logo h1 {
+    color: var(--text-primary);
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+    transition: color 0.3s;
+  }
+
+  .logo-p {
+    color: var(--accent);
+    font-weight: 800;
+  }
+
+  .logo-dot {
+    color: var(--accent);
+    font-weight: 800;
+  }
+
+
+
+  /* ─── Tagline ─── */
+  .portal-tagline {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+  }
+
+  .tagline-separator {
+    display: inline-block;
+    margin: 0 0.1em;
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  /* Gradient card — matches onboarding "Fastest Way" style */
+  .portal-card {
+    position: relative;
+    background: linear-gradient(135deg, var(--bg-surface), var(--accent-glow));
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    padding: 2.2rem 1.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .card-badge {
+    position: absolute;
+    top: -1.1em;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #1a1a2e;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25em 1em;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .portal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: block;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: var(--accent) !important;
+    color: var(--bg-deep) !important;
+    box-shadow: none !important;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-light) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px var(--accent-glow) !important;
+  }
+
+  .btn-secondary {
+    background: var(--bg-elevated) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background: var(--bg-hover) !important;
+    border-color: var(--accent) !important;
+  }
+
+  .btn-text {
+    color: var(--text-secondary);
+    padding: 0.75rem;
+    transition: color 0.2s;
+  }
+
+  .btn-text:hover {
+    color: var(--accent);
+  }
+
+  /* Language flags */
+  .languages {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .lang {
+    font-size: 20px;
+  }
+
+  .lang-more {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+  }
+
+  /* Footer */
+  .portal-footer {
+    text-align: center;
+    padding: 0.5rem;
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+
+  .portal-footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .portal-footer a:hover {
+    text-decoration: underline;
+  }
+
+  .portal-footer-brand {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .portal-footer-brand p {
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+</style>

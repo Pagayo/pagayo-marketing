@@ -7,19 +7,18 @@
 import { getBasePath, getFullPath } from '../utils/country.js';
 
 interface Props {
-  country: any; // Country config from JSON
+  country: {
+    name: string;
+    region: string;
+    code: string;
+    nav: {
+      cta: string;
+    };
+  };
 }
 
 const { country } = Astro.props;
 const basePath = getBasePath(country);
-
-// Helper functions for backwards compatibility
-// Supports both string format (NL) and object format (GB)
-const getNavText = (item: string | { label: string; path: string }) => 
-  typeof item === 'string' ? item : item.label;
-
-const getNavPath = (item: string | { label: string; path: string }, fallbackPath: string) => 
-  typeof item === 'string' ? getFullPath(country, fallbackPath) : item.path;
 ---
 
 <nav>
@@ -30,12 +29,9 @@ const getNavPath = (item: string | { label: string; path: string }, fallbackPath
     <span></span>
   </button>
   <ul class="nav-center">
-    <li><a href={getNavPath(country.nav.features, '/features')}>{getNavText(country.nav.features)}</a></li>
-    <li><a href={getNavPath(country.nav.pricing, '/pricing')}>{getNavText(country.nav.pricing)}</a></li>
-    <li><a href={getNavPath(country.nav.contact, '/contact')}>{getNavText(country.nav.contact)}</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://app.pagayo.com/register/" class="nav-cta">{getNavText(country.nav.cta || 'Start free')}</a>
+    <a href="https://app.pagayo.com/register/" class="nav-cta">{country.nav.cta || 'Start free'}</a>
   </div>
 </nav>
 

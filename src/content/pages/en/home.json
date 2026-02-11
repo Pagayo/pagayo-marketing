@@ -1,0 +1,82 @@
+{
+  "slug": "home",
+  "title": "Pagayo - The Order-First Commerce Platform",
+  "description": "Build and scale modern webshops, hotels, and POS systems on one powerful multi-tenant platform.",
+  "hero": {
+    "eyebrow": "Multi-Tenant E-commerce",
+    "headline": "One Platform. All Channels.",
+    "subheadline": "Webshop, POS, WhatsApp, TikTok — all orders flow through one unified system. No more juggling multiple platforms.",
+    "primaryCta": {
+      "label": "Start Free Trial",
+      "url": "https://app.pagayo.com/register"
+    },
+    "secondaryCta": {
+      "label": "See How It Works",
+      "url": "/ie/features"
+    }
+  },
+  "features": [
+    {
+      "icon": "🛒",
+      "title": "Order-First Architecture",
+      "description": "One unified order model for web, POS, social, and more. No channel silos."
+    },
+    {
+      "icon": "🏢",
+      "title": "Multi-Tenant by Design",
+      "description": "Each business gets their own isolated database schema. Enterprise-grade security."
+    },
+    {
+      "icon": "⚡",
+      "title": "Edge-Native Performance",
+      "description": "Deployed on Cloudflare's global network. Sub-50ms response times worldwide."
+    },
+    {
+      "icon": "🔌",
+      "title": "API-First",
+      "description": "Everything is an API. Integrate with any system, build custom frontends."
+    },
+    {
+      "icon": "💳",
+      "title": "Payments Built-In",
+      "description": "Bunq, Stripe, and more. Automated reconciliation and payouts."
+    },
+    {
+      "icon": "📊",
+      "title": "Real-Time Analytics",
+      "description": "Live dashboards across all channels. Know what's selling, when."
+    }
+  ],
+  "socialProof": {
+    "headline": "Trusted by Growing Businesses",
+    "stats": [
+      { "number": "99.9%", "label": "Uptime" },
+      { "number": "<50ms", "label": "Response Time" },
+      { "number": "∞", "label": "Scalability" }
+    ]
+  },
+  "cta": {
+    "headline": "Ready to Unify Your Commerce?",
+    "description": "Join businesses that have simplified their operations with Pagayo's order-first platform.",
+    "buttonLabel": "Get Started Free"
+  },
+  "seo": {
+    "ogImage": "/og-home.svg",
+    "ogType": "website",
+    "twitterCard": "summary_large_image",
+    "noIndex": false,
+    "canonicalPath": "/ie/",
+    "alternates": [
+      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/ie/" },
+      { "lang": "nl", "hreflang": "nl-NL", "href": "https://www.pagayo.com/nl/" },
+      { "lang": "de", "hreflang": "de-DE", "href": "https://www.pagayo.com/de/" },
+      { "lang": "fr", "hreflang": "fr-FR", "href": "https://www.pagayo.com/fr/" },
+      { "lang": "es", "hreflang": "es-ES", "href": "https://www.pagayo.com/es/" }
+    ],
+    "structuredData": {
+      "type": "Organization",
+      "name": "Pagayo",
+      "url": "https://www.pagayo.com"
+    }
+  }
+}

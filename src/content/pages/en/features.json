@@ -1,0 +1,98 @@
+{
+  "slug": "features",
+  "title": "Features - Pagayo",
+  "description": "Discover all the features that make Pagayo the most powerful order-first commerce platform.",
+  "hero": {
+    "headline": "Everything You Need to Sell Everywhere",
+    "subheadline": "One platform, infinite possibilities. See what makes Pagayo different."
+  },
+  "featureGroups": [
+    {
+      "title": "Order Management",
+      "description": "The heart of Pagayo",
+      "features": [
+        {
+          "title": "Unified Order Model",
+          "description": "Web, POS, WhatsApp, TikTok — all orders in one system with the same workflow.",
+          "icon": "📦"
+        },
+        {
+          "title": "Real-Time Sync",
+          "description": "Inventory, orders, and customers sync instantly across all channels.",
+          "icon": "🔄"
+        },
+        {
+          "title": "Smart Fulfillment",
+          "description": "Automatic routing, split shipments, and carrier integration.",
+          "icon": "🚚"
+        }
+      ]
+    },
+    {
+      "title": "Multi-Tenant Architecture",
+      "description": "Enterprise-grade isolation",
+      "features": [
+        {
+          "title": "Isolated Databases",
+          "description": "Each tenant gets their own PostgreSQL schema. Complete data isolation.",
+          "icon": "🔒"
+        },
+        {
+          "title": "Custom Domains",
+          "description": "Your brand, your domain. SSL included.",
+          "icon": "🌐"
+        },
+        {
+          "title": "White Label",
+          "description": "Remove all Pagayo branding. Make it yours.",
+          "icon": "🏷️"
+        }
+      ]
+    },
+    {
+      "title": "Developer Experience",
+      "description": "Built for developers",
+      "features": [
+        {
+          "title": "REST & GraphQL APIs",
+          "description": "Full API access to everything. Build custom integrations.",
+          "icon": "🔌"
+        },
+        {
+          "title": "Webhooks",
+          "description": "Real-time notifications for any event. No polling needed.",
+          "icon": "🪝"
+        },
+        {
+          "title": "SDK & CLI",
+          "description": "TypeScript SDK and command-line tools for automation.",
+          "icon": "💻"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "headline": "See It In Action",
+    "description": "Try Pagayo free for 14 days. No credit card required.",
+    "buttonLabel": "Start Free Trial"
+  },
+  "seo": {
+    "ogImage": "/og-features.svg",
+    "ogType": "website",
+    "twitterCard": "summary_large_image",
+    "noIndex": false,
+    "canonicalPath": "/ie/features",
+    "alternates": [
+      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/ie/features" },
+      { "lang": "nl", "hreflang": "nl-NL", "href": "https://www.pagayo.com/nl/functies" },
+      { "lang": "de", "hreflang": "de-DE", "href": "https://www.pagayo.com/de/funktionen" },
+      { "lang": "fr", "hreflang": "fr-FR", "href": "https://www.pagayo.com/fr/fonctionnalites" },
+      { "lang": "es", "hreflang": "es-ES", "href": "https://www.pagayo.com/es/caracteristicas" }
+    ],
+    "structuredData": {
+      "type": "WebSite",
+      "name": "Pagayo Features",
+      "url": "https://www.pagayo.com/ie/features"
+    }
+  }
+}

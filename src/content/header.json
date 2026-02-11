@@ -1,0 +1,13 @@
+{
+  "logo": "Pagayo",
+  "nav": {
+    "en": [
+      { "label": "Features", "url": "/ie/features" },
+      { "label": "Pricing", "url": "/ie/pricing" },
+      { "label": "Contact", "url": "/ie/contact" }
+    ]
+  },
+  "cta": {
+    "en": { "label": "Get Started", "url": "https://app.pagayo.com/register" }
+  }
+}

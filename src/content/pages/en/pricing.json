@@ -1,0 +1,97 @@
+{
+  "slug": "pricing",
+  "title": "Pricing - Pagayo",
+  "description": "Simple, transparent pricing for businesses of all sizes. Start free, scale as you grow.",
+  "hero": {
+    "headline": "Simple, Transparent Pricing",
+    "subheadline": "No hidden fees. No surprises. Pay only for what you use."
+  },
+  "plans": [
+    {
+      "name": "Starter",
+      "price": "€0",
+      "period": "forever",
+      "description": "Perfect for testing and small projects",
+      "features": [
+        "1 tenant",
+        "Up to 100 orders/month",
+        "Basic analytics",
+        "Email support"
+      ],
+      "cta": {
+        "label": "Start Free",
+        "url": "https://app.pagayo.com/register"
+      },
+      "highlighted": false
+    },
+    {
+      "name": "Growth",
+      "price": "€49",
+      "period": "per month",
+      "description": "For growing businesses",
+      "features": [
+        "Up to 5 tenants",
+        "Unlimited orders",
+        "Advanced analytics",
+        "Priority support",
+        "Custom domain"
+      ],
+      "cta": {
+        "label": "Start Trial",
+        "url": "https://app.pagayo.com/register?plan=growth"
+      },
+      "highlighted": true
+    },
+    {
+      "name": "Enterprise",
+      "price": "Custom",
+      "period": "",
+      "description": "For large organizations",
+      "features": [
+        "Unlimited tenants",
+        "Dedicated infrastructure",
+        "SLA guarantee",
+        "24/7 phone support",
+        "Custom integrations"
+      ],
+      "cta": {
+        "label": "Contact Sales",
+        "url": "/ie/contact"
+      },
+      "highlighted": false
+    }
+  ],
+  "faq": [
+    {
+      "question": "Can I change plans later?",
+      "answer": "Yes, you can upgrade or downgrade at any time. Changes take effect immediately."
+    },
+    {
+      "question": "Is there a free trial?",
+      "answer": "Yes, all paid plans include a 14-day free trial. No credit card required."
+    },
+    {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major credit cards, SEPA direct debit, and bank transfers for enterprise plans."
+    }
+  ],
+  "seo": {
+    "ogImage": "/og-pricing.svg",
+    "ogType": "website",
+    "twitterCard": "summary_large_image",
+    "noIndex": false,
+    "canonicalPath": "/ie/pricing",
+    "alternates": [
+      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/ie/pricing" },
+      { "lang": "nl", "hreflang": "nl-NL", "href": "https://www.pagayo.com/nl/prijzen" },
+      { "lang": "de", "hreflang": "de-DE", "href": "https://www.pagayo.com/de/preise" },
+      { "lang": "fr", "hreflang": "fr-FR", "href": "https://www.pagayo.com/fr/tarifs" },
+      { "lang": "es", "hreflang": "es-ES", "href": "https://www.pagayo.com/es/precios" }
+    ],
+    "structuredData": {
+      "type": "WebSite",
+      "name": "Pagayo Pricing",
+      "url": "https://www.pagayo.com/ie/pricing"
+    }
+  }
+}
