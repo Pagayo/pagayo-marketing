@@ -9,4 +9,4 @@ pages_build_output_dir = "dist"
 # KV namespace for Astro sessions (required by @astrojs/cloudflare)
 [[kv_namespaces]]
 binding = "SESSION"
-id = "SESSION_KV_PLACEHOLDER"
+id = "7b840cb8ab2d4d1293a14d31cc4f6ff9"
