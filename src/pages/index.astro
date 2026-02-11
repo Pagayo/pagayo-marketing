@@ -14,9 +14,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import portalContent from '../content/pages/en/portal.json';
 
-// Pagayo Design System — single CSS source of truth
-// Bevat: CSS reset, base tokens, revolutionary theme tokens, BEM component classes
-import '@pagayo/design';
+// Pagayo Design System — lokale CSS kopie (bron: @pagayo/design dist/revolutionary/admin.css)
+// Bij design updates: kopieer opnieuw vanuit pagayo-design/dist/revolutionary/admin.css
+import '../styles/pagayo-design.css';
 
 const { title, description, lang, countryFlag, tagline, actions, themeToggle, footer, languages, seo } = portalContent;
 ---
