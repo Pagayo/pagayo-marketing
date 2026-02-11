@@ -70,8 +70,8 @@ const createConfig = (code, data) => {
   const isFrench = data.locale.startsWith('fr-');
   const isPortuguese = data.locale.startsWith('pt-');
   const isSpanish = data.locale.startsWith('es-');
-  const isAmharic = data.locale.startsWith('am-');
-  const isTigrinya = data.locale.startsWith('ti-');
+  const _isAmharic = data.locale.startsWith('am-');
+  const _isTigrinya = data.locale.startsWith('ti-');
 
   let nav, footerTitles, footerLabels;
 

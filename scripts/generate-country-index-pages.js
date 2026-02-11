@@ -61,7 +61,7 @@ async function findCountryDirectory(countryCode) {
       if (dirs.includes(countryCode)) {
         return path.join(regionPath, countryCode);
       }
-    } catch (error) {
+    } catch {
       // Region directory doesn't exist, skip
     }
   }
