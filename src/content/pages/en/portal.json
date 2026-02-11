@@ -4,11 +4,6 @@
   "description": "The Order-First Commerce Platform. Login, register, or learn more.",
   "lang": "en",
   "countryFlag": "🇮🇪",
-  "tagline": {
-    "before": "Sell anywhere",
-    "separator": "—",
-    "after": "one dashboard."
-  },
   "actions": {
     "createOrder": {
       "label": "Create Order",
@@ -29,19 +24,6 @@
   },
   "themeToggle": {
     "ariaLabel": "Toggle dark/light mode"
-  },
-  "footer": {
-    "helpText": "You can always change this later.",
-    "helpLink": {
-      "label": "Need help?",
-      "url": "/ie/"
-    },
-    "brand": "The Order-First Commerce Platform",
-    "copyright": "© 2026 Pagayo. All rights reserved."
-  },
-  "languages": {
-    "flags": ["🇬🇧", "🇫🇷", "🇳🇱", "🇩🇪", "🇪🇸", "🇸🇳"],
-    "moreLabel": "+50"
   },
   "seo": {
     "ogImage": "/og-portal.svg",

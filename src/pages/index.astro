@@ -18,7 +18,7 @@ import portalContent from '../content/pages/en/portal.json';
 // Bij design updates: kopieer opnieuw vanuit pagayo-design/dist/revolutionary/admin.css
 import '../styles/pagayo-design.css';
 
-const { title, description, lang, countryFlag, tagline, actions, themeToggle, footer, languages, seo } = portalContent;
+const { title, description, lang, countryFlag, actions, themeToggle, seo } = portalContent;
 ---
 
 <BaseLayout 
@@ -54,8 +54,6 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
         <h1><span class="logo-p">P</span>agayo<span class="logo-dot">.</span></h1>
       </div>
 
-      <p class="portal-tagline">"{tagline.before}<span class="tagline-separator">{tagline.separator}</span>{tagline.after}"</p>
-
       <!-- Portal card — .badge from design system, portal-specific card styling -->
       <div class="portal-card">
         <span class="badge card-badge">100% free</span>
@@ -74,22 +72,6 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
           </a>
         </div>
       </div>
-
-      <!-- Language flags -->
-      <div class="languages">
-        {languages.flags.map(flag => (
-          <span class="lang">{flag}</span>
-        ))}
-        <span class="lang-more">{languages.moreLabel}</span>
-      </div>
-
-      <footer class="portal-footer">
-        <p>{footer.helpText} <a href={footer.helpLink.url}>{footer.helpLink.label}</a></p>
-        <div class="portal-footer-brand">
-          <p>{footer.brand}</p>
-          <p>{footer.copyright}</p>
-        </div>
-      </footer>
     </div>
   </main>
 </BaseLayout>
@@ -269,23 +251,6 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
     font-weight: 800;
   }
 
-  /* ─── Tagline ─── */
-  .portal-tagline {
-    color: var(--text-secondary);
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-8);
-    font-style: italic;
-    letter-spacing: 0.02em;
-    transition: color var(--transition-slow);
-  }
-
-  .tagline-separator {
-    display: inline-block;
-    margin: 0 0.1em;
-    color: var(--accent);
-    font-style: normal;
-  }
-
   /* ─── Portal Card ─── */
   .portal-card {
     position: relative;
@@ -381,55 +346,5 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
   .portal-actions .btn--ghost:hover {
     color: var(--text-primary);
     background: var(--bg-hover);
-  }
-
-  /* ─── Language Flags ─── */
-  .languages {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-2);
-    margin-bottom: var(--space-4);
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .lang {
-    font-size: var(--text-xl);
-  }
-
-  .lang-more {
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-  }
-
-  /* ─── Footer ─── */
-  .portal-footer {
-    text-align: center;
-    padding: var(--space-2);
-    color: var(--text-muted);
-    font-size: var(--text-xs);
-  }
-
-  .portal-footer a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  .portal-footer a:hover {
-    text-decoration: underline;
-  }
-
-  .portal-footer-brand {
-    margin-top: var(--space-6);
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--border);
-  }
-
-  .portal-footer-brand p {
-    color: var(--text-muted);
-    font-size: var(--text-xs);
-    line-height: var(--leading-relaxed);
   }
 </style>
