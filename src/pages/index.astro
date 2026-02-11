@@ -2,13 +2,21 @@
 /**
  * Root Portal - pagayo.com
  * Minimale portal met login, registratie, en link naar meer informatie
- * Theme: revolutionary (dark + gold accent from pagayo-design)
- * 
+ *
+ * CSS Architecture:
+ * - @pagayo/design: Single CSS source of truth (revolutionary theme tokens + BEM component classes)
+ * - Scoped styles: Portal-specifieke layout, theme toggle, logo, light theme overrides
+ * - BEM: .btn--primary, .btn--secondary, .btn--ghost, .badge (uit design system)
+ *
  * i18n-ready: Alle teksten komen uit content/pages/en/portal.json
  * Voor nieuwe taal: maak content/pages/{lang}/portal.json + pages/{lang-route}/index.astro
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import portalContent from '../content/pages/en/portal.json';
+
+// Pagayo Design System — single CSS source of truth
+// Bevat: CSS reset, base tokens, revolutionary theme tokens, BEM component classes
+import '@pagayo/design';
 
 const { title, description, lang, countryFlag, tagline, actions, themeToggle, footer, languages, seo } = portalContent;
 ---
@@ -48,20 +56,20 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
 
       <p class="portal-tagline">"{tagline.before}<span class="tagline-separator">{tagline.separator}</span>{tagline.after}"</p>
 
-      <!-- Gradient card (like onboarding "Fastest Way") -->
+      <!-- Portal card — .badge from design system, portal-specific card styling -->
       <div class="portal-card">
-        <span class="card-badge">100% free</span>
+        <span class="badge card-badge">100% free</span>
         <div class="portal-actions">
-          <a href={actions.createOrder.url} class="btn btn-primary">
+          <a href={actions.createOrder.url} class="btn btn--primary btn--lg btn--full">
             {actions.createOrder.label}
           </a>
-          <a href={actions.signIn.url} class="btn btn-secondary">
+          <a href={actions.signIn.url} class="btn btn--secondary btn--lg btn--full">
             {actions.signIn.label}
           </a>
-          <a href={actions.createAccount.url} class="btn btn-secondary">
+          <a href={actions.createAccount.url} class="btn btn--secondary btn--lg btn--full">
             {actions.createAccount.label}
           </a>
-          <a href={actions.learnMore.url} class="btn btn-text">
+          <a href={actions.learnMore.url} class="btn btn--ghost btn--full">
             {actions.learnMore.label}
           </a>
         </div>
@@ -113,48 +121,67 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
 </style>
 
 <style>
-  /* Revolutionary Theme Tokens — DARK (default) */
+  /* ─────────────────────────────────────────────────
+   * PORTAL TOKEN SCOPE
+   *
+   * Design system tokens op :root worden overschreven door
+   * global.css continent-theme (:root --accent: #00ff88).
+   * Daarom scopen we tokens op .portal tot global.css
+   * is opgeschoond. Waarden zijn 1:1 met @pagayo/design
+   * revolutionary theme.
+   *
+   * TODO: Verwijder deze scope wanneer global.css alleen
+   * design system tokens gebruikt.
+   * ───────────────────────────────────────────────── */
   .portal {
     --bg-deep: #0a0a0f;
     --bg-surface: #0e0e14;
     --bg-elevated: #111118;
     --bg-hover: #1a1a23;
+    --bg-active: #292a36;
     --accent: #f5a623;
     --accent-light: #ffbe3f;
-    --accent-dim: #c48a1a;
+    --accent-dim: #d98e00;
     --accent-glow: rgb(245 166 35 / 0.15);
     --text-primary: #f0f0f5;
     --text-secondary: rgb(240 240 245 / 0.7);
-    --text-muted: #606070;
+    --text-muted: rgb(240 240 245 / 0.45);
+    --text-disabled: rgb(240 240 245 / 0.3);
     --border: rgb(240 240 245 / 0.06);
-    --border-light: rgb(255 255 255 / 0.1);
+    --border-light: rgb(240 240 245 / 0.09);
+    --border-strong: rgb(240 240 245 / 0.15);
   }
 
-  /* LIGHT theme overrides */
+  /* LIGHT THEME — design system heeft alleen dark/revolutionary.
+     Tot light theme in design system: overrides hier. */
   .portal[data-theme="light"] {
     --bg-deep: #f5f5f7;
     --bg-surface: #ffffff;
     --bg-elevated: #f0f0f2;
     --bg-hover: #e8e8ec;
+    --bg-active: #dddde2;
     --accent: #e8951a;
     --accent-light: #f5a623;
     --accent-dim: #c47d10;
     --accent-glow: rgb(232 149 26 / 0.12);
     --text-primary: #1a1a2e;
     --text-secondary: rgb(26 26 46 / 0.6);
-    --text-muted: #8a8a9a;
+    --text-muted: rgb(26 26 46 / 0.35);
+    --text-disabled: rgb(26 26 46 / 0.25);
     --border: rgb(26 26 46 / 0.08);
     --border-light: rgb(26 26 46 / 0.12);
+    --border-strong: rgb(26 26 46 / 0.2);
   }
 
+  /* ─── PORTAL LAYOUT ─── */
   .portal {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--bg-deep) !important;
-    padding: 2rem;
-    transition: background 0.3s ease, color 0.3s ease;
+    padding: var(--space-8);
+    transition: background var(--transition-slow), color var(--transition-slow);
   }
 
   .portal-container {
@@ -167,45 +194,43 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
   /* ─── Country Flag ─── */
   .country-flag {
     position: absolute;
-    top: -1rem;
+    top: calc(-1 * var(--space-4));
     left: 0;
-    font-size: 20px;
-    line-height: 1;
-    z-index: 10;
+    font-size: var(--text-xl);
+    line-height: var(--leading-none);
+    z-index: var(--z-dropdown);
   }
 
   /* ─── Theme Toggle ─── */
   .theme-toggle {
     position: absolute;
-    top: -1rem;
+    top: calc(-1 * var(--space-4));
     right: 0;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: var(--space-2);
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
-    z-index: 10;
+    padding: var(--space-1);
+    z-index: var(--z-dropdown);
   }
 
   .toggle-icon {
     display: flex;
     align-items: center;
     color: var(--accent);
-    transition: opacity 0.2s;
+    transition: opacity var(--transition-normal);
   }
-
-  .toggle-icon { opacity: 1; }
 
   .toggle-track {
     width: 36px;
     height: 20px;
     background: var(--bg-elevated);
     border: 1px solid var(--border-light);
-    border-radius: 10px;
+    border-radius: var(--radius-full);
     position: relative;
-    transition: background 0.3s;
+    transition: background var(--transition-slow);
   }
 
   .toggle-thumb {
@@ -215,8 +240,8 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
     width: 14px;
     height: 14px;
     background: var(--accent);
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+    border-radius: var(--radius-full);
+    transition: transform var(--transition-slow);
     transform: translateX(16px);
   }
 
@@ -226,38 +251,32 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
 
   /* ─── Logo ─── */
   .portal-logo {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
   }
 
   .portal-logo h1 {
     color: var(--text-primary);
     font-size: 2.75rem;
-    font-weight: 700;
+    font-weight: var(--font-bold);
     margin: 0;
     letter-spacing: -0.02em;
-    transition: color 0.3s;
+    transition: color var(--transition-slow);
   }
 
-  .logo-p {
-    color: var(--accent);
-    font-weight: 800;
-  }
-
+  .logo-p,
   .logo-dot {
     color: var(--accent);
     font-weight: 800;
   }
 
-
-
   /* ─── Tagline ─── */
   .portal-tagline {
     color: var(--text-secondary);
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
     font-style: italic;
     letter-spacing: 0.02em;
-    transition: color 0.3s;
+    transition: color var(--transition-slow);
   }
 
   .tagline-separator {
@@ -267,111 +286,130 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
     font-style: normal;
   }
 
-  /* Gradient card — matches onboarding "Fastest Way" style */
+  /* ─── Portal Card ─── */
   .portal-card {
     position: relative;
     background: linear-gradient(135deg, var(--bg-surface), var(--accent-glow));
     border: 2px solid var(--accent);
-    border-radius: 20px;
-    padding: 2.2rem 1.5rem 1.5rem;
-    margin-bottom: 1.5rem;
-    transition: background 0.3s, border-color 0.3s;
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10) var(--space-6) var(--space-6);
+    margin-bottom: var(--space-6);
+    transition: background var(--transition-slow), border-color var(--transition-slow);
   }
 
+  /* ─── Card Badge — volledig zelfstandig, onafhankelijk van design .badge ─── */
   .card-badge {
     position: absolute;
-    top: -1.1em;
+    top: -0.85em;
     left: 50%;
     transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4em 1.2em;
     background: var(--accent);
-    color: #1a1a2e;
-    font-size: 0.75rem;
-    font-weight: 700;
+    color: var(--bg-deep);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    line-height: 1;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 0.25em 1em;
-    border-radius: 100px;
     white-space: nowrap;
+    border-radius: var(--radius-full);
+    z-index: 1;
   }
 
+  /* ─── Portal Action Buttons ─── */
+  /* Design system build mist button variant CSS (primary/secondary/ghost).
+     Daarom hier volledig gedefinieerd met portal tokens. */
   .portal-actions {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space-4);
   }
 
-  .btn {
-    display: block;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    font-weight: 600;
+  .portal-actions .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-base);
     text-decoration: none;
-    transition: all 0.2s ease;
-    font-size: 1rem;
+    height: auto;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      transform var(--transition-fast);
   }
 
-  .btn-primary {
-    background: var(--accent) !important;
-    color: var(--bg-deep) !important;
-    box-shadow: none !important;
+  .portal-actions .btn--primary {
+    background: var(--accent);
+    color: var(--bg-deep);
+    border-color: var(--accent);
   }
 
-  .btn-primary:hover {
-    background: var(--accent-light) !important;
+  .portal-actions .btn--primary:hover {
+    background: var(--accent-light);
+    border-color: var(--accent-light);
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px var(--accent-glow) !important;
+    box-shadow: 0 4px 20px var(--accent-glow);
   }
 
-  .btn-secondary {
-    background: var(--bg-elevated) !important;
-    color: var(--text-primary) !important;
-    border: 1px solid var(--border-light) !important;
-    box-shadow: none !important;
-    transition: all 0.2s ease;
+  .portal-actions .btn--secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-strong);
   }
 
-  .btn-secondary:hover {
-    background: var(--bg-hover) !important;
-    border-color: var(--accent) !important;
+  .portal-actions .btn--secondary:hover {
+    border-color: var(--accent);
+    background: var(--bg-hover);
   }
 
-  .btn-text {
+  .portal-actions .btn--ghost {
+    background: transparent;
     color: var(--text-secondary);
-    padding: 0.75rem;
-    transition: color 0.2s;
+    border-color: transparent;
+    padding: var(--space-3);
   }
 
-  .btn-text:hover {
-    color: var(--accent);
+  .portal-actions .btn--ghost:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
   }
 
-  /* Language flags */
+  /* ─── Language Flags ─── */
   .languages {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
     flex-wrap: wrap;
     align-items: center;
   }
 
   .lang {
-    font-size: 20px;
+    font-size: var(--text-xl);
   }
 
   .lang-more {
-    font-size: 12px;
+    font-size: var(--text-xs);
     color: var(--text-muted);
     display: flex;
     align-items: center;
   }
 
-  /* Footer */
+  /* ─── Footer ─── */
   .portal-footer {
     text-align: center;
-    padding: 0.5rem;
+    padding: var(--space-2);
     color: var(--text-muted);
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
 
   .portal-footer a {
@@ -384,14 +422,14 @@ const { title, description, lang, countryFlag, tagline, actions, themeToggle, fo
   }
 
   .portal-footer-brand {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
     border-top: 1px solid var(--border);
   }
 
   .portal-footer-brand p {
     color: var(--text-muted);
-    font-size: 12px;
-    line-height: 1.6;
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
   }
 </style>

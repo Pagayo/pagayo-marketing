@@ -12,6 +12,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -91,13 +94,11 @@ button {
 }
 
 /* ============================================ */
-/* LEGACY: Tailwind v4 Configuration Below     */
+/* Marketing Design Tokens (ex-Tailwind @theme) */
+/* TODO: Merge met pagayo-design tokens        */
 /* ============================================ */
 
-@import 'tailwindcss';
-
-/* Tailwind v4 Custom Theme */
-@theme {
+:root {
   /* Colors */
   --color-primary-purple: #635BFF;
   --color-dark-blue: #0A2540;
@@ -106,9 +107,6 @@ button {
   --color-success-green: #00D924;
   --color-warning-orange: #FF8A00;
   --color-error-red: #DF1B41;
-  
-  /* Typography */
-  --font-family-sans: Inter, system-ui, sans-serif;
   
   /* Shadows */
   --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -133,51 +131,9 @@ button {
   --radius-medium: 12px;
   --radius-large: 16px;
   --radius-xlarge: 22px;
-  
-  /* Breakpoints (for reference in JS) */
-  --breakpoint-desktop: 1024px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-mobile: 480px;
 }
 
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html {
-  scroll-behavior: smooth;
-  overflow-y: scroll; /* Force scrollbar always visible - fixes 1px shift on anchor links */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  @apply font-sans text-gray-900 bg-white;
-}
-
-/* Focus */
-:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary-purple);
-}
-
-/* Selection */
-::selection {
-  background-color: var(--color-primary-purple);
-  color: white;
-}
-
-/* Utility */
-button {
-  @apply cursor-pointer;
-}
-
-img {
-  @apply max-w-full h-auto;
-}
 
 /* 
 ================================================================================
