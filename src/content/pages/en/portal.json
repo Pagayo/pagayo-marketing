@@ -11,7 +11,7 @@
   "actions": {
     "createOrder": {
       "label": "Create Order",
-      "url": "https://app.pagayo.com/order/create"
+      "url": "https://start.pagayo.app"
     },
     "signIn": {
       "label": "Sign In",
