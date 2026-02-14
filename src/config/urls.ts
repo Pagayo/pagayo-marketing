@@ -16,10 +16,10 @@ export const urls = {
 
   /**
    * Sign In - Existing tenant login
-   * Dev: localhost:3000/login (pagayo-storefront tenant login)
-   * Prod: app.pagayo.com/login
+   * Dev: localhost:3000/start/login (pagayo-storefront universal login)
+   * Prod: start.pagayo.app/login
    */
-  signIn: isDev ? 'http://localhost:3000/login' : 'https://app.pagayo.com/login',
+  signIn: isDev ? 'http://localhost:3000/start/login' : 'https://start.pagayo.app/login',
 
   /**
    * Create Account - Direct claim registration (zero-friction without order)

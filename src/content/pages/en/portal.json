@@ -16,7 +16,7 @@
     },
     "signIn": {
       "label": "Sign In",
-      "url": "https://app.pagayo.com/login"
+      "url": "https://start.pagayo.app/login"
     },
     "createAccount": {
       "label": "Create Account",
