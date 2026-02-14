@@ -19,7 +19,7 @@ import { urls } from '../config/urls';
 // Bij design updates: kopieer opnieuw vanuit pagayo-design/dist/revolutionary/admin.css
 import '../styles/pagayo-design.css';
 
-const { title, description, lang, badge, tagline, actions, themeToggle, seo } = portalContent;
+const { title, description, lang, badge, tagline, actions, seo } = portalContent;
 
 // Environment-aware URLs: localhost in dev, production URLs in prod
 const actionUrls = {
@@ -58,23 +58,6 @@ const actionUrls = {
 
     <div class="portal-container">
 
-      <!-- Theme toggle -->
-      <button class="theme-toggle" id="themeToggle" aria-label={themeToggle.ariaLabel}>
-        <span class="toggle-icon sun">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </span>
-        <span class="toggle-track">
-          <span class="toggle-thumb"></span>
-        </span>
-        <span class="toggle-icon moon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </span>
-      </button>
-
-      <div class="portal-logo">
-        <h1><span class="logo-p">P</span>agayo<span class="logo-dot">.</span></h1>
-      </div>
-
       <!-- Portal card — .badge from design system, portal-specific card styling -->
       <div class="portal-card">
         <span class="badge card-badge">{badge}</span>
@@ -108,29 +91,10 @@ const actionUrls = {
   </main>
 </BaseLayout>
 
-<script>
-  const toggle = document.getElementById('themeToggle');
-  const portal = document.querySelector('.portal');
-  
-  // Read saved preference
-  const saved = localStorage.getItem('portal-theme') || 'dark';
-  portal?.setAttribute('data-theme', saved);
-  
-  toggle?.addEventListener('click', () => {
-    const current = portal?.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    portal?.setAttribute('data-theme', next);
-    localStorage.setItem('portal-theme', next);
-  });
-</script>
-
 <style is:global>
   /* Override global styles for portal page */
   body:has(.portal) {
     background: #0a0a0f !important;
-  }
-  body:has(.portal[data-theme="light"]) {
-    background: #f5f5f7 !important;
   }
 </style>
 
@@ -166,35 +130,14 @@ const actionUrls = {
     --border-strong: rgb(240 240 245 / 0.15);
   }
 
-  /* LIGHT THEME — design system heeft alleen dark/revolutionary.
-     Tot light theme in design system: overrides hier. */
-  .portal[data-theme="light"] {
-    --bg-deep: #f5f5f7;
-    --bg-surface: #ffffff;
-    --bg-elevated: #f0f0f2;
-    --bg-hover: #e8e8ec;
-    --bg-active: #dddde2;
-    --accent: #e8951a;
-    --accent-light: #f5a623;
-    --accent-dim: #c47d10;
-    --accent-glow: rgb(232 149 26 / 0.12);
-    --text-primary: #1a1a2e;
-    --text-secondary: rgb(26 26 46 / 0.6);
-    --text-muted: rgb(26 26 46 / 0.35);
-    --text-disabled: rgb(26 26 46 / 0.25);
-    --border: rgb(26 26 46 / 0.08);
-    --border-light: rgb(26 26 46 / 0.12);
-    --border-strong: rgb(26 26 46 / 0.2);
-  }
-
   /* ─── PORTAL LAYOUT ─── */
   .portal {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background: var(--bg-deep) !important;
-    padding: var(--space-8);
+    padding: 6rem var(--space-8) var(--space-8);
     transition: background var(--transition-slow), color var(--transition-slow);
   }
 
@@ -203,74 +146,6 @@ const actionUrls = {
     max-width: 400px;
     width: 100%;
     position: relative;
-  }
-
-  /* ─── Theme Toggle ─── */
-  .theme-toggle {
-    position: absolute;
-    top: calc(-1 * var(--space-4));
-    right: 0;
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: var(--space-1);
-    z-index: var(--z-dropdown);
-  }
-
-  .toggle-icon {
-    display: flex;
-    align-items: center;
-    color: var(--accent);
-    transition: opacity var(--transition-normal);
-  }
-
-  .toggle-track {
-    width: 36px;
-    height: 20px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-full);
-    position: relative;
-    transition: background var(--transition-slow);
-  }
-
-  .toggle-thumb {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 14px;
-    height: 14px;
-    background: var(--accent);
-    border-radius: var(--radius-full);
-    transition: transform var(--transition-slow);
-    transform: translateX(16px);
-  }
-
-  .portal[data-theme="light"] .toggle-thumb {
-    transform: translateX(0);
-  }
-
-  /* ─── Logo ─── */
-  .portal-logo {
-    margin-bottom: var(--space-8);
-  }
-
-  .portal-logo h1 {
-    color: var(--text-primary);
-    font-size: 2.75rem;
-    font-weight: var(--font-bold);
-    margin: 0;
-    letter-spacing: -0.02em;
-    transition: color var(--transition-slow);
-  }
-
-  .logo-p,
-  .logo-dot {
-    color: var(--accent);
-    font-weight: 800;
   }
 
   /* ─── Portal Card ─── */
