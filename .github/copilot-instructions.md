@@ -470,7 +470,7 @@ src/components/
 - [ ] Accessible (WCAG AA)
 - [ ] Performance optimized
 - [ ] TypeScript strict mode
-- [ ] Tailwind CSS (no custom CSS)
+- [ ] `@pagayo/design` CSS tokens (geen hardcoded kleuren/spacing)
 - [ ] Tested in Chrome, Firefox, Safari
 
 **Page klaar als:**
@@ -583,7 +583,7 @@ src/components/
 - **Masterplan:** `/pagayo-beheer/AI/plan/open-to-do/PAGAYO-MARKETING-MASTERPLAN.md`
 - **Design Inspiration:** https://stripe.com
 - **Astro Docs:** https://docs.astro.build
-- **Tailwind Docs:** https://tailwindcss.com
+- **Design System:** `/pagayo-design/` (CSS tokens, components, themes)
 
 ---
 

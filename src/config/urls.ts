@@ -1,0 +1,39 @@
+/**
+ * Environment-aware URL configuration
+ * Development: localhost URLs
+ * Production: pagayo.com/app URLs
+ */
+
+const isDev = import.meta.env.DEV;
+
+export const urls = {
+  /**
+   * Create Order flow - Zero-friction anonymous onboarding
+   * Dev: localhost:3000/start (pagayo-storefront)
+   * Prod: start.pagayo.app/start
+   */
+  createOrder: isDev ? 'http://localhost:3000/start' : 'https://start.pagayo.app/start',
+
+  /**
+   * Sign In - Existing tenant login
+   * Dev: localhost:3000/login (pagayo-storefront tenant login)
+   * Prod: app.pagayo.com/login
+   */
+  signIn: isDev ? 'http://localhost:3000/login' : 'https://app.pagayo.com/login',
+
+  /**
+   * Create Account - Direct claim registration (zero-friction without order)
+   * Skips order creation, goes directly to account claim form.
+   * Dev: localhost:3000/register (pagayo-storefront)
+   * Prod: start.pagayo.app/register
+   */
+  createAccount: isDev ? 'http://localhost:3000/register' : 'https://start.pagayo.app/register',
+} as const;
+
+/**
+ * Get environment-aware URL
+ * @param key - URL key from urls object
+ */
+export function getUrl(key: keyof typeof urls): string {
+  return urls[key];
+}

@@ -8,17 +8,26 @@
  * - Scoped styles: Portal-specifieke layout, theme toggle, logo, light theme overrides
  * - BEM: .btn--primary, .btn--secondary, .btn--ghost, .badge (uit design system)
  *
- * i18n-ready: Alle teksten komen uit content/pages/en/portal.json
+ * i18n-ready: Alle teksten komen uit content/pages/nl/portal.json
  * Voor nieuwe taal: maak content/pages/{lang}/portal.json + pages/{lang-route}/index.astro
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import portalContent from '../content/pages/en/portal.json';
+import portalContent from '../content/pages/nl/portal.json';
+import { urls } from '../config/urls';
 
 // Pagayo Design System — lokale CSS kopie (bron: @pagayo/design dist/revolutionary/admin.css)
 // Bij design updates: kopieer opnieuw vanuit pagayo-design/dist/revolutionary/admin.css
 import '../styles/pagayo-design.css';
 
-const { title, description, lang, tagline, actions, themeToggle, seo } = portalContent;
+const { title, description, lang, badge, tagline, actions, themeToggle, seo } = portalContent;
+
+// Environment-aware URLs: localhost in dev, production URLs in prod
+const actionUrls = {
+  createOrder: urls.createOrder,
+  signIn: urls.signIn,
+  createAccount: urls.createAccount,
+  learnMore: actions.learnMore.url, // blijft relatief pad
+};
 ---
 
 <BaseLayout 
@@ -33,6 +42,20 @@ const { title, description, lang, tagline, actions, themeToggle, seo } = portalC
   structuredData={[{ type: seo.structuredData.type as 'WebSite', data: { name: seo.structuredData.name, url: seo.structuredData.url } }]}
 >
   <main class="portal" data-theme="dark">
+    <!-- Main navigation -->
+    <nav class="main-nav">
+      <a href="/" class="main-nav__logo">
+        <span class="logo-p">P</span>agayo<span class="logo-dot">.</span>
+      </a>
+      <button class="main-nav__menu" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </nav>
+
     <div class="portal-container">
 
       <!-- Theme toggle -->
@@ -54,18 +77,18 @@ const { title, description, lang, tagline, actions, themeToggle, seo } = portalC
 
       <!-- Portal card — .badge from design system, portal-specific card styling -->
       <div class="portal-card">
-        <span class="badge card-badge">100% free</span>
+        <span class="badge card-badge">{badge}</span>
         <div class="portal-actions">
-          <a href={actions.createOrder.url} class="btn btn--primary btn--lg btn--full">
+          <a href={actionUrls.createOrder} class="btn btn--primary btn--lg btn--full">
             {actions.createOrder.label}
           </a>
-          <a href={actions.signIn.url} class="btn btn--secondary btn--lg btn--full">
+          <a href={actionUrls.signIn} class="btn btn--secondary btn--lg btn--full">
             {actions.signIn.label}
           </a>
-          <a href={actions.createAccount.url} class="btn btn--secondary btn--lg btn--full">
+          <a href={actionUrls.createAccount} class="btn btn--secondary btn--lg btn--full">
             {actions.createAccount.label}
           </a>
-          <a href={actions.learnMore.url} class="btn btn--ghost btn--full">
+          <a href={actionUrls.learnMore} class="btn btn--ghost btn--full">
             {actions.learnMore.label}
           </a>
         </div>
@@ -381,6 +404,52 @@ const { title, description, lang, tagline, actions, themeToggle, seo } = portalC
 
   .channel-icon:hover {
     color: var(--accent);
+  }
+
+  /* ─── Main Navigation ─── */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-6);
+    z-index: 100;
+  }
+
+  .main-nav__logo {
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: color var(--transition-slow);
+  }
+
+  .main-nav__logo .logo-p,
+  .main-nav__logo .logo-dot {
+    color: var(--accent);
+    font-weight: 800;
+  }
+
+  .main-nav__menu {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .main-nav__menu:hover {
+    color: var(--accent);
+    background: var(--bg-hover);
   }
 
 </style>

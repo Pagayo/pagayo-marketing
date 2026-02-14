@@ -20,7 +20,7 @@
       ],
       "cta": {
         "label": "Start Free",
-        "url": "https://app.pagayo.com/register"
+        "url": "https://start.pagayo.app/register"
       },
       "highlighted": false
     },
@@ -38,7 +38,7 @@
       ],
       "cta": {
         "label": "Start Trial",
-        "url": "https://app.pagayo.com/register?plan=growth"
+        "url": "https://start.pagayo.app/register?plan=growth"
       },
       "highlighted": true
     },

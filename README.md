@@ -30,7 +30,7 @@ npm run preview
 ## 🏗️ Tech Stack
 
 - **Framework:** Astro 4.x (static-first, island architecture)
-- **Styling:** Tailwind CSS 4.x
+- **Styling:** `@pagayo/design` (CSS design system, geen Tailwind)
 - **TypeScript:** Strict mode
 - **Deployment:** Cloudflare Pages (edge, 300+ locations)
 - **i18n:** Path-based routing (`/nl`, `/de`, `/us`)
@@ -85,21 +85,44 @@ www.pagayo.com/us/pricing    → US English pricing
 
 **Design Leidraad:** Stripe.com
 
-**Color Palette:**
-- Primary Purple: `#635BFF` (CTA buttons)
-- Primary Dark: `#0A2540` (headings)
-- Primary Light: `#F6F9FC` (backgrounds)
+**Styling:** Alle CSS komt uit `@pagayo/design` (Tailwind is verwijderd op 11 feb 2026).
+Geladen via: `src/styles/pagayo-design.css` (gebuild door `@pagayo/design`).
 
-**Typography:**
-- Font: Inter (WOFF2, subsetting)
-- Scale: 1.25 ratio (16px base)
+Site-specifieke design standaarden staan in `/DESIGN-SYSTEM.md`.
 
-**Components:**
-- Buttons: Primary, Secondary, Text
-- Cards: Elevated with subtle shadow
-- Hero: Large headline + visual
+**CSS Tokens (uit `@pagayo/design`):**
+```css
+/* Kleuren */
+var(--accent)           /* Primary accent */
+var(--bg-deep)          /* Deepest background */
+var(--bg-surface)       /* Card backgrounds */
+var(--text-primary)     /* Hoofdtekst */
+var(--text-secondary)   /* Ondersteunende tekst */
+var(--border)           /* Borders */
 
-See `/pagayo-beheer/AI/plan/open-to-do/PAGAYO-MARKETING-MASTERPLAN.md` for complete design system.
+/* Spacing (4px grid) */
+var(--space-1) t/m var(--space-24)
+
+/* Typography */
+var(--text-sm), var(--text-base), var(--text-lg), etc.
+var(--font-sans)        /* Inter */
+```
+
+**VERBODEN:**
+```css
+/* ❌ Geen hardcoded kleuren */
+color: #635BFF;
+background: #0A2540;
+
+/* ✅ Altijd design tokens */
+color: var(--accent);
+background: var(--bg-deep);
+```
+
+**Bronnen:**
+- Design tokens: `/pagayo-design/src/tokens/`
+- Theme JSON: `/pagayo-design/src/themes/revolutionary.json`
+- Site-specifiek: `/DESIGN-SYSTEM.md`
 
 ---
 
@@ -203,7 +226,8 @@ touch src/pages/nl/nieuwe-pagina.astro
 
 - **Masterplan:** `/pagayo-beheer/AI/plan/open-to-do/PAGAYO-MARKETING-MASTERPLAN.md`
 - **Astro Docs:** https://docs.astro.build
-- **Tailwind Docs:** https://tailwindcss.com/docs
+- **Design System:** `/pagayo-design/` (CSS tokens, components, themes)
+- **Design Standaarden:** `/DESIGN-SYSTEM.md` (site-specifieke standaarden)
 - **Design Inspiration:** https://stripe.com
 
 ---
