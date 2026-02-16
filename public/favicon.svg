@@ -1,19 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <defs>
-    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00e077;stop-opacity:1" />
-    </linearGradient>
-  </defs>
+  <!-- Dark background -->
+  <rect width="128" height="128" rx="24" fill="#0a0a0f"/>
   
-  <!-- Dark background for contrast -->
-  <rect width="128" height="128" rx="24" fill="#06130d"/>
+  <!-- Gold P -->
+  <text x="16" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="90" font-weight="800" fill="#f5a623">P</text>
   
-  <!-- Letter P -->
-  <text x="24" y="95" font-family="system-ui, -apple-system, sans-serif" font-size="80" font-weight="800" fill="#ffffff">P</text>
-  
-  <!-- Green dot -->
-  <circle cx="92" cy="85" r="10" fill="url(#greenGradient)">
-    <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
-  </circle>
+  <!-- White dot -->
+  <circle cx="98" cy="88" r="9" fill="#ffffff"/>
 </svg>
