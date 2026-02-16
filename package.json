@@ -31,6 +31,6 @@
     "eslint": "^10.0.0",
     "globals": "^17.3.0",
     "prettier-plugin-astro": "^0.14.1",
-    "wrangler": "^4.63.0"
+    "wrangler": "^4.65.0"
   }
 }
