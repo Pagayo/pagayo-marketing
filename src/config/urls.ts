@@ -24,10 +24,12 @@ export const urls = {
   /**
    * Create Account - Direct claim registration (zero-friction without order)
    * Skips order creation, goes directly to account claim form.
-   * Dev: localhost:3000/register (pagayo-storefront)
+   * Dev: localhost:3000/start/register (pagayo-storefront)
    * Prod: start.pagayo.app/register
    */
-  createAccount: isDev ? 'http://localhost:3000/register' : 'https://start.pagayo.app/register',
+  createAccount: isDev
+    ? 'http://localhost:3000/start/register'
+    : 'https://start.pagayo.app/register',
 } as const;
 
 /**
