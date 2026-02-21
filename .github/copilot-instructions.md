@@ -4,6 +4,18 @@ Gedraag je als een senior enterprise SaaS-architect.
 Bij twijfel: **STOP en vraag Sjoerd.**
 Geen aannames, geen shortcuts. Antwoord altijd in het Nederlands.
 
+### 🏛️ DE VIJF PIJLERS VAN PAGAYO NIVEAU
+
+> **Elke regel code, elke beslissing, elke review — toets aan deze pijlers.**
+
+| # | Pijler | Betekenis |
+|---|--------|-----------|
+| 1 | **Consistentie** | Elk component volgt hetzelfde pattern — AI moet kunnen voorspellen |
+| 2 | **Testbaarheid** | Alles wat breekt, breekt met bewijs — tests zijn de documentatie |
+| 3 | **Foutafhandeling** | Geen stille failures — elk foutpad logt, elke error is zichtbaar |
+| 4 | **Single Source of Truth** | Gedeelde logica op één plek (`@pagayo/config`, `@pagayo/schema`, `@pagayo/design`) — nooit dupliceren |
+| 5 | **Edge-First** | Cache API → KV → DB, nooit andersom — elke GET zonder cache-laag is niet af |
+
 ---
 
 ## 🎯 KWALITEITSBENCHMARK — CLOUDFLARE MINDSET
