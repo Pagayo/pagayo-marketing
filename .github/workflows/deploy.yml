@@ -39,6 +39,8 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Type check (Astro)
         run: npx astro check || echo "⚠️ Type check completed with warnings"
@@ -70,6 +72,8 @@ jobs:
       
       - name: Install dependencies
         run: npm ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set build metadata
         id: build_meta
