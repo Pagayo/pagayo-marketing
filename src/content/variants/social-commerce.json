@@ -1,0 +1,64 @@
+{
+  "slug": "home-social-commerce",
+  "variantName": "Social Commerce — TikTok/Instagram",
+  "title": "Pagayo — Turn Social Media Into Sales",
+  "description": "Connect TikTok, Instagram, and Facebook to your shop. Every like can become a sale.",
+  "hero": {
+    "eyebrow": "Social Commerce Platform",
+    "headline": "From Content to Commerce. Instantly.",
+    "subheadline": "Your TikTok goes viral? Pagayo turns viewers into buyers. One unified shop for all your social channels — TikTok, Instagram, Facebook.",
+    "primaryCta": {
+      "label": "Connect Your Socials",
+      "url": "https://start.pagayo.app"
+    },
+    "secondaryCta": {
+      "label": "See Success Stories",
+      "url": "/ie/features"
+    }
+  },
+  "features": [
+    {
+      "icon": "🎵",
+      "title": "TikTok Shop Ready",
+      "description": "Link your TikTok to your Pagayo shop. Every video can drive orders — automatically."
+    },
+    {
+      "icon": "📸",
+      "title": "Instagram Shopping",
+      "description": "Tag products in your posts and stories. Followers buy without leaving the app."
+    },
+    {
+      "icon": "🔥",
+      "title": "Go Viral, Stay Ready",
+      "description": "When your content blows up, your shop handles the traffic. Edge-native = never crashes."
+    },
+    {
+      "icon": "📊",
+      "title": "Track What Converts",
+      "description": "See which posts drive sales. Optimize your content strategy with real commerce data."
+    },
+    {
+      "icon": "🛒",
+      "title": "One Cart, All Channels",
+      "description": "TikTok, Instagram, WhatsApp, website — one order system. No more manual tracking."
+    },
+    {
+      "icon": "💳",
+      "title": "Checkout in Seconds",
+      "description": "Mobile-optimized checkout. Social shoppers convert 3x faster with Pagayo."
+    }
+  ],
+  "socialProof": {
+    "headline": "Creators & Brands Love Pagayo",
+    "stats": [
+      { "number": "3x", "label": "Higher Conversion" },
+      { "number": "All", "label": "Socials Connected" },
+      { "number": "0", "label": "Missed Orders" }
+    ]
+  },
+  "cta": {
+    "headline": "Turn Your Following Into Revenue",
+    "description": "Stop losing sales to 'Link in bio'. Pagayo connects your social channels to a real commerce engine.",
+    "buttonLabel": "Start Free Trial"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "home-africa-mobile",
+  "variantName": "Africa Mobile — WhatsApp First",
+  "title": "Pagayo — Start Selling on WhatsApp Today",
+  "description": "Turn WhatsApp into your storefront. Accept orders, share products, and get paid — all from your phone.",
+  "hero": {
+    "eyebrow": "WhatsApp Commerce",
+    "headline": "Sell on WhatsApp. Get Paid Instantly.",
+    "subheadline": "No website needed. Share your products via WhatsApp, accept orders, and receive payments directly to your phone. Start in 2 minutes.",
+    "primaryCta": {
+      "label": "Start Selling Now",
+      "url": "https://start.pagayo.app"
+    },
+    "secondaryCta": {
+      "label": "See How It Works",
+      "url": "/ie/features"
+    }
+  },
+  "features": [
+    {
+      "icon": "📱",
+      "title": "WhatsApp-First Selling",
+      "description": "Create products, share them on WhatsApp, and accept orders — all from your phone. No computer needed."
+    },
+    {
+      "icon": "💰",
+      "title": "Instant Mobile Payments",
+      "description": "Accept mobile money, bank transfers, and cash. Get paid faster than ever before."
+    },
+    {
+      "icon": "🛍️",
+      "title": "Your Shop, Your Phone",
+      "description": "Full shop management from your smartphone. Add products, track orders, manage customers."
+    },
+    {
+      "icon": "🔗",
+      "title": "One Link, All Products",
+      "description": "Share a single link that shows all your products. Customers browse and order in seconds."
+    },
+    {
+      "icon": "📦",
+      "title": "Track Every Order",
+      "description": "See all orders in one place. WhatsApp, in-person, or online — nothing gets lost."
+    },
+    {
+      "icon": "🚀",
+      "title": "Ready in 2 Minutes",
+      "description": "No setup fees, no technical knowledge needed. Create your account and start selling immediately."
+    }
+  ],
+  "socialProof": {
+    "headline": "Trusted by Sellers Across Africa",
+    "stats": [
+      { "number": "2min", "label": "Setup Time" },
+      { "number": "0", "label": "Setup Fees" },
+      { "number": "24/7", "label": "Selling" }
+    ]
+  },
+  "cta": {
+    "headline": "Start Selling on WhatsApp Today",
+    "description": "Join thousands of sellers who use Pagayo to sell on WhatsApp. No setup fees, no technical skills needed.",
+    "buttonLabel": "Start Selling Free"
+  }
+}
