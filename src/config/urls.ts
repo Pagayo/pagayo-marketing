@@ -8,13 +8,6 @@ const isDev = import.meta.env.DEV;
 
 export const urls = {
   /**
-   * Create Order flow - Zero-friction anonymous onboarding
-   * Dev: localhost:3000/start (pagayo-storefront)
-   * Prod: start.pagayo.app/start
-   */
-  createOrder: isDev ? 'http://localhost:3000/start' : 'https://start.pagayo.app/start',
-
-  /**
    * Sign In - Existing tenant login
    * Dev: localhost:3000/start/login (pagayo-storefront universal login)
    * Prod: start.pagayo.app/login

@@ -2,9 +2,9 @@
   "logo": "Pagayo",
   "nav": {
     "en": [
-      { "label": "Features", "url": "/ie/features" },
-      { "label": "Pricing", "url": "/ie/pricing" },
-      { "label": "Contact", "url": "/ie/contact" }
+      { "label": "Features", "url": "#" },
+      { "label": "Pricing", "url": "#" },
+      { "label": "Contact", "url": "#" }
     ]
   },
   "cta": {

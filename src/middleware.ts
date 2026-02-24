@@ -30,9 +30,7 @@ import type { ContextRule, ContentVariant, VisitorContext } from '@pagayo/config
 const PATH_TO_PAGE: Record<string, string> = {
   '/': 'marketing-home',
   '/nl': 'marketing-home',
-  '/ie': 'marketing-home',
   '/pricing': 'pricing',
-  '/ie/pricing': 'pricing',
 };
 
 // ─── MIDDLEWARE ──────────────────────────────────────────

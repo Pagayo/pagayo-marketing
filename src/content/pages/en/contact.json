@@ -47,9 +47,9 @@
     "ogType": "website",
     "twitterCard": "summary_large_image",
     "noIndex": false,
-    "canonicalPath": "/ie/contact",
+    "canonicalPath": "#",
     "alternates": [
-      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/ie/contact" },
+      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/#" },
       { "lang": "nl", "hreflang": "nl-NL", "href": "https://www.pagayo.com/nl/contact" },
       { "lang": "de", "hreflang": "de-DE", "href": "https://www.pagayo.com/de/kontakt" },
       { "lang": "fr", "hreflang": "fr-FR", "href": "https://www.pagayo.com/fr/contact" },

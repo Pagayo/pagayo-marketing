@@ -10,10 +10,6 @@
     "punch": "All your orders in one place."
   },
   "actions": {
-    "createOrder": {
-      "label": "Create Order",
-      "url": "https://start.pagayo.app"
-    },
     "signIn": {
       "label": "Sign In",
       "url": "https://start.pagayo.app/login"
@@ -21,10 +17,6 @@
     "createAccount": {
       "label": "Create Account",
       "url": "https://start.pagayo.app/register"
-    },
-    "learnMore": {
-      "label": "Learn More →",
-      "url": "/ie/"
     }
   },
   "themeToggle": {
@@ -34,7 +26,7 @@
     "helpText": "You can always change this later.",
     "helpLink": {
       "label": "Need help?",
-      "url": "/ie/"
+      "url": "#"
     },
     "brand": "The Order-First Commerce Platform",
     "copyright": "© 2026 Pagayo. All rights reserved."

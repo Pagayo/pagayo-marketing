@@ -7,8 +7,8 @@
   },
   "links": {
     "en": [
-      { "label": "Privacy Policy", "url": "/ie/privacy" },
-      { "label": "Terms of Service", "url": "/ie/terms" }
+      { "label": "Privacy Policy", "url": "#" },
+      { "label": "Terms of Service", "url": "#" }
     ]
   }
 }

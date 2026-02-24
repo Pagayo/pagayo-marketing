@@ -56,7 +56,7 @@
       ],
       "cta": {
         "label": "Contact Sales",
-        "url": "/ie/contact"
+        "url": "#"
       },
       "highlighted": false
     }
@@ -80,9 +80,9 @@
     "ogType": "website",
     "twitterCard": "summary_large_image",
     "noIndex": false,
-    "canonicalPath": "/ie/pricing",
+    "canonicalPath": "#",
     "alternates": [
-      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/ie/pricing" },
+      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/#" },
       { "lang": "nl", "hreflang": "nl-NL", "href": "https://www.pagayo.com/nl/prijzen" },
       { "lang": "de", "hreflang": "de-DE", "href": "https://www.pagayo.com/de/preise" },
       { "lang": "fr", "hreflang": "fr-FR", "href": "https://www.pagayo.com/fr/tarifs" },
@@ -91,7 +91,7 @@
     "structuredData": {
       "type": "WebSite",
       "name": "Pagayo Pricing",
-      "url": "https://www.pagayo.com/ie/pricing"
+      "url": "https://www.pagayo.com/#"
     }
   }
 }

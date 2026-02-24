@@ -19,14 +19,12 @@ import { urls } from '../config/urls';
 // Bij design updates: kopieer opnieuw vanuit pagayo-design/dist/revolutionary/admin.css
 import '../styles/pagayo-design.css';
 
-const { title, description, lang, badge, tagline, actions, seo } = portalContent;
+const { title, description, lang, hero, badge, tagline, actions, seo } = portalContent;
 
 // Environment-aware URLs: localhost in dev, production URLs in prod
 const actionUrls = {
-  createOrder: urls.createOrder,
   signIn: urls.signIn,
   createAccount: urls.createAccount,
-  learnMore: actions.learnMore.url, // blijft relatief pad
 };
 ---
 
@@ -58,21 +56,21 @@ const actionUrls = {
 
     <div class="portal-container">
 
+      <!-- Hero headline — Odoo-style above the card -->
+      <div class="portal-hero">
+        <h1 class="portal-hero__headline" set:html={hero.headline} />
+        <p class="portal-hero__sub">{hero.sub}</p>
+      </div>
+
       <!-- Portal card — .badge from design system, portal-specific card styling -->
       <div class="portal-card">
         <span class="badge card-badge">{badge}</span>
         <div class="portal-actions">
-          <a href={actionUrls.createOrder} class="btn btn--primary btn--lg btn--full">
-            {actions.createOrder.label}
-          </a>
           <a href={actionUrls.signIn} class="btn btn--secondary btn--lg btn--full">
             {actions.signIn.label}
           </a>
           <a href={actionUrls.createAccount} class="btn btn--secondary btn--lg btn--full">
             {actions.createAccount.label}
-          </a>
-          <a href={actionUrls.learnMore} class="btn btn--ghost btn--full">
-            {actions.learnMore.label}
           </a>
         </div>
       </div>
@@ -142,10 +140,57 @@ const actionUrls = {
   }
 
   .portal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
     position: relative;
+  }
+
+  /* ─── Hero Headline ─── */
+  .portal-hero {
+    margin-bottom: var(--space-10);
+    max-width: 600px;
+  }
+
+  .portal-hero__headline {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 900;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 var(--space-3);
+  }
+
+  .portal-hero__headline :global(em) {
+    font-style: normal;
+    position: relative;
+    display: inline;
+  }
+
+  .portal-hero__headline :global(em)::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    bottom: 2px;
+    height: 0.35em;
+    background: var(--accent);
+    opacity: 0.35;
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .portal-hero__sub {
+    font-family: var(--font-sans);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    margin: 0;
   }
 
   /* ─── Portal Card ─── */
@@ -156,6 +201,8 @@ const actionUrls = {
     border-radius: var(--radius-2xl);
     padding: var(--space-10) var(--space-6) var(--space-6);
     margin-bottom: var(--space-6);
+    width: 100%;
+    max-width: 400px;
     transition: background var(--transition-slow), border-color var(--transition-slow);
   }
 
@@ -325,6 +372,17 @@ const actionUrls = {
   .main-nav__menu:hover {
     color: var(--accent);
     background: var(--bg-hover);
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 480px) {
+    .portal-hero {
+      margin-bottom: var(--space-6);
+    }
+
+    .portal-card {
+      max-width: 100%;
+    }
   }
 
 </style>

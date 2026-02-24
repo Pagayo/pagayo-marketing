@@ -4,16 +4,16 @@
   "description": "Het Order-First Commerce Platform. Inloggen, registreren of meer informatie.",
   "lang": "nl",
   "countryFlag": "🇳🇱",
+  "hero": {
+    "headline": "Al je orders op <em>één platform</em>.",
+    "sub": "100% GRATIS! Voor altijd!"
+  },
   "badge": "100% GRATIS",
   "tagline": {
     "channels": "WhatsApp, TikTok, Facebook, Webshop, POS, QR, etc.",
     "punch": "Al je orders op één plek."
   },
   "actions": {
-    "createOrder": {
-      "label": "Order Aanmaken",
-      "url": "https://start.pagayo.app"
-    },
     "signIn": {
       "label": "Inloggen",
       "url": "https://start.pagayo.app/login"
@@ -21,10 +21,6 @@
     "createAccount": {
       "label": "Account Aanmaken",
       "url": "https://start.pagayo.app/register"
-    },
-    "learnMore": {
-      "label": "Meer informatie →",
-      "url": "/ie/"
     }
   },
   "themeToggle": {
@@ -34,7 +30,7 @@
     "helpText": "Je kunt dit altijd later aanpassen.",
     "helpLink": {
       "label": "Hulp nodig?",
-      "url": "/ie/"
+      "url": "#"
     },
     "brand": "Het Order-First Commerce Platform",
     "copyright": "© 2026 Pagayo. Alle rechten voorbehouden."

@@ -12,7 +12,7 @@
     },
     "secondaryCta": {
       "label": "See How It Works",
-      "url": "/ie/features"
+      "url": "#"
     }
   },
   "features": [
@@ -65,9 +65,9 @@
     "ogType": "website",
     "twitterCard": "summary_large_image",
     "noIndex": false,
-    "canonicalPath": "/ie/",
+    "canonicalPath": "/",
     "alternates": [
-      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/ie/" },
+      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/" },
       { "lang": "nl", "hreflang": "nl-NL", "href": "https://www.pagayo.com/nl/" },
       { "lang": "de", "hreflang": "de-DE", "href": "https://www.pagayo.com/de/" },
       { "lang": "fr", "hreflang": "fr-FR", "href": "https://www.pagayo.com/fr/" },

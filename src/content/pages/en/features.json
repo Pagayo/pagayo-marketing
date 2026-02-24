@@ -81,9 +81,9 @@
     "ogType": "website",
     "twitterCard": "summary_large_image",
     "noIndex": false,
-    "canonicalPath": "/ie/features",
+    "canonicalPath": "#",
     "alternates": [
-      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/ie/features" },
+      { "lang": "en", "hreflang": "en-IE", "href": "https://www.pagayo.com/#" },
       { "lang": "nl", "hreflang": "nl-NL", "href": "https://www.pagayo.com/nl/functies" },
       { "lang": "de", "hreflang": "de-DE", "href": "https://www.pagayo.com/de/funktionen" },
       { "lang": "fr", "hreflang": "fr-FR", "href": "https://www.pagayo.com/fr/fonctionnalites" },
@@ -92,7 +92,7 @@
     "structuredData": {
       "type": "WebSite",
       "name": "Pagayo Features",
-      "url": "https://www.pagayo.com/ie/features"
+      "url": "https://www.pagayo.com/#"
     }
   }
 }
