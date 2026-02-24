@@ -62,17 +62,29 @@ const actionUrls = {
         <p class="portal-hero__sub">{hero.sub}</p>
       </div>
 
-      <!-- Portal card — .badge from design system, portal-specific card styling -->
-      <div class="portal-card">
-        <span class="badge card-badge">{badge}</span>
-        <div class="portal-actions">
-          <a href={actionUrls.signIn} class="btn btn--secondary btn--lg btn--full">
-            {actions.signIn.label}
-          </a>
-          <a href={actionUrls.createAccount} class="btn btn--secondary btn--lg btn--full">
-            {actions.createAccount.label}
-          </a>
-        </div>
+      <!-- Video: Anna over Pagayo -->
+      <div class="portal-video-wrap" id="videoWrap">
+        <video
+          class="portal-video"
+          id="portalVideo"
+          preload="metadata"
+          playsinline
+        >
+          <source src="/movies/anna-over-pagayo-nl.mp4" type="video/mp4" />
+        </video>
+        <button class="video-play-btn" id="videoPlayBtn" aria-label="Afspelen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+
+      <!-- Action buttons — los onder de video -->
+      <div class="portal-actions-row">
+        <a href={actionUrls.signIn} class="btn btn--secondary btn--lg">
+          {actions.signIn.label}
+        </a>
+        <a href={actionUrls.createAccount} class="btn btn--secondary btn--lg">
+          {actions.createAccount.label}
+        </a>
       </div>
 
       <p class="portal-tagline">{tagline.channels}<br/><strong>{tagline.punch}</strong></p>
@@ -94,6 +106,7 @@ const actionUrls = {
   body:has(.portal) {
     background: #0a0a0f !important;
   }
+
 </style>
 
 <style>
@@ -193,103 +206,89 @@ const actionUrls = {
     margin: 0;
   }
 
-  /* ─── Portal Card ─── */
-  .portal-card {
-    position: relative;
-    background: linear-gradient(135deg, var(--bg-surface), var(--accent-glow));
-    border: 2px solid var(--accent);
-    border-radius: var(--radius-2xl);
-    padding: var(--space-10) var(--space-6) var(--space-6);
-    margin-bottom: var(--space-6);
+  /* ─── Portal Action Buttons (row under video) ─── */
+  .portal-actions-row {
+    display: flex;
+    gap: var(--space-4);
     width: 100%;
     max-width: 400px;
-    transition: background var(--transition-slow), border-color var(--transition-slow);
+    margin-bottom: var(--space-6);
   }
 
-  /* ─── Card Badge — volledig zelfstandig, onafhankelijk van design .badge ─── */
-  .card-badge {
-    position: absolute;
-    top: -0.85em;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-flex;
-    align-items: center;
-    padding: 0.4em 1.2em;
-    background: var(--accent);
-    color: var(--bg-deep);
-    font-size: var(--text-sm);
-    font-weight: var(--font-bold);
-    line-height: 1;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    border-radius: var(--radius-full);
-    z-index: 1;
-  }
-
-  /* ─── Portal Action Buttons ─── */
-  /* Design system build mist button variant CSS (primary/secondary/ghost).
-     Daarom hier volledig gedefinieerd met portal tokens. */
-  .portal-actions {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  .portal-actions .btn {
+  .portal-actions-row .btn {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-4) var(--space-8);
+    padding: var(--space-4) var(--space-6);
     border-radius: var(--radius-lg);
     font-weight: var(--font-semibold);
     font-size: var(--text-base);
     text-decoration: none;
-    height: auto;
-    border: 2px solid transparent;
+    border: 2px solid var(--border-strong);
+    background: transparent;
+    color: var(--text-primary);
     cursor: pointer;
     transition:
       background-color var(--transition-fast),
       border-color var(--transition-fast),
-      color var(--transition-fast),
-      box-shadow var(--transition-fast),
-      transform var(--transition-fast);
+      color var(--transition-fast);
   }
 
-  .portal-actions .btn--primary {
-    background: var(--accent);
-    color: var(--bg-deep);
-    border-color: var(--accent);
-  }
-
-  .portal-actions .btn--primary:hover {
-    background: var(--accent-light);
-    border-color: var(--accent-light);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px var(--accent-glow);
-  }
-
-  .portal-actions .btn--secondary {
-    background: transparent;
-    color: var(--text-primary);
-    border-color: var(--border-strong);
-  }
-
-  .portal-actions .btn--secondary:hover {
+  .portal-actions-row .btn:hover {
     border-color: var(--accent);
     background: var(--bg-hover);
   }
 
-  .portal-actions .btn--ghost {
-    background: transparent;
-    color: var(--text-secondary);
-    border-color: transparent;
-    padding: var(--space-3);
+  /* ─── Video ─── */
+  .portal-video-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: var(--space-6);
   }
 
-  .portal-actions .btn--ghost:hover {
-    color: var(--text-primary);
-    background: var(--bg-hover);
+  .portal-video {
+    width: 100%;
+    border-radius: var(--radius-2xl);
+    border: 2px solid var(--accent);
+    background: var(--bg-surface);
+    display: block;
+  }
+
+  .video-play-btn {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgb(0 0 0 / 0.55);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 2;
+  }
+
+  .video-play-btn:hover {
+    background: rgb(0 0 0 / 0.75);
+  }
+
+  .video-play-btn[data-playing] svg {
+    /* pause icon via CSS — twee balken */
+    display: none;
+  }
+
+  .video-play-btn[data-playing]::after {
+    content: '';
+    width: 10px;
+    height: 14px;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff;
   }
 
   /* ─── Tagline ─── */
@@ -327,6 +326,8 @@ const actionUrls = {
   .channel-icon:hover {
     color: var(--accent);
   }
+
+
 
   /* ─── Main Navigation ─── */
   .main-nav {
@@ -386,3 +387,22 @@ const actionUrls = {
   }
 
 </style>
+
+<script>
+  const video = document.getElementById('portalVideo') as HTMLVideoElement;
+  const btn = document.getElementById('videoPlayBtn')!;
+
+  btn.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      btn.setAttribute('data-playing', '');
+    } else {
+      video.pause();
+      btn.removeAttribute('data-playing');
+    }
+  });
+
+  video.addEventListener('ended', () => {
+    btn.removeAttribute('data-playing');
+  });
+</script>
