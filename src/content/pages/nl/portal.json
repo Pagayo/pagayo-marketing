@@ -1,43 +1,180 @@
 {
   "slug": "portal",
   "title": "Pagayo - Commerce Platform",
-  "description": "Het Order-First Commerce Platform. Inloggen, registreren of meer informatie.",
-  "lang": "nl",
+  "description": "The Order-First Commerce Platform. Sign in, register, or learn more.",
+  "lang": "en",
   "countryFlag": "🇳🇱",
   "hero": {
-    "headline": "Al je orders op <em>één plek</em>.",
-    "sub": "100% GRATIS!"
+    "headline": "Sell anywhere.<br/><em>One dashboard</em>.",
+    "sub": "100% FREE!"
   },
-  "badge": "100% GRATIS",
+  "badge": "100% FREE",
   "tagline": {
-    "channels": "WhatsApp, TikTok, Facebook, Webshop, POS, QR, etc.",
-    "punch": "Al je orders op één plek."
+    "channels": "Social media, Webshop, POS, QR, etc.",
+    "punch": "Sell anywhere. One dashboard."
   },
   "actions": {
     "signIn": {
-      "label": "Inloggen",
+      "label": "Sign in",
       "url": "https://start.pagayo.app/login"
     },
     "createAccount": {
-      "label": "Account Aanmaken",
+      "label": "Start here",
       "url": "https://start.pagayo.app/register"
     }
   },
   "themeToggle": {
-    "ariaLabel": "Wissel donker/licht thema"
+    "ariaLabel": "Toggle dark/light theme"
   },
   "footer": {
-    "helpText": "Je kunt dit altijd later aanpassen.",
+    "helpText": "You can always change this later.",
     "helpLink": {
-      "label": "Hulp nodig?",
+      "label": "Need help?",
       "url": "#"
     },
-    "brand": "Het Order-First Commerce Platform",
-    "copyright": "© 2026 Pagayo. Alle rechten voorbehouden."
+    "brand": "The Order-First Commerce Platform",
+    "copyright": "© 2026 Pagayo. All rights reserved."
   },
   "languages": {
     "flags": ["🇬🇧", "🇫🇷", "🇳🇱", "🇩🇪", "🇪🇸", "🇸🇳"],
     "moreLabel": "+50"
+  },
+  "sections": {
+    "social": {
+      "title": "Sell on social media.",
+      "subtitle": "Your customers are on WhatsApp, TikTok, and Facebook. Now you can sell there too.",
+      "items": [
+        {
+          "icon": "whatsapp",
+          "name": "WhatsApp",
+          "text": "Share a product link. Customer taps, pays, done. No website needed."
+        },
+        {
+          "icon": "tiktok",
+          "name": "TikTok",
+          "text": "Go viral. Link your shop to your TikTok bio. Every view is a potential sale."
+        },
+        {
+          "icon": "facebook",
+          "name": "Facebook",
+          "text": "Post it, sell it. Turn your Facebook page into a storefront in minutes."
+        },
+        {
+          "icon": "instagram",
+          "name": "Instagram",
+          "text": "Tag your products in posts and stories. Followers tap, shop, and check out instantly."
+        },
+        {
+          "icon": "pinterest",
+          "name": "Pinterest",
+          "text": "Pin your products where shoppers are already looking. High intent, high conversion."
+        },
+        {
+          "icon": "snapchat",
+          "name": "Snapchat",
+          "text": "Sell through Stories and Spotlight. Reach Gen Z where they spend their time."
+        }
+      ]
+    },
+    "dashboard": {
+      "title": "One dashboard.<br/>Zero chaos.",
+      "subtitle": "WhatsApp order, TikTok sale, walk-in customer — all in one place. Real-time.",
+      "items": [
+        {
+          "label": "Orders",
+          "text": "Every sale from every channel. One list. No switching between apps."
+        },
+        {
+          "label": "Products",
+          "text": "Update a price once. It changes everywhere — webshop, POS, social links."
+        },
+        {
+          "label": "Customers",
+          "text": "See who buys what and where. Build relationships, not spreadsheets."
+        }
+      ]
+    },
+    "start": {
+      "title": "Start selling today.",
+      "subtitle": "No credit card. No setup fees. No catch.",
+      "items": [
+        "Create your free account",
+        "Add your first product",
+        "Share the link on WhatsApp",
+        "Get paid"
+      ],
+      "cta": "Start here"
+    },
+    "payments": {
+      "title": "Powered by <em>Stripe</em>.",
+      "subtitle": "Secure, global payments built in. Accept cards, wallets, and local payment methods — all handled by the world's most trusted payment platform.",
+      "items": [
+        {
+          "icon": "credit-card",
+          "label": "Cards & wallets",
+          "text": "Visa, Mastercard, Apple Pay, Google Pay — ready from day one."
+        },
+        {
+          "icon": "globe",
+          "label": "135+ currencies",
+          "text": "Sell globally, get paid locally. Automatic currency conversion."
+        },
+        {
+          "icon": "shield",
+          "label": "PCI compliant",
+          "text": "Bank-grade security. Fraud protection. Zero liability for you."
+        }
+      ]
+    },
+    "free": {
+      "title": "Free. Not freemium.<br/><em>Actually free</em>.",
+      "subtitle": "No hidden costs. No commission on sales. No credit card required. Ever.",
+      "stats": [
+        { "value": "$0", "label": "Monthly fee" },
+        { "value": "0%", "label": "Commission" },
+        { "value": "∞", "label": "Products" }
+      ]
+    },
+    "multichannel": {
+      "title": "Online, offline, and everything in between.",
+      "subtitle": "Omnichannel commerce made simple. Sell in-store, online, and on social media — from one account.",
+      "items": [
+        "Webshop with checkout and payments",
+        "Point of Sale for physical stores",
+        "WhatsApp and social media links",
+        "QR code ordering for restaurants",
+        "Cash register for markets and events",
+        "All channels sync in real-time"
+      ]
+    },
+    "usecases": {
+      "title": "Built for how you sell.",
+      "subtitle": "From market stalls to restaurants, from Instagram shops to retail stores.",
+      "items": [
+        {
+          "emoji": "🛍️",
+          "name": "Retail & fashion",
+          "text": "Manage inventory across your store and webshop. Sell on Instagram, get paid instantly."
+        },
+        {
+          "emoji": "🍽️",
+          "name": "Restaurants & cafés",
+          "text": "QR code menus, table ordering, kitchen display. No expensive POS hardware needed."
+        },
+        {
+          "emoji": "📱",
+          "name": "Social sellers",
+          "text": "Sell via WhatsApp and TikTok. Share a link, receive payment. That's it."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Your next customer is waiting.",
+      "subtitle": "Join thousands of sellers who started for free. No risk, no contracts, cancel anytime.",
+      "quote": "I set up my WhatsApp shop in 10 minutes. First sale came the same day.",
+      "quoteAuthor": "— Small business owner",
+      "cta": "Start selling for free"
+    }
   },
   "seo": {
     "ogImage": "/og-portal.svg",
