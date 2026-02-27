@@ -521,10 +521,10 @@ src/components/
 ---
 
 ## 🤖 AGENT-BESTANDEN — CENTRALE LOCATIE
-**Alle agent-configuraties staan CENTRAAL in pagayo-beheer:**
+**Alle agent-configuraties staan CENTRAAL in pagayo-vault:**
 
 ```
-/pagayo-beheer/.github/agents/
+/pagayo-vault/.github/agents/
 ├── ArchitectureGuard.agent.md
 ├── BackendDev.agent.md
 ├── CloudflareOps.agent.md
@@ -538,14 +538,13 @@ src/components/
 ├── FrontendDev.agent.md
 ├── GitHubOps.agent.md
 ├── IntegrationAudit.agent.md
-├── NeonOps.agent.md
 ├── Planner.agent.md
 ├── SecurityAudit.agent.md
 ├── TaskDispatcher.agent.md
 └── Tester.agent.md
 ```
 
-**Bij agent-gerelateerde taken: lees ALTIJD het relevante `.agent.md` bestand in `/pagayo-beheer/.github/agents/`**
+**Bij agent-gerelateerde taken: lees ALTIJD het relevante `.agent.md` bestand in `/pagayo-vault/.github/agents/`**
 
 ---
 

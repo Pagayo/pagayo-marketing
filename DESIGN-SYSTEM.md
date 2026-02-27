@@ -156,11 +156,12 @@ Dit document definieert ALLE design standaarden voor de Pagayo marketing website
 ### Button URLs
 **KRITIEK: Alle "Start gratis" buttons gebruiken:**
 ```html
-<a href="https://app.pagayo.com/register/">Start gratis</a>
+<a href="https://start.pagayo.app/register">Start gratis</a>
 ```
 
 **NOOIT:**
 - ❌ `https://beheer.pagayo.com`
+- ❌ `https://app.pagayo.com` (legacy, redirect)
 - ❌ `/admin`
 - ❌ Relatieve paden voor registratie
 
@@ -367,7 +368,7 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 - [ ] Padding = `120px 2rem 80px` (desktop), `100px 1rem 60px` (mobile)
 - [ ] Typography gebruikt `clamp()` voor responsive sizing
 - [ ] Breakpoints op `1024px`, `768px`, `480px`
-- [ ] "Start gratis" → `https://app.pagayo.com/register/`
+- [ ] "Start gratis" → `https://start.pagayo.app/register`
 - [ ] Lead paragraphs max-width `720px`
 - [ ] Sections met `4rem` spacing
 - [ ] Mobile: padding `1rem`, font-size gereduceerd
@@ -422,6 +423,7 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 |-------|-----------|-------|
 | 2026-01-05 | Initial creation | Standardize inconsistent widths (800px → 1200px blog posts) |
 | 2026-01-05 | Added button URL standard | Ensure all CTAs point to app.pagayo.com/register/ |
+| 2026-02-27 | Updated CTA URL to start.pagayo.app | V2 migratie: beheer geabsorbeerd in storefront |
 
 ---
 

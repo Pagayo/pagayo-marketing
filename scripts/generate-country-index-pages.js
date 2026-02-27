@@ -527,7 +527,7 @@ const structuredData = [
         <h1>E-commerce without hassle</h1>
         <p class="lead">${description}</p>
         <div class="hero__actions">
-          <a class="btn btn-primary" href="https://app.pagayo.com/register/">${country.nav.cta}</a>
+          <a class="btn btn-primary" href="https://start.pagayo.app/register">${country.nav.cta}</a>
           <a class="btn btn-ghost" href="/${regionCode}/${countryCode}/pricing">${country.nav.pricing}</a>
         </div>
         <div class="hero__meta">
@@ -670,7 +670,7 @@ const structuredData = [
           
           <div class="pricing-footer">
             <p>Start free - no trial period</p>
-            <a href="https://app.pagayo.com/register/" class="btn btn-primary">
+            <a href="https://start.pagayo.app/register" class="btn btn-primary">
               ${country.nav.cta}
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 1l6 6-6 6"/>
@@ -690,7 +690,7 @@ const structuredData = [
         </p>
       </div>
       <div class="btn-group">
-        <a href="https://app.pagayo.com/register/" class="btn btn-primary">
+        <a href="https://start.pagayo.app/register" class="btn btn-primary">
           ${country.nav.cta}
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 1l6 6-6 6"/>
