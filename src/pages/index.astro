@@ -11,6 +11,9 @@
  * i18n-ready: Alle teksten komen uit content/pages/nl/portal.json
  * Voor nieuwe taal: maak content/pages/{lang}/portal.json + pages/{lang-route}/index.astro
  */
+
+// Server-rendered: nodig voor cf-ipcountry header (landnaam in nav)
+export const prerender = false;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import portalContent from '../content/pages/nl/portal.json';
 import { urls } from '../config/urls';
