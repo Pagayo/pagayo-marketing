@@ -38,11 +38,15 @@ const PATH_TO_PAGE: Record<string, string> = {
 export const onRequest = defineMiddleware(async (context, next) => {
   const { request, locals, url } = context;
 
+  // 0. Detecteer bezoeker context voor ELKE route (o.a. land in nav)
+  const visitorContext = detectVisitorContext(request);
+  setLocals(locals, visitorContext, null);
+
   // Bepaal welke content page dit is
   const contentPage = PATH_TO_PAGE[url.pathname];
 
   if (!contentPage) {
-    // Geen content-personalisatie voor deze route
+    // Geen content-personalisatie voor deze route, maar visitorContext is al gezet
     return next();
   }
 
@@ -56,14 +60,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
     if (!kv) {
       // KV niet beschikbaar (dev mode of niet geconfigureerd)
-      // Stel context in maar zonder variant
-      const visitorContext = detectVisitorContext(request);
-      setLocals(locals, visitorContext, null);
+      // visitorContext is al gezet, geen variant
       return next();
     }
-
-    // 1. Detecteer bezoeker context
-    const visitorContext = detectVisitorContext(request);
 
     // 2. Haal regels op uit KV
     const rulesKey = `content-rules:${contentPage}`;
