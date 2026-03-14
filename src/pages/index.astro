@@ -66,11 +66,8 @@ const actionUrls = {
       </div>
 
       <div class="portal-actions">
-        <a href={actionUrls.signIn} class="portal-actions__btn portal-actions__btn--primary">
+        <a href={actionUrls.signIn} class="btn btn--primary btn--lg">
           {actions.signIn.label}
-        </a>
-        <a href={actionUrls.createAccount} class="portal-actions__btn portal-actions__btn--secondary">
-          {actions.createAccount.label}
         </a>
       </div>
     </div>
@@ -232,40 +229,53 @@ const actionUrls = {
     gap: var(--space-3);
   }
 
-  .portal-actions__btn {
+  /* @pagayo/design uses @layer which has lower cascade priority than unlayered.
+     Astro's scoped <style> is unlayered. We must repeat the SSoT btn values
+     here so the unlayered cascade wins. Values MUST match primary.css + _base.css. */
+  .portal-actions .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 2rem;
-    border-radius: var(--radius-lg);
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: none;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-weight: var(--font-medium);
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
     cursor: pointer;
-    transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      transform var(--transition-fast);
   }
 
-  .portal-actions__btn--primary {
+  .portal-actions .btn--lg {
+    height: 48px;
+    padding: 0 var(--space-6);
+    font-size: var(--text-base);
+    min-width: 100px;
+  }
+
+  .portal-actions .btn--primary {
     background: var(--accent);
-    color: #fff;
-    border: 2px solid var(--accent);
+    color: var(--bg-deep);
+    border-color: var(--accent);
   }
 
-  .portal-actions__btn--primary:hover {
+  .portal-actions .btn--primary:hover {
+    background: var(--accent-light, #4f79ff);
+    border-color: var(--accent-light, #4f79ff);
+    box-shadow: var(--shadow-glow-sm, 0 0 10px rgba(37, 99, 235, 0.15));
+  }
+
+  .portal-actions .btn--primary:active {
     background: var(--accent-dim);
     border-color: var(--accent-dim);
-    transform: translateY(-1px);
-  }
-
-  .portal-actions__btn--secondary {
-    background: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--border-strong);
-  }
-
-  .portal-actions__btn--secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    transform: scale(0.98);
   }
 
   /* ─── Footer ─── */
@@ -293,7 +303,7 @@ const actionUrls = {
       padding: 0 var(--space-6);
     }
 
-    .portal-actions__btn {
+    .portal-actions .btn {
       width: 100%;
     }
 

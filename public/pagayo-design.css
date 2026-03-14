@@ -2,7 +2,7 @@
  * Pagayo Design System - Start (fresh)
  * Zero-Friction Onboarding
  * Theme: Light + Blue Accent
- * Generated: 2026-03-14T09:32:28.837Z
+ * Generated: 2026-03-14T09:46:13.059Z
  * (c) 2026 Pagayo
  *
  * CSS @layer order: reset → tokens → base → components → contexts → utilities → tenant
@@ -333,7 +333,7 @@ table {
  * Light-first design met blue accent - modern en helder Pagayo theme
  * 
  * Mode: light
- * Generated: 2026-03-14T09:32:28.785Z
+ * Generated: 2026-03-14T09:46:13.015Z
  * 
  * AI-NOTE: Dit bestand is GEGENEREERD. Wijzig niet handmatig.
  * Wijzig src/themes/fresh.json en run `npm run build`.
@@ -5977,6 +5977,24 @@ table {
   transform: none;
 }
 
+/* ===== CARD LINKS (shared across login, register) ===== */
+.card-links {
+  text-align: center;
+  margin-top: var(--space-5);
+  font-size: var(--text-xs-plus);
+  color: var(--text-secondary);
+}
+
+.card-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: var(--font-semibold);
+}
+
+.card-links a:hover {
+  text-decoration: underline;
+}
+
 /* ===== TURNSTILE (invisible) ===== */
 .cf-turnstile {
   position: absolute;
@@ -6231,23 +6249,7 @@ table {
   margin-top: var(--space-2);
 }
 
-/* ===== LOGIN LINKS ===== */
-.login-links {
-  text-align: center;
-  margin-top: var(--space-5);
-  font-size: var(--text-xs-plus);
-  color: var(--text-secondary);
-}
-
-.login-links a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: var(--font-semibold);
-}
-
-.login-links a:hover {
-  text-decoration: underline;
-}
+/* ===== LOGIN LINKS — SSoT is .card-links in _base.css ===== */
 
 .forgot-password-link {
   display: block;
@@ -6891,86 +6893,16 @@ table {
 /* register.css */
 /**
  * CONTEXT: Start — Register Page
- * Registration form with claim flow: email, password, organization name.
- * Uses portal-card styling from _base.css + token-based inputs.
+ * Registration form. Uses login-container/login-card SSoT from login.css,
+ * card-badge + card-links SSoT from _base.css, form-input SSoT from login.css.
+ * Only register-specific CSS lives here.
  */
-
-/* ===== REGISTER TITLE ===== */
-.register-title {
-  font-family: var(--font-sans);
-  font-size: var(--text-2xl);
-  font-weight: 900;
-  color: var(--text-primary);
-  text-align: center;
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--space-6);
-}
 
 /* ===== REGISTER FORM ===== */
 .register-form {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-}
-
-/* ===== REGISTER INPUT (extends portal-input pattern) ===== */
-.register-input {
-  width: 100%;
-  height: auto;
-  padding: 0.9rem var(--space-4);
-  font-size: var(--text-sm-plus);
-  font-family: inherit;
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
-  box-sizing: border-box;
-}
-
-.register-input:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.register-input::placeholder {
-  color: var(--text-disabled);
-}
-
-/* Autofill override for dark theme */
-.register-input:-webkit-autofill,
-.register-input:-webkit-autofill:hover,
-.register-input:-webkit-autofill:focus,
-.register-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
-  -webkit-text-fill-color: var(--text-primary) !important;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-.register-input:-moz-autofill,
-.register-input:-moz-autofill-preview {
-  background: rgba(255, 255, 255, 0.05) !important;
-  color: var(--text-primary) !important;
-}
-
-/* ===== REGISTER PAGE OVERRIDES ===== */
-/* Override center-page/center-card to match portal card design */
-.center-page.register-page {
-  align-items: flex-start;
-  padding: var(--space-24) var(--space-4) var(--space-4);
-  background: var(--bg-deep);
-}
-
-.center-page.register-page .center-card {
-  position: relative;
-  max-width: 400px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-10) var(--space-6) var(--space-6);
-  text-align: left;
 }
 
 /* Button styling comes from SSoT .btn.btn--primary.btn--lg.btn--full (components/buttons) */

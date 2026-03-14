@@ -11,12 +11,8 @@
   },
   "actions": {
     "signIn": {
-      "label": "Sign In",
+      "label": "Sign in",
       "url": "https://start.pagayo.app/login"
-    },
-    "createAccount": {
-      "label": "Create Account",
-      "url": "https://start.pagayo.app/register"
     }
   },
   "themeToggle": {
