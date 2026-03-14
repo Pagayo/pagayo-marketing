@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <!-- Dark background -->
-  <rect width="128" height="128" rx="24" fill="#0a0a0f"/>
+  <!-- White background -->
+  <rect width="128" height="128" rx="24" fill="#ffffff"/>
   
-  <!-- Gold P -->
-  <text x="16" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="90" font-weight="800" fill="#f5a623">P</text>
+  <!-- Blue P -->
+  <text x="16" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="90" font-weight="800" fill="#2563eb">P</text>
   
-  <!-- White dot -->
-  <circle cx="98" cy="88" r="9" fill="#ffffff"/>
+  <!-- Blue dot -->
+  <circle cx="98" cy="88" r="9" fill="#2563eb"/>
 </svg>

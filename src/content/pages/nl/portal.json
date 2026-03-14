@@ -1,7 +1,7 @@
 {
   "slug": "portal",
   "title": "Pagayo - Commerce Platform",
-  "description": "The Order-First Commerce Platform. Sign in, register, or learn more.",
+  "description": "Het Order-First Commerce Platform. Inloggen, registreren of meer informatie.",
   "lang": "en",
   "countryFlag": "🇳🇱",
   "hero": {
@@ -15,11 +15,11 @@
   },
   "actions": {
     "signIn": {
-      "label": "Sign in",
+      "label": "Inloggen",
       "url": "https://start.pagayo.app/login"
     },
     "createAccount": {
-      "label": "Start here",
+      "label": "Account aanmaken",
       "url": "https://start.pagayo.app/register"
     }
   },
@@ -93,7 +93,7 @@
         "Share the link on WhatsApp",
         "Get paid"
       ],
-      "cta": "Start here"
+      "cta": "Account aanmaken"
     },
     "payments": {
       "title": "Powered by <em>Stripe</em>.",

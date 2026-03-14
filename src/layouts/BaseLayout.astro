@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { FONT_URL } from '@pagayo/config/brand';
 
 interface Props {
   title: string;
@@ -86,13 +87,10 @@ import StructuredData from '../components/StructuredData.astro';
       <link rel="alternate" hreflang="x-default" href={alternates[0]?.href || canonicalURL} />
     )}
 
-    <!-- Fonts -->
+    <!-- Font — SSoT from @pagayo/config/brand -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href={FONT_URL} rel="stylesheet" />
 
     <!-- Structured Data (Schema.org) -->
     {structuredData.map(schema => (

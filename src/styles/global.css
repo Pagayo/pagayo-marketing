@@ -3,8 +3,8 @@
 @import './typography.css';
 @import './animations.css';
 
-/* Global Reset & Base Styles */
-*, *::before, *::after {
+/* Global Reset & Base Styles — :where() keeps specificity at 0 so @layer rules from pagayo-design win */
+:where(*, *::before, *::after) {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -47,12 +47,12 @@ img, picture, video, canvas, svg {
 }
 
 /* Form elements inherit fonts */
-input, button, textarea, select {
+:where(input, button, textarea, select) {
   font: inherit;
 }
 
-/* Remove default button styles */
-button {
+/* Remove default button styles — :where() keeps specificity low */
+:where(button) {
   background: none;
   border: none;
   cursor: pointer;

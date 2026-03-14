@@ -116,14 +116,14 @@ p {
   background-clip: text;
 }
 
-/* Links */
-a {
+/* Links — :where() keeps specificity at 0 so class selectors from pagayo-design win */
+:where(a) {
   color: var(--color-accent);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-a:hover {
+:where(a):hover {
   color: var(--color-accent-hover);
 }
 
