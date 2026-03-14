@@ -18,8 +18,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import portalContent from '../content/pages/nl/portal.json';
 import { urls } from '../config/urls';
 
-// Pagayo Design System — lokale CSS kopie (bron: @pagayo/design dist/revolutionary/admin.css)
-// Bij design updates: kopieer opnieuw vanuit pagayo-design/dist/revolutionary/admin.css
+// Pagayo Design System — lokale CSS kopie (bron: @pagayo/design dist/fresh/admin.css)
+// Bij design updates: kopieer opnieuw vanuit pagayo-design/dist/fresh/admin.css
 import '../styles/pagayo-design.css';
 
 const { title, description, lang, hero, badge, tagline, actions, sections, seo } = portalContent;
@@ -80,7 +80,7 @@ const actionUrls = {
   noIndex={seo.noIndex}
   structuredData={[{ type: seo.structuredData.type as 'WebSite', data: { name: seo.structuredData.name, url: seo.structuredData.url } }]}
 >
-  <main class="portal" data-theme="dark">
+  <main class="portal" data-theme="light">
     <!-- Main navigation -->
     <nav class="main-nav">
       <a href="/" class="main-nav__logo">
@@ -121,10 +121,9 @@ const actionUrls = {
           </a>
         </div>
       </div>
-      <button class="scroll-down" aria-label="Scroll to next section">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><div class="section-divider__gradient"></div></div>
 
     <!-- Section 2: Social Selling -->
     <section class="section section--social">
@@ -146,10 +145,9 @@ const actionUrls = {
           ))}
         </div>
       </div>
-      <button class="scroll-down" aria-label="Scroll to next section">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><div class="section-divider__gradient"></div></div>
 
     <!-- Section 3: One Dashboard -->
     <section class="section section--dashboard">
@@ -165,10 +163,9 @@ const actionUrls = {
           ))}
         </div>
       </div>
-      <button class="scroll-down" aria-label="Scroll to next section">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><div class="section-divider__gradient"></div></div>
 
     <!-- Section 4: Get Started -->
     <section class="section section--start">
@@ -184,10 +181,9 @@ const actionUrls = {
           {sections.start.cta}
         </a>
       </div>
-      <button class="scroll-down" aria-label="Scroll to next section">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><div class="section-divider__gradient"></div></div>
 
     <!-- Section 6: Payments (Stripe) -->
     <section class="section section--payments">
@@ -211,10 +207,9 @@ const actionUrls = {
           <svg viewBox="0 0 468 222.5" fill="currentColor" class="stripe-logo" role="img" aria-label="Stripe"><path d="M414 113.4c0-25.6-12.4-45.8-36.1-45.8-23.8 0-38.2 20.2-38.2 45.6 0 30.1 17 45.3 41.4 45.3 11.9 0 20.9-2.7 27.7-6.5v-20c-6.8 3.4-14.6 5.5-24.5 5.5-9.7 0-18.3-3.4-19.4-15.2h48.9c0-1.3.2-6.5.2-8.9zm-49.4-9.5c0-11.3 6.9-16 13.2-16 6.1 0 12.6 4.7 12.6 16h-25.8zM301.1 67.6c-9.8 0-16.1 4.6-19.6 7.8l-1.3-6.2h-22v116.6l25-5.3.1-28.3c3.6 2.6 8.9 6.3 17.7 6.3 17.9 0 34.2-14.4 34.2-46.1-.1-29-16.6-44.8-34.1-44.8zm-6 68.9c-5.9 0-9.4-2.1-11.8-4.7l-.1-37.1c2.6-2.9 6.2-4.9 11.9-4.9 9.1 0 15.4 10.2 15.4 23.3 0 13.4-6.2 23.4-15.4 23.4zM223.8 61.7l25.1-5.4V36l-25.1 5.3zM223.8 69.3h25.1v87.5h-25.1zM196.9 76.7l-1.6-7.4h-21.6v87.5h25V97.5c5.9-7.7 15.9-6.3 19-5.2v-23c-3.2-1.2-14.9-3.4-20.8 7.4zM146.9 47.6l-24.4 5.2-.1 80.1c0 14.8 11.1 25.7 25.9 25.7 8.2 0 14.2-1.5 17.5-3.3V135c-3.2 1.3-19 5.9-19-8.9V90.6h19V69.3h-19l.1-21.7zM79.3 94.7c0-3.9 3.2-5.4 8.5-5.4 7.6 0 17.2 2.3 24.8 6.4V72.2c-8.3-3.3-16.5-4.6-24.8-4.6C67.5 67.6 52 78.8 52 97.4c0 28.9 39.8 24.3 39.8 36.7 0 4.6-4 6.1-9.6 6.1-8.3 0-18.9-3.4-27.3-8v23.8c9.3 4 18.7 5.7 27.3 5.7 20.8 0 35.1-10.3 35.1-28.2-.1-31.2-40-25.7-40-37.8z"/></svg>
         </div>
       </div>
-      <button class="scroll-down" aria-label="Scroll to next section">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><div class="section-divider__gradient"></div></div>
 
     <!-- Section 6: Free Forever -->
     <section class="section section--free">
@@ -230,10 +225,9 @@ const actionUrls = {
           ))}
         </div>
       </div>
-      <button class="scroll-down" aria-label="Scroll to next section">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><div class="section-divider__gradient"></div></div>
 
     <!-- Section 7: Multi-channel -->
     <section class="section section--multichannel">
@@ -246,10 +240,9 @@ const actionUrls = {
           ))}
         </ul>
       </div>
-      <button class="scroll-down" aria-label="Scroll to next section">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><div class="section-divider__gradient"></div></div>
 
     <!-- Section 8: Use Cases -->
     <section class="section section--usecases">
@@ -266,10 +259,9 @@ const actionUrls = {
           ))}
         </div>
       </div>
-      <button class="scroll-down" aria-label="Scroll to next section">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><div class="section-divider__gradient"></div></div>
 
     <!-- Section 9: Final CTA -->
     <section class="section section--cta">
@@ -296,7 +288,7 @@ const actionUrls = {
 <style is:global>
   /* Override global styles for portal page */
   body:has(.portal) {
-    background: #0a0a0f !important;
+    background: #ffffff !important;
   }
 
   /* Gold accent letters in headline */
@@ -313,28 +305,28 @@ const actionUrls = {
    * global.css continent-theme (:root --accent: #00ff88).
    * Daarom scopen we tokens op .portal tot global.css
    * is opgeschoond. Waarden zijn 1:1 met @pagayo/design
-   * revolutionary theme.
+   * fresh theme (SSoT: pagayo-design/src/themes/fresh.json).
    *
    * TODO: Verwijder deze scope wanneer global.css alleen
    * design system tokens gebruikt.
    * ───────────────────────────────────────────────── */
   .portal {
-    --bg-deep: #0a0a0f;
-    --bg-surface: #0e0e14;
-    --bg-elevated: #111118;
-    --bg-hover: #1a1a23;
-    --bg-active: #292a36;
-    --accent: #f5a623;
-    --accent-light: #ffbe3f;
-    --accent-dim: #d98e00;
-    --accent-glow: rgb(245 166 35 / 0.15);
-    --text-primary: #f0f0f5;
-    --text-secondary: rgb(240 240 245 / 0.7);
-    --text-muted: rgb(240 240 245 / 0.45);
-    --text-disabled: rgb(240 240 245 / 0.3);
-    --border: rgb(240 240 245 / 0.06);
-    --border-light: rgb(240 240 245 / 0.09);
-    --border-strong: rgb(240 240 245 / 0.15);
+    --bg-deep: #ffffff;
+    --bg-surface: #f6f8fa;
+    --bg-elevated: #edf1f5;
+    --bg-hover: #e8ecf2;
+    --bg-active: #e8eaf1;
+    --accent: #2563eb;
+    --accent-light: #4f79ff;
+    --accent-dim: #004ed1;
+    --accent-glow: rgb(37 99 235 / 0.12);
+    --text-primary: #0f172a;
+    --text-secondary: rgb(15 23 42 / 0.75);
+    --text-muted: rgb(15 23 42 / 0.5);
+    --text-disabled: rgb(15 23 42 / 0.35);
+    --border: rgb(15 23 42 / 0.15);
+    --border-light: rgb(15 23 42 / 0.225);
+    --border-strong: rgb(15 23 42 / 0.375);
   }
 
   /* ─── PORTAL LAYOUT — Scroll Snap ─── */
@@ -344,7 +336,45 @@ const actionUrls = {
     scroll-snap-type: y proximity;
     -webkit-overflow-scrolling: touch;
     background: var(--bg-deep) !important;
+    color: var(--text-primary);
     transition: background var(--transition-slow), color var(--transition-slow);
+  }
+
+  /* ─── Animated Gradient Divider (Stripe-style) ─── */
+  .section-divider {
+    width: 100%;
+    height: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-divider__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      #2563eb 0%,
+      #7c3aed 15%,
+      #ec4899 30%,
+      #f97316 45%,
+      #eab308 60%,
+      #22c55e 75%,
+      #06b6d4 90%,
+      #2563eb 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-flow 4s linear infinite;
+  }
+
+  @keyframes gradient-flow {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .section-divider__gradient {
+      animation: none;
+    }
   }
 
   /* ─── Sections ─── */
@@ -465,7 +495,8 @@ const actionUrls = {
 
   .portal-actions-row .btn:hover {
     border-color: var(--accent);
-    background: var(--bg-hover);
+    color: var(--accent);
+    background: var(--bg-surface);
   }
 
   /* ─── Video ─── */
@@ -529,7 +560,7 @@ const actionUrls = {
     align-items: center;
     justify-content: center;
     padding: var(--space-4) var(--space-6);
-    background: var(--bg-deep, #0a0a0f);
+    background: var(--bg-deep, #ffffff);
     border-top: 1px solid var(--border-strong);
     z-index: 50;
   }
@@ -662,7 +693,7 @@ const actionUrls = {
     height: 32px;
     border-radius: 50%;
     background: var(--accent);
-    color: var(--bg-deep);
+    color: #ffffff;
     font-weight: var(--font-bold);
     font-size: var(--text-sm);
     display: flex;
@@ -682,7 +713,7 @@ const actionUrls = {
     text-decoration: none;
     border: none;
     background: var(--accent);
-    color: var(--bg-deep);
+    color: #ffffff;
     cursor: pointer;
     transition: background var(--transition-fast), transform var(--transition-fast);
   }
@@ -863,44 +894,7 @@ const actionUrls = {
     font-style: normal;
   }
 
-  /* ─── Scroll Down Button ─── */
-  .scroll-down {
-    position: absolute;
-    bottom: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1.5px solid var(--border-strong);
-    background: rgb(0 0 0 / 0.3);
-    color: var(--text-secondary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
-    animation: bounce-down 2s ease-in-out infinite;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 10;
-  }
 
-  .scroll-down:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgb(0 0 0 / 0.5);
-  }
-
-  @keyframes bounce-down {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(6px); }
-  }
-
-  /* Sections need position:relative for the button */
-  .section {
-    position: relative;
-  }
 
   /* ─── Main Navigation ─── */
   .main-nav {
@@ -1029,14 +1023,5 @@ const actionUrls = {
     btn.removeAttribute('data-playing');
   });
 
-  // Scroll-down buttons: scroll to next section
-  document.querySelectorAll('.scroll-down').forEach((button) => {
-    button.addEventListener('click', () => {
-      const section = button.closest('.section');
-      const next = section?.nextElementSibling as HTMLElement | null;
-      if (next) {
-        next.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+
 </script>
