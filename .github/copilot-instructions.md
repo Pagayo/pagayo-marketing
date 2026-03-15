@@ -305,16 +305,6 @@ grep -r "<Footer" src/pages/nl/
 
 ---
 
-## 📌 VERPLICHT: eerst Pagayo Beheer Copilot-bestand lezen
-
-**VOORDAT je iets doet in deze repo, moet je eerst het Copilot-instructiebestand van Pagayo Beheer lezen:**
-
-- `/pagayo-beheer/.github/copilot-instructions.md`
-
-**Waarom:** Enterprise mindset, kwaliteit > snelheid, security requirements, Git workflow.
-
----
-
 ## 🌍 INTERNATIONALIZATION (i18n)
 
 ### Path-Based Routing
@@ -506,8 +496,6 @@ src/components/
 
 ## 🔒 GIT OPERATIES — STRIKTE BEPERKING
 
-**Zie `/pagayo-beheer/.github/copilot-instructions.md` voor volledige regels.**
-
 **⛔ VERBODEN voor alle agents (behalve Deployer):**
 - `git checkout`, `git switch`, `git reset`
 - `git commit`, `git push`, `git merge`
@@ -591,7 +579,6 @@ src/components/
 
 ## 📚 REFERENTIES
 
-- **Masterplan:** `/pagayo-beheer/AI/plan/open-to-do/PAGAYO-MARKETING-MASTERPLAN.md`
 - **Design Inspiration:** https://stripe.com
 - **Astro Docs:** https://docs.astro.build
 - **Design System:** `/pagayo-design/` (CSS tokens, components, themes)
