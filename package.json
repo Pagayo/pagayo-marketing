@@ -16,7 +16,7 @@
     "type-check": "astro check"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/cloudflare": "^13.1.2",
     "@astrojs/markdoc": "^0.15.10",
     "@astrojs/react": "^5.0.0",
     "@astrojs/sitemap": "^3.6.0",
