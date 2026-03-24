@@ -1,13 +1,14 @@
-// src/content/config.ts - Astro Content Collections Schema
-// Simplified for JSON-based content structure
+// src/content.config.ts - Astro 6 Content Collections Schema
+// Migrated from legacy src/content/config.ts for Astro 6 compatibility
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 /**
  * Blog Posts Collection
  * MDX files for blog articles
  */
 const blogCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
