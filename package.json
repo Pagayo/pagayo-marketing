@@ -24,7 +24,7 @@
     "@keystatic/core": "^0.5.49",
     "@pagayo/config": "^1.13.0",
     "@pagayo/design": "^2.4.1",
-    "astro": "^5.18.0",
+    "astro": "^6.0.8",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
