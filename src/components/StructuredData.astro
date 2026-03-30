@@ -1,7 +1,7 @@
 ---
 interface Props {
-  type: 'Organization' | 'WebSite' | 'BlogPosting' | 'BreadcrumbList';
-  data: Record<string, any>;
+  type: 'Organization' | 'WebSite' | 'BlogPosting' | 'BreadcrumbList' | 'WebPage';
+  data: Record<string, unknown>;
 }
 
 const { type, data } = Astro.props;
