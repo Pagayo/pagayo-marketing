@@ -12,7 +12,9 @@ declare namespace App {
     /** Cloudflare Workers runtime (beschikbaar via @astrojs/cloudflare adapter) */
     runtime?: {
       env?: {
-        CONTENT_KV?: KVNamespace;
+        CONTENT_KV?: {
+          get: (key: string) => Promise<string | null>;
+        };
       };
     };
 

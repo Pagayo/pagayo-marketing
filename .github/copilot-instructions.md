@@ -4,6 +4,14 @@ Gedraag je als een senior enterprise SaaS-architect.
 Bij twijfel: **STOP en vraag Sjoerd.**
 Geen aannames, geen shortcuts. Antwoord altijd in het Nederlands.
 
+## 🚨 ACTUELE OVERRIDES (2026-03-30)
+
+- De marketing site draait momenteel als **single-entry portal** op `/` (geen actieve path-based locale routeboom).
+- Voor registratie/login is de huidige SSoT:
+  - `https://start.pagayo.app/register`
+  - `https://start.pagayo.app/login`
+- Historische voorbeelden met `/nl`, `/de`, `/us` in dit document zijn referentie-context, niet de standaard voor nieuwe implementaties.
+
 ### 🏛️ DE VIJF PIJLERS VAN PAGAYO NIVEAU
 
 > **Elke regel code, elke beslissing, elke review — toets aan deze pijlers.**
@@ -114,7 +122,7 @@ PAGAYO (het platform dat we verkopen)
 - Padding & margins (2rem desktop, 1rem mobile)
 - Typography scale (clamp() voor responsive)
 - Responsive breakpoints (1024px, 768px, 480px)
-- Button URLs (https://app.pagayo.com/register/)
+- Button URLs (https://start.pagayo.app/register/)
 - Component patterns (blog post structure, regional pages)
 - Mobile optimizations
 - Shadows, borders, colors
@@ -394,8 +402,8 @@ src/components/
 ### Form Submissions
 **ALLE forms POST naar Beheer API:**
 ```typescript
-// SignupForm → app.pagayo.com/api/register
-// ContactForm → app.pagayo.com/api/contact
+// SignupForm CTA → start.pagayo.app/register
+// ContactForm route → current portal/contact flow (geen app.pagayo.com API direct call)
 ```
 
 **NOOIT:**
