@@ -52,11 +52,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   try {
     // Cloudflare runtime binding — beschikbaar via @astrojs/cloudflare adapter
-    const runtime = (locals as Record<string, unknown>).runtime as
-      | { env?: { CONTENT_KV?: KVNamespace } }
-      | undefined;
-
-    const kv = runtime?.env?.CONTENT_KV;
+    const kv = locals.runtime?.env?.CONTENT_KV;
 
     if (!kv) {
       // KV niet beschikbaar (dev mode of niet geconfigureerd)
@@ -116,7 +112,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
  * Page templates gebruiken `Astro.locals.contentVariant` en `Astro.locals.visitorContext`.
  */
 function setLocals(
-  locals: Record<string, unknown>,
+  locals: App.Locals,
   visitorContext: VisitorContext,
   variant: ContentVariant | null
 ): void {

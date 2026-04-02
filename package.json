@@ -18,22 +18,24 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/markdoc": "^0.15.10",
-    "@astrojs/react": "^5.0.1",
-    "@astrojs/sitemap": "^3.7.1",
+    "@astrojs/react": "^5.0.2",
+    "@astrojs/sitemap": "^3.7.2",
     "@keystatic/astro": "^5.0.6",
-    "@keystatic/core": "^0.5.49",
-    "@pagayo/config": "^1.13.0",
-    "@pagayo/design": "^2.4.1",
+    "@keystatic/core": "^0.5.50",
+    "@pagayo/config": "^1.14.5",
+    "@pagayo/design": "2.4.23",
     "astro": "^5.18.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.8",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.1.0",
     "globals": "^17.4.0",
     "prettier-plugin-astro": "^0.14.1",
-    "wrangler": "^4.77.0"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.78.0"
   },
   "engines": {
     "node": ">=24.0.0"

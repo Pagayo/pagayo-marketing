@@ -17,7 +17,7 @@ Geen tenant businesslogica of platform admin functionaliteit in deze repo.
 
 ## Implementatieregels
 - Gebruik `@pagayo/design` tokens en component patterns.
-- Houd i18n routes consistent (`/nl`, `/de`, `/us`).
+- Houd locale-content consistent (`nl/de/en`) zonder route-aannames; huidige publieke portalroute is `/` (single-entry).
 - Geen hardcoded registratie- of API URL's buiten centrale config-afspraken.
 
 ## Verificatie voor oplevering

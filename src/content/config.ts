@@ -20,6 +20,24 @@ const blogCollection = defineCollection({
   }),
 });
 
+const pagesCollection = defineCollection({
+  type: 'data',
+  schema: z.record(z.unknown()),
+});
+
+const settingsCollection = defineCollection({
+  type: 'data',
+  schema: z.record(z.unknown()),
+});
+
+const variantsCollection = defineCollection({
+  type: 'data',
+  schema: z.record(z.unknown()),
+});
+
 export const collections = {
   blog: blogCollection,
+  pages: pagesCollection,
+  settings: settingsCollection,
+  variants: variantsCollection,
 };
