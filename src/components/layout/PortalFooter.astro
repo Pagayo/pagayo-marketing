@@ -1,0 +1,36 @@
+---
+interface Props {
+  copyright: string;
+  fixedToViewport?: boolean;
+}
+
+const {
+  copyright,
+  fixedToViewport = false,
+} = Astro.props;
+---
+
+<footer class:list={['portal-footer', fixedToViewport && 'portal-footer--fixed']}>
+  <span class="portal-footer__copy">{copyright}</span>
+</footer>
+
+<style>
+  .portal-footer {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-4);
+  }
+
+  .portal-footer--fixed {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .portal-footer__copy {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+</style>
