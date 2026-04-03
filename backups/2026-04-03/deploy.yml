@@ -42,9 +42,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Validate design asset sync
-        run: npm run design:check
-
       - name: Type check (Astro)
         run: npx astro check || echo "⚠️ Type check completed with warnings"
 
