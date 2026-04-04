@@ -1,0 +1,411 @@
+---
+/**
+ * Root Portal - pagayo.com
+ * Minimale portal: gecentreerde branding + login/registratie.
+ *
+ * i18n-ready: Alle teksten uit content/pages/nl/portal.json
+ */
+
+export const prerender = false;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PortalHeader from '../components/layout/PortalHeader.astro';
+import PortalFooter from '../components/layout/PortalFooter.astro';
+import portalContent from '../content/pages/nl/portal.json';
+import { urls } from '../config/urls';
+import { resolveCountryName } from '@pagayo/config/brand';
+import '../styles/pagayo-design.css';
+
+const { title, description, lang, badge, actions, footer, seo } = portalContent;
+
+// Landnaam detectie via middleware visitorContext (cf-ipcountry op Cloudflare, 'XX' fallback)
+// In dev mode: geen cf-ipcountry header → fallback 'NL' voor lokale preview
+const isDev = import.meta.env.DEV;
+const visitorCountry = Astro.locals.visitorContext?.country;
+const countryCode = (visitorCountry && visitorCountry !== 'XX') ? visitorCountry : (isDev ? 'NL' : '');
+const countryName = resolveCountryName(countryCode, isDev ? 'NL' : '');
+
+// Environment-aware URLs: localhost in dev, production URLs in prod
+const actionUrls = {
+  signIn: urls.signIn,
+  createAccount: urls.createAccount,
+};
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  lang={lang}
+  alternates={seo.alternates}
+  ogImage={seo.ogImage}
+  ogType={seo.ogType}
+  twitterCard={seo.twitterCard}
+  noIndex={seo.noIndex}
+  structuredData={[{ type: seo.structuredData.type as 'WebSite', data: { name: seo.structuredData.name, url: seo.structuredData.url } }]}
+>
+  <main class="portal" data-theme="light">
+    <PortalHeader countryName={countryName} />
+
+    <div class="portal-globe" aria-hidden="true">
+      <svg class="portal-globe__svg" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="pg-land" width="9" height="9" patternUnits="userSpaceOnUse">
+            <circle cx="4.5" cy="4.5" r="1.5" fill="rgba(147,197,253,0.9)"/>
+          </pattern>
+          <pattern id="pg-sea" width="14" height="14" patternUnits="userSpaceOnUse">
+            <circle cx="7" cy="7" r="0.8" fill="rgba(100,160,230,0.18)"/>
+          </pattern>
+          <radialGradient id="pg-light" cx="36%" cy="34%" r="68%">
+            <stop offset="0%" stop-color="rgba(200,225,255,0.18)"/>
+            <stop offset="40%" stop-color="rgba(0,0,0,0)"/>
+            <stop offset="75%" stop-color="rgba(0,0,0,0.3)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0.65)"/>
+          </radialGradient>
+          <clipPath id="pg-clip">
+            <circle cx="300" cy="300" r="270"/>
+          </clipPath>
+        </defs>
+        <circle cx="300" cy="300" r="270" fill="#0a1628"/>
+        <circle cx="300" cy="300" r="270" fill="url(#pg-sea)"/>
+        <g clip-path="url(#pg-clip)" stroke="rgba(100,165,240,0.09)" stroke-width="0.5" fill="none">
+          <line x1="30" y1="300" x2="570" y2="300"/>
+          <line x1="72" y1="165" x2="528" y2="165"/>
+          <line x1="72" y1="435" x2="528" y2="435"/>
+          <line x1="172" y1="68" x2="428" y2="68"/>
+          <line x1="172" y1="532" x2="428" y2="532"/>
+          <ellipse cx="300" cy="300" rx="135" ry="270"/>
+          <ellipse cx="300" cy="300" rx="234" ry="270"/>
+          <line x1="300" y1="30" x2="300" y2="570"/>
+        </g>
+        <g clip-path="url(#pg-clip)" fill="url(#pg-land)">
+          <path d="M115,150 C125,128 155,113 185,110 C210,108 232,114 248,124 C256,130 258,140 254,150 C266,146 278,154 280,168 C282,182 274,196 262,204 C250,212 236,220 222,226 C208,232 192,234 178,228 C164,220 152,208 142,194 C130,176 120,164 115,152 Z"/>
+          <path d="M248,68 C262,58 284,62 292,78 C296,94 286,110 270,114 C256,112 244,94 248,68 Z"/>
+          <path d="M268,90 C275,83 286,86 289,95 C292,106 285,114 276,112 C269,108 264,98 268,90 Z"/>
+          <path d="M148,234 C162,227 180,232 192,245 C200,256 194,266 180,264 C166,262 152,252 148,242 Z"/>
+          <path d="M196,272 C214,263 232,268 240,284 C248,302 252,326 248,348 C244,370 236,388 224,400 C214,408 200,410 190,398 C180,383 174,358 172,336 C170,312 178,290 188,276 Z"/>
+          <path d="M318,120 C330,112 348,116 356,130 C362,144 358,160 348,168 C336,176 322,178 314,170 C304,160 310,134 318,120 Z"/>
+          <path d="M296,130 C304,123 316,127 318,140 C320,152 312,158 302,155 C294,150 291,138 296,130 Z"/>
+          <path d="M342,88 C352,78 368,82 372,98 C376,116 366,134 354,140 C344,144 338,132 337,118 C336,106 338,94 342,88 Z"/>
+          <path d="M326,184 C342,178 364,184 376,204 C386,224 392,250 388,278 C386,306 378,332 366,350 C354,364 342,370 328,372 C316,370 308,356 302,338 C296,316 294,292 298,268 C304,244 314,220 320,200 Z"/>
+          <path d="M392,322 C398,314 408,318 410,334 C412,350 404,362 396,358 C388,352 386,336 392,322 Z"/>
+          <path d="M374,174 C388,166 404,174 410,192 C416,210 406,228 394,234 C382,238 372,226 368,208 C364,190 368,178 374,174 Z"/>
+          <path d="M414,222 C428,212 444,220 448,240 C452,262 444,284 432,294 C420,300 410,290 406,272 C402,252 408,232 414,222 Z"/>
+          <path d="M438,140 C456,128 478,138 488,162 C496,184 490,210 478,228 C466,242 450,248 440,238 C428,226 422,206 424,184 C426,166 432,150 438,140 Z"/>
+          <path d="M490,156 C498,146 510,152 512,168 C514,184 506,196 496,192 C488,186 484,170 490,156 Z"/>
+        </g>
+        <circle cx="300" cy="300" r="270" fill="url(#pg-light)"/>
+        <circle cx="300" cy="300" r="274" fill="none" stroke="rgba(100,170,240,0.08)" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- Centered portal -->
+    <div class="portal-center">
+      <div class="portal-brand">
+        <h1 class="portal-brand__name">
+          <span class="portal-brand__p">P</span>agayo<span class="portal-brand__dot">.</span>
+        </h1>
+        <p class="portal-brand__tagline">{description}</p>
+        <span class="portal-brand__badge">{badge}</span>
+      </div>
+
+      <div class="portal-actions">
+        <a href={actionUrls.signIn} class="btn btn--primary btn--lg">
+          {actions.signIn.label}
+        </a>
+      </div>
+    </div>
+
+    <PortalFooter copyright={footer.copyright} fixedToViewport />
+  </main>
+</BaseLayout>
+
+<style is:global>
+  body:has(.portal) {
+    background: #ffffff !important;
+    overflow: hidden;
+  }
+</style>
+
+<style>
+  .portal {
+    --bg-deep: #ffffff;
+    --bg-surface: #f6f8fa;
+    --bg-hover: #e8ecf2;
+    --accent: #2563eb;
+    --accent-dim: #004ed1;
+    --accent-light: #60a5fa;
+    --accent-glow: rgb(37 99 235 / 0.14);
+    --text-primary: #0f172a;
+    --text-secondary: rgb(15 23 42 / 0.75);
+    --text-muted: rgb(15 23 42 / 0.5);
+    --border: rgb(15 23 42 / 0.15);
+    --border-strong: rgb(15 23 42 / 0.375);
+  }
+
+  .portal {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6.25rem 1.25rem 5rem;
+    color: var(--text-primary);
+    position: relative;
+    overflow: clip;
+    background:
+      radial-gradient(800px 500px at 50% 52%, rgba(7, 30, 65, 0.12), transparent 56%),
+      radial-gradient(1040px 520px at 8% -12%, rgba(37, 99, 235, 0.14), transparent 64%),
+      radial-gradient(940px 500px at 94% -16%, rgba(96, 165, 250, 0.16), transparent 60%),
+      linear-gradient(180deg, #f0f5ff 0%, #dde8ff 48%, #edf3ff 100%);
+    background-size: 112% 112%, 125% 125%, 125% 125%, 100% 100%;
+    animation: portal-gradient-drift 26s ease-in-out infinite alternate;
+  }
+
+  .portal-globe {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(640px, 92vw);
+    aspect-ratio: 1;
+    z-index: 0;
+    pointer-events: none;
+    animation: portal-globe-float 20s ease-in-out infinite alternate;
+    will-change: transform;
+    filter: drop-shadow(0 0 80px rgba(37, 99, 235, 0.15));
+  }
+
+  .portal-globe__svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .portal::before,
+  .portal::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .portal::before {
+    width: 32rem;
+    height: 32rem;
+    left: -14rem;
+    top: 28%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(37, 99, 235, 0) 70%);
+    animation: portal-blob-left 23s ease-in-out infinite alternate;
+    will-change: transform, opacity;
+  }
+
+  .portal::after {
+    width: 24rem;
+    height: 24rem;
+    right: -8rem;
+    top: 54%;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.18) 0%, rgba(96, 165, 250, 0) 70%);
+    animation: portal-blob-right 27s ease-in-out infinite alternate;
+    will-change: transform, opacity;
+  }
+
+  @keyframes portal-gradient-drift {
+    0% {
+      background-position: 50% 64%, 0% 0%, 100% 0%, 0% 0%;
+    }
+    100% {
+      background-position: 50% 67%, 7% 5%, 93% 7%, 0% 0%;
+    }
+  }
+
+  @keyframes portal-globe-float {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      transform: translate(-50%, -51.5%) scale(1.025);
+    }
+  }
+
+  @keyframes portal-blob-left {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.84;
+    }
+    100% {
+      transform: translate3d(4.5rem, -2.6rem, 0) scale(1.08);
+      opacity: 1;
+    }
+  }
+
+  @keyframes portal-blob-right {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate3d(-3.8rem, 2.2rem, 0) scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .portal,
+    .portal::before,
+    .portal::after,
+    .portal-globe {
+      animation: none !important;
+    }
+  }
+
+  .portal-center {
+    position: relative;
+    z-index: 1;
+    width: min(760px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 3.25rem 2.4rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, #ffffff 100%);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 28px;
+    box-shadow:
+      0 24px 54px -40px rgba(15, 23, 42, 0.6),
+      0 14px 28px -24px rgba(37, 99, 235, 0.46);
+    backdrop-filter: blur(8px);
+  }
+
+  .portal-brand {
+    text-align: center;
+  }
+
+  .portal-brand__name {
+    font-family: var(--font-sans);
+    font-size: clamp(3.2rem, 8.2vw, 5.35rem);
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    margin: 0 0 0.9rem;
+    color: var(--text-primary);
+  }
+
+  .portal-brand__p,
+  .portal-brand__dot {
+    color: var(--accent);
+  }
+
+  .portal-brand__tagline {
+    font-family: var(--font-sans);
+    font-size: clamp(1.02rem, 2.2vw, 1.38rem);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 31rem;
+    text-wrap: balance;
+  }
+
+  .portal-brand__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.4rem;
+    padding: 0.58rem 1.55rem;
+    font-family: var(--font-sans);
+    font-size: clamp(1.04rem, 2.6vw, 1.28rem);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background: rgba(37, 99, 235, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 999px;
+  }
+
+  .portal-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+  }
+
+  .portal-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-weight: var(--font-medium);
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .portal-actions .btn--lg {
+    height: 50px;
+    padding: 0 1.95rem;
+    font-size: var(--text-base);
+    min-width: 136px;
+  }
+
+  .portal-actions .btn--primary {
+    background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+    color: #ffffff;
+    border-color: rgba(37, 99, 235, 0.56);
+    box-shadow: 0 16px 30px -22px rgba(37, 99, 235, 0.8);
+  }
+
+  .portal-actions .btn--primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 36px -20px rgba(37, 99, 235, 0.72);
+  }
+
+  .portal-actions .btn--primary:active {
+    background: var(--accent-dim);
+    border-color: var(--accent-dim);
+    transform: scale(0.98);
+  }
+
+  @media (max-width: 768px) {
+    .portal {
+      padding-top: 6rem;
+      padding-bottom: 4.5rem;
+    }
+
+    .portal-center {
+      width: 100%;
+      padding: 2.4rem 1.3rem;
+      border-radius: 20px;
+    }
+
+    .portal-brand__tagline {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .portal {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    .portal-center {
+      gap: 2rem;
+      padding: 2.15rem 1rem;
+      border-radius: 16px;
+    }
+
+    .portal-actions {
+      width: 100%;
+    }
+
+    .portal-actions .btn {
+      width: 100%;
+    }
+  }
+</style>

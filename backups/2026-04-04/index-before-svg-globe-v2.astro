@@ -1,0 +1,427 @@
+---
+/**
+ * Root Portal - pagayo.com
+ * Minimale portal: gecentreerde branding + login/registratie.
+ *
+ * i18n-ready: Alle teksten uit content/pages/nl/portal.json
+ */
+
+export const prerender = false;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PortalHeader from '../components/layout/PortalHeader.astro';
+import PortalFooter from '../components/layout/PortalFooter.astro';
+import portalContent from '../content/pages/nl/portal.json';
+import { urls } from '../config/urls';
+import { resolveCountryName } from '@pagayo/config/brand';
+import '../styles/pagayo-design.css';
+
+const { title, description, lang, badge, actions, footer, seo } = portalContent;
+
+// Landnaam detectie via middleware visitorContext (cf-ipcountry op Cloudflare, 'XX' fallback)
+// In dev mode: geen cf-ipcountry header → fallback 'NL' voor lokale preview
+const isDev = import.meta.env.DEV;
+const visitorCountry = Astro.locals.visitorContext?.country;
+const countryCode = (visitorCountry && visitorCountry !== 'XX') ? visitorCountry : (isDev ? 'NL' : '');
+const countryName = resolveCountryName(countryCode, isDev ? 'NL' : '');
+
+// Environment-aware URLs: localhost in dev, production URLs in prod
+const actionUrls = {
+  signIn: urls.signIn,
+  createAccount: urls.createAccount,
+};
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  lang={lang}
+  alternates={seo.alternates}
+  ogImage={seo.ogImage}
+  ogType={seo.ogType}
+  twitterCard={seo.twitterCard}
+  noIndex={seo.noIndex}
+  structuredData={[{ type: seo.structuredData.type as 'WebSite', data: { name: seo.structuredData.name, url: seo.structuredData.url } }]}
+>
+  <main class="portal" data-theme="light">
+    <PortalHeader countryName={countryName} />
+
+    <div class="portal-world" aria-hidden="true">
+      <span class="portal-world__globe"></span>
+    </div>
+
+    <!-- Centered portal -->
+    <div class="portal-center">
+      <div class="portal-brand">
+        <h1 class="portal-brand__name">
+          <span class="portal-brand__p">P</span>agayo<span class="portal-brand__dot">.</span>
+        </h1>
+        <p class="portal-brand__tagline">{description}</p>
+        <span class="portal-brand__badge">{badge}</span>
+      </div>
+
+      <div class="portal-actions">
+        <a href={actionUrls.signIn} class="btn btn--primary btn--lg">
+          {actions.signIn.label}
+        </a>
+      </div>
+    </div>
+
+    <PortalFooter copyright={footer.copyright} fixedToViewport />
+  </main>
+</BaseLayout>
+
+<style is:global>
+  body:has(.portal) {
+    background: #ffffff !important;
+    overflow: hidden;
+  }
+</style>
+
+<style>
+  .portal {
+    --bg-deep: #ffffff;
+    --bg-surface: #f6f8fa;
+    --bg-hover: #e8ecf2;
+    --accent: #2563eb;
+    --accent-dim: #004ed1;
+    --accent-light: #60a5fa;
+    --accent-glow: rgb(37 99 235 / 0.14);
+    --text-primary: #0f172a;
+    --text-secondary: rgb(15 23 42 / 0.75);
+    --text-muted: rgb(15 23 42 / 0.5);
+    --border: rgb(15 23 42 / 0.15);
+    --border-strong: rgb(15 23 42 / 0.375);
+  }
+
+  .portal {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6.25rem 1.25rem 5rem;
+    color: var(--text-primary);
+    position: relative;
+    overflow: clip;
+    background:
+      radial-gradient(1200px 620px at 50% 66%, rgba(7, 30, 65, 0.78), rgba(7, 30, 65, 0) 72%),
+      radial-gradient(1040px 520px at 8% -12%, rgba(37, 99, 235, 0.24), transparent 64%),
+      radial-gradient(940px 500px at 94% -16%, rgba(96, 165, 250, 0.3), transparent 60%),
+      linear-gradient(180deg, #f6f9ff 0%, #dbe8ff 48%, #edf3ff 100%);
+    background-size: 112% 112%, 125% 125%, 125% 125%, 100% 100%;
+    animation: portal-gradient-drift 26s ease-in-out infinite alternate;
+  }
+
+  .portal-world {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .portal-world__globe {
+    position: absolute;
+    left: 50%;
+    top: 57%;
+    width: min(1780px, 166vw);
+    height: min(860px, 78vw);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(3, 16, 37, 0) 0%, rgba(3, 16, 37, 0.72) 62%, rgba(3, 16, 37, 0.95) 100%),
+      radial-gradient(circle, rgba(150, 199, 255, 0.95) 0 1.2px, rgba(150, 199, 255, 0) 1.75px);
+    background-size: 100% 100%, 12px 12px;
+    box-shadow:
+      0 0 0 1px rgba(160, 205, 255, 0.32),
+      inset 0 -70px 130px rgba(0, 0, 0, 0.66),
+      inset 0 32px 72px rgba(169, 211, 255, 0.2),
+      0 54px 160px -70px rgba(3, 11, 24, 0.95);
+    opacity: 0.9;
+    filter: saturate(128%) contrast(132%);
+    animation: portal-world-float 16s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  .portal-world__globe::before,
+  .portal-world__globe::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .portal-world__globe::before {
+    background:
+      repeating-linear-gradient(90deg, rgba(156, 206, 255, 0.46) 0 1px, transparent 1px 50px),
+      repeating-linear-gradient(0deg, rgba(145, 196, 255, 0.28) 0 1px, transparent 1px 38px);
+    mix-blend-mode: screen;
+    opacity: 0.58;
+    animation: portal-world-grid-spin 66s linear infinite;
+  }
+
+  .portal-world__globe::after {
+    inset: 12% 6% 14% 6%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 480'%3E%3Cg fill='none' stroke='%23b8d9ff' stroke-width='2.6' stroke-linecap='round' stroke-dasharray='0.1 15'%3E%3Cpath d='M40 230 C140 170 260 170 370 232 C460 282 580 282 670 230 C770 172 880 172 990 230 C1080 280 1210 286 1380 220'/%3E%3Cpath d='M70 150 C170 110 300 118 420 170 C510 210 610 210 700 170 C810 120 930 122 1040 168 C1140 210 1260 214 1370 176'/%3E%3Cpath d='M120 320 C230 268 340 270 450 324 C530 362 640 364 730 326 C830 284 950 286 1060 334 C1160 378 1270 380 1380 336'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 58% 100%;
+    opacity: 0.86;
+    animation: portal-world-map-spin 74s linear infinite;
+  }
+
+  .portal::before,
+  .portal::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .portal::before {
+    width: 32rem;
+    height: 32rem;
+    left: -14rem;
+    top: 28%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(37, 99, 235, 0) 70%);
+    animation: portal-blob-left 23s ease-in-out infinite alternate;
+    will-change: transform, opacity;
+  }
+
+  .portal::after {
+    width: 24rem;
+    height: 24rem;
+    right: -8rem;
+    top: 54%;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.18) 0%, rgba(96, 165, 250, 0) 70%);
+    animation: portal-blob-right 27s ease-in-out infinite alternate;
+    will-change: transform, opacity;
+  }
+
+  @keyframes portal-gradient-drift {
+    0% {
+      background-position: 50% 64%, 0% 0%, 100% 0%, 0% 0%;
+    }
+    100% {
+      background-position: 50% 67%, 7% 5%, 93% 7%, 0% 0%;
+    }
+  }
+
+  @keyframes portal-world-float {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      transform: translate(-50%, -52.3%) scale(1.048);
+    }
+  }
+
+  @keyframes portal-world-grid-spin {
+    0% {
+      background-position: 0 0, 0 0;
+    }
+    100% {
+      background-position: -240px 0, -182px 0;
+    }
+  }
+
+  @keyframes portal-world-map-spin {
+    0% {
+      background-position: 0 0;
+      opacity: 0.76;
+    }
+    50% {
+      opacity: 0.92;
+    }
+    100% {
+      background-position: -760px 0;
+      opacity: 0.78;
+    }
+  }
+
+  @keyframes portal-blob-left {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.84;
+    }
+    100% {
+      transform: translate3d(4.5rem, -2.6rem, 0) scale(1.08);
+      opacity: 1;
+    }
+  }
+
+  @keyframes portal-blob-right {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate3d(-3.8rem, 2.2rem, 0) scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .portal,
+    .portal::before,
+    .portal::after,
+    .portal-world__globe,
+    .portal-world__globe::before,
+    .portal-world__globe::after {
+      animation: none !important;
+    }
+  }
+
+  .portal-center {
+    position: relative;
+    z-index: 1;
+    width: min(760px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 3.25rem 2.4rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, #ffffff 100%);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 28px;
+    box-shadow:
+      0 24px 54px -40px rgba(15, 23, 42, 0.6),
+      0 14px 28px -24px rgba(37, 99, 235, 0.46);
+    backdrop-filter: blur(8px);
+  }
+
+  .portal-brand {
+    text-align: center;
+  }
+
+  .portal-brand__name {
+    font-family: var(--font-sans);
+    font-size: clamp(3.2rem, 8.2vw, 5.35rem);
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+    margin: 0 0 0.9rem;
+    color: var(--text-primary);
+  }
+
+  .portal-brand__p,
+  .portal-brand__dot {
+    color: var(--accent);
+  }
+
+  .portal-brand__tagline {
+    font-family: var(--font-sans);
+    font-size: clamp(1.02rem, 2.2vw, 1.38rem);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 31rem;
+    text-wrap: balance;
+  }
+
+  .portal-brand__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.4rem;
+    padding: 0.58rem 1.55rem;
+    font-family: var(--font-sans);
+    font-size: clamp(1.04rem, 2.6vw, 1.28rem);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background: rgba(37, 99, 235, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 999px;
+  }
+
+  .portal-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+  }
+
+  .portal-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-weight: var(--font-medium);
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .portal-actions .btn--lg {
+    height: 50px;
+    padding: 0 1.95rem;
+    font-size: var(--text-base);
+    min-width: 136px;
+  }
+
+  .portal-actions .btn--primary {
+    background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+    color: #ffffff;
+    border-color: rgba(37, 99, 235, 0.56);
+    box-shadow: 0 16px 30px -22px rgba(37, 99, 235, 0.8);
+  }
+
+  .portal-actions .btn--primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 36px -20px rgba(37, 99, 235, 0.72);
+  }
+
+  .portal-actions .btn--primary:active {
+    background: var(--accent-dim);
+    border-color: var(--accent-dim);
+    transform: scale(0.98);
+  }
+
+  @media (max-width: 768px) {
+    .portal {
+      padding-top: 6rem;
+      padding-bottom: 4.5rem;
+    }
+
+    .portal-center {
+      width: 100%;
+      padding: 2.4rem 1.3rem;
+      border-radius: 20px;
+    }
+
+    .portal-brand__tagline {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .portal {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    .portal-center {
+      gap: 2rem;
+      padding: 2.15rem 1rem;
+      border-radius: 16px;
+    }
+
+    .portal-actions {
+      width: 100%;
+    }
+
+    .portal-actions .btn {
+      width: 100%;
+    }
+  }
+</style>

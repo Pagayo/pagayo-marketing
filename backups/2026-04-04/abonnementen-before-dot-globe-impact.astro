@@ -30,10 +30,6 @@ const countryName = resolveCountryName(countryCode, isDev ? 'NL' : '');
     <PortalHeader countryName={countryName} />
 
     <main>
-      <div class="page-world" aria-hidden="true">
-        <span class="page-world__globe"></span>
-      </div>
-
       <!-- Hero Section -->
       <section class="hero">
         <div class="container">
@@ -234,76 +230,16 @@ const countryName = resolveCountryName(countryCode, isDev ? 'NL' : '');
     min-height: 100vh;
     color: var(--text-primary);
     background:
-      radial-gradient(1240px 700px at 50% 17%, rgba(6, 28, 60, 0.72), rgba(6, 28, 60, 0) 72%),
-      radial-gradient(1200px 520px at 8% -8%, rgba(37, 99, 235, 0.22), transparent 62%),
-      radial-gradient(900px 440px at 92% -16%, rgba(96, 165, 250, 0.26), transparent 58%),
-      linear-gradient(180deg, #f5f9ff 0%, #dfebff 44%, #ffffff 100%);
-    background-size: 112% 112%, 126% 126%, 126% 126%, 100% 100%;
-    animation: subs-gradient-drift 27s ease-in-out infinite alternate;
+      radial-gradient(1200px 520px at 8% -8%, rgba(37, 99, 235, 0.11), transparent 62%),
+      radial-gradient(900px 440px at 92% -16%, rgba(96, 165, 250, 0.16), transparent 58%),
+      linear-gradient(180deg, #ffffff 0%, #f7faff 44%, #ffffff 100%);
+    background-size: 126% 126%, 126% 126%, 100% 100%;
+    animation: subs-gradient-drift 21s ease-in-out infinite alternate;
     overflow-x: clip;
   }
 
   main {
     position: relative;
-    isolation: isolate;
-  }
-
-  .page-world {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .page-world__globe {
-    position: absolute;
-    left: 50%;
-    top: 21rem;
-    width: min(1760px, 162vw);
-    height: min(840px, 76vw);
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background:
-      radial-gradient(circle at 50% 50%, rgba(2, 14, 34, 0) 0%, rgba(2, 14, 34, 0.74) 62%, rgba(2, 14, 34, 0.95) 100%),
-      radial-gradient(circle, rgba(153, 203, 255, 0.93) 0 1.2px, rgba(153, 203, 255, 0) 1.75px);
-    background-size: 100% 100%, 12px 12px;
-    box-shadow:
-      0 0 0 1px rgba(160, 205, 255, 0.34),
-      inset 0 -68px 126px rgba(0, 0, 0, 0.66),
-      inset 0 30px 72px rgba(169, 211, 255, 0.2),
-      0 52px 150px -70px rgba(3, 11, 24, 0.95);
-    opacity: 0.88;
-    filter: saturate(128%) contrast(132%);
-    animation: subs-world-float 17s ease-in-out infinite alternate;
-    will-change: transform;
-  }
-
-  .page-world__globe::before,
-  .page-world__globe::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-  }
-
-  .page-world__globe::before {
-    background:
-      repeating-linear-gradient(90deg, rgba(156, 206, 255, 0.45) 0 1px, transparent 1px 50px),
-      repeating-linear-gradient(0deg, rgba(145, 196, 255, 0.28) 0 1px, transparent 1px 38px);
-    mix-blend-mode: screen;
-    opacity: 0.57;
-    animation: subs-world-grid-spin 66s linear infinite;
-  }
-
-  .page-world__globe::after {
-    inset: 12% 6% 14% 6%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 480'%3E%3Cg fill='none' stroke='%23b8d9ff' stroke-width='2.6' stroke-linecap='round' stroke-dasharray='0.1 15'%3E%3Cpath d='M40 230 C140 170 260 170 370 232 C460 282 580 282 670 230 C770 172 880 172 990 230 C1080 280 1210 286 1380 220'/%3E%3Cpath d='M70 150 C170 110 300 118 420 170 C510 210 610 210 700 170 C810 120 930 122 1040 168 C1140 210 1260 214 1370 176'/%3E%3Cpath d='M120 320 C230 268 340 270 450 324 C530 362 640 364 730 326 C830 284 950 286 1060 334 C1160 378 1270 380 1380 336'/%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-size: 58% 100%;
-    opacity: 0.84;
-    animation: subs-world-map-spin 74s linear infinite;
   }
 
   .container {
@@ -624,42 +560,10 @@ const countryName = resolveCountryName(countryCode, isDev ? 'NL' : '');
 
   @keyframes subs-gradient-drift {
     0% {
-      background-position: 50% 17%, 0% 0%, 100% 0%, 0% 0%;
+      background-position: 0% 0%, 100% 0%, 0% 0%;
     }
     100% {
-      background-position: 50% 20%, 8% 6%, 92% 8%, 0% 0%;
-    }
-  }
-
-  @keyframes subs-world-float {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-    }
-    100% {
-      transform: translate(-50%, -52.4%) scale(1.045);
-    }
-  }
-
-  @keyframes subs-world-grid-spin {
-    0% {
-      background-position: 0 0, 0 0;
-    }
-    100% {
-      background-position: -240px 0, -182px 0;
-    }
-  }
-
-  @keyframes subs-world-map-spin {
-    0% {
-      background-position: 0 0;
-      opacity: 0.75;
-    }
-    50% {
-      opacity: 0.9;
-    }
-    100% {
-      background-position: -760px 0;
-      opacity: 0.77;
+      background-position: 8% 6%, 92% 8%, 0% 0%;
     }
   }
 
@@ -698,9 +602,6 @@ const countryName = resolveCountryName(countryCode, isDev ? 'NL' : '');
 
   @media (prefers-reduced-motion: reduce) {
     .page,
-    .page-world__globe,
-    .page-world__globe::before,
-    .page-world__globe::after,
     .hero::before,
     .hero::after,
     .benefits::before {
