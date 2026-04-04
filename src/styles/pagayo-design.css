@@ -2,7 +2,7 @@
  * Pagayo Design System - Start (fresh)
  * Zero-Friction Onboarding
  * Theme: Light + Blue Accent
- * Generated: 2026-03-14T09:05:02.078Z
+ * Generated: 2026-04-04T13:52:59.795Z
  * (c) 2026 Pagayo
  *
  * CSS @layer order: reset → tokens → base → components → contexts → utilities → tenant
@@ -209,7 +209,7 @@ table {
   --text-2xs-plus: 0.6875rem; /* 11px - compact UI, meta text */
   --text-xs: 0.75rem;     /* 12px */
   --text-xs-plus: 0.8125rem; /* 13px - compact table data */
-  --text-sm: 0.875rem;    /* 14px */
+  --text-sm: 0.8125rem;   /* 13px */
   --text-sm-plus: 0.9375rem; /* 15px - slightly larger body */
   --text-base: 1rem;      /* 16px */
   --text-lg: 1.125rem;    /* 18px */
@@ -289,7 +289,7 @@ table {
   
   /* Font sizes (per control size) */
   --control-font-sm: var(--text-xs);       /* 12px */
-  --control-font-md: var(--text-sm);       /* 14px */
+  --control-font-md: var(--text-sm);       /* 13px */
   --control-font-lg: var(--text-base);     /* 16px */
   
   /* Icon sizes (per control size) */
@@ -333,7 +333,7 @@ table {
  * Light-first design met blue accent - modern en helder Pagayo theme
  * 
  * Mode: light
- * Generated: 2026-03-14T09:05:02.033Z
+ * Generated: 2026-04-04T13:52:59.679Z
  * 
  * AI-NOTE: Dit bestand is GEGENEREERD. Wijzig niet handmatig.
  * Wijzig src/themes/fresh.json en run `npm run build`.
@@ -1973,19 +1973,21 @@ table {
   color: var(--error);
 }
 
-/* ===== INPUT BASE ===== */
+/* ===== INPUT BASE (SSoT — alle form inputs) ===== */
 .form-input {
   width: 100%;
-  height: var(--control-height-md);
-  padding: 0 var(--control-padding-md);
+  height: auto;
+  padding: 0.9rem var(--space-4);
   
   font-family: var(--tenant-font-main, var(--font-sans));
-  font-size: var(--control-font-md);
+  font-size: var(--text-sm-plus);
   color: var(--text-primary);
   
-  background: var(--bg-elevated);
+  background: var(--bg-hover);
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
+  outline: none;
+  box-sizing: border-box;
   
   transition:
     border-color var(--transition-fast),
@@ -1993,7 +1995,7 @@ table {
 }
 
 .form-input::placeholder {
-  color: var(--text-muted);
+  color: var(--text-disabled);
 }
 
 .form-input:hover:not(:disabled):not(:focus) {
@@ -2001,22 +2003,30 @@ table {
 }
 
 .form-input:focus {
-  outline: none;
   border-color: var(--tenant-accent, var(--accent));
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
+/* Autofill override — voorkom browser-default witte achtergrond */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus,
+.form-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-hover) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 /* ===== INPUT SIZES ===== */
 .form-input--sm {
-  height: var(--control-height-sm);
+  padding: 0.5rem var(--space-3);
   font-size: var(--control-font-sm);
-  padding: 0 var(--control-padding-sm);
+  border-radius: var(--radius-md);
 }
 
 .form-input--lg {
-  height: var(--control-height-lg);
+  padding: 1.1rem var(--space-5);
   font-size: var(--control-font-lg);
-  padding: 0 var(--control-padding-lg);
 }
 
 /* ===== TEXTAREA ===== */
@@ -2037,14 +2047,7 @@ table {
   cursor: pointer;
 }
 
-/* ===== GOLDEN FORM OVERRIDES (Pagayo brand) ===== */
-/* Alle form controls gebruiken de golden accent tint.
- * Single Source of Truth — NIET dupliceren in context CSS.
- */
-.form-input,
-.form-textarea {
-  background: var(--bg-hover);
-}
+/* Golden form overrides geabsorbeerd in .form-input base (SSoT) */
 
 .form-select {
   background-color: rgb(245 166 35 / 0.08);
@@ -4001,11 +4004,12 @@ table {
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--space-6);
-  height: 56px;
+  --main-nav-height: 56px;
+  height: var(--main-nav-height);
   background: var(--bg-deep);
   border-bottom: 1px solid var(--border);
   z-index: 100;
-  overflow: hidden;
+  overflow: visible;
   max-width: 100vw;
 }
 
@@ -5791,6 +5795,75 @@ table {
 }
 
 
+/* ===== Component: social-auth ===== */
+/* social-auth/social-auth.css */
+/**
+ * Social Auth Components (SSoT)
+ * Gedeelde styling voor social login buttons en dividers.
+ * Gebruikt in: start context (login/register), admin context (admin login)
+ */
+
+/* ===== AUTH DIVIDER ("of" separator) ===== */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+  color: var(--text-disabled);
+  font-size: var(--text-xs-plus);
+  text-transform: lowercase;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-light);
+}
+
+/* ===== SOCIAL AUTH BUTTONS ===== */
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm-plus);
+  font-weight: var(--font-semibold);
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.social-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Google: wit met subtle border (Google HIG) */
+.social-btn--google {
+  background: white;
+  color: #1f1f1f;
+  border: 1px solid var(--border-light);
+}
+
+.social-btn--google:hover {
+  background: #f8f8f8;
+  border-color: var(--text-disabled);
+}
+
+.social-btn--google:active {
+  background: #f0f0f0;
+  transform: scale(0.98);
+}
+
+
 
 }
 
@@ -5977,12 +6050,32 @@ table {
   transform: none;
 }
 
+/* ===== CARD LINKS (shared across login, register) ===== */
+.card-links {
+  text-align: center;
+  margin-top: var(--space-5);
+  font-size: var(--text-xs-plus);
+  color: var(--text-secondary);
+}
+
+.card-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: var(--font-semibold);
+}
+
+.card-links a:hover {
+  text-decoration: underline;
+}
+
 /* ===== TURNSTILE (invisible) ===== */
 .cf-turnstile {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
+
+/* ===== SOCIAL AUTH: zie components/social-auth/social-auth.css (SSoT) ===== */
 
 /* loading.css */
 /**
@@ -6145,6 +6238,7 @@ table {
 }
 
 /* ===== FORM ELEMENTS ===== */
+/* .form-input styling → SSoT in components/forms/_base.css */
 .form-group {
   margin-bottom: var(--space-4);
 }
@@ -6156,46 +6250,6 @@ table {
   color: var(--text-secondary);
   margin-bottom: var(--space-1-5);
   letter-spacing: 0.01em;
-}
-
-.form-input {
-  width: 100%;
-  height: auto;
-  padding: 0.9rem var(--space-4);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  color: var(--text-primary);
-  font-size: var(--text-sm-plus);
-  font-family: inherit;
-  outline: none;
-  transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
-  box-sizing: border-box;
-}
-
-.form-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-}
-
-.form-input::placeholder {
-  color: var(--text-disabled);
-}
-
-/* Autofill override for dark theme */
-.form-input:-webkit-autofill,
-.form-input:-webkit-autofill:hover,
-.form-input:-webkit-autofill:focus,
-.form-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
-  -webkit-text-fill-color: var(--text-primary) !important;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-.form-input:-moz-autofill,
-.form-input:-moz-autofill-preview {
-  background: rgba(255, 255, 255, 0.05) !important;
-  color: var(--text-primary) !important;
 }
 
 /* ===== FORM ERRORS ===== */
@@ -6225,53 +6279,13 @@ table {
   display: block;
 }
 
-/* ===== LOGIN BUTTON ===== */
-.login-btn {
-  width: 100%;
-  padding: 0.9rem var(--space-6);
-  background: var(--accent);
-  color: var(--bg-deep);
-  font-size: var(--text-base);
-  font-weight: var(--font-bold);
-  font-family: inherit;
-  border: none;
-  border-radius: var(--radius-lg);
-  cursor: pointer;
-  transition: all var(--transition-slow);
+/* ===== LOGIN BUTTON — uses SSoT .btn.btn--primary from components/buttons ===== */
+/* Context-specific overrides for start pages: full-width, large, extra top margin */
+.login-container .btn--primary {
   margin-top: var(--space-2);
 }
 
-.login-btn:hover:not(:disabled) {
-  background: var(--accent-light);
-}
-
-.login-btn:active:not(:disabled) {
-  transform: translateY(0);
-}
-
-.login-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* ===== LOGIN LINKS ===== */
-.login-links {
-  text-align: center;
-  margin-top: var(--space-5);
-  font-size: var(--text-xs-plus);
-  color: var(--text-secondary);
-}
-
-.login-links a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: var(--font-semibold);
-}
-
-.login-links a:hover {
-  text-decoration: underline;
-}
+/* ===== LOGIN LINKS — SSoT is .card-links in _base.css ===== */
 
 .forgot-password-link {
   display: block;
@@ -6465,40 +6479,7 @@ table {
 }
 
 /* ===== ORDER CARD FORM INPUTS ===== */
-.order-card .form-input {
-  height: auto;
-  padding: 0.9rem var(--space-4);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  color: var(--text-primary);
-  font-size: var(--text-sm-plus);
-}
-
-.order-card .form-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-}
-
-.order-card .form-input::placeholder {
-  color: var(--text-disabled);
-}
-
-/* Autofill override for dark theme */
-.order-card .form-input:-webkit-autofill,
-.order-card .form-input:-webkit-autofill:hover,
-.order-card .form-input:-webkit-autofill:focus,
-.order-card .form-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
-  -webkit-text-fill-color: var(--text-primary) !important;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-.order-card .form-input:-moz-autofill,
-.order-card .form-input:-moz-autofill-preview {
-  background: rgba(255, 255, 255, 0.05) !important;
-  color: var(--text-primary) !important;
-}
+/* .form-input styling → SSoT in components/forms/_base.css */
 
 .order-card .form-label {
   font-size: var(--text-xs-plus);
@@ -6915,20 +6896,10 @@ table {
 /* register.css */
 /**
  * CONTEXT: Start — Register Page
- * Registration form with claim flow: email, password, organization name.
- * Uses portal-card styling from _base.css + token-based inputs.
+ * Registration form. Uses login-container/login-card SSoT from login.css,
+ * card-badge + card-links SSoT from _base.css, form-input SSoT from login.css.
+ * Only register-specific CSS lives here.
  */
-
-/* ===== REGISTER TITLE ===== */
-.register-title {
-  font-family: var(--font-sans);
-  font-size: var(--text-2xl);
-  font-weight: 900;
-  color: var(--text-primary);
-  text-align: center;
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--space-6);
-}
 
 /* ===== REGISTER FORM ===== */
 .register-form {
@@ -6937,84 +6908,7 @@ table {
   gap: var(--space-3);
 }
 
-/* ===== REGISTER INPUT (extends portal-input pattern) ===== */
-.register-input {
-  width: 100%;
-  height: auto;
-  padding: 0.9rem var(--space-4);
-  font-size: var(--text-sm-plus);
-  font-family: inherit;
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
-  box-sizing: border-box;
-}
-
-.register-input:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.register-input::placeholder {
-  color: var(--text-disabled);
-}
-
-/* Autofill override for dark theme */
-.register-input:-webkit-autofill,
-.register-input:-webkit-autofill:hover,
-.register-input:-webkit-autofill:focus,
-.register-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
-  -webkit-text-fill-color: var(--text-primary) !important;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-.register-input:-moz-autofill,
-.register-input:-moz-autofill-preview {
-  background: rgba(255, 255, 255, 0.05) !important;
-  color: var(--text-primary) !important;
-}
-
-/* ===== REGISTER PAGE OVERRIDES ===== */
-/* Override center-page/center-card to match portal card design */
-.center-page.register-page {
-  align-items: flex-start;
-  padding: var(--space-24) var(--space-4) var(--space-4);
-  background: var(--bg-deep);
-}
-
-.center-page.register-page .center-card {
-  position: relative;
-  max-width: 400px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-10) var(--space-6) var(--space-6);
-  text-align: left;
-}
-
-.center-page.register-page .center-card .btn {
-  height: auto;
-  padding: 0.9rem var(--space-6);
-  border-radius: var(--radius-lg);
-  font-size: var(--text-base);
-  font-weight: var(--font-bold);
-  width: 100%;
-}
-
-.center-page.register-page .center-card .btn--primary {
-  background: var(--accent);
-  color: var(--bg-deep);
-  border: none;
-}
-
-.center-page.register-page .center-card .btn--primary:hover:not(:disabled) {
-  background: var(--accent-light);
-}
+/* Button styling comes from SSoT .btn.btn--primary.btn--lg.btn--full (components/buttons) */
 
 /* ===== SUCCESS CHECK ===== */
 .success-check {
