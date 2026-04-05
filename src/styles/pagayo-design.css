@@ -2,7 +2,7 @@
  * Pagayo Design System - Start (fresh)
  * Zero-Friction Onboarding
  * Theme: Light + Blue Accent
- * Generated: 2026-04-04T13:52:59.795Z
+ * Generated: 2026-04-05T09:45:04.318Z
  * (c) 2026 Pagayo
  *
  * CSS @layer order: reset → tokens → base → components → contexts → utilities → tenant
@@ -291,6 +291,11 @@ table {
   --control-font-sm: var(--text-xs);       /* 12px */
   --control-font-md: var(--text-sm);       /* 13px */
   --control-font-lg: var(--text-base);     /* 16px */
+
+  /* Admin list page control fonts (reference pattern) */
+  --admin-list-toolbar-control-font: var(--text-xs);  /* 12px */
+  --admin-list-detail-control-font: var(--text-sm);   /* 13px */
+  --admin-products-list-font: 13px;
   
   /* Icon sizes (per control size) */
   --control-icon-sm: 16px;
@@ -333,7 +338,7 @@ table {
  * Light-first design met blue accent - modern en helder Pagayo theme
  * 
  * Mode: light
- * Generated: 2026-04-04T13:52:59.679Z
+ * Generated: 2026-04-05T09:45:04.187Z
  * 
  * AI-NOTE: Dit bestand is GEGENEREERD. Wijzig niet handmatig.
  * Wijzig src/themes/fresh.json en run `npm run build`.
