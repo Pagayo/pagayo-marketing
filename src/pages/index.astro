@@ -462,9 +462,20 @@ const actionUrls = {
 
     function loadWorldMask() {
       const image = new Image();
+      image.crossOrigin = 'anonymous';
       image.decoding = 'async';
-      image.onload = () => buildMaskFromImage(image);
+      image.onload = () => {
+        try {
+          buildMaskFromImage(image);
+        } catch (err) {
+          console.warn('[globe] mask build failed, using fallback:', err);
+          maskReady = false;
+          refreshPointLandMask();
+          render();
+        }
+      };
       image.onerror = () => {
+        console.warn('[globe] mask image failed to load');
         maskReady = false;
         refreshPointLandMask();
         render();
@@ -735,7 +746,7 @@ const actionUrls = {
         ctx.fill();
       }
 
-      if (cssWidth > 900) {
+      if (cssWidth > 600) {
         const visibleBadges = [];
         for (const badge of badgeDefinitions) {
           const projection = projectMarker(badge.marker, cosA, sinA, cosTilt, sinTilt, cx, cy);
