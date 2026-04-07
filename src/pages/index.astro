@@ -228,7 +228,9 @@ const actionUrls = {
     const northTiltRad = (northTiltDeg * Math.PI) / 180;
     const worldMaskUrl = '/world_alpha_mini.jpg';
     const points = [];
-    const maskBands = Array.from({ length: 181 }, () => new Uint8Array(720));
+    let maskPixels = new Uint8Array(0);
+    let maskWidth = 0;
+    let maskHeight = 0;
     const keyCities = [
       { name: 'Amsterdam', lat: 52.3676, lon: 4.9041 },
       { name: 'Rotterdam', lat: 51.9244, lon: 4.4777 },
@@ -276,11 +278,21 @@ const actionUrls = {
       { name: 'Sydney', lat: -33.8688, lon: 151.2093 },
       { name: 'Melbourne', lat: -37.8136, lon: 144.9631 },
       { name: 'Auckland', lat: -36.8509, lon: 174.7645 },
+      { name: 'Seattle', lat: 47.6062, lon: -122.3321 },
       { name: 'New York', lat: 40.7128, lon: -74.006 },
+      { name: 'Boston', lat: 42.3601, lon: -71.0589 },
+      { name: 'Washington DC', lat: 38.9072, lon: -77.0369 },
       { name: 'Toronto', lat: 43.6532, lon: -79.3832 },
       { name: 'Chicago', lat: 41.8781, lon: -87.6298 },
+      { name: 'Minneapolis', lat: 44.9778, lon: -93.265 },
+      { name: 'Denver', lat: 39.7392, lon: -104.9903 },
       { name: 'San Francisco', lat: 37.7749, lon: -122.4194 },
       { name: 'Los Angeles', lat: 34.0522, lon: -118.2437 },
+      { name: 'Phoenix', lat: 33.4484, lon: -112.074 },
+      { name: 'Dallas', lat: 32.7767, lon: -96.797 },
+      { name: 'Houston', lat: 29.7604, lon: -95.3698 },
+      { name: 'Atlanta', lat: 33.749, lon: -84.388 },
+      { name: 'Miami', lat: 25.7617, lon: -80.1918 },
       { name: 'Sao Paulo', lat: -23.5558, lon: -46.6396 },
       { name: 'Rio de Janeiro', lat: -22.9068, lon: -43.1729 },
       { name: 'Buenos Aires', lat: -34.6037, lon: -58.3816 },
@@ -300,18 +312,41 @@ const actionUrls = {
       };
     });
     const cityLookup = new Map(cityMarkers.map((city) => [city.name, city]));
-    const badgeDuration = 12400;
+    const badgeDuration = 14000;
     const badgeDefinitions = [
-      { city: 'Amsterdam', amount: '€365 EUR', offsetX: -92, offsetY: -28, delay: 0 },
-      { city: 'London', amount: '£420 GBP', offsetX: 46, offsetY: -38, delay: 1200 },
-      { city: 'New York', amount: '$615 USD', offsetX: -104, offsetY: 34, delay: 2600 },
-      { city: 'Dubai', amount: 'AED 980', offsetX: 54, offsetY: -34, delay: 4100 },
-      { city: 'Lagos', amount: '₦92,000 NGN', offsetX: 72, offsetY: -22, delay: 5500 },
-      { city: 'Nairobi', amount: 'KSh 18,400', offsetX: 60, offsetY: 24, delay: 6800 },
-      { city: 'Sao Paulo', amount: 'R$480 BRL', offsetX: 72, offsetY: -20, delay: 1900 },
-      { city: 'Buenos Aires', amount: 'ARS 54.000', offsetX: -112, offsetY: -22, delay: 4900 },
-      { city: 'Singapore', amount: 'S$240 SGD', offsetX: 62, offsetY: -26, delay: 8100 },
-      { city: 'Tokyo', amount: '¥8,200 JPY', offsetX: 56, offsetY: 30, delay: 9500 }
+      // Azië-Pacific (start, globe opent op Hong Kong)
+      { city: 'Hong Kong', label: '香港', offsetX: 0, offsetY: 0, delay: 0 },
+      { city: 'Tokyo', label: '東京', offsetX: 0, offsetY: 0, delay: 2200 },
+      { city: 'Sydney', label: 'Sydney', offsetX: 0, offsetY: 0, delay: 4400 },
+      { city: 'Singapore', label: '新加坡', offsetX: 0, offsetY: 0, delay: 6600 },
+      { city: 'Seoul', label: '서울', offsetX: 0, offsetY: 0, delay: 8800 },
+      { city: 'Mumbai', label: 'मुंबई', offsetX: 0, offsetY: 0, delay: 11000 },
+      { city: 'Bangkok', label: 'กรุงเทพ', offsetX: 0, offsetY: 0, delay: 13200 },
+      { city: 'Jakarta', label: 'Jakarta', offsetX: 0, offsetY: 0, delay: 15400 },
+      // Midden-Oosten & Afrika
+      { city: 'Dubai', label: 'دبي', offsetX: 0, offsetY: 0, delay: 1100 },
+      { city: 'Istanbul', label: 'İstanbul', offsetX: 0, offsetY: 0, delay: 3300 },
+      { city: 'Cairo', label: 'القاهرة', offsetX: 0, offsetY: 0, delay: 5500 },
+      { city: 'Lagos', label: 'Lagos', offsetX: 0, offsetY: 0, delay: 7700 },
+      { city: 'Nairobi', label: 'Nairobi', offsetX: 0, offsetY: 0, delay: 9900 },
+      { city: 'Johannesburg', label: 'Johannesburg', offsetX: 0, offsetY: 0, delay: 12100 },
+      { city: 'Cape Town', label: 'Kaapstad', offsetX: 0, offsetY: 0, delay: 14300 },
+      // Europa (goed verspreid, nooit naast elkaar)
+      { city: 'London', label: 'London', offsetX: 0, offsetY: 0, delay: 2800 },
+      { city: 'Amsterdam', label: 'Amsterdam', offsetX: 0, offsetY: 0, delay: 7200 },
+      { city: 'Paris', label: 'Paris', offsetX: 0, offsetY: 0, delay: 11600 },
+      { city: 'Berlin', label: 'Berlin', offsetX: 0, offsetY: 0, delay: 16000 },
+      { city: 'Madrid', label: 'Madrid', offsetX: 0, offsetY: 0, delay: 4000 },
+      { city: 'Stockholm', label: 'Stockholm', offsetX: 0, offsetY: 0, delay: 8400 },
+      { city: 'Moscow', label: 'Москва', offsetX: 0, offsetY: 0, delay: 14800 },
+      // Amerika's (goed verspreid)
+      { city: 'New York', label: 'New York', offsetX: 0, offsetY: 0, delay: 1600 },
+      { city: 'Sao Paulo', label: 'São Paulo', offsetX: 0, offsetY: 0, delay: 5000 },
+      { city: 'Buenos Aires', label: 'Buenos Aires', offsetX: 0, offsetY: 0, delay: 9400 },
+      { city: 'Toronto', label: 'Toronto', offsetX: 0, offsetY: 0, delay: 13000 },
+      { city: 'San Francisco', label: 'San Francisco', offsetX: 0, offsetY: 0, delay: 6100 },
+      { city: 'Lima', label: 'Lima', offsetX: 0, offsetY: 0, delay: 10500 },
+      { city: 'Bogota', label: 'Bogotá', offsetX: 0, offsetY: 0, delay: 15000 }
     ]
       .map((badge) => {
         const marker = cityLookup.get(badge.city);
@@ -356,34 +391,39 @@ const actionUrls = {
       return false;
     }
 
-    function wrapLonBin(bin) {
-      if (bin < 0) return bin + 720;
-      if (bin >= 720) return bin - 720;
-      return bin;
+    function wrapMaskX(x) {
+      if (!maskWidth) return 0;
+      let wrapped = x % maskWidth;
+      if (wrapped < 0) wrapped += maskWidth;
+      return wrapped;
+    }
+
+    function sampleMaskPixel(x, y) {
+      if (!maskWidth || !maskHeight || !maskPixels.length) return 0;
+      const clampedY = Math.max(0, Math.min(maskHeight - 1, y));
+      return maskPixels[(clampedY * maskWidth) + wrapMaskX(x)];
+    }
+
+    function maskCoverage(latDeg, lonDeg) {
+      if (!maskWidth || !maskHeight) return 0;
+
+      const lonNorm = ((lonDeg + 180 + 360) % 360) - 180;
+      const x = ((lonNorm + 180) / 360) * (maskWidth - 1);
+      const y = ((90 - latDeg) / 180) * (maskHeight - 1);
+      const x0 = Math.floor(x);
+      const y0 = Math.floor(y);
+      const x1 = x0 + 1;
+      const y1 = y0 + 1;
+      const tx = x - x0;
+      const ty = y - y0;
+
+      const top = sampleMaskPixel(x0, y0) * (1 - tx) + sampleMaskPixel(x1, y0) * tx;
+      const bottom = sampleMaskPixel(x0, y1) * (1 - tx) + sampleMaskPixel(x1, y1) * tx;
+      return top * (1 - ty) + bottom * ty;
     }
 
     function maskHasLand(latDeg, lonDeg) {
-      const latBand = Math.max(-90, Math.min(90, Math.round(latDeg)));
-      const lonNorm = ((lonDeg + 180 + 360) % 360) - 180;
-      const lonBin = wrapLonBin(Math.floor((lonNorm + 180) * 2));
-
-      // Sample nearby latitude bands as well to avoid visible horizontal mask artifacts.
-      for (let latOffset = -2; latOffset <= 2; latOffset += 1) {
-        const row = maskBands[latBand + latOffset + 90];
-        if (!row) continue;
-
-        if (
-          row[lonBin] ||
-          row[wrapLonBin(lonBin - 1)] ||
-          row[wrapLonBin(lonBin + 1)] ||
-          row[wrapLonBin(lonBin - 2)] ||
-          row[wrapLonBin(lonBin + 2)]
-        ) {
-          return true;
-        }
-      }
-
-      return false;
+      return maskCoverage(latDeg, lonDeg) >= 0.54;
     }
 
     function pointLand(latDeg, lonDeg) {
@@ -391,10 +431,103 @@ const actionUrls = {
       return isLand(latDeg, lonDeg);
     }
 
+    const biomePalettes = {
+      desert: {
+        front: { h: 34, s: 46, l: 58 },
+        back: { h: 32, s: 34, l: 43 }
+      },
+      forest: {
+        front: { h: 102, s: 36, l: 45 },
+        back: { h: 106, s: 28, l: 33 }
+      },
+      rainforest: {
+        front: { h: 132, s: 44, l: 34 },
+        back: { h: 136, s: 36, l: 25 }
+      },
+      mountain: {
+        front: { h: 92, s: 7, l: 58 },
+        back: { h: 94, s: 6, l: 41 }
+      },
+      boreal: {
+        front: { h: 88, s: 24, l: 47 },
+        back: { h: 90, s: 18, l: 34 }
+      },
+      steppe: {
+        front: { h: 76, s: 24, l: 49 },
+        back: { h: 74, s: 18, l: 36 }
+      }
+    };
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function inRegion(latDeg, lonDeg, centerLat, centerLon, latRadius, lonRadius) {
+      const dy = Math.abs(latDeg - centerLat) / latRadius;
+      const dx = normalizedDeltaLon(lonDeg, centerLon) / lonRadius;
+      return (dx * dx) + (dy * dy) <= 1;
+    }
+
+    function terrainNoise(point) {
+      return (
+        Math.sin((point.lat + point.lon) * 0.11) +
+        Math.cos(point.lon * 0.07) +
+        Math.sin(point.lat * 0.19)
+      ) / 3;
+    }
+
+    function toHsl({ h, s, l }, hueOffset, saturationOffset, lightnessOffset) {
+      const hue = (h + hueOffset + 360) % 360;
+      const saturation = clamp(s + saturationOffset, 0, 100);
+      const lightness = clamp(l + lightnessOffset, 0, 100);
+      return `hsl(${hue.toFixed(1)} ${saturation.toFixed(1)}% ${lightness.toFixed(1)}%)`;
+    }
+
+    function resolveBiome(point) {
+      const { lat, lon } = point;
+      const absLat = Math.abs(lat);
+
+      if (
+        inRegion(lat, lon, 35, -112, 10, 15) ||
+        inRegion(lat, lon, -18, -70, 24, 8) ||
+        inRegion(lat, lon, 46, 10, 6, 8) ||
+        inRegion(lat, lon, 31, 87, 11, 24) ||
+        inRegion(lat, lon, 8, 39, 8, 7)
+      ) return 'mountain';
+
+      if (
+        inRegion(lat, lon, 23, 14, 15, 36) ||
+        inRegion(lat, lon, 24, 48, 11, 18) ||
+        inRegion(lat, lon, 42, 103, 10, 18) ||
+        inRegion(lat, lon, -24, 134, 16, 22) ||
+        inRegion(lat, lon, 33, -112, 8, 12) ||
+        inRegion(lat, lon, -23, -69, 8, 6)
+      ) return 'desert';
+
+      if (
+        inRegion(lat, lon, -4, -62, 16, 24) ||
+        inRegion(lat, lon, 0, 22, 13, 14) ||
+        inRegion(lat, lon, 8, 108, 18, 24) ||
+        inRegion(lat, lon, -4, 142, 10, 12)
+      ) return 'rainforest';
+
+      if (
+        inRegion(lat, lon, 47, 72, 11, 24) ||
+        inRegion(lat, lon, -25, 24, 10, 14) ||
+        inRegion(lat, lon, -44, -68, 10, 11)
+      ) return 'steppe';
+
+      if (absLat >= 56) return 'boreal';
+      if (absLat <= 14) return 'forest';
+      if (absLat <= 30) return 'steppe';
+      return 'forest';
+    }
+
     function setPointStyle(point) {
-      const hue = 204 + ((point.lon + 180) / 360) * 110;
-      point.landFrontColor = `hsl(${hue.toFixed(1)} 84% 59%)`;
-      point.landBackColor = `hsl(${hue.toFixed(1)} 66% 42%)`;
+      const biome = biomePalettes[resolveBiome(point)];
+      const noise = terrainNoise(point);
+      point.landFrontColor = toHsl(biome.front, noise * 4, noise * 8, noise * 7);
+      point.landBackColor = toHsl(biome.back, noise * 3, noise * 5, noise * 5);
     }
 
     function createPoints(count) {
@@ -435,23 +568,18 @@ const actionUrls = {
 
       offctx.drawImage(image, 0, 0);
       const { data, width, height } = offctx.getImageData(0, 0, offscreen.width, offscreen.height);
+      maskWidth = width;
+      maskHeight = height;
+      maskPixels = new Uint8Array(width * height);
 
       for (let y = 0; y < height; y += 1) {
-        const lat = 90 - (y / (height - 1)) * 180;
-        const latBand = Math.max(-90, Math.min(90, Math.round(lat)));
-        const row = maskBands[latBand + 90];
-
         for (let x = 0; x < width; x += 1) {
           const idx = (y * width + x) * 4;
           const r = data[idx];
           const g = data[idx + 1];
           const b = data[idx + 2];
           const isDarkLand = r < 96 && g < 96 && b < 96;
-          if (!isDarkLand) continue;
-
-          const lon = -180 + (x / (width - 1)) * 360;
-          const lonBin = wrapLonBin(Math.floor((lon + 180) * 2));
-          row[lonBin] = 1;
+          maskPixels[(y * width) + x] = isDarkLand ? 1 : 0;
         }
       }
 
@@ -486,9 +614,9 @@ const actionUrls = {
     let dotsPerFrame = 0;
 
     function dotsForViewport(width) {
-      if (width >= 1200) return 84000;
-      if (width >= 900) return 48000;
-      return 12000;
+      if (width >= 1200) return 336000;
+      if (width >= 900) return 192000;
+      return 48000;
     }
 
     const hongKongLongitudeDeg = 114.1694;
@@ -546,10 +674,10 @@ const actionUrls = {
 
     function badgeOpacity(progress) {
       const normalized = progress / badgeDuration;
-      if (normalized < 0.12) return 0;
-      if (normalized < 0.2) return (normalized - 0.12) / 0.08;
-      if (normalized < 0.76) return 1;
-      if (normalized < 0.9) return 1 - ((normalized - 0.76) / 0.14);
+      if (normalized < 0.04) return 0;
+      if (normalized < 0.20) return (normalized - 0.04) / 0.16;
+      if (normalized < 0.68) return 1;
+      if (normalized < 0.86) return 1 - ((normalized - 0.68) / 0.18);
       return 0;
     }
 
@@ -628,45 +756,19 @@ const actionUrls = {
       const badgeX = Math.round(drawX * 2) / 2;
       const badgeY = Math.round(drawY * 2) / 2;
       const iconSize = 18;
-      const horizontalPadding = 10;
-      const badgeHeight = 28;
-      const gap = 7;
+      const gap = 5;
 
       ctx.save();
-      ctx.font = '700 12.3px Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
-      const textWidth = ctx.measureText(badge.amount).width;
-      const badgeWidth = horizontalPadding + iconSize + gap + textWidth + horizontalPadding;
-      const x = badgeX - (badgeWidth / 2);
-      const y = badgeY - (badgeHeight / 2);
+      ctx.font = '600 11.5px Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
 
-      ctx.globalAlpha = opacity * 0.18;
-      ctx.fillStyle = '#0f172a';
-      if (typeof ctx.roundRect === 'function') {
-        ctx.beginPath();
-        ctx.roundRect(x, y + 5, badgeWidth, badgeHeight, 14);
-        ctx.fill();
-      } else {
-        ctx.fillRect(x, y + 5, badgeWidth, badgeHeight);
-      }
+      // Icoon gecentreerd op de stadslocatie
+      drawBoxIcon(badgeX - iconSize / 2, badgeY - iconSize / 2, iconSize, opacity);
 
+      // Tekst direct rechts naast het icoon
       ctx.globalAlpha = opacity;
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.36)';
-      if (typeof ctx.roundRect === 'function') {
-        ctx.beginPath();
-        ctx.roundRect(x, y, badgeWidth, badgeHeight, 14);
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(191, 219, 254, 0.45)';
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
-      } else {
-        ctx.fillRect(x, y, badgeWidth, badgeHeight);
-      }
-
-      drawBoxIcon(x + horizontalPadding, y + 5, iconSize, opacity);
-
-      ctx.fillStyle = '#f8fafc';
+      ctx.fillStyle = '#0f172a';
       ctx.textBaseline = 'middle';
-      ctx.fillText(badge.amount, x + horizontalPadding + iconSize + gap, y + (badgeHeight / 2) + 0.5);
+      ctx.fillText(badge.label, badgeX + iconSize / 2 + gap, badgeY + 0.5);
       ctx.restore();
     }
 
@@ -683,6 +785,17 @@ const actionUrls = {
       }
 
       ctx.clearRect(0, 0, cssWidth, cssHeight);
+
+      // Inner globe — subtle sea-blue filled sphere behind the dots
+      const innerRadius = sphereRadius * 0.95;
+      const innerGradient = ctx.createRadialGradient(cx, cy - innerRadius * 0.08, innerRadius * 0.1, cx, cy, innerRadius);
+        innerGradient.addColorStop(0, 'rgba(80, 160, 200, 0.26)');
+        innerGradient.addColorStop(0.7, 'rgba(60, 140, 185, 0.16)');
+        innerGradient.addColorStop(1, 'rgba(40, 110, 165, 0.05)');
+      ctx.beginPath();
+      ctx.arc(cx, cy, innerRadius, 0, Math.PI * 2);
+      ctx.fillStyle = innerGradient;
+      ctx.fill();
 
       const cosA = Math.cos(angle);
       const sinA = Math.sin(angle);
@@ -710,7 +823,7 @@ const actionUrls = {
         const dy = sy - cy;
         if ((dx * dx) + (dy * dy) > sphereRadius * sphereRadius) continue;
 
-        const radius = (0.58 + depth * 1.28) * mobileDotScale;
+        const radius = (0.42 + depth * 0.98) * mobileDotScale;
         const backSide = depth < 0.45;
         const color = backSide ? p.landBackColor : p.landFrontColor;
 
@@ -750,7 +863,7 @@ const actionUrls = {
         const visibleBadges = [];
         for (const badge of badgeDefinitions) {
           const projection = projectMarker(badge.marker, cosA, sinA, cosTilt, sinTilt, cx, cy);
-          if (projection.zTilt < 0.14 || projection.hidden) {
+          if (projection.zTilt < 0.42 || projection.hidden) {
             badge.renderX = null;
             badge.renderY = null;
             continue;
@@ -866,13 +979,9 @@ const actionUrls = {
     color: var(--text-primary);
     position: relative;
     overflow: clip;
-    background:
-      radial-gradient(1200px 740px at 50% 56%, rgba(7, 30, 65, 0.18), transparent 58%),
-      radial-gradient(1040px 520px at 8% -12%, rgba(37, 99, 235, 0.14), transparent 64%),
-      radial-gradient(940px 500px at 94% -16%, rgba(96, 165, 250, 0.16), transparent 60%),
-      linear-gradient(180deg, #edf3ff 0%, #d6e2fb 48%, #e7efff 100%);
-    background-size: 112% 112%, 125% 125%, 125% 125%, 100% 100%;
-    animation: portal-gradient-drift 26s ease-in-out infinite alternate;
+    background: #ffffff;
+    background-size: 100% 100%;
+    animation: none;
   }
 
   .portal-globe {
