@@ -1,0 +1,54 @@
+---
+import Button from '../ui/Button.astro';
+---
+<section class="section fade-in" id="partners" style="background:var(--bg-surface);">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-label" style="background:var(--partner-violet-glow);color:var(--partner-violet);border-color:rgba(168,85,247,0.2);">
+        Partner Program
+      </span>
+      <h2 class="headline-lg">
+        Share Pagayo.<br />
+        <span style="color:var(--partner-violet);">Earn 50%.</span>
+      </h2>
+      <p class="text-lg">
+        No sales experience required. No contracts. No minimum.
+        Share your unique link — when someone subscribes, you earn
+        50% of their subscription fee. Every month. Forever.
+      </p>
+    </div>
+
+    <div class="partner-calc">
+      <h3>What you could earn</h3>
+      <div class="partner-examples">
+        <div class="partner-example">
+          <span class="scenario">10 referrals on <strong>Supporter</strong> (€48/yr each)</span>
+          <span class="arrow">→</span>
+          <span class="earning">€240/yr</span>
+        </div>
+        <div class="partner-example">
+          <span class="scenario">25 referrals on <strong>Professional</strong> (€228/yr each)</span>
+          <span class="arrow">→</span>
+          <span class="earning">€2,850/yr</span>
+        </div>
+        <div class="partner-example">
+          <span class="scenario">10 referrals on <strong>Advanced</strong> (€468/yr each)</span>
+          <span class="arrow">→</span>
+          <span class="earning">€2,340/yr</span>
+        </div>
+        <div class="partner-example partner-highlight">
+          <span class="scenario">100 mixed referrals — <strong>realistic year 1</strong></span>
+          <span class="arrow">→</span>
+          <span class="earning">€11,400/yr</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;">
+      <Button href="#" variant="partner" size="lg">Become a Partner →</Button>
+      <p style="margin-top:1rem;font-size:0.85rem;color:var(--text-muted);">
+        Payout via Stripe. No minimum threshold. Withdraw anytime.
+      </p>
+    </div>
+  </div>
+</section>

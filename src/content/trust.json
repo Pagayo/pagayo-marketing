@@ -1,0 +1,30 @@
+{
+  "logobar": [
+    "Powered by Cloudflare",
+    "Stripe Payments",
+    "EU Data Protection",
+    "Edge-deployed in 300+ cities"
+  ],
+  "security": [
+    {
+      "icon": "🔒",
+      "title": "EU Data Protection",
+      "description": "GDPR compliant. Data stored in European data centers. Your customers' data is safe."
+    },
+    {
+      "icon": "⚡",
+      "title": "99.99% Uptime",
+      "description": "Running on Cloudflare's global edge network. 300+ cities. Redundant everything."
+    },
+    {
+      "icon": "💳",
+      "title": "Stripe Payments",
+      "description": "PCI-DSS Level 1 compliant. iDEAL, cards, SEPA, Bancontact — all built in."
+    },
+    {
+      "icon": "🏦",
+      "title": "Your Money, Your Account",
+      "description": "Payments go directly to your Stripe account. We never touch your revenue."
+    }
+  ]
+}

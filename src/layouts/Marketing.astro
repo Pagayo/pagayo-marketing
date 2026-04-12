@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Pagayo — Every Sale. One Platform.',
+  description = 'Webshop, POS, WhatsApp, QR — all orders flow into one dashboard. Free forever.'
+} = Astro.props as Props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <Nav />
+    <slot />
+    <Footer />
+    <script is:inline>
+      const nav = document.getElementById('nav');
+      window.addEventListener('scroll', () => {
+        if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+      }, { passive: true });
+
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOptions = { threshold: 0.1, rootMargin: '0px 0px -60px 0px' };
+
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, appearOptions);
+
+      faders.forEach((fader) => appearOnScroll.observe(fader));
+
+      const pricingSwitch = document.querySelector('.pricing-switch');
+      if (pricingSwitch) {
+        pricingSwitch.addEventListener('click', () => {
+          pricingSwitch.classList.toggle('annual');
+        });
+      }
+    </script>
+  </body>
+</html>

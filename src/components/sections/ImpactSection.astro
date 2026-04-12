@@ -1,0 +1,88 @@
+---
+import Button from '../ui/Button.astro';
+---
+<section class="section ngo-section fade-in" id="impact">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-label" style="background:var(--ngo-amber-glow);color:var(--ngo-amber);border-color:rgba(251,191,36,0.2);">
+        Impact Engine
+      </span>
+      <h2 class="headline-lg">
+        Give entrepreneurs the tools.<br />
+        <span style="color:var(--ngo-amber);">Track the impact.</span>
+      </h2>
+      <p class="text-lg">
+        Pagayo is free for aspiring entrepreneurs worldwide. NGOs and development
+        organizations can sponsor cohorts and track real business outcomes
+        through live impact dashboards.
+      </p>
+    </div>
+
+    <div class="ngo-flow">
+      <div class="ngo-step">
+        <div class="ngo-step-number">1</div>
+        <h3>NGO Signs Up</h3>
+        <p>Create an impact program on Pagayo. Define your cohort — region, industry, goals.</p>
+      </div>
+      <div class="ngo-step">
+        <div class="ngo-step-number">2</div>
+        <h3>Entrepreneurs Get Tools</h3>
+        <p>Each participant gets a free Pagayo shop with all features. Ready to sell from day one.</p>
+      </div>
+      <div class="ngo-step">
+        <div class="ngo-step-number">3</div>
+        <h3>Track Real Impact</h3>
+        <p>Live dashboards show revenue generated, orders processed, jobs created — real business outcomes.</p>
+      </div>
+    </div>
+
+    <h3 class="headline-md" style="text-align:center;margin-top:4rem;margin-bottom:0.5rem;">
+      Impact Dashboard Pricing
+    </h3>
+    <p class="text-lg" style="text-align:center;margin-bottom:2rem;">
+      The platform is free for entrepreneurs. NGOs pay only for dashboard access.
+    </p>
+
+    <div class="ngo-tiers">
+      <div class="ngo-tier-card">
+        <div class="tier-name">Starter</div>
+        <div class="tier-price">€500/mo</div>
+        <div class="tier-unit">Up to 50 entrepreneurs</div>
+        <ul>
+          <li>Live revenue tracking</li>
+          <li>Basic impact metrics</li>
+          <li>Monthly PDF reports</li>
+          <li>Email support</li>
+        </ul>
+      </div>
+      <div class="ngo-tier-card" style="border-color:rgba(251,191,36,0.3);">
+        <div class="tier-name">Growth</div>
+        <div class="tier-price">€2,000/mo</div>
+        <div class="tier-unit">Up to 250 entrepreneurs</div>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Advanced analytics</li>
+          <li>Cohort comparison</li>
+          <li>API access for own reporting</li>
+          <li>Dedicated account manager</li>
+        </ul>
+      </div>
+      <div class="ngo-tier-card">
+        <div class="tier-name">Enterprise</div>
+        <div class="tier-price">€5,000/mo</div>
+        <div class="tier-unit">Unlimited entrepreneurs</div>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>White-label dashboards</li>
+          <li>Custom metrics & KPIs</li>
+          <li>Multi-region programs</li>
+          <li>Integration with donor systems</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;">
+      <Button href="#" variant="ngo" size="lg">Start an Impact Program →</Button>
+    </div>
+  </div>
+</section>

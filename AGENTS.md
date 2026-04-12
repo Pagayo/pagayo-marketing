@@ -1,32 +1,29 @@
 # AGENTS - pagayo-marketing
 
 ## Scope van deze repo
-`pagayo-marketing` is de publieke marketing site (`www.pagayo.com`) voor positionering, content en conversie.
-Geen tenant businesslogica of platform admin functionaliteit in deze repo.
+`pagayo-marketing` is de publieke marketing site van Pagayo (`www.pagayo.com`) op Astro + Cloudflare Pages.
 
-## Leesvolgorde (verplicht)
-1. `../AGENTS.md`
-2. `../pagayo-vault/PAGAYO-NIVEAU.md` (platform waarheid/copy-context)
-3. `./.github/copilot-instructions.md`
-4. `./DESIGN-SYSTEM.md`
+## Harde SSOT regels
+- Header en footer zijn single source of truth via `src/components/layout/Nav.astro` en `src/components/layout/Footer.astro`.
+- Alle terugkerende secties moeten componenten zijn in `src/components/sections/`.
+- Content leeft als data in `src/content/*.json` (pricing, features, channels, competitors, trust).
+- Styling is gecentraliseerd in `src/styles/global.css`.
+- Nieuwe pagina's mogen geen losstaande, gedupliceerde header/footer of pricing-markup bevatten.
 
-## Harde grenzen
-- Marketing claims moeten kloppen met actuele platformcapaciteiten.
-- Geen "shadow API" of business rules in frontend scripts verstoppen.
-- Design consistent houden met afgesproken patroon, geen willekeurige maatvoering.
+## Architectuur
+- Layout: `src/layouts/Marketing.astro`
+- UI primitives: `src/components/ui/`
+- Secties: `src/components/sections/`
+- Pagina-routes: `src/pages/`
+- Taalroutes: `src/pages/nl/` (uitbreidbaar)
 
-## Implementatieregels
-- Gebruik `@pagayo/design` tokens en component patterns.
-- Houd locale-content consistent (`nl/de/en`) zonder route-aannames; huidige publieke portalroute is `/` (single-entry).
-- Geen hardcoded registratie- of API URL's buiten centrale config-afspraken.
+## Kwaliteitseisen
+- Pixel-perfect consistentie met het marketing concept.
+- Wijzigingen in pricing alleen via `src/content/pricing.json`.
+- Geen hardcoded duplicatie van features/competitor-data in pagina's.
 
-## Verificatie voor oplevering
+## Verificatie
 ```bash
-npm run lint
-npm run type-check
+npm install
 npm run build
 ```
-
-## Verplichte platform smoke tests
-Bij route- of endpointwijzigingen ook onderhouden in:
-- `../pagayo-maintenance/tests/smoke/marketing.test.ts`

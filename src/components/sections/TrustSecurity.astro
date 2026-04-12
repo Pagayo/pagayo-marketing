@@ -1,0 +1,16 @@
+---
+import trustData from '../../content/trust.json';
+---
+<section class="section trust-section fade-in">
+  <div class="container">
+    <div class="trust-grid">
+      {trustData.security.map((item) => (
+        <div class="trust-item">
+          <div class="trust-icon">{item.icon}</div>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

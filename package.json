@@ -1,45 +1,15 @@
 {
   "name": "pagayo-marketing",
+  "version": "1.0.0",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "design:check": "node scripts/design-assets.js check",
-    "design:sync": "node scripts/design-assets.js sync",
-    "dev": "npm run design:check && astro dev --port 4321",
-    "dev:wrangler": "npm run build && wrangler pages dev dist --port 4321",
-    "build": "npm run design:check && astro build",
-    "preview": "wrangler pages dev dist --port 4321",
-    "deploy": "npm run build && wrangler pages deploy dist",
-    "astro": "astro",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write \"**/*.{js,ts,astro,md,json}\"",
-    "format:check": "prettier --check \"**/*.{js,ts,astro,md,json}\"",
-    "type-check": "astro check"
-  },
-  "dependencies": {
-    "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/markdoc": "^0.15.10",
-    "@astrojs/react": "^5.0.2",
-    "@astrojs/sitemap": "^3.7.2",
-    "@keystatic/astro": "^5.0.6",
-    "@keystatic/core": "^0.5.50",
-    "@pagayo/config": "^1.14.5",
-    "@pagayo/design": "^2.4.36",
-    "astro": "^5.18.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.8",
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.1.0",
-    "globals": "^17.4.0",
-    "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^5.9.3",
-    "wrangler": "^4.80.0"
-  },
-  "engines": {
-    "node": ">=24.0.0"
+    "astro": "^5.7.5",
+    "typescript": "^5.8.3"
   }
 }

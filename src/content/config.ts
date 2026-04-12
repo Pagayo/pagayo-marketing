@@ -1,43 +1,61 @@
-// src/content/config.ts - Astro Content Collections Schema
-// Simplified for JSON-based content structure
-import { defineCollection, z } from 'astro:content';
+import { z } from "zod";
 
-/**
- * Blog Posts Collection
- * MDX files for blog articles
- */
-const blogCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    date: z.date().optional(),
-    author: z.string().default('Pagayo Team'),
-    category: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    image: z.string().optional(),
-    draft: z.boolean().optional().default(false),
-  }),
+export const pricingTierSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  monthly: z.number(),
+  annual: z.number(),
+  annualLabel: z.string(),
+  description: z.string(),
+  features: z.array(z.string()),
+  cta: z.string(),
+  variant: z.enum(["primary", "secondary"]),
+  popular: z.boolean().optional(),
 });
 
-const pagesCollection = defineCollection({
-  type: 'data',
-  schema: z.record(z.unknown()),
+export const pricingSchema = z.object({
+  tiers: z.array(pricingTierSchema),
 });
 
-const settingsCollection = defineCollection({
-  type: 'data',
-  schema: z.record(z.unknown()),
+export const featuresSchema = z.object({
+  items: z.array(
+    z.object({
+      icon: z.string(),
+      title: z.string(),
+      description: z.string(),
+    }),
+  ),
 });
 
-const variantsCollection = defineCollection({
-  type: 'data',
-  schema: z.record(z.unknown()),
+export const competitorsSchema = z.object({
+  rows: z.array(
+    z.object({
+      platform: z.string(),
+      price: z.string(),
+      perMemberFees: z.string(),
+      note: z.string(),
+      highlight: z.boolean().optional(),
+    }),
+  ),
+  featureChecklist: z.array(z.string()),
 });
 
-export const collections = {
-  blog: blogCollection,
-  pages: pagesCollection,
-  settings: settingsCollection,
-  variants: variantsCollection,
-};
+export const channelsSchema = z.object({
+  items: z.array(
+    z.object({
+      icon: z.string(),
+      label: z.string(),
+    }),
+  ),
+});
+
+export const trustSchema = z.object({
+  logobar: z.array(z.string()),
+  security: z.array(
+    z.object({
+      icon: z.string(),
+      title: z.string(),
+      description: z.string(),
+    }),
+  ),
+});

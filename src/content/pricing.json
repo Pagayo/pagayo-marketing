@@ -1,0 +1,88 @@
+{
+  "billing": "annual",
+  "billingNote": "All paid plans are billed annually. Prices shown per month.",
+  "free": {
+    "name": "Free",
+    "price": 0,
+    "priceLabel": "forever",
+    "headline": "Everything you need to start selling",
+    "description": "All features are available from day one. No credit card required, no time limit. POS and subscriptions are in test mode — you can explore them fully, payments activate when you upgrade.",
+    "cta": "Get Started Free",
+    "featuresLeft": [
+      { "label": "Webshop + product catalog", "included": true },
+      { "label": "Up to 50 products", "included": true, "limit": "hard limit" },
+      { "label": "Order management", "included": true },
+      { "label": "100 orders/month", "included": true, "limit": "soft limit" },
+      { "label": "Dashboard & analytics", "included": true },
+      { "label": "Discount codes", "included": true }
+    ],
+    "featuresRight": [
+      { "label": "POS / kassa", "included": true, "test": true },
+      { "label": "Subscriptions", "included": true, "test": true },
+      { "label": "WhatsApp, TikTok, Instagram", "included": true },
+      { "label": "Payment links & cash", "included": true },
+      { "label": "1 team member", "included": true },
+      { "label": "Pagayo subdomain", "included": true }
+    ]
+  },
+  "tiers": [
+    {
+      "id": "supporter",
+      "name": "Supporter",
+      "monthly": 1.50,
+      "annual": 18,
+      "annualLabel": "€18 billed annually",
+      "description": "For growing shops that need more room and want their own domain.",
+      "features": [
+        { "label": "Up to 200 products" },
+        { "label": "500 orders/month", "limit": "soft" },
+        { "label": "POS system — fully active" },
+        { "label": "Custom domain" },
+        { "label": "2 team members" },
+        { "label": "No fair-use nudges" },
+        { "label": "Branding optional" }
+      ],
+      "cta": "Start with Supporter",
+      "variant": "secondary"
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "monthly": 10,
+      "annual": 120,
+      "annualLabel": "€120 billed annually",
+      "description": "For daily teams that need performance, more capacity and full control.",
+      "features": [
+        { "label": "Up to 500 products" },
+        { "label": "2,000 orders/month", "limit": "soft" },
+        { "label": "5 team members" },
+        { "label": "Performance SLA 99.5%" },
+        { "label": "Advanced reporting" },
+        { "label": "No Pagayo branding" },
+        { "label": "Priority support badge" }
+      ],
+      "cta": "Start with Professional",
+      "variant": "primary",
+      "popular": true
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "monthly": 20,
+      "annual": 240,
+      "annualLabel": "€240 billed annually",
+      "description": "For complex businesses: B2B invoicing, rentals, API, multi-location.",
+      "features": [
+        { "label": "Unlimited products" },
+        { "label": "Unlimited orders" },
+        { "label": "10+ team members" },
+        { "label": "Subscriptions — fully active" },
+        { "label": "B2B invoicing & rentals" },
+        { "label": "API & webhook access" },
+        { "label": "Multi-location" }
+      ],
+      "cta": "Start with Advanced",
+      "variant": "primary"
+    }
+  ]
+}

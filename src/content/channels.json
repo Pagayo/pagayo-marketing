@@ -1,0 +1,11 @@
+{
+  "items": [
+    { "icon": "🛒", "label": "Webshop" },
+    { "icon": "💳", "label": "POS" },
+    { "icon": "💬", "label": "WhatsApp" },
+    { "icon": "📱", "label": "QR Order" },
+    { "icon": "🎵", "label": "TikTok" },
+    { "icon": "📸", "label": "Instagram" },
+    { "icon": "💵", "label": "Cash" }
+  ]
+}

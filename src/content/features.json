@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "icon": "📦",
+      "title": "Unified Orders",
+      "description": "Every sale — webshop, POS, WhatsApp, QR — lands in one order feed. Filter by source, track in real time."
+    },
+    {
+      "icon": "🎟️",
+      "title": "Subscriptions & Memberships",
+      "description": "Recurring billing, family members, QR check-in, automated renewals. Perfect for gyms, clubs, and associations."
+    },
+    {
+      "icon": "💳",
+      "title": "Point of Sale",
+      "description": "Turn any device into a cash register. Card, cash, or QR — parked carts, split payments, real-time sync."
+    },
+    {
+      "icon": "📊",
+      "title": "Reports & Analytics",
+      "description": "Revenue, tax, products, payment methods — all broken down by channel, period, and category. Export-ready."
+    },
+    {
+      "icon": "🌐",
+      "title": "Multi-language CMS",
+      "description": "Pages, blog posts, menus — manage your content in multiple languages. SEO-optimized, mobile-first."
+    },
+    {
+      "icon": "⚡",
+      "title": "Edge Performance",
+      "description": "Deployed on Cloudflare's global network. <50ms response times worldwide. Your shop loads instantly, everywhere."
+    }
+  ]
+}

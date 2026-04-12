@@ -1,0 +1,22 @@
+---
+import channelsData from '../../content/channels.json';
+---
+<section class="section fade-in" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header center">
+      <h2 class="headline-md">One order model. Every&nbsp;channel.</h2>
+      <p class="text-lg">
+        No matter where the sale happens — it flows into one unified system.
+      </p>
+    </div>
+
+    <div class="channels-strip">
+      {channelsData.items.map((item) => (
+        <div class="channel-item">
+          <div class="channel-icon-box">{item.icon}</div>
+          <span class="channel-label">{item.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

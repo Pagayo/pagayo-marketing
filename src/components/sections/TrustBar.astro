@@ -1,0 +1,10 @@
+---
+import trustData from '../../content/trust.json';
+---
+<div class="logobar">
+  <div class="container">
+    <div class="logobar-inner">
+      {trustData.logobar.map((item) => <span class="logobar-item">{item}</span>)}
+    </div>
+  </div>
+</div>

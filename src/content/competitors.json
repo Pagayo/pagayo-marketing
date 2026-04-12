@@ -1,0 +1,49 @@
+{
+  "rows": [
+    {
+      "platform": "Mindbody",
+      "price": "$139 – $699/mo",
+      "perMemberFees": "Yes",
+      "note": "+ setup fees, long contracts"
+    },
+    {
+      "platform": "Virtuagym",
+      "price": "€49 – €99/mo",
+      "perMemberFees": "Yes",
+      "note": "Per-member pricing scales fast"
+    },
+    {
+      "platform": "GymMaster",
+      "price": "$99 – $239/mo",
+      "perMemberFees": "No",
+      "note": "Limited webshop, no QR"
+    },
+    {
+      "platform": "Glofox",
+      "price": "$110 – $280/mo",
+      "perMemberFees": "Yes",
+      "note": "Annual contracts, opaque pricing"
+    },
+    {
+      "platform": "Pagayo",
+      "price": "€4 – €39/mo",
+      "perMemberFees": "Never",
+      "note": "Free tier included. No contracts.",
+      "highlight": true
+    }
+  ],
+  "featureChecklist": [
+    "Recurring subscriptions with auto-renewal",
+    "Family/group member management",
+    "QR code check-in at the door",
+    "Point of Sale for smoothie bar / shop",
+    "Online webshop for merchandise",
+    "Member CRM with bulk import",
+    "Revenue, tax, and product reports",
+    "Promotions and discount codes",
+    "Automated invoicing and credit notes",
+    "CMS for pages, blog, announcements",
+    "Team access with role-based permissions",
+    "Stripe payments (cards, iDEAL, SEPA, etc.)"
+  ]
+}

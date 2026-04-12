@@ -1,0 +1,57 @@
+---
+import competitorData from '../../content/competitors.json';
+import Button from '../ui/Button.astro';
+---
+<section class="section gym-section fade-in" id="gyms">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" style="background:var(--gym-green-glow);color:var(--gym-green);border-color:rgba(0,212,170,0.2);">
+        For Gyms & Fitness
+      </span>
+      <h2 class="headline-lg">
+        The all-in-one platform that replaces your gym software — for&nbsp;90%&nbsp;less.
+      </h2>
+      <p class="text-lg">
+        Subscriptions, POS, member check-in, webshop, reporting —
+        everything the big players offer, at a fraction of the cost.
+        No lock-in. No per-member pricing. Just one simple fee.
+      </p>
+    </div>
+
+    <table class="gym-competitor-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Price Range</th>
+          <th>Per-member fees</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        {competitorData.rows.map((row) => (
+          <tr class={row.highlight ? 'pagayo-row' : ''}>
+            <td class="competitor-name" style={row.highlight ? 'font-size:1.05rem;' : ''}>{row.platform}</td>
+            <td class={row.highlight ? 'pagayo-price' : 'competitor-price'}>{row.price}</td>
+            <td style={row.highlight ? 'color:var(--gym-green);' : ''}>{row.perMemberFees}</td>
+            <td style={row.highlight ? 'color:var(--gym-green);' : 'color:var(--text-muted);'}>{row.note}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h3 class="headline-md" style="margin-top:3rem;margin-bottom:1rem;">Everything included. No add-ons.</h3>
+
+    <div class="gym-features">
+      {competitorData.featureChecklist.map((feature) => (
+        <div class="gym-feature-item">
+          <span class="gym-feature-check">✓</span>
+          <span>{feature}</span>
+        </div>
+      ))}
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;">
+      <Button href="https://start.pagayo.app/register" variant="gym" size="lg">Start Your Gym on Pagayo — Free →</Button>
+    </div>
+  </div>
+</section>

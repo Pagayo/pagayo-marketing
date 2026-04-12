@@ -1,0 +1,22 @@
+---
+interface Props {
+  label?: string;
+  title: string;
+  subtitle?: string;
+  center?: boolean;
+  labelStyle?: string;
+}
+
+const {
+  label,
+  title,
+  subtitle,
+  center = false,
+  labelStyle = ''
+} = Astro.props as Props;
+---
+<div class={`section-header ${center ? 'center' : ''}`.trim()}>
+  {label && <span class="section-label" style={labelStyle}>{label}</span>}
+  <h2 class="headline-lg" set:html={title}></h2>
+  {subtitle && <p class="text-lg" set:html={subtitle}></p>}
+</div>
