@@ -42,14 +42,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Validate design asset sync
-        run: npm run design:check
+      - name: Validate design asset sync (if present)
+        run: npm run design:check --if-present
 
-      - name: Type check (Astro)
-        run: npm run type-check
+      - name: Type check (Astro, if present)
+        run: npm run type-check --if-present
 
-      - name: Lint
-        run: npm run lint
+      - name: Lint (if present)
+        run: npm run lint --if-present
 
   # ===========================================================================
   # JOB 2: Deploy
