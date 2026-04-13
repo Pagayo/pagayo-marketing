@@ -309,8 +309,8 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 
-/* --- STICKY BAR --- */
-.sticky-bar {
+/* --- STICKY FOOTER --- */
+.sticky-footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -323,7 +323,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 12px 0;
 }
 
-.sticky-bar-inner {
+.sticky-footer-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -333,7 +333,7 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 12px;
 }
 
-.sticky-bar-lang {
+.sticky-footer-lang {
   font-size: 0.85rem;
   color: var(--text-muted);
   padding: 6px 12px;
@@ -343,7 +343,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: transparent;
 }
 
-.sticky-bar-btn {
+.sticky-footer-btn {
   padding: 8px 20px;
   font-size: 0.85rem;
   border-radius: var(--radius-sm);

@@ -1,0 +1,618 @@
+<section class="section fade-in" id="gym-operations" aria-labelledby="gym-ops-heading">
+  <div class="container">
+
+    <!-- ── Section header ── -->
+    <div class="section-header center">
+      <span class="section-label" style="background:var(--gym-green-glow);color:var(--gym-green);border-color:rgba(0,212,170,0.2);">
+        Gym Operations
+      </span>
+      <h2 class="headline-lg" id="gym-ops-heading">
+        One admin surface. Every module your gym needs.
+      </h2>
+      <p class="text-lg">
+        Pagayo brings gym membership management, POS, online orders, returns, subscriptions,
+        and business analytics into a single admin panel. No integrations to maintain, no data
+        spread across separate tools. Staff sees the same real-time information at the front desk,
+        on the gym floor, and in the back office.
+      </p>
+    </div>
+
+    <!-- ── Three showcase modules ── -->
+    <div class="gym-module-list">
+
+      <!-- Module 1: Membership holders -->
+      <article class="gym-module" aria-label="Gym membership management dashboard">
+        <div class="gym-module-info">
+          <div class="gym-module-badge">
+            <span class="gym-board-icon" aria-hidden="true">◈</span>
+            <span class="gym-module-label">Memberships</span>
+          </div>
+          <h3>Membership Holders &amp; Pass Print</h3>
+          <p>
+            Every active, trialing, paused or past-due member in one view. Pass codes
+            follow the <code>PAG-&#123;tenantId&#125;-&#123;seq&#125;</code> format from the
+            subscriptionMember flow. Staff can print or re-send passes directly from this screen.
+          </p>
+          <ul class="gym-feature-list">
+            <li>Bulk pass print &amp; PDF export</li>
+            <li>Automatic status transitions (TRIALING → ACTIVE → PAST_DUE)</li>
+            <li>Photo upload requirement enforcement per plan</li>
+          </ul>
+        </div>
+        <div class="gym-module-visual">
+          <div class="board-mock" role="table" aria-label="Member overview">
+            <div class="board-row board-head" role="row">
+              <span role="columnheader">Member</span>
+              <span role="columnheader">Pass Code</span>
+              <span role="columnheader">Photo</span>
+              <span role="columnheader">Status</span>
+            </div>
+            <div class="board-row" role="row">
+              <span>Naomi Jansen</span><span>PAG-16-001002</span><span>Uploaded</span>
+              <strong class="status-active">ACTIVE</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>Sem Jansen</span><span>PAG-16-001003</span><span>Required</span>
+              <strong class="status-trialing">TRIALING</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>Ravi Patel</span><span>PAG-16-001028</span><span>Uploaded</span>
+              <strong class="status-pastdue">PAST_DUE</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>Mila Novak</span><span>PAG-16-001041</span><span>Uploaded</span>
+              <strong class="status-active">ACTIVE</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>Lars de Boer</span><span>PAG-16-001056</span><span>Uploaded</span>
+              <strong class="status-active">ACTIVE</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>Yuki Tanaka</span><span>PAG-16-001061</span><span>Required</span>
+              <strong class="status-paused">PAUSED</strong>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="gym-module-divider" aria-hidden="true"></div>
+
+      <!-- Module 2: POS + Orders + Returns -->
+      <article class="gym-module gym-module--flip" aria-label="Gym POS orders and returns management">
+        <div class="gym-module-info">
+          <div class="gym-module-badge">
+            <span class="gym-board-icon" aria-hidden="true">⊞</span>
+            <span class="gym-module-label">Orders &amp; Returns</span>
+          </div>
+          <h3>POS, Online Orders &amp; Returns Queue</h3>
+          <p>
+            All transactions — whether placed at the front desk (POS) or through the webshop
+            (WEB) — land in the same Order-First queue. Returns follow a tracked flow from
+            <em>requested</em> through <em>approved</em>, <em>received</em> to <em>refunded</em>.
+          </p>
+          <ul class="gym-feature-list">
+            <li>Single order model for POS, webshop, and WhatsApp sales</li>
+            <li>Full return lifecycle — 4-stage tracked flow with credit notes</li>
+            <li>Payment retry &amp; dunning across all sources</li>
+          </ul>
+        </div>
+        <div class="gym-module-visual">
+          <div class="board-mock" role="table" aria-label="Order and returns queue">
+            <div class="board-row board-head" role="row">
+              <span role="columnheader">Order</span>
+              <span role="columnheader">Source</span>
+              <span role="columnheader">Total</span>
+              <span role="columnheader">Action</span>
+            </div>
+            <div class="board-row" role="row">
+              <span>#A-1844</span><span class="src-pos">POS</span><span>€24.50</span>
+              <strong class="status-active">Ship now</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>#A-1842</span><span class="src-web">WEB</span><span>€59.00</span>
+              <strong class="status-pastdue">Payment retry</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>#A-1840</span><span class="src-pos">POS</span><span>€12.00</span>
+              <strong class="status-muted">Refunded</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>#A-1838</span><span class="src-web">WEB</span><span>€79.00</span>
+              <strong class="status-trialing">Return requested</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>#A-1835</span><span class="src-pos">POS</span><span>€33.00</span>
+              <strong class="status-active">Fulfilled</strong>
+            </div>
+            <div class="board-row" role="row">
+              <span>#A-1831</span><span class="src-web">WEB</span><span>€118.00</span>
+              <strong class="status-trialing">Return approved</strong>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="gym-module-divider" aria-hidden="true"></div>
+
+      <!-- Module 3: Growth controls / KPIs -->
+      <article class="gym-module" aria-label="Gym business growth and analytics controls">
+        <div class="gym-module-info">
+          <div class="gym-module-badge">
+            <span class="gym-board-icon" aria-hidden="true">◎</span>
+            <span class="gym-module-label">Analytics</span>
+          </div>
+          <h3>Growth Controls &amp; Business Intelligence</h3>
+          <p>
+            Live KPIs from the dashboard stats route: active products, low-stock alerts,
+            coupon performance, invoice collection rate, and open action items — all
+            without leaving the admin.
+          </p>
+          <ul class="gym-feature-list">
+            <li>Coupon codes per campaign — percentage or fixed discount</li>
+            <li>Low-stock threshold alerts from admin-products route</li>
+            <li>Invoice collection rate tracked per billing cycle</li>
+          </ul>
+        </div>
+        <div class="gym-module-visual">
+          <div class="kpi-stack">
+            <div class="kpi-chip">
+              <span>Active products</span>
+              <strong>486</strong>
+            </div>
+            <div class="kpi-chip kpi-alert">
+              <span>Low stock alerts</span>
+              <strong>14</strong>
+            </div>
+            <div class="kpi-chip">
+              <span>Coupons live</span>
+              <strong>9</strong>
+            </div>
+            <div class="kpi-chip">
+              <span>Coupon usage (30d)</span>
+              <strong>241</strong>
+            </div>
+            <div class="kpi-chip kpi-good">
+              <span>Invoices paid</span>
+              <strong>92%</strong>
+            </div>
+            <div class="kpi-chip kpi-alert">
+              <span>Open actions</span>
+              <strong>7</strong>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- ── Divider ── -->
+    <div class="ops-divider" aria-hidden="true"></div>
+
+    <!-- ── Feature deep-dive: three text blocks ── -->
+    <div class="ops-features-grid">
+
+      <article class="ops-feature-block">
+        <h3>Subscription Lifecycle Management for Fitness Studios</h3>
+        <p>
+          Running a gym means handling memberships that change state constantly — members
+          upgrade plans, pause during holiday, miss a payment, or add a family member.
+          Pagayo's subscription engine manages each state transition automatically:
+          TRIALING starts a grace period, PAST_DUE triggers a dunning sequence, PAUSED
+          suspends scan access without cancelling billing data.
+        </p>
+        <p>
+          Every member gets a unique pass code linked to their
+          <code>subscriptionMember</code> record. The scan desk validates the pass in
+          real time against the <code>subscriptionVisit</code> log — and blocks entry
+          if the subscription is EXPIRED, CANCELED, or PAST_DUE.
+        </p>
+        <ul class="ops-bullet-list">
+          <li>Automatic dunning — email reminders at 3, 7, and 14 days overdue</li>
+          <li>Family memberships — multiple members per subscription holder</li>
+          <li>Pause &amp; resume without losing payment history</li>
+          <li>Upgrade and downgrade mid-cycle with pro-rata calculation</li>
+          <li>Scan access log per member per day — full visit history</li>
+        </ul>
+      </article>
+
+      <article class="ops-feature-block">
+        <h3>Integrated Gym POS and E-commerce Order Management</h3>
+        <p>
+          Most gym software treats the front desk and the webshop as separate systems.
+          Pagayo uses one Order model for every sale channel: your receptionist selling a
+          protein shake at the POS, a member buying a class pack online, or a coach
+          accepting a walk-in payment via QR code — all land in the same order queue,
+          with the same status flow.
+        </p>
+        <p>
+          The <code>source</code> field (POS, WEB, CASH, WHATSAPP) and
+          <code>originator</code> field (CUSTOMER, SELLER, SYSTEM) make every transaction
+          auditable. Returns and refunds follow a four-stage process — requested, approved,
+          received, refunded — with automatic credit note generation.
+        </p>
+        <ul class="ops-bullet-list">
+          <li>Unified order queue — no separate POS and webshop reconciliation</li>
+          <li>QR-code checkout for day passes and class packs</li>
+          <li>Partial refunds and store credit</li>
+          <li>VAT grouping per product category</li>
+          <li>Daily end-of-day reconciliation report</li>
+        </ul>
+      </article>
+
+      <article class="ops-feature-block">
+        <h3>Gym Stock, Coupons and Revenue Analytics</h3>
+        <p>
+          Beyond memberships and orders, gyms sell merchandise, supplements, and class packs.
+          Pagayo tracks inventory per product variant, fires low-stock alerts when thresholds
+          are crossed, and shows days-to-stockout estimates based on recent sales velocity.
+        </p>
+        <p>
+          Coupon campaigns can be time-limited, member-segment specific, or tied to a
+          referral source. Usage analytics per coupon code show redemption rate, average
+          order uplift, and net revenue impact — so you can see which promotions actually
+          drive revenue and which just erode margin.
+        </p>
+        <ul class="ops-bullet-list">
+          <li>Inventory low-stock alerts with configurable thresholds</li>
+          <li>Coupon codes — percentage or fixed, single-use or multi-use</li>
+          <li>Revenue breakdown by membership vs. merchandise vs. classes</li>
+          <li>Monthly recurring revenue (MRR) tracker</li>
+          <li>Churn rate and net revenue retention per plan tier</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- ── Module tag cloud ── -->
+    <div class="ops-module-row" role="list" aria-label="Included admin modules">
+      <span role="listitem" class="ops-module-tag">Membership management</span>
+      <span role="listitem" class="ops-module-tag">Subscription billing</span>
+      <span role="listitem" class="ops-module-tag">Member pass printing</span>
+      <span role="listitem" class="ops-module-tag">Scan &amp; check-in</span>
+      <span role="listitem" class="ops-module-tag">POS system</span>
+      <span role="listitem" class="ops-module-tag">Online shop</span>
+      <span role="listitem" class="ops-module-tag">Order management</span>
+      <span role="listitem" class="ops-module-tag">Returns &amp; refunds</span>
+      <span role="listitem" class="ops-module-tag">Coupon campaigns</span>
+      <span role="listitem" class="ops-module-tag">Inventory &amp; stock</span>
+      <span role="listitem" class="ops-module-tag">Analytics dashboard</span>
+      <span role="listitem" class="ops-module-tag">Automated invoicing</span>
+      <span role="listitem" class="ops-module-tag">Dunning &amp; payment retry</span>
+      <span role="listitem" class="ops-module-tag">Family memberships</span>
+      <span role="listitem" class="ops-module-tag">Visit history log</span>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ── Section wrapper ── */
+  .gym-module-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4rem;
+  }
+
+  .gym-module-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 4rem 0;
+  }
+
+  /* ── Individual showcase module ── */
+  .gym-module {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 4.5rem;
+    align-items: center;
+  }
+
+  /* Flip: visual left, info right */
+  .gym-module--flip .gym-module-info {
+    order: 2;
+  }
+
+  .gym-module--flip .gym-module-visual {
+    order: 1;
+  }
+
+  .gym-module-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Info column ── */
+  .gym-module-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .gym-board-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--gym-green-glow);
+    border: 1px solid rgba(0,212,170,0.2);
+    border-radius: var(--radius-sm);
+    color: var(--gym-green);
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .gym-module-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gym-green);
+  }
+
+  .gym-module-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .gym-module-info p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  .gym-feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .gym-feature-list li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .gym-feature-list li::before {
+    content: "✓";
+    color: var(--gym-green);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* ── Visual column: table mock ── */
+  .board-mock {
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(24,24,27,0.98) 0%, rgba(9,9,11,0.98) 100%);
+    overflow: hidden;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .board-row {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr 1.1fr;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .board-row:last-child { border-bottom: none; }
+
+  .board-head {
+    background: rgba(99,91,255,0.12);
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  /* Status colours */
+  .status-active   { color: var(--gym-green) !important;   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.02em; }
+  .status-trialing { color: var(--ngo-amber) !important;   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.02em; }
+  .status-pastdue  { color: #f87171 !important;            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.02em; }
+  .status-paused   { color: var(--text-muted) !important;  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.02em; }
+  .status-muted    { color: var(--text-muted) !important;  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.02em; }
+
+  /* Source badges */
+  .src-pos { color: var(--gym-green);           font-weight: 700; font-size: 0.75rem; }
+  .src-web { color: var(--pagayo-purple-light); font-weight: 700; font-size: 0.75rem; }
+
+  /* ── Visual column: KPI grid ── */
+  .kpi-stack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .kpi-chip {
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    padding: 1.25rem;
+    transition: border-color var(--transition-fast);
+  }
+
+  .kpi-chip.kpi-alert { border-color: rgba(248,113,113,0.3); }
+  .kpi-chip.kpi-good  { border-color: rgba(0,212,170,0.2); }
+
+  .kpi-chip span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .kpi-chip strong {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .kpi-chip.kpi-alert strong { color: #f87171; }
+  .kpi-chip.kpi-good  strong { color: var(--gym-green); }
+
+  /* ── Divider between boards and deep-dive ── */
+  .ops-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 5rem 0;
+  }
+
+  /* ── Deep-dive feature text blocks ── */
+  .ops-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+  }
+
+  .ops-feature-block h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .ops-feature-block p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .ops-feature-block code {
+    font-family: 'Fira Code', 'Fira Mono', monospace;
+    font-size: 0.78rem;
+    background: rgba(99,91,255,0.1);
+    border: 1px solid rgba(99,91,255,0.2);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+    color: var(--pagayo-purple-light);
+  }
+
+  .ops-bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+
+  .ops-bullet-list li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .ops-bullet-list li::before {
+    content: "→";
+    color: var(--gym-green);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* ── Module tag cloud ── */
+  .ops-module-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 3.5rem;
+    justify-content: center;
+  }
+
+  .ops-module-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    white-space: nowrap;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+  }
+
+  .ops-module-tag:hover {
+    border-color: var(--gym-green);
+    color: var(--gym-green);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .gym-module,
+    .gym-module--flip {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .gym-module--flip .gym-module-info,
+    .gym-module--flip .gym-module-visual {
+      order: initial;
+    }
+
+    .ops-features-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .board-row {
+      grid-template-columns: 1.3fr 0.7fr 0.75fr 1fr;
+      font-size: 0.77rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .kpi-stack {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ops-features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gym-module-divider {
+      margin: 2.5rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .board-row {
+      grid-template-columns: 1.2fr 0.6fr 0.65fr 0.9fr;
+      font-size: 0.7rem;
+      padding: 0.65rem 0.75rem;
+    }
+
+    .kpi-chip strong {
+      font-size: 1.4rem;
+    }
+  }
+</style>

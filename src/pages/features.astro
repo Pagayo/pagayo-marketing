@@ -1,0 +1,130 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+import FeaturesGrid from '../components/sections/FeaturesGrid.astro';
+import ProductPreview from '../components/sections/ProductPreview.astro';
+import ChannelStrip from '../components/sections/ChannelStrip.astro';
+import CompetitorTable from '../components/sections/CompetitorTable.astro';
+import PricingTable from '../components/sections/PricingTable.astro';
+import StepsGrid from '../components/sections/StepsGrid.astro';
+import ImpactSection from '../components/sections/ImpactSection.astro';
+import PartnerCalc from '../components/sections/PartnerCalc.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+
+const pageTitle = 'Pagayo Features - Webshop, POS, WhatsApp en QR in een platform';
+const pageDescription = 'Ontdek alle Pagayo features voor e-commerce en hospitality: orderbeheer, voorraad, coupons, retouren, abonnementen, analytics en omnichannel verkoop in een dashboard.';
+
+const featureSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: pageTitle,
+  description: pageDescription,
+  url: 'https://www.pagayo.com/features',
+  inLanguage: 'nl-NL',
+  about: [
+    'Order management software',
+    'POS systeem',
+    'Webshop software',
+    'Omnichannel commerce',
+    'Subscriptions en memberships',
+    'Coupon en voorraadbeheer'
+  ],
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Pagayo',
+    url: 'https://www.pagayo.com'
+  }
+};
+---
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(featureSchema)} />
+
+  <section class="section features-hero fade-in" aria-labelledby="features-page-title">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label">Feature Overview</span>
+        <h1 class="headline-xl" id="features-page-title">
+          Verkoop op elk kanaal.<br />
+          <span class="text-gradient">Beheer alles in een dashboard.</span>
+        </h1>
+        <p class="text-lg">
+          Van webshop en POS tot WhatsApp, QR en abonnementen: Pagayo centraliseert orders,
+          voorraad, betalingen, coupons, retouren en rapportages in een overzichtelijk platform.
+        </p>
+      </div>
+
+      <div class="feature-points" aria-label="Belangrijkste featurepunten">
+        <div class="feature-point-card">
+          <h2>Order-First kern</h2>
+          <p>Alle kanalen landen in een uniforme orderflow, met dezelfde statussen, dezelfde acties en dezelfde rapportages.</p>
+        </div>
+        <div class="feature-point-card">
+          <h2>Realtime operations</h2>
+          <p>Voorraad, low-stock alerts, retouren, membership-validatie en coupons direct zichtbaar voor je team.</p>
+        </div>
+        <div class="feature-point-card">
+          <h2>Groeien zonder re-platform</h2>
+          <p>Start gratis, voeg modules toe wanneer nodig, en schaal internationaal zonder losse systemen of add-ons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FeaturesGrid />
+  <ProductPreview />
+  <ChannelStrip />
+
+  <div class="section-divider"></div>
+  <CompetitorTable />
+
+  <div class="section-divider"></div>
+  <PricingTable />
+  <StepsGrid />
+
+  <div class="section-divider"></div>
+  <ImpactSection />
+
+  <div class="section-divider"></div>
+  <PartnerCalc />
+  <FinalCta />
+</MarketingLayout>
+
+<style>
+  .features-hero {
+    padding-top: clamp(7rem, 14vw, 10rem);
+    padding-bottom: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .feature-points {
+    margin-top: 2.75rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .feature-point-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.2rem;
+  }
+
+  .feature-point-card h2 {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-point-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .feature-points {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,10 +1,33 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
+import GymsHero from '../components/sections/GymsHero.astro';
+import TrustBar from '../components/sections/TrustBar.astro';
+import GymsOpsShowcase from '../components/sections/GymsOpsShowcase.astro';
 import CompetitorTable from '../components/sections/CompetitorTable.astro';
 import PricingTable from '../components/sections/PricingTable.astro';
+import StepsGrid from '../components/sections/StepsGrid.astro';
+import ImpactSection from '../components/sections/ImpactSection.astro';
+import PartnerCalc from '../components/sections/PartnerCalc.astro';
+import TestimonialsGrid from '../components/sections/TestimonialsGrid.astro';
+import TrustSecurity from '../components/sections/TrustSecurity.astro';
+import GlobalReach from '../components/sections/GlobalReach.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
 ---
 <MarketingLayout title="Pagayo for Gyms" description="All-in-one platform for gyms and fitness businesses.">
+  <GymsHero />
+  <TrustBar />
+  <GymsOpsShowcase />
+  <div class="section-divider"></div>
   <CompetitorTable />
   <div class="section-divider"></div>
   <PricingTable />
+  <StepsGrid />
+  <div class="section-divider"></div>
+  <ImpactSection />
+  <div class="section-divider"></div>
+  <PartnerCalc />
+  <TestimonialsGrid />
+  <TrustSecurity />
+  <GlobalReach />
+  <FinalCta />
 </MarketingLayout>

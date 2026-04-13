@@ -1,0 +1,261 @@
+---
+import Button from '../ui/Button.astro';
+---
+<section class="section gyms-hero fade-in">
+  <div class="container gyms-hero-grid">
+    <div>
+      <span class="section-label" style="background:var(--gym-green-glow);color:var(--gym-green);border-color:rgba(0,212,170,0.2);">
+        Pagayo For Gyms
+      </span>
+      <h1 class="headline-xl">
+        Run your gym like an operator.<br />
+        <span class="text-gradient">Members, check-ins, POS, and reports in one flow.</span>
+      </h1>
+      <p class="text-lg gyms-hero-copy">
+        Built on the same tenant model used in Storefront: subscriptions, subscription members,
+        visit scans, order sources (WEB/POS), returns, invoices, and live dashboard stats.
+      </p>
+      <div class="gyms-hero-actions">
+        <Button href="https://start.pagayo.app/register" variant="gym" size="lg">Start Free For Gyms</Button>
+        <Button href="#pricing" variant="secondary" size="lg">View Gym Plans</Button>
+      </div>
+      <div class="gyms-hero-metrics" aria-label="Gym KPI preview">
+        <div class="gym-metric">
+          <span class="kpi-label">Active subscriptions</span>
+          <span class="kpi-value">412</span>
+        </div>
+        <div class="gym-metric">
+          <span class="kpi-label">Valid scans today</span>
+          <span class="kpi-value">289</span>
+        </div>
+        <div class="gym-metric">
+          <span class="kpi-label">POS orders today</span>
+          <span class="kpi-value">74</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="browser-frame gyms-frame">
+      <div class="browser-topbar">
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+        <span class="browser-url">fitzone.pagayo.app/admin/subscriptions</span>
+      </div>
+      <div class="browser-body">
+        <div class="dashboard-mock gyms-dashboard-mock">
+          <div class="mock-sidebar">
+            <div class="mock-sidebar-item">📊 Dashboard</div>
+            <div class="mock-sidebar-item">📦 Orders</div>
+            <div class="mock-sidebar-item">💳 POS</div>
+            <div class="mock-sidebar-item active">🎟️ Subscriptions</div>
+            <div class="mock-sidebar-item">🪪 Members</div>
+            <div class="mock-sidebar-item">📷 Member Photos</div>
+            <div class="mock-sidebar-item">✅ Visit Feed</div>
+            <div class="mock-sidebar-item">💸 Returns</div>
+            <div class="mock-sidebar-item">🏷️ Coupons</div>
+            <div class="mock-sidebar-item">📈 Reports</div>
+          </div>
+          <div class="mock-main">
+            <div class="mock-topbar">
+              <div class="mock-title">Subscriptions Scan Desk</div>
+              <span class="scan-chip">/subscriptions/scan live</span>
+            </div>
+            <div class="mock-cards-row">
+              <div class="mock-stat-card">
+                <div class="label">VALID</div>
+                <div class="value">274</div>
+                <div class="change">today</div>
+              </div>
+              <div class="mock-stat-card">
+                <div class="label">EXPIRED</div>
+                <div class="value">11</div>
+                <div class="change">needs renewal</div>
+              </div>
+              <div class="mock-stat-card">
+                <div class="label">PAUSED</div>
+                <div class="value">4</div>
+                <div class="change">manual review</div>
+              </div>
+              <div class="mock-stat-card">
+                <div class="label">NOT_FOUND</div>
+                <div class="value">2</div>
+                <div class="change">wrong pass code</div>
+              </div>
+            </div>
+
+            <div class="gyms-data-panels">
+              <div class="gyms-data-card">
+                <h3>Live Scan Feed</h3>
+                <ul>
+                  <li><span>PAG-16-000982</span><strong class="ok">VALID</strong></li>
+                  <li><span>PAG-16-001031</span><strong class="ok">VALID</strong></li>
+                  <li><span>PAG-16-001077</span><strong>EXPIRED</strong></li>
+                  <li><span>PAG-16-000774</span><strong class="ok">VALID</strong></li>
+                </ul>
+              </div>
+              <div class="gyms-data-card">
+                <h3>Family Members</h3>
+                <ul>
+                  <li><span>Owner + 2 members</span><strong>ACTIVE</strong></li>
+                  <li><span>Owner + 1 member</span><strong>ACTIVE</strong></li>
+                  <li><span>Owner only</span><strong>TRIALING</strong></li>
+                  <li><span>Owner + 3 members</span><strong>PAST_DUE</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gyms-hero {
+    padding-top: calc(var(--nav-height) + 3rem);
+  }
+
+  .gyms-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .gyms-hero-copy {
+    max-width: 680px;
+    margin-top: 1rem;
+  }
+
+  .gyms-hero-actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  .gyms-hero-metrics {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+    max-width: 720px;
+  }
+
+  .gym-metric {
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1rem;
+  }
+
+  .kpi-label {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .kpi-value {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 1.35rem;
+    font-weight: 800;
+  }
+
+  .gyms-frame {
+    max-width: 100%;
+  }
+
+  .gyms-dashboard-mock {
+    grid-template-columns: 210px 1fr;
+  }
+
+  .scan-chip {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gym-green);
+    background: var(--gym-green-glow);
+    border: 1px solid rgba(0, 212, 170, 0.25);
+    border-radius: var(--radius-full);
+    padding: 0.3rem 0.55rem;
+  }
+
+  .gyms-data-panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .gyms-data-card {
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 0.8rem;
+  }
+
+  .gyms-data-card h3 {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.55rem;
+  }
+
+  .gyms-data-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .gyms-data-card li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.32rem;
+  }
+
+  .gyms-data-card li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .gyms-data-card strong {
+    color: #fbbf24;
+    font-size: 0.66rem;
+  }
+
+  .gyms-data-card strong.ok {
+    color: var(--gym-green);
+  }
+
+  @media (min-width: 960px) {
+    .gyms-hero-grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    .gyms-frame .browser-body {
+      min-height: 480px;
+      aspect-ratio: auto;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .gyms-hero-metrics {
+      grid-template-columns: 1fr;
+    }
+
+    .gyms-data-panels {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
