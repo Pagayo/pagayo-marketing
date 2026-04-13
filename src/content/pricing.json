@@ -29,9 +29,9 @@
     {
       "id": "supporter",
       "name": "Supporter",
-      "monthly": 1.50,
-      "annual": 18,
-      "annualLabel": "€18 billed annually",
+      "monthly": 4,
+      "annual": 48,
+      "annualLabel": "€48 billed annually",
       "description": "For growing shops that need more room and want their own domain.",
       "features": [
         { "label": "Up to 200 products" },
@@ -48,9 +48,9 @@
     {
       "id": "professional",
       "name": "Professional",
-      "monthly": 10,
-      "annual": 120,
-      "annualLabel": "€120 billed annually",
+      "monthly": 19,
+      "annual": 228,
+      "annualLabel": "€228 billed annually",
       "description": "For daily teams that need performance, more capacity and full control.",
       "features": [
         { "label": "Up to 500 products" },
@@ -68,9 +68,9 @@
     {
       "id": "advanced",
       "name": "Advanced",
-      "monthly": 20,
-      "annual": 240,
-      "annualLabel": "€240 billed annually",
+      "monthly": 39,
+      "annual": 468,
+      "annualLabel": "€468 billed annually",
       "description": "For complex businesses: B2B invoicing, rentals, API, multi-location.",
       "features": [
         { "label": "Unlimited products" },

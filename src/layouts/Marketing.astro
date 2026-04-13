@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Nav from '../components/layout/Nav.astro';
 import Footer from '../components/layout/Footer.astro';
+import StickyBar from '../components/layout/StickyBar.astro';
 
 interface Props {
   title?: string;
@@ -28,6 +29,7 @@ const {
     <Nav />
     <slot />
     <Footer />
+    <StickyBar />
     <script is:inline>
       const nav = document.getElementById('nav');
       window.addEventListener('scroll', () => {

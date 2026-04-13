@@ -1,0 +1,18 @@
+---
+import i18nEn from '../../content/i18n/en.json';
+
+const nav = i18nEn.nav;
+---
+<div class="sticky-bar" id="sticky-bar">
+  <div class="sticky-bar-inner">
+    <select class="sticky-bar-lang" aria-label="Language">
+      <option value="en">EN</option>
+      <option value="nl">NL</option>
+      <option value="de">DE</option>
+      <option value="fr">FR</option>
+      <option value="es">ES</option>
+    </select>
+    <a href="https://start.pagayo.app/login" class="btn btn-secondary sticky-bar-btn">{nav.login}</a>
+    <a href="https://start.pagayo.app/register" class="btn btn-primary sticky-bar-btn">{nav.start}</a>
+  </div>
+</div>
