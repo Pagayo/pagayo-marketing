@@ -17,6 +17,13 @@
 - Pagina-routes: `src/pages/`
 - Taalroutes: `src/pages/nl/` (uitbreidbaar)
 
+## Taal & URL standaarden (verplicht)
+- Standaardcontent in **Engels** op default routes (bijv. `/`, `/features`, `/pricing`, `/partners`, `/gyms`, `/impact`).
+- Vertalingen altijd via i18n-bestanden (`src/content/i18n/*.json`), niet via hardcoded copy in pagina's.
+- Nieuwe pagina's moeten i18n-keys gebruiken voor zichtbare tekst, SEO-title/description en indien gebruikt structured data taalvelden.
+- URL's en slugs altijd **Engels** houden. Geen Nederlandstalige slugs op default routes.
+- Gelokaliseerde content uitsluitend via taalprefix-routes (bijv. `/nl/...`).
+
 ## Kwaliteitseisen
 - Pixel-perfect consistentie met het marketing concept.
 - Wijzigingen in pricing alleen via `src/content/pricing.json`.

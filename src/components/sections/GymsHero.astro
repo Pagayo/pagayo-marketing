@@ -4,17 +4,19 @@ import Button from '../ui/Button.astro';
 <section class="section gyms-hero fade-in">
   <div class="container gyms-hero-grid">
     <div>
-      <span class="section-label" style="background:var(--gym-green-glow);color:var(--gym-green);border-color:rgba(0,212,170,0.2);">
-        Pagayo For Gyms
-      </span>
-      <h1 class="headline-xl">
-        Run your gym like an operator.<br />
-        <span class="text-gradient">Members, check-ins, POS, and reports in one flow.</span>
-      </h1>
-      <p class="text-lg gyms-hero-copy">
-        Built on the same tenant model used in Storefront: subscriptions, subscription members,
-        visit scans, order sources (WEB/POS), returns, invoices, and live dashboard stats.
-      </p>
+      <div class="section-header center gyms-hero-header">
+        <span class="section-label" style="background:var(--gym-green-glow);color:var(--gym-green);border-color:rgba(0,212,170,0.2);">
+          Pagayo For Gyms
+        </span>
+        <h1 class="headline-xl">
+          Run your gym like an operator.<br />
+          <span class="text-gradient">Members, check-ins, POS, and reports in one flow.</span>
+        </h1>
+        <p class="text-lg gyms-hero-copy">
+          Built on the same tenant model used in Storefront: subscriptions, subscription members,
+          visit scans, order sources (WEB/POS), returns, invoices, and live dashboard stats.
+        </p>
+      </div>
       <div class="gyms-hero-actions">
         <Button href="https://start.pagayo.app/register" variant="gym" size="lg">Start Free For Gyms</Button>
         <Button href="#pricing" variant="secondary" size="lg">View Gym Plans</Button>
@@ -127,11 +129,16 @@ import Button from '../ui/Button.astro';
     margin-top: 1rem;
   }
 
+  .gyms-hero-header {
+    margin-bottom: 0;
+  }
+
   .gyms-hero-actions {
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.9rem;
+    justify-content: center;
   }
 
   .gyms-hero-metrics {
@@ -140,6 +147,8 @@ import Button from '../ui/Button.astro';
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.8rem;
     max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .gym-metric {

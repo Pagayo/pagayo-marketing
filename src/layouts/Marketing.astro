@@ -13,6 +13,9 @@ const {
   title = 'Pagayo — Every Sale. One Platform.',
   description = 'Webshop, POS, WhatsApp, QR — all orders flow into one dashboard. Free forever.'
 } = Astro.props as Props;
+
+const isHomepage = Astro.url.pathname === '/';
+const bodyClass = isHomepage ? '' : 'standard-sections-ssot';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +28,7 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class={bodyClass}>
     <Nav />
     <slot />
     <Footer />

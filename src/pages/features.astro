@@ -9,9 +9,11 @@ import StepsGrid from '../components/sections/StepsGrid.astro';
 import ImpactSection from '../components/sections/ImpactSection.astro';
 import PartnerCalc from '../components/sections/PartnerCalc.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
+import i18nEn from '../content/i18n/en.json';
 
-const pageTitle = 'Pagayo Features - Webshop, POS, WhatsApp en QR in een platform';
-const pageDescription = 'Ontdek alle Pagayo features voor e-commerce en hospitality: orderbeheer, voorraad, coupons, retouren, abonnementen, analytics en omnichannel verkoop in een dashboard.';
+const t = i18nEn.featuresPage;
+const pageTitle = t.title;
+const pageDescription = t.description;
 
 const featureSchema = {
   '@context': 'https://schema.org',
@@ -19,15 +21,8 @@ const featureSchema = {
   name: pageTitle,
   description: pageDescription,
   url: 'https://www.pagayo.com/features',
-  inLanguage: 'nl-NL',
-  about: [
-    'Order management software',
-    'POS systeem',
-    'Webshop software',
-    'Omnichannel commerce',
-    'Subscriptions en memberships',
-    'Coupon en voorraadbeheer'
-  ],
+  inLanguage: t.inLanguage,
+  about: t.about,
   isPartOf: {
     '@type': 'WebSite',
     name: 'Pagayo',
@@ -41,30 +36,21 @@ const featureSchema = {
   <section class="section features-hero fade-in" aria-labelledby="features-page-title">
     <div class="container">
       <div class="section-header center">
-        <span class="section-label">Feature Overview</span>
+        <span class="section-label">{t.sectionLabel}</span>
         <h1 class="headline-xl" id="features-page-title">
-          Verkoop op elk kanaal.<br />
-          <span class="text-gradient">Beheer alles in een dashboard.</span>
+          {t.headlineTop}<br />
+          <span class="text-gradient">{t.headlineBottom}</span>
         </h1>
-        <p class="text-lg">
-          Van webshop en POS tot WhatsApp, QR en abonnementen: Pagayo centraliseert orders,
-          voorraad, betalingen, coupons, retouren en rapportages in een overzichtelijk platform.
-        </p>
+        <p class="text-lg">{t.intro}</p>
       </div>
 
-      <div class="feature-points" aria-label="Belangrijkste featurepunten">
-        <div class="feature-point-card">
-          <h2>Order-First kern</h2>
-          <p>Alle kanalen landen in een uniforme orderflow, met dezelfde statussen, dezelfde acties en dezelfde rapportages.</p>
-        </div>
-        <div class="feature-point-card">
-          <h2>Realtime operations</h2>
-          <p>Voorraad, low-stock alerts, retouren, membership-validatie en coupons direct zichtbaar voor je team.</p>
-        </div>
-        <div class="feature-point-card">
-          <h2>Groeien zonder re-platform</h2>
-          <p>Start gratis, voeg modules toe wanneer nodig, en schaal internationaal zonder losse systemen of add-ons.</p>
-        </div>
+      <div class="feature-points" aria-label={t.pointsAriaLabel}>
+        {t.points.map((point) => (
+          <div class="feature-point-card">
+            <h2>{point.title}</h2>
+            <p>{point.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

@@ -7,5 +7,37 @@
     "partners": "Partner",
     "login": "Anmelden",
     "start": "Kostenlos starten"
+  },
+  "featuresPage": {
+    "title": "Pagayo Features - Webshop, POS, WhatsApp und QR in einer Plattform",
+    "description": "Entdecken Sie alle Pagayo-Features für E-Commerce und Hospitality: Auftragsverwaltung, Lagerbestand, Gutscheine, Rückgaben, Abonnements, Analytics und Omnichannel-Verkauf in einem Dashboard.",
+    "inLanguage": "de-DE",
+    "sectionLabel": "Feature-Ueberblick",
+    "headlineTop": "Verkaufen auf jedem Kanal.",
+    "headlineBottom": "Alles in einem Dashboard verwalten.",
+    "intro": "Von Webshop und POS bis WhatsApp, QR und Abonnements: Pagayo zentralisiert Auftraege, Lagerbestand, Zahlungen, Gutscheine, Rueckgaben und Reporting in einer klaren Plattform.",
+    "pointsAriaLabel": "Wichtigste Feature-Punkte",
+    "points": [
+      {
+        "title": "Order-First-Kern",
+        "description": "Alle Kanaele laufen in einen einheitlichen Auftragszyklus mit gemeinsamen Status, Aktionen und Reports."
+      },
+      {
+        "title": "Echtzeit-Operations",
+        "description": "Bestand, Low-Stock-Warnungen, Rueckgaben, Membership-Validierung und Gutschein-Nutzung bleiben fuer Ihr Team in Echtzeit sichtbar."
+      },
+      {
+        "title": "Skalieren ohne Re-Platforming",
+        "description": "Starten Sie kostenlos, aktivieren Sie Module bei Bedarf und wachsen Sie international ohne verteilte Einzelsysteme."
+      }
+    ],
+    "about": [
+      "Order management software",
+      "POS software",
+      "Webshop software",
+      "Omnichannel commerce",
+      "Subscriptions und Memberships",
+      "Gutschein- und Bestandsverwaltung"
+    ]
   }
 }

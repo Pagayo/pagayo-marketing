@@ -7,5 +7,37 @@
     "partners": "Partners",
     "login": "Inloggen",
     "start": "Start gratis"
+  },
+  "featuresPage": {
+    "title": "Pagayo Features - Webshop, POS, WhatsApp en QR in een platform",
+    "description": "Ontdek alle Pagayo features voor e-commerce en hospitality: orderbeheer, voorraad, coupons, retouren, abonnementen, analytics en omnichannel verkoop in een dashboard.",
+    "inLanguage": "nl-NL",
+    "sectionLabel": "Feature Overzicht",
+    "headlineTop": "Verkoop op elk kanaal.",
+    "headlineBottom": "Beheer alles in één dashboard.",
+    "intro": "Van webshop en POS tot WhatsApp, QR en abonnementen: Pagayo centraliseert orders, voorraad, betalingen, coupons, retouren en rapportages in één overzichtelijk platform.",
+    "pointsAriaLabel": "Belangrijkste featurepunten",
+    "points": [
+      {
+        "title": "Order-First kern",
+        "description": "Alle kanalen landen in één uniforme orderflow, met gedeelde statussen, acties en rapportages."
+      },
+      {
+        "title": "Realtime operations",
+        "description": "Voorraad, low-stock alerts, retouren, membership-validatie en coupongebruik zijn realtime zichtbaar voor je team."
+      },
+      {
+        "title": "Schalen zonder re-platforming",
+        "description": "Start gratis, voeg modules toe wanneer nodig en groei internationaal zonder losse tools aan elkaar te koppelen."
+      }
+    ],
+    "about": [
+      "Order management software",
+      "POS software",
+      "Webshop software",
+      "Omnichannel commerce",
+      "Subscriptions en memberships",
+      "Coupon- en voorraadbeheer"
+    ]
   }
 }

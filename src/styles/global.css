@@ -162,6 +162,40 @@ img { max-width: 100%; height: auto; display: block; }
   margin-top: 1rem;
 }
 
+/* SSOT: all non-home pages use pricing-grade section header typography */
+.standard-sections-ssot .section-header.center {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.standard-sections-ssot .section-header.center > .section-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.standard-sections-ssot .section-header.center > .headline-xl,
+.standard-sections-ssot .section-header.center > .headline-lg,
+.standard-sections-ssot .section-header.center > .headline-md,
+.standard-sections-ssot .section-header.center > h1,
+.standard-sections-ssot .section-header.center > h2,
+.standard-sections-ssot .section-header.center > h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.standard-sections-ssot .section-header.center > .text-lg,
+.standard-sections-ssot .section-header.center > p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
 /* --- BUTTONS --- */
 .btn {
   display: inline-flex;

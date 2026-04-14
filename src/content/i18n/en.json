@@ -7,5 +7,37 @@
     "partners": "Partners",
     "login": "Log in",
     "start": "Start Free"
+  },
+  "featuresPage": {
+    "title": "Pagayo Features - Webshop, POS, WhatsApp and QR in one platform",
+    "description": "Discover all Pagayo features for e-commerce and hospitality: order management, inventory, coupons, returns, subscriptions, analytics and omnichannel sales in one dashboard.",
+    "inLanguage": "en-US",
+    "sectionLabel": "Feature Overview",
+    "headlineTop": "Sell on every channel.",
+    "headlineBottom": "Manage everything in one dashboard.",
+    "intro": "From webshop and POS to WhatsApp, QR and subscriptions, Pagayo centralizes orders, inventory, payments, coupons, returns and reporting in one clear platform.",
+    "pointsAriaLabel": "Key feature points",
+    "points": [
+      {
+        "title": "Order-First core",
+        "description": "All channels flow into one consistent order lifecycle with shared statuses, shared actions and shared reporting."
+      },
+      {
+        "title": "Real-time operations",
+        "description": "Inventory, low-stock alerts, returns, membership validation and coupon usage stay visible to your team in real time."
+      },
+      {
+        "title": "Scale without re-platforming",
+        "description": "Start free, add modules when needed, and grow internationally without stitching together separate tools."
+      }
+    ],
+    "about": [
+      "Order management software",
+      "POS software",
+      "Webshop software",
+      "Omnichannel commerce",
+      "Subscriptions and memberships",
+      "Coupons and inventory management"
+    ]
   }
 }
