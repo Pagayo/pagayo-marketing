@@ -7,7 +7,7 @@ const nav = i18nEn.nav;
   <div class="container">
     <a href="/" class="nav-logo">Pagayo<span>.</span></a>
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="/features">{nav.features}</a></li>
       <li><a href="/gyms">{nav.gyms}</a></li>
       <li><a href="/pricing">{nav.pricing}</a></li>
@@ -15,6 +15,6 @@ const nav = i18nEn.nav;
       <li><a href="/partners">{nav.partners}</a></li>
     </ul>
 
-    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
   </div>
 </nav>
