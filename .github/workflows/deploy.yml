@@ -21,10 +21,18 @@ env:
 
 jobs:
   # ===========================================================================
+  # JOB 0: Stack Manifest Drift Guard (SSOT = pagayo-maintenance)
+  # ===========================================================================
+  # TODO: Switch to @main after grounding batch merge.
+  stack-check:
+    uses: Pagayo/pagayo-maintenance/.github/workflows/reusable-check-stack.yml@feature/batch-staging-20260416
+
+  # ===========================================================================
   # JOB 1: Validate
   # ===========================================================================
   validate:
     name: Validate
+    needs: stack-check
     runs-on: ubuntu-latest
     
     steps:
