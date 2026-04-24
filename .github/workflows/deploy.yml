@@ -25,7 +25,7 @@ jobs:
   # ===========================================================================
   # TODO: Switch to @main after grounding batch merge.
   stack-check:
-    uses: Pagayo/pagayo-maintenance/.github/workflows/reusable-check-stack.yml@feature/batch-staging-20260416
+    uses: Pagayo/pagayo-maintenance/.github/workflows/reusable-check-stack.yml@main
 
   # ===========================================================================
   # JOB 1: Validate
