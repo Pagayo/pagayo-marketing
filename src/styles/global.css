@@ -74,7 +74,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg-deep);
   color: var(--text-primary);
   line-height: 1.6;
@@ -172,7 +172,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .standard-sections-ssot .section-header.center > .section-label {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .standard-sections-ssot .section-header.center > .headline-xl,
@@ -189,7 +189,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .standard-sections-ssot .section-header.center > .text-lg,
 .standard-sections-ssot .section-header.center > p {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(1.1rem, 1.5vw, 1.25rem);
   line-height: 1.6;
   color: var(--text-secondary);

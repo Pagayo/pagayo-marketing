@@ -4,16 +4,16 @@
     <!-- ── Section header ── -->
     <div class="section-header center">
       <span class="section-label" style="background:var(--gym-green-glow);color:var(--gym-green);border-color:rgba(0,212,170,0.2);">
-        Gym Operations
+        Everything Under One Roof
       </span>
       <h2 class="headline-lg" id="gym-ops-heading">
-        One admin surface. Every module your gym needs.
+        One admin. Every module your club needs.
       </h2>
       <p class="text-lg">
-        Pagayo brings gym membership management, POS, online orders, returns, subscriptions,
-        and business analytics into a single admin panel. No integrations to maintain, no data
-        spread across separate tools. Staff sees the same real-time information at the front desk,
-        on the gym floor, and in the back office.
+        Memberships, POS, online orders, returns, subscriptions, reporting —
+        all in a single admin panel. Nothing to integrate, nothing to reconcile.
+        The front desk, the floor and the back office see the same numbers,
+        at the same moment, with no extra licence per seat.
       </p>
     </div>
 
@@ -191,19 +191,19 @@
     <div class="ops-features-grid">
 
       <article class="ops-feature-block">
-        <h3>Subscription Lifecycle Management for Fitness Studios</h3>
+        <h3>Memberships that handle their own lifecycle</h3>
         <p>
-          Running a gym means handling memberships that change state constantly — members
-          upgrade plans, pause during holiday, miss a payment, or add a family member.
-          Pagayo's subscription engine manages each state transition automatically:
-          TRIALING starts a grace period, PAST_DUE triggers a dunning sequence, PAUSED
-          suspends scan access without cancelling billing data.
+          Running a club means dealing with memberships that change state constantly —
+          members upgrade, pause during a holiday, miss a payment, add a family member.
+          Pagayo handles every transition in the background: TRIALING grants a grace
+          period, PAST_DUE starts a dunning sequence, PAUSED suspends scan access
+          without losing the member's history.
         </p>
         <p>
-          Every member gets a unique pass code linked to their
-          <code>subscriptionMember</code> record. The scan desk validates the pass in
-          real time against the <code>subscriptionVisit</code> log — and blocks entry
-          if the subscription is EXPIRED, CANCELED, or PAST_DUE.
+          Every member gets a unique pass code linked to their subscription. The scan
+          desk validates it in real time — and blocks entry the moment the membership
+          goes EXPIRED, CANCELED or PAST_DUE. No spreadsheet. No “I'll let you in this
+          one time”. No revenue leak.
         </p>
         <ul class="ops-bullet-list">
           <li>Automatic dunning — email reminders at 3, 7, and 14 days overdue</li>
@@ -215,19 +215,19 @@
       </article>
 
       <article class="ops-feature-block">
-        <h3>Integrated Gym POS and E-commerce Order Management</h3>
+        <h3>One order queue. Front desk, webshop, everything.</h3>
         <p>
-          Most gym software treats the front desk and the webshop as separate systems.
-          Pagayo uses one Order model for every sale channel: your receptionist selling a
-          protein shake at the POS, a member buying a class pack online, or a coach
-          accepting a walk-in payment via QR code — all land in the same order queue,
-          with the same status flow.
+          Most gym software treats the front desk and the webshop as separate worlds,
+          then sells you an integration to bolt them back together. Pagayo uses one
+          order model for every channel: the receptionist selling a protein shake,
+          a member buying a class pack online, a coach taking a walk-in payment via
+          QR — all land in the same queue, with the same status flow.
         </p>
         <p>
-          The <code>source</code> field (POS, WEB, CASH, WHATSAPP) and
-          <code>originator</code> field (CUSTOMER, SELLER, SYSTEM) make every transaction
-          auditable. Returns and refunds follow a four-stage process — requested, approved,
-          received, refunded — with automatic credit note generation.
+          Every transaction is tagged with its <code>source</code> (POS, WEB, CASH, WHATSAPP)
+          and <code>originator</code> (CUSTOMER, SELLER, SYSTEM), so the audit trail is
+          always honest. Refunds follow a four-step process — requested, approved,
+          received, refunded — with credit notes generated automatically.
         </p>
         <ul class="ops-bullet-list">
           <li>Unified order queue — no separate POS and webshop reconciliation</li>
@@ -239,17 +239,18 @@
       </article>
 
       <article class="ops-feature-block">
-        <h3>Gym Stock, Coupons and Revenue Analytics</h3>
+        <h3>Stock, coupons and the numbers that matter</h3>
         <p>
-          Beyond memberships and orders, gyms sell merchandise, supplements, and class packs.
-          Pagayo tracks inventory per product variant, fires low-stock alerts when thresholds
-          are crossed, and shows days-to-stockout estimates based on recent sales velocity.
+          Clubs don't just sell memberships. They sell merchandise, supplements, class
+          packs and day passes. Pagayo tracks inventory per variant, fires low-stock
+          alerts when thresholds are crossed, and estimates days-to-stockout from your
+          actual sales velocity — not a static reorder rule from 1998.
         </p>
         <p>
-          Coupon campaigns can be time-limited, member-segment specific, or tied to a
-          referral source. Usage analytics per coupon code show redemption rate, average
-          order uplift, and net revenue impact — so you can see which promotions actually
-          drive revenue and which just erode margin.
+          Coupon campaigns can be time-limited, segment-specific, or tied to a
+          referral source. Usage analytics show redemption rate, average uplift and
+          net revenue impact per code — so you can tell which promotions actually
+          drove revenue and which just gave away margin.
         </p>
         <ul class="ops-bullet-list">
           <li>Inventory low-stock alerts with configurable thresholds</li>

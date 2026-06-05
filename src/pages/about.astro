@@ -1,0 +1,273 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+
+const pageTitle = 'About Pagayo — One platform, every way you sell.';
+const pageDescription =
+  'Pagayo is a commerce platform built from one idea: a sale is a sale. Learn what we believe, how Pagayo is built, and where it is going.';
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <main class="about-page">
+
+    <!-- Hero -->
+    <section class="section about-hero fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">About Pagayo</span>
+          <h1 class="headline-xl">
+            One platform.<br />
+            <span class="text-gradient">Every way you sell.</span>
+          </h1>
+          <p class="text-lg">
+            Pagayo is a commerce platform built on a single idea — and shaped,
+            week by week, by the people who use it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto echo -->
+    <section class="section about-belief">
+      <div class="container narrow">
+        <h2 class="headline-md">A sale is a sale.</h2>
+        <p>
+          A subscription, a webshop checkout, a register at the counter, a
+          membership renewal, a sponsored seat for someone who couldn't
+          otherwise afford it — they are all the same thing. They are all
+          <strong>one Order</strong>.
+        </p>
+        <p>
+          Most platforms hide that truth behind separate products, separate
+          dashboards, separate invoices, separate logins. Pagayo refuses to.
+          Every sale, wherever it happens, flows into the same Order, the
+          same admin, the same numbers.
+        </p>
+        <p>
+          That single decision is what makes everything else possible: clean
+          reporting, predictable pricing, no duplicate work, no surprises at
+          the end of the month.
+        </p>
+      </div>
+    </section>
+
+    <!-- What Pagayo is -->
+    <section class="section about-what">
+      <div class="container narrow">
+        <span class="section-label">What Pagayo is</span>
+        <h2 class="headline-md">A serious platform, accessible to everyone.</h2>
+        <p>
+          Pagayo bundles the tools a serious business needs — webshop, point
+          of sale, subscriptions, memberships, invoicing, customer
+          management, reporting — into one platform that you can use for
+          free, from day one, with every feature included.
+        </p>
+        <p>
+          You pay when you outgrow the free plan, not when you unlock a
+          feature. There are no transaction fees on top, no revenue share,
+          no gated modules. Your data stays yours. You can leave whenever
+          you want — most operators never do.
+        </p>
+      </div>
+    </section>
+
+    <!-- How it's built -->
+    <section class="section about-built">
+      <div class="container narrow">
+        <span class="section-label">How it's built</span>
+        <h2 class="headline-md">Engineered on the edge.</h2>
+        <p>
+          Pagayo runs on Cloudflare's global edge network. No origin
+          servers, no maintenance windows, no single point of failure.
+          Every page, every API call, every payment is handled close to
+          your customer — wherever in the world they are.
+        </p>
+        <p>
+          Every change goes through a pull request. Every deployment is
+          automated. Every piece of infrastructure is code. We ship
+          continuously because the platform is built to ship continuously
+          — and because the people using Pagayo deserve a system that
+          keeps getting better, every week.
+        </p>
+        <p class="about-link-row">
+          <a href="/build-log" class="about-link">See the Build Log →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- What we believe -->
+    <section class="section about-believe">
+      <div class="container narrow">
+        <span class="section-label">What we believe</span>
+        <h2 class="headline-md">A few quiet principles.</h2>
+        <ul class="about-principles">
+          <li>
+            <h3>One Order, every channel.</h3>
+            <p>
+              The shape of the platform follows the shape of the work, not
+              the other way around.
+            </p>
+          </li>
+          <li>
+            <h3>Free isn't a teaser.</h3>
+            <p>
+              The free plan is a real product. Paid plans add capacity, not
+              features.
+            </p>
+          </li>
+          <li>
+            <h3>Boring infrastructure, exciting outcomes.</h3>
+            <p>
+              We choose proven, edge-native technology so you don't have to
+              think about uptime, scale, or backups.
+            </p>
+          </li>
+          <li>
+            <h3>The roadmap is the inbox.</h3>
+            <p>
+              Pagayo grows from what the people using it ask for. Every
+              message gets read. Every good idea finds its way in.
+            </p>
+          </li>
+          <li>
+            <h3>Commerce should be honest.</h3>
+            <p>
+              Clear pricing, clear invoices, clear data ownership. No
+              dark patterns, no lock-in, no surprises.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Where it's going -->
+    <section class="section about-future">
+      <div class="container narrow">
+        <span class="section-label">Where it's going</span>
+        <h2 class="headline-md">Built to grow with you.</h2>
+        <p>
+          Pagayo is still early — and that is the best part. The platform
+          is being shaped right now, in public, with the people who use it.
+          New modules, new channels, new integrations land continuously.
+          The same Order model carries them all.
+        </p>
+        <p>
+          If there's something you wish Pagayo did — a workflow, a report,
+          a sales channel, a payment method, anything — we want to hear it.
+        </p>
+        <p class="about-link-row">
+          <a href="/contact" class="about-link">Tell us your idea →</a>
+        </p>
+      </div>
+    </section>
+
+    <FinalCta />
+  </main>
+</MarketingLayout>
+
+<style>
+  .about-hero {
+    padding-top: calc(var(--nav-height, 72px) + 4rem);
+    padding-bottom: 4rem;
+  }
+
+  .container.narrow {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .about-belief,
+  .about-what,
+  .about-built,
+  .about-believe,
+  .about-future {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .about-belief h2,
+  .about-what h2,
+  .about-built h2,
+  .about-believe h2,
+  .about-future h2 {
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-page p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #cbd5e1);
+    margin: 0 0 1.25rem 0;
+  }
+
+  .about-page strong {
+    background: linear-gradient(135deg, #6366f1, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+  }
+
+  .about-link-row {
+    margin-top: 1.5rem;
+  }
+
+  .about-link {
+    color: var(--text-primary, #f8fafc);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    font-weight: 500;
+    transition: opacity 0.15s ease;
+  }
+
+  .about-link:hover {
+    opacity: 0.75;
+  }
+
+  .about-principles {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-principles li {
+    padding: 1.5rem 1.75rem;
+    background: var(--bg-card, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: var(--radius-lg, 12px);
+  }
+
+  .about-principles h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary, #f8fafc);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .about-principles p {
+    margin: 0;
+    font-size: 0.98rem;
+  }
+
+  @media (max-width: 640px) {
+    .about-hero {
+      padding-top: calc(var(--nav-height, 72px) + 2rem);
+      padding-bottom: 2.5rem;
+    }
+    .about-belief,
+    .about-what,
+    .about-built,
+    .about-believe,
+    .about-future {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    .about-principles li {
+      padding: 1.25rem 1.25rem;
+    }
+  }
+</style>

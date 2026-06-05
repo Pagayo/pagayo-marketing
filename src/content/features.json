@@ -2,33 +2,33 @@
   "items": [
     {
       "icon": "📦",
-      "title": "Unified Orders",
-      "description": "Every sale — webshop, POS, WhatsApp, QR — lands in one order feed. Filter by source, track in real time."
+      "title": "One Order Model",
+      "description": "Every sale — webshop, POS, WhatsApp, QR, cash — lands in the same order feed. One source of truth, one set of statuses, no channel silos."
     },
     {
       "icon": "🎟️",
       "title": "Subscriptions & Memberships",
-      "description": "Recurring billing, family members, QR check-in, automated renewals. Perfect for gyms, clubs, and associations."
+      "description": "Recurring billing, family plans, QR check-in, automated renewals. Built for the clubs, gyms and associations that enterprise software priced out."
     },
     {
       "icon": "💳",
       "title": "Point of Sale",
-      "description": "Turn any device into a cash register. Card, cash, or QR — parked carts, split payments, real-time sync."
+      "description": "Turn any device into a register. Card, cash, QR — parked carts, split payments, real-time sync with your online shop. No extra hardware required."
     },
     {
       "icon": "📊",
-      "title": "Reports & Analytics",
-      "description": "Revenue, tax, products, payment methods — all broken down by channel, period, and category. Export-ready."
+      "title": "Honest Reporting",
+      "description": "Revenue, tax, products, payouts — broken down by channel, period and category. Export-ready, accountant-friendly, owned by you."
     },
     {
       "icon": "🌐",
       "title": "Multi-language CMS",
-      "description": "Pages, blog posts, menus — manage your content in multiple languages. SEO-optimized, mobile-first."
+      "description": "Pages, blog, menus — manage your content in every language your customers speak. SEO-ready, mobile-first, no plugin marketplace."
     },
     {
       "icon": "⚡",
-      "title": "Edge Performance",
-      "description": "Deployed on Cloudflare's global network. <50ms response times worldwide. Your shop loads instantly, everywhere."
+      "title": "Fast Everywhere",
+      "description": "Deployed on a global edge network. Sub-50ms response times in 300+ cities — the same speed in Lagos as in London."
     }
   ]
 }
