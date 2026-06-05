@@ -1,0 +1,228 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+
+const pageTitle = 'Built on the shoulders of giants — Pagayo';
+const pageDescription =
+  'Pagayo is built on a handful of extraordinary platforms: Cloudflare, Stripe, GitHub, OpenAI, Cursor, and Claude. Here is what each of them does — and why we picked them.';
+
+const giants = [
+  {
+    name: 'Cloudflare',
+    role: 'The runtime',
+    url: 'https://www.cloudflare.com',
+    body: `Every page, every API call, every database query, every payment webhook — they all run on Cloudflare's global edge network. Workers, D1, KV, R2, Queues, Workflows, Pages, DNS, Access, WAF: the entire Pagayo platform lives here. No origin servers. No maintenance windows. No single point of failure. Just one network, close to every customer on earth.`,
+  },
+  {
+    name: 'Stripe',
+    role: 'The payments',
+    url: 'https://stripe.com',
+    body: `Stripe handles the money. Cards, iDEAL, Bancontact, SEPA, Apple Pay, Google Pay, subscriptions, refunds, invoices, payouts, tax — Pagayo speaks one clean API and the rest is taken care of. Payments are the part of commerce that absolutely must be right, every single time. Stripe is what makes that possible.`,
+  },
+  {
+    name: 'GitHub',
+    role: 'The workshop',
+    url: 'https://github.com',
+    body: `Every line of Pagayo lives on GitHub. Pull requests, Actions, releases, packages, secrets, environments — the whole build-and-ship pipeline runs there. Every deployment to staging and production starts with a commit and a green check. Nothing ships without it. Nothing ever has.`,
+  },
+  {
+    name: 'OpenAI',
+    role: 'The reasoning layer',
+    url: 'https://openai.com',
+    body: `OpenAI powers the parts of Pagayo that need to think — admin assistants, product help, content understanding, search relevance, the quiet intelligence behind features that just feel easier than they should. The models keep getting better; Pagayo gets better with them.`,
+  },
+  {
+    name: 'Cursor',
+    role: 'The editor',
+    url: 'https://cursor.com',
+    body: `Pagayo is built inside Cursor. It's where code is written, refactored, reviewed, and shipped. Multi-agent workflows, deep codebase context, instant edits across repos — Cursor is what turns a single operator into a development team that can move at the speed of the platform itself.`,
+  },
+  {
+    name: 'Claude',
+    role: 'The pair programmer',
+    url: 'https://www.anthropic.com/claude',
+    body: `Claude is the engineer in the chair next to mine. It reads the codebase, weighs trade-offs, writes careful changes, catches the bugs I would have shipped, and explains its reasoning along the way. Most of what gets built at Pagayo is built in conversation with Claude — and the platform is sharper for it.`,
+  },
+];
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <main class="giants-page">
+
+    <!-- Hero -->
+    <section class="section giants-hero fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Credits</span>
+          <h1 class="headline-xl">
+            Built on the shoulders<br />
+            of <span class="text-gradient">giants</span>.
+          </h1>
+          <p class="text-lg">
+            Pagayo is small. The platforms it stands on are not. A handful
+            of extraordinary tools — built by thousands of people over many
+            years — make everything we do possible. Here they are, and
+            here is why we picked each one.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giants list -->
+    <section class="section giants-list-section">
+      <div class="container narrow">
+        <ul class="giants-list">
+          {giants.map((g) => (
+            <li class="giant-card">
+              <div class="giant-header">
+                <h2 class="giant-name">{g.name}</h2>
+                <span class="giant-role">{g.role}</span>
+              </div>
+              <p class="giant-body">{g.body}</p>
+              <a class="giant-link" href={g.url} target="_blank" rel="noopener">
+                Visit {g.name} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="section giants-closing">
+      <div class="container narrow">
+        <h2 class="headline-md">Standing on, not standing in for.</h2>
+        <p>
+          Pagayo is not a thin wrapper over any of these tools. It is its
+          own platform — its own data model, its own architecture, its own
+          opinions about how commerce should work. But it would be foolish
+          to pretend we built any of this alone.
+        </p>
+        <p>
+          To every engineer at Cloudflare, Stripe, GitHub, OpenAI, Cursor,
+          and Anthropic: thank you. Pagayo exists because your work
+          exists.
+        </p>
+      </div>
+    </section>
+
+    <FinalCta />
+  </main>
+</MarketingLayout>
+
+<style>
+  .giants-hero {
+    padding-top: calc(var(--nav-height, 72px) + 4rem);
+    padding-bottom: 4rem;
+  }
+
+  .container.narrow {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .giants-list-section,
+  .giants-closing {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  .giants-page p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #cbd5e1);
+    margin: 0 0 1.25rem 0;
+  }
+
+  .giants-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .giant-card {
+    padding: 1.75rem 2rem;
+    background: var(--bg-card, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: var(--radius-lg, 12px);
+    transition: border-color 0.15s ease;
+  }
+
+  .giant-card:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+
+  .giant-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.85rem;
+  }
+
+  .giant-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary, #f8fafc);
+    background: linear-gradient(135deg, #6366f1, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .giant-role {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted, #94a3b8);
+  }
+
+  .giant-body {
+    margin: 0 0 1rem 0 !important;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .giant-link {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary, #f8fafc);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+    transition: opacity 0.15s ease;
+  }
+
+  .giant-link:hover {
+    opacity: 0.75;
+  }
+
+  .giants-closing h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .giants-hero {
+      padding-top: calc(var(--nav-height, 72px) + 2rem);
+      padding-bottom: 2.5rem;
+    }
+    .giants-list-section,
+    .giants-closing {
+      padding-top: 2rem;
+      padding-bottom: 2.5rem;
+    }
+    .giant-card {
+      padding: 1.4rem 1.4rem;
+    }
+    .giant-name {
+      font-size: 1.25rem;
+    }
+  }
+</style>
