@@ -1,0 +1,912 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+
+const pageTitle = 'Pagayo on OpenAI — The quiet intelligence behind easy features';
+const pageDescription =
+  'How Pagayo uses OpenAI to power the parts that need to think — admin assistants, product help, search relevance, content generation. The features that feel easier than they should.';
+
+const capabilities = [
+  { code: 'GPT-5',          tag: 'Reasoning',  desc: 'The flagship model behind the admin assistant and complex analysis.' },
+  { code: 'GPT-4.1 mini',   tag: 'Fast',       desc: 'Cheap, fast reasoning for inline help, tagging and short answers.' },
+  { code: 'Embeddings',     tag: 'Vectors',    desc: 'text-embedding-3-large powers search relevance and product-help RAG.' },
+  { code: 'Vision',         tag: 'Multimodal', desc: 'Understands product photos for alt text, categorisation and quality checks.' },
+  { code: 'Image gen',      tag: 'Creative',   desc: 'On-brand banners, placeholders and marketing visuals from a prompt.' },
+  { code: 'Whisper',        tag: 'Audio in',   desc: 'Transcribes voice notes into orders, tickets and admin commands.' },
+  { code: 'TTS',            tag: 'Audio out',  desc: 'Spoken responses for accessibility and hands-free POS workflows.' },
+  { code: 'Function call',  tag: 'Tools',      desc: 'The model picks Pagayo admin actions safely, with typed arguments.' },
+  { code: 'Structured out', tag: 'Schemas',    desc: 'JSON that always matches our Zod schemas — no parsing, no surprises.' },
+  { code: 'Moderation',     tag: 'Safety',     desc: 'Catches abusive input on every customer-facing AI surface.' },
+  { code: 'Realtime',       tag: 'Streaming',  desc: 'Token-by-token replies so the admin chat feels instant.' },
+  { code: 'Fine-tuning',    tag: 'Custom',     desc: 'Specialised small models for the tasks we run a million times.' },
+];
+
+const layers = [
+  {
+    slug: 'admin-chat',
+    title: 'An admin that talks back',
+    role: 'Admin assistant',
+    accent: '#10a37f',
+    accentSoft: 'rgba(16, 163, 127, 0.18)',
+    tagline: 'Ask the platform what to do next.',
+    body: `Inside every Pagayo admin sits an assistant that knows your shop — your products, your orders, your customers, your settings. Ask it to add a brand, write a return policy, find customers who bought twice last month, or explain why a webhook failed. It uses GPT-5 for reasoning, function calling to safely take action, and structured outputs so its answers always fit the rest of the admin UI.`,
+    bullets: [
+      'GPT-5 for reasoning, GPT-4.1 mini for fast inline help',
+      'Function calling = the model takes admin actions safely',
+      'Structured outputs match our Zod schemas, no parsing',
+    ],
+  },
+  {
+    slug: 'product-help',
+    title: 'Help that knows your platform',
+    role: 'RAG · Embeddings',
+    accent: '#6366f1',
+    accentSoft: 'rgba(99, 102, 241, 0.2)',
+    tagline: 'Every help article, instantly retrievable.',
+    body: `Pagayo's product help lives as Markdown in the repo — every admin screen, every webshop feature, every workflow. We embed it with text-embedding-3-large, store the vectors at the edge, and when you type a question in admin chat we pull the three most relevant articles and feed them to the model. The answer cites the source. No hallucinations, no scrolling through docs.`,
+    bullets: [
+      'text-embedding-3-large for high-recall retrieval',
+      'Per-tenant vector scope — your data never leaks',
+      'Answers cite the help article they came from',
+    ],
+  },
+  {
+    slug: 'search',
+    title: 'Search that understands intent',
+    role: 'Embeddings · Re-ranking',
+    accent: '#06b6d4',
+    accentSoft: 'rgba(6, 182, 212, 0.18)',
+    tagline: 'A customer searches "warme winterjas". They get the warm coats.',
+    body: `Keyword search finds matches. Embedding search finds meaning. Pagayo indexes every product, category and brand as a vector — alongside the classic full-text index — and ranks results by semantic similarity. The shopper types in their own words and the catalogue answers. Same for synonyms, typos, and the long tail of "I don't know what it's called but I know what it does".`,
+    bullets: [
+      'Hybrid search: full-text + embeddings, combined',
+      'Multilingual out of the box — NL/EN/DE/FR on day one',
+      'Re-ranking with GPT-4.1 mini for the top results',
+    ],
+  },
+  {
+    slug: 'content',
+    title: 'Content that writes itself',
+    role: 'Generation',
+    accent: '#fbbf24',
+    accentSoft: 'rgba(251, 191, 36, 0.18)',
+    tagline: 'A new product. A draft description. One click.',
+    body: `Upload a product photo, fill in a name, and Pagayo drafts the description, the short summary, the SEO title, the meta description, and the alt text — in your tenant's voice, in every language you sell in. You review, edit, publish. Translations stay in sync. The model never publishes on its own; it just gives you a strong starting point so the blank page is never blank.`,
+    bullets: [
+      'Tenant voice + style sheet kept as system prompt',
+      'Multi-language drafts in one call (NL/EN/DE/FR/ES)',
+      'Vision reads the product photo for accurate detail',
+    ],
+  },
+  {
+    slug: 'understanding',
+    title: 'Photos that describe themselves',
+    role: 'Vision · Classification',
+    accent: '#d97757',
+    accentSoft: 'rgba(217, 119, 87, 0.18)',
+    tagline: 'Vision turns a product photo into clean data.',
+    body: `Every product photo runs through GPT vision: it suggests a category, extracts colour and material, writes accessible alt text, and flags poor-quality images before they hit the catalogue. The same model reviews incoming POS receipts, customer-uploaded warranty photos, and invoice scans. Less typing, fewer mistakes, more consistent data.`,
+    bullets: [
+      'Auto-categorisation against your category tree',
+      'Alt text for accessibility, on every image, free',
+      'Quality flags: blurry, dark, mismatched aspect ratio',
+    ],
+  },
+  {
+    slug: 'safety',
+    title: 'Quietly safe, by default',
+    role: 'Moderation · Guardrails',
+    accent: '#ef4444',
+    accentSoft: 'rgba(239, 68, 68, 0.18)',
+    tagline: 'The features that need to refuse, refuse.',
+    body: `Every AI surface that touches customer input runs through the OpenAI moderation endpoint first. Abusive prompts are blocked before they reach the model. Sensitive admin actions ask for confirmation. Spend caps and rate limits protect the bill. Pagayo never trusts a model output blindly — typed schemas, server-side validation and structured outputs mean the model can only ever return shapes the system already understands.`,
+    bullets: [
+      'Moderation on every customer-facing AI input',
+      'Spend caps, rate limits and per-tenant quotas',
+      'Typed outputs only — no free-form parsing, ever',
+    ],
+  },
+];
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <main class="oa-page">
+
+    <!-- Hero -->
+    <section class="hero section oa-hero" id="hero">
+      <div class="hero-bg">
+        <div class="hero-orb hero-orb-1" style="background: #10a37f;"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse" style="background:#10a37f;"></span>
+          OpenAI inside the parts that think.
+        </div>
+
+        <h1 class="headline-xl">
+          The quiet intelligence<br />
+          <span class="text-gradient oa-gradient">behind easy features.</span>
+        </h1>
+
+        <p>
+          OpenAI powers the parts of Pagayo that need to think — admin
+          assistants, product help, smarter search, content drafts, image
+          understanding. The features that just feel easier than they
+          should. The models keep getting better; Pagayo gets better with
+          them.
+        </p>
+
+        <a class="giant-external" style="--giant-accent:#10a37f" href="https://openai.com" target="_blank" rel="noopener">
+          Visit openai.com <span class="ext-arrow">↗</span>
+        </a>
+
+        <!-- Neural / token constellation -->
+        <div class="oa-neural" aria-hidden="true">
+          <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="oaCoreGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#10a37f" stop-opacity="0.45" />
+                <stop offset="60%" stop-color="#10a37f" stop-opacity="0.10" />
+                <stop offset="100%" stop-color="#10a37f" stop-opacity="0" />
+              </radialGradient>
+              <radialGradient id="oaHaloGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#10a37f" stop-opacity="0.20" />
+                <stop offset="100%" stop-color="#10a37f" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="oaEdge" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#10a37f" stop-opacity="0" />
+                <stop offset="50%" stop-color="#10a37f" stop-opacity="0.65" />
+                <stop offset="100%" stop-color="#10a37f" stop-opacity="0" />
+              </linearGradient>
+              <radialGradient id="oaNodeGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#10a37f" stop-opacity="0.18" />
+                <stop offset="100%" stop-color="#10a37f" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <ellipse cx="600" cy="240" rx="580" ry="220" fill="url(#oaHaloGlow)" />
+
+            <!-- Outer orbit ring (decorative) -->
+            <ellipse cx="600" cy="240" rx="500" ry="190" fill="none" stroke="#10a37f" stroke-opacity="0.16" stroke-width="1" />
+            <ellipse cx="600" cy="240" rx="400" ry="150" fill="none" stroke="#10a37f" stroke-opacity="0.12" stroke-width="1" />
+
+            <!-- 12 satellite capability nodes (polar layout, two rings) -->
+            {[
+              // outer ring (8 nodes)
+              { x: 1100, y: 240, label: 'embed' },
+              { x: 1010, y:  90, label: 'reason' },
+              { x:  790, y:  40, label: 'tools' },
+              { x:  410, y:  40, label: 'vision' },
+              { x:  190, y:  90, label: 'rag' },
+              { x:  100, y: 240, label: 'whisper' },
+              { x:  190, y: 390, label: 'tts' },
+              { x:  410, y: 440, label: 'classify' },
+              // inner satellites filling gaps (4 nodes)
+              { x:  790, y: 440, label: 'search' },
+              { x: 1010, y: 390, label: 'gen' },
+              { x:  340, y: 240, label: 'json' },
+              { x:  860, y: 240, label: 'moderate' },
+            ].map((n) => (
+              <g>
+                <line x1="600" y1="240" x2={n.x} y2={n.y} stroke="url(#oaEdge)" stroke-width="1.2" />
+                <circle cx={n.x} cy={n.y} r="46" fill="url(#oaNodeGlow)" />
+                <circle cx={n.x} cy={n.y} r="34" fill="#0f172a" stroke="#10a37f" stroke-width="1.8" />
+                <text x={n.x} y={n.y + 5} text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="600" font-family="ui-monospace, monospace">{n.label}</text>
+              </g>
+            ))}
+
+            <!-- Core glow -->
+            <circle cx="600" cy="240" r="170" fill="url(#oaCoreGlow)" />
+
+            <!-- Core node -->
+            <circle cx="600" cy="240" r="118" fill="none" stroke="#10a37f" stroke-opacity="0.12" stroke-width="1" />
+            <circle cx="600" cy="240" r="100" fill="none" stroke="#10a37f" stroke-opacity="0.22" stroke-width="1" />
+            <circle cx="600" cy="240" r="82"  fill="#0f172a" stroke="#10a37f" stroke-width="3" />
+            <text x="600" y="232" text-anchor="middle" fill="#10a37f" font-size="22" font-weight="700" font-family="ui-monospace, monospace">GPT-5</text>
+            <text x="600" y="258" text-anchor="middle" fill="#94a3b8" font-size="13" font-family="ui-monospace, monospace">reasoning</text>
+          </svg>
+        </div>
+
+        <!-- Stat row -->
+        <div class="oa-stats">
+          <div class="oa-stat">
+            <div class="oa-stat-num">12</div>
+            <div class="oa-stat-label">OpenAI capabilities in use</div>
+          </div>
+          <div class="oa-stat">
+            <div class="oa-stat-num">6</div>
+            <div class="oa-stat-label">Languages, day one</div>
+          </div>
+          <div class="oa-stat">
+            <div class="oa-stat-num">0</div>
+            <div class="oa-stat-label">Free-form parsing, ever</div>
+          </div>
+          <div class="oa-stat">
+            <div class="oa-stat-num">∞</div>
+            <div class="oa-stat-label">Better with every release</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities strip -->
+    <section class="section oa-capabilities-section">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">The toolkit</span>
+          <h2 class="headline-md">Twelve OpenAI capabilities. One platform.</h2>
+          <p class="text-lg">
+            Pagayo uses OpenAI for everything that benefits from
+            understanding — words, images, voice, intent. Here is the
+            full set, and what each one does for you.
+          </p>
+        </div>
+
+        <ul class="oa-capabilities-grid">
+          {capabilities.map((c) => (
+            <li class="oa-capability">
+              <div class="oa-capability-head">
+                <span class="oa-capability-code">{c.code}</span>
+                <span class="oa-capability-tag">{c.tag}</span>
+              </div>
+              <p>{c.desc}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Layers -->
+    <section class="section oa-layers">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">How it fits together</span>
+          <h2 class="headline-lg">Six layers, one platform.</h2>
+          <p class="text-lg">
+            Admin chat, product help, search, content, vision, safety —
+            every AI surface in Pagayo runs on the same OpenAI plumbing.
+            Here is what each one does.
+          </p>
+        </div>
+
+        {layers.map((l, idx) => (
+          <article
+            class={`oa-row ${idx % 2 === 1 ? 'reverse' : ''}`}
+            id={l.slug}
+            style={`--accent: ${l.accent}; --accent-soft: ${l.accentSoft};`}
+          >
+            <div class="oa-text">
+              <div class="oa-meta">
+                <span class="oa-tag">0{idx + 1}</span>
+                <span class="oa-role">{l.role}</span>
+              </div>
+              <h3 class="oa-title">{l.title}</h3>
+              <p class="oa-tagline">{l.tagline}</p>
+              <p class="oa-body">{l.body}</p>
+              <ul class="oa-bullets">
+                {l.bullets.map((b) => (
+                  <li><span class="oa-dot"></span>{b}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="oa-visual">
+              <div class="oa-frame">
+                {l.slug === 'admin-chat' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="acGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#10a37f" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#10a37f" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#acGlow)" />
+                    <!-- Chat panel -->
+                    <rect x="40" y="40" width="320" height="240" rx="14" fill="#0f172a" stroke="#10a37f" stroke-width="1.5" />
+                    <!-- Header bar -->
+                    <rect x="40" y="40" width="320" height="32" rx="14" fill="rgba(16,163,127,0.15)" />
+                    <circle cx="60" cy="56" r="6" fill="#10a37f" />
+                    <text x="76" y="60" fill="#6ee7b7" font-size="11" font-weight="700" font-family="ui-monospace, monospace">admin · assistant</text>
+                    <!-- User bubble -->
+                    <rect x="140" y="92" width="200" height="36" rx="10" fill="rgba(99,102,241,0.18)" stroke="#6366f1" stroke-width="1" />
+                    <text x="155" y="115" fill="#c7d2fe" font-size="11" font-family="system-ui">Add brand "Sonos" + logo</text>
+                    <!-- Assistant bubble -->
+                    <rect x="60" y="142" width="240" height="58" rx="10" fill="rgba(16,163,127,0.14)" stroke="#10a37f" stroke-width="1" />
+                    <text x="75" y="162" fill="#6ee7b7" font-size="11" font-family="system-ui">Brand created. Logo uploaded</text>
+                    <text x="75" y="178" fill="#6ee7b7" font-size="11" font-family="system-ui">to R2. Ready for products?</text>
+                    <text x="75" y="194" fill="#94a3b8" font-size="9" font-family="ui-monospace, monospace">tool: brands.create · 240ms</text>
+                    <!-- Input -->
+                    <rect x="60" y="222" width="280" height="34" rx="10" fill="#020617" stroke="rgba(16,163,127,0.4)" stroke-width="1" />
+                    <text x="74" y="244" fill="#475569" font-size="11" font-family="system-ui">Ask anything…</text>
+                    <circle cx="320" cy="239" r="11" fill="#10a37f" />
+                    <path d="M 316 239 L 320 235 L 324 239 M 320 235 L 320 243" stroke="#0f172a" stroke-width="1.4" fill="none" />
+                  </svg>
+                )}
+
+                {l.slug === 'product-help' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="phGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#phGlow)" />
+                    <!-- Question -->
+                    <rect x="30" y="30" width="160" height="34" rx="10" fill="rgba(99,102,241,0.18)" stroke="#6366f1" stroke-width="1" />
+                    <text x="45" y="52" fill="#c7d2fe" font-size="11" font-family="system-ui">How do refunds work?</text>
+                    <!-- Embedding arrow -->
+                    <line x1="190" y1="47" x2="240" y2="47" stroke="#6366f1" stroke-opacity="0.5" stroke-dasharray="3,3" />
+                    <polygon points="240,47 233,43 233,51" fill="#6366f1" />
+                    <!-- Vector store -->
+                    <g transform="translate(245,20)">
+                      <rect width="130" height="60" rx="10" fill="#0f172a" stroke="#6366f1" stroke-width="1.5" />
+                      <text x="65" y="20" text-anchor="middle" fill="#a5b4fc" font-size="10" font-weight="700" font-family="ui-monospace, monospace">vector store</text>
+                      <g fill="#6366f1" opacity="0.7">
+                        <rect x="14" y="30" width="14" height="18" rx="2" />
+                        <rect x="32" y="32" width="14" height="16" rx="2" opacity="0.8" />
+                        <rect x="50" y="34" width="14" height="14" rx="2" opacity="0.65" />
+                        <rect x="68" y="30" width="14" height="18" rx="2" opacity="0.55" />
+                        <rect x="86" y="32" width="14" height="16" rx="2" opacity="0.4" />
+                        <rect x="104" y="34" width="14" height="14" rx="2" opacity="0.3" />
+                      </g>
+                    </g>
+                    <!-- Retrieved chunks -->
+                    <text x="30" y="105" fill="#94a3b8" font-size="10" font-family="ui-monospace, monospace">top 3 chunks · cited</text>
+                    {[
+                      { y: 120, label: 'refunds/full-refund.md', score: '0.91' },
+                      { y: 162, label: 'refunds/partial.md',     score: '0.87' },
+                      { y: 204, label: 'policy/returns.md',      score: '0.79' },
+                    ].map((c) => (
+                      <g>
+                        <rect x="30" y={c.y} width="340" height="32" rx="8" fill="#0f172a" stroke="#6366f1" stroke-opacity="0.5" stroke-width="1" />
+                        <text x="44" y={c.y + 20} fill="#cbd5e1" font-size="10" font-family="ui-monospace, monospace">{c.label}</text>
+                        <text x="358" y={c.y + 20} text-anchor="end" fill="#10a37f" font-size="10" font-family="ui-monospace, monospace">{c.score}</text>
+                      </g>
+                    ))}
+                    <!-- Answer -->
+                    <rect x="30" y="252" width="340" height="42" rx="10" fill="rgba(16,163,127,0.12)" stroke="#10a37f" stroke-width="1.2" />
+                    <text x="44" y="272" fill="#6ee7b7" font-size="11" font-family="system-ui">Refunds in Pagayo are processed via</text>
+                    <text x="44" y="287" fill="#6ee7b7" font-size="11" font-family="system-ui">the order detail page… [refunds/full-refund.md]</text>
+                  </svg>
+                )}
+
+                {l.slug === 'search' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="srGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#srGlow)" />
+                    <!-- Search bar -->
+                    <rect x="30" y="30" width="340" height="44" rx="22" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5" />
+                    <circle cx="52" cy="52" r="7" fill="none" stroke="#67e8f9" stroke-width="1.5" />
+                    <line x1="57" y1="57" x2="63" y2="63" stroke="#67e8f9" stroke-width="1.5" />
+                    <text x="76" y="57" fill="#cbd5e1" font-size="13" font-family="system-ui">warme winterjas</text>
+                    <!-- Pipeline -->
+                    <g transform="translate(30,100)">
+                      <rect width="100" height="34" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1" />
+                      <text x="50" y="22" text-anchor="middle" fill="#a5b4fc" font-size="10" font-family="ui-monospace, monospace">full-text</text>
+                    </g>
+                    <text x="142" y="122" fill="#94a3b8" font-size="14">+</text>
+                    <g transform="translate(160,100)">
+                      <rect width="100" height="34" rx="8" fill="rgba(6,182,212,0.18)" stroke="#06b6d4" stroke-width="1" />
+                      <text x="50" y="22" text-anchor="middle" fill="#67e8f9" font-size="10" font-family="ui-monospace, monospace">embeddings</text>
+                    </g>
+                    <text x="272" y="122" fill="#94a3b8" font-size="14">→</text>
+                    <g transform="translate(290,100)">
+                      <rect width="80" height="34" rx="8" fill="rgba(16,163,127,0.18)" stroke="#10a37f" stroke-width="1" />
+                      <text x="40" y="22" text-anchor="middle" fill="#6ee7b7" font-size="10" font-family="ui-monospace, monospace">re-rank</text>
+                    </g>
+                    <!-- Results -->
+                    {[
+                      { y: 158, name: 'Donsjas Heren — Marmot',      score: '0.94' },
+                      { y: 200, name: 'Parka — North Face Nuptse',   score: '0.91' },
+                      { y: 242, name: 'Wol-mantel — Filippa K',      score: '0.86' },
+                      { y: 284, name: 'Skijack — Salomon Outpeak',   score: '0.82' },
+                    ].map((r) => (
+                      <g>
+                        <rect x="30" y={r.y} width="340" height="32" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-opacity="0.4" stroke-width="1" />
+                        <text x="44" y={r.y + 20} fill="#cbd5e1" font-size="11" font-family="system-ui">{r.name}</text>
+                        <text x="358" y={r.y + 20} text-anchor="end" fill="#10a37f" font-size="10" font-family="ui-monospace, monospace">{r.score}</text>
+                      </g>
+                    ))}
+                  </svg>
+                )}
+
+                {l.slug === 'content' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="cnGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.28" />
+                        <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#cnGlow)" />
+                    <!-- Product photo placeholder -->
+                    <g transform="translate(30,40)">
+                      <rect width="120" height="160" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5" />
+                      <circle cx="60" cy="60" r="22" fill="rgba(251,191,36,0.18)" stroke="#fbbf24" />
+                      <rect x="20" y="100" width="80" height="6" rx="3" fill="rgba(251,191,36,0.4)" />
+                      <rect x="20" y="114" width="60" height="6" rx="3" fill="rgba(251,191,36,0.25)" />
+                      <text x="60" y="145" text-anchor="middle" fill="#fde68a" font-size="10" font-family="ui-monospace, monospace">photo.jpg</text>
+                    </g>
+                    <!-- Arrow -->
+                    <line x1="160" y1="120" x2="200" y2="120" stroke="#fbbf24" stroke-opacity="0.7" stroke-dasharray="3,3" />
+                    <polygon points="200,120 193,116 193,124" fill="#fbbf24" />
+                    <!-- Generated draft card -->
+                    <g transform="translate(210,40)">
+                      <rect width="160" height="240" rx="12" fill="#0f172a" stroke="#10a37f" stroke-width="1.5" />
+                      <text x="14" y="22" fill="#6ee7b7" font-size="9" font-weight="700" font-family="ui-monospace, monospace">DRAFT · NL / EN / DE</text>
+                      <text x="14" y="42" fill="#f8fafc" font-size="11" font-weight="700" font-family="system-ui">Donsjas Heren Marmot</text>
+                      <rect x="14" y="50" width="132" height="4" rx="2" fill="rgba(16,163,127,0.4)" />
+                      <text x="14" y="74" fill="#cbd5e1" font-size="9" font-family="system-ui">Lichtgewicht donsjas met</text>
+                      <text x="14" y="86" fill="#cbd5e1" font-size="9" font-family="system-ui">water-afstotende coating.</text>
+                      <text x="14" y="98" fill="#cbd5e1" font-size="9" font-family="system-ui">Geschikt voor -10°C…</text>
+                      <text x="14" y="124" fill="#94a3b8" font-size="9" font-weight="700" font-family="ui-monospace, monospace">SEO</text>
+                      <rect x="14" y="130" width="120" height="6" rx="3" fill="rgba(99,102,241,0.3)" />
+                      <rect x="14" y="140" width="90" height="6" rx="3" fill="rgba(99,102,241,0.25)" />
+                      <text x="14" y="166" fill="#94a3b8" font-size="9" font-weight="700" font-family="ui-monospace, monospace">ALT</text>
+                      <rect x="14" y="172" width="100" height="6" rx="3" fill="rgba(243,128,32,0.3)" />
+                      <text x="14" y="200" fill="#94a3b8" font-size="9" font-weight="700" font-family="ui-monospace, monospace">TAGS</text>
+                      <g font-size="9" font-family="ui-monospace, monospace" fill="#6ee7b7">
+                        <rect x="14" y="208" width="30" height="14" rx="7" fill="rgba(16,163,127,0.18)" /><text x="29" y="218" text-anchor="middle">jas</text>
+                        <rect x="50" y="208" width="36" height="14" rx="7" fill="rgba(16,163,127,0.18)" /><text x="68" y="218" text-anchor="middle">winter</text>
+                        <rect x="92" y="208" width="44" height="14" rx="7" fill="rgba(16,163,127,0.18)" /><text x="114" y="218" text-anchor="middle">marmot</text>
+                      </g>
+                    </g>
+                  </svg>
+                )}
+
+                {l.slug === 'understanding' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="vsGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#d97757" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#d97757" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#vsGlow)" />
+                    <!-- Photo with eye -->
+                    <g transform="translate(30,40)">
+                      <rect width="160" height="160" rx="12" fill="#0f172a" stroke="#d97757" stroke-width="1.5" />
+                      <!-- "shoe" silhouette -->
+                      <path d="M 30 100 Q 30 70, 70 70 L 110 70 Q 140 70, 140 95 L 140 110 Q 140 120, 125 120 L 35 120 Q 25 120, 25 110 Z"
+                        fill="rgba(217,119,87,0.2)" stroke="#d97757" />
+                      <text x="80" y="145" text-anchor="middle" fill="#fdba74" font-size="10" font-family="ui-monospace, monospace">sneaker.jpg</text>
+                      <!-- Scan overlay -->
+                      <line x1="10" y1="40" x2="150" y2="40" stroke="#d97757" stroke-opacity="0.6" stroke-dasharray="3,3" />
+                      <text x="20" y="32" fill="#fdba74" font-size="9" font-family="ui-monospace, monospace">vision · scanning</text>
+                    </g>
+                    <!-- Output rows -->
+                    {[
+                      { y: 50,  k: 'category',    v: 'Schoenen › Sneakers' },
+                      { y: 88,  k: 'colour',      v: 'wit / zwart' },
+                      { y: 126, k: 'material',    v: 'leer + mesh' },
+                      { y: 164, k: 'alt text',    v: 'Witte sneaker met zwart…' },
+                      { y: 202, k: 'quality',     v: 'sharp · well-lit' },
+                      { y: 240, k: 'confidence',  v: '0.94' },
+                    ].map((r) => (
+                      <g>
+                        <text x="210" y={r.y + 14} fill="#94a3b8" font-size="9" font-weight="700" font-family="ui-monospace, monospace">{r.k}</text>
+                        <rect x="210" y={r.y + 18} width="160" height="14" rx="3" fill="#0f172a" stroke="#d97757" stroke-opacity="0.4" stroke-width="0.8" />
+                        <text x="216" y={r.y + 29} fill="#fdba74" font-size="9" font-family="ui-monospace, monospace">{r.v}</text>
+                      </g>
+                    ))}
+                  </svg>
+                )}
+
+                {l.slug === 'safety' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="sfGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#ef4444" stop-opacity="0.28" />
+                        <stop offset="100%" stop-color="#ef4444" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#sfGlow)" />
+
+                    <!-- Inbound prompts (left column) -->
+                    {[
+                      { y: 40,  text: 'Help me return a product',  ok: true },
+                      { y: 84,  text: 'Translate this for me',     ok: true },
+                      { y: 128, text: 'Insult my competitor',      ok: false },
+                      { y: 172, text: 'Generate fake reviews',     ok: false },
+                      { y: 216, text: 'Show sales last month',     ok: true },
+                    ].map((p) => (
+                      <g>
+                        <rect x="14" y={p.y} width="150" height="34" rx="8" fill="#0f172a" stroke={p.ok ? '#10a37f' : '#ef4444'} stroke-opacity="0.7" stroke-width="1.2" />
+                        <text x="26" y={p.y + 21} fill={p.ok ? '#cbd5e1' : '#fca5a5'} font-size="10" font-family="system-ui">{p.text}</text>
+                        <!-- arrow toward shield -->
+                        <line x1="164" y1={p.y + 17} x2="195" y2="160" stroke={p.ok ? '#10a37f' : '#ef4444'} stroke-opacity="0.35" stroke-width="0.8" stroke-dasharray="3,3" />
+                      </g>
+                    ))}
+
+                    <!-- Shield (centered, proper proportions) -->
+                    <g transform="translate(200,160)">
+                      <!-- outer halo -->
+                      <path d="M 0 -90 L 70 -60 L 70 30 Q 70 80, 0 105 Q -70 80, -70 30 L -70 -60 Z"
+                        fill="none" stroke="#ef4444" stroke-opacity="0.25" stroke-width="1" transform="scale(1.12)" />
+                      <!-- shield body -->
+                      <path d="M 0 -90 L 70 -60 L 70 30 Q 70 80, 0 105 Q -70 80, -70 30 L -70 -60 Z"
+                        fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="2" />
+                      <!-- layered labels inside -->
+                      <text x="0" y="-50" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="700" font-family="system-ui">Moderation</text>
+                      <line x1="-50" y1="-38" x2="50" y2="-38" stroke="#ef4444" stroke-opacity="0.35" />
+                      <text x="0" y="-15" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="700" font-family="system-ui">Schema</text>
+                      <line x1="-50" y1="-3" x2="50" y2="-3" stroke="#ef4444" stroke-opacity="0.35" />
+                      <text x="0" y="20" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="700" font-family="system-ui">Rate limit</text>
+                      <line x1="-50" y1="32" x2="50" y2="32" stroke="#ef4444" stroke-opacity="0.35" />
+                      <text x="0" y="55" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="700" font-family="system-ui">Spend cap</text>
+                      <!-- check tick at top -->
+                      <circle cx="0" cy="-72" r="11" fill="#ef4444" />
+                      <path d="M -5 -72 L -1 -68 L 6 -77" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+
+                    <!-- Outcomes (right column) -->
+                    <g transform="translate(310,90)">
+                      <circle cx="14" cy="14" r="12" fill="#10a37f" />
+                      <path d="M 8 14 L 12 18 L 20 9" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                      <text x="34" y="19" fill="#6ee7b7" font-size="11" font-weight="700" font-family="ui-monospace, monospace">allowed</text>
+                      <text x="34" y="33" fill="#94a3b8" font-size="9" font-family="ui-monospace, monospace">3 / 5</text>
+                    </g>
+                    <g transform="translate(310,170)">
+                      <circle cx="14" cy="14" r="12" fill="#ef4444" />
+                      <path d="M 9 9 L 19 19 M 19 9 L 9 19" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" />
+                      <text x="34" y="19" fill="#fca5a5" font-size="11" font-weight="700" font-family="ui-monospace, monospace">blocked</text>
+                      <text x="34" y="33" fill="#94a3b8" font-size="9" font-family="ui-monospace, monospace">2 / 5</text>
+                    </g>
+                  </svg>
+                )}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Why this matters -->
+    <section class="section oa-why">
+      <div class="container narrow">
+        <span class="section-label">Why this matters for you</span>
+        <h2 class="headline-md">The features that feel easy.</h2>
+        <p>
+          You will never see the model name. You will never tune a
+          temperature. You will never read a token bill. What you'll
+          notice is that the admin answers your question, the search
+          finds what you meant, the product description writes itself,
+          and the help knows your platform.
+        </p>
+        <p>
+          OpenAI's models keep getting better — and because Pagayo only
+          calls the latest, your shop gets better with them, without you
+          doing anything. New release on Tuesday? You feel it on
+          Wednesday.
+        </p>
+        <p>
+          That's what "OpenAI inside" really buys.
+        </p>
+      </div>
+    </section>
+
+    <FinalCta />
+  </main>
+</MarketingLayout>
+
+<style>
+  /* Hero */
+  .oa-hero {
+    padding-top: calc(var(--nav-height, 72px) + 4rem);
+    padding-bottom: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .oa-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .oa-hero p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary, #cbd5e1);
+    max-width: 720px;
+    margin: 1.5rem auto 0 auto;
+  }
+  .oa-gradient {
+    background: linear-gradient(135deg, #10a37f, #6ee7b7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .oa-neural {
+    margin: 3.5rem auto 0 auto;
+    max-width: 1180px;
+  }
+  .oa-neural svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .oa-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 3.5rem auto 0 auto;
+    max-width: 1000px;
+  }
+  .oa-stat {
+    text-align: center;
+    padding: 2rem 1rem 1.75rem;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(16, 163, 127, 0.12), transparent 60%),
+      var(--bg-card, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 18px;
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .oa-stat:hover {
+    border-color: rgba(16, 163, 127, 0.4);
+    transform: translateY(-3px);
+  }
+  .oa-stat-num {
+    font-size: clamp(2.25rem, 4.5vw, 3rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #10a37f, #6ee7b7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+  .oa-stat-label {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text-secondary, #cbd5e1);
+    line-height: 1.4;
+  }
+
+  /* Capabilities */
+  .oa-capabilities-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .oa-capabilities-grid {
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+  .oa-capability {
+    padding: 1.1rem 1.25rem;
+    background: var(--bg-card, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .oa-capability:hover {
+    border-color: rgba(16, 163, 127, 0.35);
+    transform: translateY(-2px);
+  }
+  .oa-capability-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+  }
+  .oa-capability-code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #6ee7b7;
+  }
+  .oa-capability-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted, #94a3b8);
+  }
+  .oa-capability p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary, #cbd5e1);
+  }
+
+  /* Layers */
+  .oa-layers {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+  .oa-layers .section-header {
+    margin-bottom: 2rem;
+  }
+  .oa-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border, rgba(255, 255, 255, 0.06));
+  }
+  .oa-row.reverse {
+    direction: rtl;
+  }
+  .oa-row.reverse > * {
+    direction: ltr;
+  }
+  .oa-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .oa-tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+  }
+  .oa-role {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted, #94a3b8);
+  }
+  .oa-title {
+    font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.15;
+    background: linear-gradient(135deg, var(--accent), #f8fafc 130%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .oa-tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary, #f8fafc);
+    margin: 0 0 1.25rem 0;
+    line-height: 1.4;
+  }
+  .oa-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #cbd5e1);
+    margin: 0 0 1.5rem 0;
+  }
+  .oa-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .oa-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.97rem;
+    color: var(--text-secondary, #cbd5e1);
+    line-height: 1.5;
+  }
+  .oa-dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    margin-top: 0.5rem;
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+  .oa-visual {
+    position: relative;
+  }
+  .oa-frame {
+    position: relative;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 20px;
+    padding: 1rem;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px var(--accent-soft) inset,
+      0 30px 60px -30px rgba(0, 0, 0, 0.6);
+  }
+  .oa-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, var(--accent-soft) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .oa-frame svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Why */
+  .oa-why {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+  .container.narrow {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .oa-why h2 {
+    margin: 0.75rem 0 1.5rem 0;
+  }
+  .oa-why p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #cbd5e1);
+    margin: 0 0 1.25rem 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 880px) {
+    .oa-capabilities-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .oa-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 760px) {
+    .oa-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 3.5rem 0;
+    }
+    .oa-row.reverse {
+      direction: ltr;
+    }
+    .oa-visual {
+      order: -1;
+    }
+  }
+  @media (max-width: 540px) {
+    .oa-capabilities-grid {
+      grid-template-columns: 1fr;
+    }
+    .oa-hero {
+      padding-top: calc(var(--nav-height, 72px) + 2rem);
+      padding-bottom: 3rem;
+    }
+    .oa-title {
+      font-size: 1.65rem;
+    }
+    .oa-tagline {
+      font-size: 1rem;
+    }
+  }
+</style>

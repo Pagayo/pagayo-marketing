@@ -1,0 +1,899 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+
+const pageTitle = 'Pagayo on Cloudflare — One network, everywhere on earth';
+const pageDescription =
+  'How Pagayo uses Cloudflare to run a global commerce platform with no origin servers, no maintenance windows, and sub-50ms latency on every continent.';
+
+const services = [
+  { code: 'Workers',   tag: 'Compute',   desc: 'Every API route, every page render, every webhook handler.' },
+  { code: 'D1',        tag: 'Database',  desc: 'SQLite at the edge. One database per tenant, fully isolated.' },
+  { code: 'KV',        tag: 'Key-value', desc: 'Hot reads of settings, navigation and cached lookups.' },
+  { code: 'R2',        tag: 'Object',    desc: 'Product images, invoices, exports — no egress fees.' },
+  { code: 'Queues',    tag: 'Async',     desc: 'Background jobs: emails, webhooks, exports, retries.' },
+  { code: 'Workflows', tag: 'Durable',   desc: 'Multi-step processes like tenant provisioning.' },
+  { code: 'Pages',     tag: 'Static',    desc: 'The marketing site you are reading right now.' },
+  { code: 'DNS',       tag: 'Routing',   desc: 'Tenant subdomains, custom hostnames, instant cutover.' },
+  { code: 'Access',    tag: 'Zero-trust',desc: 'Platform admin protected without VPN or passwords.' },
+  { code: 'WAF',       tag: 'Security',  desc: 'Bot mitigation, rate limiting, managed rules.' },
+  { code: 'Cache API', tag: 'Edge cache',desc: 'GET responses served from the closest city.' },
+  { code: 'SSL',       tag: 'TLS',       desc: 'Automatic certificates for every tenant domain.' },
+];
+
+const layers = [
+  {
+    slug: 'compute',
+    title: 'Compute on the edge',
+    role: 'Workers',
+    accent: '#F38020',
+    accentSoft: 'rgba(243, 128, 32, 0.18)',
+    tagline: 'Every request runs in the city it came from.',
+    body: `Pagayo runs as a fleet of Workers — small, focused, V8-isolated services that wake up in the data centre closest to your customer, handle the request in milliseconds, and go back to sleep. No virtual machines. No Kubernetes. No "scale-out" event to plan for. There are 300+ cities running Pagayo right now, and we never had to provision a single one.`,
+    bullets: [
+      'Cold start in ~5ms, warm requests in under 1ms',
+      'Same Worker handles webshop, API, admin, POS',
+      'Service bindings connect Workers without leaving the edge',
+    ],
+  },
+  {
+    slug: 'data',
+    title: 'Data, close to the customer',
+    role: 'D1 · KV · R2',
+    accent: '#06b6d4',
+    accentSoft: 'rgba(6, 182, 212, 0.18)',
+    tagline: 'Three storage layers, each for the job it is best at.',
+    body: `D1 holds the transactional truth — orders, products, customers — as SQLite databases with one per tenant for hard isolation. KV serves the things that change rarely and read often: settings, navigation, public lookups. R2 stores the heavy stuff — product images, invoices, exports — without ever charging egress fees. Together they replace the entire "database + cache + bucket + CDN" stack most platforms juggle.`,
+    bullets: [
+      'D1: per-tenant SQLite, automatic global replication',
+      'KV: sub-10ms reads of hot configuration',
+      'R2: S3-compatible objects, zero egress cost',
+    ],
+  },
+  {
+    slug: 'cache',
+    title: 'Edge-first, always',
+    role: 'Cache API',
+    accent: '#6366f1',
+    accentSoft: 'rgba(99, 102, 241, 0.2)',
+    tagline: 'Cache API → KV → D1. Never the other way around.',
+    body: `Every public GET in Pagayo follows the same order: try the Cache API first, then KV, then D1. The fast path serves a fully rendered response in single-digit milliseconds, anywhere on earth. The slow path still finishes inside the same data centre. The database is the last thing we touch — never the first.`,
+    bullets: [
+      'Catalogue, product, brand and content pages pre-cached',
+      'Per-tenant cache keys for safe multi-tenant isolation',
+      'Surrogate keys for surgical, instant invalidation',
+    ],
+  },
+  {
+    slug: 'async',
+    title: 'Async work, done right',
+    role: 'Queues · Workflows',
+    accent: '#10a37f',
+    accentSoft: 'rgba(16, 163, 127, 0.18)',
+    tagline: 'For everything that should not block the customer.',
+    body: `Order confirmation emails, webhook deliveries, exports, retries, scheduled reports — none of it happens inside the request that triggered it. Queues take messages off the hot path; Workflows run the durable, multi-step processes (like provisioning a brand-new tenant with its own D1 database, KV namespaces, DNS records and SSL certificates) that need to survive a deploy.`,
+    bullets: [
+      'Queues: at-least-once delivery, retries, dead-letter queues',
+      'Workflows: durable execution across hours or days',
+      'Cron triggers for scheduled jobs across all tenants',
+    ],
+  },
+  {
+    slug: 'security',
+    title: 'Security by default',
+    role: 'Access · WAF · SSL',
+    accent: '#d97757',
+    accentSoft: 'rgba(217, 119, 87, 0.18)',
+    tagline: 'The hardest network on the internet, free of charge.',
+    body: `The platform admin sits behind Cloudflare Access — no VPN, no shared passwords, no panic when someone leaves. The WAF mitigates bots, brute-force, and the OWASP top ten before traffic ever reaches a Worker. Every tenant — every custom domain — gets an SSL certificate, automatically, the moment they're provisioned. Pagayo never sees a plaintext request.`,
+    bullets: [
+      'Access for zero-trust admin authentication',
+      'WAF + rate limiting on every public endpoint',
+      'Automatic SSL for every custom hostname',
+    ],
+  },
+  {
+    slug: 'routing',
+    title: 'Routing & domains',
+    role: 'DNS · Pages · Custom Hostnames',
+    accent: '#818cf8',
+    accentSoft: 'rgba(129, 140, 248, 0.2)',
+    tagline: 'A new shop, on a new domain, in seconds.',
+    body: `Every tenant lives on its own subdomain ({slug}.pagayo.app) the moment they sign up — DNS, SSL, routing, everything. When they're ready, they bring their own domain and Cloudflare Custom Hostnames handles the cutover without downtime. The marketing site you're reading right now is served by Cloudflare Pages from the same network.`,
+    bullets: [
+      '{slug}.pagayo.app live in under a minute',
+      'Custom hostnames with zero-downtime cutover',
+      'Pages for static marketing, Workers for everything else',
+    ],
+  },
+];
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <main class="cf-page">
+
+    <!-- Hero -->
+    <section class="hero section cf-hero" id="hero">
+      <div class="hero-bg">
+        <div class="hero-orb hero-orb-1" style="background: #F38020;"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse" style="background:#F38020;"></span>
+          100% Cloudflare. Always has been.
+        </div>
+
+        <h1 class="headline-xl">
+          One network.<br />
+          <span class="text-gradient cf-gradient">Everywhere on earth.</span>
+        </h1>
+
+        <p>
+          Pagayo runs entirely on Cloudflare. Every page, every API call,
+          every database query, every payment webhook — handled in the data
+          centre closest to your customer, in milliseconds, with no servers
+          to manage and no maintenance windows to plan around.
+        </p>
+
+        <a class="giant-external" style="--giant-accent:#F38020" href="https://www.cloudflare.com" target="_blank" rel="noopener">
+          Visit cloudflare.com <span class="ext-arrow">↗</span>
+        </a>
+
+        <!-- Globe map -->
+        <div class="cf-globe" aria-hidden="true">
+          <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="cfGlobeGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#F38020" stop-opacity="0.28" />
+                <stop offset="60%" stop-color="#F38020" stop-opacity="0.08" />
+                <stop offset="100%" stop-color="#F38020" stop-opacity="0" />
+              </radialGradient>
+              <radialGradient id="cfSphereShade" cx="35%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#1f1408" stop-opacity="0.0" />
+                <stop offset="70%" stop-color="#0b0703" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#000000" stop-opacity="0.85" />
+              </radialGradient>
+              <linearGradient id="cfArc" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#F38020" stop-opacity="0" />
+                <stop offset="50%" stop-color="#F38020" stop-opacity="0.85" />
+                <stop offset="100%" stop-color="#F38020" stop-opacity="0" />
+              </linearGradient>
+              <clipPath id="cfSphereClip">
+                <circle cx="300" cy="300" r="240" />
+              </clipPath>
+            </defs>
+
+            <!-- Outer halo -->
+            <circle cx="300" cy="300" r="290" fill="url(#cfGlobeGlow)" />
+
+            <!-- Sphere base -->
+            <circle cx="300" cy="300" r="240" fill="#0f0a05" stroke="#F38020" stroke-opacity="0.45" stroke-width="1.5" />
+
+            <!-- Inner grid clipped to sphere -->
+            <g clip-path="url(#cfSphereClip)">
+              <!-- Equator -->
+              <ellipse cx="300" cy="300" rx="240" ry="42" fill="none" stroke="#F38020" stroke-opacity="0.35" stroke-width="1.2" />
+              <!-- Latitudes -->
+              <g stroke="#F38020" stroke-opacity="0.22" fill="none" stroke-width="1">
+                <ellipse cx="300" cy="300" rx="230" ry="110" />
+                <ellipse cx="300" cy="300" rx="210" ry="170" />
+                <ellipse cx="300" cy="300" rx="170" ry="212" />
+                <ellipse cx="300" cy="300" rx="110" ry="232" />
+              </g>
+              <!-- Meridians (great-circle ellipses tilted) -->
+              <g stroke="#F38020" stroke-opacity="0.20" fill="none" stroke-width="1">
+                <ellipse cx="300" cy="300" rx="60"  ry="240" />
+                <ellipse cx="300" cy="300" rx="130" ry="240" />
+                <ellipse cx="300" cy="300" rx="200" ry="240" />
+              </g>
+              <!-- Subtle shading for sphere -->
+              <circle cx="300" cy="300" r="240" fill="url(#cfSphereShade)" />
+
+              <!-- Request arcs -->
+              <path d="M 160 250 Q 300 80, 460 220"  stroke="url(#cfArc)" stroke-width="1.6" fill="none" />
+              <path d="M 190 380 Q 320 500, 470 360" stroke="url(#cfArc)" stroke-width="1.6" fill="none" />
+              <path d="M 130 320 Q 300 200, 470 320" stroke="url(#cfArc)" stroke-width="1.6" fill="none" />
+              <path d="M 220 180 Q 380 280, 420 440" stroke="url(#cfArc)" stroke-width="1.2" fill="none" />
+
+              <!-- Edge nodes scattered across continents -->
+              <g fill="#F38020">
+                <!-- North America -->
+                <circle cx="170" cy="220" r="4" />
+                <circle cx="200" cy="200" r="3" />
+                <circle cx="160" cy="260" r="3" />
+                <circle cx="220" cy="280" r="3" />
+                <circle cx="190" cy="240" r="3" />
+                <!-- South America -->
+                <circle cx="230" cy="380" r="3" />
+                <circle cx="245" cy="420" r="3" />
+                <circle cx="215" cy="450" r="3" />
+                <!-- Europe -->
+                <circle cx="320" cy="200" r="4" />
+                <circle cx="345" cy="220" r="3" />
+                <circle cx="305" cy="220" r="3" />
+                <circle cx="330" cy="240" r="3" />
+                <!-- Africa -->
+                <circle cx="335" cy="320" r="3" />
+                <circle cx="320" cy="370" r="3" />
+                <circle cx="350" cy="410" r="3" />
+                <!-- Asia -->
+                <circle cx="400" cy="210" r="3" />
+                <circle cx="430" cy="240" r="4" />
+                <circle cx="460" cy="270" r="3" />
+                <circle cx="420" cy="290" r="3" />
+                <circle cx="440" cy="320" r="3" />
+                <!-- Oceania -->
+                <circle cx="460" cy="400" r="3" />
+                <circle cx="430" cy="430" r="3" />
+                <!-- Core/Amsterdam -->
+                <circle cx="320" cy="225" r="6" />
+              </g>
+
+              <!-- Pulse rings on key hubs -->
+              <circle cx="320" cy="225" r="14" fill="none" stroke="#F38020" stroke-width="1.2" stroke-opacity="0.6" />
+              <circle cx="320" cy="225" r="26" fill="none" stroke="#F38020" stroke-width="0.9" stroke-opacity="0.35" />
+              <circle cx="170" cy="220" r="11" fill="none" stroke="#F38020" stroke-width="1" stroke-opacity="0.45" />
+              <circle cx="430" cy="240" r="11" fill="none" stroke="#F38020" stroke-width="1" stroke-opacity="0.45" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Stat row -->
+        <div class="cf-stats">
+          <div class="cf-stat">
+            <div class="cf-stat-num">300+</div>
+            <div class="cf-stat-label">Cities running Pagayo</div>
+          </div>
+          <div class="cf-stat">
+            <div class="cf-stat-num">&lt;50ms</div>
+            <div class="cf-stat-label">From any major city</div>
+          </div>
+          <div class="cf-stat">
+            <div class="cf-stat-num">0</div>
+            <div class="cf-stat-label">Origin servers to manage</div>
+          </div>
+          <div class="cf-stat">
+            <div class="cf-stat-num">100%</div>
+            <div class="cf-stat-label">Cloudflare, end to end</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services strip -->
+    <section class="section cf-services-section">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">The stack</span>
+          <h2 class="headline-md">Twelve Cloudflare services. One platform.</h2>
+          <p class="text-lg">
+            Pagayo uses Cloudflare top to bottom — compute, storage,
+            security, routing, the lot. Here is the full set, and what
+            each one does for you.
+          </p>
+        </div>
+
+        <ul class="cf-services-grid">
+          {services.map((s) => (
+            <li class="cf-service">
+              <div class="cf-service-head">
+                <span class="cf-service-code">{s.code}</span>
+                <span class="cf-service-tag">{s.tag}</span>
+              </div>
+              <p>{s.desc}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Layers -->
+    <section class="section cf-layers">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">How it fits together</span>
+          <h2 class="headline-lg">Six layers, one platform.</h2>
+          <p class="text-lg">
+            Compute, data, cache, async work, security, routing — every
+            layer of Pagayo runs on a Cloudflare primitive. Here is what
+            each one does.
+          </p>
+        </div>
+
+        {layers.map((l, idx) => (
+          <article
+            class={`cf-row ${idx % 2 === 1 ? 'reverse' : ''}`}
+            id={l.slug}
+            style={`--accent: ${l.accent}; --accent-soft: ${l.accentSoft};`}
+          >
+            <div class="cf-text">
+              <div class="cf-meta">
+                <span class="cf-tag">0{idx + 1}</span>
+                <span class="cf-role">{l.role}</span>
+              </div>
+              <h3 class="cf-title">{l.title}</h3>
+              <p class="cf-tagline">{l.tagline}</p>
+              <p class="cf-body">{l.body}</p>
+              <ul class="cf-bullets">
+                {l.bullets.map((b) => (
+                  <li><span class="cf-dot"></span>{b}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="cf-visual">
+              <div class="cf-frame">
+                {l.slug === 'compute' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="cmpGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#F38020" stop-opacity="0.35" />
+                        <stop offset="100%" stop-color="#F38020" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#cmpGlow)" />
+                    <!-- Central request -->
+                    <circle cx="200" cy="160" r="38" fill="#0f172a" stroke="#F38020" stroke-width="2" />
+                    <text x="200" y="156" text-anchor="middle" fill="#F38020" font-size="11" font-weight="700" font-family="ui-monospace, monospace">REQ</text>
+                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="ui-monospace, monospace">12ms</text>
+                    <!-- Worker satellites -->
+                    {[
+                      { x: 80, y: 80, label: 'web' },
+                      { x: 320, y: 80, label: 'api' },
+                      { x: 60, y: 200, label: 'admin' },
+                      { x: 340, y: 200, label: 'pos' },
+                      { x: 200, y: 280, label: 'webhook' },
+                      { x: 200, y: 40, label: 'static' },
+                    ].map((w) => (
+                      <g>
+                        <line x1="200" y1="160" x2={w.x} y2={w.y} stroke="#F38020" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3,3" />
+                        <circle cx={w.x} cy={w.y} r="22" fill="rgba(243,128,32,0.12)" stroke="#F38020" stroke-width="1.2" />
+                        <text x={w.x} y={w.y + 4} text-anchor="middle" fill="#fdba74" font-size="10" font-family="ui-monospace, monospace">{w.label}</text>
+                      </g>
+                    ))}
+                  </svg>
+                )}
+
+                {l.slug === 'data' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="datGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#datGlow)" />
+                    <!-- D1 -->
+                    <g transform="translate(70,80)">
+                      <rect width="90" height="160" rx="10" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5" />
+                      <ellipse cx="45" cy="20" rx="36" ry="8" fill="none" stroke="#06b6d4" stroke-width="1.2" />
+                      <ellipse cx="45" cy="60" rx="36" ry="8" fill="none" stroke="#06b6d4" stroke-opacity="0.7" stroke-width="1.2" />
+                      <ellipse cx="45" cy="100" rx="36" ry="8" fill="none" stroke="#06b6d4" stroke-opacity="0.5" stroke-width="1.2" />
+                      <text x="45" y="140" text-anchor="middle" fill="#67e8f9" font-size="11" font-weight="700" font-family="ui-monospace, monospace">D1</text>
+                      <text x="45" y="152" text-anchor="middle" fill="#64748b" font-size="8" font-family="ui-monospace, monospace">SQLite</text>
+                    </g>
+                    <!-- KV -->
+                    <g transform="translate(180,90)">
+                      <rect width="80" height="140" rx="10" fill="#0f172a" stroke="#6366f1" stroke-width="1.5" />
+                      <rect x="14" y="20" width="52" height="14" rx="3" fill="rgba(99,102,241,0.2)" />
+                      <rect x="14" y="40" width="52" height="14" rx="3" fill="rgba(99,102,241,0.16)" />
+                      <rect x="14" y="60" width="52" height="14" rx="3" fill="rgba(99,102,241,0.12)" />
+                      <text x="40" y="105" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace, monospace">KV</text>
+                      <text x="40" y="117" text-anchor="middle" fill="#64748b" font-size="8" font-family="ui-monospace, monospace">key-value</text>
+                    </g>
+                    <!-- R2 -->
+                    <g transform="translate(280,80)">
+                      <rect width="80" height="160" rx="10" fill="#0f172a" stroke="#10a37f" stroke-width="1.5" />
+                      <circle cx="40" cy="40" r="14" fill="rgba(16,163,127,0.2)" stroke="#10a37f" />
+                      <circle cx="25" cy="70" r="10" fill="rgba(16,163,127,0.15)" stroke="#10a37f" stroke-opacity="0.7" />
+                      <circle cx="55" cy="80" r="12" fill="rgba(16,163,127,0.15)" stroke="#10a37f" stroke-opacity="0.7" />
+                      <text x="40" y="125" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="700" font-family="ui-monospace, monospace">R2</text>
+                      <text x="40" y="137" text-anchor="middle" fill="#64748b" font-size="8" font-family="ui-monospace, monospace">objects</text>
+                    </g>
+                    <!-- Worker on top -->
+                    <g transform="translate(160,30)">
+                      <rect width="80" height="32" rx="16" fill="rgba(243,128,32,0.18)" stroke="#F38020" stroke-width="1" />
+                      <text x="40" y="20" text-anchor="middle" fill="#fdba74" font-size="11" font-weight="700" font-family="ui-monospace, monospace">Worker</text>
+                    </g>
+                    <!-- Lines -->
+                    <line x1="180" y1="60" x2="115" y2="80" stroke="#F38020" stroke-opacity="0.4" stroke-dasharray="3,3" />
+                    <line x1="200" y1="62" x2="220" y2="90" stroke="#F38020" stroke-opacity="0.4" stroke-dasharray="3,3" />
+                    <line x1="220" y1="60" x2="320" y2="80" stroke="#F38020" stroke-opacity="0.4" stroke-dasharray="3,3" />
+                  </svg>
+                )}
+
+                {l.slug === 'cache' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="cchGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#cchGlow)" />
+                    <!-- Request arrow -->
+                    <text x="50" y="80" fill="#94a3b8" font-size="11" font-family="ui-monospace, monospace">GET /elektronica</text>
+                    <line x1="50" y1="90" x2="350" y2="90" stroke="#6366f1" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="4,3" />
+                    <polygon points="350,90 343,86 343,94" fill="#6366f1" fill-opacity="0.7" />
+                    <!-- Three layered boxes -->
+                    <g transform="translate(50,120)">
+                      <rect width="300" height="42" rx="10" fill="#0f172a" stroke="#6366f1" stroke-width="1.5" />
+                      <text x="20" y="27" fill="#a5b4fc" font-size="12" font-weight="700" font-family="ui-monospace, monospace">1.</text>
+                      <text x="44" y="27" fill="#f8fafc" font-size="12" font-weight="600" font-family="system-ui">Cache API</text>
+                      <text x="280" y="27" text-anchor="end" fill="#10a37f" font-size="11" font-family="ui-monospace, monospace">~3ms HIT</text>
+                    </g>
+                    <g transform="translate(50,178)">
+                      <rect width="300" height="42" rx="10" fill="#0f172a" stroke="#6366f1" stroke-opacity="0.5" stroke-width="1.2" />
+                      <text x="20" y="27" fill="#a5b4fc" font-size="12" font-weight="700" font-family="ui-monospace, monospace">2.</text>
+                      <text x="44" y="27" fill="#cbd5e1" font-size="12" font-weight="600" font-family="system-ui">KV</text>
+                      <text x="280" y="27" text-anchor="end" fill="#64748b" font-size="11" font-family="ui-monospace, monospace">~8ms</text>
+                    </g>
+                    <g transform="translate(50,236)">
+                      <rect width="300" height="42" rx="10" fill="#0f172a" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1" />
+                      <text x="20" y="27" fill="#a5b4fc" font-size="12" font-weight="700" font-family="ui-monospace, monospace">3.</text>
+                      <text x="44" y="27" fill="#94a3b8" font-size="12" font-weight="600" font-family="system-ui">D1</text>
+                      <text x="280" y="27" text-anchor="end" fill="#64748b" font-size="11" font-family="ui-monospace, monospace">~25ms</text>
+                    </g>
+                    <text x="200" y="305" text-anchor="middle" fill="#64748b" font-size="10" font-family="ui-monospace, monospace">edge-first, always</text>
+                  </svg>
+                )}
+
+                {l.slug === 'async' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="asyGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#10a37f" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#10a37f" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#asyGlow)" />
+                    <!-- Producer -->
+                    <g transform="translate(30,140)">
+                      <rect width="80" height="40" rx="10" fill="rgba(243,128,32,0.18)" stroke="#F38020" stroke-width="1.2" />
+                      <text x="40" y="25" text-anchor="middle" fill="#fdba74" font-size="11" font-weight="700" font-family="ui-monospace, monospace">Worker</text>
+                    </g>
+                    <!-- Queue -->
+                    <g transform="translate(140,140)">
+                      <rect width="120" height="40" rx="10" fill="#0f172a" stroke="#10a37f" stroke-width="1.5" />
+                      <text x="60" y="25" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="700" font-family="ui-monospace, monospace">Queue</text>
+                      <!-- messages -->
+                      <circle cx="22" cy="20" r="3" fill="#10a37f" />
+                      <circle cx="32" cy="20" r="3" fill="#10a37f" opacity="0.7" />
+                      <circle cx="42" cy="20" r="3" fill="#10a37f" opacity="0.5" />
+                    </g>
+                    <!-- Consumers -->
+                    {[
+                      { y: 60, label: 'email', color: '#06b6d4' },
+                      { y: 130, label: 'webhook', color: '#6366f1' },
+                      { y: 200, label: 'export', color: '#d97757' },
+                      { y: 260, label: 'retry', color: '#fbbf24' },
+                    ].map((c) => (
+                      <g>
+                        <line x1="260" y1="160" x2="300" y2={c.y + 20} stroke="#10a37f" stroke-opacity="0.4" stroke-dasharray="3,3" />
+                        <rect x="300" y={c.y} width="80" height="40" rx="10" fill="#0f172a" stroke={c.color} stroke-width="1.2" />
+                        <text x="340" y={c.y + 25} text-anchor="middle" fill={c.color} font-size="11" font-family="ui-monospace, monospace">{c.label}</text>
+                      </g>
+                    ))}
+                    <line x1="110" y1="160" x2="140" y2="160" stroke="#F38020" stroke-opacity="0.5" />
+                    <polygon points="140,160 133,156 133,164" fill="#F38020" fill-opacity="0.7" />
+                  </svg>
+                )}
+
+                {l.slug === 'security' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="secGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#d97757" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#d97757" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#secGlow)" />
+                    <!-- Shield -->
+                    <path d="M 200 60 L 290 95 L 290 175 Q 290 235, 200 270 Q 110 235, 110 175 L 110 95 Z"
+                      fill="rgba(217,119,87,0.1)" stroke="#d97757" stroke-width="2" />
+                    <!-- Layers inside -->
+                    <text x="200" y="115" text-anchor="middle" fill="#fdba74" font-size="13" font-weight="700" font-family="system-ui">WAF</text>
+                    <line x1="135" y1="130" x2="265" y2="130" stroke="#d97757" stroke-opacity="0.35" stroke-width="0.8" />
+                    <text x="200" y="155" text-anchor="middle" fill="#fdba74" font-size="13" font-weight="700" font-family="system-ui">Rate limit</text>
+                    <line x1="135" y1="170" x2="265" y2="170" stroke="#d97757" stroke-opacity="0.35" stroke-width="0.8" />
+                    <text x="200" y="195" text-anchor="middle" fill="#fdba74" font-size="13" font-weight="700" font-family="system-ui">Access</text>
+                    <line x1="135" y1="210" x2="265" y2="210" stroke="#d97757" stroke-opacity="0.35" stroke-width="0.8" />
+                    <text x="200" y="235" text-anchor="middle" fill="#fdba74" font-size="13" font-weight="700" font-family="system-ui">SSL</text>
+                    <!-- Incoming hostile dots -->
+                    <g fill="#ef4444">
+                      <circle cx="50" cy="80" r="3" />
+                      <circle cx="60" cy="120" r="3" />
+                      <circle cx="40" cy="200" r="3" />
+                      <circle cx="55" cy="240" r="3" />
+                    </g>
+                    <g fill="#ef4444" opacity="0.6">
+                      <circle cx="345" cy="80" r="3" />
+                      <circle cx="355" cy="160" r="3" />
+                      <circle cx="345" cy="220" r="3" />
+                    </g>
+                    <!-- Block ticks -->
+                    <line x1="60" y1="80" x2="105" y2="100" stroke="#ef4444" stroke-opacity="0.4" stroke-width="0.8" />
+                    <line x1="60" y1="120" x2="110" y2="140" stroke="#ef4444" stroke-opacity="0.4" stroke-width="0.8" />
+                    <line x1="50" y1="200" x2="110" y2="200" stroke="#ef4444" stroke-opacity="0.4" stroke-width="0.8" />
+                  </svg>
+                )}
+
+                {l.slug === 'routing' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="rtGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#818cf8" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#rtGlow)" />
+                    <!-- Central pagayo.app node -->
+                    <g transform="translate(160,135)">
+                      <rect width="80" height="50" rx="12" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" />
+                      <text x="40" y="22" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace, monospace">pagayo</text>
+                      <text x="40" y="38" text-anchor="middle" fill="#64748b" font-size="9" font-family="ui-monospace, monospace">.app</text>
+                    </g>
+                    <!-- Branches -->
+                    {[
+                      { x: 50, y: 50, label: 'demo' },
+                      { x: 320, y: 50, label: 'banjul' },
+                      { x: 30, y: 270, label: 'amsterdam' },
+                      { x: 340, y: 270, label: 'studio' },
+                      { x: 200, y: 50, label: 'shop' },
+                      { x: 200, y: 280, label: 'cafe' },
+                    ].map((t) => (
+                      <g>
+                        <line x1="200" y1="160" x2={t.x + 30} y2={t.y + 15} stroke="#818cf8" stroke-opacity="0.4" stroke-width="1" />
+                        <rect x={t.x} y={t.y} width="60" height="30" rx="8" fill="rgba(129,140,248,0.1)" stroke="#818cf8" stroke-width="1" />
+                        <text x={t.x + 30} y={t.y + 19} text-anchor="middle" fill="#c7d2fe" font-size="10" font-family="ui-monospace, monospace">{t.label}</text>
+                      </g>
+                    ))}
+                    <!-- Custom domain -->
+                    <g transform="translate(140,235)">
+                      <rect width="120" height="32" rx="8" fill="rgba(6,182,212,0.12)" stroke="#06b6d4" stroke-width="1" stroke-dasharray="3,3" />
+                      <text x="60" y="20" text-anchor="middle" fill="#67e8f9" font-size="10" font-family="ui-monospace, monospace">custom.com</text>
+                    </g>
+                    <line x1="200" y1="185" x2="200" y2="235" stroke="#06b6d4" stroke-opacity="0.5" stroke-dasharray="3,3" />
+                  </svg>
+                )}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Why this matters -->
+    <section class="section cf-why">
+      <div class="container narrow">
+        <span class="section-label">Why this matters for you</span>
+        <h2 class="headline-md">It's not about the infrastructure.</h2>
+        <p>
+          You will never need to touch any of this. You will never read a
+          status page, file a support ticket about a region outage, or
+          plan a migration. That is the whole point of standing on
+          Cloudflare: the boring parts of running a platform on the
+          internet are taken care of, by the people who do it best.
+        </p>
+        <p>
+          What you get instead is a shop that loads instantly anywhere on
+          earth, a checkout that doesn't go down on Black Friday, an
+          admin that's protected without you thinking about it, and a
+          platform that gets faster every week without you doing
+          anything.
+        </p>
+        <p>
+          That's what "100% Cloudflare" really buys.
+        </p>
+      </div>
+    </section>
+
+    <FinalCta />
+  </main>
+</MarketingLayout>
+
+<style>
+  /* Hero */
+  .cf-hero {
+    padding-top: calc(var(--nav-height, 72px) + 4rem);
+    padding-bottom: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cf-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .cf-hero p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary, #cbd5e1);
+    max-width: 680px;
+    margin: 1.5rem auto 0 auto;
+  }
+  .cf-gradient {
+    background: linear-gradient(135deg, #F38020, #fbbf24);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .cf-globe {
+    margin: 3rem auto 0 auto;
+    max-width: 560px;
+  }
+  .cf-globe svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .cf-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin: 3rem auto 0 auto;
+    max-width: 780px;
+  }
+  .cf-stat {
+    text-align: center;
+    padding: 1.25rem 0.75rem;
+    background: var(--bg-card, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 14px;
+  }
+  .cf-stat-num {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #F38020, #fbbf24);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .cf-stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.3;
+  }
+
+  /* Services */
+  .cf-services-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .cf-services-grid {
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+  .cf-service {
+    padding: 1.1rem 1.25rem;
+    background: var(--bg-card, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .cf-service:hover {
+    border-color: rgba(243, 128, 32, 0.35);
+    transform: translateY(-2px);
+  }
+  .cf-service-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+  }
+  .cf-service-code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fdba74;
+  }
+  .cf-service-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted, #94a3b8);
+  }
+  .cf-service p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary, #cbd5e1);
+  }
+
+  /* Layers */
+  .cf-layers {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+  .cf-layers .section-header {
+    margin-bottom: 2rem;
+  }
+  .cf-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border, rgba(255, 255, 255, 0.06));
+  }
+  .cf-row.reverse {
+    direction: rtl;
+  }
+  .cf-row.reverse > * {
+    direction: ltr;
+  }
+  .cf-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .cf-tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+  }
+  .cf-role {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted, #94a3b8);
+  }
+  .cf-title {
+    font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.15;
+    background: linear-gradient(135deg, var(--accent), #f8fafc 130%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .cf-tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary, #f8fafc);
+    margin: 0 0 1.25rem 0;
+    line-height: 1.4;
+  }
+  .cf-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #cbd5e1);
+    margin: 0 0 1.5rem 0;
+  }
+  .cf-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .cf-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.97rem;
+    color: var(--text-secondary, #cbd5e1);
+    line-height: 1.5;
+  }
+  .cf-dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    margin-top: 0.5rem;
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+
+  .cf-visual {
+    position: relative;
+  }
+  .cf-frame {
+    position: relative;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 20px;
+    padding: 1rem;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px var(--accent-soft) inset,
+      0 30px 60px -30px rgba(0, 0, 0, 0.6);
+  }
+  .cf-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, var(--accent-soft) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cf-frame svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Why */
+  .cf-why {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+  .container.narrow {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .cf-why h2 {
+    margin: 0.75rem 0 1.5rem 0;
+  }
+  .cf-why p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #cbd5e1);
+    margin: 0 0 1.25rem 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 880px) {
+    .cf-services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cf-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cf-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 3.5rem 0;
+    }
+    .cf-row.reverse {
+      direction: ltr;
+    }
+    .cf-visual {
+      order: -1;
+    }
+  }
+  @media (max-width: 540px) {
+    .cf-services-grid {
+      grid-template-columns: 1fr;
+    }
+    .cf-hero {
+      padding-top: calc(var(--nav-height, 72px) + 2rem);
+      padding-bottom: 3rem;
+    }
+    .cf-title {
+      font-size: 1.65rem;
+    }
+    .cf-tagline {
+      font-size: 1rem;
+    }
+  }
+</style>

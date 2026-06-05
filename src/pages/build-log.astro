@@ -1,23 +1,25 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
-import storyData from '../content/our-story.json';
+import storyData from '../content/build-log.json';
 
-const pageTitle = 'Our Story — Pagayo';
-const pageDescription = 'How Pagayo was built: from a single repository to a fully edge-native multi-tenant platform. A transparent account of 20 months of continuous development.';
+const pageTitle = 'Build Log — Pagayo';
+const pageDescription = 'How Pagayo was built: from a single repository to a fully edge-native multi-tenant platform. A transparent week-by-week log of continuous development.';
 ---
 
 <MarketingLayout title={pageTitle} description={pageDescription}>
-  <main class="our-story">
+  <main class="build-log">
 
     <!-- Hero -->
     <section class="os-hero section">
       <div class="container">
         <div class="section-header center">
-          <span class="section-label">Our Story</span>
-          <h1 class="headline-lg">Built in public.<br />Deployed every day.</h1>
+          <span class="section-label">Build Log</span>
+          <h1 class="headline-lg">Built every day.<br />Shipped every week.</h1>
           <p class="text-lg">
-            Pagayo was built from scratch, without a team, without funding, and without shortcuts.
-            This is a transparent account of how that happened.
+            Pagayo is a living platform. New features, new modules, new
+            improvements ship continuously — driven by what the people who
+            actually use it ask for. This is a transparent week-by-week log
+            of how the platform grew, and how it keeps growing.
           </p>
         </div>
 
@@ -37,18 +39,20 @@ const pageDescription = 'How Pagayo was built: from a single repository to a ful
       <div class="container">
         <div class="os-intro-text">
           <p>
-            From day one, every change went through a pull request. Every deployment was automated.
-            Every piece of infrastructure was provisioned as code. Not because it was the easy path —
-            but because it was the right one.
+            From day one, every change went through a pull request. Every
+            deployment was automated. Every piece of infrastructure was
+            provisioned as code — not because it was the easy path, but
+            because it was the right one.
           </p>
           <p>
-            The result is a platform built on Cloudflare's global edge network, with no servers to
-            manage, no downtime windows, and no single point of failure. CI/CD from commit one.
-            Automated testing from the start. A codebase that a single developer can maintain,
-            extend, and trust.
+            The result is a platform built on Cloudflare's global edge
+            network: no servers to manage, no downtime windows, no single
+            point of failure. CI/CD from commit one. Automated testing from
+            the start. A codebase built to ship weekly, indefinitely.
           </p>
           <p>
-            The timeline below is not marketing. It is what actually happened.
+            The timeline below is not marketing. It is what actually
+            happened — and it keeps getting longer.
           </p>
         </div>
       </div>
@@ -81,10 +85,11 @@ const pageDescription = 'How Pagayo was built: from a single repository to a ful
       <div class="container">
         <div class="os-closing-inner">
           <p class="text-lg">
-            Interested in what we're building? We're always open to a conversation with investors,
-            researchers, and organisations who believe in responsible commerce infrastructure.
+            Got an idea, a question, or a feature you wish existed? Pagayo
+            grows from what the people using it ask for — we'd love to
+            hear from you.
           </p>
-          <a href="mailto:hello@pagayo.com" class="os-contact-link">
+          <a href="/contact" class="os-contact-link">
             Get in touch →
           </a>
         </div>

@@ -1,30 +1,30 @@
 {
   "logobar": [
-    "Powered by Cloudflare",
-    "Stripe Payments",
-    "EU Data Protection",
-    "Edge-deployed in 300+ cities"
+    "No transaction fees",
+    "Your data, your domain",
+    "EU-grade data protection",
+    "Deployed in 300+ cities"
   ],
   "security": [
     {
       "icon": "🔒",
-      "title": "EU Data Protection",
-      "description": "GDPR compliant. Data stored in European data centers. Your customers' data is safe."
+      "title": "EU-grade Data Protection",
+      "description": "GDPR compliant. Data hosted in European regions. Your customers' information stays where it belongs — with you."
     },
     {
       "icon": "⚡",
       "title": "99.99% Uptime",
-      "description": "Running on Cloudflare's global edge network. 300+ cities. Redundant everything."
+      "description": "Running on a global edge network across 300+ cities. Redundant by design — no single point of failure."
     },
     {
       "icon": "💳",
       "title": "Stripe Payments",
-      "description": "PCI-DSS Level 1 compliant. iDEAL, cards, SEPA, Bancontact — all built in."
+      "description": "PCI-DSS Level 1 compliant. iDEAL, cards, SEPA, Bancontact and more — plus M-Pesa, Flutterwave and Paystack for Africa."
     },
     {
       "icon": "🏦",
       "title": "Your Money, Your Account",
-      "description": "Payments go directly to your Stripe account. We never touch your revenue."
+      "description": "Payouts go directly to your bank via your own Stripe account. We never touch your revenue. No platform float, no held funds."
     }
   ]
 }

@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
+import PageBackdrop from '../components/layout/PageBackdrop.astro';
 import GymsHero from '../components/sections/GymsHero.astro';
 import TrustBar from '../components/sections/TrustBar.astro';
 import GymsOpsShowcase from '../components/sections/GymsOpsShowcase.astro';
@@ -13,7 +14,8 @@ import TrustSecurity from '../components/sections/TrustSecurity.astro';
 import GlobalReach from '../components/sections/GlobalReach.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
 ---
-<MarketingLayout title="Pagayo for Gyms" description="All-in-one platform for gyms and fitness businesses.">
+<MarketingLayout title="Pagayo for Gyms & Clubs" description="The all-in-one platform for independent gyms, clubs and pools. Memberships, POS, check-in, webshop — no per-member fees, no revenue share.">
+  <PageBackdrop variant="gyms" />
   <GymsHero />
   <TrustBar />
   <GymsOpsShowcase />

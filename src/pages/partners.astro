@@ -1,9 +1,11 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
+import PageBackdrop from '../components/layout/PageBackdrop.astro';
 import PartnerCalc from '../components/sections/PartnerCalc.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
 ---
 <MarketingLayout title="Pagayo Partner Program" description="Share Pagayo and earn 50% commission.">
+  <PageBackdrop variant="partners" />
   <PartnerCalc />
   <FinalCta />
 </MarketingLayout>

@@ -1,0 +1,11 @@
+---
+type Variant = 'features' | 'gyms' | 'pricing' | 'impact' | 'partners';
+interface Props { variant: Variant; }
+const { variant } = Astro.props;
+---
+<div class={`page-backdrop pb-${variant}`} aria-hidden="true">
+  <div class="pb-orb pb-orb-1"></div>
+  <div class="pb-orb pb-orb-2"></div>
+  <div class="pb-orb pb-orb-3"></div>
+  <div class="pb-grid"></div>
+</div>
