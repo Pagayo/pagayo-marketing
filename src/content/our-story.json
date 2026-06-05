@@ -1,0 +1,150 @@
+{
+  "stats": [
+    { "value": "10", "label": "Repositories" },
+    { "value": "2500+", "label": "Deployments" },
+    { "value": "59", "label": "DB tables per tenant" },
+    { "value": "1", "label": "Developer" }
+  ],
+  "timeline": [
+    {
+      "marker": "Week 1",
+      "title": "The idea becomes code",
+      "body": "First commit. One server. One goal: every sales channel in a single platform. No investors, no team — just a vision and an empty repository."
+    },
+    {
+      "marker": "Week 2",
+      "title": "Product catalogue",
+      "body": "Products. Categories. A first admin interface. The building blocks of any commerce platform, laid down cleanly from the start."
+    },
+    {
+      "marker": "Week 3",
+      "title": "User authentication",
+      "body": "Login, sessions, roles. A storefront without authentication is a demo, not a platform. Security-first from week three."
+    },
+    {
+      "marker": "Week 4",
+      "title": "Customers can pay",
+      "body": "First checkout flow. Database. A working end-to-end order. A webshop is not a webshop without a pay button — so that came first."
+    },
+    {
+      "marker": "Week 6",
+      "title": "CI/CD from day one",
+      "body": "Automated deployment pipeline. Every push triggers a build, a test run, and a deploy to staging. No manual deployments — ever. This discipline has held for every week since."
+    },
+    {
+      "marker": "Week 8",
+      "title": "API layer introduced",
+      "body": "A dedicated API Stack repository. Payment providers, webhooks, and external integrations move out of the storefront into their own service. Clean separation from the start."
+    },
+    {
+      "marker": "Week 10",
+      "title": "Stripe integrated",
+      "body": "Real payment intents. Webhook verification. Idempotent event handling. Money flows through the platform reliably for the first time."
+    },
+    {
+      "marker": "Week 12",
+      "title": "BUNQ banking connected",
+      "body": "Dutch banking integration live. Payment events forwarded to tenants in real time. The API Stack handles its first multi-provider routing."
+    },
+    {
+      "marker": "Week 14",
+      "title": "Multi-tenant foundation",
+      "body": "The most important architectural decision: every customer gets their own fully isolated database and environment. No shared tables. No data mixing. This is what makes Pagayo a platform, not a product."
+    },
+    {
+      "marker": "Week 17",
+      "title": "Shared schema package",
+      "body": "@pagayo/schema introduced. One set of database definitions, shared across all repositories. A single source of truth — enforced in code, not in documentation."
+    },
+    {
+      "marker": "Week 19",
+      "title": "Design system extracted",
+      "body": "@pagayo/design: tokens, components, and context bundles as a standalone package. Every consumer inherits the same visual language. No local overrides."
+    },
+    {
+      "marker": "Week 21",
+      "title": "Shared configuration",
+      "body": "@pagayo/config: domains, endpoints, policy, and runtime defaults in one place. Ten repositories, one source of truth for configuration."
+    },
+    {
+      "marker": "Week 24",
+      "title": "First customer live",
+      "body": "A real business on their own subdomain. Real orders. Real payments. The platform works — not just in tests, but in production."
+    },
+    {
+      "marker": "Week 27",
+      "title": "POS channel",
+      "body": "Point-of-sale flows added alongside the webshop. Same order model, same pipeline, different input surface. The Order-First architecture proves its value for the first time."
+    },
+    {
+      "marker": "Week 30",
+      "title": "Custom domains",
+      "body": "Tenants can connect their own domain. Cloudflare for SaaS provisions SSL and routing automatically. No manual DNS configuration. No per-tenant deploy."
+    },
+    {
+      "marker": "Week 33",
+      "title": "One order model for everything",
+      "body": "Webshop, POS, WhatsApp, QR — every sales channel flows into a single Order model with a source and an originator. No channel subtypes. No if/else per channel. Order-First."
+    },
+    {
+      "marker": "Week 38",
+      "title": "Edge Workers — core routes",
+      "body": "Phase A of the Cloudflare Workers migration complete. Core storefront routes move from a traditional server to the global edge. No infrastructure. No cold starts."
+    },
+    {
+      "marker": "Week 42",
+      "title": "Edge Workers — admin routes",
+      "body": "Phase B complete. Admin panel, settings, and tenant management all running on Workers. The last server dependency starts to disappear."
+    },
+    {
+      "marker": "Week 46",
+      "title": "Edge Workers — payment routes",
+      "body": "Phase C complete. The full platform runs on Cloudflare Workers. No servers. No VMs. No orchestration. The migration that was planned in months shipped in weeks."
+    },
+    {
+      "marker": "Week 50",
+      "title": "Database at the edge",
+      "body": "Neon/Prisma replaced by Cloudflare D1. Every customer gets their own SQLite database, running alongside the Worker — not in a distant data centre. Latency drops. Complexity drops."
+    },
+    {
+      "marker": "Week 54",
+      "title": "Automatic tenant provisioning",
+      "body": "New customer? The platform creates a D1 database, applies the full schema, configures Cloudflare routing, and sets up KV cache — all automatically. No deployment. No manual steps."
+    },
+    {
+      "marker": "Week 58",
+      "title": "Subscriptions and memberships",
+      "body": "Recurring billing, member management, and visit tracking. Sports clubs, gyms, and membership organisations get a dedicated flow built into the same platform."
+    },
+    {
+      "marker": "Week 62",
+      "title": "Passkey authentication",
+      "body": "Passwordless login via WebAuthn. Customers authenticate with Face ID or fingerprint. No passwords to forget, no credentials to breach."
+    },
+    {
+      "marker": "Week 66",
+      "title": "International payment methods",
+      "body": "M-Pesa, Flutterwave, and Paystack added. Nigeria, Ghana, South Africa, Kenya — localised payment methods across Europe and Africa, unified in one API layer."
+    },
+    {
+      "marker": "Week 70",
+      "title": "Data migration tooling",
+      "body": "Import pipelines for WooCommerce and Magento. Retailers can move their entire catalogue and order history into Pagayo without manual data entry."
+    },
+    {
+      "marker": "Week 74",
+      "title": "Newsletter and announcements",
+      "body": "Built-in newsletter tooling with DNS automation. Social announcements. Tenant-to-customer communication without a third-party dependency."
+    },
+    {
+      "marker": "Week 78",
+      "title": "AI layer introduced",
+      "body": "AI configuration, action logging, and insight tracking added to the tenant schema. The groundwork for intelligent commerce features — product descriptions, demand forecasting, search."
+    },
+    {
+      "marker": "Week 87",
+      "title": "Today",
+      "body": "2500+ automated deployments. 10 repositories. 59 database tables per tenant. Continuous delivery from the first commit. One developer. Still building."
+    }
+  ]
+}
