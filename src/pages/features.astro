@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
+import PageBackdrop from '../components/layout/PageBackdrop.astro';
 import FeaturesGrid from '../components/sections/FeaturesGrid.astro';
 import ProductPreview from '../components/sections/ProductPreview.astro';
 import ChannelStrip from '../components/sections/ChannelStrip.astro';
@@ -32,6 +33,7 @@ const featureSchema = {
 ---
 <MarketingLayout title={pageTitle} description={pageDescription}>
   <script type="application/ld+json" set:html={JSON.stringify(featureSchema)} />
+  <PageBackdrop variant="features" />
 
   <section class="section features-hero fade-in" aria-labelledby="features-page-title">
     <div class="container">

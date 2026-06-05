@@ -1,9 +1,11 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
+import PageBackdrop from '../components/layout/PageBackdrop.astro';
 import ImpactSection from '../components/sections/ImpactSection.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
 ---
 <MarketingLayout title="Pagayo Impact Engine" description="Empower entrepreneurs and track measurable impact.">
+  <PageBackdrop variant="impact" />
   <ImpactSection />
   <FinalCta />
 </MarketingLayout>

@@ -476,6 +476,68 @@ img { max-width: 100%; height: auto; display: block; }
   background-size: 32px 32px;
 }
 
+/* --- PAGE BACKDROP (flamboyant top-of-page colour wash for non-hero pages) --- */
+.page-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 900px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-backdrop .pb-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.45;
+  animation: float 22s ease-in-out infinite;
+}
+
+.page-backdrop .pb-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+}
+
+/* Variant: features — signature purple + cyan with a warm amber accent */
+.pb-features .pb-orb-1 { width: 720px; height: 720px; background: var(--pagayo-purple); top: -240px; right: -160px; animation-delay: 0s; }
+.pb-features .pb-orb-2 { width: 560px; height: 560px; background: var(--pagayo-cyan, #06b6d4); bottom: -180px; left: -140px; animation-delay: -8s; opacity: 0.35; }
+.pb-features .pb-orb-3 { width: 380px; height: 380px; background: var(--ngo-amber); top: 30%; left: 55%; opacity: 0.18; animation-delay: -15s; }
+
+/* Variant: gyms — emerald + cyan, warm sand right */
+.pb-gyms .pb-orb-1 { width: 700px; height: 700px; background: var(--gym-green); top: -220px; right: -120px; animation-delay: 0s; opacity: 0.45; }
+.pb-gyms .pb-orb-2 { width: 520px; height: 520px; background: var(--pagayo-cyan, #06b6d4); bottom: -160px; left: -120px; animation-delay: -9s; opacity: 0.35; }
+.pb-gyms .pb-orb-3 { width: 360px; height: 360px; background: var(--ngo-amber); top: 20%; left: 60%; opacity: 0.16; animation-delay: -16s; }
+
+/* Variant: pricing — warm money tones: amber right, purple left, soft cyan center */
+.pb-pricing .pb-orb-1 { width: 760px; height: 760px; background: var(--ngo-amber); top: -260px; right: -180px; animation-delay: 0s; opacity: 0.38; }
+.pb-pricing .pb-orb-2 { width: 540px; height: 540px; background: var(--pagayo-purple); bottom: -160px; left: -140px; animation-delay: -7s; opacity: 0.42; }
+.pb-pricing .pb-orb-3 { width: 420px; height: 420px; background: var(--pagayo-cyan, #06b6d4); top: 40%; left: 50%; opacity: 0.16; animation-delay: -14s; }
+
+/* Variant: impact — green growth + amber warmth */
+.pb-impact .pb-orb-1 { width: 720px; height: 720px; background: var(--gym-green); top: -240px; right: -160px; animation-delay: 0s; opacity: 0.4; }
+.pb-impact .pb-orb-2 { width: 560px; height: 560px; background: var(--ngo-amber); bottom: -180px; left: -140px; animation-delay: -8s; opacity: 0.38; }
+.pb-impact .pb-orb-3 { width: 380px; height: 380px; background: var(--pagayo-purple); top: 35%; left: 55%; opacity: 0.18; animation-delay: -15s; }
+
+/* Variant: partners — cool cyan + purple constellation */
+.pb-partners .pb-orb-1 { width: 700px; height: 700px; background: var(--pagayo-cyan, #06b6d4); top: -220px; right: -120px; animation-delay: 0s; opacity: 0.4; }
+.pb-partners .pb-orb-2 { width: 540px; height: 540px; background: var(--pagayo-purple); bottom: -180px; left: -140px; animation-delay: -8s; opacity: 0.45; }
+.pb-partners .pb-orb-3 { width: 380px; height: 380px; background: var(--gym-green); top: 30%; left: 55%; opacity: 0.18; animation-delay: -15s; }
+
+/* First section right after a page backdrop must stay transparent so the
+   colour wash remains visible (the section's own background would otherwise
+   cover it once the fade-in finishes). */
+.page-backdrop + .section,
+.page-backdrop + .section[style*="background"] {
+  background: transparent !important;
+}
+
 .hero-content {
   position: relative;
   z-index: 1;

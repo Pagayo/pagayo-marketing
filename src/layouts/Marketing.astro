@@ -67,9 +67,11 @@ const bodyClass = isHomepage ? '' : 'standard-sections-ssot';
         });
       }
 
-      window.addEventListener('scroll', () => {
+      const updateNavScrolled = () => {
         if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
-      }, { passive: true });
+      };
+      updateNavScrolled();
+      window.addEventListener('scroll', updateNavScrolled, { passive: true });
 
       const faders = document.querySelectorAll('.fade-in');
       const appearOptions = { threshold: 0.1, rootMargin: '0px 0px -60px 0px' };
