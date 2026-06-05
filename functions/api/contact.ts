@@ -40,7 +40,10 @@ async function sha256Hex(message: string): Promise<string> {
     .join("");
 }
 
-async function hmacSha256(key: ArrayBuffer, message: string): Promise<ArrayBuffer> {
+async function hmacSha256(
+  key: ArrayBuffer,
+  message: string,
+): Promise<ArrayBuffer> {
   const cryptoKey = await crypto.subtle.importKey(
     "raw",
     key,
@@ -48,10 +51,17 @@ async function hmacSha256(key: ArrayBuffer, message: string): Promise<ArrayBuffe
     false,
     ["sign"],
   );
-  return crypto.subtle.sign("HMAC", cryptoKey, new TextEncoder().encode(message));
+  return crypto.subtle.sign(
+    "HMAC",
+    cryptoKey,
+    new TextEncoder().encode(message),
+  );
 }
 
-async function hmacSha256Hex(key: ArrayBuffer, message: string): Promise<string> {
+async function hmacSha256Hex(
+  key: ArrayBuffer,
+  message: string,
+): Promise<string> {
   const buf = await hmacSha256(key, message);
   return Array.from(new Uint8Array(buf))
     .map((b) => b.toString(16).padStart(2, "0"))
@@ -225,7 +235,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // Validation
   const name = typeof data.name === "string" ? data.name.trim() : "";
   const email = typeof data.email === "string" ? data.email.trim() : "";
-  const company = typeof data.company === "string" ? data.company.trim() : undefined;
+  const company =
+    typeof data.company === "string" ? data.company.trim() : undefined;
   const subject = typeof data.subject === "string" ? data.subject.trim() : "";
   const message = typeof data.message === "string" ? data.message.trim() : "";
 
@@ -234,7 +245,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254)
     errors.push("email");
   if (!subject || subject.length > 200) errors.push("subject");
-  if (!message || message.length < 10 || message.length > 5000) errors.push("message");
+  if (!message || message.length < 10 || message.length > 5000)
+    errors.push("message");
 
   if (errors.length > 0) {
     return Response.json(
