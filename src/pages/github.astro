@@ -1,0 +1,897 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+
+const pageTitle = 'Pagayo on GitHub — Nothing ships without a green check';
+const pageDescription =
+  'How Pagayo uses GitHub to build, review, test and ship a multi-repo platform — every commit, every deploy, every release, in the open.';
+
+const features = [
+  { code: 'Pull requests', tag: 'Review',    desc: 'Every change reviewed before it touches main.' },
+  { code: 'Actions',       tag: 'CI/CD',     desc: 'Build, test, and deploy on every push.' },
+  { code: 'Packages',      tag: 'Registry',  desc: 'Shared packages: schema, design, config.' },
+  { code: 'Environments',  tag: 'Deploys',   desc: 'Staging and production, gated and approved.' },
+  { code: 'Secrets',       tag: 'Vault',     desc: 'Credentials per environment, never in code.' },
+  { code: 'Releases',      tag: 'Versions',  desc: 'Tagged versions for every shared package.' },
+  { code: 'Issues',        tag: 'Tracking',  desc: 'Bugs, ideas, follow-ups — written down, in order.' },
+  { code: 'Projects',      tag: 'Planning',  desc: 'The week-by-week roadmap behind the Build Log.' },
+  { code: 'Dependabot',    tag: 'Security',  desc: 'Watches every dependency, opens PRs for updates.' },
+  { code: 'CodeQL',        tag: 'Scanning',  desc: 'Static analysis for vulnerabilities on every push.' },
+  { code: 'Branches',      tag: 'Workflow',  desc: 'feature/batch-staging-* → main, never the other way.' },
+  { code: 'Copilot',       tag: 'Reviews',   desc: 'AI reviewer on every PR before a human looks.' },
+];
+
+const layers = [
+  {
+    slug: 'monorepos',
+    title: 'Thirteen repos, one platform',
+    role: 'Repositories',
+    accent: '#8b949e',
+    accentSoft: 'rgba(139, 148, 158, 0.22)',
+    tagline: 'Each piece of Pagayo, in its own house.',
+    body: `Pagayo is not a monorepo. It is thirteen focused repositories — storefront, api-stack, edge, workflows, schema, design, config, marketing, and a few more — each with its own concerns, its own tests, and its own deploy pipeline. They share types and contracts through a handful of versioned packages, and nothing else. One change, in one place, with a clear blast radius.`,
+    bullets: [
+      'storefront, api-stack, edge, workflows — runtime services',
+      'schema, design, config — shared, versioned packages',
+      'marketing, vault, maintenance, docs — supporting repos',
+    ],
+  },
+  {
+    slug: 'pull-requests',
+    title: 'Every change is a pull request',
+    role: 'Pull requests · Reviews',
+    accent: '#10a37f',
+    accentSoft: 'rgba(16, 163, 127, 0.18)',
+    tagline: 'No commits to main. Not by anyone. Not ever.',
+    body: `Every line of Pagayo arrives through a pull request from a feature branch (feature/batch-staging-YYYYMMDD). Branch protection enforces it. Copilot opens an automated review on every PR — looking for missed tests, broken types, and obvious bugs — before a human ever reads it. Lint, typecheck, and tests must all be green. Then the PR gets merged, and only then does the change become real.`,
+    bullets: [
+      'Branch protection: no direct pushes to main',
+      'Copilot reviews every PR automatically',
+      'Lint + typecheck + tests required, no override',
+    ],
+  },
+  {
+    slug: 'actions',
+    title: 'Continuous integration, on every push',
+    role: 'GitHub Actions',
+    accent: '#06b6d4',
+    accentSoft: 'rgba(6, 182, 212, 0.18)',
+    tagline: 'The build is green, or the change does not ship.',
+    body: `Every push to every branch fires GitHub Actions: install, lint, typecheck, run the unit tests, run the integration tests, build the workers, build the static site, run smoke tests against staging. If any step fails, the PR cannot merge. If everything passes, the workflow can deploy. Same workflow on macOS for development, on Linux for CI — same Node version, same npm version, same lockfile. No "works on my machine".`,
+    bullets: [
+      'Lint, typecheck, unit, integration, smoke — on every push',
+      '.nvmrc + node-version-file — dev and CI on the same Node',
+      'Workflows owned per repo, with shared release-playbooks',
+    ],
+  },
+  {
+    slug: 'environments',
+    title: 'Staging first. Always.',
+    role: 'Environments · Releases',
+    accent: '#F38020',
+    accentSoft: 'rgba(243, 128, 32, 0.18)',
+    tagline: 'Every change rides the same path: branch → staging → main → production.',
+    body: `Nothing reaches production without spending time on staging first. Every feature branch deploys to a staging environment automatically. Smoke tests run against it. Sjoerd validates it. Only then does the branch merge to main, which kicks off the production deploy through GitHub Environments — with explicit approval gates, audit logs, and the ability to roll back to the previous tagged release in seconds.`,
+    bullets: [
+      'feature/batch-staging-YYYYMMDD → staging (auto)',
+      'main → production (approval gate)',
+      'Tagged releases for every deploy, instant rollback',
+    ],
+  },
+  {
+    slug: 'packages',
+    title: 'Shared code, versioned',
+    role: 'Packages · npm registry',
+    accent: '#6366f1',
+    accentSoft: 'rgba(99, 102, 241, 0.2)',
+    tagline: 'Three packages every repo depends on. Bumped on purpose.',
+    body: `@pagayo/schema (database schemas), @pagayo/design (CSS tokens and components), and @pagayo/config (URLs, endpoints, policy) live in their own repos and publish to GitHub Packages. Consumer repos pin exact versions in their package-lock. A change in design doesn't touch storefront until storefront chooses to upgrade — and the consumer-update gets its own pull request, its own review, and its own staging run.`,
+    bullets: [
+      'Tag → Publish workflow on every shared package',
+      'Consumers pin exact versions in their lockfile',
+      'Drift checks: local dist vs published version, in CI',
+    ],
+  },
+  {
+    slug: 'security',
+    title: 'Security as a workflow',
+    role: 'Dependabot · CodeQL · Secrets',
+    accent: '#d97757',
+    accentSoft: 'rgba(217, 119, 87, 0.18)',
+    tagline: 'Every dependency, every scan, every secret — accounted for.',
+    body: `Dependabot watches every package across every repo, opens pull requests for security and version updates, and waits for CI to validate them. CodeQL runs static analysis on every push, looking for the patterns that turn small bugs into large incidents. Secrets live in GitHub Environments — never in code, never in commits — and audit logs record every access. Branch protection, signed commits, required reviewers: all of it, all the time.`,
+    bullets: [
+      'Dependabot PRs for security and version updates',
+      'CodeQL static analysis on every push',
+      'Secrets per environment, audited, never in code',
+    ],
+  },
+];
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <main class="gh-page">
+
+    <!-- Hero -->
+    <section class="hero section gh-hero" id="hero">
+      <div class="hero-bg">
+        <div class="hero-orb hero-orb-1" style="background: #8b949e;"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse" style="background:#10a37f;"></span>
+          Every commit, every deploy, every line — on GitHub
+        </div>
+
+        <h1 class="headline-xl">
+          Nothing ships<br />
+          <span class="text-gradient gh-gradient">without a green check.</span>
+        </h1>
+
+        <p>
+          Pagayo lives on GitHub end to end. Every line of code, every
+          pull request, every CI run, every deploy — written down,
+          reviewed, tested, and traceable to the commit that started it.
+          The platform is built the way it runs: small steps, green
+          checks, no surprises.
+        </p>
+
+        <!-- Pipeline diagram -->
+        <div class="gh-pipeline" aria-hidden="true">
+          <svg viewBox="0 0 1240 420" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ghPipeLine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#10a37f" stop-opacity="0" />
+                <stop offset="50%" stop-color="#10a37f" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#10a37f" stop-opacity="0" />
+              </linearGradient>
+              <radialGradient id="ghPipeGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#10a37f" stop-opacity="0.22" />
+                <stop offset="60%" stop-color="#8b949e" stop-opacity="0.08" />
+                <stop offset="100%" stop-color="#8b949e" stop-opacity="0" />
+              </radialGradient>
+              <radialGradient id="ghNodeGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#fff" stop-opacity="0.10" />
+                <stop offset="100%" stop-color="#fff" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <ellipse cx="620" cy="210" rx="620" ry="200" fill="url(#ghPipeGlow)" />
+
+            <!-- Section label -->
+            <text x="620" y="40" text-anchor="middle" fill="#64748b" font-size="13" letter-spacing="0.35em" font-family="ui-monospace, monospace">THE JOURNEY OF A CHANGE</text>
+
+            <!-- Pipeline track -->
+            <line x1="110" y1="220" x2="1130" y2="220" stroke="url(#ghPipeLine)" stroke-width="4" />
+
+            <!-- 6 stages -->
+            {[
+              { x: 110,  label: 'commit',  sub: 'feature/...', step: '01', color: '#c9d1d9' },
+              { x: 314,  label: 'PR',      sub: 'review · CI', step: '02', color: '#06b6d4' },
+              { x: 518,  label: 'Actions', sub: 'lint · test', step: '03', color: '#fbbf24' },
+              { x: 722,  label: 'staging', sub: 'auto-deploy', step: '04', color: '#F38020' },
+              { x: 926,  label: 'main',    sub: 'merged',      step: '05', color: '#10a37f' },
+              { x: 1130, label: 'prod',    sub: 'released',    step: '06', color: '#10a37f' },
+            ].map((s) => (
+              <g transform={`translate(${s.x},220)`}>
+                <circle r="74" fill="url(#ghNodeGlow)" />
+                <circle r="58" fill="none" stroke={s.color} stroke-opacity="0.18" stroke-width="1" />
+                <circle r="48" fill="#0f172a" stroke={s.color} stroke-width="2.5" />
+                <text y="-78" text-anchor="middle" fill="#475569" font-size="13" font-weight="700" font-family="ui-monospace, monospace" letter-spacing="0.18em">{s.step}</text>
+                <text y="7" text-anchor="middle" fill={s.color} font-size="19" font-weight="700" font-family="ui-monospace, monospace">{s.label}</text>
+                <text y="92" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="500" font-family="ui-monospace, monospace">{s.sub}</text>
+              </g>
+            ))}
+
+            <!-- Green checks above last 3 -->
+            {[722, 926, 1130].map((x) => (
+              <g transform={`translate(${x},132)`}>
+                <circle r="26" fill="none" stroke="#10a37f" stroke-opacity="0.35" stroke-width="1" />
+                <circle r="18" fill="#10a37f" />
+                <path d="M -7 0 L -2 6 L 9 -7" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            ))}
+          </svg>
+        </div>
+
+        <!-- Stat row -->
+        <div class="gh-stats">
+          <div class="gh-stat">
+            <div class="gh-stat-num">13</div>
+            <div class="gh-stat-label">Repositories, one platform</div>
+          </div>
+          <div class="gh-stat">
+            <div class="gh-stat-num">100%</div>
+            <div class="gh-stat-label">Changes via pull request</div>
+          </div>
+          <div class="gh-stat">
+            <div class="gh-stat-num">0</div>
+            <div class="gh-stat-label">Commits direct to main</div>
+          </div>
+          <div class="gh-stat">
+            <div class="gh-stat-num">∞</div>
+            <div class="gh-stat-label">Green checks before deploy</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features strip -->
+    <section class="section gh-features-section">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">The toolbelt</span>
+          <h2 class="headline-md">Twelve GitHub features. One workflow.</h2>
+          <p class="text-lg">
+            Pagayo uses GitHub for far more than hosting code. From
+            review to release, from secrets to scanning — here is the
+            full set, and what each one does day to day.
+          </p>
+        </div>
+
+        <ul class="gh-features-grid">
+          {features.map((f) => (
+            <li class="gh-feature">
+              <div class="gh-feature-head">
+                <span class="gh-feature-code">{f.code}</span>
+                <span class="gh-feature-tag">{f.tag}</span>
+              </div>
+              <p>{f.desc}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Layers -->
+    <section class="section gh-layers">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">How it fits together</span>
+          <h2 class="headline-lg">Six layers, one workflow.</h2>
+          <p class="text-lg">
+            Repositories, pull requests, CI/CD, environments, packages,
+            security — every part of building Pagayo runs on a GitHub
+            primitive. Here is what each one does.
+          </p>
+        </div>
+
+        {layers.map((l, idx) => (
+          <article
+            class={`gh-row ${idx % 2 === 1 ? 'reverse' : ''}`}
+            id={l.slug}
+            style={`--accent: ${l.accent}; --accent-soft: ${l.accentSoft};`}
+          >
+            <div class="gh-text">
+              <div class="gh-meta">
+                <span class="gh-tag">0{idx + 1}</span>
+                <span class="gh-role">{l.role}</span>
+              </div>
+              <h3 class="gh-title">{l.title}</h3>
+              <p class="gh-tagline">{l.tagline}</p>
+              <p class="gh-body">{l.body}</p>
+              <ul class="gh-bullets">
+                {l.bullets.map((b) => (
+                  <li><span class="gh-dot"></span>{b}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="gh-visual">
+              <div class="gh-frame">
+                {l.slug === 'monorepos' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="repGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#8b949e" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#8b949e" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#repGlow)" />
+                    <!-- Center: Pagayo platform -->
+                    <g transform="translate(200,160)">
+                      <circle r="36" fill="#0f172a" stroke="#c9d1d9" stroke-width="1.5" />
+                      <text y="-2" text-anchor="middle" fill="#c9d1d9" font-size="10" font-weight="700" font-family="ui-monospace, monospace">Pagayo</text>
+                      <text y="12" text-anchor="middle" fill="#64748b" font-size="9" font-family="ui-monospace, monospace">platform</text>
+                    </g>
+                    <!-- Repos around it -->
+                    {[
+                      { angle:   0, label: 'storefront', color: '#06b6d4' },
+                      { angle:  45, label: 'api-stack',  color: '#06b6d4' },
+                      { angle:  90, label: 'edge',       color: '#06b6d4' },
+                      { angle: 135, label: 'workflows',  color: '#06b6d4' },
+                      { angle: 180, label: 'schema',     color: '#6366f1' },
+                      { angle: 225, label: 'design',     color: '#6366f1' },
+                      { angle: 270, label: 'config',     color: '#6366f1' },
+                      { angle: 315, label: 'marketing',  color: '#10a37f' },
+                    ].map((r) => {
+                      const rad = (r.angle * Math.PI) / 180;
+                      const x = 200 + Math.cos(rad) * 110;
+                      const y = 160 + Math.sin(rad) * 110;
+                      return (
+                        <g>
+                          <line x1="200" y1="160" x2={x} y2={y} stroke={r.color} stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3,3" />
+                          <rect x={x - 36} y={y - 12} width="72" height="24" rx="6" fill="#0f172a" stroke={r.color} stroke-width="1" />
+                          <text x={x} y={y + 4} text-anchor="middle" fill={r.color} font-size="9.5" font-family="ui-monospace, monospace">{r.label}</text>
+                        </g>
+                      );
+                    })}
+                  </svg>
+                )}
+
+                {l.slug === 'pull-requests' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="prGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#10a37f" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#10a37f" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#prGlow)" />
+                    <!-- PR card -->
+                    <rect x="40" y="40" width="320" height="240" rx="12" fill="#0f172a" stroke="#10a37f" stroke-width="1.5" />
+                    <!-- Header -->
+                    <rect x="40" y="40" width="320" height="40" rx="12" fill="#1e293b" />
+                    <circle cx="62" cy="60" r="8" fill="#10a37f" />
+                    <path d="M 58 60 L 60 62 L 66 56" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    <text x="80" y="64" fill="#cbd5e1" font-size="11" font-weight="700" font-family="system-ui">#1247 · feat: Cloudflare page</text>
+                    <text x="346" y="64" text-anchor="end" fill="#10a37f" font-size="10" font-weight="700" font-family="ui-monospace, monospace">OPEN</text>
+                    <!-- Branch line -->
+                    <text x="58" y="105" fill="#94a3b8" font-size="10" font-family="ui-monospace, monospace">feature/giants → main</text>
+                    <line x1="58" y1="115" x2="342" y2="115" stroke="#334155" />
+                    <!-- Checks -->
+                    {[
+                      { y: 138, label: 'lint',          status: 'pass' },
+                      { y: 162, label: 'typecheck',     status: 'pass' },
+                      { y: 186, label: 'tests',         status: 'pass' },
+                      { y: 210, label: 'build',         status: 'pass' },
+                      { y: 234, label: 'copilot review',status: 'pass' },
+                    ].map((c) => (
+                      <g>
+                        <circle cx="68" cy={c.y} r="7" fill="#10a37f" />
+                        <path d={`M 64 ${c.y} L 67 ${c.y + 3} L 72 ${c.y - 3}`} stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                        <text x="86" y={c.y + 4} fill="#cbd5e1" font-size="11" font-family="system-ui">{c.label}</text>
+                        <text x="342" y={c.y + 4} text-anchor="end" fill="#10a37f" font-size="10" font-family="ui-monospace, monospace">passed</text>
+                      </g>
+                    ))}
+                    <!-- Merge button -->
+                    <rect x="220" y="252" width="120" height="22" rx="6" fill="#10a37f" />
+                    <text x="280" y="267" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="system-ui">Merge ✓</text>
+                  </svg>
+                )}
+
+                {l.slug === 'actions' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="acGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#acGlow)" />
+                    <!-- Workflow run card -->
+                    <rect x="30" y="30" width="340" height="260" rx="12" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5" />
+                    <text x="50" y="58" fill="#cbd5e1" font-size="12" font-weight="700" font-family="system-ui">CI · run #2841</text>
+                    <text x="350" y="58" text-anchor="end" fill="#10a37f" font-size="10" font-weight="700" font-family="ui-monospace, monospace">2m 14s</text>
+                    <line x1="50" y1="68" x2="350" y2="68" stroke="#334155" />
+                    <!-- Job timeline -->
+                    {[
+                      { y: 90,  label: 'install',     w: 60,  delay: 0,   color: '#10a37f' },
+                      { y: 116, label: 'lint',        w: 40,  delay: 60,  color: '#10a37f' },
+                      { y: 142, label: 'typecheck',   w: 70,  delay: 100, color: '#10a37f' },
+                      { y: 168, label: 'unit tests',  w: 110, delay: 170, color: '#10a37f' },
+                      { y: 194, label: 'integration', w: 130, delay: 70,  color: '#10a37f' },
+                      { y: 220, label: 'build',       w: 90,  delay: 200, color: '#10a37f' },
+                      { y: 246, label: 'smoke',       w: 70,  delay: 250, color: '#06b6d4' },
+                    ].map((j) => (
+                      <g>
+                        <text x="55" y={j.y + 4} fill="#cbd5e1" font-size="10" font-family="ui-monospace, monospace">{j.label}</text>
+                        <rect x={130 + j.delay * 0.4} y={j.y - 6} width={j.w} height="12" rx="3" fill={j.color} fill-opacity="0.3" stroke={j.color} stroke-width="1" />
+                        <circle cx={130 + j.delay * 0.4 + j.w} cy={j.y} r="4" fill={j.color} />
+                      </g>
+                    ))}
+                    <text x="50" y="278" fill="#10a37f" font-size="11" font-weight="700" font-family="system-ui">All jobs passed</text>
+                  </svg>
+                )}
+
+                {l.slug === 'environments' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="enGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#F38020" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#F38020" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#enGlow)" />
+                    <!-- Branch -->
+                    <g transform="translate(40,70)">
+                      <rect width="100" height="48" rx="10" fill="#0f172a" stroke="#c9d1d9" stroke-width="1.2" />
+                      <text x="50" y="22" text-anchor="middle" fill="#c9d1d9" font-size="10" font-weight="700" font-family="ui-monospace, monospace">feature</text>
+                      <text x="50" y="36" text-anchor="middle" fill="#64748b" font-size="9" font-family="ui-monospace, monospace">batch-...</text>
+                    </g>
+                    <!-- Arrow -->
+                    <line x1="140" y1="94" x2="180" y2="94" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="4,3" />
+                    <polygon points="180,94 173,90 173,98" fill="#06b6d4" />
+                    <!-- Staging -->
+                    <g transform="translate(180,70)">
+                      <rect width="100" height="48" rx="10" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5" />
+                      <text x="50" y="22" text-anchor="middle" fill="#67e8f9" font-size="10" font-weight="700" font-family="ui-monospace, monospace">staging</text>
+                      <text x="50" y="36" text-anchor="middle" fill="#64748b" font-size="9" font-family="ui-monospace, monospace">auto</text>
+                    </g>
+                    <!-- Smoke -->
+                    <g transform="translate(290,70)">
+                      <circle cx="35" cy="24" r="20" fill="rgba(16,163,127,0.18)" stroke="#10a37f" stroke-width="1.5" />
+                      <text x="35" y="28" text-anchor="middle" fill="#10a37f" font-size="9" font-weight="700" font-family="ui-monospace, monospace">smoke</text>
+                    </g>
+                    <!-- Down arrow -->
+                    <line x1="200" y1="160" x2="200" y2="200" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4,3" />
+                    <polygon points="200,200 196,193 204,193" fill="#fbbf24" />
+                    <text x="220" y="182" fill="#fbbf24" font-size="10" font-family="ui-monospace, monospace">approval</text>
+                    <!-- Main + prod -->
+                    <g transform="translate(40,210)">
+                      <rect width="100" height="48" rx="10" fill="#0f172a" stroke="#10a37f" stroke-width="1.5" />
+                      <text x="50" y="22" text-anchor="middle" fill="#6ee7b7" font-size="10" font-weight="700" font-family="ui-monospace, monospace">main</text>
+                      <text x="50" y="36" text-anchor="middle" fill="#64748b" font-size="9" font-family="ui-monospace, monospace">merged</text>
+                    </g>
+                    <line x1="140" y1="234" x2="180" y2="234" stroke="#10a37f" stroke-width="1.5" stroke-dasharray="4,3" />
+                    <polygon points="180,234 173,230 173,238" fill="#10a37f" />
+                    <g transform="translate(180,210)">
+                      <rect width="100" height="48" rx="10" fill="#0f172a" stroke="#F38020" stroke-width="1.8" />
+                      <text x="50" y="22" text-anchor="middle" fill="#fdba74" font-size="10" font-weight="700" font-family="ui-monospace, monospace">production</text>
+                      <text x="50" y="36" text-anchor="middle" fill="#64748b" font-size="9" font-family="ui-monospace, monospace">released</text>
+                    </g>
+                    <!-- Tag -->
+                    <g transform="translate(300,222)">
+                      <rect width="60" height="24" rx="12" fill="rgba(243,128,32,0.15)" stroke="#F38020" stroke-width="1" />
+                      <text x="30" y="16" text-anchor="middle" fill="#fdba74" font-size="10" font-family="ui-monospace, monospace">v2.7.4</text>
+                    </g>
+                  </svg>
+                )}
+
+                {l.slug === 'packages' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="pkGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#pkGlow)" />
+                    <!-- Three package boxes -->
+                    {[
+                      { x: 30,  label: '@pagayo/schema', ver: 'v2.6.41', color: '#06b6d4' },
+                      { x: 145, label: '@pagayo/design', ver: 'v3.4.12', color: '#6366f1' },
+                      { x: 260, label: '@pagayo/config', ver: 'v1.9.7',  color: '#10a37f' },
+                    ].map((p) => (
+                      <g transform={`translate(${p.x},40)`}>
+                        <rect width="110" height="80" rx="10" fill="#0f172a" stroke={p.color} stroke-width="1.5" />
+                        <rect x="0" y="0" width="110" height="22" rx="10" fill={p.color} fill-opacity="0.18" />
+                        <text x="55" y="15" text-anchor="middle" fill={p.color} font-size="9.5" font-weight="700" font-family="ui-monospace, monospace">{p.label}</text>
+                        <text x="55" y="46" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="700" font-family="ui-monospace, monospace">{p.ver}</text>
+                        <text x="55" y="64" text-anchor="middle" fill="#64748b" font-size="9" font-family="system-ui">published</text>
+                      </g>
+                    ))}
+                    <!-- Lines down -->
+                    {[85, 200, 315].map((x) => (
+                      <line x1={x} y1="120" x2={x} y2="190" stroke="#6366f1" stroke-opacity="0.4" stroke-width="1" stroke-dasharray="3,3" />
+                    ))}
+                    <!-- Consumer repos -->
+                    {[
+                      { x: 30,  label: 'storefront' },
+                      { x: 145, label: 'api-stack' },
+                      { x: 260, label: 'marketing' },
+                    ].map((c) => (
+                      <g transform={`translate(${c.x},190)`}>
+                        <rect width="110" height="60" rx="10" fill="#0f172a" stroke="#94a3b8" stroke-width="1" />
+                        <text x="55" y="22" text-anchor="middle" fill="#cbd5e1" font-size="10" font-weight="700" font-family="ui-monospace, monospace">{c.label}</text>
+                        <text x="55" y="40" text-anchor="middle" fill="#64748b" font-size="9" font-family="ui-monospace, monospace">pinned · ✓</text>
+                      </g>
+                    ))}
+                    <text x="200" y="282" text-anchor="middle" fill="#a5b4fc" font-size="10" font-family="ui-monospace, monospace">tag → publish → consumer PR</text>
+                  </svg>
+                )}
+
+                {l.slug === 'security' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="ghSecGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#d97757" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#d97757" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#ghSecGlow)" />
+                    <!-- Three columns -->
+                    <g transform="translate(20,40)">
+                      <rect width="110" height="240" rx="10" fill="#0f172a" stroke="#d97757" stroke-width="1.2" />
+                      <text x="55" y="26" text-anchor="middle" fill="#fdba74" font-size="11" font-weight="700" font-family="ui-monospace, monospace">Dependabot</text>
+                      <line x1="14" y1="38" x2="96" y2="38" stroke="#334155" />
+                      {[60, 90, 120, 150, 180].map((y, i) => (
+                        <g>
+                          <circle cx="22" cy={y} r="4" fill="#d97757" />
+                          <text x="32" y={y + 3} fill="#cbd5e1" font-size="9" font-family="ui-monospace, monospace">PR #{i + 12}</text>
+                          <text x="100" y={y + 3} text-anchor="end" fill="#10a37f" font-size="9" font-family="ui-monospace, monospace">✓</text>
+                        </g>
+                      ))}
+                      <text x="55" y="220" text-anchor="middle" fill="#64748b" font-size="9" font-family="system-ui">5 updates merged</text>
+                    </g>
+                    <g transform="translate(145,40)">
+                      <rect width="110" height="240" rx="10" fill="#0f172a" stroke="#10a37f" stroke-width="1.2" />
+                      <text x="55" y="26" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="700" font-family="ui-monospace, monospace">CodeQL</text>
+                      <line x1="14" y1="38" x2="96" y2="38" stroke="#334155" />
+                      <text x="55" y="80" text-anchor="middle" fill="#10a37f" font-size="36" font-weight="700" font-family="ui-monospace, monospace">0</text>
+                      <text x="55" y="105" text-anchor="middle" fill="#cbd5e1" font-size="9" font-family="system-ui">vulnerabilities</text>
+                      <line x1="14" y1="125" x2="96" y2="125" stroke="#334155" />
+                      <text x="55" y="148" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="ui-monospace, monospace">last scan</text>
+                      <text x="55" y="166" text-anchor="middle" fill="#10a37f" font-size="10" font-family="ui-monospace, monospace">2h ago</text>
+                      <line x1="14" y1="184" x2="96" y2="184" stroke="#334155" />
+                      <text x="55" y="208" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="ui-monospace, monospace">queries</text>
+                      <text x="55" y="226" text-anchor="middle" fill="#cbd5e1" font-size="10" font-family="ui-monospace, monospace">142</text>
+                    </g>
+                    <g transform="translate(270,40)">
+                      <rect width="110" height="240" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.2" />
+                      <text x="55" y="26" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700" font-family="ui-monospace, monospace">Secrets</text>
+                      <line x1="14" y1="38" x2="96" y2="38" stroke="#334155" />
+                      {[
+                        'STRIPE_KEY',
+                        'CLOUDFLARE_API',
+                        'OPENAI_KEY',
+                        'AWS_SES',
+                        'INTERNAL_SECRET',
+                      ].map((s, i) => (
+                        <g transform={`translate(0,${56 + i * 28})`}>
+                          <rect x="14" y="0" width="82" height="20" rx="4" fill="#1e293b" stroke="#334155" />
+                          <text x="22" y="13" fill="#fbbf24" font-size="9" font-family="ui-monospace, monospace">🔒</text>
+                          <text x="36" y="14" fill="#cbd5e1" font-size="8.5" font-family="ui-monospace, monospace">{s}</text>
+                        </g>
+                      ))}
+                      <text x="55" y="226" text-anchor="middle" fill="#64748b" font-size="9" font-family="system-ui">audited · per env</text>
+                    </g>
+                  </svg>
+                )}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Why this matters -->
+    <section class="section gh-why">
+      <div class="container narrow">
+        <span class="section-label">Why this matters for you</span>
+        <h2 class="headline-md">A platform you can trust the boring parts of.</h2>
+        <p>
+          Most "you'll never see this" parts of running software online are
+          where the danger lives — unreviewed changes, untested deploys,
+          forgotten secrets, surprise dependency upgrades, "we'll fix it
+          later" branches. Pagayo doesn't have those, because GitHub
+          doesn't let it.
+        </p>
+        <p>
+          Every change goes through the same path. Every deploy ends with
+          a green check and a tag you can roll back to. Every secret
+          lives somewhere we can audit. The discipline is built into the
+          tools, not into anyone's memory — which is what makes it
+          possible to keep shipping every week, indefinitely, with one
+          person at the keyboard and a small army of agents helping out.
+        </p>
+      </div>
+    </section>
+
+    <FinalCta />
+  </main>
+</MarketingLayout>
+
+<style>
+  /* Hero */
+  .gh-hero {
+    padding-top: calc(var(--nav-height, 72px) + 4rem);
+    padding-bottom: 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .gh-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1240px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+  .gh-hero p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary, #cbd5e1);
+    max-width: 720px;
+    margin: 1.5rem auto 0 auto;
+  }
+  .gh-gradient {
+    background: linear-gradient(135deg, #c9d1d9, #10a37f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gh-pipeline {
+    margin: 4rem auto 0 auto;
+    max-width: 1180px;
+  }
+  .gh-pipeline svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .gh-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 4rem auto 0 auto;
+    max-width: 1100px;
+  }
+  .gh-stat {
+    text-align: center;
+    padding: 2.25rem 1.25rem 2rem;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(16, 163, 127, 0.12), transparent 60%),
+      var(--bg-card, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 20px;
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .gh-stat:hover {
+    border-color: rgba(16, 163, 127, 0.4);
+    transform: translateY(-3px);
+  }
+  .gh-stat-num {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #c9d1d9, #10a37f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
+  }
+  .gh-stat-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary, #cbd5e1);
+    line-height: 1.4;
+  }
+
+  /* Features */
+  .gh-features-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .gh-features-grid {
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+  .gh-feature {
+    padding: 1.1rem 1.25rem;
+    background: var(--bg-card, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .gh-feature:hover {
+    border-color: rgba(16, 163, 127, 0.4);
+    transform: translateY(-2px);
+  }
+  .gh-feature-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+  }
+  .gh-feature-code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #c9d1d9;
+  }
+  .gh-feature-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted, #94a3b8);
+  }
+  .gh-feature p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary, #cbd5e1);
+  }
+
+  /* Layers */
+  .gh-layers {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+  .gh-layers .section-header {
+    margin-bottom: 2rem;
+  }
+  .gh-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border, rgba(255, 255, 255, 0.06));
+  }
+  .gh-row.reverse {
+    direction: rtl;
+  }
+  .gh-row.reverse > * {
+    direction: ltr;
+  }
+  .gh-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .gh-tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+  }
+  .gh-role {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted, #94a3b8);
+  }
+  .gh-title {
+    font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.15;
+    background: linear-gradient(135deg, var(--accent), #f8fafc 130%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gh-tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary, #f8fafc);
+    margin: 0 0 1.25rem 0;
+    line-height: 1.4;
+  }
+  .gh-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #cbd5e1);
+    margin: 0 0 1.5rem 0;
+  }
+  .gh-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .gh-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.97rem;
+    color: var(--text-secondary, #cbd5e1);
+    line-height: 1.5;
+  }
+  .gh-dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    margin-top: 0.5rem;
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+
+  .gh-visual {
+    position: relative;
+  }
+  .gh-frame {
+    position: relative;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 20px;
+    padding: 1rem;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px var(--accent-soft) inset,
+      0 30px 60px -30px rgba(0, 0, 0, 0.6);
+  }
+  .gh-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, var(--accent-soft) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .gh-frame svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Why */
+  .gh-why {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+  .container.narrow {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .gh-why h2 {
+    margin: 0.75rem 0 1.5rem 0;
+  }
+  .gh-why p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #cbd5e1);
+    margin: 0 0 1.25rem 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 880px) {
+    .gh-features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .gh-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .gh-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 3.5rem 0;
+    }
+    .gh-row.reverse {
+      direction: ltr;
+    }
+    .gh-visual {
+      order: -1;
+    }
+  }
+  @media (max-width: 540px) {
+    .gh-features-grid {
+      grid-template-columns: 1fr;
+    }
+    .gh-hero {
+      padding-top: calc(var(--nav-height, 72px) + 2rem);
+      padding-bottom: 3rem;
+    }
+    .gh-title {
+      font-size: 1.65rem;
+    }
+    .gh-tagline {
+      font-size: 1rem;
+    }
+  }
+</style>
