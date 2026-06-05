@@ -130,7 +130,7 @@ const giants = [
         </h1>
 
         <p>
-          Pagayo is small. The platforms it stands on are not. Six
+          Pagayo is focused. The platforms it stands on are vast. Six
           extraordinary tools — built by thousands of people over many
           years — make everything we do possible. Here they are, and here
           is why we picked each one.
@@ -421,7 +421,7 @@ const giants = [
     <!-- Closing -->
     <section class="section giants-closing fade-in">
       <div class="container narrow">
-        <span class="section-label">A small platform, a big thank-you</span>
+        <span class="section-label">A focused platform, a big thank-you</span>
         <h2 class="headline-md">Standing on, not standing in for.</h2>
         <p>
           Pagayo is not a thin wrapper over any of these tools. It is its
@@ -451,10 +451,11 @@ const giants = [
   .giants-hero .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 880px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
     text-align: center;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
   .giants-hero p {
     font-size: 1.1rem;
@@ -483,7 +484,7 @@ const giants = [
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    padding: 5rem 0;
+    padding: 4.5rem 0;
     border-top: 1px solid var(--border, rgba(255, 255, 255, 0.06));
   }
   .giant-row:first-of-type {
@@ -520,17 +521,17 @@ const giants = [
     color: var(--text-muted, #94a3b8);
   }
   .giant-name {
-    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-size: clamp(1.75rem, 3.2vw, 2.25rem);
     font-weight: 700;
     margin: 0 0 0.75rem 0;
-    line-height: 1.1;
+    line-height: 1.15;
     background: linear-gradient(135deg, var(--accent), #f8fafc 130%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .giant-tagline {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--text-primary, #f8fafc);
     margin: 0 0 1.25rem 0;
@@ -629,7 +630,7 @@ const giants = [
     margin: 0 0 1.25rem 0;
   }
 
-  @media (max-width: 880px) {
+  @media (max-width: 760px) {
     .giant-row {
       grid-template-columns: 1fr;
       gap: 2.5rem;

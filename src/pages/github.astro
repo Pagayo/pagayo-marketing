@@ -71,7 +71,7 @@ const layers = [
     accent: '#F38020',
     accentSoft: 'rgba(243, 128, 32, 0.18)',
     tagline: 'Every change rides the same path: branch → staging → main → production.',
-    body: `Nothing reaches production without spending time on staging first. Every feature branch deploys to a staging environment automatically. Smoke tests run against it. Sjoerd validates it. Only then does the branch merge to main, which kicks off the production deploy through GitHub Environments — with explicit approval gates, audit logs, and the ability to roll back to the previous tagged release in seconds.`,
+    body: `Nothing reaches production without spending time on staging first. Every feature branch deploys to a staging environment automatically. Smoke tests run against it. Pagayo validates it. Only then does the branch merge to main, which kicks off the production deploy through GitHub Environments — with explicit approval gates, audit logs, and the ability to roll back to the previous tagged release in seconds.`,
     bullets: [
       'feature/batch-staging-YYYYMMDD → staging (auto)',
       'main → production (approval gate)',
@@ -596,10 +596,11 @@ const layers = [
   .gh-hero .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 1240px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
     text-align: center;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
   .gh-hero p {
     font-size: 1.1rem;
