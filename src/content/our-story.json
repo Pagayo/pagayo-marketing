@@ -104,7 +104,7 @@
     {
       "marker": "Week 50",
       "title": "Database at the edge",
-      "body": "Neon/Prisma replaced by Cloudflare D1. Every customer gets their own SQLite database, running alongside the Worker — not in a distant data centre. Latency drops. Complexity drops."
+      "body": "The database layer was replaced by Cloudflare D1. Every customer gets their own SQLite database, running alongside the Worker — not in a distant data centre. Latency drops. Complexity drops."
     },
     {
       "marker": "Week 54",
