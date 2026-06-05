@@ -538,6 +538,30 @@ img { max-width: 100%; height: auto; display: block; }
   background: transparent !important;
 }
 
+/* External "Visit X.com" link on giant pages — small, restrained, accent-coloured */
+.giant-external {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.25rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--giant-accent, var(--pagayo-purple-light));
+  background: color-mix(in srgb, var(--giant-accent, #6366f1) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--giant-accent, #6366f1) 35%, transparent);
+  text-decoration: none;
+  transition: background var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+}
+.giant-external:hover {
+  background: color-mix(in srgb, var(--giant-accent, #6366f1) 20%, transparent);
+  border-color: color-mix(in srgb, var(--giant-accent, #6366f1) 55%, transparent);
+  transform: translateY(-1px);
+}
+.giant-external .ext-arrow { font-size: 0.95em; line-height: 1; }
+
 .hero-content {
   position: relative;
   z-index: 1;
