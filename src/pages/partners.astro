@@ -432,7 +432,7 @@ const faqs = [
 <style>
   /* ─── HERO ─────────────────────────────────────────────────────── */
   .pp-hero {
-    padding-top: calc(var(--nav-height, 72px) + 4rem);
+    padding-top: var(--hero-pt);
     padding-bottom: 4rem;
     position: relative;
     overflow: hidden;
@@ -1054,7 +1054,7 @@ const faqs = [
 
   @media (max-width: 680px) {
     .pp-hero {
-      padding-top: calc(var(--nav-height, 72px) + 2rem);
+      padding-top: var(--hero-pt);
     }
 
     .pp-scenarios-grid {

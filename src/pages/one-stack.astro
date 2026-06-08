@@ -783,7 +783,7 @@ const stats = [
 <style>
   /* ─── HERO ─────────────────────────────────────────────────────── */
   .os-hero {
-    padding-top: calc(var(--nav-height, 72px) + 4rem);
+    padding-top: var(--hero-pt);
     padding-bottom: 4rem;
     position: relative;
     overflow: hidden;
@@ -1345,7 +1345,7 @@ const stats = [
 
   @media (max-width: 780px) {
     .os-hero {
-      padding-top: calc(var(--nav-height, 72px) + 2rem);
+      padding-top: var(--hero-pt);
     }
 
     .os-stats-row {
