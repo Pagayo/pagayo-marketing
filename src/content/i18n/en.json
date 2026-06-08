@@ -39,5 +39,17 @@
       "Subscriptions and memberships",
       "Coupons and inventory management"
     ]
+  },
+  "blogPage": {
+    "title": "Pagayo Blog — Commerce, edge engineering, and platform notes",
+    "description": "Articles from the Pagayo team on edge-native commerce, SSR hydration, payments, and building a platform that runs everywhere.",
+    "inLanguage": "en-US",
+    "sectionLabel": "Blog",
+    "headline": "Ideas for building commerce on the edge.",
+    "intro": "Engineering notes, product thinking, and industry perspectives from the team behind Pagayo — the platform where every sale is one Order.",
+    "featuredLabel": "Featured",
+    "allPostsLabel": "All posts",
+    "backToBlog": "Back to Blog",
+    "readArticle": "Read article"
   }
 }

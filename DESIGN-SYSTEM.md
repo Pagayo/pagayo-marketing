@@ -74,6 +74,20 @@ Compose pagina’s uit bestaande secties vóór je nieuwe bouwt:
 | `ImpactSection`, `PartnerCalc` | Programma’s |
 | `GymsHero`, `GymsOpsShowcase` | `/gyms` |
 
+### Blog (`/blog`, `/blog/[slug]`)
+
+| Element | Class / component | Notities |
+|---------|-------------------|----------|
+| Index hero | `blog-hero`, `section-label`, `headline-xl` | i18n: `blogPage` in `i18n/*.json` |
+| Featured cards | `BlogCard.astro` variant `featured` + `BlogIllustration.astro` | Content links; SVG illustration on the right (Stripe-style) |
+| Post list | `.blog-featured-grid` / `.blog-grid` | Single-column stack of horizontal cards; illustration stacks below on mobile |
+| Illustrations | `BlogIllustration.astro` | Inline SVG per slug or category fallback; same visual language as giant/partner pages |
+| Category pill | `.blog-category-pill` | Zelfde accent als build-log markers |
+| Article prose | `.blog-prose` | 680px measure; 19px body, 1.85 line-height; Geist stack; generous heading/paragraph spacing |
+| Backdrop | `PageBackdrop` variant `blog` | Subtle purple wash |
+
+Nieuwe posts: markdown in `src/content/blog/` met frontmatter (title, description, category, author, pubDate, featured, draft).
+
 Nieuwe sectie: zelfde BEM-achtige class-namen als in `global.css`; `fade-in` op sectie-root.
 
 ## Chrome (niet dupliceren)
@@ -92,6 +106,7 @@ Nieuwe sectie: zelfde BEM-achtige class-namen als in `global.css`; `fade-in` op 
 | `src/content/competitors.json` | Concurrentietabel |
 | `src/content/trust.json` | Trust/security items |
 | `src/content/i18n/*.json` | UI-strings, pagina-meta, nav |
+| `src/content/blog/*.md` | Blogposts (Astro content collection) |
 
 ## Meertaligheid
 
