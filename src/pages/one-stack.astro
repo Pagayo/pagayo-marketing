@@ -1,0 +1,1391 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+
+const pageTitle = 'One stack, no compromises — How Pagayo is built';
+const pageDescription =
+  'Pagayo is fast, affordable and reliable because of one rule: for every critical function we choose one world-class tool and go deep. Here is what that looks like — and what it means for your shop.';
+
+const pillars = [
+  {
+    num: '01',
+    slug: 'cloudflare',
+    category: 'Infrastructure',
+    name: 'Cloudflare',
+    tagline: 'The infrastructure every feature runs on.',
+    forYou: 'Your shop loads in milliseconds — in Amsterdam, in Nairobi, anywhere.',
+    body: `Every page your customer opens, every order they place, every payment confirmation they receive — it all runs on Cloudflare's global edge network. Over 300 cities. No servers to rent. No maintenance windows to plan around. When Cloudflare adds a new data centre, your shop gets faster. Automatically.`,
+    accent: '#F38020',
+    accentSoft: 'rgba(243, 128, 32, 0.15)',
+    linkSlug: 'cloudflare',
+  },
+  {
+    num: '02',
+    slug: 'stripe',
+    category: 'Payments',
+    name: 'Stripe',
+    tagline: 'The only payment layer we will ever need.',
+    forYou: 'Your money arrives. Every time. Right on schedule.',
+    body: `Cards, iDEAL, SEPA, Apple Pay, Google Pay, subscriptions, refunds, payouts direct to the founder's own bank account — all of it flows through a single integration with Stripe. Every new payment method Stripe launches becomes available to your shop automatically. We connect once, deeply, and it just works.`,
+    accent: '#635BFF',
+    accentSoft: 'rgba(99, 91, 255, 0.15)',
+    linkSlug: 'stripe',
+  },
+  {
+    num: '03',
+    slug: 'github',
+    category: 'Code safety',
+    name: 'GitHub',
+    tagline: 'Nothing ships without passing every check.',
+    forYou: 'Your platform never degrades. Every update is safer than the last.',
+    body: `Every change to Pagayo — from a button colour to a new payment method — is written, reviewed, tested, and deployed from GitHub. Automated checks run before anything reaches production. There is no shortcut. There is no "quick fix" that bypasses the process. That discipline is what keeps the platform stable as it grows.`,
+    accent: '#8b949e',
+    accentSoft: 'rgba(139, 148, 158, 0.2)',
+    linkSlug: 'github',
+  },
+  {
+    num: '04',
+    slug: 'typescript',
+    category: 'Language',
+    name: 'TypeScript',
+    tagline: 'One language, from the button you click to the database that stores your order.',
+    forYou: 'Fewer bugs. Faster fixes. More predictable behaviour.',
+    body: `TypeScript is the language of the entire Pagayo platform — the storefront your customers browse, the API that processes their orders, the database schemas that store their data. One language, front to back. No translation layers. No mismatches between what the client sends and what the server expects. Most bugs are caught before the code ever runs.`,
+    accent: '#3b82f6',
+    accentSoft: 'rgba(59, 130, 246, 0.15)',
+    linkSlug: null,
+  },
+  {
+    num: '05',
+    slug: 'drizzle',
+    category: 'Data',
+    name: 'Drizzle',
+    tagline: "Your shop's memory, structured and safe.",
+    forYou: 'Your data is where you expect it. Migrations run in seconds. Nothing gets lost.',
+    body: `Drizzle is the single source of truth for how Pagayo thinks about data — what an order looks like, what a product contains, how a customer is stored, what a payment records. One schema, one library, consistent across every database, every tenant. There is no guessing about the shape of your data. It is defined once and respected everywhere.`,
+    accent: '#34d399',
+    accentSoft: 'rgba(52, 211, 153, 0.13)',
+    linkSlug: null,
+  },
+  {
+    num: '06',
+    slug: 'cursor',
+    category: 'Development',
+    name: 'Cursor',
+    tagline: 'A single operator, moving at the speed of a team.',
+    forYou: 'New features arrive every week. Not every quarter.',
+    body: `Pagayo is built inside Cursor — the AI-native development environment that gives one engineer the leverage of five. Multi-repo context, parallel agents, instant refactors across the entire codebase. Features that would take a team of four a month ship in days. That speed comes back to you as more value per euro.`,
+    accent: '#06b6d4',
+    accentSoft: 'rgba(6, 182, 212, 0.15)',
+    linkSlug: 'cursor',
+  },
+  {
+    num: '07',
+    slug: 'claude',
+    category: 'Intelligence',
+    name: 'Claude',
+    tagline: 'The brain behind features that feel effortless.',
+    forYou: 'A platform that gets smarter over time. Without you lifting a finger.',
+    body: `Claude reads the full codebase, spots problems before they ship, and powers the kind of intelligent features — admin assistants, smart search, automated insights — that used to require a dedicated data team. Every model release makes Pagayo more capable. You benefit from that without doing anything.`,
+    accent: '#d97757',
+    accentSoft: 'rgba(217, 119, 87, 0.15)',
+    linkSlug: 'claude',
+  },
+];
+
+const benefits = [
+  {
+    icon: '💶',
+    title: 'Lower prices',
+    body: 'Every integration we avoid is overhead that never reaches your invoice. One tool per job means we spend engineering time on features, not on plumbing between vendors.',
+  },
+  {
+    icon: '🟢',
+    title: 'Fewer outages',
+    body: 'A chain with seven strong links is more reliable than a chain with fifteen weak ones. We know every tool inside-out. There is no finger-pointing between vendors when something is slow.',
+  },
+  {
+    icon: '🚀',
+    title: 'Weekly updates',
+    body: 'When each platform partner ships an improvement, we pick it up immediately. One integration means zero friction between "released" and "live in your shop".',
+  },
+  {
+    icon: '🔒',
+    title: 'Deep expertise',
+    body: 'We do not skim the surface of seven hundred libraries. We go deep on seven. That depth is what produces the sub-50ms load times, the 99.99% uptime, the clean API.',
+  },
+];
+
+const stats = [
+  { value: '7', label: 'strategic tool choices' },
+  { value: '300+', label: 'cities worldwide' },
+  { value: '<50ms', label: 'response time, anywhere' },
+  { value: '1', label: 'team, one codebase' },
+];
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <main class="os-page">
+
+    <!-- ═══════════════════════════════════════════════════════ HERO -->
+    <section class="hero section os-hero">
+      <div class="hero-bg">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          How Pagayo is built
+        </div>
+
+        <h1 class="headline-xl">
+          One tool per job.<br />
+          <span class="text-gradient">The best one.</span>
+        </h1>
+
+        <p class="os-hero-intro">
+          Pagayo is fast, affordable, and reliable because of a rule we never break:
+          for every critical function, we choose one world-class tool and go deep.
+          No mixing. No patching. No compromises.
+        </p>
+
+        <!-- Pillar constellation -->
+        <div class="os-constellation" aria-hidden="true">
+          <svg viewBox="0 0 860 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="osLine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#6366f1" stop-opacity="0.04" />
+                <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#6366f1" stop-opacity="0.04" />
+              </linearGradient>
+            </defs>
+            <!-- connecting spine -->
+            <path d="M 60 100 L 800 100" stroke="url(#osLine)" stroke-width="1.5" fill="none" />
+            <!-- vertical connector lines -->
+            {[
+              { x: 60,  y1: 100, y2: 60,  label: 'CF', color: '#F38020' },
+              { x: 180, y1: 100, y2: 140, label: 'St', color: '#635BFF' },
+              { x: 300, y1: 100, y2: 60,  label: 'Gh', color: '#8b949e' },
+              { x: 420, y1: 100, y2: 140, label: 'TS', color: '#3b82f6' },
+              { x: 540, y1: 100, y2: 60,  label: 'Dz', color: '#34d399' },
+              { x: 660, y1: 100, y2: 140, label: 'Cu', color: '#06b6d4' },
+              { x: 780, y1: 100, y2: 60,  label: 'Cl', color: '#d97757' },
+            ].map((n) => (
+              <>
+                <line x1={n.x} y1={n.y1} x2={n.x} y2={n.y2}
+                  stroke={n.color} stroke-width="1.2" stroke-opacity="0.55" />
+                <circle cx={n.x} cy={n.y2} r="20"
+                  fill="none" stroke={n.color} stroke-width="1.5" stroke-opacity="0.7" />
+                <circle cx={n.x} cy={n.y2} r="20"
+                  fill={n.color} fill-opacity="0.1" />
+                <text x={n.x} y={n.y2 + 5} text-anchor="middle"
+                  fill={n.color} font-size="10" font-weight="700"
+                  font-family="ui-monospace, monospace">{n.label}</text>
+              </>
+            ))}
+          </svg>
+        </div>
+
+        <div class="os-stats-row">
+          {stats.map((s) => (
+            <div class="os-stat">
+              <span class="os-stat-value">{s.value}</span>
+              <span class="os-stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ PRINCIPLE -->
+    <section class="section os-principle fade-in">
+      <div class="container">
+        <div class="os-principle-inner">
+          <div class="os-principle-text">
+            <span class="section-label">The principle</span>
+            <h2 class="headline-md">Simplicity is a decision, not an accident.</h2>
+            <p>
+              Your baker has one flour supplier. Your accountant runs one accounting
+              program. Your coffee machine takes one type of pod. Not because there
+              are no alternatives — but because mixing too many vendors is where
+              things start to break, where costs creep up, where nobody knows who
+              is responsible when something goes wrong.
+            </p>
+            <p>
+              Pagayo works the same way. Every layer of the platform has exactly
+              one world-class tool behind it. We chose each one carefully, integrated
+              it deeply, and we never look back. That is where the reliability comes
+              from. That is where the lower price comes from. That is where the
+              weekly updates come from.
+            </p>
+            <p>
+              We call it the One Stack rule. One infrastructure provider. One
+              payment processor. One language. One ORM. No exceptions.
+            </p>
+          </div>
+          <div class="os-principle-visual" aria-hidden="true">
+            <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="osPrinGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.35" />
+                  <stop offset="100%" stop-color="#a78bfa" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <circle cx="170" cy="170" r="140" fill="url(#osPrinGlow)" />
+              <!-- outer ring -->
+              <circle cx="170" cy="170" r="130" fill="none" stroke="#a78bfa"
+                stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6" />
+              <!-- middle ring -->
+              <circle cx="170" cy="170" r="88" fill="none" stroke="#a78bfa"
+                stroke-width="1" stroke-opacity="0.3" />
+              <!-- spokes to 7 nodes -->
+              {[0, 51.4, 102.8, 154.2, 205.6, 257.1, 308.5].map((deg, i) => {
+                const colors = ['#F38020','#635BFF','#8b949e','#3b82f6','#34d399','#06b6d4','#d97757'];
+                const rad = (deg - 90) * Math.PI / 180;
+                const x1 = 170 + 30 * Math.cos(rad);
+                const y1 = 170 + 30 * Math.sin(rad);
+                const x2 = 170 + 88 * Math.cos(rad);
+                const y2 = 170 + 88 * Math.sin(rad);
+                return (
+                  <>
+                    <line x1={x1} y1={y1} x2={x2} y2={y2}
+                      stroke={colors[i]} stroke-width="1.5" stroke-opacity="0.65" />
+                    <circle cx={x2} cy={y2} r="12" fill={colors[i]} fill-opacity="0.15"
+                      stroke={colors[i]} stroke-width="1.5" />
+                    <circle cx={x2} cy={y2} r="4" fill={colors[i]} />
+                  </>
+                );
+              })}
+              <!-- centre -->
+              <circle cx="170" cy="170" r="30" fill="rgba(167,139,250,0.12)"
+                stroke="#a78bfa" stroke-width="1.5" />
+              <circle cx="170" cy="170" r="8" fill="#a78bfa" />
+              <text x="170" y="206" text-anchor="middle" fill="#a78bfa"
+                font-size="10" font-weight="600" font-family="ui-monospace,monospace"
+                fill-opacity="0.75">Pagayo</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ PILLARS -->
+    <section class="section os-pillars">
+      <div class="container">
+        {pillars.map((p, idx) => (
+          <article
+            class={`os-pillar-row ${idx % 2 === 1 ? 'os-pillar-row--reverse' : ''}`}
+            id={p.slug}
+            style={`--accent: ${p.accent}; --accent-soft: ${p.accentSoft};`}
+          >
+            <div class="os-pillar-text">
+              <div class="os-pillar-meta">
+                <span class="os-pillar-num">{p.num}</span>
+                <span class="os-pillar-category">{p.category}</span>
+              </div>
+              <h2 class="os-pillar-name">{p.name}</h2>
+              <p class="os-pillar-tagline">{p.tagline}</p>
+              <p class="os-pillar-body">{p.body}</p>
+              <div class="os-pillar-foryou">
+                <span class="os-foryou-label">For your shop</span>
+                <span class="os-foryou-text">{p.forYou}</span>
+              </div>
+              {p.linkSlug && (
+                <a class="os-pillar-link" href={`/${p.linkSlug}`}>
+                  How Pagayo uses {p.name} →
+                </a>
+              )}
+            </div>
+
+            <div class="os-pillar-visual">
+              <div class="os-visual-frame">
+                {p.slug === 'cloudflare' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="cfG" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#F38020" stop-opacity="0.45" />
+                        <stop offset="100%" stop-color="#F38020" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <circle cx="200" cy="160" r="110" fill="url(#cfG)" />
+                    <circle cx="200" cy="160" r="85" fill="none" stroke="#F38020" stroke-width="1.2" stroke-opacity="0.5" />
+                    <ellipse cx="200" cy="160" rx="85" ry="32" fill="none" stroke="#F38020" stroke-width="1" stroke-opacity="0.3" />
+                    <ellipse cx="200" cy="160" rx="55" ry="85" fill="none" stroke="#F38020" stroke-width="1" stroke-opacity="0.3" />
+                    <line x1="115" y1="160" x2="285" y2="160" stroke="#F38020" stroke-width="1" stroke-opacity="0.3" />
+                    <line x1="200" y1="75" x2="200" y2="245" stroke="#F38020" stroke-width="1" stroke-opacity="0.3" />
+                    {[
+                      {cx:120,cy:120},{cx:280,cy:135},{cx:160,cy:220},{cx:245,cy:210},{cx:200,cy:78},
+                      {cx:148,cy:108},{cx:265,cy:190}
+                    ].map(n => <circle cx={n.cx} cy={n.cy} r="4" fill="#F38020" />)}
+                    <circle cx="200" cy="160" r="6" fill="#F38020" />
+                    <circle cx="200" cy="160" r="46" fill="none" stroke="#F38020" stroke-width="0.8" stroke-opacity="0.35" />
+                    <text x="200" y="270" text-anchor="middle" fill="#F38020"
+                      font-size="11" font-weight="600" font-family="ui-monospace,monospace"
+                      fill-opacity="0.7">300+ cities · zero origin servers</text>
+                  </svg>
+                )}
+
+                {p.slug === 'stripe' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="stG1" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#635BFF" />
+                        <stop offset="100%" stop-color="#818cf8" />
+                      </linearGradient>
+                      <linearGradient id="stG2" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#06b6d4" />
+                        <stop offset="100%" stop-color="#635BFF" />
+                      </linearGradient>
+                      <radialGradient id="stGl" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#635BFF" stop-opacity="0.35" />
+                        <stop offset="100%" stop-color="#635BFF" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <circle cx="200" cy="160" r="140" fill="url(#stGl)" />
+                    <g transform="translate(80,80) rotate(-8 110 70)">
+                      <rect width="220" height="135" rx="14" fill="url(#stG2)" opacity="0.8" />
+                      <rect x="22" y="32" width="36" height="26" rx="4" fill="#fff" fill-opacity="0.8" />
+                      <rect x="22" y="76" width="120" height="6" rx="3" fill="#fff" fill-opacity="0.5" />
+                    </g>
+                    <g transform="translate(100,110) rotate(6 110 70)">
+                      <rect width="220" height="135" rx="14" fill="url(#stG1)" />
+                      <rect x="22" y="32" width="36" height="26" rx="4" fill="#fff" fill-opacity="0.95" />
+                      <rect x="22" y="76" width="160" height="8" rx="4" fill="#fff" fill-opacity="0.7" />
+                      <rect x="22" y="92" width="110" height="6" rx="3" fill="#fff" fill-opacity="0.45" />
+                      <text x="172" y="120" text-anchor="end" fill="#fff" font-size="14" font-weight="700" font-family="system-ui">VISA</text>
+                    </g>
+                    <!-- checkmark -->
+                    <circle cx="315" cy="75" r="22" fill="#10a37f" fill-opacity="0.9" />
+                    <path d="M 305 75 L 313 83 L 326 68" stroke="#fff" stroke-width="3"
+                      fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                )}
+
+                {p.slug === 'github' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="ghGl" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#8b949e" stop-opacity="0.25" />
+                        <stop offset="100%" stop-color="#8b949e" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#ghGl)" />
+                    <path d="M 70 240 L 70 80" stroke="#c9d1d9" stroke-width="2" stroke-opacity="0.5" />
+                    <path d="M 70 200 Q 70 155 155 155 L 210 155" stroke="#06b6d4" stroke-width="2" stroke-opacity="0.7" fill="none" />
+                    <path d="M 210 155 Q 285 155 285 100 L 285 65" stroke="#10a37f" stroke-width="2" stroke-opacity="0.7" fill="none" />
+                    <path d="M 70 135 Q 70 95 155 95 L 210 95 Q 285 95 285 155 L 285 240" stroke="#d97757" stroke-width="2" stroke-opacity="0.6" fill="none" />
+                    {[{x:70,y:240},{x:70,y:200},{x:70,y:135},{x:70,y:80}].map(n =>
+                      <circle cx={n.x} cy={n.y} r="7" fill="#c9d1d9" />)}
+                    <circle cx="210" cy="155" r="7" fill="#06b6d4" />
+                    <circle cx="210" cy="95" r="7" fill="#d97757" />
+                    <circle cx="285" cy="65" r="7" fill="#10a37f" />
+                    <circle cx="285" cy="240" r="7" fill="#d97757" />
+                    <text x="90" y="83" fill="#c9d1d9" font-size="11" font-family="ui-monospace,monospace">main</text>
+                    <text x="225" y="68" fill="#10a37f" font-size="11" font-family="ui-monospace,monospace">feature/one-stack</text>
+                    <text x="225" y="158" fill="#06b6d4" font-size="11" font-family="ui-monospace,monospace">staging</text>
+                    <!-- green check badge -->
+                    <circle cx="340" cy="65" r="14" fill="#10a37f" />
+                    <path d="M 333 65 L 338 70 L 347 61" stroke="#fff" stroke-width="2.5"
+                      fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                )}
+
+                {p.slug === 'typescript' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="tsGl" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#tsGl)" />
+                    <!-- editor window -->
+                    <rect x="44" y="44" width="312" height="232" rx="12" fill="#0f172a"
+                      stroke="#3b82f6" stroke-width="1.2" stroke-opacity="0.35" />
+                    <rect x="44" y="44" width="312" height="26" rx="12" fill="#1e293b" />
+                    <circle cx="62" cy="57" r="4" fill="#f87171" />
+                    <circle cx="76" cy="57" r="4" fill="#fbbf24" />
+                    <circle cx="90" cy="57" r="4" fill="#34d399" />
+                    <text x="200" y="61" text-anchor="middle" fill="#64748b"
+                      font-size="10" font-family="ui-monospace,monospace">order.ts</text>
+                    <!-- code lines -->
+                    <g font-family="ui-monospace,monospace" font-size="11">
+                      <text x="64" y="96"  fill="#94a3b8">1</text>
+                      <text x="82" y="96"  fill="#c084fc">type</text>
+                      <text x="118" y="96" fill="#67e8f9">Order</text>
+                      <text x="158" y="96" fill="#94a3b8">=</text>
+                      <text x="170" y="96" fill="#fbbf24">{'{'}</text>
+
+                      <text x="64" y="115"  fill="#94a3b8">2</text>
+                      <text x="98" y="115"  fill="#67e8f9">id</text>
+                      <text x="116" y="115" fill="#94a3b8">:</text>
+                      <text x="125" y="115" fill="#86efac">string</text>
+                      <text x="167" y="115" fill="#94a3b8">;</text>
+
+                      <text x="64" y="134"  fill="#94a3b8">3</text>
+                      <text x="98" y="134"  fill="#67e8f9">total</text>
+                      <text x="131" y="134" fill="#94a3b8">:</text>
+                      <text x="140" y="134" fill="#86efac">number</text>
+                      <text x="189" y="134" fill="#94a3b8">;</text>
+
+                      <text x="64" y="153"  fill="#94a3b8">4</text>
+                      <text x="98" y="153"  fill="#67e8f9">status</text>
+                      <text x="137" y="153" fill="#94a3b8">:</text>
+                      <text x="146" y="153" fill="#86efac">'paid'</text>
+                      <text x="179" y="153" fill="#94a3b8">|</text>
+                      <text x="187" y="153" fill="#86efac">'pending'</text>
+                      <text x="244" y="153" fill="#94a3b8">;</text>
+
+                      <text x="64" y="172" fill="#94a3b8">5</text>
+                      <text x="82" y="172" fill="#fbbf24">{'}'}</text>
+
+                      <text x="64" y="195" fill="#94a3b8">7</text>
+                      <text x="82" y="195" fill="#64748b">// Type error caught before deploy</text>
+                    </g>
+                    <!-- error squiggle -->
+                    <path d="M 82 200 Q 96 203 110 200 Q 124 197 138 200 Q 152 203 166 200"
+                      stroke="#f87171" stroke-width="1.5" fill="none" stroke-opacity="0.75" />
+                    <!-- TS badge -->
+                    <rect x="316" y="236" width="28" height="28" rx="6" fill="#3b82f6" />
+                    <text x="330" y="254" text-anchor="middle" fill="#fff"
+                      font-size="11" font-weight="800" font-family="system-ui">TS</text>
+                  </svg>
+                )}
+
+                {p.slug === 'drizzle' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="dzGl" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#34d399" stop-opacity="0.25" />
+                        <stop offset="100%" stop-color="#34d399" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#dzGl)" />
+                    <!-- three schema tables -->
+                    {[
+                      { x: 44,  y: 60,  w: 130, rows: ['id: string', 'total: number', 'status: string', 'createdAt: Date'], title: 'orders', color: '#34d399' },
+                      { x: 230, y: 60,  w: 130, rows: ['id: string', 'name: string', 'price: number', 'stock: number'], title: 'products', color: '#06b6d4' },
+                      { x: 136, y: 200, w: 130, rows: ['id: string', 'email: string', 'createdAt: Date'], title: 'customers', color: '#a78bfa' },
+                    ].map(t => (
+                      <>
+                        <rect x={t.x} y={t.y} width={t.w} height={26} rx="8"
+                          fill={t.color} fill-opacity="0.2" stroke={t.color}
+                          stroke-width="1.5" />
+                        <rect x={t.x} y={t.y + 26} width={t.w}
+                          height={t.rows.length * 22 + 10} rx="0"
+                          fill="#0f172a" stroke={t.color} stroke-width="1" stroke-opacity="0.4" />
+                        <text x={t.x + t.w/2} y={t.y + 17} text-anchor="middle"
+                          fill={t.color} font-size="11" font-weight="700"
+                          font-family="ui-monospace,monospace">{t.title}</text>
+                        {t.rows.map((r, i) => (
+                          <text x={t.x + 10} y={t.y + 42 + i * 22}
+                            fill="#94a3b8" font-size="10"
+                            font-family="ui-monospace,monospace">{r}</text>
+                        ))}
+                      </>
+                    ))}
+                    <!-- relation lines -->
+                    <path d="M 174 152 L 174 182 Q 174 200 201 200"
+                      stroke="#34d399" stroke-width="1.5" fill="none"
+                      stroke-opacity="0.6" stroke-dasharray="4 3" />
+                    <path d="M 230 152 L 230 182 Q 230 200 266 200"
+                      stroke="#06b6d4" stroke-width="1.5" fill="none"
+                      stroke-opacity="0.6" stroke-dasharray="4 3" />
+                  </svg>
+                )}
+
+                {p.slug === 'cursor' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="cuGl" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+                      </radialGradient>
+                      <linearGradient id="cuCur" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#06b6d4" />
+                        <stop offset="100%" stop-color="#6366f1" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#cuGl)" />
+                    <!-- editor -->
+                    <rect x="48" y="44" width="304" height="218" rx="12" fill="#0f172a"
+                      stroke="#06b6d4" stroke-opacity="0.4" stroke-width="1.5" />
+                    <rect x="48" y="44" width="304" height="26" rx="12" fill="#1e293b" />
+                    <circle cx="66" cy="57" r="4" fill="#f87171" />
+                    <circle cx="80" cy="57" r="4" fill="#fbbf24" />
+                    <circle cx="94" cy="57" r="4" fill="#34d399" />
+                    <text x="200" y="61" text-anchor="middle" fill="#64748b"
+                      font-size="10" font-family="ui-monospace,monospace">one-stack.astro</text>
+                    <g font-family="ui-monospace,monospace" font-size="11">
+                      <text x="68" y="95"  fill="#94a3b8">1</text>
+                      <text x="86" y="95"  fill="#c084fc">const</text>
+                      <text x="126" y="95" fill="#67e8f9">platform</text>
+                      <text x="180" y="95" fill="#94a3b8">=</text>
+                      <text x="192" y="95" fill="#fbbf24">{'{'}</text>
+                      <text x="68" y="115" fill="#94a3b8">2</text>
+                      <text x="100" y="115" fill="#67e8f9">tools</text>
+                      <text x="132" y="115" fill="#94a3b8">:</text>
+                      <text x="142" y="115" fill="#86efac">7</text>
+                      <text x="68" y="135" fill="#94a3b8">3</text>
+                      <text x="100" y="135" fill="#67e8f9">vendors</text>
+                      <text x="148" y="135" fill="#94a3b8">:</text>
+                      <text x="158" y="135" fill="#86efac">1</text>
+                      <text x="68" y="155" fill="#94a3b8">4</text>
+                      <text x="100" y="155" fill="#67e8f9">deploys</text>
+                      <text x="148" y="155" fill="#94a3b8">:</text>
+                      <text x="158" y="155" fill="#86efac">'weekly'</text>
+                      <text x="68" y="175" fill="#94a3b8">5</text>
+                      <text x="86" y="175" fill="#fbbf24">{'}'}</text>
+                    </g>
+                    <!-- cursor blink -->
+                    <rect x="124" y="167" width="2.5" height="14" fill="url(#cuCur)" />
+                    <!-- AI suggestion -->
+                    <rect x="134" y="168" width="130" height="14" rx="3"
+                      fill="#06b6d4" fill-opacity="0.12" stroke="#06b6d4"
+                      stroke-opacity="0.45" stroke-width="0.8" stroke-dasharray="3,3" />
+                    <text x="141" y="179" fill="#06b6d4" font-size="10"
+                      font-family="ui-monospace,monospace" opacity="0.85">uptime: '99.99%'</text>
+                    <!-- status bar -->
+                    <rect x="48" y="236" width="304" height="26" rx="0" fill="#0b1220" />
+                    <circle cx="66" cy="249" r="4" fill="#10a37f" />
+                    <text x="78" y="253" fill="#94a3b8" font-size="10"
+                      font-family="ui-monospace,monospace">3 agents · one-stack</text>
+                    <text x="340" y="253" text-anchor="end" fill="#06b6d4"
+                      font-size="10" font-family="ui-monospace,monospace">ready</text>
+                  </svg>
+                )}
+
+                {p.slug === 'claude' && (
+                  <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="clGl" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stop-color="#d97757" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#d97757" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="400" height="320" fill="url(#clGl)" />
+                    <!-- human message -->
+                    <g transform="translate(56,54)">
+                      <rect width="220" height="56" rx="14" fill="#1e293b"
+                        stroke="#334155" stroke-width="1" />
+                      <rect x="16" y="16" width="160" height="8" rx="4" fill="#cbd5e1" fill-opacity="0.7" />
+                      <rect x="16" y="30" width="110" height="8" rx="4" fill="#94a3b8" fill-opacity="0.5" />
+                    </g>
+                    <!-- Claude response -->
+                    <g transform="translate(116,130)">
+                      <rect width="240" height="90" rx="14" fill="#d97757" fill-opacity="0.12"
+                        stroke="#d97757" stroke-width="1" />
+                      <rect x="16" y="16" width="190" height="8" rx="4" fill="#fbbf24" fill-opacity="0.7" />
+                      <rect x="16" y="30" width="210" height="8" rx="4" fill="#fdba74" fill-opacity="0.55" />
+                      <rect x="16" y="44" width="170" height="8" rx="4" fill="#fdba74" fill-opacity="0.4" />
+                      <rect x="16" y="58" width="130" height="8" rx="4" fill="#fdba74" fill-opacity="0.3" />
+                      <!-- Claude avatar -->
+                      <circle cx="-18" cy="45" r="16" fill="#d97757" />
+                      <text x="-18" y="50" text-anchor="middle" fill="#fff"
+                        font-size="12" font-weight="700" font-family="system-ui">C</text>
+                    </g>
+                    <!-- thinking dots -->
+                    <g transform="translate(116,240)">
+                      <rect width="88" height="32" rx="14" fill="#d97757" fill-opacity="0.1"
+                        stroke="#d97757" stroke-opacity="0.45" stroke-width="1" />
+                      <circle cx="24" cy="16" r="4" fill="#d97757" fill-opacity="0.55" />
+                      <circle cx="44" cy="16" r="4" fill="#d97757" fill-opacity="0.75" />
+                      <circle cx="64" cy="16" r="4" fill="#d97757" />
+                    </g>
+                    <!-- spark -->
+                    <path d="M 330 72 L 333 63 L 336 72 L 345 75 L 336 78 L 333 87 L 330 78 L 321 75 Z"
+                      fill="#fbbf24" fill-opacity="0.85" />
+                  </svg>
+                )}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ BENEFITS -->
+    <section class="section os-benefits fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">What this means for you</span>
+          <h2 class="headline-md">Seven choices. One outcome.</h2>
+          <p>Every decision in the One Stack comes back to the same four benefits.</p>
+        </div>
+        <div class="os-benefits-grid">
+          {benefits.map((b) => (
+            <div class="os-benefit-card">
+              <span class="os-benefit-icon">{b.icon}</span>
+              <h3>{b.title}</h3>
+              <p>{b.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ COMPARISON -->
+    <section class="section os-comparison fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">The alternative</span>
+          <h2 class="headline-md">Most platforms mix. We don't.</h2>
+          <p>This is what complexity looks like — and why we never let it in.</p>
+        </div>
+
+        <div class="os-comparison-grid">
+          <div class="os-comp-col os-comp-col--bad">
+            <div class="os-comp-header">
+              <span class="os-comp-label os-comp-label--bad">Typical platform</span>
+            </div>
+            {[
+              ['Infrastructure', '2–3 hosting providers + a CDN'],
+              ['Payments', 'Stripe + Mollie + Adyen + fallbacks'],
+              ['Code', 'PHP, Python, Node.js, Ruby'],
+              ['Database', 'MySQL + Redis + Elasticsearch + S3'],
+              ['AI', '4+ model providers, mixed APIs'],
+              ['Deploys', 'Bespoke scripts, monthly release cycles'],
+              ['Languages', 'A different stack per service'],
+            ].map(([cat, val]) => (
+              <div class="os-comp-row">
+                <span class="os-comp-cat">{cat}</span>
+                <span class="os-comp-val os-comp-val--bad">✕ {val}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="os-comp-col os-comp-col--good">
+            <div class="os-comp-header">
+              <span class="os-comp-label os-comp-label--good">Pagayo</span>
+            </div>
+            {[
+              ['Infrastructure', 'Cloudflare — one edge network'],
+              ['Payments', 'Stripe — one integration'],
+              ['Code', 'TypeScript — front to back'],
+              ['Database', 'Drizzle + D1 — one schema layer'],
+              ['AI', 'Claude — one deep integration'],
+              ['Deploys', 'GitHub Actions — every week, automated'],
+              ['Languages', 'One language. One team. One codebase.'],
+            ].map(([cat, val]) => (
+              <div class="os-comp-row">
+                <span class="os-comp-cat">{cat}</span>
+                <span class="os-comp-val os-comp-val--good">✓ {val}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p class="os-comparison-note">
+          Complexity is not a sign of ambition. It is a sign of unresolved decisions.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ THE RIPPLE -->
+    <section class="section os-ripple fade-in">
+      <div class="container">
+        <div class="os-ripple-inner">
+          <div class="section-header">
+            <span class="section-label">The ripple effect</span>
+            <h2 class="headline-md">One good decision compounds.</h2>
+          </div>
+          <div class="os-ripple-steps">
+            {[
+              {
+                step: '1',
+                title: 'We pick Cloudflare.',
+                body: 'Every service — compute, storage, cache, queues, DNS — lives on one network. No cross-provider latency. No egress fees between services.',
+              },
+              {
+                step: '2',
+                title: 'That makes Stripe trivially reliable.',
+                body: 'Payment webhooks hit a Worker on the same network. No transit. No timeout risk. Stripe confirmations land in milliseconds.',
+              },
+              {
+                step: '3',
+                title: 'That makes TypeScript the obvious language.',
+                body: 'One runtime (V8), one language (TypeScript), from the storefront to the Worker to the Drizzle schema. No polyglot friction.',
+              },
+              {
+                step: '4',
+                title: 'That makes Cursor and Claude unstoppable.',
+                body: 'One codebase in one language gives AI full context. Changes that span 13 repos take hours, not weeks. You get new features every week.',
+              },
+            ].map((s) => (
+              <div class="os-ripple-step">
+                <div class="os-ripple-num">{s.step}</div>
+                <div class="os-ripple-content">
+                  <h3>{s.title}</h3>
+                  <p>{s.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ NUMBERS -->
+    <section class="section os-numbers fade-in">
+      <div class="container">
+        <div class="os-numbers-grid">
+          {[
+            { val: '7',      label: 'tools in the stack', sub: 'one per category, chosen once' },
+            { val: '300+',   label: 'cities worldwide',    sub: 'all powered by one provider' },
+            { val: '<50ms',  label: 'typical response',    sub: 'anywhere on earth' },
+            { val: '99.99%', label: 'uptime',              sub: 'no origin servers to fail' },
+            { val: '1',      label: 'language',            sub: 'TypeScript, end to end' },
+            { val: 'Weekly', label: 'deploy cadence',      sub: 'not quarterly, not monthly' },
+          ].map((n) => (
+            <div class="os-number-card">
+              <span class="os-number-val">{n.val}</span>
+              <span class="os-number-label">{n.label}</span>
+              <span class="os-number-sub">{n.sub}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════ CLOSING CTA -->
+    <section class="section os-closing fade-in">
+      <div class="container narrow">
+        <span class="section-label">Enough about the stack</span>
+        <h2 class="headline-md">
+          The best infrastructure is the kind<br />you never have to think about.
+        </h2>
+        <p>
+          You open your shop, you sell, you get paid. Everything under the hood —
+          Cloudflare, Stripe, GitHub, TypeScript, Drizzle, Cursor, Claude — runs so
+          that you never have to wonder what runs.
+        </p>
+        <p>
+          That is the whole point.
+        </p>
+        <a href="https://start.pagayo.app/register" class="btn btn-primary btn-lg os-closing-cta">
+          Open your shop for free →
+        </a>
+        <p class="os-closing-links">
+          Curious how it fits together?
+          <a href="/built-on-giants">Read the full giant story →</a>
+        </p>
+      </div>
+    </section>
+
+    <FinalCta />
+  </main>
+</MarketingLayout>
+
+<style>
+  /* ─── HERO ─────────────────────────────────────────────────────── */
+  .os-hero {
+    padding-top: calc(var(--nav-height, 72px) + 4rem);
+    padding-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .os-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .os-hero-intro {
+    font-size: 1.1rem;
+    line-height: 1.72;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 1.5rem auto 0;
+  }
+
+  .os-constellation {
+    margin: 3rem auto 0;
+    max-width: 820px;
+  }
+
+  .os-constellation svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .os-stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+
+  .os-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .os-stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    background: linear-gradient(135deg, #a78bfa, #f8fafc 130%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .os-stat-label {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+
+  /* ─── PRINCIPLE ─────────────────────────────────────────────────── */
+  .os-principle {
+    border-top: 1px solid var(--border);
+  }
+
+  .os-principle-inner {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .os-principle-text .section-label {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .os-principle-text h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .os-principle-text p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .os-principle-visual svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ─── PILLARS ───────────────────────────────────────────────────── */
+  .os-pillars {
+    padding-top: 1rem;
+  }
+
+  .os-pillar-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+    align-items: center;
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .os-pillar-row:first-of-type {
+    border-top: none;
+  }
+
+  .os-pillar-row--reverse {
+    direction: rtl;
+  }
+
+  .os-pillar-row--reverse > * {
+    direction: ltr;
+  }
+
+  .os-pillar-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .os-pillar-num {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.05em;
+  }
+
+  .os-pillar-category {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .os-pillar-name {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.15;
+    background: linear-gradient(135deg, var(--accent), #f8fafc 130%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .os-pillar-tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0 0 1.25rem 0;
+    line-height: 1.4;
+  }
+
+  .os-pillar-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin: 0 0 1.5rem 0;
+  }
+
+  .os-pillar-foryou {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    border-left-width: 3px;
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .os-foryou-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--accent);
+    white-space: nowrap;
+    padding-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .os-foryou-text {
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    line-height: 1.55;
+  }
+
+  .os-pillar-link {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+    transition: opacity 0.15s;
+  }
+
+  .os-pillar-link:hover {
+    opacity: 0.75;
+  }
+
+  .os-visual-frame {
+    position: relative;
+    background: linear-gradient(160deg, rgba(255,255,255,0.025), rgba(255,255,255,0));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1rem;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px var(--accent-soft) inset,
+      0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+
+  .os-visual-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, var(--accent-soft) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .os-visual-frame svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* ─── BENEFITS ──────────────────────────────────────────────────── */
+  .os-benefits {
+    border-top: 1px solid var(--border);
+  }
+
+  .os-benefits .section-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .os-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .os-benefit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .os-benefit-card:hover {
+    border-color: rgba(167, 139, 250, 0.35);
+  }
+
+  .os-benefit-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .os-benefit-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .os-benefit-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ─── COMPARISON ────────────────────────────────────────────────── */
+  .os-comparison {
+    border-top: 1px solid var(--border);
+  }
+
+  .os-comparison .section-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .os-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .os-comp-col {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .os-comp-col--bad  { border-color: rgba(248, 113, 113, 0.25); }
+  .os-comp-col--good { border-color: rgba(52, 211, 153, 0.3); }
+
+  .os-comp-header {
+    padding: 1rem 1.25rem 0.85rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .os-comp-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  .os-comp-label--bad  { color: #f87171; }
+  .os-comp-label--good { color: #34d399; }
+
+  .os-comp-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .os-comp-row:last-of-type {
+    border-bottom: none;
+  }
+
+  .os-comp-cat {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+  }
+
+  .os-comp-val {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .os-comp-val--bad  { color: #fca5a5; }
+  .os-comp-val--good { color: #6ee7b7; }
+
+  .os-comparison-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  /* ─── RIPPLE ────────────────────────────────────────────────────── */
+  .os-ripple {
+    border-top: 1px solid var(--border);
+  }
+
+  .os-ripple-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .os-ripple-inner .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .os-ripple-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .os-ripple-step {
+    display: flex;
+    gap: 2rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .os-ripple-step:last-of-type {
+    border-bottom: none;
+  }
+
+  .os-ripple-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #a78bfa;
+    font-family: ui-monospace, monospace;
+  }
+
+  .os-ripple-content h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+  }
+
+  .os-ripple-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ─── NUMBERS ───────────────────────────────────────────────────── */
+  .os-numbers {
+    border-top: 1px solid var(--border);
+  }
+
+  .os-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .os-number-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .os-number-val {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, #a78bfa, #f8fafc 130%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .os-number-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 0.5rem;
+  }
+
+  .os-number-sub {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  /* ─── CLOSING ───────────────────────────────────────────────────── */
+  .os-closing {
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  .container.narrow {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .os-closing .section-label {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .os-closing h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .os-closing p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  .os-closing-cta {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .os-closing-links {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .os-closing-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.15s;
+  }
+
+  .os-closing-links a:hover {
+    color: var(--text-primary);
+  }
+
+  /* ─── RESPONSIVE ────────────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .os-principle-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .os-principle-visual {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .os-benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .os-numbers-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 780px) {
+    .os-hero {
+      padding-top: calc(var(--nav-height, 72px) + 2rem);
+    }
+
+    .os-stats-row {
+      gap: 1.5rem;
+    }
+
+    .os-pillar-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 3.5rem 0;
+    }
+
+    .os-pillar-row--reverse {
+      direction: ltr;
+    }
+
+    .os-pillar-visual {
+      order: -1;
+    }
+
+    .os-comparison-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .os-numbers-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .os-benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .os-numbers-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .os-stats-row {
+      gap: 1.25rem;
+    }
+  }
+</style>
