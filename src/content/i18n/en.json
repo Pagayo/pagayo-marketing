@@ -77,5 +77,170 @@
     "intro": "One hundred success stories from Pagayo tenants across continents where Stripe is active — from webshops and gyms to foundations, pools, and clubs. Stories are grouped by region, not by country list. We never name tenants or their organisations: only the role they play and the city they operate in.",
     "feedAriaLabel": "Success stories by continent",
     "viewAllStories": "View all 100 stories →"
+  },
+  "impactPage": {
+    "title": "Pagayo Impact Engine — Sponsor entrepreneurs, measure real outcomes",
+    "description": "Fund cohorts of founders with full Pagayo access — free for them, live dashboards for you. Same commerce stack in Nairobi and Amsterdam.",
+    "inLanguage": "en-US",
+    "hero": {
+      "sectionLabel": "For organisations that fund entrepreneurship programs",
+      "headlineTop": "Turn entrepreneurship programs",
+      "headlineBottom": "into operating businesses.",
+      "tagline": "Every entrepreneur gets a business. Every sponsor gets proof.",
+      "intro": "We don't train entrepreneurs. We provision businesses. Every founder your program supports gets a full commerce stack from day one — webshop, POS, WhatsApp, payouts to their own account. You measure sales. Not attendance."
+    },
+    "mission": {
+      "headline": "Funding should follow outcomes, not slide decks.",
+      "intro": "Most entrepreneurship programs hand out grants, training, and PDF reports. Pagayo gives sponsored founders a production-grade commerce stack — webshop, POS, WhatsApp, payouts — and gives you verifiable metrics tied to every order.",
+      "points": [
+        {
+          "title": "Zero platform cost for founders",
+          "description": "Sponsored entrepreneurs get the same product European businesses pay for. No watered-down tier, no trial expiry mid-program."
+        },
+        {
+          "title": "Outcomes you can audit",
+          "description": "Revenue, orders, customers, and cohort progress flow into dashboards and exportable reports — not self-reported surveys."
+        },
+        {
+          "title": "Built for emerging markets",
+          "description": "Edge-first architecture, mobile-first admin, and payment rails that work where Stripe operates — including Kenya and much of Sub-Saharan Africa."
+        }
+      ]
+    },
+    "parity": {
+      "headline": "One platform. Two cities. No compromise.",
+      "intro": "Whether your cohort runs a boutique in Amsterdam or a market stall network in Nairobi, they operate on identical infrastructure.",
+      "amsterdam": {
+        "city": "Amsterdam",
+        "region": "Western Europe",
+        "items": [
+          "Multi-location retail chain",
+          "Stripe Connect payouts to local bank",
+          "Webshop + in-store POS unified",
+          "Subscriptions and member billing",
+          "Real-time inventory across channels"
+        ]
+      },
+      "nairobi": {
+        "city": "Nairobi",
+        "region": "East Africa",
+        "items": [
+          "Single-founder fashion label",
+          "M-Pesa-ready checkout via Stripe",
+          "WhatsApp order intake + webshop",
+          "QR menus and walk-in sales",
+          "Same order lifecycle and reporting"
+        ]
+      }
+    },
+    "metrics": {
+      "headline": "What your dashboard tracks",
+      "intro": "Every sponsored account feeds aggregate metrics — anonymised at the entrepreneur level when required, drill-down when your program allows.",
+      "items": [
+        { "label": "Time to first sale", "description": "Average days from account creation to first completed order — typically four days for new cohorts." },
+        { "label": "12-month survival rate", "description": "Percentage of founders still transacting after the program grant period ends — the strongest indicator of sustainable impact." },
+        { "label": "Revenue earned", "description": "Gross and net sales per cohort, region, and time window." },
+        { "label": "Orders fulfilled", "description": "Completed, cancelled, and returned orders with channel breakdown." },
+        { "label": "Customers served", "description": "Unique buyers and repeat purchase rates." },
+        { "label": "Active entrepreneurs", "description": "Who is transacting, who needs support, who graduated." },
+        { "label": "Jobs supported", "description": "Optional headcount and role tags per tenant for employment programs." },
+        { "label": "Program milestones", "description": "Custom KPIs — first sale, €1k revenue, 100 orders, and more." }
+      ]
+    },
+    "audiences": {
+      "headline": "Who sponsors cohorts",
+      "intro": "The Impact Engine is designed for organisations that fund access — not organisations that resell software.",
+      "cards": [
+        {
+          "icon": "🏛️",
+          "title": "NGOs & development agencies",
+          "description": "Run multi-year livelihood programs with live proof of commerce activity instead of quarterly narrative reports."
+        },
+        {
+          "icon": "🏢",
+          "title": "Government & public sector",
+          "description": "Youth employment, women-in-business, and SME formalisation initiatives with transparent, exportable data."
+        },
+        {
+          "icon": "💼",
+          "title": "Corporate foundations & CSR",
+          "description": "Align ESG commitments with measurable SME revenue and job outcomes in your target regions."
+        },
+        {
+          "icon": "🎓",
+          "title": "Accelerators & universities",
+          "description": "Give every cohort company a running business on day one — not just pitch-deck templates."
+        }
+      ]
+    },
+    "programs": {
+      "headline": "Example program shapes",
+      "intro": "Programs are flexible — you define regions, sectors, cohort size, and duration. Pagayo provisions accounts and permissions.",
+      "examples": [
+        {
+          "title": "Retail cohort — Nairobi",
+          "description": "50 fashion and home-goods founders, 12 months, M-Pesa and card checkout, weekly revenue leaderboard for mentors."
+        },
+        {
+          "title": "Women entrepreneurs — multi-city",
+          "description": "200 founders across East Africa, shared training curriculum, dashboard segmented by country and vertical."
+        },
+        {
+          "title": "Youth employment — national",
+          "description": "Government-backed program tracking first sale dates, 90-day survival rate, and jobs created per tenant."
+        }
+      ]
+    },
+    "platform": {
+      "headline": "What every sponsored entrepreneur receives",
+      "items": [
+        "Full webshop and product catalogue",
+        "Point of sale and QR ordering",
+        "WhatsApp commerce intake",
+        "Inventory, coupons, and returns",
+        "Subscriptions and memberships",
+        "Stripe Connect payouts to their account",
+        "Mobile-friendly admin dashboard",
+        "Email and in-app support"
+      ]
+    },
+    "reporting": {
+      "headline": "Reporting & compliance",
+      "intro": "Donors and boards expect numbers they can trust. Export, integrate, or white-label.",
+      "items": [
+        "Monthly PDF impact reports",
+        "CSV and API export for your BI stack",
+        "Cohort comparison and year-over-year views",
+        "Role-based dashboard access for program staff",
+        "White-label dashboards on Enterprise tier",
+        "Integration hooks for donor management systems"
+      ]
+    },
+    "faq": {
+      "headline": "Common questions from program sponsors",
+      "items": [
+        {
+          "q": "Do entrepreneurs pay anything?",
+          "a": "No. When you sponsor a cohort, their Pagayo accounts are fully featured at no cost to them. You pay only for the Impact Dashboard tier that matches your program size."
+        },
+        {
+          "q": "Which countries are supported?",
+          "a": "Anywhere Stripe Connect is available for payouts — including Kenya and most of Sub-Saharan Africa, plus Europe, the Americas, and Asia-Pacific. We confirm coverage before you launch a cohort."
+        },
+        {
+          "q": "Can we anonymise individual entrepreneurs?",
+          "a": "Yes. Dashboards can show aggregate cohort metrics by default, with drill-down restricted to authorised program managers."
+        },
+        {
+          "q": "How long does onboarding take?",
+          "a": "Account provisioning is batch-ready. Founders can register, add products, and take their first order in minutes — the same five-minute flow as any Pagayo tenant."
+        },
+        {
+          "q": "Is this different from the Partner Program?",
+          "a": "Yes. Partners earn commission by referring paying businesses. The Impact Engine is for funders who sponsor free access and need outcome dashboards — not resale."
+        }
+      ]
+    },
+    "exploreCta": "Explore the full Impact Engine →"
   }
 }

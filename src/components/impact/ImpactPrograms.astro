@@ -1,0 +1,51 @@
+---
+import i18nEn from '../../content/i18n/en.json';
+
+const { programs, platform, reporting } = i18nEn.impactPage;
+---
+
+<section class="section impact-programs fade-in" aria-labelledby="impact-programs-title">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-label impact-label">Programs</span>
+      <h2 class="headline-lg" id="impact-programs-title">{programs.headline}</h2>
+      <p class="text-lg">{programs.intro}</p>
+    </div>
+
+    <div class="impact-program-examples">
+      {programs.examples.map((example) => (
+        <article class="impact-program-card">
+          <h3>{example.title}</h3>
+          <p>{example.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section impact-platform fade-in" aria-labelledby="impact-platform-title">
+  <div class="container">
+    <div class="impact-platform-grid">
+      <div class="impact-platform-copy">
+        <span class="section-label impact-label">For founders</span>
+        <h2 class="headline-md" id="impact-platform-title">{platform.headline}</h2>
+        <ul class="impact-checklist">
+          {platform.items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="impact-platform-copy">
+        <span class="section-label impact-label">For sponsors</span>
+        <h2 class="headline-md" id="impact-reporting-title">{reporting.headline}</h2>
+        <p class="text-lg impact-platform-intro">{reporting.intro}</p>
+        <ul class="impact-checklist">
+          {reporting.items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

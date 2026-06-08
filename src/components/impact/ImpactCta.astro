@@ -1,0 +1,112 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section class="section impact-page-cta fade-in">
+  <div class="impact-page-cta-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="impact-page-cta-inner">
+      <span class="section-label impact-label">Start a Program</span>
+      <h2 class="headline-lg">
+        Ready to sponsor a cohort?<br />
+        <span class="impact-headline-accent">Let's talk outcomes.</span>
+      </h2>
+      <p>
+        Tell us your region, sector, and cohort size — we'll send a concrete program outline
+        and confirm country coverage before any commitment.
+      </p>
+      <div class="impact-cta-buttons">
+        <div class="impact-cta-block">
+          <Button href="/contact" variant="ngo" size="lg">Request a Cohort Proposal →</Button>
+          <span class="impact-cta-hint">A concrete outline for your board or steering committee — region, pricing, timeline.</span>
+        </div>
+        <div class="impact-cta-block">
+          <Button href="/contact" variant="secondary" size="lg">Book a Sponsor Demo</Button>
+          <span class="impact-cta-hint">See the Impact Dashboard live. No commitment, no sales pitch.</span>
+        </div>
+      </div>
+      <p class="impact-cta-note">
+        Want to see what your entrepreneurs will use?
+        <a href="https://start.pagayo.app/register">Explore the founder experience free →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .impact-page-cta {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .impact-page-cta-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(251, 191, 36, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 50%, rgba(99, 91, 255, 0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .impact-page-cta-inner {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .impact-page-cta-inner .section-label {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .impact-page-cta-inner h2 {
+    margin-bottom: 1rem;
+  }
+
+  .impact-page-cta-inner > p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .impact-cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .impact-cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 260px;
+  }
+
+  .impact-cta-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.45;
+  }
+
+  .impact-cta-note {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .impact-cta-note a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .impact-cta-note a:hover {
+    color: var(--text-primary);
+  }
+</style>

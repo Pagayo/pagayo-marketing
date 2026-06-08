@@ -1,0 +1,137 @@
+---
+const rows = [
+  { traditional: 'Training curriculum',           pagayo: 'A running business from day one' },
+  { traditional: 'Self-reported surveys',          pagayo: 'Live transaction data, verified per order' },
+  { traditional: 'Shopify + WhatsApp + Excel',    pagayo: 'One platform — webshop, POS, payouts, reporting' },
+  { traditional: 'Grants based on applications',  pagayo: 'Sponsorship tied to measurable outcomes' },
+  { traditional: 'Quarterly narrative reports',   pagayo: 'Real-time dashboard, always current' },
+  { traditional: 'Founders left without tooling after program ends', pagayo: '81% still transacting 12 months after grant period' },
+];
+---
+
+<section class="section impact-comparison fade-in" aria-labelledby="impact-comparison-title">
+  <div class="container">
+    <div class="section-header center impact-comparison-header">
+      <span class="section-label impact-label">Traditional vs Pagayo</span>
+      <h2 class="headline-lg" id="impact-comparison-title">
+        Why a separate grant + Shopify<br />
+        <span class="impact-headline-accent">doesn't solve the problem.</span>
+      </h2>
+      <p class="text-lg">
+        The issue isn't access to e-commerce tools. It's that no single platform
+        connects the entrepreneur's daily operations to the sponsor's accountability needs.
+      </p>
+    </div>
+
+    <div class="impact-comparison-table" role="table" aria-label="Traditional approach compared to Pagayo">
+      <div class="impact-comparison-row impact-comparison-row--head" role="row">
+        <div role="columnheader" class="impact-col-traditional">Traditional Approach</div>
+        <div role="columnheader" class="impact-col-pagayo">Pagayo</div>
+      </div>
+      {rows.map((row) => (
+        <div class="impact-comparison-row" role="row">
+          <div role="cell" class="impact-col-traditional">
+            <span class="impact-col-x" aria-hidden="true">✕</span>
+            {row.traditional}
+          </div>
+          <div role="cell" class="impact-col-pagayo">
+            <span class="impact-col-check" aria-hidden="true">✓</span>
+            {row.pagayo}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .impact-comparison {
+    background: var(--bg-surface);
+  }
+
+  .impact-comparison-header {
+    max-width: var(--max-width);
+  }
+
+  .impact-comparison-table {
+    margin-top: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .impact-comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .impact-comparison-row:last-child {
+    border-bottom: none;
+  }
+
+  .impact-comparison-row--head {
+    background: var(--bg-elevated);
+  }
+
+  .impact-col-traditional,
+  .impact-col-pagayo {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .impact-col-traditional {
+    color: var(--text-muted);
+    border-right: 1px solid var(--border);
+  }
+
+  .impact-col-pagayo {
+    color: var(--text-secondary);
+    background: rgba(251, 191, 36, 0.03);
+  }
+
+  .impact-comparison-row--head .impact-col-traditional,
+  .impact-comparison-row--head .impact-col-pagayo {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-muted);
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .impact-comparison-row--head .impact-col-pagayo {
+    color: var(--ngo-amber);
+  }
+
+  .impact-col-x {
+    color: #f87171;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .impact-col-check {
+    color: var(--ngo-amber);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  @media (max-width: 640px) {
+    .impact-comparison-row {
+      grid-template-columns: 1fr;
+    }
+
+    .impact-col-traditional {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      background: rgba(239, 68, 68, 0.03);
+    }
+  }
+</style>

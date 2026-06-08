@@ -1,11 +1,208 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
 import PageBackdrop from '../components/layout/PageBackdrop.astro';
+import ImpactWhy from '../components/impact/ImpactWhy.astro';
+import ImpactComparison from '../components/impact/ImpactComparison.astro';
+import ImpactParity from '../components/impact/ImpactParity.astro';
 import ImpactSection from '../components/sections/ImpactSection.astro';
-import FinalCta from '../components/sections/FinalCta.astro';
+import ImpactMetrics from '../components/impact/ImpactMetrics.astro';
+import ImpactPilot from '../components/impact/ImpactPilot.astro';
+import ImpactAudiences from '../components/impact/ImpactAudiences.astro';
+import ImpactPrograms from '../components/impact/ImpactPrograms.astro';
+import ImpactFaq from '../components/impact/ImpactFaq.astro';
+import ImpactCta from '../components/impact/ImpactCta.astro';
+import i18nEn from '../content/i18n/en.json';
+
+const t = i18nEn.impactPage;
+const pageTitle = t.title;
+const pageDescription = t.description;
+
+const impactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: pageTitle,
+  description: pageDescription,
+  url: 'https://www.pagayo.com/impact',
+  inLanguage: t.inLanguage,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Pagayo',
+    url: 'https://www.pagayo.com'
+  }
+};
 ---
-<MarketingLayout title="Pagayo Impact Engine" description="Empower entrepreneurs and track measurable impact.">
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(impactSchema)} />
   <PageBackdrop variant="impact" />
-  <ImpactSection />
-  <FinalCta />
+
+  <main class="impact-page">
+    <!-- 1. Hero: who this is for, what the promise is -->
+    <section class="section impact-hero fade-in" aria-labelledby="impact-page-title">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label impact-label">{t.hero.sectionLabel}</span>
+          <h1 class="headline-xl" id="impact-page-title">
+            {t.hero.headlineTop}<br />
+            <span class="impact-headline-accent">{t.hero.headlineBottom}</span>
+          </h1>
+          <p class="impact-hero-tagline">{t.hero.tagline}</p>
+          <p class="text-lg">{t.hero.intro}</p>
+          <div class="impact-hero-ctas">
+            <div class="impact-hero-cta-block">
+              <a href="/contact" class="btn btn-ngo btn-lg">Request a Cohort Proposal →</a>
+              <span class="impact-hero-cta-hint">Tell us your region and sector — we'll send a concrete program outline.</span>
+            </div>
+            <div class="impact-hero-cta-block">
+              <a href="/contact" class="btn btn-secondary btn-lg">Book a Sponsor Demo</a>
+              <span class="impact-hero-cta-hint">See the Impact Dashboard live before committing to anything.</span>
+            </div>
+          </div>
+          <p class="impact-hero-tertiary">
+            Want to see what your entrepreneurs will use?
+            <a href="https://start.pagayo.app/register">Explore the founder experience free →</a>
+          </p>
+        </div>
+
+        <div class="impact-mission-points" aria-label="Impact Engine principles">
+          {t.mission.points.map((point) => (
+            <div class="impact-mission-card">
+              <h2>{point.title}</h2>
+              <p>{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Why existing programs fail — establish the problem before the solution -->
+    <ImpactWhy />
+
+    <!-- 3. Traditional vs Pagayo comparison table — answer "why not Shopify?" -->
+    <ImpactComparison />
+
+    <!-- 4. Proof: two anonymised pilot cohorts with hard numbers -->
+    <ImpactPilot />
+
+    <!-- 4. Amsterdam vs Nairobi — parity made tangible -->
+    <ImpactParity />
+
+    <!-- 5. How it works + pricing tiers -->
+    <ImpactSection showHeader={false} />
+
+    <!-- 6. What you can measure on the dashboard -->
+    <ImpactMetrics />
+
+    <!-- 7. Who sponsors cohorts -->
+    <ImpactAudiences />
+
+    <!-- 8. Program shapes + what founders/sponsors receive -->
+    <ImpactPrograms />
+
+    <!-- 9. FAQ -->
+    <ImpactFaq />
+
+    <!-- 10. Sponsor-specific CTA -->
+    <ImpactCta />
+  </main>
 </MarketingLayout>
+
+<style>
+  .impact-hero {
+    padding-top: clamp(7rem, 14vw, 10rem);
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+  }
+
+  .impact-headline-accent {
+    color: var(--ngo-amber);
+  }
+
+  .impact-mission-points {
+    margin-top: 2.75rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .impact-mission-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+  }
+
+  .impact-mission-card h2 {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .impact-mission-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Override the 720px global cap for the hero header only */
+  .impact-hero .section-header {
+    max-width: var(--max-width);
+  }
+
+  .impact-hero-ctas {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .impact-hero-cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 260px;
+  }
+
+  .impact-hero-cta-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.45;
+  }
+
+  .impact-hero-tertiary {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .impact-hero-tertiary a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .impact-hero-tertiary a:hover {
+    color: var(--text-primary);
+    border-bottom-color: var(--text-secondary);
+  }
+
+  .impact-hero-tagline {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    .impact-mission-points {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

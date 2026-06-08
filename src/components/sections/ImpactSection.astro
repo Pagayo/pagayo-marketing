@@ -1,23 +1,43 @@
 ---
 import Button from '../ui/Button.astro';
+
+interface Props {
+  /** Hide the section header (used on /impact where the hero covers it). */
+  showHeader?: boolean;
+  /** Homepage teaser: hide pricing tiers and link to full page. */
+  compact?: boolean;
+}
+
+const { showHeader = true, compact = false } = Astro.props;
 ---
 <section class="section ngo-section fade-in" id="impact">
   <div class="container">
-    <div class="section-header center">
-      <span class="section-label" style="background:var(--ngo-amber-glow);color:var(--ngo-amber);border-color:rgba(251,191,36,0.2);">
-        Impact Engine
-      </span>
-      <h2 class="headline-lg">
-        Same tools. Same chance.<br />
-        <span style="color:var(--ngo-amber);">Anywhere on the map.</span>
-      </h2>
-      <p class="text-lg">
-        Pagayo was built so a founder in Banjul can run the same software as
-        a chain in Amsterdam. NGOs, governments and donors can sponsor entire
-        cohorts — the platform stays free for the entrepreneur, and you see
-        the real business outcomes on a live dashboard.
-      </p>
-    </div>
+    {showHeader && (
+      <div class="section-header center">
+        <span class="section-label impact-label">
+          Entrepreneurship Infrastructure
+        </span>
+        <h2 class="headline-lg">
+          Provision a cohort.<br />
+          <span class="impact-headline-accent">Measure what actually happened.</span>
+        </h2>
+        <p class="text-lg">
+          NGOs, governments, and foundations sponsor cohorts of entrepreneurs.
+          Each founder gets a full commerce platform — free for them, live-monitored by you.
+          Three steps. Real outcomes. No grant report required.
+        </p>
+      </div>
+    )}
+
+    {!showHeader && (
+      <div class="section-header center">
+        <span class="section-label impact-label">How it works</span>
+        <h2 class="headline-lg">From sponsorship to verified outcomes.</h2>
+        <p class="text-lg">
+          Three steps — provision a cohort, founders run real businesses, you measure what happened.
+        </p>
+      </div>
+    )}
 
     <div class="ngo-flow">
       <div class="ngo-step">
@@ -37,53 +57,87 @@ import Button from '../ui/Button.astro';
       </div>
     </div>
 
-    <h3 class="headline-md" style="text-align:center;margin-top:4rem;margin-bottom:0.5rem;">
-      Impact Dashboard Pricing
-    </h3>
-    <p class="text-lg" style="text-align:center;margin-bottom:2rem;">
-      The platform is free for sponsored entrepreneurs. You pay only for the dashboard — so the funding goes to the people doing the work.
-    </p>
+    {!compact && (
+      <>
+        <h3 class="headline-md impact-pricing-title">
+          Impact Dashboard Pricing
+        </h3>
+        <p class="text-lg impact-pricing-intro">
+          The platform is free for sponsored entrepreneurs. You pay only for the dashboard — so the funding goes to the people doing the work.
+        </p>
 
-    <div class="ngo-tiers">
-      <div class="ngo-tier-card">
-        <div class="tier-name">Starter</div>
-        <div class="tier-price">€500/mo</div>
-        <div class="tier-unit">Up to 50 entrepreneurs</div>
-        <ul>
-          <li>Live revenue tracking</li>
-          <li>Basic impact metrics</li>
-          <li>Monthly PDF reports</li>
-          <li>Email support</li>
-        </ul>
-      </div>
-      <div class="ngo-tier-card" style="border-color:rgba(251,191,36,0.3);">
-        <div class="tier-name">Growth</div>
-        <div class="tier-price">€2,000/mo</div>
-        <div class="tier-unit">Up to 250 entrepreneurs</div>
-        <ul>
-          <li>Everything in Starter</li>
-          <li>Advanced analytics</li>
-          <li>Cohort comparison</li>
-          <li>API access for own reporting</li>
-          <li>Dedicated account manager</li>
-        </ul>
-      </div>
-      <div class="ngo-tier-card">
-        <div class="tier-name">Enterprise</div>
-        <div class="tier-price">€5,000/mo</div>
-        <div class="tier-unit">Unlimited entrepreneurs</div>
-        <ul>
-          <li>Everything in Growth</li>
-          <li>White-label dashboards</li>
-          <li>Custom metrics & KPIs</li>
-          <li>Multi-region programs</li>
-          <li>Integration with donor systems</li>
-        </ul>
-      </div>
-    </div>
+        <div class="ngo-tiers">
+          <div class="ngo-tier-card">
+            <div class="tier-name">Starter</div>
+            <div class="tier-price">€1,000/mo</div>
+            <div class="tier-unit">Up to 50 entrepreneurs</div>
+            <ul>
+              <li>Live revenue tracking</li>
+              <li>Basic impact metrics</li>
+              <li>Monthly PDF reports</li>
+              <li>Email support</li>
+            </ul>
+          </div>
+          <div class="ngo-tier-card ngo-tier-card--featured">
+            <div class="tier-name">Growth</div>
+            <div class="tier-price">€3,000/mo</div>
+            <div class="tier-unit">Up to 250 entrepreneurs</div>
+            <ul>
+              <li>Everything in Starter</li>
+              <li>Advanced analytics</li>
+              <li>Cohort comparison</li>
+              <li>API access for own reporting</li>
+              <li>Dedicated account manager</li>
+            </ul>
+          </div>
+          <div class="ngo-tier-card">
+            <div class="tier-name">Enterprise</div>
+            <div class="tier-price ngo-tier-price--contact">Contact us</div>
+            <div class="tier-unit">Unlimited entrepreneurs</div>
+            <ul>
+              <li>Everything in Growth</li>
+              <li>White-label dashboards</li>
+              <li>Custom metrics & KPIs</li>
+              <li>Multi-region programs</li>
+              <li>Integration with donor systems</li>
+            </ul>
+          </div>
+        </div>
+      </>
+    )}
 
-    <div style="text-align:center;margin-top:3rem;">
-      <Button href="/contact" variant="ngo" size="lg">Sponsor a Cohort →</Button>
+    <div class="impact-section-cta">
+      {compact ? (
+        <Button href="/impact" variant="ngo" size="lg">Explore the full Impact Engine →</Button>
+      ) : (
+        <Button href="/contact" variant="ngo" size="lg">Sponsor a Cohort →</Button>
+      )}
     </div>
   </div>
 </section>
+
+<style>
+  .impact-headline-accent {
+    color: var(--ngo-amber);
+  }
+
+  .impact-pricing-title {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .impact-pricing-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .impact-section-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .ngo-tier-price--contact {
+    font-size: 1.2rem;
+  }
+</style>

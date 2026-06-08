@@ -117,6 +117,20 @@ Nieuwe posts: markdown in `src/content/blog/` met frontmatter (title, descriptio
 | Preview | `TestimonialsGrid` `limit={3}` + `showViewAllLink` | Homepage + `/gyms` |
 | Data | `src/content/success-stories.json` | Zod: `src/lib/success-stories-schema.ts`; generator: `pagayo-maintenance/.github/scripts/generate-success-stories.mjs` |
 
+### Impact Engine (`/impact`)
+
+| Element | Class / component | Notities |
+|---------|-------------------|----------|
+| Hero | `impact-hero`, i18n `impactPage.hero` | Nairobi ↔ Amsterdam framing |
+| Parity | `ImpactParity.astro`, `.impact-parity-grid` | Side-by-side Amsterdam / Nairobi use cases |
+| Flow + pricing | `ImpactSection.astro` | Homepage: `compact` (teaser + link); full page: tiers + CTA |
+| Metrics | `ImpactMetrics.astro` | Dashboard KPI cards |
+| Audiences | `ImpactAudiences.astro` | NGO, government, CSR, accelerators |
+| Programs | `ImpactPrograms.astro` | Example cohorts + platform/reporting checklists |
+| FAQ | `ImpactFaq.astro`, `<details>` | Sponsor questions |
+| Backdrop | `PageBackdrop` variant `impact` | Green + amber wash |
+| Accent | `.impact-label`, `--ngo-amber` | Sectielabels Impact-programma |
+
 Nieuwe sectie: zelfde BEM-achtige class-namen als in `global.css`; `fade-in` op sectie-root.
 
 ## Chrome (niet dupliceren)
