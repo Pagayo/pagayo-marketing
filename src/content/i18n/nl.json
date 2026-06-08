@@ -39,5 +39,17 @@
       "Subscriptions en memberships",
       "Coupon- en voorraadbeheer"
     ]
+  },
+  "blogPage": {
+    "title": "Pagayo Blog — Commerce, edge engineering en platformnotities",
+    "description": "Artikelen van het Pagayo-team over edge-native commerce, SSR hydration, betalingen en het bouwen van een platform dat overal draait.",
+    "inLanguage": "nl-NL",
+    "sectionLabel": "Blog",
+    "headline": "Ideeën voor commerce op de edge.",
+    "intro": "Engineeringnotities, productdenken en industryperspectieven van het team achter Pagayo — het platform waar elke verkoop één Order is.",
+    "featuredLabel": "Uitgelicht",
+    "allPostsLabel": "Alle artikelen",
+    "backToBlog": "Terug naar Blog",
+    "readArticle": "Lees artikel"
   }
 }

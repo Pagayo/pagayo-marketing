@@ -39,5 +39,17 @@
       "Subscriptions und Memberships",
       "Gutschein- und Bestandsverwaltung"
     ]
+  },
+  "blogPage": {
+    "title": "Pagayo Blog — Commerce, Edge Engineering und Plattform-Notizen",
+    "description": "Artikel vom Pagayo-Team zu Edge-native Commerce, SSR Hydration, Zahlungen und dem Aufbau einer Plattform, die ueberall laeuft.",
+    "inLanguage": "de-DE",
+    "sectionLabel": "Blog",
+    "headline": "Ideen fuer Commerce an der Edge.",
+    "intro": "Engineering-Notizen, Produktgedanken und Branchenperspektiven vom Team hinter Pagayo — der Plattform, in der jeder Verkauf eine Order ist.",
+    "featuredLabel": "Empfohlen",
+    "allPostsLabel": "Alle Beitraege",
+    "backToBlog": "Zurueck zum Blog",
+    "readArticle": "Artikel lesen"
   }
 }
