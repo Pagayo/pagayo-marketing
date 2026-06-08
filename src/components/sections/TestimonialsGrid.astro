@@ -1,51 +1,50 @@
-<section class="section testimonials fade-in">
+---
+import SuccessStoryCard from '../success-stories/SuccessStoryCard.astro';
+import storiesRaw from '../../content/success-stories.json';
+import i18nEn from '../../content/i18n/en.json';
+import { parseSuccessStories, resolvePreviewStories } from '../../lib/success-stories-schema';
+
+interface Props {
+  showHeader?: boolean;
+  sectionId?: string;
+  limit?: number;
+  showViewAllLink?: boolean;
+}
+
+const {
+  showHeader = true,
+  sectionId = 'success-stories',
+  limit,
+  showViewAllLink = false,
+} = Astro.props;
+
+const t = i18nEn.successStoriesPage;
+const data = parseSuccessStories(storiesRaw);
+
+const stories = limit
+  ? resolvePreviewStories(data).slice(0, limit)
+  : data.continents.flatMap((c) => c.stories);
+---
+
+<section class="section testimonials fade-in" id={sectionId}>
   <div class="container">
-    <div class="section-header center">
-      <span class="section-label">In the Wild</span>
-      <h2 class="headline-lg">Used by independent operators worldwide.</h2>
-    </div>
+    {showHeader && (
+      <div class="section-header center">
+        <span class="section-label">In the Wild</span>
+        <h2 class="headline-lg">Used by independent operators worldwide.</h2>
+      </div>
+    )}
 
     <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <p class="testimonial-quote">
-          "We left an enterprise gym platform and save over €600 per year.
-          Same features. None of the per-member taxes."
-        </p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">MK</div>
-          <div>
-            <div class="testimonial-name">Marco K.</div>
-            <div class="testimonial-role">Gym Owner, Amsterdam</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-quote">
-          "Our community pool had no budget for software. In an afternoon
-          we had subscriptions, QR check-in at the gate and an online shop —
-          live, on our own domain."
-        </p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SV</div>
-          <div>
-            <div class="testimonial-name">Stichting Voorburg</div>
-            <div class="testimonial-role">Community Pool, NL</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-quote">
-          "I started referring shop owners in my city. Three signed up the
-          first week. The recurring commission is real — it just keeps coming in."
-        </p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">JR</div>
-          <div>
-            <div class="testimonial-name">Jasmine R.</div>
-            <div class="testimonial-role">Pagayo Partner, UK</div>
-          </div>
-        </div>
-      </div>
+      {stories.map((story) => (
+        <SuccessStoryCard story={story} />
+      ))}
     </div>
+
+    {showViewAllLink && limit && (
+      <p class="success-stories-view-all">
+        <a href="/success-stories">{t.viewAllStories}</a>
+      </p>
+    )}
   </div>
 </section>

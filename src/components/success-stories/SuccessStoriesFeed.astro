@@ -1,0 +1,20 @@
+---
+import SuccessStoryCard from './SuccessStoryCard.astro';
+import storiesRaw from '../../content/success-stories.json';
+import { parseSuccessStories } from '../../lib/success-stories-schema';
+
+const data = parseSuccessStories(storiesRaw);
+---
+
+<div class="success-stories-feed">
+  {data.continents.map((continent) => (
+    <section class="success-stories-continent-section fade-in" aria-labelledby={`continent-${continent.id}`}>
+      <h2 class="success-stories-continent" id={`continent-${continent.id}`}>{continent.label}</h2>
+      <div class="testimonials-grid">
+        {continent.stories.map((story) => (
+          <SuccessStoryCard story={story} />
+        ))}
+      </div>
+    </section>
+  ))}
+</div>

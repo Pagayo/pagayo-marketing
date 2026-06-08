@@ -51,5 +51,31 @@
     "allPostsLabel": "Alle artikelen",
     "backToBlog": "Terug naar Blog",
     "readArticle": "Lees artikel"
+  },
+  "changelogPage": {
+    "title": "Pagayo Changelog — Productupdates en fixes",
+    "description": "Een gedateerd overzicht van wat er in Pagayo veranderde: nieuwe features, verbeteringen, fixes en verwijderingen.",
+    "inLanguage": "nl-NL",
+    "sectionLabel": "Changelog",
+    "headline": "Wat er is uitgerold, en wanneer.",
+    "intro": "Productwijzigingen in Pagayo — nieuwe mogelijkheden, verbeteringen en fixes. Voor het weekverhaal, zie de Build Log.",
+    "statUpdates": "Updates gelogd",
+    "statReleaseDays": "Releasedagen",
+    "statSince": "Sinds start",
+    "feedAriaLabel": "Changelog-items per datum",
+    "typeNew": "Nieuw",
+    "typeImproved": "Verbeterd",
+    "typeFixed": "Fix",
+    "typeRemoved": "Verwijderd"
+  },
+  "successStoriesPage": {
+    "title": "Pagayo Success Stories — Operators in het wild",
+    "description": "Honderd geanonimiseerde verhalen van winkels, clubs, stichtingen en onafhankelijke operators in Stripe-regio's — gegroepeerd per continent.",
+    "inLanguage": "nl-NL",
+    "sectionLabel": "Success Stories",
+    "headline": "Gemaakt voor operators die zelf de touwtjes in handen houden.",
+    "intro": "Honderd success stories van Pagayo-tenants verspreid over continenten waar Stripe actief is — van webshops en gyms tot stichtingen, zwembaden en verenigingen. Gegroepeerd per regio, niet als landenlijst. We noemen tenants nooit bij naam of organisatie: alleen hun rol en stad.",
+    "feedAriaLabel": "Success stories per continent",
+    "viewAllStories": "Bekijk alle 100 verhalen →"
   }
 }

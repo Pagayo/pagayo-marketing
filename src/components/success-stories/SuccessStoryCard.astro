@@ -1,0 +1,47 @@
+---
+import type { SuccessStory, StoryVertical } from '../../lib/success-stories-schema';
+
+interface Props {
+  story: SuccessStory;
+}
+
+const { story } = Astro.props;
+
+const VERTICAL_ICONS: Record<StoryVertical, string> = {
+  'gym': '🏋',
+  'crossfit': '💪',
+  'yoga': '🧘',
+  'martial-arts': '🥋',
+  'football-club': '⚽',
+  'tennis-club': '🎾',
+  'swimming-club': '🏊',
+  'community-pool': '🏊',
+  'community-foundation': '🤝',
+  'cultural-association': '🎭',
+  'fashion-webshop': '👗',
+  'electronics-webshop': '📱',
+  'bookshop': '📚',
+  'home-goods': '🏠',
+  'pet-supplies': '🐾',
+  'artisan-marketplace': '🎨',
+  'b2b-catalog': '📦',
+  'subscription-box': '📬',
+  'cafe': '☕',
+  'restaurant': '🍽',
+  'food-truck': '🚚',
+  'charity-shop': '♻',
+  'event-tickets': '🎟',
+  'hotel-gift-shop': '🏨',
+  'local-retailer': '🛍',
+};
+
+const icon = VERTICAL_ICONS[story.vertical];
+---
+
+<article class="testimonial-card success-story-card">
+  <p class="testimonial-quote">"{story.quote}"</p>
+  <div class="testimonial-author">
+    <div class="testimonial-avatar success-story-avatar" aria-hidden="true">{icon}</div>
+    <p class="testimonial-role success-story-role">{story.role}</p>
+  </div>
+</article>
