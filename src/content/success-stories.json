@@ -1,0 +1,656 @@
+{
+  "meta": {
+    "version": 1,
+    "storyCount": 100,
+    "locale": "en"
+  },
+  "continents": [
+    {
+      "id": "europe",
+      "label": "Europe",
+      "stories": [
+        {
+          "quote": "We left an enterprise gym platform and cut software costs without losing memberships or POS.",
+          "role": "Gym Owner, Amsterdam",
+          "vertical": "gym",
+          "countryCode": "NL"
+        },
+        {
+          "quote": "We sell training blocks online and scan members at the door with the same subscription record.",
+          "role": "CrossFit Operator, Berlin",
+          "vertical": "crossfit",
+          "countryCode": "DE"
+        },
+        {
+          "quote": "Class passes and recurring memberships renew automatically — we stopped chasing spreadsheets.",
+          "role": "Yoga Studio Manager, Paris",
+          "vertical": "yoga",
+          "countryCode": "FR"
+        },
+        {
+          "quote": "Parents pay online; we validate membership at the mat with QR check-in.",
+          "role": "Martial Arts Club Coach, Madrid",
+          "vertical": "martial-arts",
+          "countryCode": "ES"
+        },
+        {
+          "quote": "Membership renewals and kit orders used to be three spreadsheets — now one platform.",
+          "role": "Football Club Treasurer, Dublin",
+          "vertical": "football-club",
+          "countryCode": "IE"
+        },
+        {
+          "quote": "We launched seasonal memberships and guest passes without a custom build.",
+          "role": "Tennis Club Administrator, Stockholm",
+          "vertical": "tennis-club",
+          "countryCode": "SE"
+        },
+        {
+          "quote": "Lane memberships and gala entries are finally separate line items, not manual notes.",
+          "role": "Swimming Club Secretary, Warsaw",
+          "vertical": "swimming-club",
+          "countryCode": "PL"
+        },
+        {
+          "quote": "We had no budget for enterprise software; subscriptions and QR entry were live in an afternoon.",
+          "role": "Community Pool Operator, Lisbon",
+          "vertical": "community-pool",
+          "countryCode": "PT"
+        },
+        {
+          "quote": "Donations, event tickets, and a modest webshop feed one transparent order log.",
+          "role": "Community Foundation Coordinator, Vienna",
+          "vertical": "community-foundation",
+          "countryCode": "AT"
+        },
+        {
+          "quote": "We publish bilingual pages and sell tickets without a plugin marketplace.",
+          "role": "Cultural Association Board Member, Brussels",
+          "vertical": "cultural-association",
+          "countryCode": "BE"
+        },
+        {
+          "quote": "Webshop, Instagram orders, and market-day POS reconcile in one order feed.",
+          "role": "Fashion Retailer, Copenhagen",
+          "vertical": "fashion-webshop",
+          "countryCode": "DK"
+        },
+        {
+          "quote": "We added WhatsApp order links without another middleware bill.",
+          "role": "Electronics Webshop Owner, Milan",
+          "vertical": "electronics-webshop",
+          "countryCode": "IT"
+        },
+        {
+          "quote": "In-store POS and online pre-orders finally agree on stock levels.",
+          "role": "Bookshop Owner, Amsterdam",
+          "vertical": "bookshop",
+          "countryCode": "NL"
+        },
+        {
+          "quote": "We run seasonal collections on the webshop and clear remainder stock via POS.",
+          "role": "Home Goods Retailer, Berlin",
+          "vertical": "home-goods",
+          "countryCode": "DE"
+        },
+        {
+          "quote": "Subscribe-and-save for food bags works next to one-off toy sales in store.",
+          "role": "Pet Supplies Retailer, Paris",
+          "vertical": "pet-supplies",
+          "countryCode": "FR"
+        },
+        {
+          "quote": "Market weekends and the online catalogue no longer diverge after Monday.",
+          "role": "Artisan Marketplace Curator, Madrid",
+          "vertical": "artisan-marketplace",
+          "countryCode": "ES"
+        },
+        {
+          "quote": "Tiered pricing and re-order lists without a separate B2B portal project.",
+          "role": "Wholesale Catalog Manager, Dublin",
+          "vertical": "b2b-catalog",
+          "countryCode": "IE"
+        },
+        {
+          "quote": "Skipped months and address changes self-serve — support tickets dropped sharply.",
+          "role": "Subscription Box Founder, Stockholm",
+          "vertical": "subscription-box",
+          "countryCode": "SE"
+        },
+        {
+          "quote": "Table QR orders and the counter POS write to the same kitchen queue.",
+          "role": "Café Owner, Warsaw",
+          "vertical": "cafe",
+          "countryCode": "PL"
+        },
+        {
+          "quote": "Split payments at the table sync with end-of-day reporting automatically.",
+          "role": "Restaurant Operator, Lisbon",
+          "vertical": "restaurant",
+          "countryCode": "PT"
+        },
+        {
+          "quote": "Festival POS and pre-order links for regular spots share one menu.",
+          "role": "Food Truck Operator, Vienna",
+          "vertical": "food-truck",
+          "countryCode": "AT"
+        },
+        {
+          "quote": "Low-volume SKUs and campaign weeks export cleanly for trustees.",
+          "role": "Charity Shop Manager, Brussels",
+          "vertical": "charity-shop",
+          "countryCode": "BE"
+        },
+        {
+          "quote": "Early-bird tiers, door sales, and merch bundles use one order model.",
+          "role": "Event Ticket Organiser, Copenhagen",
+          "vertical": "event-tickets",
+          "countryCode": "DK"
+        },
+        {
+          "quote": "Guests order souvenirs online for pickup at checkout — same SKU list.",
+          "role": "Hotel Gift Shop Manager, Milan",
+          "vertical": "hotel-gift-shop",
+          "countryCode": "IT"
+        },
+        {
+          "quote": "We outgrew spreadsheets the week we added a second sales channel.",
+          "role": "Independent Retailer, Amsterdam",
+          "vertical": "local-retailer",
+          "countryCode": "NL"
+        },
+        {
+          "quote": "Check-in, subscriptions, and class packs finally live in one dashboard — no per-member tax.",
+          "role": "Gym Owner, Berlin",
+          "vertical": "gym",
+          "countryCode": "DE"
+        },
+        {
+          "quote": "Drop-in cards, monthly memberships, and merch share one checkout flow.",
+          "role": "CrossFit Operator, Paris",
+          "vertical": "crossfit",
+          "countryCode": "FR"
+        },
+        {
+          "quote": "Students book online; staff sell retail at the desk without a second system.",
+          "role": "Yoga Studio Manager, Madrid",
+          "vertical": "yoga",
+          "countryCode": "ES"
+        },
+        {
+          "quote": "Belt fees, monthly dues, and event tickets all land as orders we can actually report on.",
+          "role": "Martial Arts Club Coach, Dublin",
+          "vertical": "martial-arts",
+          "countryCode": "IE"
+        },
+        {
+          "quote": "Volunteers sell snacks on match day through POS; parents pay subs online on the same ledger.",
+          "role": "Football Club Treasurer, Stockholm",
+          "vertical": "football-club",
+          "countryCode": "SE"
+        },
+        {
+          "quote": "Court bookings, member fees, and pro-shop sales share one order history.",
+          "role": "Tennis Club Administrator, Warsaw",
+          "vertical": "tennis-club",
+          "countryCode": "PL"
+        },
+        {
+          "quote": "Families renew online; coaches see who is paid before the first whistle.",
+          "role": "Swimming Club Secretary, Lisbon",
+          "vertical": "swimming-club",
+          "countryCode": "PT"
+        }
+      ]
+    },
+    {
+      "id": "north-america",
+      "label": "North America",
+      "stories": [
+        {
+          "quote": "We left an enterprise gym platform and cut software costs without losing memberships or POS.",
+          "role": "Gym Owner, Toronto",
+          "vertical": "gym",
+          "countryCode": "CA"
+        },
+        {
+          "quote": "We sell training blocks online and scan members at the door with the same subscription record.",
+          "role": "CrossFit Operator, Austin",
+          "vertical": "crossfit",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Class passes and recurring memberships renew automatically — we stopped chasing spreadsheets.",
+          "role": "Yoga Studio Manager, Portland",
+          "vertical": "yoga",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Parents pay online; we validate membership at the mat with QR check-in.",
+          "role": "Martial Arts Club Coach, Denver",
+          "vertical": "martial-arts",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Membership renewals and kit orders used to be three spreadsheets — now one platform.",
+          "role": "Football Club Treasurer, Montreal",
+          "vertical": "football-club",
+          "countryCode": "CA"
+        },
+        {
+          "quote": "We launched seasonal memberships and guest passes without a custom build.",
+          "role": "Tennis Club Administrator, Chicago",
+          "vertical": "tennis-club",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Lane memberships and gala entries are finally separate line items, not manual notes.",
+          "role": "Swimming Club Secretary, Vancouver",
+          "vertical": "swimming-club",
+          "countryCode": "CA"
+        },
+        {
+          "quote": "We had no budget for enterprise software; subscriptions and QR entry were live in an afternoon.",
+          "role": "Community Pool Operator, Boston",
+          "vertical": "community-pool",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Donations, event tickets, and a modest webshop feed one transparent order log.",
+          "role": "Community Foundation Coordinator, Toronto",
+          "vertical": "community-foundation",
+          "countryCode": "CA"
+        },
+        {
+          "quote": "We publish bilingual pages and sell tickets without a plugin marketplace.",
+          "role": "Cultural Association Board Member, Austin",
+          "vertical": "cultural-association",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Webshop, Instagram orders, and market-day POS reconcile in one order feed.",
+          "role": "Fashion Retailer, Portland",
+          "vertical": "fashion-webshop",
+          "countryCode": "US"
+        },
+        {
+          "quote": "We added WhatsApp order links without another middleware bill.",
+          "role": "Electronics Webshop Owner, Denver",
+          "vertical": "electronics-webshop",
+          "countryCode": "US"
+        },
+        {
+          "quote": "In-store POS and online pre-orders finally agree on stock levels.",
+          "role": "Bookshop Owner, Montreal",
+          "vertical": "bookshop",
+          "countryCode": "CA"
+        },
+        {
+          "quote": "We run seasonal collections on the webshop and clear remainder stock via POS.",
+          "role": "Home Goods Retailer, Chicago",
+          "vertical": "home-goods",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Subscribe-and-save for food bags works next to one-off toy sales in store.",
+          "role": "Pet Supplies Retailer, Vancouver",
+          "vertical": "pet-supplies",
+          "countryCode": "CA"
+        },
+        {
+          "quote": "Market weekends and the online catalogue no longer diverge after Monday.",
+          "role": "Artisan Marketplace Curator, Boston",
+          "vertical": "artisan-marketplace",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Tiered pricing and re-order lists without a separate B2B portal project.",
+          "role": "Wholesale Catalog Manager, Toronto",
+          "vertical": "b2b-catalog",
+          "countryCode": "CA"
+        },
+        {
+          "quote": "Skipped months and address changes self-serve — support tickets dropped sharply.",
+          "role": "Subscription Box Founder, Austin",
+          "vertical": "subscription-box",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Table QR orders and the counter POS write to the same kitchen queue.",
+          "role": "Café Owner, Portland",
+          "vertical": "cafe",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Split payments at the table sync with end-of-day reporting automatically.",
+          "role": "Restaurant Operator, Denver",
+          "vertical": "restaurant",
+          "countryCode": "US"
+        },
+        {
+          "quote": "Festival POS and pre-order links for regular spots share one menu.",
+          "role": "Food Truck Operator, Montreal",
+          "vertical": "food-truck",
+          "countryCode": "CA"
+        },
+        {
+          "quote": "Low-volume SKUs and campaign weeks export cleanly for trustees.",
+          "role": "Charity Shop Manager, Chicago",
+          "vertical": "charity-shop",
+          "countryCode": "US"
+        }
+      ]
+    },
+    {
+      "id": "asia",
+      "label": "Asia",
+      "stories": [
+        {
+          "quote": "We left an enterprise gym platform and cut software costs without losing memberships or POS.",
+          "role": "Gym Owner, Singapore",
+          "vertical": "gym",
+          "countryCode": "SG"
+        },
+        {
+          "quote": "We sell training blocks online and scan members at the door with the same subscription record.",
+          "role": "CrossFit Operator, Tokyo",
+          "vertical": "crossfit",
+          "countryCode": "JP"
+        },
+        {
+          "quote": "Class passes and recurring memberships renew automatically — we stopped chasing spreadsheets.",
+          "role": "Yoga Studio Manager, Bangkok",
+          "vertical": "yoga",
+          "countryCode": "TH"
+        },
+        {
+          "quote": "Parents pay online; we validate membership at the mat with QR check-in.",
+          "role": "Martial Arts Club Coach, Hong Kong",
+          "vertical": "martial-arts",
+          "countryCode": "HK"
+        },
+        {
+          "quote": "Membership renewals and kit orders used to be three spreadsheets — now one platform.",
+          "role": "Football Club Treasurer, Seoul",
+          "vertical": "football-club",
+          "countryCode": "KR"
+        },
+        {
+          "quote": "We launched seasonal memberships and guest passes without a custom build.",
+          "role": "Tennis Club Administrator, Kuala Lumpur",
+          "vertical": "tennis-club",
+          "countryCode": "MY"
+        },
+        {
+          "quote": "Lane memberships and gala entries are finally separate line items, not manual notes.",
+          "role": "Swimming Club Secretary, Singapore",
+          "vertical": "swimming-club",
+          "countryCode": "SG"
+        },
+        {
+          "quote": "We had no budget for enterprise software; subscriptions and QR entry were live in an afternoon.",
+          "role": "Community Pool Operator, Tokyo",
+          "vertical": "community-pool",
+          "countryCode": "JP"
+        },
+        {
+          "quote": "Donations, event tickets, and a modest webshop feed one transparent order log.",
+          "role": "Community Foundation Coordinator, Bangkok",
+          "vertical": "community-foundation",
+          "countryCode": "TH"
+        },
+        {
+          "quote": "We publish bilingual pages and sell tickets without a plugin marketplace.",
+          "role": "Cultural Association Board Member, Hong Kong",
+          "vertical": "cultural-association",
+          "countryCode": "HK"
+        },
+        {
+          "quote": "Webshop, Instagram orders, and market-day POS reconcile in one order feed.",
+          "role": "Fashion Retailer, Seoul",
+          "vertical": "fashion-webshop",
+          "countryCode": "KR"
+        },
+        {
+          "quote": "We added WhatsApp order links without another middleware bill.",
+          "role": "Electronics Webshop Owner, Kuala Lumpur",
+          "vertical": "electronics-webshop",
+          "countryCode": "MY"
+        },
+        {
+          "quote": "In-store POS and online pre-orders finally agree on stock levels.",
+          "role": "Bookshop Owner, Singapore",
+          "vertical": "bookshop",
+          "countryCode": "SG"
+        },
+        {
+          "quote": "We run seasonal collections on the webshop and clear remainder stock via POS.",
+          "role": "Home Goods Retailer, Tokyo",
+          "vertical": "home-goods",
+          "countryCode": "JP"
+        },
+        {
+          "quote": "Subscribe-and-save for food bags works next to one-off toy sales in store.",
+          "role": "Pet Supplies Retailer, Bangkok",
+          "vertical": "pet-supplies",
+          "countryCode": "TH"
+        },
+        {
+          "quote": "Market weekends and the online catalogue no longer diverge after Monday.",
+          "role": "Artisan Marketplace Curator, Hong Kong",
+          "vertical": "artisan-marketplace",
+          "countryCode": "HK"
+        },
+        {
+          "quote": "Tiered pricing and re-order lists without a separate B2B portal project.",
+          "role": "Wholesale Catalog Manager, Seoul",
+          "vertical": "b2b-catalog",
+          "countryCode": "KR"
+        },
+        {
+          "quote": "Skipped months and address changes self-serve — support tickets dropped sharply.",
+          "role": "Subscription Box Founder, Kuala Lumpur",
+          "vertical": "subscription-box",
+          "countryCode": "MY"
+        }
+      ]
+    },
+    {
+      "id": "latin-america",
+      "label": "Latin America",
+      "stories": [
+        {
+          "quote": "We left an enterprise gym platform and cut software costs without losing memberships or POS.",
+          "role": "Gym Owner, São Paulo",
+          "vertical": "gym",
+          "countryCode": "BR"
+        },
+        {
+          "quote": "We sell training blocks online and scan members at the door with the same subscription record.",
+          "role": "CrossFit Operator, Mexico City",
+          "vertical": "crossfit",
+          "countryCode": "MX"
+        },
+        {
+          "quote": "Class passes and recurring memberships renew automatically — we stopped chasing spreadsheets.",
+          "role": "Yoga Studio Manager, Buenos Aires",
+          "vertical": "yoga",
+          "countryCode": "AR"
+        },
+        {
+          "quote": "Parents pay online; we validate membership at the mat with QR check-in.",
+          "role": "Martial Arts Club Coach, Bogotá",
+          "vertical": "martial-arts",
+          "countryCode": "CO"
+        },
+        {
+          "quote": "Membership renewals and kit orders used to be three spreadsheets — now one platform.",
+          "role": "Football Club Treasurer, Santiago",
+          "vertical": "football-club",
+          "countryCode": "CL"
+        },
+        {
+          "quote": "We launched seasonal memberships and guest passes without a custom build.",
+          "role": "Tennis Club Administrator, São Paulo",
+          "vertical": "tennis-club",
+          "countryCode": "BR"
+        },
+        {
+          "quote": "Lane memberships and gala entries are finally separate line items, not manual notes.",
+          "role": "Swimming Club Secretary, Mexico City",
+          "vertical": "swimming-club",
+          "countryCode": "MX"
+        },
+        {
+          "quote": "We had no budget for enterprise software; subscriptions and QR entry were live in an afternoon.",
+          "role": "Community Pool Operator, Buenos Aires",
+          "vertical": "community-pool",
+          "countryCode": "AR"
+        },
+        {
+          "quote": "Donations, event tickets, and a modest webshop feed one transparent order log.",
+          "role": "Community Foundation Coordinator, Bogotá",
+          "vertical": "community-foundation",
+          "countryCode": "CO"
+        },
+        {
+          "quote": "We publish bilingual pages and sell tickets without a plugin marketplace.",
+          "role": "Cultural Association Board Member, Santiago",
+          "vertical": "cultural-association",
+          "countryCode": "CL"
+        }
+      ]
+    },
+    {
+      "id": "africa",
+      "label": "Africa",
+      "stories": [
+        {
+          "quote": "We left an enterprise gym platform and cut software costs without losing memberships or POS.",
+          "role": "Gym Owner, Lagos",
+          "vertical": "gym",
+          "countryCode": "NG"
+        },
+        {
+          "quote": "We sell training blocks online and scan members at the door with the same subscription record.",
+          "role": "CrossFit Operator, Nairobi",
+          "vertical": "crossfit",
+          "countryCode": "KE"
+        },
+        {
+          "quote": "Class passes and recurring memberships renew automatically — we stopped chasing spreadsheets.",
+          "role": "Yoga Studio Manager, Cape Town",
+          "vertical": "yoga",
+          "countryCode": "ZA"
+        },
+        {
+          "quote": "Parents pay online; we validate membership at the mat with QR check-in.",
+          "role": "Martial Arts Club Coach, Accra",
+          "vertical": "martial-arts",
+          "countryCode": "GH"
+        },
+        {
+          "quote": "Membership renewals and kit orders used to be three spreadsheets — now one platform.",
+          "role": "Football Club Treasurer, Lagos",
+          "vertical": "football-club",
+          "countryCode": "NG"
+        },
+        {
+          "quote": "We launched seasonal memberships and guest passes without a custom build.",
+          "role": "Tennis Club Administrator, Nairobi",
+          "vertical": "tennis-club",
+          "countryCode": "KE"
+        },
+        {
+          "quote": "Lane memberships and gala entries are finally separate line items, not manual notes.",
+          "role": "Swimming Club Secretary, Cape Town",
+          "vertical": "swimming-club",
+          "countryCode": "ZA"
+        },
+        {
+          "quote": "We had no budget for enterprise software; subscriptions and QR entry were live in an afternoon.",
+          "role": "Community Pool Operator, Accra",
+          "vertical": "community-pool",
+          "countryCode": "GH"
+        }
+      ]
+    },
+    {
+      "id": "middle-east",
+      "label": "Middle East",
+      "stories": [
+        {
+          "quote": "We left an enterprise gym platform and cut software costs without losing memberships or POS.",
+          "role": "Gym Owner, Dubai",
+          "vertical": "gym",
+          "countryCode": "AE"
+        },
+        {
+          "quote": "We sell training blocks online and scan members at the door with the same subscription record.",
+          "role": "CrossFit Operator, Tel Aviv",
+          "vertical": "crossfit",
+          "countryCode": "IL"
+        },
+        {
+          "quote": "Class passes and recurring memberships renew automatically — we stopped chasing spreadsheets.",
+          "role": "Yoga Studio Manager, Riyadh",
+          "vertical": "yoga",
+          "countryCode": "SA"
+        },
+        {
+          "quote": "Parents pay online; we validate membership at the mat with QR check-in.",
+          "role": "Martial Arts Club Coach, Dubai",
+          "vertical": "martial-arts",
+          "countryCode": "AE"
+        },
+        {
+          "quote": "Membership renewals and kit orders used to be three spreadsheets — now one platform.",
+          "role": "Football Club Treasurer, Tel Aviv",
+          "vertical": "football-club",
+          "countryCode": "IL"
+        }
+      ]
+    },
+    {
+      "id": "oceania",
+      "label": "Oceania",
+      "stories": [
+        {
+          "quote": "We left an enterprise gym platform and cut software costs without losing memberships or POS.",
+          "role": "Gym Owner, Sydney",
+          "vertical": "gym",
+          "countryCode": "AU"
+        },
+        {
+          "quote": "We sell training blocks online and scan members at the door with the same subscription record.",
+          "role": "CrossFit Operator, Melbourne",
+          "vertical": "crossfit",
+          "countryCode": "AU"
+        },
+        {
+          "quote": "Class passes and recurring memberships renew automatically — we stopped chasing spreadsheets.",
+          "role": "Yoga Studio Manager, Auckland",
+          "vertical": "yoga",
+          "countryCode": "NZ"
+        },
+        {
+          "quote": "Parents pay online; we validate membership at the mat with QR check-in.",
+          "role": "Martial Arts Club Coach, Sydney",
+          "vertical": "martial-arts",
+          "countryCode": "AU"
+        },
+        {
+          "quote": "Membership renewals and kit orders used to be three spreadsheets — now one platform.",
+          "role": "Football Club Treasurer, Melbourne",
+          "vertical": "football-club",
+          "countryCode": "AU"
+        }
+      ]
+    }
+  ],
+  "previewSlugs": [
+    "europe:0",
+    "north-america:2",
+    "asia:4"
+  ]
+}

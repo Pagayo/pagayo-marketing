@@ -1,0 +1,37 @@
+---
+import type { ChangelogItem, ChangelogRelease } from '../../lib/changelog-schema';
+
+interface Props {
+  release: ChangelogRelease;
+  typeLabels: Record<ChangelogItem['type'], string>;
+}
+
+const { release, typeLabels } = Astro.props;
+
+function formatDate(iso: string): string {
+  const date = new Date(`${iso}T12:00:00Z`);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+---
+
+<article class="changelog-release fade-in" aria-labelledby={`changelog-${release.date}`}>
+  <h2 class="changelog-date" id={`changelog-${release.date}`}>{formatDate(release.date)}</h2>
+  <ul class="changelog-items">
+    {release.items.map((item) => (
+      <li class="changelog-item">
+        <span class={`changelog-type-pill changelog-type-pill--${item.type}`}>
+          {typeLabels[item.type]}
+        </span>
+        <span class="changelog-item-text">
+          {item.area && <span class="changelog-area">{item.area} — </span>}
+          {item.text}
+        </span>
+      </li>
+    ))}
+  </ul>
+</article>

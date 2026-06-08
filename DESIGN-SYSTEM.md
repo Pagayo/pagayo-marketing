@@ -88,6 +88,35 @@ Compose pagina’s uit bestaande secties vóór je nieuwe bouwt:
 
 Nieuwe posts: markdown in `src/content/blog/` met frontmatter (title, description, category, author, pubDate, featured, draft).
 
+### Changelog (`/changelog`)
+
+| Element | Class / component | Notities |
+|---------|-------------------|----------|
+| Index hero | `changelog-hero`, `section-label`, `headline-xl` | i18n: `changelogPage` in `i18n/*.json` |
+| Stats strip | `.changelog-stats`, `.changelog-stat-card` | Lichte variant van build-log stats |
+| Release feed | `ChangelogRelease.astro`, `.changelog-feed` | Max-width 720px; nieuwste datum eerst |
+| Type badge | `.changelog-type-pill--new\|improved\|fixed\|removed` | new=green, improved=purple, fixed=amber, removed=muted |
+| Backdrop | `PageBackdrop` variant `changelog` | Purple + green wash |
+| Data | `src/content/changelog.json` | Zod: `src/lib/changelog-schema.ts`; backfill via `pagayo-maintenance/.github/scripts/changelog-backfill/` |
+
+### Legal (`/privacy-policy`, `/terms-of-service`)
+
+| Element | Class / component | Notities |
+|---------|-------------------|----------|
+| Layout | `.privacy-page`, `.pp-layout`, `.pp-toc`, `.pp-content` | Gedeeld legal-document patroon |
+| TOC | Sticky sidebar op desktop | Ankerlinks per sectie |
+| Cross-links | Privacy ↔ Terms | Footer + inline links |
+
+### Success Stories (`/success-stories`)
+
+| Element | Class / component | Notities |
+|---------|-------------------|----------|
+| Hero | `success-stories-hero`, i18n `successStoriesPage` | Intro: 100 stories, anonimiteit, continenten |
+| Feed | `SuccessStoriesFeed.astro`, `.success-stories-continent` | 7 continent-secties, 100 cards totaal |
+| Card | `SuccessStoryCard.astro` | Quote + role only (geen namen); vertical-icoon als avatar |
+| Preview | `TestimonialsGrid` `limit={3}` + `showViewAllLink` | Homepage + `/gyms` |
+| Data | `src/content/success-stories.json` | Zod: `src/lib/success-stories-schema.ts`; generator: `pagayo-maintenance/.github/scripts/generate-success-stories.mjs` |
+
 Nieuwe sectie: zelfde BEM-achtige class-namen als in `global.css`; `fade-in` op sectie-root.
 
 ## Chrome (niet dupliceren)
@@ -107,6 +136,8 @@ Nieuwe sectie: zelfde BEM-achtige class-namen als in `global.css`; `fade-in` op 
 | `src/content/trust.json` | Trust/security items |
 | `src/content/i18n/*.json` | UI-strings, pagina-meta, nav |
 | `src/content/blog/*.md` | Blogposts (Astro content collection) |
+| `src/content/changelog.json` | Publieke product-changelog (datum + type + tekst) |
+| `src/content/success-stories.json` | 100 anonymised tenant stories by continent |
 
 ## Meertaligheid
 

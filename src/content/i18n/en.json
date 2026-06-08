@@ -51,5 +51,31 @@
     "allPostsLabel": "All posts",
     "backToBlog": "Back to Blog",
     "readArticle": "Read article"
+  },
+  "changelogPage": {
+    "title": "Pagayo Changelog — Product updates and fixes",
+    "description": "A dated log of what changed in Pagayo: new features, improvements, fixes, and removals — from the first commit to today.",
+    "inLanguage": "en-US",
+    "sectionLabel": "Changelog",
+    "headline": "What shipped, and when.",
+    "intro": "Product-facing changes to Pagayo — new capabilities, improvements, and fixes. For the week-by-week build story, see the Build Log.",
+    "statUpdates": "Updates logged",
+    "statReleaseDays": "Release days",
+    "statSince": "Since launch",
+    "feedAriaLabel": "Changelog entries by date",
+    "typeNew": "New",
+    "typeImproved": "Improved",
+    "typeFixed": "Fixed",
+    "typeRemoved": "Removed"
+  },
+  "successStoriesPage": {
+    "title": "Pagayo Success Stories — Operators in the wild",
+    "description": "One hundred anonymised stories from shops, clubs, foundations, and independent operators across Stripe-supported regions — grouped by continent.",
+    "inLanguage": "en-US",
+    "sectionLabel": "Success Stories",
+    "headline": "Built for operators who run the show.",
+    "intro": "One hundred success stories from Pagayo tenants across continents where Stripe is active — from webshops and gyms to foundations, pools, and clubs. Stories are grouped by region, not by country list. We never name tenants or their organisations: only the role they play and the city they operate in.",
+    "feedAriaLabel": "Success stories by continent",
+    "viewAllStories": "View all 100 stories →"
   }
 }
