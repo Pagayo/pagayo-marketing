@@ -1,11 +1,1091 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
 import PageBackdrop from '../components/layout/PageBackdrop.astro';
-import PartnerCalc from '../components/sections/PartnerCalc.astro';
-import FinalCta from '../components/sections/FinalCta.astro';
+
+const pageTitle = 'Partner Program — Earn 50% by referring your clients to Pagayo';
+const pageDescription =
+  'You already know businesses that sell products. Introduce them to Pagayo and earn 50% of their subscription every month — for as long as they stay. No sales experience needed.';
+
+const scenarios = [
+  {
+    num: '01',
+    icon: '✂️',
+    sector: 'Hairdressing & Barber supply',
+    headline: 'You supply 200 salons. Each one needs a way to sell.',
+    body: `You sell scissors, chairs, colour, shampoo and styling products to hairdressers and barber shops across the region. Every single one of those shops needs a way to take bookings, sell retail products, run a loyalty card and send appointment reminders. Right now they piece it together themselves — badly. You introduce them to Pagayo, they get a webshop, POS and WhatsApp sales in one. You earn 50% of their subscription every month without lifting a finger after the intro.`,
+    example: '80 salons on Professional → €9,120/yr passive income',
+    accent: '#a855f7',
+    accentSoft: 'rgba(168, 85, 247, 0.12)',
+  },
+  {
+    num: '02',
+    icon: '🏋️',
+    sector: 'Sports nutrition & supplement brands',
+    headline: "You supply 300 gyms. They're all sitting on untapped online revenue.",
+    body: `Your protein shakes, supplements and sports nutrition line up in the fridges of hundreds of gyms and fitness studios. Those same gyms want to sell memberships online, take class bookings, offer their own branded merchandise and send promotional messages to members. Pagayo gives them a complete commerce stack — webshop, POS, WhatsApp, digital products. You become the brand that helped their business grow. That relationship pays you back every month.`,
+    example: '60 gyms on Advanced → €14,040/yr passive income',
+    accent: '#22c55e',
+    accentSoft: 'rgba(34, 197, 94, 0.12)',
+  },
+  {
+    num: '03',
+    icon: '🍺',
+    sector: 'Horeca wholesale & beverage distributors',
+    headline: 'Every café and restaurant on your delivery route is a potential tenant.',
+    body: `You deliver drinks, coffee, ingredients and packaging to cafés, restaurants and food businesses. These owners know you, trust you, and see you regularly. When you mention that you can also set them up with an online webshop, a table-order QR code and a WhatsApp ordering system — all in one — they listen. Pagayo plugs into their daily operations immediately. Your delivery relationship becomes a revenue stream that never needs a delivery van.`,
+    example: '50 cafés on Supporter → €1,200/yr — 120 restaurants on Professional → €13,680/yr',
+    accent: '#f59e0b',
+    accentSoft: 'rgba(245, 158, 11, 0.12)',
+  },
+  {
+    num: '04',
+    icon: '💼',
+    sector: 'Accountants & bookkeepers',
+    headline: "Your clients trust your advice. That's the only sales pitch you need.",
+    body: `You manage the books for dozens of small businesses — retail shops, service providers, sole traders. You already know exactly who among them is struggling to sell online or losing money to clunky payment setups. A short recommendation from you carries more weight than any advertisement. Pagayo integrates cleanly with financial workflows. Your clients get a better commerce system; you earn a passive income on every subscription, month after month, without any additional work after the initial referral.`,
+    example: '40 small business clients → avg. €228/yr each → €4,560/yr',
+    accent: '#3b82f6',
+    accentSoft: 'rgba(59, 130, 246, 0.12)',
+  },
+  {
+    num: '05',
+    icon: '🏪',
+    sector: 'Franchise organisations',
+    headline: 'You have 50 franchisees. Roll out Pagayo once. Earn on all 50.',
+    body: `You run or consult for a franchise concept — a chain of car washes, specialty food stores, boutique fitness studios or service shops. You control the tech stack. By making Pagayo the standard commerce platform for your franchisee network, you give every location a consistent, professional online and in-store experience — and you earn a share of every subscription automatically. One decision. Fifty revenue streams.`,
+    example: '50 franchisees on Advanced → €11,700/yr recurring',
+    accent: '#06b6d4',
+    accentSoft: 'rgba(6, 182, 212, 0.12)',
+  },
+  {
+    num: '06',
+    icon: '🎨',
+    sector: 'Web agencies & digital consultants',
+    headline: "You build the website. We run the commerce. Both of you get paid forever.",
+    body: `You design and build websites for small businesses. Your clients always ask: "How do I sell online? How do I take payments? How do we set up WhatsApp ordering?" You can now answer that question with a Pagayo setup, earn the setup fee yourself, and then collect 50% of their subscription every month going forward. Pagayo handles all the complexity — payments, logistics integrations, inventory, subscriptions — so you can stay focused on design and growth, not platform maintenance.`,
+    example: '30 client sites on Professional → €3,420/yr recurring from existing client work',
+    accent: '#ec4899',
+    accentSoft: 'rgba(236, 72, 153, 0.12)',
+  },
+];
+
+const steps = [
+  {
+    num: '1',
+    title: 'Apply in two minutes.',
+    body: 'Fill in the short form. We review every application personally and respond within one business day. No pitch deck, no revenue proof required.',
+  },
+  {
+    num: '2',
+    title: 'Get your link and materials.',
+    body: 'You receive a unique referral link, a one-page PDF you can share with clients, and optional co-branded introduction materials for your sector.',
+  },
+  {
+    num: '3',
+    title: 'Introduce Pagayo to your clients.',
+    body: "An email, a conversation, a mention at your next delivery or meeting. Your clients sign up through your link at their own pace. You don't need to do demos or sales calls.",
+  },
+  {
+    num: '4',
+    title: 'Earn 50%, every month, forever.',
+    body: 'As soon as a referral subscribes, 50% of their monthly fee lands in your partner account. Automatic. Paid via Stripe. Withdraw any time, no minimum threshold.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Do my clients pay more because I referred them?',
+    a: 'No. Your clients pay exactly the same price they would if they signed up directly. Your commission comes entirely from our margin, not from a surcharge on their subscription.',
+  },
+  {
+    q: 'How long do I earn on a referral?',
+    a: "For as long as your client stays subscribed. There is no end date, no cliff, no reduced rate after year one. If they're on Pagayo in year five, you're still earning 50% in year five.",
+  },
+  {
+    q: 'What if I refer someone who upgrades their plan later?',
+    a: 'You earn 50% of whatever they pay at the time of billing. If they upgrade from Supporter to Professional, your earnings upgrade automatically.',
+  },
+  {
+    q: 'I supply a specific sector — do you have materials in my industry language?',
+    a: "Yes. Once you're accepted, we can produce co-branded materials that use the right terminology for your sector. A barber supply company needs different language than a software agency.",
+  },
+  {
+    q: 'How does payout work?',
+    a: 'Payouts run through Stripe Connect. You connect your bank account once during onboarding. Earnings accumulate in your partner dashboard and you request a withdrawal whenever you want.',
+  },
+  {
+    q: 'Can I refer businesses in any country?',
+    a: 'Pagayo currently operates in the Netherlands, Belgium, Germany, France, Spain and several African markets. If your clients are based there, the answer is yes.',
+  },
+];
 ---
-<MarketingLayout title="Pagayo Partner Program" description="Share Pagayo and earn 50% commission.">
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
   <PageBackdrop variant="partners" />
-  <PartnerCalc />
-  <FinalCta />
+
+  <main class="pp-page">
+
+    <!-- ══════════════════════════════════════════════════ HERO -->
+    <section class="hero section pp-hero">
+      <div class="hero-bg">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          Partner Program — 50% recurring commission
+        </div>
+
+        <h1 class="headline-xl">
+          Your clients already sell.<br />
+          <span class="text-gradient">Help them sell better.</span>
+        </h1>
+
+        <p class="pp-hero-intro">
+          You have a customer base. Some of them run a shop, a salon, a gym,
+          a café. Introduce them to Pagayo and earn half of what they pay,
+          every month, for as long as they stay — without ever handling a
+          support ticket or writing a line of code.
+        </p>
+
+        <div class="pp-hero-ctas">
+          <a href="/contact?subject=Partner+Program" class="btn btn-partner btn-lg">
+            Apply to become a partner →
+          </a>
+          <a href="#scenarios" class="btn btn-secondary btn-lg">
+            See if this fits your business
+          </a>
+        </div>
+
+        <div class="pp-trust-row">
+          <div class="pp-trust-item">
+            <span class="pp-trust-val">50%</span>
+            <span class="pp-trust-label">commission, recurring</span>
+          </div>
+          <div class="pp-trust-sep" aria-hidden="true">·</div>
+          <div class="pp-trust-item">
+            <span class="pp-trust-val">€0</span>
+            <span class="pp-trust-label">cost to join</span>
+          </div>
+          <div class="pp-trust-sep" aria-hidden="true">·</div>
+          <div class="pp-trust-item">
+            <span class="pp-trust-val">No</span>
+            <span class="pp-trust-label">minimum referrals</span>
+          </div>
+          <div class="pp-trust-sep" aria-hidden="true">·</div>
+          <div class="pp-trust-item">
+            <span class="pp-trust-val">Forever</span>
+            <span class="pp-trust-label">no end date on earnings</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ THE MODEL -->
+    <section class="section pp-model fade-in">
+      <div class="container">
+        <div class="pp-model-inner">
+          <div class="pp-model-text">
+            <span class="section-label">How it works</span>
+            <h2 class="headline-md">You refer. We handle the rest. You earn.</h2>
+            <p>
+              Most affiliate programs pay a one-off bounty and move on.
+              Ours pays you every month for the lifetime of the customer.
+              There is a significant difference between a €50 sign-up bonus
+              and €114 per year, every year, from a single customer —
+              automatically deposited without any further action from you.
+            </p>
+            <p>
+              You do not need to sell. You do not need to demo the product.
+              You do not need to handle support. You make the introduction
+              and we take care of onboarding, support, and renewal.
+            </p>
+          </div>
+          <div class="pp-model-cards">
+            <div class="pp-model-card">
+              <div class="pp-model-icon">🤝</div>
+              <h3>You refer</h3>
+              <p>Share your unique link. An email, a mention, a QR code at your next delivery — whatever fits how you work.</p>
+            </div>
+            <div class="pp-model-card">
+              <div class="pp-model-icon">🛍️</div>
+              <h3>They subscribe</h3>
+              <p>Your client signs up for Pagayo. We handle onboarding, training, and support from day one. You're not involved unless you want to be.</p>
+            </div>
+            <div class="pp-model-card pp-model-card--highlight">
+              <div class="pp-model-icon">💶</div>
+              <h3>You earn, monthly</h3>
+              <p>50% of their subscription lands in your partner account every billing cycle. Automatically. For as long as they stay.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ SCENARIOS -->
+    <section class="section pp-scenarios" id="scenarios">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Who this is for</span>
+          <h2 class="headline-md">
+            If your clients run a business,<br />you are a natural partner.
+          </h2>
+          <p class="pp-scenarios-sub">
+            You don't need to be a tech company. You need a relationship with
+            businesses that sell — and a reason to mention Pagayo.
+            Here's what that looks like in practice.
+          </p>
+        </div>
+
+        <div class="pp-scenarios-grid">
+          {scenarios.map((s, idx) => (
+            <article
+              class={`pp-scenario-card ${idx === 0 ? 'pp-scenario-card--wide' : ''}`}
+              style={`--accent: ${s.accent}; --accent-soft: ${s.accentSoft};`}
+            >
+              <div class="pp-scenario-top">
+                <div class="pp-scenario-icon-wrap">
+                  <span class="pp-scenario-num">{s.num}</span>
+                  <span class="pp-scenario-icon">{s.icon}</span>
+                </div>
+                <span class="pp-scenario-sector">{s.sector}</span>
+              </div>
+              <h3 class="pp-scenario-headline">{s.headline}</h3>
+              <p class="pp-scenario-body">{s.body}</p>
+              <div class="pp-scenario-example">
+                <span class="pp-scenario-example-label">Example earnings</span>
+                <span class="pp-scenario-example-val">{s.example}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ EARNINGS -->
+    <section class="section pp-earnings fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">The numbers</span>
+          <h2 class="headline-md">Small introductions. Serious income.</h2>
+          <p class="pp-earnings-sub">
+            These are not projections. These are the exact numbers based on
+            current Pagayo pricing — with 50% going to you, every month.
+          </p>
+        </div>
+
+        <div class="pp-earnings-table">
+          <div class="pp-earnings-header">
+            <span>Referrals</span>
+            <span>Plan</span>
+            <span>Their monthly fee</span>
+            <span>Your monthly cut</span>
+            <span>Your annual income</span>
+          </div>
+
+          {[
+            { refs: 10,  plan: 'Supporter',    monthly: '€4',   cut: '€2',    annual: '€240' },
+            { refs: 25,  plan: 'Professional', monthly: '€19',  cut: '€9.50', annual: '€2,850' },
+            { refs: 50,  plan: 'Professional', monthly: '€19',  cut: '€9.50', annual: '€5,700' },
+            { refs: 30,  plan: 'Advanced',     monthly: '€39',  cut: '€19.50', annual: '€7,020' },
+            { refs: 100, plan: 'Mixed',        monthly: '—',    cut: '—',     annual: '€11,400+', highlight: true },
+          ].map((r) => (
+            <div class={`pp-earnings-row ${r.highlight ? 'pp-earnings-row--highlight' : ''}`}>
+              <span class="pp-er-refs">{r.refs} referrals</span>
+              <span class="pp-er-plan">{r.plan}</span>
+              <span class="pp-er-monthly">{r.monthly}</span>
+              <span class="pp-er-cut">{r.cut}</span>
+              <span class="pp-er-annual">{r.annual}</span>
+            </div>
+          ))}
+        </div>
+
+        <p class="pp-earnings-note">
+          Numbers based on annual billing. Monthly billing yields the same total split over 12 payments.
+          Commission is paid on net subscription revenue after any applicable taxes.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ HOW IT WORKS -->
+    <section class="section pp-steps fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Getting started</span>
+          <h2 class="headline-md">From application to first payout in four steps.</h2>
+        </div>
+
+        <div class="pp-steps-grid">
+          {steps.map((s) => (
+            <div class="pp-step">
+              <div class="pp-step-num">{s.num}</div>
+              <h3>{s.title}</h3>
+              <p>{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════ WHAT YOU'RE SELLING -->
+    <section class="section pp-product fade-in">
+      <div class="container">
+        <div class="pp-product-inner">
+          <div class="pp-product-text">
+            <span class="section-label">What your clients get</span>
+            <h2 class="headline-md">
+              A complete commerce platform.<br />Not another subscription to manage.
+            </h2>
+            <p>
+              The hardest part of recommending a product is standing behind it.
+              Pagayo is easy to recommend because what it does is immediately
+              visible: your client gets a professional webshop, an in-store
+              payment terminal, WhatsApp ordering, and a dashboard with
+              everything in one place — live within 24 hours of signing up.
+            </p>
+            <p>
+              There are no six-month implementation projects. There is no IT
+              consultant to hire. Most clients are fully operational within
+              a day. That makes your referral feel effortless and your
+              recommendation look smart.
+            </p>
+          </div>
+          <div class="pp-product-features">
+            {[
+              { icon: '🛒', label: 'Webshop', desc: 'Fully branded, live in hours.' },
+              { icon: '💳', label: 'Point of Sale', desc: 'In-store payments via any device.' },
+              { icon: '💬', label: 'WhatsApp Commerce', desc: 'Orders and broadcasts via WhatsApp.' },
+              { icon: '📦', label: 'Inventory', desc: 'One stock level, all channels.' },
+              { icon: '📊', label: 'Dashboard', desc: 'Sales, customers, payouts in one view.' },
+              { icon: '🔔', label: 'Subscriptions & loyalty', desc: 'Recurring revenue for your clients.' },
+            ].map((f) => (
+              <div class="pp-product-feature">
+                <span class="pp-feature-icon">{f.icon}</span>
+                <div>
+                  <strong>{f.label}</strong>
+                  <span>{f.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ FAQ -->
+    <section class="section pp-faq fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Frequently asked</span>
+          <h2 class="headline-md">Good questions deserve straight answers.</h2>
+        </div>
+
+        <div class="pp-faq-grid">
+          {faqs.map((f) => (
+            <div class="pp-faq-item">
+              <h3>{f.q}</h3>
+              <p>{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ FINAL CTA -->
+    <section class="section pp-cta fade-in">
+      <div class="container">
+        <div class="pp-cta-inner">
+          <div class="pp-cta-bg" aria-hidden="true"></div>
+          <span class="section-label pp-cta-label">Join the program</span>
+          <h2 class="headline-lg">
+            You already have the clients.<br />
+            <span class="pp-cta-accent">Start earning on them.</span>
+          </h2>
+          <p>
+            Apply in two minutes. We'll review your application personally
+            and get back to you within one business day. No commitment,
+            no exclusivity, no minimum referrals required.
+          </p>
+          <div class="pp-cta-buttons">
+            <a href="/contact?subject=Partner+Program" class="btn btn-partner btn-lg">
+              Apply now — it's free →
+            </a>
+            <a href="mailto:partners@pagayo.com" class="btn btn-secondary btn-lg">
+              Email us first
+            </a>
+          </div>
+          <p class="pp-cta-note">
+            Questions about a specific sector or earning structure?
+            Email <a href="mailto:partners@pagayo.com">partners@pagayo.com</a> — we reply the same day.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
 </MarketingLayout>
+
+<style>
+  /* ─── HERO ─────────────────────────────────────────────────────── */
+  .pp-hero {
+    padding-top: calc(var(--nav-height, 72px) + 4rem);
+    padding-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pp-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .pp-hero-intro {
+    font-size: 1.1rem;
+    line-height: 1.72;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 1.5rem auto 0;
+  }
+
+  .pp-hero-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .pp-trust-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+
+  .pp-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .pp-trust-val {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--partner-violet);
+    line-height: 1;
+  }
+
+  .pp-trust-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+
+  .pp-trust-sep {
+    color: var(--border);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  /* ─── MODEL ─────────────────────────────────────────────────────── */
+  .pp-model {
+    border-top: 1px solid var(--border);
+  }
+
+  .pp-model-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .pp-model-text .section-label {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .pp-model-text h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .pp-model-text p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .pp-model-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pp-model-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .pp-model-card--highlight {
+    border-color: rgba(168, 85, 247, 0.35);
+    background: rgba(168, 85, 247, 0.06);
+  }
+
+  .pp-model-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .pp-model-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+  }
+
+  .pp-model-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ─── SCENARIOS ─────────────────────────────────────────────────── */
+  .pp-scenarios {
+    border-top: 1px solid var(--border);
+  }
+
+  .pp-scenarios .section-header p,
+  .pp-scenarios-sub {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 0.75rem;
+    max-width: 580px;
+    margin-inline: auto;
+  }
+
+  .pp-scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .pp-scenario-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.2s;
+    border-top: 3px solid var(--accent);
+  }
+
+  .pp-scenario-card:hover {
+    border-color: var(--accent);
+    border-top-color: var(--accent);
+  }
+
+  .pp-scenario-card--wide {
+    grid-column: span 1;
+  }
+
+  .pp-scenario-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .pp-scenario-icon-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pp-scenario-num {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-full);
+  }
+
+  .pp-scenario-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .pp-scenario-sector {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-secondary);
+  }
+
+  .pp-scenario-headline {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .pp-scenario-body {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.68;
+    margin: 0;
+    flex: 1;
+  }
+
+  .pp-scenario-example {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.85rem 1rem;
+    background: var(--accent-soft);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--accent);
+    border-opacity: 0.3;
+    margin-top: auto;
+  }
+
+  .pp-scenario-example-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--accent);
+  }
+
+  .pp-scenario-example-val {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+
+  /* ─── EARNINGS ──────────────────────────────────────────────────── */
+  .pp-earnings {
+    border-top: 1px solid var(--border);
+  }
+
+  .pp-earnings .section-header p,
+  .pp-earnings-sub {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .pp-earnings-table {
+    margin-top: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .pp-earnings-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+    background: var(--bg-card);
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+
+  .pp-earnings-header span {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-secondary);
+  }
+
+  .pp-earnings-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+    align-items: center;
+    transition: background 0.15s;
+  }
+
+  .pp-earnings-row:last-of-type {
+    border-bottom: none;
+  }
+
+  .pp-earnings-row:hover {
+    background: var(--bg-card);
+  }
+
+  .pp-earnings-row--highlight {
+    background: rgba(168, 85, 247, 0.07);
+    border-color: rgba(168, 85, 247, 0.2);
+  }
+
+  .pp-earnings-row--highlight:hover {
+    background: rgba(168, 85, 247, 0.1);
+  }
+
+  .pp-er-refs {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .pp-er-plan {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+
+  .pp-er-monthly,
+  .pp-er-cut {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-family: ui-monospace, monospace;
+  }
+
+  .pp-er-annual {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--partner-violet);
+  }
+
+  .pp-earnings-note {
+    margin-top: 1.25rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ─── STEPS ─────────────────────────────────────────────────────── */
+  .pp-steps {
+    border-top: 1px solid var(--border);
+  }
+
+  .pp-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .pp-steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: calc(10% + 20px);
+    right: calc(10% + 20px);
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%, var(--partner-violet) 20%,
+      var(--partner-violet) 80%, transparent 100%);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .pp-step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .pp-step-num {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--partner-violet);
+    margin: 0 auto;
+    font-family: ui-monospace, monospace;
+  }
+
+  .pp-step h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .pp-step p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ─── PRODUCT ───────────────────────────────────────────────────── */
+  .pp-product {
+    border-top: 1px solid var(--border);
+  }
+
+  .pp-product-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .pp-product-text .section-label {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .pp-product-text h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .pp-product-text p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .pp-product-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .pp-product-feature {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    padding: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+  }
+
+  .pp-feature-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 1px;
+  }
+
+  .pp-product-feature strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .pp-product-feature span {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+  }
+
+  /* ─── FAQ ───────────────────────────────────────────────────────── */
+  .pp-faq {
+    border-top: 1px solid var(--border);
+  }
+
+  .pp-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .pp-faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+  }
+
+  .pp-faq-item h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.65rem;
+    line-height: 1.4;
+  }
+
+  .pp-faq-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ─── FINAL CTA ─────────────────────────────────────────────────── */
+  .pp-cta {
+    border-top: 1px solid var(--border);
+  }
+
+  .pp-cta-inner {
+    position: relative;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 1rem;
+  }
+
+  .pp-cta-bg {
+    position: absolute;
+    inset: -80px;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 50%, rgba(6, 182, 212, 0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .pp-cta-label {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .pp-cta-inner h2 {
+    position: relative;
+    margin-bottom: 1.25rem;
+  }
+
+  .pp-cta-accent {
+    color: var(--partner-violet);
+  }
+
+  .pp-cta-inner > p {
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .pp-cta-buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .pp-cta-note {
+    position: relative;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .pp-cta-note a {
+    color: var(--partner-violet);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ─── RESPONSIVE ────────────────────────────────────────────────── */
+  @media (max-width: 1100px) {
+    .pp-scenarios-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .pp-model-inner,
+    .pp-product-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .pp-steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pp-steps-grid::before {
+      display: none;
+    }
+
+    .pp-earnings-header,
+    .pp-earnings-row {
+      grid-template-columns: 1.2fr 0.8fr 1fr 1fr 1fr;
+      font-size: 0.82rem;
+    }
+
+    .pp-trust-row {
+      gap: 1rem;
+    }
+
+    .pp-trust-sep {
+      display: none;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .pp-hero {
+      padding-top: calc(var(--nav-height, 72px) + 2rem);
+    }
+
+    .pp-scenarios-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pp-faq-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pp-product-features {
+      grid-template-columns: 1fr;
+    }
+
+    .pp-steps-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pp-earnings-header {
+      display: none;
+    }
+
+    .pp-earnings-row {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 0.25rem 1rem;
+    }
+
+    .pp-er-monthly,
+    .pp-er-cut {
+      display: none;
+    }
+  }
+</style>
