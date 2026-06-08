@@ -47,9 +47,9 @@
   /* Layout */
   --max-width: 1200px;
   --nav-height: 72px;
-  /* Consistent hero top-padding for all pages — matches the visual centre of
-     the homepage flex-centred hero across all viewport heights */
-  --hero-pt: clamp(8rem, 28vh, 15rem);
+  /* Consistent hero top-padding for all non-homepage pages.
+     Matches the homepage's effective starting position (nav-height + 4rem). */
+  --hero-pt: calc(var(--nav-height) + 4rem);
 
   /* Radius */
   --radius-sm: 8px;
