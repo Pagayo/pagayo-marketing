@@ -1,6 +1,7 @@
 ---
 import MarketingLayout from '../../layouts/Marketing.astro';
 import PageBackdrop from '../../components/layout/PageBackdrop.astro';
+import PageHero from '../../components/layout/PageHero.astro';
 import FinalCta from '../../components/sections/FinalCta.astro';
 import BlogCard from '../../components/blog/BlogCard.astro';
 import i18nEn from '../../content/i18n/en.json';
@@ -37,15 +38,10 @@ const blogSchema = {
   <PageBackdrop variant="blog" />
 
   <main class="blog-page">
-    <section class="section blog-hero fade-in" aria-labelledby="blog-page-title">
-      <div class="container">
-        <div class="section-header center">
-          <span class="section-label">{t.sectionLabel}</span>
-          <h1 class="headline-xl" id="blog-page-title">{t.headline}</h1>
-          <p class="text-lg">{t.intro}</p>
-        </div>
-      </div>
-    </section>
+    <PageHero label={t.sectionLabel} headingId="blog-page-title">
+      <Fragment slot="title">{t.headline}</Fragment>
+      <p class="text-lg" slot="intro">{t.intro}</p>
+    </PageHero>
 
     {featuredPosts.length > 0 && (
       <section class="section blog-featured-section fade-in" aria-labelledby="blog-featured-heading">

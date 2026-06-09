@@ -1,6 +1,7 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
 import PageBackdrop from '../components/layout/PageBackdrop.astro';
+import PageHero from '../components/layout/PageHero.astro';
 import FeaturesGrid from '../components/sections/FeaturesGrid.astro';
 import ProductPreview from '../components/sections/ProductPreview.astro';
 import ChannelStrip from '../components/sections/ChannelStrip.astro';
@@ -32,27 +33,22 @@ const featureSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(featureSchema)} />
   <PageBackdrop variant="features" />
 
-  <section class="section features-hero fade-in" aria-labelledby="features-page-title">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-label">{t.sectionLabel}</span>
-        <h1 class="headline-xl" id="features-page-title">
-          {t.headlineTop}<br />
-          <span class="text-gradient">{t.headlineBottom}</span>
-        </h1>
-        <p class="text-lg">{t.intro}</p>
-      </div>
+  <PageHero label={t.sectionLabel} headingId="features-page-title">
+    <Fragment slot="title">
+      {t.headlineTop}<br />
+      <span class="text-gradient">{t.headlineBottom}</span>
+    </Fragment>
+    <p class="text-lg" slot="intro">{t.intro}</p>
 
-      <div class="feature-points" aria-label={t.pointsAriaLabel}>
-        {t.points.map((point) => (
-          <div class="feature-point-card">
-            <h2>{point.title}</h2>
-            <p>{point.description}</p>
-          </div>
-        ))}
-      </div>
+    <div class="feature-points" aria-label={t.pointsAriaLabel}>
+      {t.points.map((point) => (
+        <div class="feature-point-card">
+          <h2>{point.title}</h2>
+          <p>{point.description}</p>
+        </div>
+      ))}
     </div>
-  </section>
+  </PageHero>
 
   <FeaturesGrid />
   <ProductPreview />
@@ -66,11 +62,6 @@ const featureSchema = {
 </MarketingLayout>
 
 <style>
-  .features-hero {
-    padding-top: var(--hero-pt);
-    padding-bottom: clamp(2.5rem, 6vw, 4rem);
-  }
-
   .feature-points {
     margin-top: 2.75rem;
     display: grid;

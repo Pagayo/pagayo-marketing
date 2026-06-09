@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
+import PageHero from '../components/layout/PageHero.astro';
 
 const pageTitle = 'Contact — Pagayo';
 const pageDescription = 'Get in touch with the Pagayo team. Questions about pricing, integrations, or a custom setup? We are happy to help.';
@@ -8,18 +9,13 @@ const pageDescription = 'Get in touch with the Pagayo team. Questions about pric
 <MarketingLayout title={pageTitle} description={pageDescription}>
   <main class="contact-page">
 
-    <section class="ct-hero section">
-      <div class="container">
-        <div class="section-header center">
-          <span class="section-label">Contact</span>
-          <h1 class="headline-lg">Let's talk.</h1>
-          <p class="text-lg">
-            Questions about pricing, a custom setup, or a partnership?
-            Fill in the form and we will get back to you within one business day.
-          </p>
-        </div>
-      </div>
-    </section>
+    <PageHero label="Contact" headingSize="lg">
+      <Fragment slot="title">Let's talk.</Fragment>
+      <p class="text-lg" slot="intro">
+        Questions about pricing, a custom setup, or a partnership?
+        Fill in the form and we will get back to you within one business day.
+      </p>
+    </PageHero>
 
     <section class="ct-body section">
       <div class="container">
@@ -217,14 +213,6 @@ const pageDescription = 'Get in touch with the Pagayo team. Questions about pric
 </script>
 
 <style>
-  .contact-page {
-    padding-top: 2rem;
-  }
-
-  .ct-hero {
-    padding-bottom: 2rem;
-  }
-
   .ct-layout {
     display: grid;
     grid-template-columns: 280px 1fr;

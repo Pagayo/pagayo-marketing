@@ -1,6 +1,7 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
 import PageBackdrop from '../components/layout/PageBackdrop.astro';
+import PageHero from '../components/layout/PageHero.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
 import ChangelogRelease from '../components/changelog/ChangelogRelease.astro';
 import changelogRaw from '../content/changelog.json';
@@ -44,30 +45,25 @@ const changelogSchema = {
   <PageBackdrop variant="changelog" />
 
   <main class="changelog-page">
-    <section class="section changelog-hero fade-in" aria-labelledby="changelog-page-title">
-      <div class="container">
-        <div class="section-header center">
-          <span class="section-label">{t.sectionLabel}</span>
-          <h1 class="headline-xl" id="changelog-page-title">{t.headline}</h1>
-          <p class="text-lg">{t.intro}</p>
-        </div>
+    <PageHero label={t.sectionLabel} headingId="changelog-page-title">
+      <Fragment slot="title">{t.headline}</Fragment>
+      <p class="text-lg" slot="intro">{t.intro}</p>
 
-        <div class="changelog-stats">
-          <div class="changelog-stat-card">
-            <span class="changelog-stat-value">{changelog.meta.entryCount}</span>
-            <span class="changelog-stat-label">{t.statUpdates}</span>
-          </div>
-          <div class="changelog-stat-card">
-            <span class="changelog-stat-value">{changelog.releases.length}</span>
-            <span class="changelog-stat-label">{t.statReleaseDays}</span>
-          </div>
-          <div class="changelog-stat-card">
-            <span class="changelog-stat-value">{changelog.meta.projectStartDate.slice(0, 4)}</span>
-            <span class="changelog-stat-label">{t.statSince}</span>
-          </div>
+      <div class="changelog-stats">
+        <div class="changelog-stat-card">
+          <span class="changelog-stat-value">{changelog.meta.entryCount}</span>
+          <span class="changelog-stat-label">{t.statUpdates}</span>
+        </div>
+        <div class="changelog-stat-card">
+          <span class="changelog-stat-value">{changelog.releases.length}</span>
+          <span class="changelog-stat-label">{t.statReleaseDays}</span>
+        </div>
+        <div class="changelog-stat-card">
+          <span class="changelog-stat-value">{changelog.meta.projectStartDate.slice(0, 4)}</span>
+          <span class="changelog-stat-label">{t.statSince}</span>
         </div>
       </div>
-    </section>
+    </PageHero>
 
     <section class="section changelog-feed-section" aria-label={t.feedAriaLabel}>
       <div class="container">

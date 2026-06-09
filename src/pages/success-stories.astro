@@ -1,6 +1,7 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
 import PageBackdrop from '../components/layout/PageBackdrop.astro';
+import PageHero from '../components/layout/PageHero.astro';
 import SuccessStoriesFeed from '../components/success-stories/SuccessStoriesFeed.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
 import i18nEn from '../content/i18n/en.json';
@@ -12,15 +13,10 @@ const t = i18nEn.successStoriesPage;
   <PageBackdrop variant="partners" />
 
   <main class="success-stories-page">
-    <section class="section success-stories-hero fade-in" aria-labelledby="success-stories-title">
-      <div class="container">
-        <div class="section-header center">
-          <span class="section-label">{t.sectionLabel}</span>
-          <h1 class="headline-xl" id="success-stories-title">{t.headline}</h1>
-          <p class="text-lg">{t.intro}</p>
-        </div>
-      </div>
-    </section>
+    <PageHero label={t.sectionLabel} headingId="success-stories-title">
+      <Fragment slot="title">{t.headline}</Fragment>
+      <p class="text-lg" slot="intro">{t.intro}</p>
+    </PageHero>
 
     <section class="section success-stories-body" aria-label={t.feedAriaLabel}>
       <div class="container">
@@ -33,12 +29,6 @@ const t = i18nEn.successStoriesPage;
 </MarketingLayout>
 
 <style>
-  .success-stories-hero {
-    padding-top: var(--hero-pt);
-    padding-bottom: 1rem;
-    text-align: center;
-  }
-
   .success-stories-body {
     padding-top: 1rem;
     padding-bottom: 2rem;

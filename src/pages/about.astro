@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
+import PageHero from '../components/layout/PageHero.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
 
 const pageTitle = 'About Pagayo — One platform, every way you sell.';
@@ -11,21 +12,16 @@ const pageDescription =
   <main class="about-page">
 
     <!-- Hero -->
-    <section class="section about-hero fade-in">
-      <div class="container">
-        <div class="section-header center">
-          <span class="section-label">About Pagayo</span>
-          <h1 class="headline-xl">
-            One platform.<br />
-            <span class="text-gradient">Every way you sell.</span>
-          </h1>
-          <p class="text-lg">
-            Pagayo is a commerce platform built on a single idea — and shaped,
-            week by week, by the people who use it.
-          </p>
-        </div>
-      </div>
-    </section>
+    <PageHero label="About Pagayo">
+      <Fragment slot="title">
+        One platform.<br />
+        <span class="text-gradient">Every way you sell.</span>
+      </Fragment>
+      <p class="text-lg" slot="intro">
+        Pagayo is a commerce platform built on a single idea — and shaped,
+        week by week, by the people who use it.
+      </p>
+    </PageHero>
 
     <!-- Manifesto echo -->
     <section class="section about-belief">
@@ -166,11 +162,6 @@ const pageDescription =
 </MarketingLayout>
 
 <style>
-  .about-hero {
-    padding-top: var(--hero-pt);
-    padding-bottom: 4rem;
-  }
-
   .container.narrow {
     max-width: 760px;
     margin: 0 auto;
@@ -254,10 +245,6 @@ const pageDescription =
   }
 
   @media (max-width: 640px) {
-    .about-hero {
-      padding-top: var(--hero-pt);
-      padding-bottom: 2.5rem;
-    }
     .about-belief,
     .about-what,
     .about-built,

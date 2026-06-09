@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
+import PageHero from '../components/layout/PageHero.astro';
 
 const pageTitle = 'Privacy Policy — Pagayo';
 const pageDescription = 'Learn how Pagayo collects, uses, and protects your personal data when you use our platform, website, or APIs.';
@@ -9,15 +10,10 @@ const lastUpdated = 'June 5, 2026';
 
 <MarketingLayout title={pageTitle} description={pageDescription}>
   <main class="privacy-page">
-    <section class="pp-hero section">
-      <div class="container">
-        <div class="section-header center">
-          <span class="section-label">Legal</span>
-          <h1 class="headline-lg">Privacy Policy</h1>
-          <p class="text-secondary">Last updated {lastUpdated}</p>
-        </div>
-      </div>
-    </section>
+    <PageHero label="Legal" headingSize="lg">
+      <Fragment slot="title">Privacy Policy</Fragment>
+      <p class="text-secondary" slot="intro">Last updated {lastUpdated}</p>
+    </PageHero>
 
     <section class="pp-body section">
       <div class="container">
@@ -329,20 +325,6 @@ const lastUpdated = 'June 5, 2026';
 </MarketingLayout>
 
 <style>
-  .privacy-page {
-    padding-top: 2rem;
-  }
-
-  .pp-hero {
-    padding-bottom: 2rem;
-  }
-
-  .pp-hero .text-secondary {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-  }
-
   .pp-layout {
     display: grid;
     grid-template-columns: 220px 1fr;

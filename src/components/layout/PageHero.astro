@@ -1,0 +1,55 @@
+---
+/**
+ * PageHero — shared hero section for all standard marketing pages.
+ *
+ * Usage:
+ *   <PageHero label="Feature Overview" headingId="features-title">
+ *     <Fragment slot="title">Headline with <span class="text-gradient">gradient</span></Fragment>
+ *     <p class="text-lg" slot="intro">Optional introduction paragraph.</p>
+ *     <!-- default slot: optional extra content (cards, stats, CTAs, …) -->
+ *   </PageHero>
+ *
+ * The padding-top is set here (var(--hero-pt)) — nowhere else.
+ * Remove any page-specific `padding-top` / `*-hero { padding-top: … }` rules
+ * when converting a page to use this component.
+ */
+
+interface Props {
+  label: string;
+  headingId?: string;
+  /** 'xl' for primary page heroes, 'lg' for contact / legal pages */
+  headingSize?: 'xl' | 'lg';
+  class?: string;
+}
+
+const {
+  label,
+  headingId,
+  headingSize = 'xl',
+  class: extraClass,
+} = Astro.props;
+
+const resolvedId = headingId ?? `page-hero-${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+---
+
+<section
+  class:list={['section', 'page-hero', 'fade-in', extraClass]}
+  aria-labelledby={resolvedId}
+>
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-label"><slot name="label">{label}</slot></span>
+      <h1 class={`headline-${headingSize}`} id={resolvedId}>
+        <slot name="title" />
+      </h1>
+      <slot name="intro" />
+    </div>
+    <slot />
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    padding-top: var(--hero-pt);
+  }
+</style>

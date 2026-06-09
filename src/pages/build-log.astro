@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
+import PageHero from '../components/layout/PageHero.astro';
 import storyData from '../content/build-log.json';
 
 const pageTitle = 'Build Log — Pagayo';
@@ -10,29 +11,24 @@ const pageDescription = 'How Pagayo was built: from a single repository to a ful
   <main class="build-log">
 
     <!-- Hero -->
-    <section class="os-hero section">
-      <div class="container">
-        <div class="section-header center">
-          <span class="section-label">Build Log</span>
-          <h1 class="headline-lg">Built every day.<br />Shipped every week.</h1>
-          <p class="text-lg">
-            Pagayo is a living platform. New features, new modules, new
-            improvements ship continuously — driven by what the people who
-            actually use it ask for. This is a transparent week-by-week log
-            of how the platform grew, and how it keeps growing.
-          </p>
-        </div>
+    <PageHero label="Build Log" headingSize="lg">
+      <Fragment slot="title">Built every day.<br />Shipped every week.</Fragment>
+      <p class="text-lg" slot="intro">
+        Pagayo is a living platform. New features, new modules, new
+        improvements ship continuously — driven by what the people who
+        actually use it ask for. This is a transparent week-by-week log
+        of how the platform grew, and how it keeps growing.
+      </p>
 
-        <div class="os-stats">
-          {storyData.stats.map((stat) => (
-            <div class="os-stat-card">
-              <span class="os-stat-value">{stat.value}</span>
-              <span class="os-stat-label">{stat.label}</span>
-            </div>
-          ))}
-        </div>
+      <div class="os-stats">
+        {storyData.stats.map((stat) => (
+          <div class="os-stat-card">
+            <span class="os-stat-value">{stat.value}</span>
+            <span class="os-stat-label">{stat.label}</span>
+          </div>
+        ))}
       </div>
-    </section>
+    </PageHero>
 
     <!-- Intro -->
     <section class="os-intro section">
@@ -100,12 +96,6 @@ const pageDescription = 'How Pagayo was built: from a single repository to a ful
 </MarketingLayout>
 
 <style>
-  /* ===== HERO ===== */
-  .os-hero {
-    padding-top: var(--hero-pt);
-    text-align: center;
-  }
-
   /* ===== STATS ===== */
   .os-stats {
     display: grid;
