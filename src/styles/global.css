@@ -4,6 +4,15 @@
    Inspiratie: Linear.app + Cloudflare Design + Stripe.com
    ========================================================= */
 
+/* --- SELF-HOSTED FONT (no external DNS / render-blocking) --- */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --- RESET --- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
