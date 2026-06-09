@@ -1,0 +1,241 @@
+---
+const questions = [
+  {
+    q: 'How do we stay relevant when our members no longer need us to exist?',
+    a: 'Stop competing on the value of your product. Compete on the value of your infrastructure. When your members run their business on your platform, their growth reinforces your relevance rather than eroding it. The stronger they get, the more embedded they become.',
+    emphasis: 'Become infrastructure. Infrastructure is not replaced. It is built around.',
+  },
+  {
+    q: 'How do we build a competitive position that takes years to displace?',
+    a: 'Platform trust is built transaction by transaction. The first organisation in a sector to own the operational layer for their members has a compounding advantage. Every month they operate the platform, the switching cost for members increases. The second organisation to do this is always a decade behind.',
+    emphasis: 'First mover in platform infrastructure is the strongest moat in any B2B sector.',
+  },
+  {
+    q: 'How do we capture value from the network we have already built?',
+    a: 'Right now, your members are generating thousands of transactions that are completely invisible to you. Every order, every sale, every payment is data about your sector that you do not have. A platform makes that visible — sector-wide, real-time, and commercially actionable.',
+    emphasis: 'Your network is generating intelligence you are not capturing. That changes.',
+  },
+  {
+    q: 'What does this look like in three years?',
+    a: 'Your members run their business on your platform. New members enter your sector and naturally onboard through you — because that is where the infrastructure is. Your commercial conversations shift from defending your position to expanding your ecosystem. Your market intelligence is deeper than any competitor can build from the outside.',
+    emphasis: 'In three years, the question is not why you built this. It is how you built it before anyone else.',
+  },
+];
+---
+
+<section class="section pb-exec-buyer fade-in" aria-labelledby="pb-exec-title">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-label pb-network-label">Leadership Brief</span>
+      <h2 class="headline-lg" id="pb-exec-title">
+        The questions boards are asking.<br />
+        <span class="pb-headline-accent">The answers they need to hear.</span>
+      </h2>
+      <p class="text-lg">
+        This section is for CEOs, Managing Directors, and Commercial Directors.
+        The ones asking: not what is this product, but what does this do to our market position.
+      </p>
+    </div>
+
+    <div class="pb-exec-questions">
+      {questions.map((item, i) => (
+        <div class="pb-exec-item">
+          <div class="pb-exec-question-wrap">
+            <span class="pb-exec-number" aria-hidden="true">0{i + 1}</span>
+            <h3 class="pb-exec-question">{item.q}</h3>
+          </div>
+          <div class="pb-exec-answer-wrap">
+            <p class="pb-exec-answer">{item.a}</p>
+            <p class="pb-exec-emphasis">{item.emphasis}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="pb-exec-close">
+      <div class="pb-exec-close-inner">
+        <h3>The strategic case in one sentence</h3>
+        <p class="pb-exec-close-statement">
+          The organisations that define the next decade of their sector are not the ones
+          with the best product. They are the ones who own the platform their sector operates on.
+        </p>
+        <div class="pb-exec-roles">
+          <span class="pb-exec-role-tag">CEO</span>
+          <span class="pb-exec-role-tag">Managing Director</span>
+          <span class="pb-exec-role-tag">Commercial Director</span>
+          <span class="pb-exec-role-tag">Head of Network</span>
+        </div>
+        <p class="pb-exec-close-cta">
+          If you want to discuss how this applies to your organisation —
+          <a href="/powered-by-contact?intent=exec">book a conversation →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pb-exec-questions {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .pb-exec-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pb-exec-item:last-child {
+    border-bottom: none;
+  }
+
+  .pb-exec-question-wrap {
+    padding: 2rem 1.75rem;
+    border-right: 1px solid var(--border);
+    background: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .pb-exec-answer-wrap {
+    padding: 2rem 1.75rem;
+    background: rgba(96, 165, 250, 0.025);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pb-exec-number {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--pb-network);
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+  }
+
+  .pb-exec-question {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .pb-exec-answer {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .pb-exec-emphasis {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--pb-network);
+    line-height: 1.45;
+    margin: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(96, 165, 250, 0.15);
+  }
+
+  .pb-exec-close {
+    margin-top: 2.5rem;
+  }
+
+  .pb-exec-close-inner {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pb-exec-close-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(96, 165, 250, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(99, 91, 255, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .pb-exec-close-inner h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+
+  .pb-exec-close-statement {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    max-width: 680px;
+    margin: 0 auto 2rem;
+    letter-spacing: -0.015em;
+    position: relative;
+  }
+
+  .pb-exec-roles {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+
+  .pb-exec-role-tag {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  .pb-exec-close-cta {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    position: relative;
+    margin: 0;
+  }
+
+  .pb-exec-close-cta a {
+    color: var(--pb-network);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.3);
+    transition: border-color 0.15s;
+  }
+
+  .pb-exec-close-cta a:hover {
+    border-bottom-color: var(--pb-network);
+  }
+
+  @media (max-width: 800px) {
+    .pb-exec-item {
+      grid-template-columns: 1fr;
+    }
+
+    .pb-exec-question-wrap {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+  }
+</style>

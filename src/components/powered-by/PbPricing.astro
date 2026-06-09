@@ -1,183 +1,340 @@
 ---
+const partnershipTiers = [
+  {
+    name: 'Foundation',
+    tagline: 'Build your platform. Activate your first cohort.',
+    forWho: 'For organisations starting their platform journey — first 50 active members.',
+    what: [
+      'Full partner dashboard and brand configuration',
+      'Member invitation and onboarding flow',
+      'Network analytics for up to 50 active members',
+      'Partner support line',
+      'Pagayo first-line support for all members',
+    ],
+    cta: 'ideal for first platform launch',
+  },
+  {
+    name: 'Growth',
+    tagline: 'Scale with your network.',
+    forWho: 'For established networks ready to expand — 50 to 250 active members.',
+    what: [
+      'Everything in Foundation',
+      'Advanced network analytics and sector benchmarks',
+      'Retention intelligence and activation insights',
+      'Dedicated partner success manager',
+      'Custom onboarding flow for your sector',
+    ],
+    cta: 'most common entry point',
+    featured: true,
+  },
+  {
+    name: 'Network Leadership',
+    tagline: 'Own the infrastructure of your sector.',
+    forWho: 'For sector-defining organisations — 250+ active members.',
+    what: [
+      'Everything in Growth',
+      'White-glove network configuration',
+      'Custom member contract structures',
+      'Executive reporting and board-ready analytics',
+      'Quarterly strategic review with Pagayo leadership',
+    ],
+    cta: 'for organisations building long-term moats',
+  },
+];
 ---
 
-<section class="section pb-pricing fade-in" aria-labelledby="pb-pricing-title">
+<section class="section pb-pricing-v2 fade-in" aria-labelledby="pb-pricing-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">Pricing</span>
+      <span class="section-label pb-network-label">Partnership Model</span>
       <h2 class="headline-lg" id="pb-pricing-title">
-        Built for networks.<br />
-        <span class="pb-headline-accent">You only pay for active members.</span>
+        Not a software subscription.<br />
+        <span class="pb-headline-accent">A partnership built around your network.</span>
       </h2>
       <p class="text-lg">
-        We do not charge per feature. Pricing scales with how active your network is —
-        so your cost stays aligned with the value you are delivering.
+        The price is secondary. What matters is what you become.
+        We structure the partnership around your network size, your sector, and how you want to
+        position the platform for your members.
       </p>
     </div>
 
-    <div class="pb-pricing-cards">
-      <div class="pb-pricing-card">
-        <div class="pb-pricing-card-header">
-          <h3>Network Platform Fee</h3>
-          <span class="pb-pricing-card-freq">Monthly</span>
+    <div class="pb-pricing-tiers">
+      {partnershipTiers.map((tier) => (
+        <div class={`pb-tier-card ${tier.featured ? 'pb-tier-card--featured' : ''}`}>
+          {tier.featured && (
+            <div class="pb-tier-badge">Most common entry point</div>
+          )}
+          <div class="pb-tier-header">
+            <h3>{tier.name}</h3>
+            <p class="pb-tier-tagline">{tier.tagline}</p>
+          </div>
+          <p class="pb-tier-for">{tier.forWho}</p>
+          <ul class="pb-tier-includes">
+            {tier.what.map((item) => (
+              <li>
+                <span class="pb-tier-check" aria-hidden="true">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="pb-tier-cta-wrap">
+            <span class="pb-tier-cta-note">{tier.cta}</span>
+          </div>
         </div>
-        <p>Covers your partner dashboard, brand configuration, sector settings, and partner support line. Scales with your network tier (up to 50 / up to 250 / 250+ members).</p>
-        <ul>
-          <li>Full partner dashboard access</li>
-          <li>Brand and sector configuration</li>
-          <li>Member invitation management</li>
-          <li>Network analytics and reporting</li>
-          <li>Dedicated partner support</li>
-        </ul>
-      </div>
-
-      <div class="pb-pricing-card pb-pricing-card--active">
-        <div class="pb-pricing-card-header">
-          <h3>Per Active Member</h3>
-          <span class="pb-pricing-card-freq">Monthly, per live member</span>
-        </div>
-        <p>Only members who are actively using the platform count. A member who registered but has not transacted does not trigger the fee.</p>
-        <ul>
-          <li>Full Pagayo commerce stack for each member</li>
-          <li>First-line support handled by Pagayo</li>
-          <li>All channels: webshop, POS, QR, subscriptions</li>
-          <li>Stripe payments for every member</li>
-          <li>Pass on or absorb — the structure is yours to decide</li>
-        </ul>
-        <div class="pb-pricing-card-note">
-          Active = at least one transaction in the billing period.
-        </div>
-      </div>
+      ))}
     </div>
 
-    <div class="pb-pricing-footer">
+    <div class="pb-pricing-structure">
+      <div class="pb-pricing-structure-header">
+        <h3>How it is structured</h3>
+      </div>
+      <div class="pb-pricing-structure-body">
+        <div class="pb-pricing-struct-item">
+          <span class="pb-pricing-struct-label">Network platform fee</span>
+          <p>A monthly base fee for your partner dashboard, configuration, and support. Scales with your network tier.</p>
+        </div>
+        <div class="pb-pricing-struct-divider" aria-hidden="true">+</div>
+        <div class="pb-pricing-struct-item">
+          <span class="pb-pricing-struct-label">Per active member</span>
+          <p>Only members who transact in the billing period count. You choose whether to pass this on or absorb it.</p>
+        </div>
+      </div>
+      <p class="pb-pricing-struct-note">
+        Every partnership is built together. There is no fixed pricing page because every network is different.
+        We build the specifics with you based on your sector, your structure, and what you want your members to pay.
+      </p>
+    </div>
+
+    <div class="pb-pricing-cta">
+      <h3>The right conversation to have first</h3>
       <p>
-        We build the pricing specifics with you based on network size, sector, and how you want to structure the commercial relationship with your members.
-        No fixed pricing page. Every Powered by Pagayo arrangement is tailored.
+        Tell us your network size and sector. We will send a proposal — including what the platform
+        would look like for your members, what your partner dashboard covers, and what the commercial
+        structure could look like. No commitment required at this stage.
       </p>
-      <a href="/powered-by-contact?intent=pricing" class="btn btn-pb btn-lg">Get a pricing proposal →</a>
-      <span class="pb-pricing-footer-hint">We will send a concrete proposal with network tier options, activation scenarios, and ROI modelling.</span>
+      <div class="pb-pricing-cta-buttons">
+        <a href="/powered-by-contact?intent=proposal" class="btn btn-pb btn-lg">Get a partnership proposal →</a>
+        <a href="/powered-by-contact?intent=demo" class="btn btn-secondary">See the dashboard first</a>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .pb-pricing-cards {
-    margin-top: 2.5rem;
+  .pb-pricing-tiers {
+    margin-top: 3rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
   }
 
-  .pb-pricing-card {
+  .pb-tier-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-xl);
     padding: 1.75rem;
-  }
-
-  .pb-pricing-card--active {
-    border-color: rgba(96, 165, 250, 0.3);
-    background: rgba(96, 165, 250, 0.04);
-  }
-
-  .pb-pricing-card-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .pb-pricing-card-header h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-  }
-
-  .pb-pricing-card-freq {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
-
-  .pb-pricing-card > p {
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-  }
-
-  .pb-pricing-card ul {
-    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.25rem;
+    position: relative;
+  }
+
+  .pb-tier-card--featured {
+    border-color: rgba(96, 165, 250, 0.4);
+    background: rgba(96, 165, 250, 0.03);
+    transform: translateY(-0.5rem);
+  }
+
+  .pb-tier-badge {
+    position: absolute;
+    top: -0.9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--pb-network);
+    color: #0a0a0f;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.85rem;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+  }
+
+  .pb-tier-header h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0 0 0.35rem;
+    letter-spacing: -0.01em;
+  }
+
+  .pb-tier-tagline {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
     margin: 0;
   }
 
-  .pb-pricing-card li {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    padding-left: 1.1rem;
-    position: relative;
-    line-height: 1.45;
-  }
-
-  .pb-pricing-card li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--pb-network);
-    font-size: 0.75rem;
-    font-weight: 700;
-    top: 0.1rem;
-  }
-
-  .pb-pricing-card-note {
-    margin-top: 1.25rem;
-    font-size: 0.78rem;
+  .pb-tier-for {
+    font-size: 0.8rem;
     color: var(--text-muted);
+    line-height: 1.5;
     background: var(--bg-surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: 0.5rem 0.85rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0;
   }
 
-  .pb-pricing-footer {
-    margin-top: 2.5rem;
-    text-align: center;
+  .pb-tier-includes {
+    list-style: none;
     display: flex;
     flex-direction: column;
+    gap: 0.55rem;
+    flex-grow: 1;
+  }
+
+  .pb-tier-includes li {
+    display: flex;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+  }
+
+  .pb-tier-check {
+    color: var(--pb-network);
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    margin-top: 0.1rem;
+  }
+
+  .pb-tier-cta-wrap {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .pb-tier-cta-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .pb-pricing-structure {
+    margin-top: 2.5rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .pb-pricing-structure-header {
+    padding: 1.25rem 1.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pb-pricing-structure-header h3 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .pb-pricing-structure-body {
+    display: flex;
     align-items: center;
-    gap: 0.75rem;
-    max-width: 600px;
+    gap: 1rem;
+    padding: 1.5rem 1.75rem;
+    flex-wrap: wrap;
+  }
+
+  .pb-pricing-struct-item {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .pb-pricing-struct-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--pb-network);
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .pb-pricing-struct-item p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .pb-pricing-struct-divider {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    padding: 0 0.5rem;
+  }
+
+  .pb-pricing-struct-note {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding: 1.25rem 1.75rem 1.5rem;
+    margin: 0;
+  }
+
+  .pb-pricing-cta {
+    margin-top: 2.5rem;
+    text-align: center;
+    max-width: 640px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .pb-pricing-footer p {
+  .pb-pricing-cta h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.85rem;
+  }
+
+  .pb-pricing-cta p {
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     line-height: 1.65;
-    margin: 0;
+    margin-bottom: 1.75rem;
   }
 
-  .pb-pricing-footer-hint {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    line-height: 1.45;
-    max-width: 400px;
-    text-align: center;
+  .pb-pricing-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
-  @media (max-width: 640px) {
-    .pb-pricing-cards {
+  @media (max-width: 900px) {
+    .pb-pricing-tiers {
       grid-template-columns: 1fr;
+    }
+
+    .pb-tier-card--featured {
+      transform: none;
+    }
+
+    .pb-tier-badge {
+      top: 0.5rem;
+      right: 0.75rem;
+      left: auto;
+      transform: none;
     }
   }
 </style>
