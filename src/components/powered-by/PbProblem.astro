@@ -1,0 +1,188 @@
+---
+---
+
+<section class="section pb-problem fade-in" aria-labelledby="pb-problem-title">
+  <div class="container">
+    <div class="pb-problem-grid">
+
+      <div class="pb-problem-left">
+        <span class="section-label pb-problem-label">The Gap</span>
+        <h2 class="headline-lg" id="pb-problem-title">
+          Your clients are already growing.<br />
+          Just not through you.
+        </h2>
+
+        <p class="pb-problem-subhead">That changes.</p>
+
+        <ul class="pb-problem-list">
+          <li>
+            <span class="pb-problem-icon">📊</span>
+            <div>
+              <strong>No visibility into member performance</strong>
+              <p>Your clients run their businesses on ten different tools. You see none of them. You can't advise on what you can't measure.</p>
+            </div>
+          </li>
+          <li>
+            <span class="pb-problem-icon">🔄</span>
+            <div>
+              <strong>Retention erodes as clients grow stronger</strong>
+              <p>The better your clients get at running their business, the less they depend on you. That relationship dynamic is backwards.</p>
+            </div>
+          </li>
+          <li>
+            <span class="pb-problem-icon">💸</span>
+            <div>
+              <strong>Relationships stay transactional</strong>
+              <p>You provide products or services. They buy elsewhere when the price is right. There is no platform holding the relationship together.</p>
+            </div>
+          </li>
+          <li>
+            <span class="pb-problem-icon">🏗️</span>
+            <div>
+              <strong>You cannot deliver on "digital"</strong>
+              <p>Every organisation in every sector promises to help clients go digital. Almost none of them have an actual product to deliver.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pb-problem-solution">
+        <span class="section-label pb-network-label">Pagayo changes that</span>
+        <h3 class="headline-md">Your network becomes the operating layer.</h3>
+
+        <ul class="pb-solution-list">
+          <li>Every member gets a full commerce platform, delivered through you</li>
+          <li>You see member performance across the entire network in real time</li>
+          <li>Your clients grow on your platform, not someone else's</li>
+          <li>Your role shifts from vendor to ecosystem — harder to replace every day</li>
+          <li>One dashboard. Every member. Full network visibility.</li>
+        </ul>
+
+        <blockquote class="pb-quote">
+          "Your network is your most valuable asset. Right now, it is not working hard enough."
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .pb-problem {
+    background: var(--bg-surface);
+  }
+
+  .pb-problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .pb-problem-subhead {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--pb-network);
+    margin: -0.5rem 0 1.75rem;
+    line-height: 1;
+  }
+
+  .pb-problem-label {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.2);
+  }
+
+  .pb-problem-left h2 {
+    margin: 1rem 0 1.75rem;
+  }
+
+  .pb-problem-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .pb-problem-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .pb-problem-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .pb-problem-list strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .pb-problem-list p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .pb-problem-solution {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    position: sticky;
+    top: calc(var(--nav-height) + 1.5rem);
+  }
+
+  .pb-problem-solution h3 {
+    margin: 1rem 0 1.5rem;
+  }
+
+  .pb-solution-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .pb-solution-list li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.35rem 0;
+    line-height: 1.5;
+  }
+
+  .pb-solution-list li::before {
+    content: '✓ ';
+    color: var(--pb-network);
+    font-weight: 700;
+  }
+
+  .pb-quote {
+    border-left: 3px solid var(--pb-network);
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-primary);
+    background: var(--pb-network-glow);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  @media (max-width: 900px) {
+    .pb-problem-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pb-problem-solution {
+      position: static;
+    }
+  }
+</style>

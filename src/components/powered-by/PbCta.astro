@@ -1,0 +1,112 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section class="section pb-page-cta fade-in">
+  <div class="pb-page-cta-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="pb-page-cta-inner">
+      <span class="section-label pb-network-label">Build Your Network</span>
+      <h2 class="headline-lg">
+        You already have a network.<br />
+        <span class="pb-headline-accent">Let's build the platform around it.</span>
+      </h2>
+      <p>
+        Tell us your sector, your network size, and what you want your members to be able to do.
+        We will send a concrete proposal — including pricing, setup timeline, and what your network dashboard would look like.
+      </p>
+      <div class="pb-cta-buttons">
+        <div class="pb-cta-block">
+          <Button href="/powered-by-contact?intent=proposal" variant="pb" size="lg">Build Your Network →</Button>
+          <span class="pb-cta-hint">We will send a detailed proposal for your leadership team within 48 hours.</span>
+        </div>
+        <div class="pb-cta-block">
+          <Button href="/powered-by-contact?intent=demo" variant="secondary" size="lg">Book a Partner Demo</Button>
+          <span class="pb-cta-hint">See the partner dashboard live. No commitment, no sales process.</span>
+        </div>
+      </div>
+      <p class="pb-cta-note">
+        Want to explore the platform your members will use?
+        <a href="https://start.pagayo.app/register">Start free as a founder →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pb-page-cta {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .pb-page-cta-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(96, 165, 250, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 50%, rgba(99, 91, 255, 0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .pb-page-cta-inner {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .pb-page-cta-inner .section-label {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .pb-page-cta-inner h2 {
+    margin-bottom: 1rem;
+  }
+
+  .pb-page-cta-inner > p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .pb-cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .pb-cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 260px;
+  }
+
+  .pb-cta-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.45;
+  }
+
+  .pb-cta-note {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .pb-cta-note a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pb-cta-note a:hover {
+    color: var(--text-primary);
+  }
+</style>

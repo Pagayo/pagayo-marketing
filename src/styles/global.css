@@ -47,6 +47,8 @@
   --ngo-amber-glow: rgba(251, 191, 36, 0.15);
   --partner-violet: #a855f7;
   --partner-violet-glow: rgba(168, 85, 247, 0.15);
+  --pb-network: #60a5fa;
+  --pb-network-glow: rgba(96, 165, 250, 0.12);
 
   /* Gradients */
   --gradient-hero: linear-gradient(135deg, #635BFF 0%, #00d4aa 50%, #fbbf24 100%);
@@ -273,6 +275,15 @@ img { max-width: 100%; height: auto; display: block; }
 
 .btn-partner:hover {
   background: #b97aff;
+}
+
+.btn-pb {
+  background: var(--pb-network);
+  color: #0a0a0f;
+}
+
+.btn-pb:hover {
+  background: #93c5fd;
 }
 
 .btn-lg {
@@ -550,6 +561,11 @@ img { max-width: 100%; height: auto; display: block; }
 .pb-partners .pb-orb-1 { width: 700px; height: 700px; background: var(--pagayo-cyan, #06b6d4); top: -220px; right: -120px; animation-delay: 0s; opacity: 0.4; }
 .pb-partners .pb-orb-2 { width: 540px; height: 540px; background: var(--pagayo-purple); bottom: -180px; left: -140px; animation-delay: -8s; opacity: 0.45; }
 .pb-partners .pb-orb-3 { width: 380px; height: 380px; background: var(--gym-green); top: 30%; left: 55%; opacity: 0.18; animation-delay: -15s; }
+
+/* Variant: powered-by — network blue + purple infrastructure */
+.pb-powered-by .pb-orb-1 { width: 740px; height: 740px; background: var(--pb-network); top: -240px; right: -160px; animation-delay: 0s; opacity: 0.28; }
+.pb-powered-by .pb-orb-2 { width: 560px; height: 560px; background: var(--pagayo-purple); bottom: -180px; left: -140px; animation-delay: -8s; opacity: 0.38; }
+.pb-powered-by .pb-orb-3 { width: 420px; height: 420px; background: var(--pb-network); top: 35%; left: 50%; opacity: 0.12; animation-delay: -14s; }
 
 /* Variant: blog — soft purple wash, editorial feel */
 .pb-blog .pb-orb-1 { width: 680px; height: 680px; background: var(--pagayo-purple); top: -200px; right: -140px; animation-delay: 0s; opacity: 0.42; }
@@ -1563,6 +1579,16 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--ngo-amber-glow);
   color: var(--ngo-amber);
   border-color: rgba(251, 191, 36, 0.2);
+}
+
+.pb-network-label {
+  background: var(--pb-network-glow);
+  color: var(--pb-network);
+  border-color: rgba(96, 165, 250, 0.2);
+}
+
+.pb-headline-accent {
+  color: var(--pb-network);
 }
 
 /* --- IMPACT PAGE --- */

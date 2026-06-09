@@ -1,0 +1,137 @@
+---
+const rows = [
+  { traditional: 'Recommend a tool. Client sets it up alone.', powered: 'One invitation. Member is operational on day one.' },
+  { traditional: 'No visibility into client performance', powered: 'Live dashboard across your entire network' },
+  { traditional: 'Client grows → client needs you less', powered: 'Member grows → member is more deeply embedded in your platform' },
+  { traditional: 'You are a vendor. Price determines loyalty.', powered: 'You are a platform. Switching means losing everything.' },
+  { traditional: 'First-line support is your client\'s problem', powered: 'Pagayo handles first-line support for your members directly' },
+  { traditional: 'Network value is static — a list of clients', powered: 'Network value compounds — every active member makes the next easier to convert' },
+];
+---
+
+<section class="section pb-comparison fade-in" aria-labelledby="pb-comparison-title">
+  <div class="container">
+    <div class="section-header center pb-comparison-header">
+      <span class="section-label pb-network-label">Traditional vs Platform</span>
+      <h2 class="headline-lg" id="pb-comparison-title">
+        Why software alone<br />
+        <span class="pb-headline-accent">doesn't solve this.</span>
+      </h2>
+      <p class="text-lg">
+        The instinct is to find a tool and recommend it. That creates another vendor in the chain.
+        What you need is infrastructure — embedded in your existing relationship.
+      </p>
+    </div>
+
+    <div class="pb-comparison-table" role="table" aria-label="Traditional distributor compared to Powered by Pagayo">
+      <div class="pb-comparison-row pb-comparison-row--head" role="row">
+        <div role="columnheader" class="pb-col-traditional">Traditional Approach</div>
+        <div role="columnheader" class="pb-col-powered">Powered by Pagayo</div>
+      </div>
+      {rows.map((row) => (
+        <div class="pb-comparison-row" role="row">
+          <div role="cell" class="pb-col-traditional">
+            <span class="pb-col-x" aria-hidden="true">✕</span>
+            {row.traditional}
+          </div>
+          <div role="cell" class="pb-col-powered">
+            <span class="pb-col-check" aria-hidden="true">✓</span>
+            {row.powered}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pb-comparison {
+    background: var(--bg-surface);
+  }
+
+  .pb-comparison-header {
+    max-width: var(--max-width);
+  }
+
+  .pb-comparison-table {
+    margin-top: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .pb-comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pb-comparison-row:last-child {
+    border-bottom: none;
+  }
+
+  .pb-comparison-row--head {
+    background: var(--bg-elevated);
+  }
+
+  .pb-col-traditional,
+  .pb-col-powered {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .pb-col-traditional {
+    color: var(--text-muted);
+    border-right: 1px solid var(--border);
+  }
+
+  .pb-col-powered {
+    color: var(--text-secondary);
+    background: rgba(96, 165, 250, 0.03);
+  }
+
+  .pb-comparison-row--head .pb-col-traditional,
+  .pb-comparison-row--head .pb-col-powered {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-muted);
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .pb-comparison-row--head .pb-col-powered {
+    color: var(--pb-network);
+  }
+
+  .pb-col-x {
+    color: #f87171;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .pb-col-check {
+    color: var(--pb-network);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  @media (max-width: 640px) {
+    .pb-comparison-row {
+      grid-template-columns: 1fr;
+    }
+
+    .pb-col-traditional {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      background: rgba(239, 68, 68, 0.03);
+    }
+  }
+</style>

@@ -1,0 +1,213 @@
+---
+const notThis = [
+  'A white-label SaaS product you have to sell',
+  'An affiliate programme where you earn a referral fee',
+  'A reseller arrangement with monthly targets',
+  'A tech project that needs an IT department',
+  'A new vendor competing with your existing relationships',
+];
+
+const butThis = [
+  'Commerce infrastructure, embedded in your existing relationship',
+  'Your brand on top. Pagayo\'s operating system underneath.',
+  'A platform your members launch on — not a tool you recommend to them',
+  'An ecosystem that makes your network more valuable every week',
+  'Infrastructure you configure once. Members activate themselves.',
+];
+---
+
+<section class="section pb-solution fade-in" aria-labelledby="pb-solution-title">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-label pb-network-label">What it actually is</span>
+      <h2 class="headline-lg" id="pb-solution-title">
+        Not another software product.<br />
+        <span class="pb-headline-accent">Infrastructure for your network.</span>
+      </h2>
+      <p class="text-lg">
+        The distinction matters. Software is something you sell. Infrastructure is something you own.
+        Powered by Pagayo makes your organisation the platform — not a reseller of ours.
+      </p>
+    </div>
+
+    <div class="pb-solution-grid">
+      <div class="pb-solution-card pb-solution-card--not">
+        <div class="pb-solution-card-header">
+          <span class="pb-solution-icon pb-solution-icon--no">✕</span>
+          <h3>Not this</h3>
+        </div>
+        <ul>
+          {notThis.map((item) => (
+            <li>
+              <span class="pb-solution-marker pb-solution-marker--no" aria-hidden="true">✕</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="pb-solution-card pb-solution-card--yes">
+        <div class="pb-solution-card-header">
+          <span class="pb-solution-icon pb-solution-icon--yes">✓</span>
+          <h3>But this</h3>
+        </div>
+        <ul>
+          {butThis.map((item) => (
+            <li>
+              <span class="pb-solution-marker pb-solution-marker--yes" aria-hidden="true">✓</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="pb-solution-badge-wrap">
+      <div class="pb-solution-badge">
+        <span class="pb-solution-badge-network">Beauty Commerce Network</span>
+        <span class="pb-solution-badge-divider" aria-hidden="true">—</span>
+        <span class="pb-solution-badge-powered">Powered by Pagayo</span>
+      </div>
+      <p class="pb-solution-badge-caption">
+        Your network. Your brand. Your platform. Pagayo is the infrastructure that runs underneath it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pb-solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .pb-solution-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 1.75rem;
+  }
+
+  .pb-solution-card--yes {
+    border-color: rgba(96, 165, 250, 0.3);
+    background: rgba(96, 165, 250, 0.04);
+  }
+
+  .pb-solution-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pb-solution-card-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .pb-solution-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .pb-solution-icon--no {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+  }
+
+  .pb-solution-icon--yes {
+    background: var(--pb-network-glow);
+    color: var(--pb-network);
+  }
+
+  .pb-solution-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .pb-solution-card li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  .pb-solution-marker {
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-top: 0.05rem;
+  }
+
+  .pb-solution-marker--no {
+    color: #f87171;
+  }
+
+  .pb-solution-marker--yes {
+    color: var(--pb-network);
+  }
+
+  .pb-solution-badge-wrap {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .pb-solution-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-card);
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: var(--radius-xl);
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pb-solution-badge-network {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .pb-solution-badge-divider {
+    color: var(--text-muted);
+  }
+
+  .pb-solution-badge-powered {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--pb-network);
+    letter-spacing: 0.02em;
+  }
+
+  .pb-solution-badge-caption {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 700px) {
+    .pb-solution-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

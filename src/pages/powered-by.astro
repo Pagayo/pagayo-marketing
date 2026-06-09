@@ -1,0 +1,224 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+import PageBackdrop from '../components/layout/PageBackdrop.astro';
+import PbProblem from '../components/powered-by/PbProblem.astro';
+import PbComparison from '../components/powered-by/PbComparison.astro';
+import PbSolution from '../components/powered-by/PbSolution.astro';
+import PbHowItWorks from '../components/powered-by/PbHowItWorks.astro';
+import PbDeliverables from '../components/powered-by/PbDeliverables.astro';
+import PbSectors from '../components/powered-by/PbSectors.astro';
+import PbModel from '../components/powered-by/PbModel.astro';
+import PbPricing from '../components/powered-by/PbPricing.astro';
+import PbFaq from '../components/powered-by/PbFaq.astro';
+import PbCta from '../components/powered-by/PbCta.astro';
+import i18nEn from '../content/i18n/en.json';
+
+const t = i18nEn.poweredByPage;
+const pageTitle = t.title;
+const pageDescription = t.description;
+
+const poweredBySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: pageTitle,
+  description: pageDescription,
+  url: 'https://www.pagayo.com/powered-by',
+  inLanguage: t.inLanguage,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Pagayo',
+    url: 'https://www.pagayo.com'
+  }
+};
+
+const missionPoints = [
+  {
+    title: 'Your brand. Their business.',
+    description: 'You stay front and centre. Pagayo powers what is underneath. Your members never see another vendor.',
+  },
+  {
+    title: 'Live in days, not months.',
+    description: 'Configure your network once. Your members onboard themselves and launch on day one. No IT project required.',
+  },
+  {
+    title: 'Infrastructure that compounds.',
+    description: 'Every member who grows makes your network harder to leave and more valuable to join. The position strengthens automatically.',
+  },
+];
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(poweredBySchema)} />
+  <PageBackdrop variant="powered-by" />
+
+  <main class="pb-page">
+    <!-- 1. Hero -->
+    <section class="section pb-hero fade-in" aria-labelledby="pb-page-title">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label pb-network-label">Powered by Pagayo</span>
+          <h1 class="headline-xl" id="pb-page-title">
+            Your network already exists.<br />
+            <span class="pb-headline-accent">Give it a platform.</span>
+          </h1>
+          <p class="pb-hero-tagline">Commerce infrastructure for networks.</p>
+          <p class="text-lg">
+            You have the trust. You have the reach. You have hundreds of clients who depend on you.
+            Powered by Pagayo turns that network into a commerce ecosystem — without building a tech team,
+            without becoming a software company, without disrupting what already works.
+          </p>
+          <div class="pb-hero-ctas">
+            <div class="pb-hero-cta-block">
+              <a href="/powered-by-contact?intent=proposal" class="btn btn-pb btn-lg">Build Your Network →</a>
+              <span class="pb-hero-cta-hint">Tell us your sector and network size — we will send a concrete proposal.</span>
+            </div>
+            <div class="pb-hero-cta-block">
+              <a href="/powered-by-contact?intent=demo" class="btn btn-secondary btn-lg">Book a Partner Demo</a>
+              <span class="pb-hero-cta-hint">See the partner dashboard live before committing to anything.</span>
+            </div>
+          </div>
+          <p class="pb-hero-tertiary">
+            Want to explore the platform your members will use?
+            <a href="https://start.pagayo.app/register">Start free as a founder →</a>
+          </p>
+        </div>
+
+        <div class="pb-mission-points" aria-label="Powered by Pagayo principles">
+          {missionPoints.map((point) => (
+            <div class="pb-mission-card">
+              <h2>{point.title}</h2>
+              <p>{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. The gap — why networks lose value -->
+    <PbProblem />
+
+    <!-- 3. Why software alone doesn't solve it -->
+    <PbComparison />
+
+    <!-- 4. What Powered by Pagayo actually is -->
+    <PbSolution />
+
+    <!-- 5. How it works — three steps -->
+    <PbHowItWorks />
+
+    <!-- 6. What members get + what the network gets -->
+    <PbDeliverables />
+
+    <!-- 7. Sector examples -->
+    <PbSectors />
+
+    <!-- 8. The Powered by model explained -->
+    <PbModel />
+
+    <!-- 9. Pricing direction -->
+    <PbPricing />
+
+    <!-- 10. FAQ -->
+    <PbFaq />
+
+    <!-- 11. CTA -->
+    <PbCta />
+  </main>
+</MarketingLayout>
+
+<style>
+  .pb-hero {
+    padding-top: var(--hero-pt);
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+  }
+
+  .pb-mission-points {
+    margin-top: 2.75rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .pb-mission-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    border-top: 2px solid rgba(96, 165, 250, 0.3);
+  }
+
+  .pb-mission-card h2 {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .pb-mission-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Override the 720px global cap for the hero header */
+  .pb-hero .section-header {
+    max-width: var(--max-width);
+  }
+
+  .pb-hero-ctas {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .pb-hero-cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 260px;
+  }
+
+  .pb-hero-cta-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.45;
+  }
+
+  .pb-hero-tertiary {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .pb-hero-tertiary a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pb-hero-tertiary a:hover {
+    color: var(--text-primary);
+    border-bottom-color: var(--text-secondary);
+  }
+
+  .pb-hero-tagline {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    .pb-mission-points {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

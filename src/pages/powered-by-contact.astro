@@ -1,0 +1,339 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+
+const pageTitle = 'Build Your Network — Pagayo Powered by';
+const pageDescription = 'Request a proposal, book a partner demo, or ask about your sector. Tell us your network size and we will send a concrete outline within 48 hours.';
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <main class="pbc-page">
+
+    <section class="pbc-hero section">
+      <div class="container">
+        <a href="/powered-by" class="pbc-back">← Back to Powered by Pagayo</a>
+        <div class="section-header center">
+          <span class="section-label pb-network-label">For Networks Ready to Become Platforms</span>
+          <h1 class="headline-lg">
+            Let's build your<br />
+            <span class="pb-headline-accent">network platform.</span>
+          </h1>
+          <p class="text-lg">
+            Tell us your sector, network size, and what you want your members to be able to do.
+            We will send a concrete proposal — pricing, setup timeline, and what your partner dashboard would look like.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pbc-body section">
+      <div class="container">
+        <div class="pbc-layout">
+
+          <div class="pbc-form-col">
+            <h2>Get in touch</h2>
+            <form class="pbc-form" action="https://formspree.io/f/pagayo-powered-by" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="Powered by Pagayo — Network enquiry" />
+
+              <div class="pbc-field">
+                <label for="pbc-name">Name</label>
+                <input id="pbc-name" name="name" type="text" placeholder="Your name" required />
+              </div>
+
+              <div class="pbc-field">
+                <label for="pbc-org">Organisation</label>
+                <input id="pbc-org" name="organisation" type="text" placeholder="Your organisation" required />
+              </div>
+
+              <div class="pbc-field">
+                <label for="pbc-email">Work email</label>
+                <input id="pbc-email" name="email" type="email" placeholder="you@yourorganisation.com" required />
+              </div>
+
+              <div class="pbc-field">
+                <label for="pbc-sector">Sector</label>
+                <select id="pbc-sector" name="sector">
+                  <option value="">Select your sector</option>
+                  <option value="beauty">Beauty / Personal care</option>
+                  <option value="food-beverage">Food &amp; Beverage / Horeca</option>
+                  <option value="agriculture">Agriculture / Farming cooperative</option>
+                  <option value="franchise">Franchise / Retail network</option>
+                  <option value="sports">Sports / Fitness / Clubs</option>
+                  <option value="professional">Professional services / Accountancy</option>
+                  <option value="wholesale">Wholesale / Distribution</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="pbc-field">
+                <label for="pbc-size">Network size (approx.)</label>
+                <select id="pbc-size" name="network_size">
+                  <option value="">Select network size</option>
+                  <option value="under-50">Under 50 members</option>
+                  <option value="50-150">50–150 members</option>
+                  <option value="150-500">150–500 members</option>
+                  <option value="500-plus">500+ members</option>
+                </select>
+              </div>
+
+              <div class="pbc-field">
+                <label for="pbc-intent">What are you looking for?</label>
+                <select id="pbc-intent" name="intent">
+                  <option value="proposal">Full proposal (pricing + timeline)</option>
+                  <option value="demo">Partner dashboard demo</option>
+                  <option value="question">Specific question</option>
+                </select>
+              </div>
+
+              <div class="pbc-field">
+                <label for="pbc-message">Tell us more (optional)</label>
+                <textarea id="pbc-message" name="message" rows="4" placeholder="Your network, your goals, specific questions..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-pb btn-lg pbc-submit">Send enquiry →</button>
+              <p class="pbc-form-note">We respond within one business day.</p>
+            </form>
+          </div>
+
+          <div class="pbc-info-col">
+            <div class="pbc-info-card">
+              <h3>What happens next</h3>
+              <ol class="pbc-next-steps">
+                <li>We review your network size and sector</li>
+                <li>We send a concrete proposal with pricing tiers and activation scenarios</li>
+                <li>We book a partner dashboard demo if you want to see it live</li>
+                <li>We confirm your network configuration requirements</li>
+                <li>You decide — no obligation at any stage</li>
+              </ol>
+            </div>
+
+            <div class="pbc-info-card pbc-info-card--highlight">
+              <h3>Not a sales process</h3>
+              <p>
+                We do not do discovery calls that turn into product pitches.
+                You tell us what your network needs, we show you what it would look like.
+                Decision is yours.
+              </p>
+            </div>
+
+            <div class="pbc-info-card">
+              <h3>Want to explore what your members will use?</h3>
+              <p>
+                The same platform your members will run their business on is available to explore free.
+              </p>
+              <a href="https://start.pagayo.app/register" class="pbc-explore-link">
+                Explore the founder experience →
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+</MarketingLayout>
+
+<style>
+  .pbc-page {
+    padding-top: var(--hero-pt);
+  }
+
+  .pbc-back {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .pbc-back:hover {
+    color: var(--text-primary);
+    border-bottom-color: var(--border);
+  }
+
+  .pbc-hero .section-header {
+    max-width: var(--max-width);
+  }
+
+  .pbc-hero {
+    padding-bottom: 0;
+  }
+
+  .pbc-body {
+    padding-top: 2rem;
+  }
+
+  .pbc-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .pbc-form-col h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .pbc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .pbc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .pbc-field label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+  }
+
+  .pbc-field input,
+  .pbc-field select,
+  .pbc-field textarea {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    transition: border-color 0.15s;
+    width: 100%;
+  }
+
+  .pbc-field input::placeholder,
+  .pbc-field textarea::placeholder {
+    color: var(--text-muted);
+  }
+
+  .pbc-field input:focus,
+  .pbc-field select:focus,
+  .pbc-field textarea:focus {
+    outline: none;
+    border-color: var(--pb-network);
+  }
+
+  .pbc-field select option {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+
+  .pbc-field textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .pbc-submit {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .pbc-form-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .pbc-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: calc(var(--nav-height) + 1.5rem);
+  }
+
+  .pbc-info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+  }
+
+  .pbc-info-card--highlight {
+    border-color: rgba(96, 165, 250, 0.3);
+    background: rgba(96, 165, 250, 0.04);
+  }
+
+  .pbc-info-card h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.85rem;
+  }
+
+  .pbc-info-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .pbc-next-steps {
+    list-style: none;
+    counter-reset: steps;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .pbc-next-steps li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding-left: 1.75rem;
+    position: relative;
+    counter-increment: steps;
+  }
+
+  .pbc-next-steps li::before {
+    content: counter(steps);
+    position: absolute;
+    left: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: var(--pb-network-glow);
+    color: var(--pb-network);
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0.1rem;
+  }
+
+  .pbc-explore-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--pb-network);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.3);
+    transition: border-color 0.15s;
+  }
+
+  .pbc-explore-link:hover {
+    border-bottom-color: var(--pb-network);
+  }
+
+  @media (max-width: 900px) {
+    .pbc-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .pbc-info-col {
+      position: static;
+    }
+  }
+</style>

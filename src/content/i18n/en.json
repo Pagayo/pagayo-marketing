@@ -1,6 +1,7 @@
 {
   "nav": {
     "oneStack": "One Stack",
+    "poweredBy": "Powered by",
     "features": "Features",
     "gyms": "For Gyms",
     "pricing": "Pricing",
@@ -78,6 +79,11 @@
     "intro": "One hundred success stories from Pagayo tenants across continents where Stripe is active — from webshops and gyms to foundations, pools, and clubs. Stories are grouped by region, not by country list. We never name tenants or their organisations: only the role they play and the city they operate in.",
     "feedAriaLabel": "Success stories by continent",
     "viewAllStories": "View all 100 stories →"
+  },
+  "poweredByPage": {
+    "title": "Powered by Pagayo — Commerce Infrastructure for Networks",
+    "description": "Turn your network into a commerce ecosystem. Give every member a full commerce platform — webshop, POS, subscriptions, payments — under your brand. No tech team required.",
+    "inLanguage": "en"
   },
   "impactPage": {
     "title": "Pagayo Impact Engine — Sponsor entrepreneurs, measure real outcomes",
