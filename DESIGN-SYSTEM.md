@@ -4,7 +4,7 @@
 
 **Proces voor agents:** `.github/design-marketing/README.md` (playbooks 01–05).
 
-**Implementatie:** `src/styles/site.css` → `global.css` (tokens + shared) + `partials/` (component/pagina). Geen `<style>` in `.astro`. Client-JS: `src/scripts/site.ts`.
+**Implementatie:** `src/styles/global.css` (alle CSS). Layout importeert `site.css` → `global.css`. Geen `<style>` in `.astro`. Client-JS: `src/scripts/`.
 
 ---
 
@@ -131,7 +131,7 @@ Nieuwe posts: markdown in `src/content/blog/` met frontmatter (title, descriptio
 | Backdrop | `PageBackdrop` variant `impact` | Green + amber wash |
 | Accent | `.impact-label`, `--ngo-amber` | Sectielabels Impact-programma |
 
-Nieuwe sectie: BEM-achtige class-namen; CSS in `src/styles/partials/` (import via `partials.css`); `fade-in` op sectie-root.
+Nieuwe sectie: BEM-achtige class-namen; CSS in `global.css`; `fade-in` op sectie-root.
 
 ## Chrome (niet dupliceren)
 

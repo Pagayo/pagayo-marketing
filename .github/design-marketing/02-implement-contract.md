@@ -10,7 +10,7 @@ Doel: nieuwe pagina’s en wijzigingen consistent, SEO-vriendelijk en SSoT-confo
 - **UI-primitives:** `Button`, `Card`, `SectionHeader` uit `src/components/ui/`.
 - **Data:** pricing → `pricing.json`; feature-lijsten → `features.json`; vergelijkbaar voor `channels.json`, `competitors.json`, `trust.json`.
 - **i18n:** zichtbare tekst, `<title>`, `description`, structured-data taalvelden via keys in `src/content/i18n/en.json` (+ `nl.json`, `de.json` in dezelfde wijziging).
-- **Styling:** tokens in `global.css`; component/pagina-CSS in `src/styles/partials/` — **geen** `<style>` in `.astro` (zie `.cursor/rules/pagayo-marketing-styles-scripts-ssot.mdc`).
+- **Styling:** alles in `global.css` — **geen** `<style>` in `.astro` (zie `.cursor/rules/pagayo-marketing-styles-scripts-ssot.mdc`).
 - **Animatie:** `fade-in` + bestaande scroll/observer in `MarketingLayout` (geen tweede IntersectionObserver zonder reden).
 - **CTA’s naar product:** gebruik bestaande URLs (`https://start.pagayo.app/register`, login-links in footer) — geen nieuwe subdomeinen zonder check met `CLOUDFLARE-CONFIG.md`.
 
@@ -41,7 +41,7 @@ Voorbeeld: nieuwe pagina `/solutions` (slug Engels).
    ```
 3. **Nav** — link in `Nav.astro` + keys in `nav` (alle drie i18n-bestanden).
 4. **Footer** — indien van toepassing, zelfde patroon als bestaande links.
-5. **Secties** — nieuwe blokken in `components/sections/`; styling in `src/styles/partials/` (zelfde relatieve pad als bron).
+5. **Secties** — nieuwe blokken in `components/sections/`; styling in `global.css`.
 6. **DESIGN-SYSTEM.md** — alleen bij nieuw visueel patroon (nieuwe card-variant, nieuwe section-label).
 7. **Build** — `npm run build` (zie `03-verify.md`).
 
