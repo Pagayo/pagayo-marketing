@@ -1,7 +1,7 @@
 import { initNavCountryLabel } from './nav-country';
 
 const NAV_MOBILE_BREAKPOINT = 768;
-const MEGA_CLOSE_DELAY_MS = 140;
+const MEGA_CLOSE_DELAY_MS = 300;
 
 function isNavMobile(): boolean {
   return window.innerWidth <= NAV_MOBILE_BREAKPOINT;
@@ -67,16 +67,15 @@ function initNavOrganizationsMega(
     if (!isNavMobile()) openMega();
   });
 
-  trigger.addEventListener('mouseleave', () => {
+  // Close only when the mouse leaves the entire <nav> element
+  // (panel is a DOM child of nav, so moving from trigger → gap → cards
+  // never triggers nav mouseleave)
+  nav.addEventListener('mouseleave', () => {
     if (!isNavMobile()) scheduleClose();
   });
 
-  panel.addEventListener('mouseenter', () => {
-    if (!isNavMobile()) openMega();
-  });
-
-  panel.addEventListener('mouseleave', () => {
-    if (!isNavMobile()) scheduleClose();
+  nav.addEventListener('mouseenter', () => {
+    if (!isNavMobile()) clearCloseTimer();
   });
 
   panel.querySelectorAll('a').forEach((link) => {

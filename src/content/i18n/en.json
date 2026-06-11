@@ -23,6 +23,12 @@
         "description": "Offer Pagayo as a commerce platform under your own name — as part of your own product, service, or platform.",
         "cta": "Explore Powered by Pagayo"
       },
+      "organization": {
+        "label": "Organization Program",
+        "title": "For wholesalers, trade associations, franchise networks, and accountants",
+        "description": "Bring Pagayo's commerce infrastructure to the entrepreneurs you already serve — without reselling or building a tech team.",
+        "cta": "Explore Organization Program"
+      },
       "note": "If neither applies, the Organization Program is the right place."
     },
     "login": "Log in",

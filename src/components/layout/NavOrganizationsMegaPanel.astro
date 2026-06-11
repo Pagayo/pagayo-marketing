@@ -14,24 +14,26 @@ const menu = i18nEn.nav.organizationsMenu;
 >
   <div class="container nav-mega-inner">
     <div class="nav-mega-grid">
-      <article class="nav-mega-card nav-mega-card--impact">
+      <a href="/organizations" class="nav-mega-card nav-mega-card--org">
+        <span class="nav-mega-label">{menu.organization.label}</span>
+        <h3 class="nav-mega-title">{menu.organization.title}</h3>
+        <p class="nav-mega-desc">{menu.organization.description}</p>
+        <span class="btn btn-org btn-sm">{menu.organization.cta}</span>
+      </a>
+
+      <a href="/impact" class="nav-mega-card nav-mega-card--impact">
         <span class="nav-mega-label">{menu.impact.label}</span>
         <h3 class="nav-mega-title">{menu.impact.title}</h3>
         <p class="nav-mega-desc">{menu.impact.description}</p>
-        <a href="/impact" class="btn btn-ngo btn-sm">{menu.impact.cta}</a>
-      </article>
+        <span class="btn btn-ngo btn-sm">{menu.impact.cta}</span>
+      </a>
 
-      <article class="nav-mega-card nav-mega-card--powered">
+      <a href="/powered-by" class="nav-mega-card nav-mega-card--powered">
         <span class="nav-mega-label">{menu.poweredBy.label}</span>
         <h3 class="nav-mega-title">{menu.poweredBy.title}</h3>
         <p class="nav-mega-desc">{menu.poweredBy.description}</p>
-        <a href="/powered-by" class="btn btn-pb btn-sm">{menu.poweredBy.cta}</a>
-      </article>
-    </div>
-
-    <div class="nav-mega-footer">
-      <a href="/organizations" class="nav-mega-overview">{menu.overview} →</a>
-      <p class="nav-mega-note">{menu.note}</p>
+        <span class="btn btn-pb btn-sm">{menu.poweredBy.cta}</span>
+      </a>
     </div>
   </div>
 </div>
