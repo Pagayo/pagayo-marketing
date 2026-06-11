@@ -1,0 +1,118 @@
+/* SSoT partial — migrated from src/components/impact/ImpactWhy.astro */
+.impact-why {
+    background: var(--bg-surface);
+  }
+
+  .impact-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .impact-why-subhead {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--ngo-amber);
+    margin: -0.5rem 0 1.75rem;
+    line-height: 1;
+  }
+
+  .impact-why-label--problem {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.2);
+  }
+
+  .impact-why-problem h2 {
+    margin: 1rem 0 1.75rem;
+  }
+
+  .impact-why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .impact-why-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .impact-why-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .impact-why-list strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .impact-why-list p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .impact-why-solution {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    position: sticky;
+    top: calc(var(--nav-height) + 1.5rem);
+  }
+
+  .impact-why-solution h3 {
+    margin: 1rem 0 1.5rem;
+  }
+
+  .impact-solution-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .impact-solution-list li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.35rem 0;
+    line-height: 1.5;
+  }
+
+  .impact-solution-list li::before {
+    content: '✓ ';
+    color: var(--ngo-amber);
+    font-weight: 700;
+  }
+
+  .impact-why-quote {
+    border-left: 3px solid var(--ngo-amber);
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-primary);
+    background: var(--ngo-amber-glow);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  @media (max-width: 900px) {
+    .impact-why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .impact-why-solution {
+      position: static;
+    }
+  }

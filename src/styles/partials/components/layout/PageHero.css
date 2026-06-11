@@ -1,0 +1,4 @@
+/* SSoT partial — migrated from src/components/layout/PageHero.astro */
+.page-hero {
+    padding-top: var(--hero-pt);
+  }

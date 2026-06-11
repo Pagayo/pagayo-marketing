@@ -1,0 +1,110 @@
+/* SSoT partial — migrated from src/components/powered-by/PbSectors.astro */
+.pb-sectors-list {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .pb-sectors-list > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 640px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .pb-sector-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .pb-sector-card:hover {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+
+  .pb-sector-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .pb-sector-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .pb-sector-meta h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.2rem;
+    line-height: 1.2;
+  }
+
+  .pb-sector-scale {
+    font-size: 0.8rem;
+    color: var(--pb-network);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .pb-sector-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .pb-sector-wins {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: auto;
+  }
+
+  .pb-sector-win {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .pb-sector-win p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .pb-sector-win-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-muted);
+  }
+
+  .pb-sector-win-label--network {
+    color: var(--pb-network);
+  }
+
+  .pb-sector-win--network p {
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 800px) {
+    .pb-sectors-list {
+      grid-template-columns: 1fr;
+    }
+
+    .pb-sectors-list > :last-child:nth-child(odd) {
+      max-width: none;
+    }
+  }

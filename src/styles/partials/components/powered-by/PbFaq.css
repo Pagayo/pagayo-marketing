@@ -1,0 +1,63 @@
+/* SSoT partial — migrated from src/components/powered-by/PbFaq.astro */
+.pb-faq-list {
+    margin-top: 2.5rem;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .pb-faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pb-faq-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .pb-faq-item summary {
+    padding: 1.1rem 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: color 0.15s;
+  }
+
+  .pb-faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .pb-faq-item summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: transform 0.2s, color 0.15s;
+  }
+
+  .pb-faq-item[open] summary::after {
+    transform: rotate(45deg);
+    color: var(--pb-network);
+  }
+
+  .pb-faq-item[open] summary {
+    color: var(--pb-network);
+  }
+
+  .pb-faq-item p {
+    padding: 0 0 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 680px;
+  }

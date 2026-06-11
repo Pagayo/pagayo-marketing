@@ -1,0 +1,459 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+import PageBackdrop from '../components/layout/PageBackdrop.astro';
+
+const pageTitle = 'For Organizations — Pagayo';
+const pageDescription =
+  'Organization Programs for wholesalers, trade associations, franchise networks, accountants, and institutions that want to bring serious commerce infrastructure to the entrepreneurs they serve.';
+
+const features = [
+  { icon: '🛒', label: 'Webshop',                desc: 'A branded online store, ready to sell on day one.' },
+  { icon: '💳', label: 'Point of Sale',           desc: 'In-store payments via any device.' },
+  { icon: '💬', label: 'WhatsApp Commerce',        desc: 'Orders, broadcasts, and customer conversations via WhatsApp.' },
+  { icon: '📦', label: 'Inventory',               desc: 'One stock level across every channel, updated in real time.' },
+  { icon: '🔔', label: 'Loyalty & subscriptions', desc: 'Recurring revenue and customer retention, built in.' },
+  { icon: '📊', label: 'Dashboard',               desc: 'Every sale, every customer, every payout — one place.' },
+];
+
+const audiences = [
+  {
+    title: 'Wholesale & distribution',
+    body: 'You deliver to salons, gyms, cafés, or specialty retailers on a regular route. You see your customers often. They trust your advice. Pagayo gives you something genuinely worth recommending.',
+  },
+  {
+    title: 'Trade associations & professional bodies',
+    body: 'Your members need modern commerce infrastructure but cannot afford enterprise tools. Pagayo is a platform you can offer as a meaningful benefit — not a discount code.',
+  },
+  {
+    title: 'Franchise organisations',
+    body: 'You set the standard for fifty locations. Rolling out Pagayo means every franchisee runs on the same commerce platform — consistent, branded, and operational from day one.',
+  },
+  {
+    title: 'Accountants & consultants',
+    body: 'You manage the books for dozens of small businesses. You already know who is losing money to fragmented tools. A recommendation from you carries more weight than any advertisement.',
+  },
+  {
+    title: 'Municipalities & development organisations',
+    body: 'You run entrepreneur support programs. Pagayo gives you a platform to measure commercial outcomes — not just participation counts.',
+  },
+  {
+    title: 'NGOs & educational institutions',
+    body: 'You want the entrepreneurs in your program to build real, sustainable businesses. Pagayo is the infrastructure that makes that possible.',
+  },
+  {
+    title: 'Web agencies & digital builders',
+    body: 'You build the website. You can now include the commerce layer — and remain a meaningful part of the growth you helped create.',
+  },
+];
+
+const steps = [
+  {
+    num: '1',
+    title: 'Tell us about your network.',
+    body: 'We start with one conversation. Who are the entrepreneurs you serve? What sector? What do they need? We explain how the program works.',
+  },
+  {
+    num: '2',
+    title: 'We confirm the commercial arrangement.',
+    body: 'We confirm the model — sponsored or growth — and walk you through how to introduce Pagayo to your network.',
+  },
+  {
+    num: '3',
+    title: 'You make the introduction.',
+    body: 'On your terms. In your language. At your pace. An email, a conversation, a mention at your next meeting or delivery. We do not require a sales pitch or a demo from you.',
+  },
+  {
+    num: '4',
+    title: 'They start. You grow with them.',
+    body: 'Entrepreneurs get live within hours. Pagayo handles all support, onboarding, and renewals. As your network grows on the platform, the program grows with it.',
+  },
+];
+
+const reasons = [
+  {
+    title: 'It deepens existing relationships.',
+    body: 'When you introduce a platform that genuinely helps your customers grow, the relationship moves from transactional to foundational. That depth is difficult to replicate.',
+  },
+  {
+    title: 'The impact is visible.',
+    body: 'When an entrepreneur in your network goes live, starts selling, and processes their first hundred orders — that outcome is directly traceable to your introduction. For associations, municipalities, and NGOs, that measurability matters.',
+  },
+  {
+    title: 'It is built for the long term.',
+    body: 'Pagayo is not a promotional tool or a trial that expires. It is a commerce infrastructure that entrepreneurs build their operations around. The value of an Organization Program compounds over time — it does not reset with each cycle.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Do the entrepreneurs in my network pay more because I introduced them?',
+    a: 'No. They pay standard Pagayo pricing. There is no surcharge, no markup, and no hidden cost. Whatever your organization receives comes entirely from Pagayo\'s side of the arrangement — not from your customers.',
+  },
+  {
+    q: 'What countries does Pagayo operate in?',
+    a: 'Pagayo currently operates in the Netherlands, Belgium, Germany, France, Spain, and several African markets. If your network is based there, we can discuss a program.',
+  },
+  {
+    q: 'How involved do I need to be after the introduction?',
+    a: 'As involved as you want to be. Many organizations make the introduction and step back — Pagayo handles all onboarding, support, and renewals. Others prefer to stay actively involved. Both work.',
+  },
+  {
+    q: 'What is the difference between a sponsored arrangement and a growth arrangement?',
+    a: 'In a sponsored arrangement, your organization covers the subscription cost for entrepreneurs — they use Pagayo at no cost. In a growth arrangement, entrepreneurs pay directly, and you participate in the growth you help create. The platform is identical in both cases.',
+  },
+  {
+    q: 'Is there a minimum network size?',
+    a: 'No minimum. We have built programs for networks of ten and networks of ten thousand. What matters is fit — not scale. We will be straightforward in our first conversation about whether a program makes sense for your situation.',
+  },
+  {
+    q: 'I am a web agency or digital consultant — does this apply to me?',
+    a: 'Yes. If you have an existing client base of entrepreneurs and want to include a commerce platform as part of what you offer, a growth arrangement fits.',
+  },
+  {
+    q: 'What happens if an entrepreneur in my network stops using Pagayo?',
+    a: 'Programs are built for the long term, not the individual transaction. Churn is a reality on any platform. We work together to minimise it and to grow the network over time.',
+  },
+];
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription}>
+  <PageBackdrop variant="organizations" />
+
+  <main class="org-page">
+
+    <!-- ══════════════════════════════════════════════════════ HERO -->
+    <section class="hero section org-hero">
+      <div class="hero-bg">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          For Organizations
+        </div>
+
+        <h1 class="headline-xl">
+          You built the trust.<br />
+          <span class="text-gradient">We built the platform.</span>
+        </h1>
+
+        <p class="org-hero-intro">
+          Pagayo's Organization Programs are built for wholesalers, trade associations,
+          franchise networks, accountants, and institutions that want to bring serious
+          commerce infrastructure to the entrepreneurs they serve.
+        </p>
+
+        <div class="org-hero-ctas">
+          <a href="/contact?subject=Organization+Program" class="btn btn-org btn-lg">
+            Request a program overview →
+          </a>
+          <a href="/one-stack" class="btn btn-secondary btn-lg">
+            Explore the platform first
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ WHAT THIS IS -->
+    <section class="section org-what fade-in">
+      <div class="container">
+        <div class="org-what-inner">
+          <div class="org-what-text">
+            <span class="section-label">What this is</span>
+            <h2 class="headline-md">
+              Not a referral program.<br />An infrastructure layer.
+            </h2>
+            <p>
+              Most arrangements that bring organizations and technology platforms
+              together are built on a simple premise: you refer, we pay. That is
+              not what this is.
+            </p>
+            <p>
+              An Organization Program is an arrangement in which you bring Pagayo's
+              commerce infrastructure to the entrepreneurs you already serve. You are
+              not a middleman. You are not a reseller. You are the trusted relationship
+              — Pagayo is the platform that runs underneath it.
+            </p>
+            <p>
+              The platform is the same for every entrepreneur, regardless of who
+              introduced them. One Stack: one webshop, one point of sale, one WhatsApp
+              integration, one inventory system. No custom builds. No sector-specific
+              versions. The same platform that an independent gym in Amsterdam uses is
+              the same platform a market vendor in Accra uses.
+            </p>
+            <p class="org-what-closer">That is the point.</p>
+          </div>
+          <div class="org-what-aside">
+            <div class="org-what-card">
+              <span class="org-what-card-label">Organizations</span>
+              <p>Already have the trust. Introduce Pagayo to their network.</p>
+            </div>
+            <div class="org-what-connector" aria-hidden="true">↓</div>
+            <div class="org-what-card org-what-card--platform">
+              <span class="org-what-card-label">Pagayo</span>
+              <p>Provides the infrastructure. One Stack. Same for everyone.</p>
+            </div>
+            <div class="org-what-connector" aria-hidden="true">↓</div>
+            <div class="org-what-card org-what-card--entrepreneurs">
+              <span class="org-what-card-label">Entrepreneurs</span>
+              <p>Get a complete commerce platform. Live within hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ ONE STACK -->
+    <section class="section org-stack fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">One Stack</span>
+          <h2 class="headline-md">
+            What your network gets —<br />and what you can stand behind.
+          </h2>
+          <p class="org-stack-intro">
+            Every entrepreneur you introduce to Pagayo gets the same thing: One Stack.
+            A complete commerce platform, live within hours, without a developer or an IT project.
+          </p>
+        </div>
+
+        <div class="org-stack-grid">
+          {features.map((f) => (
+            <div class="org-stack-card">
+              <span class="org-stack-icon">{f.icon}</span>
+              <div>
+                <strong>{f.label}</strong>
+                <span>{f.desc}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p class="org-stack-note">
+          They pay standard Pagayo pricing. There is no surcharge because of how they were introduced.
+          What organizations receive comes entirely from Pagayo's side of the arrangement — not from their customers.
+        </p>
+
+        <div class="org-stack-link-row">
+          <a href="/one-stack" class="org-text-link">See how it's built →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════ WHO THIS IS FOR -->
+    <section class="section org-audiences fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Who this is for</span>
+          <h2 class="headline-md">
+            If your customers are entrepreneurs,<br />you qualify.
+          </h2>
+          <p class="org-audiences-sub">
+            Organization Programs are built for organizations that already have
+            trusted relationships with the entrepreneurs they serve.
+          </p>
+        </div>
+
+        <div class="org-audiences-grid">
+          {audiences.map((a) => (
+            <div class="org-audience-card">
+              <h3>{a.title}</h3>
+              <p>{a.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ COMMERCIAL MODELS -->
+    <section class="section org-models fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">How organizations participate</span>
+          <h2 class="headline-md">Two arrangements. One platform.</h2>
+          <p class="org-models-intro">
+            Every organization that works with Pagayo introduces the same product to
+            their network. What differs is the commercial arrangement.
+          </p>
+        </div>
+
+        <div class="org-models-grid">
+          <div class="org-model-card">
+            <div class="org-model-num">01</div>
+            <h3>Your organization covers the cost.</h3>
+            <p>
+              You pay for the entrepreneurs in your program. They use Pagayo at no
+              cost to them. This arrangement is common for municipalities, NGOs,
+              educational institutions, and accelerators — organizations whose goal
+              is commercial empowerment rather than commercial return.
+            </p>
+          </div>
+          <div class="org-model-card org-model-card--growth">
+            <div class="org-model-num">02</div>
+            <h3>Entrepreneurs pay. You participate in their growth.</h3>
+            <p>
+              Entrepreneurs subscribe to Pagayo directly, at standard pricing. As
+              the organization that helped bring them to the platform, you participate
+              in the growth you help create. This arrangement is common for wholesalers,
+              trade associations, franchise networks, accountants, and consultants.
+            </p>
+          </div>
+        </div>
+
+        <p class="org-models-footer">
+          In both cases: the platform is identical. Entrepreneurs receive the same product.
+          The only difference is the commercial arrangement between Pagayo and your organization.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ HOW IT WORKS -->
+    <section class="section org-steps fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Getting started</span>
+          <h2 class="headline-md">Simple to introduce. Built to last.</h2>
+        </div>
+
+        <div class="org-steps-grid">
+          {steps.map((s) => (
+            <div class="org-step">
+              <div class="org-step-num">{s.num}</div>
+              <h3>{s.title}</h3>
+              <p>{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ DEEP-DIVE ROUTING -->
+    <section class="section org-deepdive fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Going deeper</span>
+          <h2 class="headline-md">Two programs with their own dedicated pages.</h2>
+          <p class="org-deepdive-sub">
+            For two specific types of organizations, we have built pages that go further than this one.
+          </p>
+        </div>
+
+        <div class="org-deepdive-grid">
+          <a href="/impact" class="org-deepdive-card">
+            <span class="org-deepdive-label">Impact Programs</span>
+            <h3>For municipalities, NGOs, educational institutions, and accelerators</h3>
+            <p>
+              Includes program structures, pilot data, cohort models, and an Impact Dashboard
+              for measuring commercial outcomes.
+            </p>
+            <span class="org-deepdive-arrow">Explore Impact Programs →</span>
+          </a>
+          <a href="/powered-by" class="org-deepdive-card">
+            <span class="org-deepdive-label">Powered by Pagayo</span>
+            <h3>For organizations that want Pagayo under their own brand</h3>
+            <p>
+              Offer Pagayo as a commerce platform under your own name — as part of
+              your own product, service, or platform.
+            </p>
+            <span class="org-deepdive-arrow">Explore Powered by Pagayo →</span>
+          </a>
+        </div>
+
+        <p class="org-deepdive-note">If neither of these applies, you are in the right place.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ WHY IT WORKS -->
+    <section class="section org-why fade-in">
+      <div class="container">
+        <div class="org-why-inner">
+          <div class="org-why-header">
+            <span class="section-label">Why it works</span>
+            <h2 class="headline-md">
+              Because trust is the only thing<br />that cannot be built overnight.
+            </h2>
+            <p>
+              You already have what Pagayo cannot provide: years of relationship,
+              credibility in your sector, and entrepreneurs who take your
+              recommendations seriously.
+            </p>
+            <p>
+              Organizations that introduce Pagayo to their network find that it
+              changes the nature of the relationship. You stop being a vendor or
+              an adviser. You become infrastructure — something the entrepreneur
+              builds their business around. That is a harder position to replace
+              than any pricing advantage.
+            </p>
+          </div>
+          <div class="org-why-reasons">
+            {reasons.map((r, i) => (
+              <div class="org-why-reason">
+                <div class="org-why-reason-num">{String(i + 1).padStart(2, '0')}</div>
+                <div>
+                  <h3>{r.title}</h3>
+                  <p>{r.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ FAQ -->
+    <section class="section org-faq fade-in">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Frequently asked</span>
+          <h2 class="headline-md">Direct questions. Direct answers.</h2>
+        </div>
+
+        <div class="org-faq-grid">
+          {faqs.map((f) => (
+            <div class="org-faq-item">
+              <h3>{f.q}</h3>
+              <p>{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ CTA -->
+    <section class="section org-cta fade-in">
+      <div class="container">
+        <div class="org-cta-inner">
+          <div class="org-cta-bg" aria-hidden="true"></div>
+          <span class="section-label org-cta-label">Start a conversation</span>
+          <h2 class="headline-lg">
+            Your network is ready.<br />
+            <span class="org-cta-accent">Let's build the right arrangement.</span>
+          </h2>
+          <p>
+            Tell us about your organization and the entrepreneurs you serve.
+            We will send a concrete program outline within two business days —
+            no commitment required.
+          </p>
+          <div class="org-cta-buttons">
+            <a href="/contact?subject=Organization+Program" class="btn btn-org btn-lg">
+              Request a program overview →
+            </a>
+            <a href="/one-stack" class="btn btn-secondary btn-lg">
+              Explore the platform first
+            </a>
+          </div>
+          <div class="org-cta-contact">
+            <a href="/contact" class="btn btn-ghost btn-md">
+              Questions first? Contact us →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</MarketingLayout>

@@ -6,14 +6,16 @@
 
 **Cursor playbooks (lees eerst bij elke opdracht):** `.github/design-marketing/README.md` → playbooks `01`–`05` voor fase (lezen, bouwen, verifiëren, escaleren, deploy). Workspace-kopie (lokaal): `pagayo-vault/.github/design-marketing/`.
 
-**Design SSoT:** `DESIGN-SYSTEM.md` (dit document) + implementatie `src/styles/global.css`.
+**Design SSoT:** `DESIGN-SYSTEM.md` + `src/styles/site.css` (importeert `global.css` + `partials/`).
+**Client JS SSoT:** `src/scripts/site.ts` (geladen via `Marketing.astro`).
 
 ## Harde SSOT regels
 
 - Header en footer zijn single source of truth via `src/components/layout/Nav.astro` en `src/components/layout/Footer.astro`.
 - Alle terugkerende secties moeten componenten zijn in `src/components/sections/`.
 - Content leeft als data in `src/content/*.json` (pricing, features, channels, competitors, trust).
-- Styling is gecentraliseerd in `src/styles/global.css`.
+- Styling leeft in `src/styles/` — geen `<style>` in `.astro`. Tokens in `global.css`; component/pagina-CSS in `partials/` (zie `partials.css`).
+- Site-breed clientgedrag leeft in `src/scripts/` — geen inline scripts in layouts.
 - Nieuwe pagina's mogen geen losstaande, gedupliceerde header/footer of pricing-markup bevatten.
 
 ## Architectuur

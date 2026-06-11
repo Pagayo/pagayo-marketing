@@ -4,7 +4,7 @@
 
 **Proces voor agents:** `.github/design-marketing/README.md` (playbooks 01–05).
 
-**Implementatie van tokens en component-classes:** `src/styles/global.css` — bij token-wijzigingen dit document in dezelfde PR bijwerken.
+**Implementatie:** `src/styles/site.css` → `global.css` (tokens + shared) + `partials/` (component/pagina). Geen `<style>` in `.astro`. Client-JS: `src/scripts/site.ts`.
 
 ---
 
@@ -131,7 +131,7 @@ Nieuwe posts: markdown in `src/content/blog/` met frontmatter (title, descriptio
 | Backdrop | `PageBackdrop` variant `impact` | Green + amber wash |
 | Accent | `.impact-label`, `--ngo-amber` | Sectielabels Impact-programma |
 
-Nieuwe sectie: zelfde BEM-achtige class-namen als in `global.css`; `fade-in` op sectie-root.
+Nieuwe sectie: BEM-achtige class-namen; CSS in `src/styles/partials/` (import via `partials.css`); `fade-in` op sectie-root.
 
 ## Chrome (niet dupliceren)
 
@@ -164,8 +164,8 @@ Nieuwe sectie: zelfde BEM-achtige class-namen als in `global.css`; `fade-in` op 
 
 - Nav scroll: class `scrolled` op `#nav`
 - Mobiel menu: `.nav.open`, toggle ARIA
-- Pricing toggle (indien aanwezig): `.pricing-switch.annual`
-- Country label: cookie `pagayo_country` + timezone fallback (`Marketing.astro` inline script)
+- Country label: cookie `pagayo_country` + timezone fallback (`src/scripts/nav-country.ts`)
+- Site-breed gedrag (nav, fade-in): `src/scripts/site.ts`
 
 ## Wat hier níet hoort
 

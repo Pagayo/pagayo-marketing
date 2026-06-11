@@ -1,0 +1,96 @@
+/* SSoT partial — migrated from src/pages/about.astro */
+.container.narrow {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .about-belief,
+  .about-what,
+  .about-built,
+  .about-believe,
+  .about-future {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .about-belief h2,
+  .about-what h2,
+  .about-built h2,
+  .about-believe h2,
+  .about-future h2 {
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-page p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary, #cbd5e1);
+    margin: 0 0 1.25rem 0;
+  }
+
+  .about-page strong {
+    background: linear-gradient(135deg, #6366f1, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+  }
+
+  .about-link-row {
+    margin-top: 1.5rem;
+  }
+
+  .about-link {
+    color: var(--text-primary, #f8fafc);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    font-weight: 500;
+    transition: opacity 0.15s ease;
+  }
+
+  .about-link:hover {
+    opacity: 0.75;
+  }
+
+  .about-principles {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-principles li {
+    padding: 1.5rem 1.75rem;
+    background: var(--bg-card, rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: var(--radius-lg, 12px);
+  }
+
+  .about-principles h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary, #f8fafc);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .about-principles p {
+    margin: 0;
+    font-size: 0.98rem;
+  }
+
+  @media (max-width: 640px) {
+    .about-belief,
+    .about-what,
+    .about-built,
+    .about-believe,
+    .about-future {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    .about-principles li {
+      padding: 1.25rem 1.25rem;
+    }
+  }
