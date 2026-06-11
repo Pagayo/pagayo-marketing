@@ -1,0 +1,37 @@
+---
+import i18nEn from '../../content/i18n/en.json';
+
+const menu = i18nEn.nav.organizationsMenu;
+---
+
+<div
+  class="nav-mega-panel"
+  id="nav-orgs-menu"
+  data-nav-mega-panel
+  role="region"
+  aria-labelledby="nav-orgs-trigger"
+  aria-hidden="true"
+>
+  <div class="container nav-mega-inner">
+    <div class="nav-mega-grid">
+      <article class="nav-mega-card nav-mega-card--impact">
+        <span class="nav-mega-label">{menu.impact.label}</span>
+        <h3 class="nav-mega-title">{menu.impact.title}</h3>
+        <p class="nav-mega-desc">{menu.impact.description}</p>
+        <a href="/impact" class="btn btn-ngo btn-sm">{menu.impact.cta}</a>
+      </article>
+
+      <article class="nav-mega-card nav-mega-card--powered">
+        <span class="nav-mega-label">{menu.poweredBy.label}</span>
+        <h3 class="nav-mega-title">{menu.poweredBy.title}</h3>
+        <p class="nav-mega-desc">{menu.poweredBy.description}</p>
+        <a href="/powered-by" class="btn btn-pb btn-sm">{menu.poweredBy.cta}</a>
+      </article>
+    </div>
+
+    <div class="nav-mega-footer">
+      <a href="/organizations" class="nav-mega-overview">{menu.overview} →</a>
+      <p class="nav-mega-note">{menu.note}</p>
+    </div>
+  </div>
+</div>

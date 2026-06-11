@@ -1,5 +1,7 @@
 ---
 import i18nEn from '../../content/i18n/en.json';
+import NavOrganizationsMegaTrigger from './NavOrganizationsMegaTrigger.astro';
+import NavOrganizationsMegaPanel from './NavOrganizationsMegaPanel.astro';
 
 const nav = i18nEn.nav;
 ---
@@ -12,11 +14,11 @@ const nav = i18nEn.nav;
       <li><a href="/features">{nav.features}</a></li>
       <li><a href="/gyms">{nav.gyms}</a></li>
       <li><a href="/pricing">{nav.pricing}</a></li>
-      <li><a href="/impact">{nav.impact}</a></li>
-      <li><a href="/powered-by">{nav.poweredBy}</a></li>
-      <li><a href="/organizations">{nav.organizations}</a></li>
+      <NavOrganizationsMegaTrigger />
     </ul>
 
     <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
   </div>
+
+  <NavOrganizationsMegaPanel />
 </nav>

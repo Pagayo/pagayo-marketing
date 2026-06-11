@@ -1,0 +1,20 @@
+---
+import i18nEn from '../../content/i18n/en.json';
+
+const { nav } = i18nEn;
+---
+
+<li class="nav-mega-item">
+  <button
+    type="button"
+    class="nav-mega-trigger"
+    data-nav-mega-trigger
+    aria-expanded="false"
+    aria-controls="nav-orgs-menu"
+    aria-haspopup="true"
+    id="nav-orgs-trigger"
+  >
+    {nav.organizations}
+    <span class="nav-mega-chevron" aria-hidden="true"></span>
+  </button>
+</li>

@@ -8,6 +8,23 @@
     "impact": "Impact",
     "partners": "Partners",
     "organizations": "For Organizations",
+    "organizationsMenu": {
+      "panelLabel": "Organization programs",
+      "overview": "Organization Program overview",
+      "impact": {
+        "label": "Impact Programs",
+        "title": "For municipalities, NGOs, educational institutions, and accelerators",
+        "description": "Includes program structures, pilot data, cohort models, and an Impact Dashboard for measuring commercial outcomes.",
+        "cta": "Explore Impact Programs"
+      },
+      "poweredBy": {
+        "label": "Powered by Pagayo",
+        "title": "For organizations that want Pagayo under their own brand",
+        "description": "Offer Pagayo as a commerce platform under your own name — as part of your own product, service, or platform.",
+        "cta": "Explore Powered by Pagayo"
+      },
+      "note": "If neither applies, the Organization Program is the right place."
+    },
     "login": "Log in",
     "start": "Start Free"
   },
