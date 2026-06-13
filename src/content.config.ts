@@ -5,7 +5,7 @@ const i18n = defineCollection({
   schema: z.object({
     nav: z.object({
       features: z.string(),
-      gyms: z.string(),
+      howWeBuild: z.string(),
       pricing: z.string(),
       impact: z.string(),
       partners: z.string(),
