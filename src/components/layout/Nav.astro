@@ -1,30 +1,41 @@
 ---
 import type { Locale, Messages } from '../../lib/i18n';
-import { hrefFor } from '../../lib/locale-routes';
+import { hrefFor, type LocalizedPageId } from '../../lib/locale-routes';
+import LangSwitcher from './LangSwitcher.astro';
 import NavOrganizationsMegaTrigger from './NavOrganizationsMegaTrigger.astro';
 import NavOrganizationsMegaPanel from './NavOrganizationsMegaPanel.astro';
 
 interface Props {
   locale: Locale;
   t: Messages;
+  alternatePageId?: LocalizedPageId;
 }
 
-const { locale, t } = Astro.props;
+const { locale, t, alternatePageId } = Astro.props;
 const nav = t.nav;
 ---
 <nav class="nav" id="nav">
   <div class="container">
     <a href={hrefFor('home', locale)} class="nav-logo">Pagayo<span>.</span><span class="nav-country" id="nav-country"></span></a>
 
-    <ul class="nav-links" id="nav-links">
-      <li><a href="/one-stack">{nav.oneStack}</a></li>
-      <li><a href="/features">{nav.features}</a></li>
-      <li><a href={hrefFor('howWeBuild', locale)}>{nav.howWeBuild}</a></li>
-      <li><a href={hrefFor('pricing', locale)}>{nav.pricing}</a></li>
-      <NavOrganizationsMegaTrigger t={t} />
-    </ul>
+    <div class="nav-end">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/one-stack">{nav.oneStack}</a></li>
+        <li><a href="/features">{nav.features}</a></li>
+        <li><a href={hrefFor('howWeBuild', locale)}>{nav.howWeBuild}</a></li>
+        <li><a href={hrefFor('pricing', locale)}>{nav.pricing}</a></li>
+        <NavOrganizationsMegaTrigger t={t} />
+      </ul>
 
-    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+      <LangSwitcher
+        locale={locale}
+        languageLabel={t.footer.languageLabel}
+        alternatePageId={alternatePageId}
+        class="lang-switch nav-lang"
+      />
+
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+    </div>
   </div>
 
   <NavOrganizationsMegaPanel locale={locale} t={t} />

@@ -1,20 +1,35 @@
 ---
-import featuresData from '../../content/features.json';
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['featuresGrid'];
+}
+
+const content = Astro.props.content ?? loadHome('en').featuresGrid;
+
+function lines(text: string) {
+  return text.split('\n');
+}
 ---
 <section class="section fade-in" id="features">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label">What's Inside</span>
-      <h2 class="headline-lg">Every tool a serious business needs.<br />Included from day one.</h2>
+      <span class="section-label">{content.label}</span>
+      <h2 class="headline-lg">
+        {lines(content.headline).map((line, i) => (
+          <>
+            {i > 0 && <br />}
+            {line}
+          </>
+        ))}
+      </h2>
       <p class="text-lg">
-        Orders, products, customers, subscriptions, POS, reporting — all in
-        the free plan. Paid plans add capacity and polish; the feature set
-        stays the same as you grow.
+        {content.intro}
       </p>
     </div>
 
     <div class="features-grid">
-      {featuresData.items.map((item) => (
+      {content.items.map((item) => (
         <div class="feature-card">
           <div class="feature-icon">{item.icon}</div>
           <h3>{item.title}</h3>

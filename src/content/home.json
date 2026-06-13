@@ -1,0 +1,366 @@
+{
+  "manifesto": {
+    "label": "Built on one idea",
+    "headline": "A sale is a sale.",
+    "paragraphs": [
+      "It shouldn't matter whether someone bought online, paid at the counter, renewed a membership or had their access sponsored. To you, the person running the business, it's the same event. The same customer. The same number that needs to add up at the end of the day.",
+      "Most software pretends otherwise. It splits your business into five products that don't agree, and then sells you a sixth one to glue them back together."
+    ],
+    "emphasis": "Pagayo is built around one Order — for every channel, every payer, every way money comes in.",
+    "paragraphsAfter": [
+      "The webshop, the register, the subscriptions, the memberships, the sponsored access, the donations — they all share the same source of truth. So your numbers match. Your reports tell one story. And the software stays out of your way."
+    ],
+    "close": "That's the whole idea. Everything else follows from it.",
+    "ideas": {
+      "prefix": "Got an idea or a feature you wish existed?",
+      "linkText": "Tell us — we read every one.",
+      "href": "/contact"
+    }
+  },
+  "alwaysShipping": {
+    "label": "Always shipping",
+    "headline": "Pagayo grows every week.",
+    "intro": "New features, new modules, new improvements ship continuously — driven by what the people using Pagayo ask for. Here's what's recently landed in the platform.",
+    "items": [
+      {
+        "marker": "Week 87",
+        "title": "Today",
+        "body": "2500+ automated deployments. 10 repositories. 59 database tables per tenant. Continuous delivery from the first commit. One developer. Still building."
+      },
+      {
+        "marker": "Week 78",
+        "title": "AI layer introduced",
+        "body": "AI configuration, action logging, and insight tracking added to the tenant schema. The groundwork for intelligent commerce features — product descriptions, demand forecasting, search."
+      },
+      {
+        "marker": "Week 74",
+        "title": "Newsletter and announcements",
+        "body": "Built-in newsletter tooling with DNS automation. Social announcements. Tenant-to-customer communication without a third-party dependency."
+      },
+      {
+        "marker": "Week 70",
+        "title": "Data migration tooling",
+        "body": "Import pipelines for WooCommerce and Magento. Retailers can move their entire catalogue and order history into Pagayo without manual data entry."
+      }
+    ],
+    "footer": {
+      "howWeBuildLink": "How Pagayo is built →",
+      "howWeBuildHref": "/how-we-build",
+      "buildLogLink": "See the full Build Log →",
+      "buildLogHref": "/build-log",
+      "ideasPrefix": "Have an idea?",
+      "ideasLinkText": "Tell us",
+      "ideasHref": "/contact",
+      "ideasSuffix": "— we read every one."
+    }
+  },
+  "trustBar": {
+    "items": [
+      "No transaction fees",
+      "Your data, your domain",
+      "EU-grade data protection",
+      "Deployed in 300+ cities"
+    ]
+  },
+  "productPreview": {
+    "label": "The Platform",
+    "headline": "One dashboard.\nEvery order, in real time.",
+    "intro": "Every sale, from every channel, on your own subdomain or custom domain. Your data, your money, your customers — directly connected, with Pagayo quietly keeping the books straight.",
+    "browserUrl": "yourshop.pagayo.app/admin",
+    "sidebarItems": [
+      "📊 Dashboard",
+      "📦 Orders",
+      "🛍️ Products",
+      "👥 Customers",
+      "💳 POS",
+      "📱 QR Ordering",
+      "🎟️ Subscriptions",
+      "📊 Reports",
+      "⚙️ Settings"
+    ],
+    "mockTitle": "Dashboard",
+    "periodTabs": ["Today", "Week", "Month"],
+    "stats": [
+      { "label": "Revenue", "value": "€2,847", "change": "↑ 12.5%" },
+      { "label": "Orders", "value": "156", "change": "↑ 8.3%" },
+      { "label": "Active Subs", "value": "342", "change": "↑ 3.1%" },
+      { "label": "Customers", "value": "1,204", "change": "↑ 5.7%" }
+    ],
+    "chartTitle": "Revenue — Last 30 Days"
+  },
+  "channelStrip": {
+    "headline": "Wherever the sale happens — it's the same order.",
+    "intro": "Webshop, counter, WhatsApp, QR, social, cash. One order model, one ledger, one place to look.",
+    "items": [
+      { "icon": "🛒", "label": "Webshop" },
+      { "icon": "💳", "label": "POS" },
+      { "icon": "💬", "label": "WhatsApp" },
+      { "icon": "📱", "label": "QR Order" },
+      { "icon": "🎵", "label": "TikTok" },
+      { "icon": "📸", "label": "Instagram" },
+      { "icon": "💵", "label": "Cash" }
+    ]
+  },
+  "featuresGrid": {
+    "label": "What's Inside",
+    "headline": "Every tool a serious business needs.\nIncluded from day one.",
+    "intro": "Orders, products, customers, subscriptions, POS, reporting — all in the free plan. Paid plans add capacity and polish; the feature set stays the same as you grow.",
+    "items": [
+      {
+        "icon": "📦",
+        "title": "One Order Model",
+        "description": "Every sale — webshop, POS, WhatsApp, QR, cash — lands in the same order feed. One source of truth, one set of statuses, no channel silos."
+      },
+      {
+        "icon": "🎟️",
+        "title": "Subscriptions & Memberships",
+        "description": "Recurring billing, family plans, QR check-in, automated renewals. Built for the clubs, gyms and associations that enterprise software priced out."
+      },
+      {
+        "icon": "💳",
+        "title": "Point of Sale",
+        "description": "Turn any device into a register. Card, cash, QR — parked carts, split payments, real-time sync with your online shop. No extra hardware required."
+      },
+      {
+        "icon": "📊",
+        "title": "Honest Reporting",
+        "description": "Revenue, tax, products, payouts — broken down by channel, period and category. Export-ready, accountant-friendly, owned by you."
+      },
+      {
+        "icon": "🌐",
+        "title": "Multi-language CMS",
+        "description": "Pages, blog, menus — manage your content in every language your customers speak. SEO-ready, mobile-first, no plugin marketplace."
+      },
+      {
+        "icon": "⚡",
+        "title": "Fast Everywhere",
+        "description": "Deployed on a global edge network. Sub-50ms response times in 300+ cities — the same speed in Lagos as in London."
+      }
+    ]
+  },
+  "motorsGrid": {
+    "label": "Three Ways to Use Pagayo",
+    "headline": "Built for the independents.",
+    "intro": "Pagayo isn't built for one kind of business. It's built for organisations that want to stand on their own — and for the people who help them get there.",
+    "cards": [
+      {
+        "icon": "🏋️",
+        "tag": "Run It Yourself",
+        "title": "Run Your Organisation on Pagayo",
+        "body": "Subscriptions, POS, QR check-in, webshop, member management — everything the enterprise platforms charge for, without per-member fees or revenue share. You keep what you earn.",
+        "cta": "See How It Works →",
+        "href": "#gyms"
+      },
+      {
+        "icon": "🌍",
+        "tag": "Sponsor Access",
+        "title": "Fund a Cohort of Entrepreneurs",
+        "body": "NGOs, governments and donors can sponsor entire groups of founders — anywhere from Gambia to Guatemala. The platform stays free for them. You see the real business outcomes on a live dashboard.",
+        "cta": "See the Impact Engine →",
+        "href": "#impact"
+      },
+      {
+        "icon": "🤝",
+        "tag": "Spread Access",
+        "title": "Become a Partner, Earn 50%",
+        "body": "We don't have a sales team — we have partners. Refer an organisation, earn half their subscription every month, for as long as they stay. Funded by us. Never by them.",
+        "cta": "Join the Program →",
+        "href": "#partners"
+      }
+    ]
+  },
+  "competitorTable": {
+    "label": "For Independent Operators",
+    "headline": "The platform that replaces your stack — for 90% less.",
+    "intro": "Subscriptions, POS, member check-in, webshop, reporting — everything the enterprise platforms charge a fortune for, without the enterprise lock-in. No per-member fees. No revenue share. No contract you can't leave.",
+    "tableHeaders": {
+      "platform": "Platform",
+      "priceRange": "Price Range",
+      "perMemberFees": "Per-member fees",
+      "note": "Note"
+    },
+    "rows": [
+      {
+        "platform": "Mindbody",
+        "price": "$139 – $699/mo",
+        "perMemberFees": "Yes",
+        "note": "+ setup fees, long contracts"
+      },
+      {
+        "platform": "Virtuagym",
+        "price": "€49 – €99/mo",
+        "perMemberFees": "Yes",
+        "note": "Per-member pricing scales fast"
+      },
+      {
+        "platform": "GymMaster",
+        "price": "$99 – $239/mo",
+        "perMemberFees": "No",
+        "note": "Limited webshop, no QR"
+      },
+      {
+        "platform": "Glofox",
+        "price": "$110 – $280/mo",
+        "perMemberFees": "Yes",
+        "note": "Annual contracts, opaque pricing"
+      },
+      {
+        "platform": "Pagayo",
+        "price": "€4 – €39/mo",
+        "perMemberFees": "Never",
+        "note": "Free tier included. No contracts.",
+        "highlight": true
+      }
+    ],
+    "checklistHeadline": "Everything included. No upsells. No phone calls.",
+    "featureChecklist": [
+      "Recurring subscriptions with auto-renewal",
+      "Family/group member management",
+      "QR code check-in at the door",
+      "Point of Sale for smoothie bar / shop",
+      "Online webshop for merchandise",
+      "Member CRM with bulk import",
+      "Revenue, tax, and product reports",
+      "Promotions and discount codes",
+      "Automated invoicing and credit notes",
+      "CMS for pages, blog, announcements",
+      "Team access with role-based permissions",
+      "Stripe payments (cards, iDEAL, SEPA, etc.)"
+    ],
+    "cta": "Run Your Organisation on Pagayo — Free →",
+    "ctaHref": "https://start.pagayo.app/register"
+  },
+  "stepsGrid": {
+    "label": "Getting Started",
+    "headline": "From zero to selling in five minutes.",
+    "intro": "No setup fee. No sales call. No \"request a demo\". The same workflow in Amsterdam, Lagos and Nairobi.",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Create Your Account",
+        "body": "Email, password, done. No credit card, no business verification, no waiting list."
+      },
+      {
+        "number": 2,
+        "title": "Add What You Sell",
+        "body": "Products, memberships, tickets — type them in or import from a spreadsheet."
+      },
+      {
+        "number": 3,
+        "title": "Connect Your Payouts",
+        "body": "Link Stripe in one click. Money goes straight to your account — we never touch it."
+      },
+      {
+        "number": 4,
+        "title": "Start Selling",
+        "body": "Your shop is live on your subdomain. Share the link, print the QR, open the POS."
+      }
+    ]
+  },
+  "impactTeaser": {
+    "label": "Entrepreneurship Infrastructure",
+    "headline": "Provision a cohort.",
+    "headlineAccent": "Measure what actually happened.",
+    "intro": "NGOs, governments, and foundations sponsor cohorts of entrepreneurs. Each founder gets a full commerce platform — free for them, live-monitored by you. Three steps. Real outcomes. No grant report required.",
+    "steps": [
+      {
+        "number": 1,
+        "title": "You Sponsor a Cohort",
+        "body": "Define a group — region, sector, goals. We provision their accounts, fully featured, no credit card required."
+      },
+      {
+        "number": 2,
+        "title": "Entrepreneurs Get to Work",
+        "body": "Each founder runs a real shop — webshop, POS, WhatsApp, payouts to their own account. The same product European businesses pay for."
+      },
+      {
+        "number": 3,
+        "title": "You See What Actually Happened",
+        "body": "Live dashboards: revenue earned, orders fulfilled, customers served, jobs created. Outcomes, not slides."
+      }
+    ],
+    "cta": "Explore the full Impact Engine →",
+    "ctaHref": "/impact"
+  },
+  "partnerCalc": {
+    "label": "Partner Program",
+    "headline": "Help others get started.",
+    "headlineAccent": "Earn 50%.",
+    "intro": "We don't have a sales team — we have partners. Refer an organisation and you earn half of their subscription, every month, for as long as they stay. Funded by us. Never by them.",
+    "calcTitle": "What you could earn",
+    "examples": [
+      {
+        "scenario": "10 referrals on Supporter (€48/yr each)",
+        "earning": "€240/yr"
+      },
+      {
+        "scenario": "25 referrals on Professional (€228/yr each)",
+        "earning": "€2,850/yr"
+      },
+      {
+        "scenario": "10 referrals on Advanced (€468/yr each)",
+        "earning": "€2,340/yr"
+      },
+      {
+        "scenario": "100 mixed referrals — realistic year 1",
+        "highlight": true,
+        "earning": "€11,400/yr"
+      }
+    ],
+    "cta": "Become a Partner →",
+    "ctaHref": "/contact",
+    "footnote": "Payout via Stripe. No minimum threshold. Withdraw anytime."
+  },
+  "testimonials": {
+    "label": "In the Wild",
+    "headline": "Used by independent operators worldwide."
+  },
+  "trustSecurity": {
+    "items": [
+      {
+        "icon": "🔒",
+        "title": "EU-grade Data Protection",
+        "description": "GDPR compliant. Data hosted in European regions. Your customers' information stays where it belongs — with you."
+      },
+      {
+        "icon": "⚡",
+        "title": "99.99% Uptime",
+        "description": "Running on a global edge network across 300+ cities. Redundant by design — no single point of failure."
+      },
+      {
+        "icon": "💳",
+        "title": "Stripe Payments",
+        "description": "PCI-DSS Level 1 compliant. iDEAL, cards, SEPA, Bancontact and more — plus M-Pesa, Flutterwave and Paystack for Africa."
+      },
+      {
+        "icon": "🏦",
+        "title": "Your Money, Your Account",
+        "description": "Payouts go directly to your bank via your own Stripe account. We never touch your revenue. No platform float, no held funds."
+      }
+    ]
+  },
+  "globalReach": {
+    "label": "Global by Default",
+    "headline": "Built for everyone.",
+    "headlineLine2": "Especially the ones the big platforms forget.",
+    "intro": "Pagayo runs on the global edge — fast in Amsterdam, just as fast in Nairobi. Same platform. Same price. Same features. Where you build your business shouldn't depend on where you happen to live.",
+    "map": {
+      "number": "300+",
+      "label": "Edge locations — one network, no regional tiers"
+    },
+    "stats": [
+      {
+        "value": "<50ms",
+        "label": "Response time anywhere on Earth"
+      },
+      {
+        "value": "Multi-lang",
+        "label": "EN, NL, DE, FR, ES — more on the way"
+      },
+      {
+        "value": "Multi-currency",
+        "label": "EUR, USD, GBP, plus local payment methods"
+      }
+    ]
+  }
+}

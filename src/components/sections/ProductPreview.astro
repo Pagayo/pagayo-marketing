@@ -1,12 +1,30 @@
+---
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['productPreview'];
+}
+
+const content = Astro.props.content ?? loadHome('en').productPreview;
+
+function lines(text: string) {
+  return text.split('\n');
+}
+---
 <section class="section product-preview fade-in" id="product">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label">The Platform</span>
-      <h2 class="headline-lg">One dashboard.<br />Every order, in real time.</h2>
+      <span class="section-label">{content.label}</span>
+      <h2 class="headline-lg">
+        {lines(content.headline).map((line, i) => (
+          <>
+            {i > 0 && <br />}
+            {line}
+          </>
+        ))}
+      </h2>
       <p class="text-lg">
-        Every sale, from every channel, on your own subdomain or custom
-        domain. Your data, your money, your customers — directly connected,
-        with Pagayo quietly keeping the books straight.
+        {content.intro}
       </p>
     </div>
 
@@ -15,54 +33,41 @@
         <span class="browser-dot"></span>
         <span class="browser-dot"></span>
         <span class="browser-dot"></span>
-        <span class="browser-url">yourshop.pagayo.app/admin</span>
+        <span class="browser-url">{content.browserUrl}</span>
       </div>
       <div class="browser-body">
         <div class="dashboard-mock">
           <div class="mock-sidebar">
-            <div class="mock-sidebar-item active">📊 Dashboard</div>
-            <div class="mock-sidebar-item">📦 Orders</div>
-            <div class="mock-sidebar-item">🛍️ Products</div>
-            <div class="mock-sidebar-item">👥 Customers</div>
-            <div class="mock-sidebar-item">💳 POS</div>
-            <div class="mock-sidebar-item">📱 QR Ordering</div>
-            <div class="mock-sidebar-item">🎟️ Subscriptions</div>
-            <div class="mock-sidebar-item">📊 Reports</div>
-            <div class="mock-sidebar-item">⚙️ Settings</div>
+            {content.sidebarItems.map((item, i) => (
+              <div class={`mock-sidebar-item ${i === 0 ? 'active' : ''}`.trim()}>{item}</div>
+            ))}
           </div>
           <div class="mock-main">
             <div class="mock-topbar">
-              <div class="mock-title">Dashboard</div>
+              <div class="mock-title">{content.mockTitle}</div>
               <div style="display:flex;gap:8px;">
-                <span style="font-size:0.7rem;padding:4px 10px;background:var(--pagayo-purple-glow);color:var(--pagayo-purple-light);border-radius:var(--radius-full);">Today</span>
-                <span style="font-size:0.7rem;padding:4px 10px;background:var(--bg-elevated);color:var(--text-muted);border-radius:var(--radius-full);">Week</span>
-                <span style="font-size:0.7rem;padding:4px 10px;background:var(--bg-elevated);color:var(--text-muted);border-radius:var(--radius-full);">Month</span>
+                {content.periodTabs.map((tab, i) => (
+                  <span
+                    style={i === 0
+                      ? 'font-size:0.7rem;padding:4px 10px;background:var(--pagayo-purple-glow);color:var(--pagayo-purple-light);border-radius:var(--radius-full);'
+                      : 'font-size:0.7rem;padding:4px 10px;background:var(--bg-elevated);color:var(--text-muted);border-radius:var(--radius-full);'}
+                  >
+                    {tab}
+                  </span>
+                ))}
               </div>
             </div>
             <div class="mock-cards-row">
-              <div class="mock-stat-card">
-                <div class="label">Revenue</div>
-                <div class="value">€2,847</div>
-                <div class="change">↑ 12.5%</div>
-              </div>
-              <div class="mock-stat-card">
-                <div class="label">Orders</div>
-                <div class="value">156</div>
-                <div class="change">↑ 8.3%</div>
-              </div>
-              <div class="mock-stat-card">
-                <div class="label">Active Subs</div>
-                <div class="value">342</div>
-                <div class="change">↑ 3.1%</div>
-              </div>
-              <div class="mock-stat-card">
-                <div class="label">Customers</div>
-                <div class="value">1,204</div>
-                <div class="change">↑ 5.7%</div>
-              </div>
+              {content.stats.map((stat) => (
+                <div class="mock-stat-card">
+                  <div class="label">{stat.label}</div>
+                  <div class="value">{stat.value}</div>
+                  <div class="change">{stat.change}</div>
+                </div>
+              ))}
             </div>
             <div class="mock-chart">
-              <div style="font-size:0.75rem;font-weight:600;color:var(--text-secondary);">Revenue — Last 30 Days</div>
+              <div style="font-size:0.75rem;font-weight:600;color:var(--text-secondary);">{content.chartTitle}</div>
               <div class="mock-chart-visual"></div>
             </div>
           </div>

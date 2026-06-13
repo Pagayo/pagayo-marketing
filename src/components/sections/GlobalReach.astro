@@ -1,36 +1,40 @@
+---
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['globalReach'];
+}
+
+const content = Astro.props.content ?? loadHome('en').globalReach;
+---
 <section class="section global-section fade-in">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label">Global by Default</span>
-      <h2 class="headline-lg">Built for everyone.<br />Especially the ones the big platforms forget.</h2>
+      <span class="section-label">{content.label}</span>
+      <h2 class="headline-lg">
+        {content.headline}<br />
+        {content.headlineLine2}
+      </h2>
       <p class="text-lg">
-        Pagayo runs on the global edge — fast in Amsterdam, just as fast in Nairobi.
-        Same platform. Same price. Same features. Where you build your business
-        shouldn't depend on where you happen to live.
+        {content.intro}
       </p>
     </div>
 
     <div class="global-map">
       <div class="global-map-dots"></div>
       <div class="global-map-label">
-        <div class="number text-gradient">300+</div>
-        <div class="text">Edge locations — one network, no regional tiers</div>
+        <div class="number text-gradient">{content.map.number}</div>
+        <div class="text">{content.map.label}</div>
       </div>
     </div>
 
     <div class="global-stats">
-      <div class="global-stat">
-        <div class="value">&lt;50ms</div>
-        <div class="label">Response time anywhere on Earth</div>
-      </div>
-      <div class="global-stat">
-        <div class="value">Multi-lang</div>
-        <div class="label">EN, NL, DE, FR, ES — more on the way</div>
-      </div>
-      <div class="global-stat">
-        <div class="value">Multi-currency</div>
-        <div class="label">EUR, USD, GBP, plus local payment methods</div>
-      </div>
+      {content.stats.map((stat) => (
+        <div class="global-stat">
+          <div class="value">{stat.value}</div>
+          <div class="label">{stat.label}</div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

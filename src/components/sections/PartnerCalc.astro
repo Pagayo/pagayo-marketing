@@ -1,53 +1,45 @@
 ---
 import Button from '../ui/Button.astro';
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['partnerCalc'];
+}
+
+const content = Astro.props.content ?? loadHome('en').partnerCalc;
 ---
 <section class="section fade-in" id="partners" style="background:var(--bg-surface);">
   <div class="container">
     <div class="section-header center">
       <span class="section-label" style="background:var(--partner-violet-glow);color:var(--partner-violet);border-color:rgba(168,85,247,0.2);">
-        Partner Program
+        {content.label}
       </span>
       <h2 class="headline-lg">
-        Help others get started.<br />
-        <span style="color:var(--partner-violet);">Earn 50%.</span>
+        {content.headline}<br />
+        <span style="color:var(--partner-violet);">{content.headlineAccent}</span>
       </h2>
       <p class="text-lg">
-        We don't have a sales team — we have partners. Refer an organisation
-        and you earn half of their subscription, every month, for as long as
-        they stay. Funded by us. Never by them.
+        {content.intro}
       </p>
     </div>
 
     <div class="partner-calc">
-      <h3>What you could earn</h3>
+      <h3>{content.calcTitle}</h3>
       <div class="partner-examples">
-        <div class="partner-example">
-          <span class="scenario">10 referrals on <strong>Supporter</strong> (€48/yr each)</span>
-          <span class="arrow">→</span>
-          <span class="earning">€240/yr</span>
-        </div>
-        <div class="partner-example">
-          <span class="scenario">25 referrals on <strong>Professional</strong> (€228/yr each)</span>
-          <span class="arrow">→</span>
-          <span class="earning">€2,850/yr</span>
-        </div>
-        <div class="partner-example">
-          <span class="scenario">10 referrals on <strong>Advanced</strong> (€468/yr each)</span>
-          <span class="arrow">→</span>
-          <span class="earning">€2,340/yr</span>
-        </div>
-        <div class="partner-example partner-highlight">
-          <span class="scenario">100 mixed referrals — <strong>realistic year 1</strong></span>
-          <span class="arrow">→</span>
-          <span class="earning">€11,400/yr</span>
-        </div>
+        {content.examples.map((example) => (
+          <div class={`partner-example ${example.highlight ? 'partner-highlight' : ''}`.trim()}>
+            <span class="scenario">{example.scenario}</span>
+            <span class="arrow">→</span>
+            <span class="earning">{example.earning}</span>
+          </div>
+        ))}
       </div>
     </div>
 
     <div style="text-align:center;margin-top:3rem;">
-      <Button href="/contact" variant="partner" size="lg">Become a Partner →</Button>
+      <Button href={content.ctaHref} variant="partner" size="lg">{content.cta}</Button>
       <p style="margin-top:1rem;font-size:0.85rem;color:var(--text-muted);">
-        Payout via Stripe. No minimum threshold. Withdraw anytime.
+        {content.footnote}
       </p>
     </div>
   </div>

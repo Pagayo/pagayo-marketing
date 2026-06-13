@@ -1,18 +1,37 @@
 ---
 import Button from '../ui/Button.astro';
+import { loadHome, type HomeContent } from '../../lib/home';
 
 interface Props {
   /** Hide the section header (used on /impact where the hero covers it). */
   showHeader?: boolean;
   /** Homepage teaser: hide pricing tiers and link to full page. */
   compact?: boolean;
+  /** Localized compact teaser copy (homepage). */
+  teaser?: HomeContent['impactTeaser'];
 }
 
-const { showHeader = true, compact = false } = Astro.props;
+const { showHeader = true, compact = false, teaser } = Astro.props;
+const teaserContent = teaser ?? loadHome('en').impactTeaser;
 ---
 <section class="section ngo-section fade-in" id="impact">
   <div class="container">
-    {showHeader && (
+    {showHeader && compact && (
+      <div class="section-header center">
+        <span class="section-label impact-label">
+          {teaserContent.label}
+        </span>
+        <h2 class="headline-lg">
+          {teaserContent.headline}<br />
+          <span class="impact-headline-accent">{teaserContent.headlineAccent}</span>
+        </h2>
+        <p class="text-lg">
+          {teaserContent.intro}
+        </p>
+      </div>
+    )}
+
+    {showHeader && !compact && (
       <div class="section-header center">
         <span class="section-label impact-label">
           Entrepreneurship Infrastructure
@@ -40,21 +59,29 @@ const { showHeader = true, compact = false } = Astro.props;
     )}
 
     <div class="ngo-flow">
-      <div class="ngo-step">
-        <div class="ngo-step-number">1</div>
-        <h3>You Sponsor a Cohort</h3>
-        <p>Define a group — region, sector, goals. We provision their accounts, fully featured, no credit card required.</p>
-      </div>
-      <div class="ngo-step">
-        <div class="ngo-step-number">2</div>
-        <h3>Entrepreneurs Get to Work</h3>
-        <p>Each founder runs a real shop — webshop, POS, WhatsApp, payouts to their own account. The same product European businesses pay for.</p>
-      </div>
-      <div class="ngo-step">
-        <div class="ngo-step-number">3</div>
-        <h3>You See What Actually Happened</h3>
-        <p>Live dashboards: revenue earned, orders fulfilled, customers served, jobs created. Outcomes, not slides.</p>
-      </div>
+      {(compact ? teaserContent.steps : [
+        {
+          number: 1,
+          title: 'You Sponsor a Cohort',
+          body: 'Define a group — region, sector, goals. We provision their accounts, fully featured, no credit card required.',
+        },
+        {
+          number: 2,
+          title: 'Entrepreneurs Get to Work',
+          body: 'Each founder runs a real shop — webshop, POS, WhatsApp, payouts to their own account. The same product European businesses pay for.',
+        },
+        {
+          number: 3,
+          title: 'You See What Actually Happened',
+          body: 'Live dashboards: revenue earned, orders fulfilled, customers served, jobs created. Outcomes, not slides.',
+        },
+      ]).map((step) => (
+        <div class="ngo-step">
+          <div class="ngo-step-number">{step.number}</div>
+          <h3>{step.title}</h3>
+          <p>{step.body}</p>
+        </div>
+      ))}
     </div>
 
     {!compact && (
@@ -108,7 +135,7 @@ const { showHeader = true, compact = false } = Astro.props;
 
     <div class="impact-section-cta">
       {compact ? (
-        <Button href="/impact" variant="ngo" size="lg">Explore the full Impact Engine →</Button>
+        <Button href={teaserContent.ctaHref} variant="ngo" size="lg">{teaserContent.cta}</Button>
       ) : (
         <Button href="/contact" variant="ngo" size="lg">Sponsor a Cohort →</Button>
       )}

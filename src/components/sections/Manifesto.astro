@@ -1,48 +1,38 @@
 ---
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['manifesto'];
+}
+
+const content = Astro.props.content ?? loadHome('en').manifesto;
 ---
 <section class="section manifesto-section fade-in" id="why-pagayo" aria-labelledby="why-pagayo-heading">
   <div class="container manifesto-container">
     <span class="section-label manifesto-label">
-      Built on one idea
+      {content.label}
     </span>
 
     <h2 class="headline-lg manifesto-headline" id="why-pagayo-heading">
-      A sale is a sale.
+      {content.headline}
     </h2>
 
     <div class="manifesto-body">
-      <p>
-        It shouldn't matter whether someone bought online, paid at the counter,
-        renewed a membership or had their access sponsored. To you, the person
-        running the business, it's the same event. The same customer. The same
-        number that needs to add up at the end of the day.
-      </p>
-
-      <p>
-        Most software pretends otherwise. It splits your business into five
-        products that don't agree, and then sells you a sixth one to glue them
-        back together.
-      </p>
+      {content.paragraphs.map((p) => <p>{p}</p>)}
 
       <p class="manifesto-emphasis">
-        Pagayo is built around <strong>one Order</strong> — for every channel,
-        every payer, every way money comes in.
+        {content.emphasis}
       </p>
 
-      <p>
-        The webshop, the register, the subscriptions, the memberships, the
-        sponsored access, the donations — they all share the same source of
-        truth. So your numbers match. Your reports tell one story. And the
-        software stays out of your way.
-      </p>
+      {content.paragraphsAfter.map((p) => <p>{p}</p>)}
 
       <p class="manifesto-close">
-        That's the whole idea. Everything else follows from it.
+        {content.close}
       </p>
 
       <p class="manifesto-ideas">
-        Got an idea or a feature you wish existed?
-        <a href="/contact">Tell us — we read every one.</a>
+        {content.ideas.prefix}
+        <a href={content.ideas.href}>{content.ideas.linkText}</a>
       </p>
     </div>
   </div>

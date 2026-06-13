@@ -1,34 +1,36 @@
 ---
-import competitorData from '../../content/competitors.json';
 import Button from '../ui/Button.astro';
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['competitorTable'];
+}
+
+const content = Astro.props.content ?? loadHome('en').competitorTable;
 ---
 <section class="section gym-section fade-in" id="gyms">
   <div class="container">
     <div class="section-header center">
       <span class="section-label" style="background:var(--gym-green-glow);color:var(--gym-green);border-color:rgba(0,212,170,0.2);">
-        For Independent Operators
+        {content.label}
       </span>
-      <h2 class="headline-lg">
-        The platform that replaces your stack — for&nbsp;90%&nbsp;less.
-      </h2>
+      <h2 class="headline-lg" set:html={content.headline.replace('90% less', '90%&nbsp;less').replace('90% minder', '90%&nbsp;minder')} />
       <p class="text-lg">
-        Subscriptions, POS, member check-in, webshop, reporting — everything
-        the enterprise platforms charge a fortune for, without the enterprise
-        lock-in. No per-member fees. No revenue share. No contract you can't leave.
+        {content.intro}
       </p>
     </div>
 
     <table class="gym-competitor-table">
       <thead>
         <tr>
-          <th>Platform</th>
-          <th>Price Range</th>
-          <th>Per-member fees</th>
-          <th>Note</th>
+          <th>{content.tableHeaders.platform}</th>
+          <th>{content.tableHeaders.priceRange}</th>
+          <th>{content.tableHeaders.perMemberFees}</th>
+          <th>{content.tableHeaders.note}</th>
         </tr>
       </thead>
       <tbody>
-        {competitorData.rows.map((row) => (
+        {content.rows.map((row) => (
           <tr class={row.highlight ? 'pagayo-row' : ''}>
             <td class="competitor-name" style={row.highlight ? 'font-size:1.05rem;' : ''}>{row.platform}</td>
             <td class={row.highlight ? 'pagayo-price' : 'competitor-price'}>{row.price}</td>
@@ -39,10 +41,10 @@ import Button from '../ui/Button.astro';
       </tbody>
     </table>
 
-    <h3 class="headline-md" style="margin-top:3rem;margin-bottom:1rem;">Everything included. No upsells. No phone calls.</h3>
+    <h3 class="headline-md" style="margin-top:3rem;margin-bottom:1rem;">{content.checklistHeadline}</h3>
 
     <div class="gym-features">
-      {competitorData.featureChecklist.map((feature) => (
+      {content.featureChecklist.map((feature) => (
         <div class="gym-feature-item">
           <span class="gym-feature-check">✓</span>
           <span>{feature}</span>
@@ -51,7 +53,7 @@ import Button from '../ui/Button.astro';
     </div>
 
     <div style="text-align:center;margin-top:3rem;">
-      <Button href="https://start.pagayo.app/register" variant="gym" size="lg">Run Your Organisation on Pagayo — Free →</Button>
+      <Button href={content.ctaHref} variant="gym" size="lg">{content.cta}</Button>
     </div>
   </div>
 </section>

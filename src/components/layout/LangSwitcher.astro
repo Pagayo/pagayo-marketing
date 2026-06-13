@@ -1,0 +1,22 @@
+---
+import type { Locale } from '../../lib/i18n';
+import { localizedPath, type LocalizedPageId } from '../../lib/locale-routes';
+
+interface Props {
+  locale: Locale;
+  languageLabel: string;
+  alternatePageId?: LocalizedPageId;
+  class?: string;
+}
+
+const { locale, languageLabel, alternatePageId, class: className = 'lang-switch' } = Astro.props;
+---
+<select
+  class={className}
+  aria-label={languageLabel}
+  data-lang-switch
+>
+  <option value="en" data-href={alternatePageId ? localizedPath(alternatePageId, 'en') : '/'} selected={locale === 'en'}>EN</option>
+  <option value="nl" data-href={alternatePageId ? localizedPath(alternatePageId, 'nl') : '/nl/'} selected={locale === 'nl'}>NL</option>
+  <option value="de" data-href={alternatePageId ? localizedPath(alternatePageId, 'de') : '/'} disabled>DE</option>
+</select>

@@ -1,53 +1,38 @@
 ---
 import Button from '../ui/Button.astro';
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['motorsGrid'];
+}
+
+const content = Astro.props.content ?? loadHome('en').motorsGrid;
 ---
 <section class="section motors fade-in">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label">Three Ways to Use Pagayo</span>
-      <h2 class="headline-lg">Built for the independents.</h2>
+      <span class="section-label">{content.label}</span>
+      <h2 class="headline-lg">{content.headline}</h2>
       <p class="text-lg">
-        Pagayo isn't built for one kind of business. It's built for organisations
-        that want to stand on their own — and for the people who help them get there.
+        {content.intro}
       </p>
     </div>
 
     <div class="motors-grid">
-      <div class="motor-card gym">
-        <div class="motor-icon">🏋️</div>
-        <span class="motor-tag">Run It Yourself</span>
-        <h3>Run Your Organisation on Pagayo</h3>
-        <p>
-          Subscriptions, POS, QR check-in, webshop, member management —
-          everything the enterprise platforms charge for, without per-member fees
-          or revenue share. You keep what you earn.
-        </p>
-        <Button href="#gyms" variant="gym">See How It Works →</Button>
-      </div>
-
-      <div class="motor-card ngo">
-        <div class="motor-icon">🌍</div>
-        <span class="motor-tag">Sponsor Access</span>
-        <h3>Fund a Cohort of Entrepreneurs</h3>
-        <p>
-          NGOs, governments and donors can sponsor entire groups of founders —
-          anywhere from Gambia to Guatemala. The platform stays free for them.
-          You see the real business outcomes on a live dashboard.
-        </p>
-        <Button href="#impact" variant="ngo">See the Impact Engine →</Button>
-      </div>
-
-      <div class="motor-card partner">
-        <div class="motor-icon">🤝</div>
-        <span class="motor-tag">Spread Access</span>
-        <h3>Become a Partner, Earn 50%</h3>
-        <p>
-          We don't have a sales team — we have partners. Refer an organisation,
-          earn half their subscription every month, for as long as they stay.
-          Funded by us. Never by them.
-        </p>
-        <Button href="#partners" variant="partner">Join the Program →</Button>
-      </div>
+      {content.cards.map((card) => (
+        <div class={`motor-card ${card.href === '#gyms' ? 'gym' : card.href === '#impact' ? 'ngo' : 'partner'}`.trim()}>
+          <div class="motor-icon">{card.icon}</div>
+          <span class="motor-tag">{card.tag}</span>
+          <h3>{card.title}</h3>
+          <p>{card.body}</p>
+          <Button
+            href={card.href}
+            variant={card.href === '#gyms' ? 'gym' : card.href === '#impact' ? 'ngo' : 'partner'}
+          >
+            {card.cta}
+          </Button>
+        </div>
+      ))}
     </div>
   </div>
 </section>

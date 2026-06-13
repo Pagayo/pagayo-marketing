@@ -1,18 +1,23 @@
 ---
-import channelsData from '../../content/channels.json';
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['channelStrip'];
+}
+
+const content = Astro.props.content ?? loadHome('en').channelStrip;
 ---
 <section class="section fade-in" style="padding-top:0;">
   <div class="container">
     <div class="section-header center">
-      <h2 class="headline-md">Wherever the sale happens — it's the same order.</h2>
+      <h2 class="headline-md">{content.headline}</h2>
       <p class="text-lg">
-        Webshop, counter, WhatsApp, QR, social, cash. One order model,
-        one ledger, one place to look.
+        {content.intro}
       </p>
     </div>
 
     <div class="channels-strip">
-      {channelsData.items.map((item) => (
+      {content.items.map((item) => (
         <div class="channel-item">
           <div class="channel-icon-box">{item.icon}</div>
           <span class="channel-label">{item.label}</span>

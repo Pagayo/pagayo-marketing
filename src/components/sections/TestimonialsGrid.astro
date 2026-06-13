@@ -1,7 +1,8 @@
 ---
 import SuccessStoryCard from '../success-stories/SuccessStoryCard.astro';
 import storiesRaw from '../../content/success-stories.json';
-import i18nEn from '../../content/i18n/en.json';
+import { loadHome, type HomeContent } from '../../lib/home';
+import { loadMessages, type Locale } from '../../lib/i18n';
 import { parseSuccessStories, resolvePreviewStories } from '../../lib/success-stories-schema';
 
 interface Props {
@@ -9,6 +10,8 @@ interface Props {
   sectionId?: string;
   limit?: number;
   showViewAllLink?: boolean;
+  locale?: Locale;
+  header?: HomeContent['testimonials'];
 }
 
 const {
@@ -16,22 +19,24 @@ const {
   sectionId = 'success-stories',
   limit,
   showViewAllLink = false,
+  locale = 'en',
+  header,
 } = Astro.props;
 
-const t = i18nEn.successStoriesPage;
+const headerContent = header ?? loadHome('en').testimonials;
+const t = loadMessages(locale).successStoriesPage;
 const data = parseSuccessStories(storiesRaw);
 
 const stories = limit
   ? resolvePreviewStories(data).slice(0, limit)
   : data.continents.flatMap((c) => c.stories);
 ---
-
 <section class="section testimonials fade-in" id={sectionId}>
   <div class="container">
     {showHeader && (
       <div class="section-header center">
-        <span class="section-label">In the Wild</span>
-        <h2 class="headline-lg">Used by independent operators worldwide.</h2>
+        <span class="section-label">{headerContent.label}</span>
+        <h2 class="headline-lg">{headerContent.headline}</h2>
       </div>
     )}
 

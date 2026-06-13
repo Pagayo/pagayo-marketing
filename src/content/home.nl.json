@@ -1,0 +1,366 @@
+{
+  "manifesto": {
+    "label": "Gebouwd op één idee",
+    "headline": "Een verkoop is een verkoop.",
+    "paragraphs": [
+      "Het maakt niet uit of iemand online kocht, aan de balie betaalde, een lidmaatschap verlengde of gesponsord toegang kreeg. Voor jou, degene die het bedrijf runt, is het hetzelfde moment. Dezelfde klant. Hetzelfde getal dat aan het eind van de dag moet kloppen.",
+      "De meeste software doet alsof dat niet zo is. Het splitst je bedrijf op in vijf producten die het niet eens zijn, en verkoopt je daarna een zesde om ze weer aan elkaar te plakken."
+    ],
+    "emphasis": "Pagayo is gebouwd rond één Order — voor elk kanaal, elke betaler, elke manier waarop geld binnenkomt.",
+    "paragraphsAfter": [
+      "De webshop, de kassa, de abonnementen, de lidmaatschappen, het gesponsorde toegang, de donaties — ze delen allemaal dezelfde bron van waarheid. Dus je cijfers kloppen. Je rapporten vertellen één verhaal. En de software blijft uit de weg."
+    ],
+    "close": "Dat is het hele idee. Al het andere volgt daaruit.",
+    "ideas": {
+      "prefix": "Heb je een idee of een feature die je mist?",
+      "linkText": "Laat het ons weten — we lezen alles.",
+      "href": "/contact"
+    }
+  },
+  "alwaysShipping": {
+    "label": "Altijd aan het shippen",
+    "headline": "Pagayo groeit elke week.",
+    "intro": "Nieuwe features, nieuwe modules, nieuwe verbeteringen komen continu live — aangedreven door wat de mensen die Pagayo gebruiken vragen. Dit is recent geland op het platform.",
+    "items": [
+      {
+        "marker": "Week 87",
+        "title": "Vandaag",
+        "body": "2500+ geautomatiseerde deployments. 10 repositories. 59 databasetabellen per tenant. Continuous delivery vanaf de eerste commit. Eén developer. Nog steeds aan het bouwen."
+      },
+      {
+        "marker": "Week 78",
+        "title": "AI-laag geïntroduceerd",
+        "body": "AI-configuratie, action logging en insight tracking toegevoegd aan het tenant-schema. De basis voor intelligente commerce-features — productbeschrijvingen, vraagvoorspelling, zoeken."
+      },
+      {
+        "marker": "Week 74",
+        "title": "Nieuwsbrief en aankondigingen",
+        "body": "Ingebouwde nieuwsbrieftooling met DNS-automatisering. Social announcements. Tenant-naar-klant communicatie zonder third-party dependency."
+      },
+      {
+        "marker": "Week 70",
+        "title": "Datamigratie-tooling",
+        "body": "Importpipelines voor WooCommerce en Magento. Retailers kunnen hun volledige catalogus en orderhistorie naar Pagayo verplaatsen zonder handmatige data-invoer."
+      }
+    ],
+    "footer": {
+      "howWeBuildLink": "Hoe Pagayo is gebouwd →",
+      "howWeBuildHref": "/how-we-build",
+      "buildLogLink": "Bekijk het volledige Build Log →",
+      "buildLogHref": "/build-log",
+      "ideasPrefix": "Heb je een idee?",
+      "ideasLinkText": "Laat het ons weten",
+      "ideasHref": "/contact",
+      "ideasSuffix": "— we lezen alles."
+    }
+  },
+  "trustBar": {
+    "items": [
+      "Geen transactiekosten",
+      "Jouw data, jouw domein",
+      "EU-grade databescherming",
+      "Gedeployed in 300+ steden"
+    ]
+  },
+  "productPreview": {
+    "label": "Het platform",
+    "headline": "Eén dashboard.\nElke order, realtime.",
+    "intro": "Elke verkoop, van elk kanaal, op je eigen subdomein of custom domain. Jouw data, jouw geld, jouw klanten — direct verbonden, met Pagayo stilletjes de boekhouding op orde houdend.",
+    "browserUrl": "yourshop.pagayo.app/admin",
+    "sidebarItems": [
+      "📊 Dashboard",
+      "📦 Orders",
+      "🛍️ Producten",
+      "👥 Klanten",
+      "💳 POS",
+      "📱 QR-bestellen",
+      "🎟️ Abonnementen",
+      "📊 Rapporten",
+      "⚙️ Instellingen"
+    ],
+    "mockTitle": "Dashboard",
+    "periodTabs": ["Vandaag", "Week", "Maand"],
+    "stats": [
+      { "label": "Omzet", "value": "€2.847", "change": "↑ 12,5%" },
+      { "label": "Orders", "value": "156", "change": "↑ 8,3%" },
+      { "label": "Actieve abo's", "value": "342", "change": "↑ 3,1%" },
+      { "label": "Klanten", "value": "1.204", "change": "↑ 5,7%" }
+    ],
+    "chartTitle": "Omzet — laatste 30 dagen"
+  },
+  "channelStrip": {
+    "headline": "Waar de verkoop ook plaatsvindt — het is dezelfde order.",
+    "intro": "Webshop, balie, WhatsApp, QR, social, contant. Eén ordermodel, één grootboek, één plek om te kijken.",
+    "items": [
+      { "icon": "🛒", "label": "Webshop" },
+      { "icon": "💳", "label": "POS" },
+      { "icon": "💬", "label": "WhatsApp" },
+      { "icon": "📱", "label": "QR-bestellen" },
+      { "icon": "🎵", "label": "TikTok" },
+      { "icon": "📸", "label": "Instagram" },
+      { "icon": "💵", "label": "Contant" }
+    ]
+  },
+  "featuresGrid": {
+    "label": "Wat erin zit",
+    "headline": "Elke tool die een serieus bedrijf nodig heeft.\nVanaf dag één inbegrepen.",
+    "intro": "Orders, producten, klanten, abonnementen, POS, rapportage — alles in het gratis plan. Betaalde plannen voegen capaciteit en polish toe; de feature set blijft hetzelfde terwijl je groeit.",
+    "items": [
+      {
+        "icon": "📦",
+        "title": "Eén ordermodel",
+        "description": "Elke verkoop — webshop, POS, WhatsApp, QR, contant — komt in dezelfde orderfeed terecht. Eén bron van waarheid, één set statussen, geen kanaalsilo's."
+      },
+      {
+        "icon": "🎟️",
+        "title": "Abonnementen & lidmaatschappen",
+        "description": "Terugkerende facturatie, gezinsplannen, QR check-in, automatische verlengingen. Gebouwd voor de clubs, gyms en verenigingen die enterprise software te duur maakte."
+      },
+      {
+        "icon": "💳",
+        "title": "Point of Sale",
+        "description": "Maak van elk apparaat een kassa. Pin, contant, QR — geparkeerde winkelwagens, gesplitste betalingen, realtime sync met je online shop. Geen extra hardware nodig."
+      },
+      {
+        "icon": "📊",
+        "title": "Eerlijke rapportage",
+        "description": "Omzet, btw, producten, uitbetalingen — uitgesplitst per kanaal, periode en categorie. Export-klaar, accountant-vriendelijk, van jou."
+      },
+      {
+        "icon": "🌐",
+        "title": "Meertalige CMS",
+        "description": "Pagina's, blog, menu's — beheer je content in elke taal die je klanten spreken. SEO-klaar, mobile-first, geen plugin marketplace."
+      },
+      {
+        "icon": "⚡",
+        "title": "Overal snel",
+        "description": "Gedeployed op een wereldwijd edge-netwerk. Sub-50ms responstijden in 300+ steden — dezelfde snelheid in Lagos als in Londen."
+      }
+    ]
+  },
+  "motorsGrid": {
+    "label": "Drie manieren om Pagayo te gebruiken",
+    "headline": "Gebouwd voor de onafhankelijken.",
+    "intro": "Pagayo is niet gebouwd voor één soort bedrijf. Het is gebouwd voor organisaties die op eigen benen willen staan — en voor de mensen die hen daarbij helpen.",
+    "cards": [
+      {
+        "icon": "🏋️",
+        "tag": "Zelf runnen",
+        "title": "Run je organisatie op Pagayo",
+        "body": "Abonnementen, POS, QR check-in, webshop, ledenbeheer — alles waar enterprise platforms voor rekenen, zonder per-lid-kosten of omzetdeling. Je houdt wat je verdient.",
+        "cta": "Bekijk hoe het werkt →",
+        "href": "#gyms"
+      },
+      {
+        "icon": "🌍",
+        "tag": "Toegang sponsoren",
+        "title": "Financier een cohort ondernemers",
+        "body": "NGO's, overheden en donateurs kunnen hele groepen founders sponsoren — van Gambia tot Guatemala. Het platform blijft gratis voor hen. Jij ziet de echte business outcomes op een live dashboard.",
+        "cta": "Bekijk de Impact Engine →",
+        "href": "#impact"
+      },
+      {
+        "icon": "🤝",
+        "tag": "Toegang verspreiden",
+        "title": "Word partner, verdien 50%",
+        "body": "We hebben geen salesteam — we hebben partners. Verwijs een organisatie door, verdien elke maand de helft van hun abonnement, zolang ze blijven. Betaald door ons. Nooit door hen.",
+        "cta": "Doe mee met het programma →",
+        "href": "#partners"
+      }
+    ]
+  },
+  "competitorTable": {
+    "label": "Voor onafhankelijke operators",
+    "headline": "Het platform dat je stack vervangt — voor 90% minder.",
+    "intro": "Abonnementen, POS, leden check-in, webshop, rapportage — alles waar enterprise platforms een fortuin voor rekenen, zonder enterprise lock-in. Geen per-lid-kosten. Geen omzetdeling. Geen contract waar je niet uit kunt.",
+    "tableHeaders": {
+      "platform": "Platform",
+      "priceRange": "Prijsklasse",
+      "perMemberFees": "Per-lid-kosten",
+      "note": "Opmerking"
+    },
+    "rows": [
+      {
+        "platform": "Mindbody",
+        "price": "$139 – $699/mo",
+        "perMemberFees": "Ja",
+        "note": "+ setupkosten, lange contracten"
+      },
+      {
+        "platform": "Virtuagym",
+        "price": "€49 – €99/mo",
+        "perMemberFees": "Ja",
+        "note": "Per-lid-prijzen schalen snel"
+      },
+      {
+        "platform": "GymMaster",
+        "price": "$99 – $239/mo",
+        "perMemberFees": "Nee",
+        "note": "Beperkte webshop, geen QR"
+      },
+      {
+        "platform": "Glofox",
+        "price": "$110 – $280/mo",
+        "perMemberFees": "Ja",
+        "note": "Jaarcontracten, ondoorzichtige prijzen"
+      },
+      {
+        "platform": "Pagayo",
+        "price": "€4 – €39/mo",
+        "perMemberFees": "Nooit",
+        "note": "Gratis tier inbegrepen. Geen contracten.",
+        "highlight": true
+      }
+    ],
+    "checklistHeadline": "Alles inbegrepen. Geen upsells. Geen telefoontjes.",
+    "featureChecklist": [
+      "Terugkerende abonnementen met automatische verlenging",
+      "Gezins-/groepsledenbeheer",
+      "QR-code check-in bij de deur",
+      "Point of Sale voor smoothiebar / shop",
+      "Online webshop voor merchandise",
+      "Leden-CRM met bulk import",
+      "Omzet-, btw- en productrapporten",
+      "Promoties en kortingscodes",
+      "Geautomatiseerde facturatie en creditnota's",
+      "CMS voor pagina's, blog, aankondigingen",
+      "Teamtoegang met rolgebaseerde rechten",
+      "Stripe-betalingen (pin, iDEAL, SEPA, etc.)"
+    ],
+    "cta": "Run je organisatie op Pagayo — gratis →",
+    "ctaHref": "https://start.pagayo.app/register"
+  },
+  "stepsGrid": {
+    "label": "Aan de slag",
+    "headline": "Van nul naar verkopen in vijf minuten.",
+    "intro": "Geen setupkosten. Geen salescall. Geen \"vraag een demo aan\". Dezelfde workflow in Amsterdam, Lagos en Nairobi.",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Maak je account aan",
+        "body": "E-mail, wachtwoord, klaar. Geen creditcard, geen bedrijfsverificatie, geen wachtlijst."
+      },
+      {
+        "number": 2,
+        "title": "Voeg toe wat je verkoopt",
+        "body": "Producten, lidmaatschappen, tickets — typ ze in of importeer vanuit een spreadsheet."
+      },
+      {
+        "number": 3,
+        "title": "Koppel je uitbetalingen",
+        "body": "Koppel Stripe in één klik. Geld gaat direct naar jouw account — wij raken het nooit aan."
+      },
+      {
+        "number": 4,
+        "title": "Begin met verkopen",
+        "body": "Je shop staat live op je subdomein. Deel de link, print de QR, open de POS."
+      }
+    ]
+  },
+  "impactTeaser": {
+    "label": "Entrepreneurship Infrastructure",
+    "headline": "Provision een cohort.",
+    "headlineAccent": "Meet wat er echt gebeurde.",
+    "intro": "NGO's, overheden en fondsen sponsoren cohorten ondernemers. Elke founder krijgt een volledig commerce-platform — gratis voor hen, live gemonitord door jou. Drie stappen. Echte resultaten. Geen subsidierapport nodig.",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Jij sponsort een cohort",
+        "body": "Definieer een groep — regio, sector, doelen. Wij provisionen hun accounts, volledig uitgerust, geen creditcard nodig."
+      },
+      {
+        "number": 2,
+        "title": "Ondernemers gaan aan de slag",
+        "body": "Elke founder runt een echte shop — webshop, POS, WhatsApp, uitbetalingen naar hun eigen account. Hetzelfde product waarvoor Europese bedrijven betalen."
+      },
+      {
+        "number": 3,
+        "title": "Jij ziet wat er echt gebeurde",
+        "body": "Live dashboards: verdiende omzet, afgehandelde orders, bediende klanten, gecreëerde banen. Resultaten, geen slides."
+      }
+    ],
+    "cta": "Verken de volledige Impact Engine →",
+    "ctaHref": "/impact"
+  },
+  "partnerCalc": {
+    "label": "Partnerprogramma",
+    "headline": "Help anderen op weg.",
+    "headlineAccent": "Verdien 50%.",
+    "intro": "We hebben geen salesteam — we hebben partners. Verwijs een organisatie door en je verdient elke maand de helft van hun abonnement, zolang ze blijven. Betaald door ons. Nooit door hen.",
+    "calcTitle": "Wat je zou kunnen verdienen",
+    "examples": [
+      {
+        "scenario": "10 referrals op Supporter (€48/jr elk)",
+        "earning": "€240/jr"
+      },
+      {
+        "scenario": "25 referrals op Professional (€228/jr elk)",
+        "earning": "€2.850/jr"
+      },
+      {
+        "scenario": "10 referrals op Advanced (€468/jr elk)",
+        "earning": "€2.340/jr"
+      },
+      {
+        "scenario": "100 gemixte referrals — realistisch jaar 1",
+        "highlight": true,
+        "earning": "€11.400/jr"
+      }
+    ],
+    "cta": "Word partner →",
+    "ctaHref": "/contact",
+    "footnote": "Uitbetaling via Stripe. Geen minimumdrempel. Opnemen wanneer je wilt."
+  },
+  "testimonials": {
+    "label": "In het wild",
+    "headline": "Gebruikt door onafhankelijke operators wereldwijd."
+  },
+  "trustSecurity": {
+    "items": [
+      {
+        "icon": "🔒",
+        "title": "EU-grade databescherming",
+        "description": "AVG-compliant. Data gehost in Europese regio's. De informatie van je klanten blijft waar die hoort — bij jou."
+      },
+      {
+        "icon": "⚡",
+        "title": "99,99% uptime",
+        "description": "Draait op een wereldwijd edge-netwerk in 300+ steden. Redundant by design — geen single point of failure."
+      },
+      {
+        "icon": "💳",
+        "title": "Stripe-betalingen",
+        "description": "PCI-DSS Level 1 compliant. iDEAL, pin, SEPA, Bancontact en meer — plus M-Pesa, Flutterwave en Paystack voor Afrika."
+      },
+      {
+        "icon": "🏦",
+        "title": "Jouw geld, jouw account",
+        "description": "Uitbetalingen gaan direct naar je bank via je eigen Stripe-account. We raken je omzet nooit aan. Geen platform float, geen vastgehouden fondsen."
+      }
+    ]
+  },
+  "globalReach": {
+    "label": "Wereldwijd by default",
+    "headline": "Gebouwd voor iedereen.",
+    "headlineLine2": "Vooral voor degenen die grote platforms vergeten.",
+    "intro": "Pagayo draait op de global edge — snel in Amsterdam, net zo snel in Nairobi. Hetzelfde platform. Dezelfde prijs. Dezelfde features. Waar je je bedrijf bouwt, zou niet moeten afhangen van waar je toevallig woont.",
+    "map": {
+      "number": "300+",
+      "label": "Edge-locaties — één netwerk, geen regionale tiers"
+    },
+    "stats": [
+      {
+        "value": "<50ms",
+        "label": "Responstijd overal op aarde"
+      },
+      {
+        "value": "Meertalig",
+        "label": "EN, NL, DE, FR, ES — meer onderweg"
+      },
+      {
+        "value": "Multi-valuta",
+        "label": "EUR, USD, GBP, plus lokale betaalmethoden"
+      }
+    ]
+  }
+}

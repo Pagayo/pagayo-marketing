@@ -1,25 +1,26 @@
 ---
-import buildLog from '../../content/build-log.json';
+import { loadHome, type HomeContent } from '../../lib/home';
 
-// Newest entries are at the end of the timeline; take the last 4 and reverse.
-const recent = [...buildLog.timeline].slice(-4).reverse();
+interface Props {
+  content?: HomeContent['alwaysShipping'];
+}
+
+const content = Astro.props.content ?? loadHome('en').alwaysShipping;
 ---
 <section class="section always-shipping fade-in" id="always-shipping" aria-labelledby="always-shipping-heading">
   <div class="container always-shipping-container">
     <div class="section-header center">
-      <span class="section-label">Always shipping</span>
+      <span class="section-label">{content.label}</span>
       <h2 class="headline-md" id="always-shipping-heading">
-        Pagayo grows every week.
+        {content.headline}
       </h2>
       <p class="text-lg">
-        New features, new modules, new improvements ship continuously —
-        driven by what the people using Pagayo ask for. Here's what's
-        recently landed in the platform.
+        {content.intro}
       </p>
     </div>
 
     <ul class="shipping-list" aria-label="Recently shipped">
-      {recent.map((item) => (
+      {content.items.map((item) => (
         <li class="shipping-item">
           <span class="shipping-marker">{item.marker}</span>
           <div class="shipping-content">
@@ -31,14 +32,14 @@ const recent = [...buildLog.timeline].slice(-4).reverse();
     </ul>
 
     <div class="shipping-footer">
-      <a href="/how-we-build" class="shipping-link">
-        How Pagayo is built →
+      <a href={content.footer.howWeBuildHref} class="shipping-link">
+        {content.footer.howWeBuildLink}
       </a>
-      <a href="/build-log" class="shipping-link">
-        See the full Build Log →
+      <a href={content.footer.buildLogHref} class="shipping-link">
+        {content.footer.buildLogLink}
       </a>
       <p class="shipping-ideas">
-        Have an idea? <a href="/contact">Tell us</a> — we read every one.
+        {content.footer.ideasPrefix} <a href={content.footer.ideasHref}>{content.footer.ideasLinkText}</a> {content.footer.ideasSuffix}
       </p>
     </div>
   </div>

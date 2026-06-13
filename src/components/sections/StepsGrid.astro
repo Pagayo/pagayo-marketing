@@ -1,35 +1,30 @@
+---
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['stepsGrid'];
+}
+
+const content = Astro.props.content ?? loadHome('en').stepsGrid;
+---
 <section class="section how-it-works fade-in">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label">Getting Started</span>
-      <h2 class="headline-lg">From zero to selling in five minutes.</h2>
+      <span class="section-label">{content.label}</span>
+      <h2 class="headline-lg">{content.headline}</h2>
       <p class="text-lg">
-        No setup fee. No sales call. No &ldquo;request a demo&rdquo;.
-        The same workflow in Amsterdam, Lagos and Nairobi.
+        {content.intro}
       </p>
     </div>
 
     <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <h3>Create Your Account</h3>
-        <p>Email, password, done. No credit card, no business verification, no waiting list.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <h3>Add What You Sell</h3>
-        <p>Products, memberships, tickets — type them in or import from a spreadsheet.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <h3>Connect Your Payouts</h3>
-        <p>Link Stripe in one click. Money goes straight to your account — we never touch it.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">4</div>
-        <h3>Start Selling</h3>
-        <p>Your shop is live on your subdomain. Share the link, print the QR, open the POS.</p>
-      </div>
+      {content.steps.map((step) => (
+        <div class="step-card">
+          <div class="step-number">{step.number}</div>
+          <h3>{step.title}</h3>
+          <p>{step.body}</p>
+        </div>
+      ))}
     </div>
   </div>
 </section>

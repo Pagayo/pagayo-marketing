@@ -1,0 +1,101 @@
+---
+import MarketingLayout from '../../layouts/Marketing.astro';
+import Hero from '../sections/Hero.astro';
+import Manifesto from '../sections/Manifesto.astro';
+import AlwaysShipping from '../sections/AlwaysShipping.astro';
+import TrustBar from '../sections/TrustBar.astro';
+import ProductPreview from '../sections/ProductPreview.astro';
+import ChannelStrip from '../sections/ChannelStrip.astro';
+import FeaturesGrid from '../sections/FeaturesGrid.astro';
+import MotorsGrid from '../sections/MotorsGrid.astro';
+import CompetitorTable from '../sections/CompetitorTable.astro';
+import PricingTable from '../sections/PricingTable.astro';
+import StepsGrid from '../sections/StepsGrid.astro';
+import ImpactSection from '../sections/ImpactSection.astro';
+import PartnerCalc from '../sections/PartnerCalc.astro';
+import TestimonialsGrid from '../sections/TestimonialsGrid.astro';
+import TrustSecurity from '../sections/TrustSecurity.astro';
+import GlobalReach from '../sections/GlobalReach.astro';
+import FinalCta from '../sections/FinalCta.astro';
+import { loadHome } from '../../lib/home';
+import { loadMessages, type Locale } from '../../lib/i18n';
+import { DEFAULT_DESCRIPTION, SITE_ORIGIN } from '../../lib/site-seo';
+import { hrefFor } from '../../lib/locale-routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = loadMessages(locale);
+const home = loadHome(locale);
+
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_ORIGIN}/#organization`,
+      name: 'Pagayo',
+      url: SITE_ORIGIN,
+      description: locale === 'en' ? DEFAULT_DESCRIPTION : messages.homePage.description,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': locale === 'en' ? `${SITE_ORIGIN}/#website` : `${SITE_ORIGIN}/nl/#website`,
+      name: 'Pagayo',
+      url: locale === 'en' ? SITE_ORIGIN : `${SITE_ORIGIN}/nl/`,
+      description: messages.homePage.description,
+      publisher: { '@id': `${SITE_ORIGIN}/#organization` },
+      inLanguage: locale === 'nl' ? 'nl-NL' : 'en-US',
+    },
+  ],
+};
+
+const alwaysShipping = {
+  ...home.alwaysShipping,
+  footer: {
+    ...home.alwaysShipping.footer,
+    howWeBuildHref: hrefFor('howWeBuild', locale),
+  },
+};
+
+const impactTeaser = {
+  ...home.impactTeaser,
+  ctaHref: hrefFor('impact', locale),
+};
+---
+<MarketingLayout
+  locale={locale}
+  alternatePageId="home"
+  title={messages.homePage.title}
+  description={messages.homePage.description}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(homeSchema)} />
+  <Hero locale={locale} home={messages.homePage} />
+  <Manifesto content={home.manifesto} />
+  <AlwaysShipping content={alwaysShipping} />
+  <TrustBar content={home.trustBar} />
+  <ProductPreview content={home.productPreview} />
+  <ChannelStrip content={home.channelStrip} />
+  <div class="section-divider"></div>
+  <FeaturesGrid content={home.featuresGrid} />
+  <MotorsGrid content={home.motorsGrid} />
+  <CompetitorTable content={home.competitorTable} />
+  <div class="section-divider"></div>
+  <PricingTable locale={locale} pricingPage={messages.pricingPage} />
+  <StepsGrid content={home.stepsGrid} />
+  <div class="section-divider"></div>
+  <ImpactSection compact teaser={impactTeaser} />
+  <div class="section-divider"></div>
+  <PartnerCalc content={home.partnerCalc} />
+  <TestimonialsGrid
+    locale={locale}
+    header={home.testimonials}
+    limit={3}
+    showViewAllLink
+  />
+  <TrustSecurity content={home.trustSecurity} />
+  <GlobalReach content={home.globalReach} />
+  <FinalCta locale={locale} home={messages.homePage} />
+</MarketingLayout>

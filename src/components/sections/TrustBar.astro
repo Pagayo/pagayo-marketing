@@ -1,10 +1,16 @@
 ---
-import trustData from '../../content/trust.json';
+import { loadHome, type HomeContent } from '../../lib/home';
+
+interface Props {
+  content?: HomeContent['trustBar'];
+}
+
+const content = Astro.props.content ?? loadHome('en').trustBar;
 ---
 <div class="logobar">
   <div class="container">
     <div class="logobar-inner">
-      {trustData.logobar.map((item) => <span class="logobar-item">{item}</span>)}
+      {content.items.map((item) => <span class="logobar-item">{item}</span>)}
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 ---
 import type { Locale, Messages } from '../../lib/i18n';
-import { hrefFor, localizedPath, type LocalizedPageId } from '../../lib/locale-routes';
+import { hrefFor, type LocalizedPageId } from '../../lib/locale-routes';
+import LangSwitcher from './LangSwitcher.astro';
 
 interface Props {
   locale: Locale;
@@ -58,16 +59,12 @@ const f = t.footer;
 
     <div class="footer-bottom">
       <span>{f.copyright}</span>
-      <select
-        class="footer-lang"
-        aria-label={f.languageLabel}
-        data-footer-lang
-        data-current-page={alternatePageId ?? ''}
-      >
-        <option value="en" data-href={alternatePageId ? localizedPath(alternatePageId, 'en') : '/'} selected={locale === 'en'}>EN</option>
-        <option value="nl" data-href={alternatePageId ? localizedPath(alternatePageId, 'nl') : '/nl/'} selected={locale === 'nl'}>NL</option>
-        <option value="de" data-href={alternatePageId ? localizedPath(alternatePageId, 'de') : '/'} disabled>DE</option>
-      </select>
+      <LangSwitcher
+        locale={locale}
+        languageLabel={f.languageLabel}
+        alternatePageId={alternatePageId}
+        class="lang-switch footer-lang"
+      />
       <div class="footer-social">
         <a href="#" aria-label="Twitter/X">𝕏</a>
         <a href="#" aria-label="LinkedIn">in</a>

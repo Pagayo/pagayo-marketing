@@ -174,20 +174,18 @@ function initFadeIn(): void {
   faders.forEach((fader) => appearOnScroll.observe(fader));
 }
 
-function initFooterLangSwitcher(): void {
-  const select = document.querySelector<HTMLSelectElement>('[data-footer-lang]');
-  if (!select) return;
-
-  select.addEventListener('change', () => {
-    const option = select.selectedOptions[0];
-    const href = option?.dataset.href;
-    if (href) {
-      window.location.href = href;
-    }
+function initLangSwitchers(): void {
+  document.querySelectorAll<HTMLSelectElement>('[data-lang-switch]').forEach((select) => {
+    select.addEventListener('change', () => {
+      const href = select.selectedOptions[0]?.dataset.href;
+      if (href) {
+        window.location.href = href;
+      }
+    });
   });
 }
 
 initNav();
 initFadeIn();
 initNavCountryLabel();
-initFooterLangSwitcher();
+initLangSwitchers();
