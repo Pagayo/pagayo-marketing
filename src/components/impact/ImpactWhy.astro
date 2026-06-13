@@ -1,4 +1,12 @@
 ---
+import type { Messages } from '../../lib/i18n';
+
+interface Props {
+  impact: Messages['impactPage'];
+}
+
+const { impact: t } = Astro.props;
+const why = t.why;
 ---
 
 <section class="section impact-why fade-in" aria-labelledby="impact-why-title">
@@ -6,59 +14,43 @@
     <div class="impact-why-grid">
 
       <div class="impact-why-problem">
-        <span class="section-label impact-why-label--problem">The Problem</span>
+        <span class="section-label impact-why-label--problem">{why.problemLabel}</span>
         <h2 class="headline-lg" id="impact-why-title">
-          Most entrepreneurship programs<br />measure attendance.
+          {why.headline.split('\n').map((line, i) => (
+            <>
+              {i > 0 && <br />}
+              {line}
+            </>
+          ))}
         </h2>
 
-        <p class="impact-why-subhead">We measure sales.</p>
+        <p class="impact-why-subhead">{why.subhead}</p>
 
         <ul class="impact-why-list">
-          <li>
-            <span class="impact-why-icon">📋</span>
-            <div>
-              <strong>Training without tooling</strong>
-              <p>Workshops teach business concepts to founders with no infrastructure to actually run a business. Attendance goes up. Revenue doesn't.</p>
-            </div>
-          </li>
-          <li>
-            <span class="impact-why-icon">💸</span>
-            <div>
-              <strong>Grants without accountability</strong>
-              <p>Funding disbursed on promises, not verified by transaction data. Next funding round starts from scratch.</p>
-            </div>
-          </li>
-          <li>
-            <span class="impact-why-icon">📊</span>
-            <div>
-              <strong>Surveys instead of sales data</strong>
-              <p>Program outcomes reported via self-reported surveys — weeks after the fact, easily inflated.</p>
-            </div>
-          </li>
-          <li>
-            <span class="impact-why-icon">🔧</span>
-            <div>
-              <strong>Shopify + WhatsApp + Excel + cash</strong>
-              <p>Founders juggle five disconnected tools on their own, with no shared visibility for program managers.</p>
-            </div>
-          </li>
+          {why.problems.map((item) => (
+            <li>
+              <span class="impact-why-icon">{item.icon}</span>
+              <div>
+                <strong>{item.title}</strong>
+                <p>{item.description}</p>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div class="impact-why-solution">
-        <span class="section-label impact-label">Pagayo replaces all of that</span>
-        <h3 class="headline-md">One operational platform. Verifiable from day one.</h3>
+        <span class="section-label impact-label">{why.solutionLabel}</span>
+        <h3 class="headline-md">{why.solutionHeadline}</h3>
 
         <ul class="impact-solution-list">
-          <li>Founders get a full commerce stack — not a training manual</li>
-          <li>Every order, sale, and payout is recorded automatically</li>
-          <li>Your dashboard reads from live transaction data, not surveys</li>
-          <li>One platform for webshop, POS, WhatsApp, subscriptions, payouts</li>
-          <li>Program managers see every cohort in one view</li>
+          {why.solutionPoints.map((point) => (
+            <li>{point}</li>
+          ))}
         </ul>
 
         <blockquote class="impact-why-quote">
-          "Funding should follow outcomes, not slide decks."
+          "{why.quote}"
         </blockquote>
       </div>
 

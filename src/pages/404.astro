@@ -1,0 +1,25 @@
+---
+import MarketingLayout from '../layouts/Marketing.astro';
+
+const pageTitle = 'Page not found — Pagayo';
+const pageDescription = 'This page does not exist. Return to the Pagayo homepage or explore features and pricing.';
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription} noindex>
+  <main class="hwb-page">
+    <section class="section page-hero fade-in">
+      <div class="container narrow">
+        <div class="section-header center">
+          <span class="section-label">404</span>
+          <h1 class="headline-lg">Page not found.</h1>
+          <p class="text-lg">
+            The page you are looking for does not exist or has moved.
+          </p>
+          <p class="hwb-link-row">
+            <a href="/" class="hwb-link">Back to homepage →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</MarketingLayout>

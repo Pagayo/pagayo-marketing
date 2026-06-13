@@ -1,0 +1,238 @@
+{
+  "hero": {
+    "badge": "Voor organisaties",
+    "titleTop": "Jullie hebben het vertrouwen opgebouwd.",
+    "titleGradient": "Wij hebben het platform gebouwd.",
+    "intro": "Pagayo's Organization Programs zijn gemaakt voor groothandels, brancheverenigingen, franchisenetwerken, accountants en instellingen die serieuze commerce-infrastructuur willen bieden aan de ondernemers die zij bedienen.",
+    "ctaPrimary": "Vraag een programma-overzicht aan →",
+    "ctaSecondary": "Verken eerst het platform"
+  },
+  "what": {
+    "sectionLabel": "Wat dit is",
+    "headline": "Geen referralprogramma.\nEen infrastructuurlaag.",
+    "paragraphs": [
+      "De meeste afspraken tussen organisaties en technologieplatforms draaien om één simpel principe: jullie verwijzen, wij betalen. Dat is dit niet.",
+      "Een Organization Program is een afspraak waarin jullie Pagayo's commerce-infrastructuur brengen naar de ondernemers die jullie al bedienen. Jullie zijn geen tussenpersoon. Jullie zijn geen wederverkoper. Jullie zijn de vertrouwde relatie — Pagayo is het platform eronder.",
+      "Het platform is hetzelfde voor elke ondernemer, ongeacht wie hen heeft geïntroduceerd. One Stack: één webshop, één kassa, één WhatsApp-integratie, één voorraadsysteem. Geen maatwerk. Geen sectorspecifieke versies. Hetzelfde platform dat een onafhankelijke gym in Amsterdam gebruikt, is hetzelfde platform dat een marktkoopman in Accra gebruikt."
+    ],
+    "closer": "Dat is precies de bedoeling.",
+    "aside": {
+      "organizations": {
+        "label": "Organisaties",
+        "text": "Hebben het vertrouwen al. Introduceer Pagayo aan jullie netwerk."
+      },
+      "pagayo": {
+        "label": "Pagayo",
+        "text": "Levert de infrastructuur. One Stack. Hetzelfde voor iedereen."
+      },
+      "entrepreneurs": {
+        "label": "Ondernemers",
+        "text": "Krijgen een compleet commerce-platform. Live binnen enkele uren."
+      }
+    }
+  },
+  "stack": {
+    "sectionLabel": "One Stack",
+    "headline": "Wat jullie netwerk krijgt —\nen waar jullie achter kunnen staan.",
+    "intro": "Elke ondernemer die jullie aan Pagayo introduceren, krijgt hetzelfde: One Stack. Een compleet commerce-platform, live binnen enkele uren, zonder developer of IT-project.",
+    "features": [
+      {
+        "icon": "🛒",
+        "label": "Webshop",
+        "desc": "Een merkgebonden online winkel, klaar om vanaf dag één te verkopen."
+      },
+      {
+        "icon": "💳",
+        "label": "Point of Sale",
+        "desc": "Betalingen in de winkel via elk apparaat."
+      },
+      {
+        "icon": "💬",
+        "label": "WhatsApp Commerce",
+        "desc": "Bestellingen, broadcasts en klantgesprekken via WhatsApp."
+      },
+      {
+        "icon": "📦",
+        "label": "Voorraad",
+        "desc": "Eén voorraadniveau over elk kanaal, realtime bijgewerkt."
+      },
+      {
+        "icon": "🔔",
+        "label": "Loyalty & abonnementen",
+        "desc": "Terugkerende omzet en klantbehoud, ingebouwd."
+      },
+      {
+        "icon": "📊",
+        "label": "Dashboard",
+        "desc": "Elke verkoop, elke klant, elke uitbetaling — op één plek."
+      }
+    ],
+    "note": "Zij betalen standaard Pagayo-tarieven. Er is geen toeslag vanwege hoe ze zijn geïntroduceerd. Wat organisaties ontvangen, komt volledig van Pagayo's kant van de afspraak — niet van hun klanten.",
+    "linkText": "Bekijk hoe het is opgebouwd →"
+  },
+  "audiences": {
+    "sectionLabel": "Voor wie dit is",
+    "headline": "Als jullie klanten ondernemers zijn,\nkwalificeren jullie.",
+    "sub": "Organization Programs zijn gemaakt voor organisaties die al vertrouwde relaties hebben met de ondernemers die zij bedienen.",
+    "items": [
+      {
+        "title": "Groothandel & distributie",
+        "body": "Jullie leveren aan salons, gyms, cafés of gespecialiseerde retailers op een vaste route. Jullie zien klanten regelmatig. Ze vertrouwen jullie advies. Pagayo geeft jullie iets dat echt de moeite waard is om aan te bevelen."
+      },
+      {
+        "title": "Brancheverenigingen & beroepsorganisaties",
+        "body": "Jullie leden hebben moderne commerce-infrastructuur nodig, maar kunnen enterprise-tools niet betalen. Pagayo is een platform dat jullie als echte meerwaarde kunnen aanbieden — geen kortingscode."
+      },
+      {
+        "title": "Franchise-organisaties",
+        "body": "Jullie bepalen de standaard voor vijftig locaties. Pagayo uitrollen betekent dat elke franchisenemer op hetzelfde commerce-platform draait — consistent, merkgebonden en operationeel vanaf dag één."
+      },
+      {
+        "title": "Accountants & adviseurs",
+        "body": "Jullie beheren de boekhouding van tientallen kleine bedrijven. Jullie weten al wie geld verliest aan versnipperde tools. Een aanbeveling van jullie weegt zwaarder dan welke advertentie dan ook."
+      },
+      {
+        "title": "Gemeenten & ontwikkelingsorganisaties",
+        "body": "Jullie runnen ondernemersondersteuningsprogramma's. Pagayo geeft jullie een platform om commerciële resultaten te meten — niet alleen participatiecijfers."
+      },
+      {
+        "title": "NGO's & onderwijsinstellingen",
+        "body": "Jullie willen dat ondernemers in jullie programma echte, duurzame bedrijven opbouwen. Pagayo is de infrastructuur die dat mogelijk maakt."
+      },
+      {
+        "title": "Webbureaus & digital builders",
+        "body": "Jullie bouwen de website. Nu kunnen jullie ook de commerce-laag meeleveren — en relevant blijven in de groei die jullie hebben helpen creëren."
+      }
+    ]
+  },
+  "models": {
+    "sectionLabel": "Hoe organisaties deelnemen",
+    "headline": "Twee afspraken. Eén platform.",
+    "intro": "Elke organisatie die met Pagayo werkt, introduceert hetzelfde product aan hun netwerk. Wat verschilt, is de commerciële afspraak.",
+    "cards": [
+      {
+        "num": "01",
+        "title": "Jullie organisatie betaalt de kosten.",
+        "body": "Jullie betalen voor de ondernemers in jullie programma. Zij gebruiken Pagayo kosteloos. Deze afspraak is gebruikelijk voor gemeenten, NGO's, onderwijsinstellingen en accelerators — organisaties waar commerciële empowerment belangrijker is dan commercieel rendement."
+      },
+      {
+        "num": "02",
+        "title": "Ondernemers betalen. Jullie delen mee in hun groei.",
+        "body": "Ondernemers nemen rechtstreeks een Pagayo-abonnement, tegen standaardtarieven. Als organisatie die hen naar het platform heeft gebracht, delen jullie mee in de groei die jullie helpen creëren. Deze afspraak is gebruikelijk voor groothandels, brancheverenigingen, franchisenetwerken, accountants en adviseurs."
+      }
+    ],
+    "footer": "In beide gevallen: het platform is identiek. Ondernemers krijgen hetzelfde product. Het enige verschil is de commerciële afspraak tussen Pagayo en jullie organisatie."
+  },
+  "steps": {
+    "sectionLabel": "Aan de slag",
+    "headline": "Eenvoudig te introduceren. Gebouwd voor de lange termijn.",
+    "items": [
+      {
+        "num": "1",
+        "title": "Vertel ons over jullie netwerk.",
+        "body": "We beginnen met één gesprek. Wie zijn de ondernemers die jullie bedienen? Welke sector? Wat hebben ze nodig? We leggen uit hoe het programma werkt."
+      },
+      {
+        "num": "2",
+        "title": "We bevestigen de commerciële afspraak.",
+        "body": "We bevestigen het model — gesponsord of groei — en lopen door hoe jullie Pagayo kunnen introduceren aan jullie netwerk."
+      },
+      {
+        "num": "3",
+        "title": "Jullie maken de introductie.",
+        "body": "Op jullie voorwaarden. In jullie taal. In jullie tempo. Een e-mail, een gesprek, een vermelding op jullie volgende vergadering of levering. Wij vragen geen verkooppitch of demo van jullie."
+      },
+      {
+        "num": "4",
+        "title": "Zij starten. Jullie groeien mee.",
+        "body": "Ondernemers gaan live binnen enkele uren. Pagayo regelt alle support, onboarding en verlengingen. Naarmate jullie netwerk op het platform groeit, groeit het programma mee."
+      }
+    ]
+  },
+  "deepdive": {
+    "sectionLabel": "Verder verdiepen",
+    "headline": "Twee programma's met een eigen pagina.",
+    "sub": "Voor twee specifieke soorten organisaties hebben we pagina's gebouwd die verder gaan dan deze.",
+    "cards": [
+      {
+        "label": "Impact Programs",
+        "title": "Voor gemeenten, NGO's, onderwijsinstellingen en accelerators",
+        "body": "Inclusief programmastructuren, pilootdata, cohortmodellen en een Impact Dashboard voor het meten van commerciële resultaten.",
+        "linkText": "Verken Impact Programs →",
+        "href": "/nl/impact"
+      },
+      {
+        "label": "Powered by Pagayo",
+        "title": "Voor organisaties die Pagayo onder hun eigen merk willen aanbieden",
+        "body": "Bied Pagayo aan als commerce-platform onder jullie eigen naam — als onderdeel van jullie eigen product, dienst of platform.",
+        "linkText": "Verken Powered by Pagayo →",
+        "href": "/nl/powered-by"
+      }
+    ],
+    "note": "Als geen van beide van toepassing is, zijn jullie op de juiste plek."
+  },
+  "why": {
+    "sectionLabel": "Waarom het werkt",
+    "headline": "Omdat vertrouwen het enige is\ndat je niet overnight opbouwt.",
+    "paragraphs": [
+      "Jullie hebben al wat Pagayo niet kan bieden: jarenlange relaties, geloofwaardigheid in jullie sector, en ondernemers die jullie aanbevelingen serieus nemen.",
+      "Organisaties die Pagayo introduceren aan hun netwerk merken dat het de aard van de relatie verandert. Jullie stoppen met leverancier of adviseur te zijn. Jullie worden infrastructuur — iets waar de ondernemer het bedrijf omheen bouwt. Dat is een moeilijkere positie om te vervangen dan welk prijsvoordeel dan ook."
+    ],
+    "reasons": [
+      {
+        "title": "Het verdiept bestaande relaties.",
+        "body": "Wanneer jullie een platform introduceren dat klanten echt helpt groeien, verschuift de relatie van transactioneel naar fundamenteel. Die diepte is moeilijk te evenaren."
+      },
+      {
+        "title": "De impact is zichtbaar.",
+        "body": "Wanneer een ondernemer in jullie netwerk live gaat, begint te verkopen en de eerste honderd bestellingen verwerkt — dat resultaat is direct traceerbaar naar jullie introductie. Voor verenigingen, gemeenten en NGO's telt die meetbaarheid."
+      },
+      {
+        "title": "Het is gebouwd voor de lange termijn.",
+        "body": "Pagayo is geen promotietool of proefperiode die afloopt. Het is commerce-infrastructuur waar ondernemers hun bedrijfsvoering op bouwen. De waarde van een Organization Program groeit in de loop der tijd — het reset niet bij elke cyclus."
+      }
+    ]
+  },
+  "faq": {
+    "sectionLabel": "Veelgestelde vragen",
+    "headline": "Directe vragen. Directe antwoorden.",
+    "items": [
+      {
+        "q": "Betalen ondernemers in mijn netwerk meer omdat ik hen heb geïntroduceerd?",
+        "a": "Nee. Zij betalen standaard Pagayo-tarieven. Geen toeslag, geen opslag en geen verborgen kosten. Wat jullie organisatie ontvangt, komt volledig van Pagayo's kant van de afspraak — niet van jullie klanten."
+      },
+      {
+        "q": "In welke landen is Pagayo actief?",
+        "a": "Pagayo is momenteel actief in Nederland, België, Duitsland, Frankrijk, Spanje en diverse Afrikaanse markten. Als jullie netwerk daar gevestigd is, kunnen we een programma bespreken."
+      },
+      {
+        "q": "Hoe betrokken moet ik blijven na de introductie?",
+        "a": "Zo betrokken als jullie willen. Veel organisaties maken de introductie en stappen terug — Pagayo regelt alle onboarding, support en verlengingen. Anderen blijven liever actief betrokken. Beide werken."
+      },
+      {
+        "q": "Wat is het verschil tussen een gesponsorde en een groeiafspraak?",
+        "a": "Bij een gesponsorde afspraak betaalt jullie organisatie het abonnement voor ondernemers — zij gebruiken Pagayo kosteloos. Bij een groeiafspraak betalen ondernemers rechtstreeks, en delen jullie mee in de groei die jullie helpen creëren. Het platform is in beide gevallen identiek."
+      },
+      {
+        "q": "Is er een minimum netwerkgrootte?",
+        "a": "Geen minimum. We hebben programma's gebouwd voor netwerken van tien en netwerken van tienduizend. Wat telt is fit — niet schaal. We zijn eerlijk in ons eerste gesprek over of een programma past bij jullie situatie."
+      },
+      {
+        "q": "Ik ben een webbureau of digital consultant — geldt dit ook voor mij?",
+        "a": "Ja. Als jullie een bestaande klantenbasis van ondernemers hebben en een commerce-platform willen meeleveren, past een groeiafspraak."
+      },
+      {
+        "q": "Wat gebeurt er als een ondernemer in mijn netwerk stopt met Pagayo?",
+        "a": "Programma's zijn gebouwd voor de lange termijn, niet voor de individuele transactie. Churn is realiteit op elk platform. We werken samen om het te minimaliseren en het netwerk in de loop der tijd te laten groeien."
+      }
+    ]
+  },
+  "cta": {
+    "sectionLabel": "Start een gesprek",
+    "headline": "Jullie netwerk is klaar.\nLaten we de juiste afspraak bouwen.",
+    "intro": "Vertel ons over jullie organisatie en de ondernemers die jullie bedienen. Binnen twee werkdagen sturen we een concreet programma-overzicht — zonder verplichtingen.",
+    "ctaPrimary": "Vraag een programma-overzicht aan →",
+    "ctaSecondary": "Verken eerst het platform",
+    "contactLink": "Eerst vragen? Neem contact op →"
+  }
+}

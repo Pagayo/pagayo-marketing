@@ -1,33 +1,42 @@
 ---
 import Button from '../ui/Button.astro';
+import type { Messages } from '../../lib/i18n';
+
+interface Props {
+  impact: Messages['impactPage'];
+}
+
+const { impact: t } = Astro.props;
+const c = t.pageCta;
 ---
 
 <section class="section impact-page-cta fade-in">
   <div class="impact-page-cta-bg" aria-hidden="true"></div>
   <div class="container">
     <div class="impact-page-cta-inner">
-      <span class="section-label impact-label">Start a Program</span>
+      <span class="section-label impact-label">{c.sectionLabel}</span>
       <h2 class="headline-lg">
-        Ready to sponsor a cohort?<br />
-        <span class="impact-headline-accent">Let's talk outcomes.</span>
+        {c.headline.split('\n').map((line, i) => (
+          <>
+            {i > 0 && <br />}
+            {i === 1 ? <span class="impact-headline-accent">{line}</span> : line}
+          </>
+        ))}
       </h2>
-      <p>
-        Tell us your region, sector, and cohort size — we'll send a concrete program outline
-        and confirm country coverage before any commitment.
-      </p>
+      <p>{c.intro}</p>
       <div class="impact-cta-buttons">
         <div class="impact-cta-block">
-          <Button href="/impact-contact?intent=proposal" variant="ngo" size="lg">Request a Cohort Proposal →</Button>
-          <span class="impact-cta-hint">A concrete outline for your board or steering committee — region, pricing, timeline.</span>
+          <Button href="/impact-contact?intent=proposal" variant="ngo" size="lg">{c.proposal}</Button>
+          <span class="impact-cta-hint">{c.proposalHint}</span>
         </div>
         <div class="impact-cta-block">
-          <Button href="/impact-contact?intent=demo" variant="secondary" size="lg">Book a Sponsor Demo</Button>
-          <span class="impact-cta-hint">See the Impact Dashboard live. No commitment, no sales pitch.</span>
+          <Button href="/impact-contact?intent=demo" variant="secondary" size="lg">{c.demo}</Button>
+          <span class="impact-cta-hint">{c.demoHint}</span>
         </div>
       </div>
       <p class="impact-cta-note">
-        Want to see what your entrepreneurs will use?
-        <a href="https://start.pagayo.app/register">Explore the founder experience free →</a>
+        {c.founderExplorePrefix}
+        <a href="https://start.pagayo.app/register">{c.founderExplore}</a>
       </p>
     </div>
   </div>

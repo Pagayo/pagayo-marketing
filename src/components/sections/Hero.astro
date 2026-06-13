@@ -1,5 +1,17 @@
 ---
 import Button from '../ui/Button.astro';
+import { DEFAULT_LOCALE, loadMessages, type Locale, type Messages } from '../../lib/i18n';
+import { hrefFor } from '../../lib/locale-routes';
+
+interface Props {
+  locale?: Locale;
+  home?: Messages['homePage'];
+}
+
+const locale = Astro.props.locale ?? DEFAULT_LOCALE;
+const home = Astro.props.home ?? loadMessages(locale).homePage;
+const { hero } = home;
+const pricingHref = `${hrefFor('pricing', locale)}#pricing`;
 ---
 <section class="hero section" id="hero">
   <div class="hero-bg">
@@ -12,42 +24,28 @@ import Button from '../ui/Button.astro';
   <div class="hero-content">
     <div class="hero-badge">
       <span class="pulse"></span>
-      Independent. Bootstrapped. Free to start.
+      {hero.badge}
     </div>
 
     <h1 class="headline-xl">
-      One platform.<br />
-      <span class="text-gradient">Every way you sell.</span>
+      {hero.titleTop}<br />
+      <span class="text-gradient">{hero.titleGradient}</span>
     </h1>
 
-    <p>
-      Webshop, register, subscriptions, memberships, sponsored access —
-      built on one Order, so the numbers always match. The same platform
-      for a shop in Nairobi and a chain in Amsterdam.
-    </p>
+    <p>{hero.intro}</p>
 
     <div class="hero-ctas">
-      <Button href="https://start.pagayo.app/register" variant="primary" size="lg">Start Free →</Button>
-      <Button href="#pricing" variant="secondary" size="lg">See Pricing</Button>
+      <Button href="https://start.pagayo.app/register" variant="primary" size="lg">{hero.ctaPrimary}</Button>
+      <Button href={pricingHref} variant="secondary" size="lg">{hero.ctaSecondary}</Button>
     </div>
 
     <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-number">0%</div>
-        <div class="hero-stat-label">Transaction Fee</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-number">7+</div>
-        <div class="hero-stat-label">Sales Channels</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-number">&lt;50ms</div>
-        <div class="hero-stat-label">Anywhere on Earth</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-number">€0</div>
-        <div class="hero-stat-label">To Get Started</div>
-      </div>
+      {hero.stats.map((stat) => (
+        <div class="hero-stat">
+          <div class="hero-stat-number">{stat.number}</div>
+          <div class="hero-stat-label">{stat.label}</div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

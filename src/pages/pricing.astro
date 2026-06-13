@@ -3,9 +3,19 @@ import MarketingLayout from '../layouts/Marketing.astro';
 import PageBackdrop from '../components/layout/PageBackdrop.astro';
 import PricingTable from '../components/sections/PricingTable.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
+import { loadMessages } from '../lib/i18n';
+
+const locale = 'en';
+const messages = loadMessages(locale);
 ---
-<MarketingLayout title="Pagayo Pricing" description="Simple, transparent pricing for every stage.">
+
+<MarketingLayout
+  locale={locale}
+  alternatePageId="pricing"
+  title={messages.pricingPage.title}
+  description={messages.pricingPage.description}
+>
   <PageBackdrop variant="pricing" />
-  <PricingTable />
-  <FinalCta />
+  <PricingTable locale={locale} pricingPage={messages.pricingPage} headingLevel="h1" />
+  <FinalCta locale={locale} home={messages.homePage} />
 </MarketingLayout>

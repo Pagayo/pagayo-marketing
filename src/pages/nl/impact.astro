@@ -1,11 +1,11 @@
 ---
-import MarketingLayout from '../layouts/Marketing.astro';
-import ImpactPageMain from '../components/impact/ImpactPageMain.astro';
-import { loadMessages } from '../lib/i18n';
-import { SITE_ORIGIN } from '../lib/site-seo';
-import { localizedPath } from '../lib/locale-routes';
+import MarketingLayout from '../../layouts/Marketing.astro';
+import ImpactPageMain from '../../components/impact/ImpactPageMain.astro';
+import { loadMessages } from '../../lib/i18n';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
 
-const locale = 'en';
+const locale = 'nl';
 const messages = loadMessages(locale);
 const t = messages.impactPage;
 

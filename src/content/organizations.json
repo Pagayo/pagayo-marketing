@@ -1,0 +1,238 @@
+{
+  "hero": {
+    "badge": "For Organizations",
+    "titleTop": "You built the trust.",
+    "titleGradient": "We built the platform.",
+    "intro": "Pagayo's Organization Programs are built for wholesalers, trade associations, franchise networks, accountants, and institutions that want to bring serious commerce infrastructure to the entrepreneurs they serve.",
+    "ctaPrimary": "Request a program overview →",
+    "ctaSecondary": "Explore the platform first"
+  },
+  "what": {
+    "sectionLabel": "What this is",
+    "headline": "Not a referral program.\nAn infrastructure layer.",
+    "paragraphs": [
+      "Most arrangements that bring organizations and technology platforms together are built on a simple premise: you refer, we pay. That is not what this is.",
+      "An Organization Program is an arrangement in which you bring Pagayo's commerce infrastructure to the entrepreneurs you already serve. You are not a middleman. You are not a reseller. You are the trusted relationship — Pagayo is the platform that runs underneath it.",
+      "The platform is the same for every entrepreneur, regardless of who introduced them. One Stack: one webshop, one point of sale, one WhatsApp integration, one inventory system. No custom builds. No sector-specific versions. The same platform that an independent gym in Amsterdam uses is the same platform a market vendor in Accra uses."
+    ],
+    "closer": "That is the point.",
+    "aside": {
+      "organizations": {
+        "label": "Organizations",
+        "text": "Already have the trust. Introduce Pagayo to their network."
+      },
+      "pagayo": {
+        "label": "Pagayo",
+        "text": "Provides the infrastructure. One Stack. Same for everyone."
+      },
+      "entrepreneurs": {
+        "label": "Entrepreneurs",
+        "text": "Get a complete commerce platform. Live within hours."
+      }
+    }
+  },
+  "stack": {
+    "sectionLabel": "One Stack",
+    "headline": "What your network gets —\nand what you can stand behind.",
+    "intro": "Every entrepreneur you introduce to Pagayo gets the same thing: One Stack. A complete commerce platform, live within hours, without a developer or an IT project.",
+    "features": [
+      {
+        "icon": "🛒",
+        "label": "Webshop",
+        "desc": "A branded online store, ready to sell on day one."
+      },
+      {
+        "icon": "💳",
+        "label": "Point of Sale",
+        "desc": "In-store payments via any device."
+      },
+      {
+        "icon": "💬",
+        "label": "WhatsApp Commerce",
+        "desc": "Orders, broadcasts, and customer conversations via WhatsApp."
+      },
+      {
+        "icon": "📦",
+        "label": "Inventory",
+        "desc": "One stock level across every channel, updated in real time."
+      },
+      {
+        "icon": "🔔",
+        "label": "Loyalty & subscriptions",
+        "desc": "Recurring revenue and customer retention, built in."
+      },
+      {
+        "icon": "📊",
+        "label": "Dashboard",
+        "desc": "Every sale, every customer, every payout — one place."
+      }
+    ],
+    "note": "They pay standard Pagayo pricing. There is no surcharge because of how they were introduced. What organizations receive comes entirely from Pagayo's side of the arrangement — not from their customers.",
+    "linkText": "See how it's built →"
+  },
+  "audiences": {
+    "sectionLabel": "Who this is for",
+    "headline": "If your customers are entrepreneurs,\nyou qualify.",
+    "sub": "Organization Programs are built for organizations that already have trusted relationships with the entrepreneurs they serve.",
+    "items": [
+      {
+        "title": "Wholesale & distribution",
+        "body": "You deliver to salons, gyms, cafés, or specialty retailers on a regular route. You see your customers often. They trust your advice. Pagayo gives you something genuinely worth recommending."
+      },
+      {
+        "title": "Trade associations & professional bodies",
+        "body": "Your members need modern commerce infrastructure but cannot afford enterprise tools. Pagayo is a platform you can offer as a meaningful benefit — not a discount code."
+      },
+      {
+        "title": "Franchise organisations",
+        "body": "You set the standard for fifty locations. Rolling out Pagayo means every franchisee runs on the same commerce platform — consistent, branded, and operational from day one."
+      },
+      {
+        "title": "Accountants & consultants",
+        "body": "You manage the books for dozens of small businesses. You already know who is losing money to fragmented tools. A recommendation from you carries more weight than any advertisement."
+      },
+      {
+        "title": "Municipalities & development organisations",
+        "body": "You run entrepreneur support programs. Pagayo gives you a platform to measure commercial outcomes — not just participation counts."
+      },
+      {
+        "title": "NGOs & educational institutions",
+        "body": "You want the entrepreneurs in your program to build real, sustainable businesses. Pagayo is the infrastructure that makes that possible."
+      },
+      {
+        "title": "Web agencies & digital builders",
+        "body": "You build the website. You can now include the commerce layer — and remain a meaningful part of the growth you helped create."
+      }
+    ]
+  },
+  "models": {
+    "sectionLabel": "How organizations participate",
+    "headline": "Two arrangements. One platform.",
+    "intro": "Every organization that works with Pagayo introduces the same product to their network. What differs is the commercial arrangement.",
+    "cards": [
+      {
+        "num": "01",
+        "title": "Your organization covers the cost.",
+        "body": "You pay for the entrepreneurs in your program. They use Pagayo at no cost to them. This arrangement is common for municipalities, NGOs, educational institutions, and accelerators — organizations whose goal is commercial empowerment rather than commercial return."
+      },
+      {
+        "num": "02",
+        "title": "Entrepreneurs pay. You participate in their growth.",
+        "body": "Entrepreneurs subscribe to Pagayo directly, at standard pricing. As the organization that helped bring them to the platform, you participate in the growth you help create. This arrangement is common for wholesalers, trade associations, franchise networks, accountants, and consultants."
+      }
+    ],
+    "footer": "In both cases: the platform is identical. Entrepreneurs receive the same product. The only difference is the commercial arrangement between Pagayo and your organization."
+  },
+  "steps": {
+    "sectionLabel": "Getting started",
+    "headline": "Simple to introduce. Built to last.",
+    "items": [
+      {
+        "num": "1",
+        "title": "Tell us about your network.",
+        "body": "We start with one conversation. Who are the entrepreneurs you serve? What sector? What do they need? We explain how the program works."
+      },
+      {
+        "num": "2",
+        "title": "We confirm the commercial arrangement.",
+        "body": "We confirm the model — sponsored or growth — and walk you through how to introduce Pagayo to your network."
+      },
+      {
+        "num": "3",
+        "title": "You make the introduction.",
+        "body": "On your terms. In your language. At your pace. An email, a conversation, a mention at your next meeting or delivery. We do not require a sales pitch or a demo from you."
+      },
+      {
+        "num": "4",
+        "title": "They start. You grow with them.",
+        "body": "Entrepreneurs get live within hours. Pagayo handles all support, onboarding, and renewals. As your network grows on the platform, the program grows with it."
+      }
+    ]
+  },
+  "deepdive": {
+    "sectionLabel": "Going deeper",
+    "headline": "Two programs with their own dedicated pages.",
+    "sub": "For two specific types of organizations, we have built pages that go further than this one.",
+    "cards": [
+      {
+        "label": "Impact Programs",
+        "title": "For municipalities, NGOs, educational institutions, and accelerators",
+        "body": "Includes program structures, pilot data, cohort models, and an Impact Dashboard for measuring commercial outcomes.",
+        "linkText": "Explore Impact Programs →",
+        "href": "/impact"
+      },
+      {
+        "label": "Powered by Pagayo",
+        "title": "For organizations that want Pagayo under their own brand",
+        "body": "Offer Pagayo as a commerce platform under your own name — as part of your own product, service, or platform.",
+        "linkText": "Explore Powered by Pagayo →",
+        "href": "/powered-by"
+      }
+    ],
+    "note": "If neither of these applies, you are in the right place."
+  },
+  "why": {
+    "sectionLabel": "Why it works",
+    "headline": "Because trust is the only thing\nthat cannot be built overnight.",
+    "paragraphs": [
+      "You already have what Pagayo cannot provide: years of relationship, credibility in your sector, and entrepreneurs who take your recommendations seriously.",
+      "Organizations that introduce Pagayo to their network find that it changes the nature of the relationship. You stop being a vendor or an adviser. You become infrastructure — something the entrepreneur builds their business around. That is a harder position to replace than any pricing advantage."
+    ],
+    "reasons": [
+      {
+        "title": "It deepens existing relationships.",
+        "body": "When you introduce a platform that genuinely helps your customers grow, the relationship moves from transactional to foundational. That depth is difficult to replicate."
+      },
+      {
+        "title": "The impact is visible.",
+        "body": "When an entrepreneur in your network goes live, starts selling, and processes their first hundred orders — that outcome is directly traceable to your introduction. For associations, municipalities, and NGOs, that measurability matters."
+      },
+      {
+        "title": "It is built for the long term.",
+        "body": "Pagayo is not a promotional tool or a trial that expires. It is a commerce infrastructure that entrepreneurs build their operations around. The value of an Organization Program compounds over time — it does not reset with each cycle."
+      }
+    ]
+  },
+  "faq": {
+    "sectionLabel": "Frequently asked",
+    "headline": "Direct questions. Direct answers.",
+    "items": [
+      {
+        "q": "Do the entrepreneurs in my network pay more because I introduced them?",
+        "a": "No. They pay standard Pagayo pricing. There is no surcharge, no markup, and no hidden cost. Whatever your organization receives comes entirely from Pagayo's side of the arrangement — not from your customers."
+      },
+      {
+        "q": "What countries does Pagayo operate in?",
+        "a": "Pagayo currently operates in the Netherlands, Belgium, Germany, France, Spain, and several African markets. If your network is based there, we can discuss a program."
+      },
+      {
+        "q": "How involved do I need to be after the introduction?",
+        "a": "As involved as you want to be. Many organizations make the introduction and step back — Pagayo handles all onboarding, support, and renewals. Others prefer to stay actively involved. Both work."
+      },
+      {
+        "q": "What is the difference between a sponsored arrangement and a growth arrangement?",
+        "a": "In a sponsored arrangement, your organization covers the subscription cost for entrepreneurs — they use Pagayo at no cost. In a growth arrangement, entrepreneurs pay directly, and you participate in the growth you help create. The platform is identical in both cases."
+      },
+      {
+        "q": "Is there a minimum network size?",
+        "a": "No minimum. We have built programs for networks of ten and networks of ten thousand. What matters is fit — not scale. We will be straightforward in our first conversation about whether a program makes sense for your situation."
+      },
+      {
+        "q": "I am a web agency or digital consultant — does this apply to me?",
+        "a": "Yes. If you have an existing client base of entrepreneurs and want to include a commerce platform as part of what you offer, a growth arrangement fits."
+      },
+      {
+        "q": "What happens if an entrepreneur in my network stops using Pagayo?",
+        "a": "Programs are built for the long term, not the individual transaction. Churn is a reality on any platform. We work together to minimise it and to grow the network over time."
+      }
+    ]
+  },
+  "cta": {
+    "sectionLabel": "Start a conversation",
+    "headline": "Your network is ready.\nLet's build the right arrangement.",
+    "intro": "Tell us about your organization and the entrepreneurs you serve. We will send a concrete program outline within two business days — no commitment required.",
+    "ctaPrimary": "Request a program overview →",
+    "ctaSecondary": "Explore the platform first",
+    "contactLink": "Questions first? Contact us →"
+  }
+}

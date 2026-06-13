@@ -3,34 +3,75 @@ import '../styles/site.css';
 import Nav from '../components/layout/Nav.astro';
 import Footer from '../components/layout/Footer.astro';
 import StickyFooter from '../components/layout/StickyFooter.astro';
+import {
+  canonicalUrl,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+} from '../lib/site-seo';
+import {
+  DEFAULT_LOCALE,
+  loadMessages,
+  localeHtmlLang,
+  localeOgLocale,
+  type Locale,
+} from '../lib/i18n';
+import { alternateLinks, type LocalizedPageId } from '../lib/locale-routes';
 
 interface Props {
   title?: string;
   description?: string;
+  locale?: Locale;
+  alternatePageId?: LocalizedPageId;
+  /** When true, adds noindex (e.g. 404). */
+  noindex?: boolean;
 }
 
 const {
-  title = 'Pagayo — Every Sale. One Platform.',
-  description = 'Webshop, POS, WhatsApp, QR — all orders flow into one dashboard. Free forever.'
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  locale = DEFAULT_LOCALE,
+  alternatePageId,
+  noindex = false,
 } = Astro.props as Props;
 
-const isHomepage = Astro.url.pathname === '/';
+const messages = loadMessages(locale);
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/nl/' || Astro.url.pathname === '/nl';
 const bodyClass = isHomepage ? '' : 'standard-sections-ssot';
+const canonical = canonicalUrl(Astro.url.pathname);
+const hreflangLinks = alternatePageId ? alternateLinks(alternatePageId) : [];
 ---
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang={localeHtmlLang(locale)}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    {hreflangLinks.map((link) => (
+      <link rel="alternate" hreflang={link.hreflang} href={link.href} />
+    ))}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pagayo" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={localeOgLocale(locale)} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
     <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
   </head>
-  <body class={bodyClass}>
-    <Nav />
+  <body class={bodyClass} data-locale={locale}>
+    <Nav locale={locale} t={messages} />
     <slot />
-    <Footer />
-    <StickyFooter />
+    <Footer locale={locale} t={messages} alternatePageId={alternatePageId} />
+    <StickyFooter locale={locale} t={messages} />
     <script src="../scripts/site.ts"></script>
   </body>
 </html>

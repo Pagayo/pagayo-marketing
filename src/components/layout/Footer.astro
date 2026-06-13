@@ -1,65 +1,72 @@
+---
+import type { Locale, Messages } from '../../lib/i18n';
+import { hrefFor, localizedPath, type LocalizedPageId } from '../../lib/locale-routes';
+
+interface Props {
+  locale: Locale;
+  t: Messages;
+  alternatePageId?: LocalizedPageId;
+}
+
+const { locale, t, alternatePageId } = Astro.props;
+const f = t.footer;
+---
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo">Pagayo<span>.</span></div>
-        <p>
-          Every sale, one platform. Built on Cloudflare, powered by Stripe,
-          trusted by businesses worldwide.
-        </p>
+        <p>{f.brandTagline}</p>
       </div>
 
       <div class="footer-col">
-        <h4>Product</h4>
+        <h4>{f.productHeading}</h4>
         <ul>
-          <li><a href="/features">Features</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/gyms">For Gyms</a></li>
-          <li><a href="/changelog">Changelog</a></li>
-          <li><a href="#">API Docs</a></li>
+          <li><a href="/features">{f.features}</a></li>
+          <li><a href={hrefFor('pricing', locale)}>{f.pricing}</a></li>
+          <li><a href={hrefFor('howWeBuild', locale)}>{f.howWeBuild}</a></li>
+          <li><a href="/changelog">{f.changelog}</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Programs</h4>
+        <h4>{f.programsHeading}</h4>
         <ul>
-          <li><a href="/impact">Impact Engine</a></li>
-          <li><a href="/powered-by">Powered by Pagayo</a></li>
-          <li><a href="/partners">Partner Program</a></li>
-          <li><a href="/success-stories">Success Stories</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href={hrefFor('impact', locale)}>{f.impactEngine}</a></li>
+          <li><a href="/powered-by">{f.poweredBy}</a></li>
+          <li><a href="/partners">{f.partners}</a></li>
+          <li><a href="/success-stories">{f.successStories}</a></li>
+          <li><a href="/blog">{f.blog}</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>{f.companyHeading}</h4>
         <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/how-we-build">How we build</a></li>
-          <li><a href="/build-log">Build Log</a></li>
-          <li><a href="/built-on-giants">Built on giants</a></li>
-          <li><a href="/one-stack">One stack</a></li>
-          <li><a href="/cloudflare">Pagayo on Cloudflare</a></li>
-          <li><a href="/stripe">Pagayo on Stripe</a></li>
-          <li><a href="/github">Pagayo on GitHub</a></li>
-          <li><a href="/openai">Pagayo on OpenAI</a></li>
-          <li><a href="/cursor">Pagayo in Cursor</a></li>
-          <li><a href="/claude">Pagayo with Claude</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms-of-service">Terms of Service</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/about">{f.about}</a></li>
+          <li><a href={hrefFor('howWeBuild', locale)}>{f.howWeBuildLink}</a></li>
+          <li><a href="/build-log">{f.buildLog}</a></li>
+          <li><a href="/built-on-giants">{f.builtOnGiants}</a></li>
+          <li><a href="/one-stack">{f.oneStack}</a></li>
+          <li><a href="/privacy-policy">{f.privacyPolicy}</a></li>
+          <li><a href="/terms-of-service">{f.termsOfService}</a></li>
+          <li><a href="/contact">{f.contact}</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; 2026 Pagayo. All rights reserved.</span>
-      <select class="footer-lang" aria-label="Language">
-        <option value="en">EN</option>
-        <option value="nl">NL</option>
-        <option value="de">DE</option>
-        <option value="fr">FR</option>
-        <option value="es">ES</option>
+      <span>{f.copyright}</span>
+      <select
+        class="footer-lang"
+        aria-label={f.languageLabel}
+        data-footer-lang
+        data-current-page={alternatePageId ?? ''}
+      >
+        <option value="en" data-href={alternatePageId ? localizedPath(alternatePageId, 'en') : '/'} selected={locale === 'en'}>EN</option>
+        <option value="nl" data-href={alternatePageId ? localizedPath(alternatePageId, 'nl') : '/nl/'} selected={locale === 'nl'}>NL</option>
+        <option value="de" data-href={alternatePageId ? localizedPath(alternatePageId, 'de') : '/'} disabled>DE</option>
       </select>
       <div class="footer-social">
         <a href="#" aria-label="Twitter/X">𝕏</a>

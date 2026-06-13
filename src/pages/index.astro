@@ -17,9 +17,42 @@ import TestimonialsGrid from '../components/sections/TestimonialsGrid.astro';
 import TrustSecurity from '../components/sections/TrustSecurity.astro';
 import GlobalReach from '../components/sections/GlobalReach.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
+import { loadMessages } from '../lib/i18n';
+import { DEFAULT_DESCRIPTION, SITE_ORIGIN } from '../lib/site-seo';
+
+const locale = 'en';
+const messages = loadMessages(locale);
+
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_ORIGIN}/#organization`,
+      name: 'Pagayo',
+      url: SITE_ORIGIN,
+      description: DEFAULT_DESCRIPTION,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_ORIGIN}/#website`,
+      name: 'Pagayo',
+      url: SITE_ORIGIN,
+      description: DEFAULT_DESCRIPTION,
+      publisher: { '@id': `${SITE_ORIGIN}/#organization` },
+      inLanguage: 'en-US',
+    },
+  ],
+};
 ---
-<MarketingLayout>
-  <Hero />
+<MarketingLayout
+  locale={locale}
+  alternatePageId="home"
+  title={messages.homePage.title}
+  description={messages.homePage.description}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(homeSchema)} />
+  <Hero locale={locale} home={messages.homePage} />
   <Manifesto />
   <AlwaysShipping />
   <TrustBar />
@@ -30,7 +63,7 @@ import FinalCta from '../components/sections/FinalCta.astro';
   <MotorsGrid />
   <CompetitorTable />
   <div class="section-divider"></div>
-  <PricingTable />
+  <PricingTable locale={locale} pricingPage={messages.pricingPage} />
   <StepsGrid />
   <div class="section-divider"></div>
   <ImpactSection compact />
@@ -39,5 +72,5 @@ import FinalCta from '../components/sections/FinalCta.astro';
   <TestimonialsGrid limit={3} showViewAllLink />
   <TrustSecurity />
   <GlobalReach />
-  <FinalCta />
+  <FinalCta locale={locale} home={messages.homePage} />
 </MarketingLayout>

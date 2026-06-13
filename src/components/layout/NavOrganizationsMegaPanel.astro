@@ -1,7 +1,14 @@
 ---
-import i18nEn from '../../content/i18n/en.json';
+import type { Locale, Messages } from '../../lib/i18n';
+import { hrefFor } from '../../lib/locale-routes';
 
-const menu = i18nEn.nav.organizationsMenu;
+interface Props {
+  locale: Locale;
+  t: Messages;
+}
+
+const { locale, t } = Astro.props;
+const menu = t.nav.organizationsMenu;
 ---
 
 <div
@@ -14,14 +21,14 @@ const menu = i18nEn.nav.organizationsMenu;
 >
   <div class="container nav-mega-inner">
     <div class="nav-mega-grid">
-      <a href="/organizations" class="nav-mega-card nav-mega-card--org">
+      <a href={hrefFor('organizations', locale)} class="nav-mega-card nav-mega-card--org">
         <span class="nav-mega-label">{menu.organization.label}</span>
         <h3 class="nav-mega-title">{menu.organization.title}</h3>
         <p class="nav-mega-desc">{menu.organization.description}</p>
         <span class="btn btn-org btn-sm">{menu.organization.cta}</span>
       </a>
 
-      <a href="/impact" class="nav-mega-card nav-mega-card--impact">
+      <a href={hrefFor('impact', locale)} class="nav-mega-card nav-mega-card--impact">
         <span class="nav-mega-label">{menu.impact.label}</span>
         <h3 class="nav-mega-title">{menu.impact.title}</h3>
         <p class="nav-mega-desc">{menu.impact.description}</p>

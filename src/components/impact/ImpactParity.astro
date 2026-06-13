@@ -1,7 +1,12 @@
 ---
-import i18nEn from '../../content/i18n/en.json';
+import type { Messages } from '../../lib/i18n';
 
-const t = i18nEn.impactPage.parity;
+interface Props {
+  impact: Messages['impactPage'];
+}
+
+const { impact } = Astro.props;
+const t = impact.parity;
 ---
 
 <section class="impact-parity fade-in" aria-labelledby="impact-parity-title">

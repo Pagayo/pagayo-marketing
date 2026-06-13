@@ -1,0 +1,93 @@
+---
+import MarketingLayout from '../../layouts/Marketing.astro';
+import HwbHero from './HwbHero.astro';
+import HwbSection from './HwbSection.astro';
+import HwbWorkflow from './HwbWorkflow.astro';
+import HwbGovernance from './HwbGovernance.astro';
+import HwbOsGrid from './HwbOsGrid.astro';
+import HwbLessons from './HwbLessons.astro';
+import HwbLongTerm from './HwbLongTerm.astro';
+import HwbHelping from './HwbHelping.astro';
+import { loadHowWeBuild } from '../../lib/how-we-build';
+import type { Locale } from '../../lib/i18n';
+import { loadMessages } from '../../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const messages = loadMessages(locale);
+const meta = messages.howWeBuildPage;
+const content = loadHowWeBuild(locale);
+const { founder, aiTeam } = content;
+---
+
+<MarketingLayout
+  locale={locale}
+  alternatePageId="howWeBuild"
+  title={meta.title}
+  description={meta.description}
+>
+  <main class="hwb-page">
+
+    <HwbHero content={content} />
+
+    <HwbSection label={founder.label} headline={founder.headline} id="founder">
+      {founder.paragraphs.map((p) => (
+        <p class="hwb-prose">{p}</p>
+      ))}
+
+      <div class="hwb-inline-diagram" aria-hidden="true">
+        <svg viewBox="0 0 560 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="230" y="8" width="100" height="36" rx="8" fill="#18181b" stroke="#27272a" />
+          <text x="280" y="31" text-anchor="middle" fill="#fafafa" font-size="11" font-weight="600"
+            font-family="Inter, system-ui, sans-serif">One founder</text>
+          <line x1="280" y1="44" x2="280" y2="58" stroke="#27272a" stroke-width="1" />
+          <line x1="80" y1="58" x2="480" y2="58" stroke="#27272a" stroke-width="1" />
+          {[
+            { x: 80,  label: 'Architecture' },
+            { x: 213, label: 'Processes' },
+            { x: 347, label: 'Quality' },
+            { x: 480, label: 'Production' },
+          ].map((node) => (
+            <>
+              <line x1={node.x} y1="58" x2={node.x} y2="72" stroke="#6366f1" stroke-opacity="0.45" />
+              <rect x={node.x - 52} y="72" width="104" height="52" rx="8"
+                fill="#18181b" stroke="#27272a" stroke-width="1" />
+              <text x={node.x} y="104" text-anchor="middle" fill="#a1a1aa" font-size="10"
+                font-family="ui-monospace, monospace">{node.label}</text>
+            </>
+          ))}
+        </svg>
+      </div>
+    </HwbSection>
+
+    <HwbWorkflow content={content} />
+
+    <HwbSection label={aiTeam.label} headline={aiTeam.headline} id="ai-team" class="hwb-section-alt">
+      {aiTeam.paragraphs.map((p) => (
+        <p class="hwb-prose">{p}</p>
+      ))}
+
+      <HwbGovernance content={content} />
+
+      <ul class="hwb-related-links">
+        {aiTeam.links.map((link) => (
+          <li>
+            <a href={link.href} class="hwb-related-link">
+              <span class="hwb-related-label">{link.label} →</span>
+              <span class="hwb-related-desc">{link.description}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </HwbSection>
+
+    <HwbOsGrid content={content} />
+    <HwbLessons content={content} />
+    <HwbLongTerm content={content} />
+    <HwbHelping content={content} />
+
+  </main>
+</MarketingLayout>

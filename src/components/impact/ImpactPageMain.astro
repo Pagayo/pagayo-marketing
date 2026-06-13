@@ -1,0 +1,73 @@
+---
+import PageBackdrop from '../layout/PageBackdrop.astro';
+import ImpactWhy from './ImpactWhy.astro';
+import ImpactComparison from './ImpactComparison.astro';
+import ImpactParity from './ImpactParity.astro';
+import ImpactSection from '../sections/ImpactSection.astro';
+import ImpactMetrics from './ImpactMetrics.astro';
+import ImpactPilot from './ImpactPilot.astro';
+import ImpactAudiences from './ImpactAudiences.astro';
+import ImpactPrograms from './ImpactPrograms.astro';
+import ImpactFaq from './ImpactFaq.astro';
+import ImpactCta from './ImpactCta.astro';
+import type { Messages } from '../../lib/i18n';
+
+interface Props {
+  impact: Messages['impactPage'];
+}
+
+const { impact: t } = Astro.props;
+const ctas = t.heroCtas;
+---
+
+<PageBackdrop variant="impact" />
+
+<main class="impact-page">
+  <section class="section impact-hero fade-in" aria-labelledby="impact-page-title">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label impact-label">{t.hero.sectionLabel}</span>
+        <h1 class="headline-xl" id="impact-page-title">
+          {t.hero.headlineTop}<br />
+          <span class="impact-headline-accent">{t.hero.headlineBottom}</span>
+        </h1>
+        <p class="impact-hero-tagline">{t.hero.tagline}</p>
+        <p class="text-lg">{t.hero.intro}</p>
+        <div class="impact-hero-ctas">
+          <div class="impact-hero-cta-block">
+            <a href="/impact-contact?intent=proposal" class="btn btn-ngo btn-lg">{ctas.proposal}</a>
+            <span class="impact-hero-cta-hint">{ctas.proposalHint}</span>
+          </div>
+          <div class="impact-hero-cta-block">
+            <a href="/impact-contact?intent=demo" class="btn btn-secondary btn-lg">{ctas.demo}</a>
+            <span class="impact-hero-cta-hint">{ctas.demoHint}</span>
+          </div>
+        </div>
+        <p class="impact-hero-tertiary">
+          {ctas.founderExplorePrefix}
+          <a href="https://start.pagayo.app/register">{ctas.founderExplore}</a>
+        </p>
+      </div>
+
+      <div class="impact-mission-points" aria-label="Impact Engine principles">
+        {t.mission.points.map((point) => (
+          <div class="impact-mission-card">
+            <h2>{point.title}</h2>
+            <p>{point.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ImpactWhy impact={t} />
+  <ImpactComparison impact={t} />
+  <ImpactPilot impact={t} />
+  <ImpactParity impact={t} />
+  <ImpactSection showHeader={false} />
+  <ImpactMetrics impact={t} />
+  <ImpactAudiences impact={t} />
+  <ImpactPrograms impact={t} />
+  <ImpactFaq impact={t} />
+  <ImpactCta impact={t} />
+</main>

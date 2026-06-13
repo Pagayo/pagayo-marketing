@@ -1,0 +1,176 @@
+{
+  "hero": {
+    "label": "Hoe we bouwen",
+    "titleTop": "Hoe Pagayo is gebouwd.",
+    "titleGradient": "Eén platform. Eén systeem.",
+    "intro": "Pagayo is een live SaaS-platform — echte tenants, echte omzet, echte productielast. Het is ook een werkend voorbeeld van wat er gebeurt wanneer je AI behandelt als ontwikkelcapaciteit binnen een bewust systeem, niet als shortcut om engineering heen.",
+    "badge": "Een compleet ontwikkelsysteem",
+    "stats": [
+      { "value": "12+", "label": "repositories, één workspace", "href": "/cursor#multi-repo" },
+      { "value": "19", "label": "gespecialiseerde agents", "href": "/cursor#agents" },
+      { "value": "Wekelijks", "label": "productiereleases", "href": "/changelog" },
+      { "value": "Live", "label": "tenants op platform", "href": "/success-stories" }
+    ]
+  },
+  "workflow": {
+    "label": "Hoe een wijziging beweegt",
+    "headline": "Eén pad. Geen shortcuts.",
+    "intro": "Elke wijziging — van een knopkleur tot een schemamigratie — volgt dezelfde pipeline. Agents werken erin; ze vervangen die niet.",
+    "steps": [
+      "Playbook",
+      "Gescopeerde agent",
+      "Pull request",
+      "Checks & review",
+      "Staging",
+      "Productie"
+    ]
+  },
+  "founder": {
+    "label": "Eén founder. Eén platform.",
+    "headline": "Geen afdeling. Een systeem.",
+    "paragraphs": [
+      "Pagayo is gebouwd door één founder — geen grote engineeringafdeling, geen bureau, geen offshore bench.",
+      "Wat dat haalbaar maakt is geen rauwe snelheid. Het is architectuur die je in één diagram kunt uitleggen, processen die een slechte week overleven, en kwaliteitssystemen die niet afhangen van geheugen of humeur.",
+      "De meeste bezoekers vragen niet of AI helpt. Ze vragen hoe één persoon een platform van deze omvang kan runnen — storefront, betalingen, edge cache, admin, marketing, migraties, staging, productie — zonder dat het uit elkaar valt.",
+      "De operator is vandaag één persoon. De playbooks, schema's en review-gates zijn version-controlled — ze gelden voor wie de code ook aanraakt, mens of agent."
+    ]
+  },
+  "aiTeam": {
+    "label": "AI is niet het gereedschap. Het is het team.",
+    "headline": "Capaciteit, geen magie.",
+    "paragraphs": [
+      "Bij Pagayo is AI ontwikkelcapaciteit: parallelle workstreams, zorgvuldige refactors, review-rondes en research — bemand door verschillende modellen met verschillende sterke punten.",
+      "Documentatie telt meer dan slimme instructies. Context telt meer dan generatiesnelheid. Agents lezen eerst de codebase, de schema's, de deploy-playbooks en de rules files — geen geïmproviseerde chatprompts.",
+      "Modellen veranderen. Tools veranderen. Het systeem dat context laadt, grenzen afdwingt en via dezelfde pipeline shipt, niet."
+    ],
+    "governance": {
+      "may": [
+        "Feature branches aanmaken en pull requests openen",
+        "Tests, builds en staging-deploys via CI draaien",
+        "Logs en docs lezen via gescopeerde MCP-tools"
+      ],
+      "mayNot": [
+        "Pushen naar main of deployen naar productie",
+        "Review overslaan of migratiechecks omzeilen",
+        "Gedeeld schema wijzigen zonder gepubliceerde package bump"
+      ]
+    },
+    "links": [
+      {
+        "href": "/cursor",
+        "label": "Pagayo in Cursor",
+        "description": "Hoe de editor, workspace en parallelle agents samenkomen"
+      },
+      {
+        "href": "/claude",
+        "label": "Pagayo met Claude",
+        "description": "Hoe reasoning, review en long-context werk in de loop komen"
+      }
+    ]
+  },
+  "operatingSystem": {
+    "label": "Het besturingssysteem",
+    "headline": "Een ontwikkelsysteem, geen stapel hacks.",
+    "intro": "Pagayo heeft geen AI-trucs verzameld. Het heeft structuur verzameld — het soort dat agents veilig op schaal laat werken en één operator de controle houdt.",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Architectuur",
+        "body": "Multi-repo, edge-first, Order-First domeinmodel. Duidelijke grenzen zodat agents weten waar een wijziging thuishoort — en waar niet.",
+        "proofHref": "/one-stack",
+        "proofLabel": "One stack — architectuurkeuzes →"
+      },
+      {
+        "num": "02",
+        "title": "Documentatie",
+        "body": "AGENTS.md, playbooks, interface matrices, design contracts. Het platform leert nieuwkomers — mens of agent — hoe ze zich moeten gedragen voordat ze code aanraken.",
+        "proofHref": "/cursor#rules",
+        "proofLabel": "Pagayo in Cursor — rules & AGENTS.md →"
+      },
+      {
+        "num": "03",
+        "title": "Single source of truth",
+        "body": "Schema, design tokens, pricing, config leven elk op één benoemde plek. Gedupliceerde waarheid is waar AI-ondersteunde ontwikkeling stilletjes kapotgaat."
+      },
+      {
+        "num": "04",
+        "title": "AI-governance",
+        "body": "Deploy policy, branch rules, MCP-grenzen en expliciete \"mag / mag niet\"-lijsten. Agents opereren binnen guardrails die version-controlled en reviewbaar zijn.",
+        "proofHref": "/github",
+        "proofLabel": "Pagayo on GitHub — PR checks & deploys →"
+      },
+      {
+        "num": "05",
+        "title": "Gespecialiseerde agents",
+        "body": "Backend, frontend, database review, security, testing, exploration — gescopeerde rollen in plaats van één generalist die alles raadt."
+      },
+      {
+        "num": "06",
+        "title": "Reviewprocessen",
+        "body": "Pull requests, geautomatiseerde checks, AI-review op diffs, founder sign-off op productie. Snelheid zonder review is alleen maar snellere drift."
+      },
+      {
+        "num": "07",
+        "title": "Kwaliteitssystemen",
+        "body": "Tests als documentatie, migratiechecks, staging vóór productie, gestructureerde errors. Kwaliteit is ontworpen — niet achteraf gehoopt."
+      }
+    ]
+  },
+  "lessons": {
+    "label": "Wat we leerden",
+    "headline": "Eerlijke lessen uit bouwen op deze manier.",
+    "intro": "Geen van dit kwam volledig gevormd. Dit zijn de patronen die contact met productie overleefden.",
+    "items": [
+      {
+        "title": "AI zonder architectuur schaalt niet",
+        "body": "Het versterkt welke rommel er al is. Duidelijke modulegrenzen en domeinregels zijn vereisten — geen optionele polish."
+      },
+      {
+        "title": "AI zonder documentatie faalt stilletjes",
+        "body": "Agents raden. Mensen patchen. Drift stapelt op tot niemand de output vertrouwt. Geschreven standaarden winnen altijd van slimme sessieprompts."
+      },
+      {
+        "title": "Prompts zijn niet genoeg",
+        "body": "Duurzame instructies leven in version control: rules files, playbooks, schema's. Chat is voor de taak — niet om op te slaan hoe het bedrijf software bouwt."
+      },
+      {
+        "title": "Governance groeit met het systeem",
+        "body": "Wat werkte bij drie repositories breekt bij twaalf. Deploy policy, secret handling en agent scope moeten strakker worden naarmate het oppervlak groeit — niet losser."
+      },
+      {
+        "title": "Kwaliteit komt uit systemen",
+        "body": "Consistente patronen, geautomatiseerde checks, reviewbare diffs en stagingvalidatie winnen van hopen dat het model geluk had in de laatste turn."
+      }
+    ]
+  },
+  "longTerm": {
+    "label": "Gebouwd voor de lange termijn",
+    "headline": "Productie, geen prototype.",
+    "paragraphs": [
+      "Pagayo is geen experiment op een slide deck. Het draait in productie, bedient live tenants, verwerkt echte betalingen en shipt wekelijks verbeteringen.",
+      "Die constraint verandert hoe je bouwt. Je kunt geen migraties wegwuiven, tests overslaan of \"fix it in prod\" doen wanneer klanten maandagochtend op het platform vertrouwen.",
+      "Dezelfde systemen die AI-ondersteunde ontwikkeling mogelijk maken, maken het ook verantwoord: staged deploys, observeerbare errors, rollback-paden en een changelog waar je naar kunt wijzen."
+    ],
+    "links": [
+      { "href": "/build-log", "label": "Build Log" },
+      { "href": "/changelog", "label": "Changelog" },
+      { "href": "/one-stack", "label": "One stack" }
+    ],
+    "stats": [
+      { "value": "2500+", "label": "gedocumenteerde deploys", "href": "/build-log" },
+      { "value": "Wekelijks", "label": "gelogde productupdates", "href": "/changelog" },
+      { "value": "100", "label": "geanonimiseerde tenant-verhalen", "href": "/success-stories" },
+      { "value": "Edge", "label": "wereldwijd, geen origin servers", "href": "/cloudflare" }
+    ]
+  },
+  "helping": {
+    "label": "Anderen helpen anders bouwen",
+    "headline": "Af en toe, niet als businessmodel.",
+    "paragraphs": [
+      "We helpen soms softwarebedrijven AI-native ontwikkelpraktijken verkennen — architectuur, documentatie, agent setup, governance — wanneer de fit klopt.",
+      "Dit is geen consultancy-landingspagina. Pagayo blijft het product. Als je software bouwt en notities wilt vergelijken, staan we open voor een gesprek."
+    ],
+    "contactHref": "/contact",
+    "contactLabel": "Neem contact op →"
+  }
+}

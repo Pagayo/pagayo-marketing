@@ -1,21 +1,37 @@
 ---
 import Button from '../ui/Button.astro';
+import { DEFAULT_LOCALE, loadMessages, type Locale, type Messages } from '../../lib/i18n';
+import { hrefFor } from '../../lib/locale-routes';
+
+interface Props {
+  locale?: Locale;
+  home?: Messages['homePage'];
+}
+
+const locale = Astro.props.locale ?? DEFAULT_LOCALE;
+const home = Astro.props.home ?? loadMessages(locale).homePage;
+const { finalCta } = home;
+const pricingHref = `${hrefFor('pricing', locale)}#pricing`;
 ---
 <section class="section final-cta fade-in">
   <div class="final-cta-bg"></div>
   <div class="container">
-    <h2 class="headline-lg">Start selling today.<br />Grow with the platform.</h2>
-    <p>
-      Free to start. All features included. Yours to leave whenever you want —
-      most never do.
-    </p>
+    <h2 class="headline-lg">
+      {finalCta.headline.split('. ').map((part, i, arr) => (
+        <>
+          {part}{i < arr.length - 1 ? '. ' : ''}
+          {i === 0 && arr.length > 1 && <br />}
+        </>
+      ))}
+    </h2>
+    <p>{finalCta.intro}</p>
     <div class="final-cta-buttons">
-      <Button href="https://start.pagayo.app/register" variant="primary" size="lg">Start Free →</Button>
-      <Button href="#pricing" variant="secondary" size="lg">Compare Plans</Button>
+      <Button href="https://start.pagayo.app/register" variant="primary" size="lg">{finalCta.ctaPrimary}</Button>
+      <Button href={pricingHref} variant="secondary" size="lg">{finalCta.ctaSecondary}</Button>
     </div>
     <p class="final-cta-ideas">
-      Have an idea, a question, or a feature you wish existed?
-      <a href="/contact">Get in touch — we listen.</a>
+      {finalCta.ideasPrefix}
+      <a href="/contact">{finalCta.ideasLink}</a>
     </p>
   </div>
 </section>

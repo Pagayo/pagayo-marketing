@@ -1,11 +1,11 @@
 ---
-import MarketingLayout from '../layouts/Marketing.astro';
-import PageBackdrop from '../components/layout/PageBackdrop.astro';
-import OrganizationsPage from '../components/organizations/OrganizationsPage.astro';
-import { loadOrganizations } from '../lib/organizations';
-import { loadMessages } from '../lib/i18n';
+import MarketingLayout from '../../layouts/Marketing.astro';
+import PageBackdrop from '../../components/layout/PageBackdrop.astro';
+import OrganizationsPage from '../../components/organizations/OrganizationsPage.astro';
+import { loadOrganizations } from '../../lib/organizations';
+import { loadMessages } from '../../lib/i18n';
 
-const locale = 'en';
+const locale = 'nl';
 const messages = loadMessages(locale);
 const meta = messages.organizationsPage;
 const content = loadOrganizations(locale);

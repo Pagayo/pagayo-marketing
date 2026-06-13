@@ -1,19 +1,28 @@
 ---
-import pricingData from '../../content/pricing.json';
 import Button from '../ui/Button.astro';
+import { DEFAULT_LOCALE, loadMessages, type Locale, type Messages } from '../../lib/i18n';
+import { loadPricing } from '../../lib/pricing';
 
-const { free, tiers, billingNote } = pricingData;
+interface Props {
+  locale?: Locale;
+  pricingPage?: Messages['pricingPage'];
+  /** Use h1 on dedicated /pricing route; h2 when embedded on the homepage. */
+  headingLevel?: 'h1' | 'h2';
+}
+
+const locale = Astro.props.locale ?? DEFAULT_LOCALE;
+const pricingPage = Astro.props.pricingPage ?? loadMessages(locale).pricingPage;
+const { headingLevel = 'h2' } = Astro.props;
+const HeadingTag = headingLevel;
+
+const { free, tiers, billingNote } = loadPricing(locale);
 ---
 <section class="section pricing fade-in" id="pricing" style="padding-top: var(--hero-pt);">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label">Pricing</span>
-      <h2 class="headline-lg">Free is free. Paid is honest.</h2>
-      <p class="text-lg">
-        The free plan is a real product, not a 14-day trial. Paid plans add
-        capacity and polish — never new features.<br />
-        What you can do on day one, you can still do on year three.
-      </p>
+      <span class="section-label">{pricingPage.sectionLabel}</span>
+      <HeadingTag class="headline-lg">{pricingPage.headline}</HeadingTag>
+      <p class="text-lg">{pricingPage.intro}</p>
     </div>
 
     <div class="pricing-billing-note">
@@ -21,7 +30,6 @@ const { free, tiers, billingNote } = pricingData;
       {billingNote}
     </div>
 
-    <!-- FREE — Full-width hero card -->
     <div class="pricing-hero-card">
       <div class="pricing-hero-top">
         <div class="pricing-hero-intro">
@@ -60,7 +68,6 @@ const { free, tiers, billingNote } = pricingData;
       </div>
     </div>
 
-    <!-- PAID TIERS — 3-column grid -->
     <div class="pricing-grid">
       {tiers.map((tier) => (
         <div class={`pricing-card ${tier.popular ? 'popular' : ''}`.trim()}>

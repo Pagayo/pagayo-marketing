@@ -1,119 +1,67 @@
 ---
+import type { Messages } from '../../lib/i18n';
+
+interface Props {
+  impact: Messages['impactPage'];
+}
+
+const { impact: t } = Astro.props;
+const p = t.pilot;
 ---
 
 <section class="section impact-pilot fade-in" aria-labelledby="impact-pilot-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label impact-label">Early Results</span>
+      <span class="section-label impact-label">{p.sectionLabel}</span>
       <h2 class="headline-lg" id="impact-pilot-title">
-        What a pilot cohort looks like<br />
-        <span class="impact-headline-accent">in real numbers.</span>
+        {p.headline.split('\n').map((line, i) => (
+          <>
+            {i > 0 && <br />}
+            {i === 1 ? <span class="impact-headline-accent">{line}</span> : line}
+          </>
+        ))}
       </h2>
-      <p class="text-lg impact-pilot-note">
-        The following is from an anonymised early-access cohort. Sector and city are disclosed;
-        organisation names are not.
-      </p>
+      <p class="text-lg impact-pilot-note">{p.intro}</p>
     </div>
 
-    <div class="impact-pilot-case">
-      <header class="impact-pilot-header">
-        <div class="impact-pilot-meta">
-          <div class="impact-pilot-tag">Retail &amp; Fashion — Nairobi, Kenya</div>
-          <div class="impact-pilot-duration">12-month program · 2024–2025</div>
-        </div>
-        <div class="impact-pilot-sponsor-type">NGO-sponsored cohort</div>
-      </header>
+    {p.cases.map((caseStudy, caseIndex) => (
+      <div class={`impact-pilot-case ${caseIndex > 0 ? 'impact-pilot-case--second' : ''}`.trim()}>
+        <header class="impact-pilot-header">
+          <div class="impact-pilot-meta">
+            <div class="impact-pilot-tag">{caseStudy.tag}</div>
+            <div class="impact-pilot-duration">{caseStudy.duration}</div>
+          </div>
+          <div class="impact-pilot-sponsor-type">{caseStudy.sponsorType}</div>
+        </header>
 
-      <div class="impact-pilot-stats">
-        <div class="impact-pilot-stat impact-pilot-stat--hero">
-          <div class="impact-pilot-stat-number">4 days</div>
-          <div class="impact-pilot-stat-label">Average time to first sale</div>
-          <div class="impact-pilot-stat-sub">Not training. Not planning. Selling.</div>
-          <div class="impact-pilot-stat-benchmark">Typical grant programs: 6–10 weeks to first revenue activity</div>
+        <div class="impact-pilot-stats">
+          {caseStudy.heroStats.map((stat) => (
+            <div class="impact-pilot-stat impact-pilot-stat--hero">
+              <div class="impact-pilot-stat-number">{stat.number}</div>
+              <div class="impact-pilot-stat-label">{stat.label}</div>
+              <div class="impact-pilot-stat-sub">{stat.sub}</div>
+              <div class="impact-pilot-stat-benchmark">{stat.benchmark}</div>
+            </div>
+          ))}
+          {caseStudy.stats.map((stat) => (
+            <div class="impact-pilot-stat">
+              <div class="impact-pilot-stat-number">{stat.number}</div>
+              <div class="impact-pilot-stat-label">{stat.label}</div>
+            </div>
+          ))}
         </div>
-        <div class="impact-pilot-stat impact-pilot-stat--hero">
-          <div class="impact-pilot-stat-number">81%</div>
-          <div class="impact-pilot-stat-label">12-month survival rate</div>
-          <div class="impact-pilot-stat-sub">38 of 47 still active after the grant period ended</div>
-          <div class="impact-pilot-stat-benchmark">Industry baseline for grant-only programs: 35–50% at month 12</div>
-        </div>
-        <div class="impact-pilot-stat">
-          <div class="impact-pilot-stat-number">47</div>
-          <div class="impact-pilot-stat-label">Entrepreneurs enrolled</div>
-        </div>
-        <div class="impact-pilot-stat">
-          <div class="impact-pilot-stat-number">€182k</div>
-          <div class="impact-pilot-stat-label">Gross revenue earned</div>
-        </div>
-        <div class="impact-pilot-stat">
-          <div class="impact-pilot-stat-number">8,400</div>
-          <div class="impact-pilot-stat-label">Orders fulfilled</div>
-        </div>
-        <div class="impact-pilot-stat">
-          <div class="impact-pilot-stat-number">31</div>
-          <div class="impact-pilot-stat-label">Jobs supported</div>
-        </div>
+
+        <ul class="impact-pilot-highlights">
+          {caseStudy.highlights.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
       </div>
-
-      <ul class="impact-pilot-highlights">
-        <li>All 47 founders received fully featured Pagayo accounts — no watered-down tier.</li>
-        <li>Sponsor accessed a live dashboard from week one; no PDF update cycle required.</li>
-        <li>Revenue data was auditable in real time, not self-reported at program end.</li>
-        <li>38 of 47 founders remained active after the grant period — without continued sponsorship.</li>
-      </ul>
-    </div>
-
-    <div class="impact-pilot-case impact-pilot-case--second">
-      <header class="impact-pilot-header">
-        <div class="impact-pilot-meta">
-          <div class="impact-pilot-tag">Food &amp; Catering — Accra, Ghana</div>
-          <div class="impact-pilot-duration">9-month program · 2025</div>
-        </div>
-        <div class="impact-pilot-sponsor-type">Government SME program</div>
-      </header>
-
-      <div class="impact-pilot-stats">
-        <div class="impact-pilot-stat impact-pilot-stat--hero">
-          <div class="impact-pilot-stat-number">6 days</div>
-          <div class="impact-pilot-stat-label">Average time to first sale</div>
-          <div class="impact-pilot-stat-sub">Not training. Not planning. Selling.</div>
-          <div class="impact-pilot-stat-benchmark">Typical grant programs: 6–10 weeks to first revenue activity</div>
-        </div>
-        <div class="impact-pilot-stat impact-pilot-stat--hero">
-          <div class="impact-pilot-stat-number">74%</div>
-          <div class="impact-pilot-stat-label">9-month survival rate</div>
-          <div class="impact-pilot-stat-sub">56 of 76 still transacting at program close</div>
-          <div class="impact-pilot-stat-benchmark">Industry baseline for grant-only programs: 35–50% at month 12</div>
-        </div>
-        <div class="impact-pilot-stat">
-          <div class="impact-pilot-stat-number">76</div>
-          <div class="impact-pilot-stat-label">Entrepreneurs enrolled</div>
-        </div>
-        <div class="impact-pilot-stat">
-          <div class="impact-pilot-stat-number">€241k</div>
-          <div class="impact-pilot-stat-label">Gross revenue earned</div>
-        </div>
-        <div class="impact-pilot-stat">
-          <div class="impact-pilot-stat-number">11,200</div>
-          <div class="impact-pilot-stat-label">Orders fulfilled</div>
-        </div>
-        <div class="impact-pilot-stat">
-          <div class="impact-pilot-stat-number">44</div>
-          <div class="impact-pilot-stat-label">Jobs supported</div>
-        </div>
-      </div>
-
-      <ul class="impact-pilot-highlights">
-        <li>Program was government-funded under a national youth employment initiative.</li>
-        <li>Cohort included both urban market traders transitioning to digital and new food-delivery founders.</li>
-        <li>Government program manager accessed anonymised aggregate data; individual dashboards visible only to founders.</li>
-        <li>Program reported to parliament using Pagayo export data — first time transaction-level evidence was used instead of survey forms.</li>
-      </ul>
-    </div>
+    ))}
 
     <p class="impact-pilot-disclaimer">
-      Figures verified from platform transaction data. Organisation names withheld by agreement.
-      <a href="/contact">Request a full program debrief →</a>
+      {p.disclaimer}
+      <a href="/contact">{p.disclaimerLink}</a>
     </p>
   </div>
 </section>

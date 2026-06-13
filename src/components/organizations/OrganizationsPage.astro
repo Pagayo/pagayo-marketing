@@ -1,0 +1,289 @@
+---
+import type { OrganizationsContent } from '../../lib/organizations';
+
+interface Props {
+  content: OrganizationsContent;
+}
+
+const { content: c } = Astro.props;
+
+function lines(text: string) {
+  return text.split('\n');
+}
+---
+
+<main class="org-page">
+
+  <section class="hero section org-hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        {c.hero.badge}
+      </div>
+
+      <h1 class="headline-xl">
+        {c.hero.titleTop}<br />
+        <span class="text-gradient">{c.hero.titleGradient}</span>
+      </h1>
+
+      <p class="org-hero-intro">{c.hero.intro}</p>
+
+      <div class="org-hero-ctas">
+        <a href="/contact?subject=Organization+Program" class="btn btn-org btn-lg">
+          {c.hero.ctaPrimary}
+        </a>
+        <a href="/one-stack" class="btn btn-secondary btn-lg">
+          {c.hero.ctaSecondary}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section org-what fade-in">
+    <div class="container">
+      <div class="org-what-inner">
+        <div class="org-what-text">
+          <span class="section-label">{c.what.sectionLabel}</span>
+          <h2 class="headline-md">
+            {lines(c.what.headline).map((line, i) => (
+              <>
+                {i > 0 && <br />}
+                {line}
+              </>
+            ))}
+          </h2>
+          {c.what.paragraphs.map((p) => <p>{p}</p>)}
+          <p class="org-what-closer">{c.what.closer}</p>
+        </div>
+        <div class="org-what-aside">
+          <div class="org-what-card">
+            <span class="org-what-card-label">{c.what.aside.organizations.label}</span>
+            <p>{c.what.aside.organizations.text}</p>
+          </div>
+          <div class="org-what-connector" aria-hidden="true">↓</div>
+          <div class="org-what-card org-what-card--platform">
+            <span class="org-what-card-label">{c.what.aside.pagayo.label}</span>
+            <p>{c.what.aside.pagayo.text}</p>
+          </div>
+          <div class="org-what-connector" aria-hidden="true">↓</div>
+          <div class="org-what-card org-what-card--entrepreneurs">
+            <span class="org-what-card-label">{c.what.aside.entrepreneurs.label}</span>
+            <p>{c.what.aside.entrepreneurs.text}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section org-stack fade-in">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label">{c.stack.sectionLabel}</span>
+        <h2 class="headline-md">
+          {lines(c.stack.headline).map((line, i) => (
+            <>
+              {i > 0 && <br />}
+              {line}
+            </>
+          ))}
+        </h2>
+        <p class="org-stack-intro">{c.stack.intro}</p>
+      </div>
+
+      <div class="org-stack-grid">
+        {c.stack.features.map((f) => (
+          <div class="org-stack-card">
+            <span class="org-stack-icon">{f.icon}</span>
+            <div>
+              <strong>{f.label}</strong>
+              <span>{f.desc}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="org-stack-note">{c.stack.note}</p>
+
+      <div class="org-stack-link-row">
+        <a href="/one-stack" class="org-text-link">{c.stack.linkText}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section org-audiences fade-in">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label">{c.audiences.sectionLabel}</span>
+        <h2 class="headline-md">
+          {lines(c.audiences.headline).map((line, i) => (
+            <>
+              {i > 0 && <br />}
+              {line}
+            </>
+          ))}
+        </h2>
+        <p class="org-audiences-sub">{c.audiences.sub}</p>
+      </div>
+
+      <div class="org-audiences-grid">
+        {c.audiences.items.map((a) => (
+          <div class="org-audience-card">
+            <h3>{a.title}</h3>
+            <p>{a.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section org-models fade-in">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label">{c.models.sectionLabel}</span>
+        <h2 class="headline-md">{c.models.headline}</h2>
+        <p class="org-models-intro">{c.models.intro}</p>
+      </div>
+
+      <div class="org-models-grid">
+        {c.models.cards.map((card, i) => (
+          <div class={`org-model-card ${i === 1 ? 'org-model-card--growth' : ''}`.trim()}>
+            <div class="org-model-num">{card.num}</div>
+            <h3>{card.title}</h3>
+            <p>{card.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="org-models-footer">{c.models.footer}</p>
+    </div>
+  </section>
+
+  <section class="section org-steps fade-in">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label">{c.steps.sectionLabel}</span>
+        <h2 class="headline-md">{c.steps.headline}</h2>
+      </div>
+
+      <div class="org-steps-grid">
+        {c.steps.items.map((s) => (
+          <div class="org-step">
+            <div class="org-step-num">{s.num}</div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section org-deepdive fade-in">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label">{c.deepdive.sectionLabel}</span>
+        <h2 class="headline-md">{c.deepdive.headline}</h2>
+        <p class="org-deepdive-sub">{c.deepdive.sub}</p>
+      </div>
+
+      <div class="org-deepdive-grid">
+        {c.deepdive.cards.map((card) => (
+          <a href={card.href} class="org-deepdive-card">
+            <span class="org-deepdive-label">{card.label}</span>
+            <h3>{card.title}</h3>
+            <p>{card.body}</p>
+            <span class="org-deepdive-arrow">{card.linkText}</span>
+          </a>
+        ))}
+      </div>
+
+      <p class="org-deepdive-note">{c.deepdive.note}</p>
+    </div>
+  </section>
+
+  <section class="section org-why fade-in">
+    <div class="container">
+      <div class="org-why-inner">
+        <div class="org-why-header">
+          <span class="section-label">{c.why.sectionLabel}</span>
+          <h2 class="headline-md">
+            {lines(c.why.headline).map((line, i) => (
+              <>
+                {i > 0 && <br />}
+                {line}
+              </>
+            ))}
+          </h2>
+          {c.why.paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+        <div class="org-why-reasons">
+          {c.why.reasons.map((r, i) => (
+            <div class="org-why-reason">
+              <div class="org-why-reason-num">{String(i + 1).padStart(2, '0')}</div>
+              <div>
+                <h3>{r.title}</h3>
+                <p>{r.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section org-faq fade-in">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label">{c.faq.sectionLabel}</span>
+        <h2 class="headline-md">{c.faq.headline}</h2>
+      </div>
+
+      <div class="org-faq-grid">
+        {c.faq.items.map((f) => (
+          <div class="org-faq-item">
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section org-cta fade-in">
+    <div class="container">
+      <div class="org-cta-inner">
+        <div class="org-cta-bg" aria-hidden="true"></div>
+        <span class="section-label org-cta-label">{c.cta.sectionLabel}</span>
+        <h2 class="headline-lg">
+          {lines(c.cta.headline).map((line, i) => (
+            <>
+              {i > 0 && <br />}
+              {i === 1 ? <span class="org-cta-accent">{line}</span> : line}
+            </>
+          ))}
+        </h2>
+        <p>{c.cta.intro}</p>
+        <div class="org-cta-buttons">
+          <a href="/contact?subject=Organization+Program" class="btn btn-org btn-lg">
+            {c.cta.ctaPrimary}
+          </a>
+          <a href="/one-stack" class="btn btn-secondary btn-lg">
+            {c.cta.ctaSecondary}
+          </a>
+        </div>
+        <div class="org-cta-contact">
+          <a href="/contact" class="btn btn-ghost btn-md">
+            {c.cta.contactLink}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

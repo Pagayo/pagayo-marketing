@@ -1,43 +1,69 @@
 {
   "nav": {
+    "oneStack": "One Stack",
+    "poweredBy": "Powered by",
     "features": "Features",
-    "howWeBuild": "How We Build",
+    "howWeBuild": "Hoe we bouwen",
     "pricing": "Prijzen",
     "impact": "Impact",
     "partners": "Partners",
+    "organizations": "Voor organisaties",
+    "organizationsMenu": {
+      "panelLabel": "Organisatieprogramma's",
+      "overview": "Overzicht Organisatieprogramma",
+      "impact": {
+        "label": "Impactprogramma's",
+        "title": "Voor gemeenten, NGO's, onderwijsinstellingen en accelerators",
+        "description": "Inclusief programmastructuren, pilootdata, cohortmodellen en een Impact Dashboard voor het meten van commerciële resultaten.",
+        "cta": "Ontdek Impactprogramma's"
+      },
+      "poweredBy": {
+        "label": "Powered by Pagayo",
+        "title": "Voor organisaties die Pagayo onder hun eigen merk willen aanbieden",
+        "description": "Bied Pagayo aan als commerceplatform onder je eigen naam — als onderdeel van je eigen product, dienst of platform.",
+        "cta": "Ontdek Powered by Pagayo"
+      },
+      "organization": {
+        "label": "Organisatieprogramma",
+        "title": "Voor groothandels, brancheverenigingen, franchisenetwerken en accountants",
+        "description": "Breng Pagayo's commerce-infrastructuur naar de ondernemers die je al bedient — zonder doorverkoop of een eigen techteam.",
+        "cta": "Ontdek Organisatieprogramma"
+      },
+      "note": "Past geen van beide? Dan is het Organisatieprogramma de juiste plek."
+    },
     "login": "Inloggen",
     "start": "Start gratis"
   },
   "featuresPage": {
-    "title": "Pagayo Features - Webshop, POS, WhatsApp en QR in een platform",
-    "description": "Ontdek alle Pagayo features voor e-commerce en hospitality: orderbeheer, voorraad, coupons, retouren, abonnementen, analytics en omnichannel verkoop in een dashboard.",
+    "title": "Pagayo Features - Webshop, POS, WhatsApp en QR in één platform",
+    "description": "Ontdek alle Pagayo-features voor e-commerce en hospitality: orderbeheer, voorraad, coupons, retouren, abonnementen, analytics en omnichannel verkoop in één dashboard.",
     "inLanguage": "nl-NL",
-    "sectionLabel": "Feature Overzicht",
+    "sectionLabel": "Feature-overzicht",
     "headlineTop": "Verkoop op elk kanaal.",
     "headlineBottom": "Beheer alles in één dashboard.",
-    "intro": "Van webshop en POS tot WhatsApp, QR en abonnementen: Pagayo centraliseert orders, voorraad, betalingen, coupons, retouren en rapportages in één overzichtelijk platform.",
+    "intro": "Van webshop en kassa tot WhatsApp, QR en abonnementen: Pagayo centraliseert orders, voorraad, betalingen, coupons, retouren en rapportages in één overzichtelijk platform.",
     "pointsAriaLabel": "Belangrijkste featurepunten",
     "points": [
       {
         "title": "Order-First kern",
-        "description": "Alle kanalen landen in één uniforme orderflow, met gedeelde statussen, acties en rapportages."
+        "description": "Alle kanalen komen samen in één consistente orderflow met gedeelde statussen, acties en rapportages."
       },
       {
         "title": "Realtime operations",
-        "description": "Voorraad, low-stock alerts, retouren, membership-validatie en coupongebruik zijn realtime zichtbaar voor je team."
+        "description": "Voorraad, lage-voorraadmeldingen, retouren, membershipvalidatie en coupongebruik blijven realtime zichtbaar voor je team."
       },
       {
         "title": "Schalen zonder re-platforming",
-        "description": "Start gratis, voeg modules toe wanneer nodig en groei internationaal zonder losse tools aan elkaar te koppelen."
+        "description": "Start gratis, voeg modules toe wanneer nodig en groei internationaal zonder losse tools aan elkaar te plakken."
       }
     ],
     "about": [
-      "Order management software",
-      "POS software",
-      "Webshop software",
+      "Orderbeheersoftware",
+      "POS-software",
+      "Webshopsoftware",
       "Omnichannel commerce",
-      "Subscriptions en memberships",
-      "Coupon- en voorraadbeheer"
+      "Abonnementen en memberships",
+      "Coupons en voorraadbeheer"
     ]
   },
   "blogPage": {
@@ -46,26 +72,26 @@
     "inLanguage": "nl-NL",
     "sectionLabel": "Blog",
     "headline": "Ideeën voor commerce op de edge.",
-    "intro": "Engineeringnotities, productdenken en industryperspectieven van het team achter Pagayo — het platform waar elke verkoop één Order is.",
+    "intro": "Engineeringnotities, productdenken en brancheperspectieven van het team achter Pagayo — het platform waar elke verkoop één Order is.",
     "featuredLabel": "Uitgelicht",
     "allPostsLabel": "Alle artikelen",
-    "backToBlog": "Terug naar Blog",
+    "backToBlog": "Terug naar blog",
     "readArticle": "Lees artikel"
   },
   "changelogPage": {
     "title": "Pagayo Changelog — Productupdates en fixes",
-    "description": "Een gedateerd overzicht van wat er in Pagayo veranderde: nieuwe features, verbeteringen, fixes en verwijderingen.",
+    "description": "Een gedateerd overzicht van wat er in Pagayo veranderde: nieuwe features, verbeteringen, fixes en verwijderingen — van de eerste commit tot vandaag.",
     "inLanguage": "nl-NL",
     "sectionLabel": "Changelog",
     "headline": "Wat er is uitgerold, en wanneer.",
-    "intro": "Productwijzigingen in Pagayo — nieuwe mogelijkheden, verbeteringen en fixes. Voor het weekverhaal, zie de Build Log.",
+    "intro": "Productwijzigingen in Pagayo — nieuwe mogelijkheden, verbeteringen en fixes. Voor het weekverhaal van de bouw, zie de Build Log.",
     "statUpdates": "Updates gelogd",
     "statReleaseDays": "Releasedagen",
     "statSince": "Sinds start",
     "feedAriaLabel": "Changelog-items per datum",
     "typeNew": "Nieuw",
     "typeImproved": "Verbeterd",
-    "typeFixed": "Fix",
+    "typeFixed": "Opgelost",
     "typeRemoved": "Verwijderd"
   },
   "successStoriesPage": {
@@ -74,8 +100,366 @@
     "inLanguage": "nl-NL",
     "sectionLabel": "Success Stories",
     "headline": "Gemaakt voor operators die zelf de touwtjes in handen houden.",
-    "intro": "Honderd success stories van Pagayo-tenants verspreid over continenten waar Stripe actief is — van webshops en gyms tot stichtingen, zwembaden en verenigingen. Gegroepeerd per regio, niet als landenlijst. We noemen tenants nooit bij naam of organisatie: alleen hun rol en stad.",
+    "intro": "Honderd success stories van Pagayo-tenants verspreid over continenten waar Stripe actief is — van webshops en sportscholen tot stichtingen, zwembaden en verenigingen. Verhalen zijn gegroepeerd per regio, niet als landenlijst. We noemen tenants nooit bij naam of organisatie: alleen hun rol en de stad waar ze actief zijn.",
     "feedAriaLabel": "Success stories per continent",
     "viewAllStories": "Bekijk alle 100 verhalen →"
+  },
+  "poweredByPage": {
+    "title": "Powered by Pagayo — Commerce-infrastructuur voor netwerken",
+    "description": "Maak van je netwerk een commerce-ecosysteem. Geef elk lid een volledig commerceplatform — webshop, POS, abonnementen, betalingen — onder je eigen merk. Geen techteam nodig.",
+    "inLanguage": "nl"
+  },
+  "impactPage": {
+    "title": "Pagayo Impact Engine — Sponsor ondernemers, meet echte resultaten",
+    "description": "Financier cohorten van founders met volledige Pagayo-toegang — gratis voor hen, live dashboards voor jou. Dezelfde commerce-stack in Nairobi en Amsterdam.",
+    "inLanguage": "nl-NL",
+    "hero": {
+      "sectionLabel": "Voor organisaties die ondernemerschapsprogramma's financieren",
+      "headlineTop": "Maak van ondernemerschapsprogramma's",
+      "headlineBottom": "draaiende bedrijven.",
+      "tagline": "Elke ondernemer krijgt een bedrijf. Elke sponsor krijgt bewijs.",
+      "intro": "We trainen geen ondernemers. We leveren bedrijven. Elke founder die je programma ondersteunt krijgt vanaf dag één een volledige commerce-stack — webshop, POS, WhatsApp, uitbetalingen naar hun eigen rekening. Jij meet omzet. Geen aanwezigheid."
+    },
+    "mission": {
+      "headline": "Financiering moet resultaten volgen, geen pitchdecks.",
+      "intro": "De meeste ondernemerschapsprogramma's geven subsidies, training en PDF-rapporten. Pagayo geeft gesponsorde founders een productieklare commerce-stack — webshop, POS, WhatsApp, uitbetalingen — en levert jou verifieerbare metrics gekoppeld aan elke order.",
+      "points": [
+        {
+          "title": "Geen platformkosten voor founders",
+          "description": "Gesponsorde ondernemers krijgen hetzelfde product waarvoor Europese bedrijven betalen. Geen afgezwakte tier, geen proefperiode die halverwege het programma afloopt."
+        },
+        {
+          "title": "Resultaten die je kunt auditen",
+          "description": "Omzet, orders, klanten en cohortvoortgang stromen naar dashboards en exporteerbare rapporten — geen zelfgerapporteerde enquêtes."
+        },
+        {
+          "title": "Gebouwd voor opkomende markten",
+          "description": "Edge-first architectuur, mobile-first admin en betaalrails die werken waar Stripe actief is — inclusief Kenia en veel van Sub-Sahara Afrika."
+        }
+      ]
+    },
+    "parity": {
+      "headline": "Eén platform. Twee steden. Geen compromis.",
+      "intro": "Of je cohort nu een boetiek in Amsterdam runt of een marktkraamnetwerk in Nairobi — ze werken op identieke infrastructuur.",
+      "amsterdam": {
+        "city": "Amsterdam",
+        "region": "West-Europa",
+        "items": [
+          "Retailketen met meerdere locaties",
+          "Stripe Connect-uitbetalingen naar lokale bank",
+          "Webshop + fysieke kassa geïntegreerd",
+          "Abonnementen en memberbilling",
+          "Realtime voorraad over alle kanalen"
+        ]
+      },
+      "nairobi": {
+        "city": "Nairobi",
+        "region": "Oost-Afrika",
+        "items": [
+          "Fashionlabel van één founder",
+          "M-Pesa-ready checkout via Stripe",
+          "WhatsApp-orderintake + webshop",
+          "QR-menu's en walk-in verkoop",
+          "Dezelfde orderflow en rapportages"
+        ]
+      }
+    },
+    "metrics": {
+      "headline": "Wat je dashboard bijhoudt",
+      "intro": "Elk gesponsord account voedt geaggregeerde metrics — geanonimiseerd op ondernemersniveau waar nodig, met drill-down wanneer je programma dat toestaat.",
+      "items": [
+        { "label": "Tijd tot eerste verkoop", "description": "Gemiddeld aantal dagen van accountaanmaak tot eerste afgeronde order — doorgaans vier dagen voor nieuwe cohorten." },
+        { "label": "12-maanden overlevingspercentage", "description": "Percentage founders dat nog transacties doet na afloop van de subsidieperiode — de sterkste indicator van duurzame impact." },
+        { "label": "Verdiende omzet", "description": "Bruto- en netto-omzet per cohort, regio en tijdsvenster." },
+        { "label": "Afgeronde orders", "description": "Voltooide, geannuleerde en geretourneerde orders met kanaalverdeling." },
+        { "label": "Bediende klanten", "description": "Unieke kopers en herhaalaankooppercentages." },
+        { "label": "Actieve ondernemers", "description": "Wie transacteert, wie ondersteuning nodig heeft, wie is afgestudeerd." },
+        { "label": "Banen ondersteund", "description": "Optionele headcount- en rol-tags per tenant voor werkgelegenheidsprogramma's." },
+        { "label": "Programmamijlpalen", "description": "Aangepaste KPI's — eerste verkoop, €1k omzet, 100 orders, en meer." }
+      ]
+    },
+    "audiences": {
+      "headline": "Wie cohorten sponsort",
+      "intro": "De Impact Engine is ontworpen voor organisaties die toegang financieren — niet voor organisaties die software doorverkopen.",
+      "cards": [
+        {
+          "icon": "🏛️",
+          "title": "NGO's & ontwikkelingsorganisaties",
+          "description": "Run meerjarige livelihood-programma's met live bewijs van commerciële activiteit in plaats van kwartaalrapporten in narratief."
+        },
+        {
+          "icon": "🏢",
+          "title": "Overheid & publieke sector",
+          "description": "Jeugdwerkgelegenheid, vrouw-ondernemerschap en MKB-formalisering met transparante, exporteerbare data."
+        },
+        {
+          "icon": "💼",
+          "title": "Bedrijfsfondsen & MVO",
+          "description": "Koppel ESG-doelen aan meetbare MKB-omzet en werkgelegenheidsresultaten in je doelregio's."
+        },
+        {
+          "icon": "🎓",
+          "title": "Accelerators & universiteiten",
+          "description": "Geef elk cohortbedrijf vanaf dag één een draaiend bedrijf — niet alleen pitchdeck-templates."
+        }
+      ]
+    },
+    "programs": {
+      "headline": "Voorbeeldprogramma's",
+      "intro": "Programma's zijn flexibel — jij bepaalt regio's, sectoren, cohortgrootte en duur. Pagayo levert accounts en permissies.",
+      "examples": [
+        {
+          "title": "Retailcohort — Nairobi",
+          "description": "50 fashion- en woonaccessoire-founders, 12 maanden, M-Pesa- en kaartcheckout, wekelijkse omzetleaderboard voor mentoren."
+        },
+        {
+          "title": "Vrouwelijke ondernemers — multi-city",
+          "description": "200 founders in Oost-Afrika, gedeeld trainingscurriculum, dashboard gesegmenteerd op land en vertical."
+        },
+        {
+          "title": "Jeugdwerkgelegenheid — nationaal",
+          "description": "Door de overheid gefinancierd programma dat eerste-verkoopdatums, 90-dagen overlevingspercentage en banen per tenant bijhoudt."
+        }
+      ]
+    },
+    "platform": {
+      "headline": "Wat elke gesponsorde ondernemer ontvangt",
+      "items": [
+        "Volledige webshop en productcatalogus",
+        "Point of sale en QR-bestellen",
+        "WhatsApp commerce-intake",
+        "Voorraad, coupons en retouren",
+        "Abonnementen en memberships",
+        "Stripe Connect-uitbetalingen naar hun rekening",
+        "Mobielvriendelijk admin-dashboard",
+        "E-mail- en in-app support"
+      ]
+    },
+    "reporting": {
+      "headline": "Rapportage & compliance",
+      "intro": "Donateurs en besturen verwachten cijfers die ze kunnen vertrouwen. Exporteer, integreer of white-label.",
+      "items": [
+        "Maandelijkse PDF-impactrapporten",
+        "CSV- en API-export voor je BI-stack",
+        "Cohortvergelijking en year-over-year-weergaven",
+        "Rolgebaseerde dashboardtoegang voor programmamedewerkers",
+        "White-label dashboards op Enterprise-tier",
+        "Integratiehooks voor donorbeheersystemen"
+      ]
+    },
+    "faq": {
+      "headline": "Veelgestelde vragen van programsponsors",
+      "items": [
+        {
+          "q": "Betalen ondernemers iets?",
+          "a": "Nee. Wanneer je een cohort sponsort, zijn hun Pagayo-accounts volledig uitgerust zonder kosten voor hen. Jij betaalt alleen voor de Impact Dashboard-tier die past bij je programmagrootte."
+        },
+        {
+          "q": "Welke landen worden ondersteund?",
+          "a": "Overal waar Stripe Connect beschikbaar is voor uitbetalingen — inclusief Kenia en het merendeel van Sub-Sahara Afrika, plus Europa, Amerika en Azië-Pacific. We bevestigen dekking voordat je een cohort lanceert."
+        },
+        {
+          "q": "Kunnen we individuele ondernemers anonimiseren?",
+          "a": "Ja. Dashboards kunnen standaard geaggregeerde cohortmetrics tonen, met drill-down beperkt tot geautoriseerde programmamanagers."
+        },
+        {
+          "q": "Hoe lang duurt onboarding?",
+          "a": "Accountprovisioning is batch-ready. Founders kunnen zich registreren, producten toevoegen en hun eerste order aannemen in minuten — dezelfde vijfminutenflow als elke Pagayo-tenant."
+        },
+        {
+          "q": "Is dit anders dan het Partnerprogramma?",
+          "a": "Ja. Partners verdienen commissie door betalende bedrijven door te verwijzen. De Impact Engine is voor financiers die gratis toegang sponsoren en outcome-dashboards nodig hebben — geen doorverkoop."
+        }
+      ]
+    },
+    "exploreCta": "Ontdek de volledige Impact Engine →",
+    "heroCtas": {
+      "proposal": "Vraag een cohortvoorstel aan →",
+      "proposalHint": "Vertel ons je regio en sector — we sturen een concreet programma-overzicht.",
+      "demo": "Boek een sponsor-demo",
+      "demoHint": "Bekijk het Impact Dashboard live voordat je iets vastlegt.",
+      "founderExplore": "Ontdek gratis de founder-ervaring →",
+      "founderExplorePrefix": "Wil je zien wat je ondernemers gaan gebruiken?"
+    },
+    "why": {
+      "problemLabel": "Het probleem",
+      "headline": "De meeste ondernemerschapsprogramma's\nmeten aanwezigheid.",
+      "subhead": "Wij meten omzet.",
+      "problems": [
+        {
+          "icon": "📋",
+          "title": "Training zonder tooling",
+          "description": "Workshops leren businessconcepten aan founders zonder infrastructuur om daadwerkelijk een bedrijf te runnen. Aanwezigheid stijgt. Omzet niet."
+        },
+        {
+          "icon": "💸",
+          "title": "Subsidies zonder verantwoording",
+          "description": "Financiering uitgekeerd op beloftes, niet geverifieerd met transactiedata. De volgende financieringsronde begint weer op nul."
+        },
+        {
+          "icon": "📊",
+          "title": "Enquêtes in plaats van omzetdata",
+          "description": "Programmaresultaten gerapporteerd via zelfgerapporteerde enquêtes — weken later, makkelijk opgeblazen."
+        },
+        {
+          "icon": "🔧",
+          "title": "Shopify + WhatsApp + Excel + contant",
+          "description": "Founders jongleren zelfstandig met vijf losgekoppelde tools, zonder gedeeld zicht voor programmamanagers."
+        }
+      ],
+      "solutionLabel": "Pagayo vervangt dat allemaal",
+      "solutionHeadline": "Eén operationeel platform. Verifieerbaar vanaf dag één.",
+      "solutionPoints": [
+        "Founders krijgen een volledige commerce-stack — geen trainingshandleiding",
+        "Elke order, verkoop en uitbetaling wordt automatisch vastgelegd",
+        "Je dashboard leest uit live transactiedata, niet uit enquêtes",
+        "Eén platform voor webshop, POS, WhatsApp, abonnementen, uitbetalingen",
+        "Programmamanagers zien elk cohort in één overzicht"
+      ],
+      "quote": "Financiering moet resultaten volgen, geen pitchdecks."
+    },
+    "comparison": {
+      "sectionLabel": "Traditioneel vs Pagayo",
+      "headline": "Waarom een losse subsidie + Shopify\nhet probleem niet oplost.",
+      "intro": "Het probleem is geen toegang tot e-commerce tools. Het is dat geen enkel platform de dagelijkse operatie van de ondernemer koppelt aan de verantwoordingsbehoefte van de sponsor.",
+      "colTraditional": "Traditionele aanpak",
+      "colPagayo": "Pagayo",
+      "rows": [
+        { "traditional": "Trainingscurriculum", "pagayo": "Een draaiend bedrijf vanaf dag één" },
+        { "traditional": "Zelfgerapporteerde enquêtes", "pagayo": "Live transactiedata, geverifieerd per order" },
+        { "traditional": "Shopify + WhatsApp + Excel", "pagayo": "Eén platform — webshop, POS, uitbetalingen, rapportage" },
+        { "traditional": "Subsidies op basis van aanvragen", "pagayo": "Sponsoring gekoppeld aan meetbare resultaten" },
+        { "traditional": "Kwartaalrapporten in narratief", "pagayo": "Realtime dashboard, altijd actueel" },
+        { "traditional": "Founders zonder tooling na afloop van het programma", "pagayo": "81% transacteert nog 12 maanden na de subsidieperiode" }
+      ]
+    },
+    "pilot": {
+      "sectionLabel": "Eerste resultaten",
+      "headline": "Hoe een pilootcohort eruitziet\nin echte cijfers.",
+      "intro": "Het volgende komt uit een geanonimiseerd early-access cohort. Sector en stad zijn bekendgemaakt; organisatienamen niet.",
+      "cases": [
+        {
+          "tag": "Retail & Fashion — Nairobi, Kenia",
+          "duration": "12-maanden programma · 2024–2025",
+          "sponsorType": "Door NGO gesponsord cohort",
+          "heroStats": [
+            { "number": "4 dagen", "label": "Gemiddelde tijd tot eerste verkoop", "sub": "Geen training. Geen planning. Verkopen.", "benchmark": "Typische subsidieprogramma's: 6–10 weken tot eerste omzetactiviteit" },
+            { "number": "81%", "label": "12-maanden overlevingspercentage", "sub": "38 van 47 nog actief na afloop van de subsidieperiode", "benchmark": "Industrie-baseline voor alleen-subsidieprogramma's: 35–50% in maand 12" }
+          ],
+          "stats": [
+            { "number": "47", "label": "Ingeschreven ondernemers" },
+            { "number": "€182k", "label": "Verdiende bruto-omzet" },
+            { "number": "8.400", "label": "Afgeronde orders" },
+            { "number": "31", "label": "Banen ondersteund" }
+          ],
+          "highlights": [
+            "Alle 47 founders kregen volledig uitgeruste Pagayo-accounts — geen afgezwakte tier.",
+            "Sponsor had vanaf week één toegang tot een live dashboard; geen PDF-updatecyclus nodig.",
+            "Omzetdata was realtime auditeerbaar, niet zelfgerapporteerd aan programma-einde.",
+            "38 van 47 founders bleven actief na de subsidieperiode — zonder voortgezette sponsoring."
+          ]
+        },
+        {
+          "tag": "Food & Catering — Accra, Ghana",
+          "duration": "9-maanden programma · 2025",
+          "sponsorType": "Overheids-MKB-programma",
+          "heroStats": [
+            { "number": "6 dagen", "label": "Gemiddelde tijd tot eerste verkoop", "sub": "Geen training. Geen planning. Verkopen.", "benchmark": "Typische subsidieprogramma's: 6–10 weken tot eerste omzetactiviteit" },
+            { "number": "74%", "label": "9-maanden overlevingspercentage", "sub": "56 van 76 transacteerden nog bij programma-afsluiting", "benchmark": "Industrie-baseline voor alleen-subsidieprogramma's: 35–50% in maand 12" }
+          ],
+          "stats": [
+            { "number": "76", "label": "Ingeschreven ondernemers" },
+            { "number": "€241k", "label": "Verdiende bruto-omzet" },
+            { "number": "11.200", "label": "Afgeronde orders" },
+            { "number": "44", "label": "Banen ondersteund" }
+          ],
+          "highlights": [
+            "Programma was door de overheid gefinancierd onder een nationaal jeugdwerkgelegenheidsinitiatief.",
+            "Cohort omvatte zowel stedelijke markthandelaren die digitaal gingen als nieuwe food-delivery-founders.",
+            "Overheidsprogrammamanager kreeg toegang tot geanonimiseerde geaggregeerde data; individuele dashboards alleen zichtbaar voor founders.",
+            "Programma rapporteerde aan het parlement met Pagayo-exportdata — voor het eerst transactieniveau-bewijs in plaats van enquêteformulieren."
+          ]
+        }
+      ],
+      "disclaimer": "Cijfers geverifieerd uit platformtransactiedata. Organisatienamen achterwege gelaten op verzoek.",
+      "disclaimerLink": "Vraag een volledige programma-debrief aan →"
+    },
+    "pageCta": {
+      "sectionLabel": "Start een programma",
+      "headline": "Klaar om een cohort te sponsoren?\nLaten we praten over resultaten.",
+      "intro": "Vertel ons je regio, sector en cohortgrootte — we sturen een concreet programma-overzicht en bevestigen landendekking voordat je iets vastlegt.",
+      "proposal": "Vraag een cohortvoorstel aan →",
+      "proposalHint": "Een concreet overzicht voor je bestuur of stuurgroep — regio, prijzen, tijdlijn.",
+      "demo": "Boek een sponsor-demo",
+      "demoHint": "Bekijk het Impact Dashboard live. Geen verplichting, geen verkooppraatje.",
+      "founderExplorePrefix": "Wil je zien wat je ondernemers gaan gebruiken?",
+      "founderExplore": "Ontdek gratis de founder-ervaring →"
+    }
+  },
+  "homePage": {
+    "title": "Pagayo — Elke verkoop. Eén platform.",
+    "description": "Webshop, POS, WhatsApp, QR — alle orders komen samen in één dashboard. Voor altijd gratis.",
+    "hero": {
+      "badge": "Onafhankelijk. Bootstrapped. Gratis om te starten.",
+      "titleTop": "Eén platform.",
+      "titleGradient": "Elke manier waarop je verkoopt.",
+      "intro": "Webshop, kassa, abonnementen, memberships, gesponsorde toegang — gebouwd op één Order, zodat de cijfers altijd kloppen. Hetzelfde platform voor een winkel in Nairobi en een keten in Amsterdam.",
+      "ctaPrimary": "Start gratis →",
+      "ctaSecondary": "Bekijk prijzen",
+      "stats": [
+        { "number": "0%", "label": "Transactiekosten" },
+        { "number": "7+", "label": "Verkoopkanalen" },
+        { "number": "<50ms", "label": "Overal op aarde" },
+        { "number": "€0", "label": "Om te starten" }
+      ]
+    },
+    "finalCta": {
+      "headline": "Begin vandaag met verkopen. Groei met het platform.",
+      "intro": "Gratis om te starten. Alle features inbegrepen. Je kunt altijd vertrekken — de meesten doen dat nooit.",
+      "ctaPrimary": "Start gratis →",
+      "ctaSecondary": "Vergelijk plannen",
+      "ideasPrefix": "Heb je een idee, een vraag of een feature die je mist?",
+      "ideasLink": "Neem contact op — we luisteren."
+    }
+  },
+  "pricingPage": {
+    "title": "Pagayo Prijzen — Gratis plan, transparante betaalde tiers, geen transactiekosten",
+    "description": "Pagayo-prijzen: een volledig gratis commerceplatform en betaalde plannen alleen voor capaciteit. Geen transactiekosten, geen omzetdeling, geen afgeschermde modules — webshop, POS en abonnementen in één dashboard.",
+    "sectionLabel": "Prijzen",
+    "headline": "Gratis is gratis. Betaald is eerlijk.",
+    "intro": "Het gratis plan is een echt product, geen proefperiode van 14 dagen. Betaalde plannen voegen capaciteit en polish toe — nooit nieuwe features. Wat je op dag één kunt, kun je nog steeds in jaar drie."
+  },
+  "howWeBuildPage": {
+    "title": "Hoe Pagayo is gebouwd — Eén founder, een compleet ontwikkelsysteem",
+    "description": "Hoe Pagayo is gebouwd: één founder, live productie-tenants en een bewust ontwikkelsysteem — architectuur, documentatie, AI-governance en kwaliteit — geen tool-hype."
+  },
+  "organizationsPage": {
+    "title": "Voor organisaties — Pagayo",
+    "description": "Organisatieprogramma's voor groothandels, brancheverenigingen, franchisenetwerken, accountants en instellingen die serieuze commerce-infrastructuur willen brengen naar de ondernemers die ze bedienen."
+  },
+  "footer": {
+    "brandTagline": "Elke verkoop, één platform. Gebouwd op Cloudflare, powered by Stripe, vertrouwd door bedrijven wereldwijd.",
+    "productHeading": "Product",
+    "features": "Features",
+    "pricing": "Prijzen",
+    "howWeBuild": "Hoe we bouwen",
+    "changelog": "Changelog",
+    "programsHeading": "Programma's",
+    "impactEngine": "Impact Engine",
+    "poweredBy": "Powered by Pagayo",
+    "partners": "Partnerprogramma",
+    "successStories": "Success Stories",
+    "blog": "Blog",
+    "companyHeading": "Bedrijf",
+    "about": "Over ons",
+    "howWeBuildLink": "Hoe we bouwen",
+    "buildLog": "Build Log",
+    "builtOnGiants": "Built on giants",
+    "oneStack": "One stack",
+    "privacyPolicy": "Privacybeleid",
+    "termsOfService": "Algemene voorwaarden",
+    "contact": "Contact",
+    "copyright": "© 2026 Pagayo. Alle rechten voorbehouden.",
+    "languageLabel": "Taal"
   }
 }

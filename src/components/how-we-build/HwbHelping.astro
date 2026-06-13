@@ -1,5 +1,11 @@
 ---
-import content from '../../content/how-we-build.json';
+import type { HowWeBuildContent } from '../../lib/how-we-build';
+
+interface Props {
+  content: HowWeBuildContent;
+}
+
+const { content } = Astro.props;
 
 const { helping } = content;
 ---

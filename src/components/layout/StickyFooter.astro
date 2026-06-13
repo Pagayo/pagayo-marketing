@@ -1,7 +1,13 @@
 ---
-import i18nEn from '../../content/i18n/en.json';
+import type { Locale, Messages } from '../../lib/i18n';
 
-const nav = i18nEn.nav;
+interface Props {
+  locale: Locale;
+  t: Messages;
+}
+
+const { t } = Astro.props;
+const nav = t.nav;
 ---
 <div class="sticky-footer" id="sticky-footer">
   <div class="sticky-footer-inner">

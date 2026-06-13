@@ -1,24 +1,31 @@
 ---
-import i18nEn from '../../content/i18n/en.json';
+import type { Locale, Messages } from '../../lib/i18n';
+import { hrefFor } from '../../lib/locale-routes';
 import NavOrganizationsMegaTrigger from './NavOrganizationsMegaTrigger.astro';
 import NavOrganizationsMegaPanel from './NavOrganizationsMegaPanel.astro';
 
-const nav = i18nEn.nav;
+interface Props {
+  locale: Locale;
+  t: Messages;
+}
+
+const { locale, t } = Astro.props;
+const nav = t.nav;
 ---
 <nav class="nav" id="nav">
   <div class="container">
-    <a href="/" class="nav-logo">Pagayo<span>.</span><span class="nav-country" id="nav-country"></span></a>
+    <a href={hrefFor('home', locale)} class="nav-logo">Pagayo<span>.</span><span class="nav-country" id="nav-country"></span></a>
 
     <ul class="nav-links" id="nav-links">
       <li><a href="/one-stack">{nav.oneStack}</a></li>
       <li><a href="/features">{nav.features}</a></li>
-      <li><a href="/how-we-build">{nav.howWeBuild}</a></li>
-      <li><a href="/pricing">{nav.pricing}</a></li>
-      <NavOrganizationsMegaTrigger />
+      <li><a href={hrefFor('howWeBuild', locale)}>{nav.howWeBuild}</a></li>
+      <li><a href={hrefFor('pricing', locale)}>{nav.pricing}</a></li>
+      <NavOrganizationsMegaTrigger t={t} />
     </ul>
 
     <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
   </div>
 
-  <NavOrganizationsMegaPanel />
+  <NavOrganizationsMegaPanel locale={locale} t={t} />
 </nav>

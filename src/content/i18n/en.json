@@ -272,6 +272,194 @@
         }
       ]
     },
-    "exploreCta": "Explore the full Impact Engine →"
+    "exploreCta": "Explore the full Impact Engine →",
+    "heroCtas": {
+      "proposal": "Request a Cohort Proposal →",
+      "proposalHint": "Tell us your region and sector — we'll send a concrete program outline.",
+      "demo": "Book a Sponsor Demo",
+      "demoHint": "See the Impact Dashboard live before committing to anything.",
+      "founderExplore": "Explore the founder experience free →",
+      "founderExplorePrefix": "Want to see what your entrepreneurs will use?"
+    },
+    "why": {
+      "problemLabel": "The Problem",
+      "headline": "Most entrepreneurship programs\nmeasure attendance.",
+      "subhead": "We measure sales.",
+      "problems": [
+        {
+          "icon": "📋",
+          "title": "Training without tooling",
+          "description": "Workshops teach business concepts to founders with no infrastructure to actually run a business. Attendance goes up. Revenue doesn't."
+        },
+        {
+          "icon": "💸",
+          "title": "Grants without accountability",
+          "description": "Funding disbursed on promises, not verified by transaction data. Next funding round starts from scratch."
+        },
+        {
+          "icon": "📊",
+          "title": "Surveys instead of sales data",
+          "description": "Program outcomes reported via self-reported surveys — weeks after the fact, easily inflated."
+        },
+        {
+          "icon": "🔧",
+          "title": "Shopify + WhatsApp + Excel + cash",
+          "description": "Founders juggle five disconnected tools on their own, with no shared visibility for program managers."
+        }
+      ],
+      "solutionLabel": "Pagayo replaces all of that",
+      "solutionHeadline": "One operational platform. Verifiable from day one.",
+      "solutionPoints": [
+        "Founders get a full commerce stack — not a training manual",
+        "Every order, sale, and payout is recorded automatically",
+        "Your dashboard reads from live transaction data, not surveys",
+        "One platform for webshop, POS, WhatsApp, subscriptions, payouts",
+        "Program managers see every cohort in one view"
+      ],
+      "quote": "Funding should follow outcomes, not slide decks."
+    },
+    "comparison": {
+      "sectionLabel": "Traditional vs Pagayo",
+      "headline": "Why a separate grant + Shopify\ndoesn't solve the problem.",
+      "intro": "The issue isn't access to e-commerce tools. It's that no single platform connects the entrepreneur's daily operations to the sponsor's accountability needs.",
+      "colTraditional": "Traditional Approach",
+      "colPagayo": "Pagayo",
+      "rows": [
+        { "traditional": "Training curriculum", "pagayo": "A running business from day one" },
+        { "traditional": "Self-reported surveys", "pagayo": "Live transaction data, verified per order" },
+        { "traditional": "Shopify + WhatsApp + Excel", "pagayo": "One platform — webshop, POS, payouts, reporting" },
+        { "traditional": "Grants based on applications", "pagayo": "Sponsorship tied to measurable outcomes" },
+        { "traditional": "Quarterly narrative reports", "pagayo": "Real-time dashboard, always current" },
+        { "traditional": "Founders left without tooling after program ends", "pagayo": "81% still transacting 12 months after grant period" }
+      ]
+    },
+    "pilot": {
+      "sectionLabel": "Early Results",
+      "headline": "What a pilot cohort looks like\nin real numbers.",
+      "intro": "The following is from an anonymised early-access cohort. Sector and city are disclosed; organisation names are not.",
+      "cases": [
+        {
+          "tag": "Retail & Fashion — Nairobi, Kenya",
+          "duration": "12-month program · 2024–2025",
+          "sponsorType": "NGO-sponsored cohort",
+          "heroStats": [
+            { "number": "4 days", "label": "Average time to first sale", "sub": "Not training. Not planning. Selling.", "benchmark": "Typical grant programs: 6–10 weeks to first revenue activity" },
+            { "number": "81%", "label": "12-month survival rate", "sub": "38 of 47 still active after the grant period ended", "benchmark": "Industry baseline for grant-only programs: 35–50% at month 12" }
+          ],
+          "stats": [
+            { "number": "47", "label": "Entrepreneurs enrolled" },
+            { "number": "€182k", "label": "Gross revenue earned" },
+            { "number": "8,400", "label": "Orders fulfilled" },
+            { "number": "31", "label": "Jobs supported" }
+          ],
+          "highlights": [
+            "All 47 founders received fully featured Pagayo accounts — no watered-down tier.",
+            "Sponsor accessed a live dashboard from week one; no PDF update cycle required.",
+            "Revenue data was auditable in real time, not self-reported at program end.",
+            "38 of 47 founders remained active after the grant period — without continued sponsorship."
+          ]
+        },
+        {
+          "tag": "Food & Catering — Accra, Ghana",
+          "duration": "9-month program · 2025",
+          "sponsorType": "Government SME program",
+          "heroStats": [
+            { "number": "6 days", "label": "Average time to first sale", "sub": "Not training. Not planning. Selling.", "benchmark": "Typical grant programs: 6–10 weeks to first revenue activity" },
+            { "number": "74%", "label": "9-month survival rate", "sub": "56 of 76 still transacting at program close", "benchmark": "Industry baseline for grant-only programs: 35–50% at month 12" }
+          ],
+          "stats": [
+            { "number": "76", "label": "Entrepreneurs enrolled" },
+            { "number": "€241k", "label": "Gross revenue earned" },
+            { "number": "11,200", "label": "Orders fulfilled" },
+            { "number": "44", "label": "Jobs supported" }
+          ],
+          "highlights": [
+            "Program was government-funded under a national youth employment initiative.",
+            "Cohort included both urban market traders transitioning to digital and new food-delivery founders.",
+            "Government program manager accessed anonymised aggregate data; individual dashboards visible only to founders.",
+            "Program reported to parliament using Pagayo export data — first time transaction-level evidence was used instead of survey forms."
+          ]
+        }
+      ],
+      "disclaimer": "Figures verified from platform transaction data. Organisation names withheld by agreement.",
+      "disclaimerLink": "Request a full program debrief →"
+    },
+    "pageCta": {
+      "sectionLabel": "Start a Program",
+      "headline": "Ready to sponsor a cohort?\nLet's talk outcomes.",
+      "intro": "Tell us your region, sector, and cohort size — we'll send a concrete program outline and confirm country coverage before any commitment.",
+      "proposal": "Request a Cohort Proposal →",
+      "proposalHint": "A concrete outline for your board or steering committee — region, pricing, timeline.",
+      "demo": "Book a Sponsor Demo",
+      "demoHint": "See the Impact Dashboard live. No commitment, no sales pitch.",
+      "founderExplorePrefix": "Want to see what your entrepreneurs will use?",
+      "founderExplore": "Explore the founder experience free →"
+    }
+  },
+  "homePage": {
+    "title": "Pagayo — Every Sale. One Platform.",
+    "description": "Webshop, POS, WhatsApp, QR — all orders flow into one dashboard. Free forever.",
+    "hero": {
+      "badge": "Independent. Bootstrapped. Free to start.",
+      "titleTop": "One platform.",
+      "titleGradient": "Every way you sell.",
+      "intro": "Webshop, register, subscriptions, memberships, sponsored access — built on one Order, so the numbers always match. The same platform for a shop in Nairobi and a chain in Amsterdam.",
+      "ctaPrimary": "Start Free →",
+      "ctaSecondary": "See Pricing",
+      "stats": [
+        { "number": "0%", "label": "Transaction Fee" },
+        { "number": "7+", "label": "Sales Channels" },
+        { "number": "<50ms", "label": "Anywhere on Earth" },
+        { "number": "€0", "label": "To Get Started" }
+      ]
+    },
+    "finalCta": {
+      "headline": "Start selling today. Grow with the platform.",
+      "intro": "Free to start. All features included. Yours to leave whenever you want — most never do.",
+      "ctaPrimary": "Start Free →",
+      "ctaSecondary": "Compare Plans",
+      "ideasPrefix": "Have an idea, a question, or a feature you wish existed?",
+      "ideasLink": "Get in touch — we listen."
+    }
+  },
+  "pricingPage": {
+    "title": "Pagayo Pricing — Free plan, transparent paid tiers, no transaction fees",
+    "description": "Pagayo pricing: a full-featured free commerce platform and paid plans for capacity only. No transaction fees, no revenue share, no gated modules — webshop, POS, and subscriptions in one dashboard.",
+    "sectionLabel": "Pricing",
+    "headline": "Free is free. Paid is honest.",
+    "intro": "The free plan is a real product, not a 14-day trial. Paid plans add capacity and polish — never new features. What you can do on day one, you can still do on year three."
+  },
+  "howWeBuildPage": {
+    "title": "How Pagayo is Built — One founder, a complete development system",
+    "description": "How Pagayo is built: one founder, live production tenants, and a deliberate development system — architecture, documentation, AI governance, and quality — not tool hype."
+  },
+  "organizationsPage": {
+    "title": "For Organizations — Pagayo",
+    "description": "Organization Programs for wholesalers, trade associations, franchise networks, accountants, and institutions that want to bring serious commerce infrastructure to the entrepreneurs they serve."
+  },
+  "footer": {
+    "brandTagline": "Every sale, one platform. Built on Cloudflare, powered by Stripe, trusted by businesses worldwide.",
+    "productHeading": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "howWeBuild": "How We Build",
+    "changelog": "Changelog",
+    "programsHeading": "Programs",
+    "impactEngine": "Impact Engine",
+    "poweredBy": "Powered by Pagayo",
+    "partners": "Partner Program",
+    "successStories": "Success Stories",
+    "blog": "Blog",
+    "companyHeading": "Company",
+    "about": "About",
+    "howWeBuildLink": "How we build",
+    "buildLog": "Build Log",
+    "builtOnGiants": "Built on giants",
+    "oneStack": "One stack",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact",
+    "copyright": "© 2026 Pagayo. All rights reserved.",
+    "languageLabel": "Language"
   }
 }

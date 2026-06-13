@@ -1,0 +1,88 @@
+{
+  "billing": "annual",
+  "billingNote": "Alle betaalde plannen worden jaarlijks gefactureerd. Prijzen per maand weergegeven.",
+  "free": {
+    "name": "Gratis",
+    "price": 0,
+    "priceLabel": "voor altijd",
+    "headline": "Alles wat je nodig hebt om te beginnen met verkopen",
+    "description": "Alle features zijn vanaf dag één beschikbaar. Geen creditcard nodig, geen tijdslimiet. POS en abonnementen staan in testmodus — je kunt ze volledig verkennen; betalingen worden actief wanneer je upgradet.",
+    "cta": "Start gratis",
+    "featuresLeft": [
+      { "label": "Webshop + productcatalogus", "included": true },
+      { "label": "Tot 50 producten", "included": true, "limit": "hard limit" },
+      { "label": "Orderbeheer", "included": true },
+      { "label": "100 orders/maand", "included": true, "limit": "soft limit" },
+      { "label": "Dashboard & analytics", "included": true },
+      { "label": "Kortingscodes", "included": true }
+    ],
+    "featuresRight": [
+      { "label": "POS / kassa", "included": true, "test": true },
+      { "label": "Abonnementen", "included": true, "test": true },
+      { "label": "WhatsApp, TikTok, Instagram", "included": true },
+      { "label": "Betaallinks & contant", "included": true },
+      { "label": "1 teamlid", "included": true },
+      { "label": "Pagayo-subdomein", "included": true }
+    ]
+  },
+  "tiers": [
+    {
+      "id": "supporter",
+      "name": "Supporter",
+      "monthly": 4,
+      "annual": 48,
+      "annualLabel": "€48 jaarlijks gefactureerd",
+      "description": "Voor groeiende winkels die meer ruimte nodig hebben en hun eigen domein willen.",
+      "features": [
+        { "label": "Tot 200 producten" },
+        { "label": "500 orders/maand", "limit": "soft" },
+        { "label": "POS-systeem — volledig actief" },
+        { "label": "Eigen domein" },
+        { "label": "2 teamleden" },
+        { "label": "Geen fair-use herinneringen" },
+        { "label": "Branding optioneel" }
+      ],
+      "cta": "Start met Supporter",
+      "variant": "secondary"
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "monthly": 19,
+      "annual": 228,
+      "annualLabel": "€228 jaarlijks gefactureerd",
+      "description": "Voor dagelijkse teams die performance, meer capaciteit en volledige controle nodig hebben.",
+      "features": [
+        { "label": "Tot 500 producten" },
+        { "label": "2.000 orders/maand", "limit": "soft" },
+        { "label": "5 teamleden" },
+        { "label": "Performance SLA 99,5%" },
+        { "label": "Geavanceerde rapportages" },
+        { "label": "Geen Pagayo-branding" },
+        { "label": "Priority support-badge" }
+      ],
+      "cta": "Start met Professional",
+      "variant": "primary",
+      "popular": true
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "monthly": 39,
+      "annual": 468,
+      "annualLabel": "€468 jaarlijks gefactureerd",
+      "description": "Voor complexe bedrijven: B2B-facturatie, verhuur, API, multi-locatie.",
+      "features": [
+        { "label": "Onbeperkt producten" },
+        { "label": "Onbeperkt orders" },
+        { "label": "10+ teamleden" },
+        { "label": "Abonnementen — volledig actief" },
+        { "label": "B2B-facturatie & verhuur" },
+        { "label": "API- & webhook-toegang" },
+        { "label": "Multi-locatie" }
+      ],
+      "cta": "Start met Advanced",
+      "variant": "primary"
+    }
+  ]
+}
