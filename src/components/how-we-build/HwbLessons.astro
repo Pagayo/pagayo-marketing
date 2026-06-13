@@ -1,0 +1,25 @@
+---
+import content from '../../content/how-we-build.json';
+
+const { lessons } = content;
+---
+
+<section class="section hwb-lessons fade-in" aria-labelledby="hwb-lessons-heading">
+  <div class="container narrow">
+    <span class="section-label">{lessons.label}</span>
+    <h2 class="headline-md" id="hwb-lessons-heading">{lessons.headline}</h2>
+    <p class="hwb-prose hwb-lessons-intro">{lessons.intro}</p>
+
+    <ol class="hwb-lessons-list">
+      {lessons.items.map((item, i) => (
+        <li class="hwb-lesson-item">
+          <span class="hwb-lesson-marker" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

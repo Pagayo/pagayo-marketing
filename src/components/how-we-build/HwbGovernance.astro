@@ -1,0 +1,25 @@
+---
+import content from '../../content/how-we-build.json';
+
+const { aiTeam } = content;
+const { governance } = aiTeam;
+---
+
+<div class="hwb-governance" aria-label="Example agent governance rules">
+  <div class="hwb-governance-col">
+    <h3 class="hwb-governance-heading">Agents may</h3>
+    <ul class="hwb-governance-list hwb-governance-list--may">
+      {governance.may.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+  <div class="hwb-governance-col">
+    <h3 class="hwb-governance-heading">Agents may not</h3>
+    <ul class="hwb-governance-list hwb-governance-list--not">
+      {governance.mayNot.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+</div>

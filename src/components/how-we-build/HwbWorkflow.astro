@@ -1,0 +1,24 @@
+---
+import content from '../../content/how-we-build.json';
+
+const { workflow } = content;
+---
+
+<section class="section hwb-workflow fade-in" aria-labelledby="hwb-workflow-heading">
+  <div class="container narrow">
+    <span class="section-label">{workflow.label}</span>
+    <h2 class="headline-md" id="hwb-workflow-heading">{workflow.headline}</h2>
+    <p class="hwb-prose">{workflow.intro}</p>
+
+    <ol class="hwb-workflow-steps">
+      {workflow.steps.map((step, i) => (
+        <li class="hwb-workflow-step">
+          <span class="hwb-workflow-node">{step}</span>
+          {i < workflow.steps.length - 1 && (
+            <span class="hwb-workflow-arrow" aria-hidden="true">→</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

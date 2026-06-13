@@ -1,0 +1,22 @@
+---
+interface Props {
+  label: string;
+  headline: string;
+  class?: string;
+  id?: string;
+}
+
+const { label, headline, class: extraClass, id } = Astro.props;
+const sectionId = id ?? label.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+---
+
+<section
+  class:list={['section', 'hwb-section', 'fade-in', extraClass]}
+  aria-labelledby={`${sectionId}-heading`}
+>
+  <div class="container narrow">
+    <span class="section-label">{label}</span>
+    <h2 class="headline-md" id={`${sectionId}-heading`}>{headline}</h2>
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import content from '../../content/how-we-build.json';
+
+const { hero } = content;
+---
+
+<section class="hero section hwb-hero fade-in" aria-labelledby="hwb-hero-heading">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="pulse"></span>
+      {hero.badge}
+    </div>
+
+    <h1 class="headline-xl" id="hwb-hero-heading">
+      {hero.titleTop}<br />
+      <span class="text-gradient">{hero.titleGradient}</span>
+    </h1>
+
+    <p class="hwb-hero-intro">{hero.intro}</p>
+
+    <div class="hwb-stats-row">
+      {hero.stats.map((stat) => (
+        <a href={stat.href} class="hwb-stat hwb-stat-link">
+          <span class="hwb-stat-value">{stat.value}</span>
+          <span class="hwb-stat-label">{stat.label}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

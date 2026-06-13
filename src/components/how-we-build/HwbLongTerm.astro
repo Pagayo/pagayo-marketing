@@ -1,0 +1,45 @@
+---
+import content from '../../content/how-we-build.json';
+
+const { longTerm } = content;
+---
+
+<section class="section hwb-longterm fade-in" aria-labelledby="hwb-longterm-heading">
+  <div class="container">
+    <div class="hwb-longterm-inner">
+      <div class="hwb-longterm-copy">
+        <span class="section-label">{longTerm.label}</span>
+        <h2 class="headline-md" id="hwb-longterm-heading">{longTerm.headline}</h2>
+        {longTerm.paragraphs.map((p) => (
+          <p class="hwb-prose">{p}</p>
+        ))}
+        <p class="hwb-link-row">
+          {longTerm.links.map((link, i) => (
+            <>
+              {i > 0 && <span class="hwb-link-sep" aria-hidden="true"> · </span>}
+              <a href={link.href} class="hwb-link">{link.label}</a>
+            </>
+          ))}
+        </p>
+      </div>
+
+      <ul class="hwb-stats" aria-label="Platform facts">
+        {longTerm.stats.map((stat) => (
+          <li class="hwb-stat-card">
+            {stat.href ? (
+              <a href={stat.href} class="hwb-stat-card-link">
+                <span class="hwb-stat-value">{stat.value}</span>
+                <span class="hwb-stat-label">{stat.label}</span>
+              </a>
+            ) : (
+              <>
+                <span class="hwb-stat-value">{stat.value}</span>
+                <span class="hwb-stat-label">{stat.label}</span>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

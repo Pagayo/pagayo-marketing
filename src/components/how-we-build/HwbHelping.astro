@@ -1,0 +1,18 @@
+---
+import content from '../../content/how-we-build.json';
+
+const { helping } = content;
+---
+
+<section class="section hwb-helping fade-in" aria-labelledby="hwb-helping-heading">
+  <div class="container narrow">
+    <span class="section-label">{helping.label}</span>
+    <h2 class="headline-md" id="hwb-helping-heading">{helping.headline}</h2>
+    {helping.paragraphs.map((p) => (
+      <p class="hwb-prose">{p}</p>
+    ))}
+    <p class="hwb-link-row">
+      <a href={helping.contactHref} class="hwb-link">{helping.contactLabel}</a>
+    </p>
+  </div>
+</section>

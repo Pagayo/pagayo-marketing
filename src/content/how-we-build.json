@@ -1,0 +1,176 @@
+{
+  "hero": {
+    "label": "How we build",
+    "titleTop": "How Pagayo is built.",
+    "titleGradient": "One platform. One system.",
+    "intro": "Pagayo is a live SaaS platform — real tenants, real revenue, real production load. It is also a working example of what happens when you treat AI as development capacity inside a deliberate system, not as a shortcut around engineering.",
+    "badge": "A complete development system",
+    "stats": [
+      { "value": "12+", "label": "repositories, one workspace", "href": "/cursor#multi-repo" },
+      { "value": "19", "label": "specialised agents", "href": "/cursor#agents" },
+      { "value": "Weekly", "label": "production releases", "href": "/changelog" },
+      { "value": "Live", "label": "tenants on platform", "href": "/success-stories" }
+    ]
+  },
+  "workflow": {
+    "label": "How a change moves",
+    "headline": "One path. No shortcuts.",
+    "intro": "Every change — from a button colour to a schema migration — follows the same pipeline. Agents work inside it; they do not replace it.",
+    "steps": [
+      "Playbook",
+      "Scoped agent",
+      "Pull request",
+      "Checks & review",
+      "Staging",
+      "Production"
+    ]
+  },
+  "founder": {
+    "label": "One founder. One platform.",
+    "headline": "Not a department. A system.",
+    "paragraphs": [
+      "Pagayo is built by one founder — not a large engineering department, not an agency, not an offshore bench.",
+      "What makes that workable is not raw speed. It is architecture you can explain in one diagram, processes that survive a bad week, and quality systems that do not depend on memory or mood.",
+      "Most visitors do not ask whether AI helps. They ask how one person can operate a platform this broad — storefront, payments, edge cache, admin, marketing, migrations, staging, production — without the wheels coming off.",
+      "The operator is one person today. The playbooks, schemas, and review gates are version-controlled — they apply to whoever touches the code next, human or agent."
+    ]
+  },
+  "aiTeam": {
+    "label": "AI is not the tool. It is the team.",
+    "headline": "Capacity, not magic.",
+    "paragraphs": [
+      "At Pagayo, AI is development capacity: parallel workstreams, careful refactors, review passes, and research — staffed by different models with different strengths.",
+      "Documentation matters more than clever instructions. Context matters more than generation speed. Agents read the codebase, the schemas, the deploy playbooks, and the rules files first — not improvised chat prompts.",
+      "Models change. Tools change. The system that loads context, enforces boundaries, and ships through the same pipeline does not."
+    ],
+    "governance": {
+      "may": [
+        "Create feature branches and open pull requests",
+        "Run tests, builds, and staging deploys via CI",
+        "Read logs and docs through scoped MCP tools"
+      ],
+      "mayNot": [
+        "Push to main or deploy to production",
+        "Skip review or bypass migration checks",
+        "Modify shared schema without a published package bump"
+      ]
+    },
+    "links": [
+      {
+        "href": "/cursor",
+        "label": "Pagayo in Cursor",
+        "description": "How the editor, workspace, and parallel agents fit together"
+      },
+      {
+        "href": "/claude",
+        "label": "Pagayo with Claude",
+        "description": "How reasoning, review, and long-context work enter the loop"
+      }
+    ]
+  },
+  "operatingSystem": {
+    "label": "The operating system",
+    "headline": "A development system, not a pile of hacks.",
+    "intro": "Pagayo did not accumulate AI tricks. It accumulated structure — the kind that lets agents work safely at scale and lets a single operator stay in control.",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Architecture",
+        "body": "Multi-repo, edge-first, Order-First domain model. Clear boundaries so agents know where a change belongs — and where it does not.",
+        "proofHref": "/one-stack",
+        "proofLabel": "One stack — architecture choices →"
+      },
+      {
+        "num": "02",
+        "title": "Documentation",
+        "body": "AGENTS.md, playbooks, interface matrices, design contracts. The platform teaches newcomers — human or agent — how to behave before they touch code.",
+        "proofHref": "/cursor#rules",
+        "proofLabel": "Pagayo in Cursor — rules & AGENTS.md →"
+      },
+      {
+        "num": "03",
+        "title": "Single source of truth",
+        "body": "Schema, design tokens, pricing, config each live in one named home. Duplicated truth is where AI-assisted development quietly breaks."
+      },
+      {
+        "num": "04",
+        "title": "AI governance",
+        "body": "Deploy policy, branch rules, MCP boundaries, and explicit \"may / may not\" lists. Agents operate inside guardrails that are version-controlled and reviewable.",
+        "proofHref": "/github",
+        "proofLabel": "Pagayo on GitHub — PR checks & deploys →"
+      },
+      {
+        "num": "05",
+        "title": "Specialised agents",
+        "body": "Backend, frontend, database review, security, testing, exploration — scoped roles instead of one generalist that guesses its way through everything."
+      },
+      {
+        "num": "06",
+        "title": "Review processes",
+        "body": "Pull requests, automated checks, AI review on diffs, founder sign-off on production. Speed without review is just faster drift."
+      },
+      {
+        "num": "07",
+        "title": "Quality systems",
+        "body": "Tests as documentation, migration checks, staging before production, structured errors. Quality is designed in — not hoped for after the fact."
+      }
+    ]
+  },
+  "lessons": {
+    "label": "What we learned",
+    "headline": "Honest lessons from building this way.",
+    "intro": "None of this arrived fully formed. These are the patterns that survived contact with production.",
+    "items": [
+      {
+        "title": "AI without architecture does not scale",
+        "body": "It amplifies whatever mess already exists. Clear module boundaries and domain rules are prerequisites — not optional polish."
+      },
+      {
+        "title": "AI without documentation fails quietly",
+        "body": "Agents guess. Humans patch. Drift compounds until nobody trusts the output. Written standards beat clever session prompts every time."
+      },
+      {
+        "title": "Prompts are not enough",
+        "body": "Durable instructions live in version control: rules files, playbooks, schemas. Chat is for the task at hand — not for storing how the company builds software."
+      },
+      {
+        "title": "Governance grows with the system",
+        "body": "What worked at three repositories breaks at twelve. Deploy policy, secret handling, and agent scope need to tighten as surface area grows — not loosen."
+      },
+      {
+        "title": "Quality comes from systems",
+        "body": "Consistent patterns, automated checks, reviewable diffs, and staging validation beat hoping the model got lucky on the last turn."
+      }
+    ]
+  },
+  "longTerm": {
+    "label": "Built for the long term",
+    "headline": "Production, not a prototype.",
+    "paragraphs": [
+      "Pagayo is not an experiment on a slide deck. It runs in production, serves live tenants, processes real payments, and ships improvements every week.",
+      "That constraint changes how you build. You cannot hand-wave migrations, skip tests, or \"fix it in prod\" when customers depend on the platform Monday morning.",
+      "The same systems that make AI-assisted development possible also make it responsible: staged deploys, observable errors, rollback paths, and a changelog you can point to."
+    ],
+    "links": [
+      { "href": "/build-log", "label": "Build Log" },
+      { "href": "/changelog", "label": "Changelog" },
+      { "href": "/one-stack", "label": "One stack" }
+    ],
+    "stats": [
+      { "value": "2500+", "label": "documented deployments", "href": "/build-log" },
+      { "value": "Weekly", "label": "logged product updates", "href": "/changelog" },
+      { "value": "100", "label": "anonymised tenant stories", "href": "/success-stories" },
+      { "value": "Edge", "label": "global, no origin servers", "href": "/cloudflare" }
+    ]
+  },
+  "helping": {
+    "label": "Helping others build differently",
+    "headline": "Occasionally, not as a business model.",
+    "paragraphs": [
+      "We sometimes help software companies explore AI-native development practices — architecture, documentation, agent setup, governance — when the fit is right.",
+      "This is not a consultancy landing page. Pagayo remains the product. If you are building software and want to compare notes, we are open to a conversation."
+    ],
+    "contactHref": "/contact",
+    "contactLabel": "Get in touch →"
+  }
+}
