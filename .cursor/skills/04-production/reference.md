@@ -104,6 +104,6 @@ Secret-waarde ≠ workflow `deploy_token` input; workflow-token staat alleen in 
 - Productie starten zonder expliciete thread-goedkeuring.
 - `deploy_token`-waarde in chat, issues, logs of `pagayo-docs`.
 
-## Volgende skill (05 — geen deploy)
+## Volgende skills (05–07 — geen deploy)
 
-Optioneel **vóór grote nieuwe beslissingen** (niet na productie): Cursor skill **`05-strategic-red-team`** — adversarial pre-build review. Zie `pagayo-docs/strategic-red-team/README.md`.
+AI Decision Process (readonly, vóór werkvoorbereiding): skills **`05-founder-mode`**, **`06-red-team`**, **`07-operator-mode`**. Docs: `pagayo-docs/ai-decision-process/README.md`.
