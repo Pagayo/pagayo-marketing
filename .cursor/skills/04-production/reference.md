@@ -103,3 +103,7 @@ Secret-waarde ≠ workflow `deploy_token` input; workflow-token staat alleen in 
 - Token roteren of naar andere repo's committen.
 - Productie starten zonder expliciete thread-goedkeuring.
 - `deploy_token`-waarde in chat, issues, logs of `pagayo-docs`.
+
+## Volgende skill (05 — geen deploy)
+
+Optioneel **vóór grote nieuwe beslissingen** (niet na productie): Cursor skill **`05-strategic-red-team`** — adversarial pre-build review. Zie `pagayo-docs/strategic-red-team/README.md`.
