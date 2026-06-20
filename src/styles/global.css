@@ -30,10 +30,10 @@
   --border-subtle: #1e1e22;
   --border-accent: rgba(99, 91, 255, 0.3);
 
-  /* Text */
+  /* Text — secondary is default body/paragraph; keep clear step from primary */
   --text-primary: #fafafa;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
+  --text-secondary: #d4d4d8;
+  --text-muted: #a1a1aa;
 
   /* Brand */
   --pagayo-purple: #635BFF;
@@ -98,6 +98,10 @@ body {
 
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
+
+p {
+  color: var(--text-secondary);
+}
 
 /* --- TYPOGRAPHY --- */
 .headline-xl {

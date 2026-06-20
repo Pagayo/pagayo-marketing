@@ -21,9 +21,9 @@ Gebruik **altijd** variabelen; geen losse hex in componenten.
 | `--bg-surface` | `#0f0f12` | Sectie-alt |
 | `--border` | `#27272a` | Standaard rand |
 | `--border-subtle` | `#1e1e22` | Subtiele scheiding |
-| `--text-primary` | `#fafafa` | Koppen, body |
-| `--text-secondary` | `#a1a1aa` | Intro, subtitels |
-| `--text-muted` | `#71717a` | Meta, labels |
+| `--text-primary` | `#fafafa` | Koppen, nadruk |
+| `--text-secondary` | `#d4d4d8` | Body, paragrafen, intro |
+| `--text-muted` | `#a1a1aa` | Meta, labels |
 | `--pagayo-purple` | `#635BFF` | Primair merk |
 | `--pagayo-purple-light` | `#818cf8` | Hover/accent |
 | `--gym-green` | `#00d4aa` | Gym-motor |
