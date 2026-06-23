@@ -1,0 +1,241 @@
+{
+  "title": "One stack, no compromises — How Pagayo is built",
+  "description": "Pagayo is fast, affordable and reliable because of one rule: for every critical function we choose one world-class tool and go deep. Here is what that looks like — and what it means for your shop.",
+  "inLanguage": "en",
+  "hero": {
+    "badge": "How Pagayo is built",
+    "headlineTop": "One tool per job.",
+    "headlineGradient": "The best one.",
+    "intro": "Pagayo is fast, affordable, and reliable because of a rule we never break: for every critical function, we choose one world-class tool and go deep. No mixing. No patching. No compromises.",
+    "stats": [
+      { "value": "7", "label": "strategic tool choices" },
+      { "value": "300+", "label": "cities worldwide" },
+      { "value": "<50ms", "label": "response time, anywhere" },
+      { "value": "1", "label": "team, one codebase" }
+    ]
+  },
+  "principle": {
+    "sectionLabel": "The principle",
+    "headline": "Simplicity is a decision, not an accident.",
+    "paragraphs": [
+      "Your baker has one flour supplier. Your accountant runs one accounting program. Your coffee machine takes one type of pod. Not because there are no alternatives — but because mixing too many vendors is where things start to break, where costs creep up, where nobody knows who is responsible when something goes wrong.",
+      "Pagayo works the same way. Every layer of the platform has exactly one world-class tool behind it. We chose each one carefully, integrated it deeply, and we never look back. That is where the reliability comes from. That is where the lower price comes from. That is where the weekly updates come from.",
+      "We call it the One Stack rule. One infrastructure provider. One payment processor. One language. One ORM. No exceptions."
+    ]
+  },
+  "pillars": [
+    {
+      "num": "01",
+      "slug": "cloudflare",
+      "category": "Infrastructure",
+      "name": "Cloudflare",
+      "tagline": "The infrastructure every feature runs on.",
+      "forYou": "Your shop loads in milliseconds — in Amsterdam, in Nairobi, anywhere.",
+      "body": "Every page your customer opens, every order they place, every payment confirmation they receive — it all runs on Cloudflare's global edge network. Over 300 cities. No servers to rent. No maintenance windows to plan around. When Cloudflare adds a new data centre, your shop gets faster. Automatically.",
+      "linkSlug": "cloudflare",
+      "accent": "#F38020",
+      "accentSoft": "rgba(243, 128, 32, 0.15)"
+    },
+    {
+      "num": "02",
+      "slug": "stripe",
+      "category": "Payments",
+      "name": "Stripe",
+      "tagline": "The only payment layer we will ever need.",
+      "forYou": "Your money arrives. Every time. Right on schedule.",
+      "body": "Cards, iDEAL, SEPA, Apple Pay, Google Pay, subscriptions, refunds, payouts direct to the founder's own bank account — all of it flows through a single integration with Stripe. Every new payment method Stripe launches becomes available to your shop automatically. We connect once, deeply, and it just works.",
+      "linkSlug": "stripe",
+      "accent": "#635BFF",
+      "accentSoft": "rgba(99, 91, 255, 0.15)"
+    },
+    {
+      "num": "03",
+      "slug": "github",
+      "category": "Code safety",
+      "name": "GitHub",
+      "tagline": "Nothing ships without passing every check.",
+      "forYou": "Your platform never degrades. Every update is safer than the last.",
+      "body": "Every change to Pagayo — from a button colour to a new payment method — is written, reviewed, tested, and deployed from GitHub. Automated checks run before anything reaches production. There is no shortcut. There is no \"quick fix\" that bypasses the process. That discipline is what keeps the platform stable as it grows.",
+      "linkSlug": "github",
+      "accent": "#8b949e",
+      "accentSoft": "rgba(139, 148, 158, 0.2)"
+    },
+    {
+      "num": "04",
+      "slug": "typescript",
+      "category": "Language",
+      "name": "TypeScript",
+      "tagline": "One language, from the button you click to the database that stores your order.",
+      "forYou": "Fewer bugs. Faster fixes. More predictable behaviour.",
+      "body": "TypeScript is the language of the entire Pagayo platform — the storefront your customers browse, the API that processes their orders, the database schemas that store their data. One language, front to back. No translation layers. No mismatches between what the client sends and what the server expects. Most bugs are caught before the code ever runs.",
+      "linkSlug": null,
+      "accent": "#3b82f6",
+      "accentSoft": "rgba(59, 130, 246, 0.15)"
+    },
+    {
+      "num": "05",
+      "slug": "drizzle",
+      "category": "Data",
+      "name": "Drizzle",
+      "tagline": "Your shop's memory, structured and safe.",
+      "forYou": "Your data is where you expect it. Migrations run in seconds. Nothing gets lost.",
+      "body": "Drizzle is the single source of truth for how Pagayo thinks about data — what an order looks like, what a product contains, how a customer is stored, what a payment records. One schema, one library, consistent across every database, every tenant. There is no guessing about the shape of your data. It is defined once and respected everywhere.",
+      "linkSlug": null,
+      "accent": "#34d399",
+      "accentSoft": "rgba(52, 211, 153, 0.13)"
+    },
+    {
+      "num": "06",
+      "slug": "cursor",
+      "category": "Development",
+      "name": "Cursor",
+      "tagline": "A single operator, moving at the speed of a team.",
+      "forYou": "New features arrive every week. Not every quarter.",
+      "body": "Pagayo is built inside Cursor — the AI-native development environment that gives one engineer the leverage of five. Multi-repo context, parallel agents, instant refactors across the entire codebase. Features that would take a team of four a month ship in days. That speed comes back to you as more value per euro.",
+      "linkSlug": "cursor",
+      "accent": "#06b6d4",
+      "accentSoft": "rgba(6, 182, 212, 0.15)"
+    },
+    {
+      "num": "07",
+      "slug": "claude",
+      "category": "Intelligence",
+      "name": "Claude",
+      "tagline": "The brain behind features that feel effortless.",
+      "forYou": "A platform that gets smarter over time. Without you lifting a finger.",
+      "body": "Claude reads the full codebase, spots problems before they ship, and powers the kind of intelligent features — admin assistants, smart search, automated insights — that used to require a dedicated data team. Every model release makes Pagayo more capable. You benefit from that without doing anything.",
+      "linkSlug": "claude",
+      "accent": "#d97757",
+      "accentSoft": "rgba(217, 119, 87, 0.15)"
+    }
+  ],
+  "forYourShopLabel": "For your shop",
+  "pillarLinkTemplate": "How Pagayo uses {name} →",
+  "benefits": {
+    "sectionLabel": "What this means for you",
+    "headline": "Seven choices. One outcome.",
+    "intro": "Every decision in the One Stack comes back to the same four benefits.",
+    "items": [
+      {
+        "icon": "💶",
+        "title": "Lower prices",
+        "body": "Every integration we avoid is overhead that never reaches your invoice. One tool per job means we spend engineering time on features, not on plumbing between vendors."
+      },
+      {
+        "icon": "🟢",
+        "title": "Fewer outages",
+        "body": "A chain with seven strong links is more reliable than a chain with fifteen weak ones. We know every tool inside-out. There is no finger-pointing between vendors when something is slow."
+      },
+      {
+        "icon": "🚀",
+        "title": "Weekly updates",
+        "body": "When each platform partner ships an improvement, we pick it up immediately. One integration means zero friction between \"released\" and \"live in your shop\"."
+      },
+      {
+        "icon": "🔒",
+        "title": "Deep expertise",
+        "body": "We do not skim the surface of seven hundred libraries. We go deep on seven. That depth is what produces the sub-50ms load times, the 99.99% uptime, the clean API."
+      }
+    ]
+  },
+  "comparison": {
+    "sectionLabel": "The alternative",
+    "headline": "Most platforms mix. We don't.",
+    "intro": "This is what complexity looks like — and why we never let it in.",
+    "badLabel": "Typical platform",
+    "goodLabel": "Pagayo",
+    "rows": [
+      {
+        "category": "Infrastructure",
+        "bad": "2–3 hosting providers + a CDN",
+        "good": "Cloudflare — one edge network"
+      },
+      {
+        "category": "Payments",
+        "bad": "Stripe + Mollie + Adyen + fallbacks",
+        "good": "Stripe — one integration"
+      },
+      {
+        "category": "Code",
+        "bad": "PHP, Python, Node.js, Ruby",
+        "good": "TypeScript — front to back"
+      },
+      {
+        "category": "Database",
+        "bad": "SQL + cache layer + search engine + object store",
+        "good": "Drizzle + D1 — one schema layer"
+      },
+      {
+        "category": "AI",
+        "bad": "4+ model providers, mixed APIs",
+        "good": "Claude — one deep integration"
+      },
+      {
+        "category": "Deploys",
+        "bad": "Bespoke scripts, monthly release cycles",
+        "good": "GitHub Actions — every week, automated"
+      },
+      {
+        "category": "Languages",
+        "bad": "A different stack per service",
+        "good": "One language. One team. One codebase."
+      }
+    ],
+    "note": "Complexity is not a sign of ambition. It is a sign of unresolved decisions."
+  },
+  "ripple": {
+    "sectionLabel": "The ripple effect",
+    "headline": "One good decision compounds.",
+    "steps": [
+      {
+        "step": "1",
+        "title": "We pick Cloudflare.",
+        "body": "Every service — compute, storage, cache, queues, DNS — lives on one network. No cross-provider latency. No egress fees between services."
+      },
+      {
+        "step": "2",
+        "title": "That makes Stripe trivially reliable.",
+        "body": "Payment webhooks hit a Worker on the same network. No transit. No timeout risk. Stripe confirmations land in milliseconds."
+      },
+      {
+        "step": "3",
+        "title": "That makes TypeScript the obvious language.",
+        "body": "One runtime (V8), one language (TypeScript), from the storefront to the Worker to the Drizzle schema. No polyglot friction."
+      },
+      {
+        "step": "4",
+        "title": "That makes Cursor and Claude unstoppable.",
+        "body": "One codebase in one language gives AI full context. Changes that span 13 repos take hours, not weeks. You get new features every week."
+      }
+    ]
+  },
+  "numbers": {
+    "items": [
+      { "val": "7", "label": "tools in the stack", "sub": "one per category, chosen once" },
+      { "val": "300+", "label": "cities worldwide", "sub": "all powered by one provider" },
+      { "val": "<50ms", "label": "typical response", "sub": "anywhere on earth" },
+      { "val": "99.99%", "label": "uptime", "sub": "no origin servers to fail" },
+      { "val": "1", "label": "language", "sub": "TypeScript, end to end" },
+      { "val": "Weekly", "label": "deploy cadence", "sub": "not quarterly, not monthly" }
+    ]
+  },
+  "closing": {
+    "sectionLabel": "Enough about the stack",
+    "headlineLine1": "The best infrastructure is the kind",
+    "headlineLine2": "you never have to think about.",
+    "paragraphs": [
+      "You open your shop, you sell, you get paid. Everything under the hood — Cloudflare, Stripe, GitHub, TypeScript, Drizzle, Cursor, Claude — runs so that you never have to wonder what runs.",
+      "That is the whole point."
+    ],
+    "cta": "Open your shop for free →",
+    "linksPrefix": "Curious how it fits together?",
+    "linksText": "Read the full giant story →",
+    "linksHref": "/built-on-giants"
+  },
+  "visuals": {
+    "cloudflareCaption": "300+ cities · zero origin servers",
+    "typescriptComment": "// Type error caught before deploy",
+    "cursorAgents": "3 agents · one-stack",
+    "cursorReady": "ready"
+  }
+}

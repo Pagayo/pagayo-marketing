@@ -9,7 +9,8 @@ export type LocalizedPageId =
   | 'impact'
   | 'poweredBy'
   | 'poweredByContact'
-  | 'howWeBuild';
+  | 'howWeBuild'
+  | 'oneStack';
 
 const ROUTES: Record<LocalizedPageId, Record<Locale, string | null>> = {
   home: { en: '/', nl: '/nl/', de: null },
@@ -19,6 +20,7 @@ const ROUTES: Record<LocalizedPageId, Record<Locale, string | null>> = {
   poweredBy: { en: '/powered-by', nl: '/nl/powered-by', de: null },
   poweredByContact: { en: '/powered-by-contact', nl: '/nl/powered-by-contact', de: null },
   howWeBuild: { en: '/how-we-build', nl: '/nl/how-we-build', de: null },
+  oneStack: { en: '/one-stack', nl: '/nl/one-stack', de: null },
 };
 
 export interface AlternateLink {
