@@ -10,7 +10,8 @@ export type LocalizedPageId =
   | 'poweredBy'
   | 'poweredByContact'
   | 'howWeBuild'
-  | 'oneStack';
+  | 'oneStack'
+  | 'builtOnGiants';
 
 const ROUTES: Record<LocalizedPageId, Record<Locale, string | null>> = {
   home: { en: '/', nl: '/nl/', de: null },
@@ -21,6 +22,7 @@ const ROUTES: Record<LocalizedPageId, Record<Locale, string | null>> = {
   poweredByContact: { en: '/powered-by-contact', nl: '/nl/powered-by-contact', de: null },
   howWeBuild: { en: '/how-we-build', nl: '/nl/how-we-build', de: null },
   oneStack: { en: '/one-stack', nl: '/nl/one-stack', de: null },
+  builtOnGiants: { en: '/built-on-giants', nl: '/nl/built-on-giants', de: null },
 };
 
 export interface AlternateLink {
