@@ -24,7 +24,7 @@ const f = t.footer;
       <div class="footer-col">
         <h4>{f.productHeading}</h4>
         <ul>
-          <li><a href="/features">{f.features}</a></li>
+          <li><a href={hrefFor('features', locale)}>{f.features}</a></li>
           <li><a href={hrefFor('pricing', locale)}>{f.pricing}</a></li>
           <li><a href={hrefFor('howWeBuild', locale)}>{f.howWeBuild}</a></li>
           <li><a href="/changelog">{f.changelog}</a></li>

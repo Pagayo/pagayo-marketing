@@ -1,12 +1,12 @@
 ---
-import MarketingLayout from '../layouts/Marketing.astro';
-import FeaturesPageMain from '../components/features/FeaturesPageMain.astro';
-import { loadHome } from '../lib/home';
-import { loadMessages } from '../lib/i18n';
-import { SITE_ORIGIN } from '../lib/site-seo';
-import { localizedPath } from '../lib/locale-routes';
+import MarketingLayout from '../../layouts/Marketing.astro';
+import FeaturesPageMain from '../../components/features/FeaturesPageMain.astro';
+import { loadHome } from '../../lib/home';
+import { loadMessages } from '../../lib/i18n';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
 
-const locale = 'en';
+const locale = 'nl';
 const messages = loadMessages(locale);
 const t = messages.featuresPage;
 const home = loadHome(locale);

@@ -1,0 +1,50 @@
+---
+import PageBackdrop from '../layout/PageBackdrop.astro';
+import PageHero from '../layout/PageHero.astro';
+import FeaturesGrid from '../sections/FeaturesGrid.astro';
+import ProductPreview from '../sections/ProductPreview.astro';
+import ChannelStrip from '../sections/ChannelStrip.astro';
+import CompetitorTable from '../sections/CompetitorTable.astro';
+import StepsGrid from '../sections/StepsGrid.astro';
+import FinalCta from '../sections/FinalCta.astro';
+import type { HomeContent } from '../../lib/home';
+import type { Locale, Messages } from '../../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  featuresPage: Messages['featuresPage'];
+  home: HomeContent;
+  homePage: Messages['homePage'];
+}
+
+const { locale, featuresPage: t, home, homePage } = Astro.props;
+---
+
+<PageBackdrop variant="features" />
+
+<PageHero label={t.sectionLabel} headingId="features-page-title">
+  <Fragment slot="title">
+    {t.headlineTop}<br />
+    <span class="text-gradient">{t.headlineBottom}</span>
+  </Fragment>
+  <p class="text-lg" slot="intro">{t.intro}</p>
+
+  <div class="feature-points" aria-label={t.pointsAriaLabel}>
+    {t.points.map((point) => (
+      <div class="feature-point-card">
+        <h2>{point.title}</h2>
+        <p>{point.description}</p>
+      </div>
+    ))}
+  </div>
+</PageHero>
+
+<FeaturesGrid content={home.featuresGrid} />
+<ProductPreview content={home.productPreview} />
+<ChannelStrip content={home.channelStrip} />
+
+<div class="section-divider"></div>
+<CompetitorTable content={home.competitorTable} />
+
+<StepsGrid content={home.stepsGrid} />
+<FinalCta locale={locale} home={homePage} />
