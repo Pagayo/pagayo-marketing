@@ -63,7 +63,15 @@
       }
     },
     "submit": "Send enquiry →",
-    "note": "We respond within one business day."
+    "submitting": "Sending…",
+    "note": "We respond within one business day.",
+    "privacyPrefix": "By submitting this form you agree to our",
+    "privacyLink": "Privacy Policy",
+    "privacySuffix": "We will only use your information to respond to your enquiry.",
+    "successTitle": "Enquiry sent!",
+    "successBody": "We will get back to you within one business day.",
+    "errorBody": "Something went wrong. Please try again or email us directly at",
+    "errorEmail": "info@pagayo.com"
   },
   "info": {
     "nextSteps": {
@@ -86,6 +94,5 @@
       "link": "Explore the founder experience →"
     }
   },
-  "founderRegister": "https://start.pagayo.app/register",
-  "formAction": "https://formspree.io/f/pagayo-powered-by"
+  "founderRegister": "https://start.pagayo.app/register"
 }

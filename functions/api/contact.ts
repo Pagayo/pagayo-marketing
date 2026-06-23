@@ -28,6 +28,10 @@ interface ContactPayload {
   message: string;
   /** Honeypot — must be empty */
   website?: string;
+  sector?: string;
+  network_size?: string;
+  intent?: string;
+  form_type?: string;
 }
 
 // ─── AWS SES v4 Signing ───────────────────────────────────────────────────────
@@ -134,12 +138,21 @@ async function sendContactEmail(
   const to = env.CONTACT_EMAIL_TO || "info@pagayo.com";
   const endpoint = `https://email.${region}.amazonaws.com/v2/email/outbound-emails`;
 
+  const isPoweredBy = payload.form_type === "powered-by";
+  const heading = isPoweredBy
+    ? "New Powered by Pagayo enquiry"
+    : "New contact form submission";
+  const subjectPrefix = isPoweredBy ? "[Powered by]" : "[Contact]";
+
   const html = `
-    <h2>New contact form submission</h2>
+    <h2>${heading}</h2>
     <table cellpadding="6" style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
       <tr><th align="left">Name</th><td>${escapeHtml(payload.name)}</td></tr>
       <tr><th align="left">Email</th><td><a href="mailto:${escapeHtml(payload.email)}">${escapeHtml(payload.email)}</a></td></tr>
-      ${payload.company ? `<tr><th align="left">Company</th><td>${escapeHtml(payload.company)}</td></tr>` : ""}
+      ${payload.company ? `<tr><th align="left">Organisation</th><td>${escapeHtml(payload.company)}</td></tr>` : ""}
+      ${payload.sector ? `<tr><th align="left">Sector</th><td>${escapeHtml(payload.sector)}</td></tr>` : ""}
+      ${payload.network_size ? `<tr><th align="left">Network size</th><td>${escapeHtml(payload.network_size)}</td></tr>` : ""}
+      ${payload.intent ? `<tr><th align="left">Intent</th><td>${escapeHtml(payload.intent)}</td></tr>` : ""}
       <tr><th align="left">Subject</th><td>${escapeHtml(payload.subject)}</td></tr>
     </table>
     <h3 style="margin-top:24px">Message</h3>
@@ -149,7 +162,10 @@ async function sendContactEmail(
   const text =
     `Name: ${payload.name}\n` +
     `Email: ${payload.email}\n` +
-    (payload.company ? `Company: ${payload.company}\n` : "") +
+    (payload.company ? `Organisation: ${payload.company}\n` : "") +
+    (payload.sector ? `Sector: ${payload.sector}\n` : "") +
+    (payload.network_size ? `Network size: ${payload.network_size}\n` : "") +
+    (payload.intent ? `Intent: ${payload.intent}\n` : "") +
     `Subject: ${payload.subject}\n\n` +
     `Message:\n${payload.message}`;
 
@@ -159,7 +175,7 @@ async function sendContactEmail(
     ReplyToAddresses: [payload.email],
     Content: {
       Simple: {
-        Subject: { Data: `[Contact] ${payload.subject}`, Charset: "UTF-8" },
+        Subject: { Data: `${subjectPrefix} ${payload.subject}`, Charset: "UTF-8" },
         Body: {
           Html: { Data: html, Charset: "UTF-8" },
           Text: { Data: text, Charset: "UTF-8" },
@@ -235,10 +251,30 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // Validation
   const name = typeof data.name === "string" ? data.name.trim() : "";
   const email = typeof data.email === "string" ? data.email.trim() : "";
-  const company =
-    typeof data.company === "string" ? data.company.trim() : undefined;
+  const companyRaw =
+    typeof data.company === "string"
+      ? data.company.trim()
+      : typeof data.organisation === "string"
+        ? data.organisation.trim()
+        : undefined;
+  const company = companyRaw || undefined;
   const subject = typeof data.subject === "string" ? data.subject.trim() : "";
-  const message = typeof data.message === "string" ? data.message.trim() : "";
+  let message = typeof data.message === "string" ? data.message.trim() : "";
+  const sector = typeof data.sector === "string" ? data.sector.trim() : undefined;
+  const network_size =
+    typeof data.network_size === "string" ? data.network_size.trim() : undefined;
+  const intent = typeof data.intent === "string" ? data.intent.trim() : undefined;
+  const form_type =
+    typeof data.form_type === "string" ? data.form_type.trim() : undefined;
+
+  if (message.length < 10 && form_type === "powered-by") {
+    const lines = ["Powered by Pagayo network enquiry."];
+    if (sector) lines.push(`Sector: ${sector}`);
+    if (network_size) lines.push(`Network size: ${network_size}`);
+    if (intent) lines.push(`Intent: ${intent}`);
+    if (message) lines.push("", "Additional notes:", message);
+    message = lines.join("\n");
+  }
 
   const errors: string[] = [];
   if (!name || name.length > 120) errors.push("name");
@@ -256,7 +292,17 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   try {
-    await sendContactEmail(env, { name, email, company, subject, message });
+    await sendContactEmail(env, {
+      name,
+      email,
+      company,
+      subject,
+      message,
+      sector,
+      network_size,
+      intent,
+      form_type,
+    });
     return Response.json({ success: true });
   } catch (err) {
     console.error("contact: send failed", err);
