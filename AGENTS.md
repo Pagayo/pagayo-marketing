@@ -18,6 +18,40 @@
 - Client-JS in `src/scripts/` — geen inline scripts in `.astro` (JSON-LD uitgezonderd).
 - Nieuwe pagina's mogen geen losstaande, gedupliceerde header/footer of pricing-markup bevatten.
 
+## Contactformulieren (verplicht — AWS SES)
+
+Alle contactformulieren op de marketing site **moeten** via de interne Pages Function **`/api/contact`** (`functions/api/contact.ts`) lopen. Die route verstuurt notificaties via **AWS SES** (`noreply@pagayo.email` → `info@pagayo.com`, regio standaard `eu-north-1`).
+
+| Route | Client | Handler |
+|-------|--------|---------|
+| `/contact` | `src/scripts/pages/contact.ts` → `initContactForm` | `/api/contact` |
+| `/impact-contact` | `src/scripts/pages/impact-contact.ts` → `initContactForm` | `/api/contact` |
+| `/powered-by-contact`, `/nl/powered-by-contact` | `src/scripts/pages/powered-by-contact.ts` | `/api/contact` (`form_type: powered-by`) |
+
+**Wel bij nieuw contactformulier**
+
+- Geen `action` naar externe URL; submit via `fetch('/api/contact')` (hergebruik `initContactForm` waar mogelijk).
+- Honeypot-veld `website` (hidden).
+- Success/error UI op de pagina; fallback `mailto:info@pagayo.com` in fouttekst.
+- Optionele velden uitbreiden in `functions/api/contact.ts` + e-mailtemplate — niet een tweede backend.
+
+**Niet**
+
+- Formspree, Getform, Netlify Forms, HubSpot embeds, Typeform, of andere **externe form-/mail-SaaS**.
+- Nieuwe `/api/*` mail-endpoints zonder expliciete afstemming.
+
+Secrets staan in Cloudflare Pages (zie `wrangler.toml` kopcomment + `05-deploy.md`).
+
+## Externe systemen (harde gate — Sjoerd)
+
+Voeg **nooit** zonder **expliciete toestemming van Sjoerd** toe, koppelt of embedt:
+
+- Externe form-, analytics-, chat-, CRM-, A/B-test- of tracking-diensten (inclusief third-party scripts op marketingpagina's).
+- Nieuwe SaaS-integraties voor e-mail, support, of lead capture.
+- Alternatieve deploy- of hosting-paden naast Cloudflare Pages voor deze site.
+
+Bij twijfel: **stoppen** (playbook `04-stop-and-escalate.md`) en escaleren vóór implementatie.
+
 ## Architectuur
 
 - Layout: `src/layouts/Marketing.astro`

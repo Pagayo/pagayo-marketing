@@ -13,6 +13,7 @@ Doel: nieuwe pagina’s en wijzigingen consistent, SEO-vriendelijk en SSoT-confo
 - **Styling:** alles in `global.css` — **geen** `<style>` in `.astro` (zie `.cursor/rules/pagayo-marketing-styles-scripts-ssot.mdc`).
 - **Animatie:** `fade-in` + bestaande scroll/observer in `MarketingLayout` (geen tweede IntersectionObserver zonder reden).
 - **CTA’s naar product:** gebruik bestaande URLs (`https://start.pagayo.app/register`, login-links in footer) — geen nieuwe subdomeinen zonder check met `CLOUDFLARE-CONFIG.md`.
+- **Contactformulieren:** altijd `/api/contact` → AWS SES via `functions/api/contact.ts`; hergebruik `src/scripts/contact-form.ts` / bestaand pagina-patroon (`contact.astro`, `impact-contact.astro`, `PoweredByContactMain.astro`). Geen Formspree of andere externe form-SaaS.
 
 ## Niet
 
@@ -21,6 +22,7 @@ Doel: nieuwe pagina’s en wijzigingen consistent, SEO-vriendelijk en SSoT-confo
 - Nieuwe kleuren/fonts buiten `DESIGN-SYSTEM.md` / `:root` zonder documentatie.
 - `@pagayo/design` of storefront CSS importeren — marketing is visueel **eigen** stack.
 - `pagayo-cloudflare-proxy` of storefront deploy-workflows voor marketing-livegang.
+- **Externe form/mail/chat/analytics-SaaS** zonder expliciete toestemming Sjoerd (zie `AGENTS.md` § Contactformulieren / Externe systemen).
 
 ## Checklist: nieuwe pagina (Engelse default route)
 
