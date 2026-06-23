@@ -1,44 +1,27 @@
 ---
-const questions = [
-  {
-    q: 'How do we stay relevant when our members no longer need us to exist?',
-    a: 'Stop competing on the value of your product. Compete on the value of your infrastructure. When your members run their business on your platform, their growth reinforces your relevance rather than eroding it. The stronger they get, the more embedded they become.',
-    emphasis: 'Become infrastructure. Infrastructure is not replaced. It is built around.',
-  },
-  {
-    q: 'How do we build a competitive position that takes years to displace?',
-    a: 'Platform trust is built transaction by transaction. The first organisation in a sector to own the operational layer for their members has a compounding advantage. Every month they operate the platform, the switching cost for members increases. The second organisation to do this is always a decade behind.',
-    emphasis: 'First mover in platform infrastructure is the strongest moat in any B2B sector.',
-  },
-  {
-    q: 'How do we capture value from the network we have already built?',
-    a: 'Right now, your members are generating thousands of transactions that are completely invisible to you. Every order, every sale, every payment is data about your sector that you do not have. A platform makes that visible — sector-wide, real-time, and commercially actionable.',
-    emphasis: 'Your network is generating intelligence you are not capturing. That changes.',
-  },
-  {
-    q: 'What does this look like in three years?',
-    a: 'Your members run their business on your platform. New members enter your sector and naturally onboard through you — because that is where the infrastructure is. Your commercial conversations shift from defending your position to expanding your ecosystem. Your market intelligence is deeper than any competitor can build from the outside.',
-    emphasis: 'In three years, the question is not why you built this. It is how you built it before anyone else.',
-  },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent['execBuyer'];
+  contactExec: string;
+}
+
+const { content: t, contactExec } = Astro.props;
 ---
 
 <section class="section pb-exec-buyer fade-in" aria-labelledby="pb-exec-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">Leadership Brief</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-exec-title">
-        The questions boards are asking.<br />
-        <span class="pb-headline-accent">The answers they need to hear.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p class="text-lg">
-        This section is for CEOs, Managing Directors, and Commercial Directors.
-        The ones asking: not what is this product, but what does this do to our market position.
-      </p>
+      <p class="text-lg">{t.intro}</p>
     </div>
 
     <div class="pb-exec-questions">
-      {questions.map((item, i) => (
+      {t.questions.map((item, i) => (
         <div class="pb-exec-item">
           <div class="pb-exec-question-wrap">
             <span class="pb-exec-number" aria-hidden="true">0{i + 1}</span>
@@ -54,20 +37,16 @@ const questions = [
 
     <div class="pb-exec-close">
       <div class="pb-exec-close-inner">
-        <h3>The strategic case in one sentence</h3>
-        <p class="pb-exec-close-statement">
-          The organisations that define the next decade of their sector are not the ones
-          with the best product. They are the ones who own the platform their sector operates on.
-        </p>
+        <h3>{t.closeTitle}</h3>
+        <p class="pb-exec-close-statement">{t.closeStatement}</p>
         <div class="pb-exec-roles">
-          <span class="pb-exec-role-tag">CEO</span>
-          <span class="pb-exec-role-tag">Managing Director</span>
-          <span class="pb-exec-role-tag">Commercial Director</span>
-          <span class="pb-exec-role-tag">Head of Network</span>
+          {t.roles.map((role) => (
+            <span class="pb-exec-role-tag">{role}</span>
+          ))}
         </div>
         <p class="pb-exec-close-cta">
-          If you want to discuss how this applies to your organisation —
-          <a href="/powered-by-contact?intent=exec">book a conversation →</a>
+          {t.closeCtaPrefix}
+          <a href={contactExec}>{t.closeCtaLink}</a>
         </p>
       </div>
     </div>

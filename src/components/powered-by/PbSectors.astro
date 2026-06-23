@@ -1,64 +1,26 @@
 ---
-const sectors = [
-  {
-    icon: '✂️',
-    name: 'Beauty Network',
-    scale: '500 salons',
-    description: 'A hair care wholesaler powers every salon in their distribution network with a webshop, online booking integration, and product subscription capability.',
-    memberWin: 'Salons sell product bundles, appointment packages, and gift vouchers online.',
-    networkWin: 'The wholesaler sees sell-through data, repurchase patterns, and product performance across every salon in real time.',
-  },
-  {
-    icon: '🍽️',
-    name: 'Restaurant Network',
-    scale: '300 restaurants',
-    description: 'A horeca collective gives every member restaurant a QR ordering system, takeaway webshop, and delivery channel — under the collective\'s brand.',
-    memberWin: 'Restaurants add online ordering without a separate tech contract. Revenue from channels they did not have before.',
-    networkWin: 'The collective negotiates better supplier terms with verified network GMV data. Every transaction strengthens the collective\'s position.',
-  },
-  {
-    icon: '🌾',
-    name: 'Farmers Cooperative',
-    scale: '1,000 producers',
-    description: 'A producer cooperative gives every farm their own farm shop — CSA box subscriptions, market pre-orders, local delivery. The cooperative owns the platform.',
-    memberWin: 'Farmers sell direct to consumers without building their own webshop. Subscription revenue they could not access before.',
-    networkWin: 'The cooperative owns the customer data, the distribution infrastructure, and the brand relationship with end consumers.',
-  },
-  {
-    icon: '🏪',
-    name: 'Franchise Group',
-    scale: '150 locations',
-    description: 'A franchise group gives every franchisee a localised commerce platform within the brand\'s framework. The franchisor controls range, pricing floors, and brand compliance centrally.',
-    memberWin: 'Franchisees run their local commerce without building a separate online presence. Everything integrated with their daily operations.',
-    networkWin: 'The franchisor has one view of every location\'s performance, inventory, and customer behaviour. Compliance enforced by the platform, not by audits.',
-  },
-  {
-    icon: '⚽',
-    name: 'Sports Federation',
-    scale: '400 clubs',
-    description: 'A sports federation gives every affiliated club a commerce platform for memberships, merchandise, event tickets, and facility access.',
-    memberWin: 'Clubs monetise their community with subscriptions, merchandise, and event ticketing — all in one place, no technical setup required.',
-    networkWin: 'The federation sees aggregate revenue across the sport, identifies underperforming clubs early, and benchmarks commercial best practices across the network.',
-  },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent['sectors'];
+}
+
+const { content: t } = Astro.props;
 ---
 
 <section class="section pb-sectors fade-in" aria-labelledby="pb-sectors-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">Sector Examples</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-sectors-title">
-        Every network has the same problem.<br />
-        <span class="pb-headline-accent">Every sector has the same answer.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p class="text-lg">
-        The specifics differ. The commercial logic does not.
-        You have a network. Your members need commerce infrastructure. Pagayo connects both.
-      </p>
+      <p class="text-lg">{t.intro}</p>
     </div>
 
     <div class="pb-sectors-list">
-      {sectors.map((sector, i) => (
+      {t.items.map((sector, i) => (
         <article class="pb-sector-card" style={`--sector-delay: ${i * 0.05}s`}>
           <div class="pb-sector-header">
             <span class="pb-sector-icon" aria-hidden="true">{sector.icon}</span>
@@ -70,11 +32,11 @@ const sectors = [
           <p class="pb-sector-desc">{sector.description}</p>
           <div class="pb-sector-wins">
             <div class="pb-sector-win">
-              <span class="pb-sector-win-label">Member win</span>
+              <span class="pb-sector-win-label">{t.memberWinLabel}</span>
               <p>{sector.memberWin}</p>
             </div>
             <div class="pb-sector-win pb-sector-win--network">
-              <span class="pb-sector-win-label pb-sector-win-label--network">Network win</span>
+              <span class="pb-sector-win-label pb-sector-win-label--network">{t.networkWinLabel}</span>
               <p>{sector.networkWin}</p>
             </div>
           </div>

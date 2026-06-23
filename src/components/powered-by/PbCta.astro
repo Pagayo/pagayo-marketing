@@ -1,33 +1,38 @@
 ---
 import Button from '../ui/Button.astro';
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent['cta'];
+  contact: PoweredByContent['contact'];
+}
+
+const { content: t, contact } = Astro.props;
 ---
 
 <section class="section pb-page-cta fade-in">
   <div class="pb-page-cta-bg" aria-hidden="true"></div>
   <div class="container">
     <div class="pb-page-cta-inner">
-      <span class="section-label pb-network-label">Build Your Network</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg">
-        You already have a network.<br />
-        <span class="pb-headline-accent">Let's build the platform around it.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p>
-        Tell us your sector, your network size, and what you want your members to be able to do.
-        We will send a concrete proposal — including pricing, setup timeline, and what your network dashboard would look like.
-      </p>
+      <p>{t.body}</p>
       <div class="pb-cta-buttons">
         <div class="pb-cta-block">
-          <Button href="/powered-by-contact?intent=proposal" variant="pb" size="lg">Build Your Network →</Button>
-          <span class="pb-cta-hint">We will send a detailed proposal for your leadership team within 48 hours.</span>
+          <Button href={contact.proposal} variant="pb" size="lg">{t.proposal}</Button>
+          <span class="pb-cta-hint">{t.proposalHint}</span>
         </div>
         <div class="pb-cta-block">
-          <Button href="/powered-by-contact?intent=demo" variant="secondary" size="lg">Book a Partner Demo</Button>
-          <span class="pb-cta-hint">See the partner dashboard live. No commitment, no sales process.</span>
+          <Button href={contact.demo} variant="secondary" size="lg">{t.demo}</Button>
+          <span class="pb-cta-hint">{t.demoHint}</span>
         </div>
       </div>
       <p class="pb-cta-note">
-        Want to explore the platform your members will use?
-        <a href="https://start.pagayo.app/register">Start free as a founder →</a>
+        {t.founderExplorePrefix}
+        <a href={contact.founderRegister}>{t.founderExplore}</a>
       </p>
     </div>
   </div>

@@ -1,0 +1,571 @@
+{
+  "hero": {
+    "sectionLabel": "Powered by Pagayo",
+    "headlineTop": "Je netwerk bestaat al.",
+    "headlineAccent": "Geef het een platform.",
+    "tagline": "Commerce-infrastructuur voor netwerken.",
+    "intro": "Je hebt het vertrouwen. Je hebt het bereik. Je hebt honderden klanten die op je rekenen. Powered by Pagayo maakt van dat netwerk een commerce-ecosysteem — zonder een techteam te bouwen, zonder een softwarebedrijf te worden, zonder te verstoren wat al werkt.",
+    "missionAriaLabel": "Powered by Pagayo-principes",
+    "missionPoints": [
+      {
+        "title": "Jouw merk. Hun bedrijf.",
+        "description": "Jij blijft centraal staan. Pagayo drijft wat eronder zit. Je leden zien nooit een andere leverancier."
+      },
+      {
+        "title": "Live in dagen, niet maanden.",
+        "description": "Configureer je netwerk één keer. Je leden onboarden zichzelf en gaan live op dag één. Geen IT-project nodig."
+      },
+      {
+        "title": "Infrastructuur die componeert.",
+        "description": "Elk lid dat groeit, maakt je netwerk moeilijker te verlaten en waardevoller om toe te treden. Die positie versterkt zich automatisch."
+      }
+    ],
+    "ctas": {
+      "proposal": "Bouw je netwerk →",
+      "proposalHint": "Vertel ons je sector en netwerkgrootte — we sturen een concreet voorstel.",
+      "demo": "Boek een partner-demo",
+      "demoHint": "Bekijk het partnerdashboard live voordat je iets vastlegt.",
+      "founderExplorePrefix": "Wil je het platform verkennen dat je leden gaan gebruiken?",
+      "founderExplore": "Start gratis als founder →"
+    }
+  },
+  "problem": {
+    "sectionLabel": "De kloof",
+    "headlineTop": "Je klanten groeien al.",
+    "headlineBottom": "Alleen niet via jou.",
+    "subhead": "Dat verandert.",
+    "problems": [
+      {
+        "icon": "📊",
+        "title": "Geen zicht op prestaties van leden",
+        "description": "Je klanten runnen hun bedrijf op tien verschillende tools. Je ziet er geen van. Je kunt niet adviseren over wat je niet kunt meten."
+      },
+      {
+        "icon": "🔄",
+        "title": "Retentie erodeert naarmate klanten sterker worden",
+        "description": "Hoe beter je klanten hun bedrijf runnen, hoe minder ze van je afhankelijk zijn. Die relatiedynamiek staat op z'n kop."
+      },
+      {
+        "icon": "💸",
+        "title": "Relaties blijven transactioneel",
+        "description": "Jij levert producten of diensten. Ze kopen elders wanneer de prijs klopt. Er is geen platform dat de relatie bij elkaar houdt."
+      },
+      {
+        "icon": "🏗️",
+        "title": "Je kunt \"digitaal\" niet waarmaken",
+        "description": "Elke organisatie in elke sector belooft klanten te helpen digitaliseren. Bijna niemand heeft een echt product om te leveren."
+      }
+    ],
+    "solutionLabel": "Pagayo verandert dat",
+    "solutionHeadline": "Je netwerk wordt de operationele laag.",
+    "solutionItems": [
+      "Elk lid krijgt een volledig commerceplatform, via jou geleverd",
+      "Je ziet prestaties van leden over het hele netwerk in realtime",
+      "Je klanten groeien op jouw platform, niet op dat van iemand anders",
+      "Je rol verschuift van leverancier naar ecosysteem — elke dag moeilijker te vervangen",
+      "Eén dashboard. Elk lid. Volledig netwerkzicht."
+    ],
+    "quote": "Je netwerk is je meest waardevolle bezit. Op dit moment werkt het niet hard genoeg."
+  },
+  "whyNow": {
+    "sectionLabel": "Waarom nu",
+    "headlineTop": "Je leden digitaliseren al.",
+    "headlineAccent": "De enige vraag is: met wie.",
+    "signals": [
+      {
+        "stat": "73%",
+        "label": "van kleine bedrijven verkoopt nu via minstens twee kanalen.",
+        "context": "Vijf jaar geleden was dat 38%. Multichannel is geen trend meer. Het is de norm."
+      },
+      {
+        "stat": "3× sneller",
+        "label": "groei voor bedrijven op digitale infrastructuur versus bedrijven die dat niet doen.",
+        "context": "De kloof wordt groter. Bedrijven die vroeg digitaliseren lopen voor. De rest wordt prijsgevoelige accounts."
+      },
+      {
+        "stat": "Nu",
+        "label": "Shopify, Square en tientallen sectorspecifieke platforms werven actief je leden.",
+        "context": "Met no-code setup, geen upfront kosten en agressieve onboarding. Ze bouwen jouw netwerk uit tot hun platform."
+      }
+    ],
+    "happeningTitle": "Wat er nu gebeurt, in jouw sector",
+    "happeningParagraphs": [
+      "Je leden wachten niet op toestemming om digitaal te gaan. Ze onboarden tools, schrijven zich in voor platforms en regelen het zelf — omdat de druk om online te verkopen, kaartbetalingen te accepteren en orders digitaal te beheren onvermijdelijk is geworden.",
+      "Sommigen doen het goed. De meesten doen het duur, inefficiënt en op het platform van iemand anders. Een platform zonder relatie met jou. Een platform dat stilletjes hun belangrijkste operationele afhankelijkheid wordt."
+    ],
+    "waitTitle": "Wat er gebeurt als je wacht",
+    "waitItems": [
+      "Je leden bouwen operationele afhankelijkheden op andere platforms. Die platforms worden elke maand moeilijker te verdringen.",
+      "De eerste concurrent in jouw sector die dit doet, bezit de digitale laag van je markt. Jij wordt leverancier in hun ecosysteem.",
+      "Je meest groeigerichte leden — degenen die het komende decennium vormgeven — platformen zichzelf. Zonder jou.",
+      "Elke maand van inactiviteit is data, transacties en loyaliteit die naar het netwerk van iemand anders gaat."
+    ],
+    "quoteLine1": "Niet beslissen is ook een beslissing.",
+    "quoteLine2": "En in deze markt de gevaarlijkste."
+  },
+  "comparison": {
+    "sectionLabel": "Traditioneel vs platform",
+    "headlineTop": "Waarom software alleen",
+    "headlineAccent": "dit niet oplost.",
+    "intro": "De reflex is een tool zoeken en aanbevelen. Dat creëert weer een leverancier in de keten. Wat je nodig hebt is infrastructuur — ingebed in je bestaande relatie.",
+    "tableAriaLabel": "Traditionele distributeur vergeleken met Powered by Pagayo",
+    "colTraditional": "Traditionele aanpak",
+    "colPowered": "Powered by Pagayo",
+    "rows": [
+      {
+        "traditional": "Een tool aanbevelen. Klant zet het zelf op.",
+        "powered": "Eén uitnodiging. Lid is operationeel op dag één."
+      },
+      {
+        "traditional": "Geen zicht op klantprestaties",
+        "powered": "Live dashboard over je hele netwerk"
+      },
+      {
+        "traditional": "Klant groeit → klant heeft je minder nodig",
+        "powered": "Lid groeit → lid is dieper ingebed in jouw platform"
+      },
+      {
+        "traditional": "Je bent leverancier. Prijs bepaalt loyaliteit.",
+        "powered": "Je bent platform. Wisselen betekent alles verliezen."
+      },
+      {
+        "traditional": "First-line support is het probleem van je klant",
+        "powered": "Pagayo verzorgt first-line support voor je leden direct"
+      },
+      {
+        "traditional": "Netwerkwaarde is statisch — een lijst klanten",
+        "powered": "Netwerkwaarde componeert — elk actief lid maakt de volgende conversie makkelijker"
+      }
+    ]
+  },
+  "solution": {
+    "sectionLabel": "Wat het echt is",
+    "headlineTop": "Geen nieuw softwareproduct.",
+    "headlineAccent": "Infrastructuur voor je netwerk.",
+    "intro": "Het verschil telt. Software is iets dat je verkoopt. Infrastructuur is iets dat je bezit. Powered by Pagayo maakt jouw organisatie het platform — geen wederverkoper van het onze.",
+    "notThisHeading": "Niet dit",
+    "butThisHeading": "Maar dit",
+    "notThis": [
+      "Een white-label SaaS-product dat je moet verkopen",
+      "Een affiliateprogramma waarmee je een referral fee verdient",
+      "Een reseller-regeling met maandelijkse targets",
+      "Een techproject dat een IT-afdeling nodig heeft",
+      "Een nieuwe leverancier die concurreert met je bestaande relaties"
+    ],
+    "butThis": [
+      "Commerce-infrastructuur, ingebed in je bestaande relatie",
+      "Jouw merk bovenop. Pagayo's besturingssysteem eronder.",
+      "Een platform waar je leden op lanceren — geen tool die je aanbeveelt",
+      "Een ecosysteem dat je netwerk elke week waardevoller maakt",
+      "Infrastructuur die je één keer configureert. Leden activeren zichzelf."
+    ],
+    "badgeNetwork": "Beauty Commerce Network",
+    "badgePowered": "Powered by Pagayo",
+    "badgeCaption": "Jouw netwerk. Jouw merk. Jouw platform. Pagayo is de infrastructuur eronder."
+  },
+  "platformPower": {
+    "sectionLabel": "De verschuiving",
+    "headlineTop": "De markt is veranderd.",
+    "headlineAccent": "Platformeigenaren winnen.",
+    "intro": "Elke sector doorloopt dezelfde transitie. Organisaties die het vroeg herkennen, bouwen structurele voordelen die een decennium duren om te verdringen.",
+    "eras": [
+      {
+        "when": "20 jaar geleden",
+        "what": "Distributie won.",
+        "detail": "Wie het product, de logistiek of de schapruimte controleerde, controleerde de markt. Toegang was de moat.",
+        "status": "past"
+      },
+      {
+        "when": "10 jaar geleden",
+        "what": "Relaties wonnen.",
+        "detail": "Wie de diepste accountrelaties en het meest vertrouwde merk had, hield de positie. Persoonlijke geloofwaardigheid was de moat.",
+        "status": "past"
+      },
+      {
+        "when": "Vandaag",
+        "what": "Platforms winnen.",
+        "detail": "Wie de infrastructuur bezit waar anderen op opereren, controleert de data, de transacties en de langetermijnpositie. Het platform is de moat.",
+        "status": "now",
+        "badge": "Waar jouw sector naartoe gaat"
+      }
+    ],
+    "dividerLabel": "Wat platformeigenaarschap echt betekent",
+    "advantages": [
+      {
+        "icon": "📊",
+        "title": "Data die niemand anders heeft",
+        "description": "Een platform ziet elke transactie over het hele netwerk. Die intelligence — sectorsbreed, realtime, granulair — is niet beschikbaar voor iemand die alleen leverancier is."
+      },
+      {
+        "icon": "🔒",
+        "title": "Switching costs die componeert",
+        "description": "Een leverancier wordt vervangen wanneer iemand een betere prijs biedt. Een platform verlaat je niet — want weggaan betekent je operationele fundament herbouwen. Hoe langer leden op jouw platform zitten, hoe moeilijker het wordt om zonder te opereren."
+      },
+      {
+        "icon": "🌐",
+        "title": "Netwerkeffecten die je positie beschermen",
+        "description": "Elk nieuw lid op jouw platform maakt het netwerk waardevoller voor bestaande leden. Je marktpositie versterkt zich automatisch naarmate het netwerk groeit."
+      },
+      {
+        "icon": "📡",
+        "title": "Marktintelligence die concurrenten niet kunnen kopen",
+        "description": "Als je geaggregeerde prestaties over je hele sector ziet, zie je wat werkt voordat iemand anders dat kan. Die intelligence vormt je commerciële beslissingen, supportmodel en productroadmap."
+      }
+    ],
+    "insightText": "Een leverancier is iemand voor wie je betaalt. Een platform is iets waar je in ingebed zit. Het verschil gaat niet over features. Het gaat over positie.",
+    "insightSub": "Powered by Pagayo maakt je geen betere leverancier. Het maakt je het platform waarop je sector opereert."
+  },
+  "howItWorks": {
+    "sectionLabel": "Hoe het werkt",
+    "headlineTop": "Drie stappen van netwerk",
+    "headlineAccent": "naar platform.",
+    "intro": "Geen IT-afdeling. Geen development-timeline. Geen onboarding-marathon. Jij configureert één keer. Je leden activeren zichzelf.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Configureer je netwerk",
+        "description": "Stel je merk, je sectorinstellingen en je uitnodigingsflow in. Wij zetten je partnerdashboard op. Geen development, geen IT-project, geen wachten. De meeste netwerken zijn binnen een week volledig geconfigureerd.",
+        "detail": "Jouw configuratie: merkidentiteit, sectordefaults, prijsstructuur, dashboardtoegangsniveaus."
+      },
+      {
+        "number": "02",
+        "title": "Nodig je leden uit",
+        "description": "Stuur je leden één uitnodigingslink. Ze registreren, doorlopen een korte onboarding en lanceren hun commerce-aanwezigheid — webshop, POS, QR-bestellen, abonnementen — op dag één. Je ziet elke activatie in realtime.",
+        "detail": "Je leden hebben geen technische kennis nodig. De onboarding duurt vijf minuten."
+      },
+      {
+        "number": "03",
+        "title": "Zie je netwerk groeien",
+        "description": "Elke transactie, elk actief lid, elk nieuw kanaal — zichtbaar in je partnerdashboard. Je adviseert op basis van data. Je ondersteunt met context. Je positie in hun bedrijf verdiept zich met elke order die ze verwerken.",
+        "detail": "Netwerkdashboard: activatiepercentage, totale netwerk-GMV, kanaalmix, top performers."
+      }
+    ],
+    "timelineBadge": "Typische timeline: 2–4 weken van kick-off tot eerste actieve leden."
+  },
+  "deliverables": {
+    "members": {
+      "sectionLabel": "Voor je leden",
+      "headlineTop": "Een volledig commercebedrijf.",
+      "headlineAccent": "Vanaf dag één.",
+      "intro": "Je leden krijgen geen trial-account of starttool. Ze krijgen een compleet commerceplatform — elk kanaal, elke capability, operationeel vanaf het moment van activatie.",
+      "capabilities": [
+        { "icon": "🛒", "title": "Webshop", "desc": "Hun eigen webshop, hun eigen producten, hun eigen domein. Live in minuten." },
+        { "icon": "🖥️", "title": "Point of Sale", "desc": "Neem betalingen aan waar dan ook — in de winkel, op markten, op events. Geen aparte hardware nodig." },
+        { "icon": "📱", "title": "QR-bestellen", "desc": "Tafels, pop-ups, afhaalpunten, events. Klanten scannen en bestellen direct." },
+        { "icon": "🔄", "title": "Abonnementen", "desc": "Terugkerende omzet, membershipplannen, loyaliteitsprogramma's. Geautomatiseerde facturatie en verlenging." },
+        { "icon": "💳", "title": "Betalingen", "desc": "Stripe-powered. Elke betaalmethode. Elke valuta. Alles in één dashboard." },
+        { "icon": "📦", "title": "Orderbeheer", "desc": "Eén overzicht van elke order, ongeacht kanaal. Voorraad, fulfilment, retouren." }
+      ]
+    },
+    "network": {
+      "sectionLabel": "Voor je netwerk",
+      "headlineTop": "Het netwerkdashboard",
+      "headlineAccent": "dat je concurrenten niet hebben.",
+      "intro": "Volledig zicht op je netwerk is het meest onderschatte commerciële voordeel in je sector. Niemand anders heeft het. Jij wel.",
+      "capabilities": [
+        { "icon": "📊", "title": "Netwerkdashboard", "desc": "Elk lid, hun activiteit, hun groei. Eén overzicht over het hele netwerk." },
+        { "icon": "✅", "title": "Activatietracking", "desc": "Zie wie live is, wie niet, en wat de niet-actieven blokkeert." },
+        { "icon": "📈", "title": "Netwerkanalytics", "desc": "Geaggregeerde GMV, kanaalmix, top performers, sectorbenchmarks. Data die je concurrenten niet hebben." },
+        { "icon": "🔍", "title": "Retentie-intelligence", "desc": "Herken leden wiens activiteit daalt voordat ze vertrekken. Grijp vroeg in." },
+        { "icon": "🏷️", "title": "Jouw merk als platform", "desc": "Leden ervaren je netwerk als het platform. Pagayo is de engine eronder." },
+        { "icon": "🔗", "title": "Ecosysteemdata", "desc": "Meer actieve leden betekent betere sectorinzichten. De data-flywheel componeert naarmate het netwerk groeit." }
+      ]
+    }
+  },
+  "ecosystem": {
+    "sectionLabel": "De transformatie",
+    "headlineTop": "Van netwerk",
+    "headlineAccent": "naar ecosysteem.",
+    "intro": "Een netwerk en een ecosysteem lijken van buiten hetzelfde. Van binnen verschillen ze fundamenteel — in hoe ze waarde creëren, behouden en laten groeien.",
+    "beforeLabel": "Voor",
+    "beforeTitle": "Netwerk",
+    "beforeDesc": "Een set relaties die je met moeite onderhoudt.",
+    "afterLabel": "Na",
+    "afterTitle": "Ecosysteem",
+    "afterDesc": "Een operationele laag waar je leden op vertrouwen om hun bedrijf te runnen.",
+    "arrowLabel": "Powered by Pagayo",
+    "propLabels": {
+      "whatItIs": "Wat het is",
+      "relationships": "Relaties",
+      "valueSource": "Waardebron",
+      "yourRole": "Jouw rol",
+      "retentionDriver": "Retentiedriver",
+      "growth": "Groei",
+      "data": "Data",
+      "position": "Positie"
+    },
+    "networkProps": [
+      "Een lijst leden",
+      "Onderhouden door mensen, één meeting per keer",
+      "Het product of de dienst die je levert",
+      "Leverancier met relatievoordeel",
+      "Prijs, traagheid, persoonlijke relaties",
+      "Lineair — vereist meer mensen en meer inspanning",
+      "Wat ze je vertellen, wanneer ze bellen",
+      "Onderhandeld, verlengd, kwetsbaar"
+    ],
+    "ecosystemProps": [
+      "Leden verbonden via gedeelde infrastructuur",
+      "Versterkt door elke transactie, elke dag",
+      "Het platform + het netwerk eromheen",
+      "De operationele laag waar je sector op vertrouwt",
+      "Operationele afhankelijkheid — wisselen betekent herbouwen",
+      "Compound — elk nieuw lid maakt het netwerk waardevoller",
+      "Elke transactie, realtime, over het hele netwerk",
+      "Structureel — ingebouwd in hoe je sector opereert"
+    ],
+    "statementHeadline": "Pagayo maakt je geen softwarebedrijf. Het maakt je organisatie de infrastructuur waarop je sector opereert.",
+    "statementBody": "De organisaties die het komende decennium hun sector definiëren, zijn niet degenen met de beste productcatalogus of het meest ervaren salesteam. Het zijn degenen die het platform bezitten waarop hun markt draait. Die positie, eenmaal gevestigd, componeert automatisch. De groei van je leden wordt jouw groei. Hun transacties zijn jouw intelligence. Hun succes maakt je platform moeilijker te verlaten.",
+    "transformationToday": "Vandaag",
+    "transformationTodayRole": "Leverancier",
+    "transformationWith": "Met Powered by Pagayo",
+    "transformationWithRole": "Platformeigenaar",
+    "transformationSector": "In jouw sector",
+    "transformationSectorRole": "Categorie-leider"
+  },
+  "sectors": {
+    "sectionLabel": "Sectorvoorbeelden",
+    "headlineTop": "Elk netwerk heeft hetzelfde probleem.",
+    "headlineAccent": "Elke sector heeft hetzelfde antwoord.",
+    "intro": "De details verschillen. De commerciële logica niet. Je hebt een netwerk. Je leden hebben commerce-infrastructuur nodig. Pagayo verbindt beide.",
+    "memberWinLabel": "Winst voor lid",
+    "networkWinLabel": "Winst voor netwerk",
+    "items": [
+      {
+        "icon": "✂️",
+        "name": "Beautynetwerk",
+        "scale": "500 salons",
+        "description": "Een haarverzorgingsgroothandel drijft elke salon in hun distributienetwerk met een webshop, online boekingsintegratie en productabonnementen.",
+        "memberWin": "Salons verkopen productbundels, afsprakenpakketten en cadeaubonnen online.",
+        "networkWin": "De groothandel ziet sell-through data, herkooppatronen en productprestaties over elke salon in realtime."
+      },
+      {
+        "icon": "🍽️",
+        "name": "Restaurantnetwerk",
+        "scale": "300 restaurants",
+        "description": "Een horecacollectief geeft elk aangesloten restaurant een QR-bestelsysteem, takeaway-webshop en bezorgkanaal — onder het merk van het collectief.",
+        "memberWin": "Restaurants voegen online bestellen toe zonder apart techcontract. Omzet uit kanalen die ze eerder niet hadden.",
+        "networkWin": "Het collectief onderhandelt betere inkoopvoorwaarden met geverifieerde netwerk-GMV-data. Elke transactie versterkt de positie van het collectief."
+      },
+      {
+        "icon": "🌾",
+        "name": "Boeren-coöperatie",
+        "scale": "1.000 producenten",
+        "description": "Een producenten-coöperatie geeft elke boerderij een eigen boerderijwinkel — CSA-boxabonnementen, marktpre-orders, lokale bezorging. De coöperatie bezit het platform.",
+        "memberWin": "Boeren verkopen direct aan consumenten zonder eigen webshop te bouwen. Abonnementsomzet die ze eerder niet konden benutten.",
+        "networkWin": "De coöperatie bezit klantdata, distributie-infrastructuur en de merkrelatie met eindconsumenten."
+      },
+      {
+        "icon": "🏪",
+        "name": "Franchisegroep",
+        "scale": "150 locaties",
+        "description": "Een franchisgroep geeft elke franchisee een gelokaliseerd commerceplatform binnen het merkkader. De franchisor stuurt assortiment, prijsvloeren en merkcompliance centraal aan.",
+        "memberWin": "Franchisees runnen lokale commerce zonder aparte online presence. Alles geïntegreerd met dagelijkse operatie.",
+        "networkWin": "De franchisor heeft één overzicht van prestaties, voorraad en klantgedrag per locatie. Compliance afgedwongen door het platform, niet door audits."
+      },
+      {
+        "icon": "⚽",
+        "name": "Sportbond",
+        "scale": "400 clubs",
+        "description": "Een sportbond geeft elke aangesloten club een commerceplatform voor memberships, merchandise, eventtickets en faciliteitstoegang.",
+        "memberWin": "Clubs monetiseren hun community met abonnementen, merchandise en eventticketing — alles op één plek, zonder technische setup.",
+        "networkWin": "De bond ziet geaggregeerde omzet over de sport, herkent underperformers vroeg en benchmarkt commerciële best practices over het netwerk."
+      }
+    ]
+  },
+  "model": {
+    "sectionLabel": "Het model",
+    "headlineTop": "Jouw merk. Hun bedrijf.",
+    "headlineAccent": "Onze infrastructuur.",
+    "intro": "Drie rollen. Eén platform. Niemand treedt het domein van de ander binnen.",
+    "youBringRole": "Jij brengt",
+    "youBringTitle": "Het netwerk",
+    "pagayoBringsRole": "Pagayo brengt",
+    "pagayoBringsTitle": "De infrastructuur",
+    "membersGetRole": "Leden krijgen",
+    "membersGetTitle": "Een echt bedrijf",
+    "youBring": [
+      "Het merk dat je leden al vertrouwen",
+      "Het netwerk dat je jarenlang hebt opgebouwd",
+      "De uitnodiging die activatie frictieloos maakt",
+      "De commerciële relatie die adoptie drijft",
+      "De sectorkennis die het platform relevant maakt"
+    ],
+    "weBring": [
+      "Commerce-infrastructuur — webshop, POS, QR, abonnementen, betalingen",
+      "Het platform waar je leden hun bedrijf op runnen",
+      "First-line support voor elk lid, elke dag",
+      "Security, betrouwbaarheid en uptime die je niet hoeft te beheren",
+      "Het technische fundament dat componeert naarmate het netwerk groeit"
+    ],
+    "theyGet": [
+      "Een echt commercebedrijf, geen starttool",
+      "Elk verkoopkanaal — online, fysiek, mobiel, abonnement",
+      "Operationeel op dag één, zonder technische setup",
+      "Verbonden met het ecosysteem en de voordelen van je netwerk",
+      "Een bedrijf dat meegroeit met je netwerk eromheen"
+    ],
+    "flywheelTitle": "De flywheel",
+    "flywheelSteps": [
+      "Meer actieve leden",
+      "Betere netwerkdata",
+      "Sterkere netwerkwaarde",
+      "Makkelijker volgend lid aantrekken"
+    ],
+    "flywheelCaption": "Elk lid dat activeert maakt je netwerk moeilijker te verlaten en makkelijker om toe te treden. De positie componeert automatisch."
+  },
+  "execBuyer": {
+    "sectionLabel": "Leiderschapsbriefing",
+    "headlineTop": "De vragen die besturen stellen.",
+    "headlineAccent": "De antwoorden die ze moeten horen.",
+    "intro": "Deze sectie is voor CEO's, managing directors en commercial directors. Degenen die vragen: niet wat is dit product, maar wat doet dit met onze marktpositie.",
+    "questions": [
+      {
+        "q": "Hoe blijven we relevant wanneer onze leden ons niet meer nodig hebben om te bestaan?",
+        "a": "Stop met concurreren op de waarde van je product. Concurreer op de waarde van je infrastructuur. Wanneer je leden hun bedrijf op jouw platform runnen, versterkt hun groei je relevantie in plaats van die te eroderen. Hoe sterker ze worden, hoe dieper ze ingebed raken.",
+        "emphasis": "Word infrastructuur. Infrastructuur wordt niet vervangen. Er wordt omheen gebouwd."
+      },
+      {
+        "q": "Hoe bouwen we een concurrentiepositie die jaren duurt om te verdringen?",
+        "a": "Platformvertrouwen wordt transactie voor transactie opgebouwd. De eerste organisatie in een sector die de operationele laag voor hun leden bezit, heeft een compounding voordeel. Elke maand dat ze het platform opereren, stijgen de switching costs voor leden. De tweede organisatie die dit doet, loopt altijd een decennium achter.",
+        "emphasis": "First mover in platforminfrastructuur is de sterkste moat in elke B2B-sector."
+      },
+      {
+        "q": "Hoe vangen we waarde uit het netwerk dat we al hebben opgebouwd?",
+        "a": "Op dit moment genereren je leden duizenden transacties die volledig onzichtbaar voor je zijn. Elke order, elke verkoop, elke betaling is data over je sector die je niet hebt. Een platform maakt dat zichtbaar — sectorsbreed, realtime en commercieel actionable.",
+        "emphasis": "Je netwerk genereert intelligence die je niet vastlegt. Dat verandert."
+      },
+      {
+        "q": "Hoe ziet dit er over drie jaar uit?",
+        "a": "Je leden runnen hun bedrijf op jouw platform. Nieuwe leden in je sector onboarden vanzelf via jou — omdat daar de infrastructuur zit. Je commerciële gesprekken verschuiven van je positie verdedigen naar je ecosysteem uitbreiden. Je marktintelligence is dieper dan welke concurrent dan ook van buitenaf kan opbouwen.",
+        "emphasis": "Over drie jaar is de vraag niet waarom je dit bouwde. Het is hoe je het bouwde voordat iemand anders dat deed."
+      }
+    ],
+    "closeTitle": "De strategische case in één zin",
+    "closeStatement": "De organisaties die het komende decennium hun sector definiëren, zijn niet degenen met het beste product. Het zijn degenen die het platform bezitten waarop hun sector opereert.",
+    "roles": ["CEO", "Managing Director", "Commercial Director", "Head of Network"],
+    "closeCtaPrefix": "Wil je bespreken hoe dit voor jouw organisatie geldt —",
+    "closeCtaLink": "plan een gesprek →"
+  },
+  "pricing": {
+    "sectionLabel": "Partnerschapsmodel",
+    "headlineTop": "Geen software-abonnement.",
+    "headlineAccent": "Een partnerschap rond je netwerk.",
+    "intro": "De prijs is secundair. Wat telt is wat je wordt. We structureren het partnerschap rond je netwerkgrootte, je sector en hoe je het platform wilt positioneren voor je leden.",
+    "featuredBadge": "Meest voorkomend instappunt",
+    "tiers": [
+      {
+        "name": "Foundation",
+        "tagline": "Bouw je platform. Activeer je eerste cohort.",
+        "forWho": "Voor organisaties die hun platformreis starten — eerste 50 actieve leden.",
+        "what": [
+          "Volledig partnerdashboard en merkconfiguratie",
+          "Uitnodigings- en onboardingflow voor leden",
+          "Netwerkanalytics voor maximaal 50 actieve leden",
+          "Partner supportlijn",
+          "Pagayo first-line support voor alle leden"
+        ],
+        "cta": "ideaal voor eerste platformlancering"
+      },
+      {
+        "name": "Growth",
+        "tagline": "Schaal mee met je netwerk.",
+        "forWho": "Voor gevestigde netwerken klaar om te groeien — 50 tot 250 actieve leden.",
+        "what": [
+          "Alles in Foundation",
+          "Geavanceerde netwerkanalytics en sectorbenchmarks",
+          "Retentie-intelligence en activatie-inzichten",
+          "Dedicated partner success manager",
+          "Aangepaste onboardingflow voor je sector"
+        ],
+        "cta": "meest voorkomend instappunt",
+        "featured": true
+      },
+      {
+        "name": "Network Leadership",
+        "tagline": "Bezit de infrastructuur van je sector.",
+        "forWho": "Voor sector-definiërende organisaties — 250+ actieve leden.",
+        "what": [
+          "Alles in Growth",
+          "White-glove netwerkconfiguratie",
+          "Aangepaste membercontractstructuren",
+          "Executive reporting en board-ready analytics",
+          "Kwartaalstrategische review met Pagayo-leiderschap"
+        ],
+        "cta": "voor organisaties die langetermijn-moats bouwen"
+      }
+    ],
+    "structureTitle": "Hoe het is opgebouwd",
+    "structureItems": [
+      {
+        "label": "Netwerkplatformfee",
+        "description": "Een maandelijkse basisfee voor je partnerdashboard, configuratie en support. Schaal met je netwerktier."
+      },
+      {
+        "label": "Per actief lid",
+        "description": "Alleen leden die transacteren in de facturatieperiode tellen mee. Jij kiest of je dit doorberekent of absorbeert."
+      }
+    ],
+    "structureNote": "Elk partnerschap bouwen we samen. Er is geen vaste prijspagina omdat elk netwerk anders is. We werken de details uit op basis van je sector, structuur en wat je leden willen betalen.",
+    "ctaTitle": "Het juiste gesprek om eerst te voeren",
+    "ctaBody": "Vertel ons je netwerkgrootte en sector. We sturen een voorstel — inclusief hoe het platform eruitziet voor je leden, wat je partnerdashboard dekt en hoe de commerciële structuur eruit kan zien. Geen verplichting op dit stadium.",
+    "ctaProposal": "Vraag een partnerschapsvoorstel aan →",
+    "ctaDemo": "Bekijk eerst het dashboard"
+  },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "headline": "Veelgestelde vragen",
+    "items": [
+      {
+        "q": "Is dit een white-label product?",
+        "a": "Nee. Powered by Pagayo is een co-brand model. Jouw naam en identiteit staan voorop. Pagayo's platform drijft het. Je leden ervaren het commerceplatform van je netwerk — niet dat van Pagayo. Wij zijn de engine. Jij bent het gezicht."
+      },
+      {
+        "q": "Hebben we een techteam of IT-afdeling nodig?",
+        "a": "Nee. Configuratie duurt dagen, geen maanden. Je stelt je merkidentiteit, sectorinstellingen en uitnodigingsflow in. Geen development, geen systeemintegratieproject en geen technisch team aan jouw kant."
+      },
+      {
+        "q": "Welke support moeten we aan onze leden leveren?",
+        "a": "Bijna geen. Pagayo verzorgt first-line support voor je leden direct — platformvragen, technische issues, betalingsvragen. Jij hebt een dedicated partner supportlijn voor netwerkniveau-vragen. Je team focust op de commerciële relatie, niet de helpdesk."
+      },
+      {
+        "q": "Kunnen we onze eigen prijzen voor leden bepalen?",
+        "a": "Ja. Je kunt Pagayo-toegang bundelen in je bestaande commerciële relatie, als aparte dienst prijzen, als retentievoordeel aanbieden of in een membershiptier verwerken. De commerciële structuur tussen jou en je leden ontwerp je volledig zelf."
+      },
+      {
+        "q": "Wat gebeurt er als een lid ons netwerk verlaat?",
+        "a": "Ze verliezen toegang tot de platformconfiguratie van je netwerk en de bijbehorende voordelen. Ze kunnen Pagayo blijven gebruiken als standaard Pagayo-klant — maar verliezen de netwerkspecifieke setup, jouw supportcontext en de voordelen van je ecosysteem."
+      },
+      {
+        "q": "Hoe lang duurt het om live te gaan?",
+        "a": "De meeste netwerken ronden configuratie af en activeren hun eerste cohort leden binnen 2–4 weken. Grotere netwerken met maatwerkconfiguratie doen er doorgaans 6–8 weken over. De onboardingflow per lid duurt vijf minuten."
+      },
+      {
+        "q": "Voor welke sectoren werkt dit?",
+        "a": "Elke sector waar je leden actief zijn in commerce — producten verkopen, orders aannemen, abonnementen beheren of betalingen verwerken. We hebben ervaring in beauty en personal care, food & beverage, landbouw, sport & fitness, professionele diensten en franchisenetwerken. Als je leden verkopen, werkt Powered by Pagayo."
+      },
+      {
+        "q": "Is dit anders dan jullie Partnerprogramma?",
+        "a": "Ja, fundamenteel. Het Partnerprogramma is een referralmodel — je verdient commissie door bedrijven door te verwijzen die zelf voor Pagayo betalen. Powered by Pagayo is een infrastructuurmodel — jij bent het platform voor je netwerk. Andere commerciële logica, andere relatie, andere strategische waarde."
+      }
+    ]
+  },
+  "cta": {
+    "sectionLabel": "Bouw je netwerk",
+    "headlineTop": "Je hebt al een netwerk.",
+    "headlineAccent": "Laten we het platform eromheen bouwen.",
+    "body": "Vertel ons je sector, netwerkgrootte en wat je leden moeten kunnen doen. We sturen een concreet voorstel — inclusief prijs, setup-timeline en hoe je netwerkdashboard eruitziet.",
+    "proposal": "Bouw je netwerk →",
+    "proposalHint": "We sturen binnen 48 uur een gedetailleerd voorstel voor je leiderschapsteam.",
+    "demo": "Boek een partner-demo",
+    "demoHint": "Bekijk het partnerdashboard live. Geen verplichting, geen salesproces.",
+    "founderExplorePrefix": "Wil je het platform verkennen dat je leden gaan gebruiken?",
+    "founderExplore": "Start gratis als founder →"
+  },
+  "contact": {
+    "proposal": "/powered-by-contact?intent=proposal",
+    "demo": "/powered-by-contact?intent=demo",
+    "exec": "/powered-by-contact?intent=exec",
+    "founderRegister": "https://start.pagayo.app/register"
+  }
+}

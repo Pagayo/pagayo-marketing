@@ -1,68 +1,30 @@
 ---
-const partnershipTiers = [
-  {
-    name: 'Foundation',
-    tagline: 'Build your platform. Activate your first cohort.',
-    forWho: 'For organisations starting their platform journey — first 50 active members.',
-    what: [
-      'Full partner dashboard and brand configuration',
-      'Member invitation and onboarding flow',
-      'Network analytics for up to 50 active members',
-      'Partner support line',
-      'Pagayo first-line support for all members',
-    ],
-    cta: 'ideal for first platform launch',
-  },
-  {
-    name: 'Growth',
-    tagline: 'Scale with your network.',
-    forWho: 'For established networks ready to expand — 50 to 250 active members.',
-    what: [
-      'Everything in Foundation',
-      'Advanced network analytics and sector benchmarks',
-      'Retention intelligence and activation insights',
-      'Dedicated partner success manager',
-      'Custom onboarding flow for your sector',
-    ],
-    cta: 'most common entry point',
-    featured: true,
-  },
-  {
-    name: 'Network Leadership',
-    tagline: 'Own the infrastructure of your sector.',
-    forWho: 'For sector-defining organisations — 250+ active members.',
-    what: [
-      'Everything in Growth',
-      'White-glove network configuration',
-      'Custom member contract structures',
-      'Executive reporting and board-ready analytics',
-      'Quarterly strategic review with Pagayo leadership',
-    ],
-    cta: 'for organisations building long-term moats',
-  },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent['pricing'];
+  contact: PoweredByContent['contact'];
+}
+
+const { content: t, contact } = Astro.props;
 ---
 
 <section class="section pb-pricing-v2 fade-in" aria-labelledby="pb-pricing-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">Partnership Model</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-pricing-title">
-        Not a software subscription.<br />
-        <span class="pb-headline-accent">A partnership built around your network.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p class="text-lg">
-        The price is secondary. What matters is what you become.
-        We structure the partnership around your network size, your sector, and how you want to
-        position the platform for your members.
-      </p>
+      <p class="text-lg">{t.intro}</p>
     </div>
 
     <div class="pb-pricing-tiers">
-      {partnershipTiers.map((tier) => (
+      {t.tiers.map((tier) => (
         <div class={`pb-tier-card ${tier.featured ? 'pb-tier-card--featured' : ''}`}>
           {tier.featured && (
-            <div class="pb-tier-badge">Most common entry point</div>
+            <div class="pb-tier-badge">{t.featuredBadge}</div>
           )}
           <div class="pb-tier-header">
             <h3>{tier.name}</h3>
@@ -86,35 +48,28 @@ const partnershipTiers = [
 
     <div class="pb-pricing-structure">
       <div class="pb-pricing-structure-header">
-        <h3>How it is structured</h3>
+        <h3>{t.structureTitle}</h3>
       </div>
       <div class="pb-pricing-structure-body">
         <div class="pb-pricing-struct-item">
-          <span class="pb-pricing-struct-label">Network platform fee</span>
-          <p>A monthly base fee for your partner dashboard, configuration, and support. Scales with your network tier.</p>
+          <span class="pb-pricing-struct-label">{t.structureItems[0].label}</span>
+          <p>{t.structureItems[0].description}</p>
         </div>
         <div class="pb-pricing-struct-divider" aria-hidden="true">+</div>
         <div class="pb-pricing-struct-item">
-          <span class="pb-pricing-struct-label">Per active member</span>
-          <p>Only members who transact in the billing period count. You choose whether to pass this on or absorb it.</p>
+          <span class="pb-pricing-struct-label">{t.structureItems[1].label}</span>
+          <p>{t.structureItems[1].description}</p>
         </div>
       </div>
-      <p class="pb-pricing-struct-note">
-        Every partnership is built together. There is no fixed pricing page because every network is different.
-        We build the specifics with you based on your sector, your structure, and what you want your members to pay.
-      </p>
+      <p class="pb-pricing-struct-note">{t.structureNote}</p>
     </div>
 
     <div class="pb-pricing-cta">
-      <h3>The right conversation to have first</h3>
-      <p>
-        Tell us your network size and sector. We will send a proposal — including what the platform
-        would look like for your members, what your partner dashboard covers, and what the commercial
-        structure could look like. No commitment required at this stage.
-      </p>
+      <h3>{t.ctaTitle}</h3>
+      <p>{t.ctaBody}</p>
       <div class="pb-pricing-cta-buttons">
-        <a href="/powered-by-contact?intent=proposal" class="btn btn-pb btn-lg">Get a partnership proposal →</a>
-        <a href="/powered-by-contact?intent=demo" class="btn btn-secondary">See the dashboard first</a>
+        <a href={contact.proposal} class="btn btn-pb btn-lg">{t.ctaProposal}</a>
+        <a href={contact.demo} class="btn btn-secondary">{t.ctaDemo}</a>
       </div>
     </div>
   </div>

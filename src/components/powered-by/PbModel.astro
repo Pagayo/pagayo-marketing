@@ -1,50 +1,32 @@
 ---
-const youBring = [
-  'The brand your members already trust',
-  'The network you have built over years',
-  'The invitation that makes activation frictionless',
-  'The commercial relationship that drives adoption',
-  'The sector knowledge that makes the platform relevant',
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
 
-const weBring = [
-  'Commerce infrastructure — webshop, POS, QR, subscriptions, payments',
-  'The platform your members run their business on',
-  'First-line support for every member, every day',
-  'Security, reliability, and uptime you do not have to manage',
-  'The technical foundation that compounds as the network grows',
-];
+interface Props {
+  content: PoweredByContent['model'];
+}
 
-const theyGet = [
-  'A real commerce business, not a starter tool',
-  'Every sales channel — online, in-person, mobile, subscription',
-  'Day-one operational, without technical setup',
-  'Connected to your network\'s ecosystem and advantages',
-  'A business that grows with your network around it',
-];
+const { content: t } = Astro.props;
 ---
 
 <section class="section pb-model fade-in" aria-labelledby="pb-model-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">The Model</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-model-title">
-        Your brand. Their business.<br />
-        <span class="pb-headline-accent">Our infrastructure.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p class="text-lg">
-        Three roles. One platform. No one crossing into the other's domain.
-      </p>
+      <p class="text-lg">{t.intro}</p>
     </div>
 
     <div class="pb-model-grid">
       <div class="pb-model-column">
         <div class="pb-model-col-header">
-          <span class="pb-model-col-role">You bring</span>
-          <h3>The network</h3>
+          <span class="pb-model-col-role">{t.youBringRole}</span>
+          <h3>{t.youBringTitle}</h3>
         </div>
         <ul class="pb-model-list">
-          {youBring.map((item) => (
+          {t.youBring.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
@@ -52,11 +34,11 @@ const theyGet = [
 
       <div class="pb-model-column pb-model-column--center">
         <div class="pb-model-col-header">
-          <span class="pb-model-col-role pb-model-col-role--pagayo">Pagayo brings</span>
-          <h3>The infrastructure</h3>
+          <span class="pb-model-col-role pb-model-col-role--pagayo">{t.pagayoBringsRole}</span>
+          <h3>{t.pagayoBringsTitle}</h3>
         </div>
         <ul class="pb-model-list">
-          {weBring.map((item) => (
+          {t.weBring.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
@@ -64,11 +46,11 @@ const theyGet = [
 
       <div class="pb-model-column">
         <div class="pb-model-col-header">
-          <span class="pb-model-col-role">Members get</span>
-          <h3>A real business</h3>
+          <span class="pb-model-col-role">{t.membersGetRole}</span>
+          <h3>{t.membersGetTitle}</h3>
         </div>
         <ul class="pb-model-list">
-          {theyGet.map((item) => (
+          {t.theyGet.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
@@ -76,31 +58,21 @@ const theyGet = [
     </div>
 
     <div class="pb-model-flywheel">
-      <h3 class="pb-model-flywheel-title">The flywheel</h3>
+      <h3 class="pb-model-flywheel-title">{t.flywheelTitle}</h3>
       <div class="pb-model-flywheel-steps">
-        <div class="pb-model-flywheel-step">
-          <span class="pb-model-flywheel-num">1</span>
-          <span>More active members</span>
-        </div>
-        <span class="pb-model-flywheel-arrow" aria-hidden="true">→</span>
-        <div class="pb-model-flywheel-step">
-          <span class="pb-model-flywheel-num">2</span>
-          <span>Better network data</span>
-        </div>
-        <span class="pb-model-flywheel-arrow" aria-hidden="true">→</span>
-        <div class="pb-model-flywheel-step">
-          <span class="pb-model-flywheel-num">3</span>
-          <span>Stronger network value</span>
-        </div>
-        <span class="pb-model-flywheel-arrow" aria-hidden="true">→</span>
-        <div class="pb-model-flywheel-step">
-          <span class="pb-model-flywheel-num">4</span>
-          <span>Easier to attract next member</span>
-        </div>
+        {t.flywheelSteps.map((step, i) => (
+          <>
+            <div class="pb-model-flywheel-step">
+              <span class="pb-model-flywheel-num">{i + 1}</span>
+              <span>{step}</span>
+            </div>
+            {i < t.flywheelSteps.length - 1 && (
+              <span class="pb-model-flywheel-arrow" aria-hidden="true">→</span>
+            )}
+          </>
+        ))}
       </div>
-      <p class="pb-model-flywheel-caption">
-        Every member who activates makes your network harder to leave and easier to join. The position compounds automatically.
-      </p>
+      <p class="pb-model-flywheel-caption">{t.flywheelCaption}</p>
     </div>
   </div>
 </section>

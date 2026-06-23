@@ -1,37 +1,27 @@
 ---
-const signals = [
-  {
-    stat: '73%',
-    label: 'of small businesses now sell across at least two channels.',
-    context: 'Up from 38% five years ago. The move to multi-channel is not a trend. It is the baseline.',
-  },
-  {
-    stat: '3× faster',
-    label: 'growth for businesses that operate on digital infrastructure vs those that do not.',
-    context: 'The gap compounds. Businesses that digitalise early pull ahead. The ones that do not become price-sensitive accounts.',
-  },
-  {
-    stat: 'Right now',
-    label: 'Shopify, Square, and a dozen category-specific platforms are actively recruiting your members.',
-    context: 'With no-code setup, zero upfront cost, and aggressive onboarding. They are building your network into their platform.',
-  },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent['whyNow'];
+}
+
+const { content: t } = Astro.props;
 ---
 
 <section class="section pb-why-now fade-in" aria-labelledby="pb-why-now-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">Why Now</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-why-now-title">
-        Your members are already digitising.<br />
-        <span class="pb-headline-accent">The only question is with who.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
     </div>
 
     <div class="pb-why-now-body">
 
       <div class="pb-why-now-signals">
-        {signals.map((s) => (
+        {t.signals.map((s) => (
           <div class="pb-signal-card">
             <div class="pb-signal-stat">{s.stat}</div>
             <div class="pb-signal-content">
@@ -44,44 +34,27 @@ const signals = [
 
       <div class="pb-why-now-argument">
         <div class="pb-argument-block">
-          <h3>What is happening right now, in your sector</h3>
-          <p>
-            Your members are not waiting for permission to go digital. They are onboarding tools, signing
-            up for platforms, and figuring it out themselves — because the pressure to sell online, accept
-            card payments, and manage orders digitally has become unavoidable.
-          </p>
-          <p>
-            Some of them are doing it well. Most of them are doing it expensively, inefficiently, and on
-            someone else's platform. A platform that has no relationship with you. A platform that is
-            quietly becoming their most important operational dependency.
-          </p>
+          <h3>{t.happeningTitle}</h3>
+          {t.happeningParagraphs.map((p) => (
+            <p>{p}</p>
+          ))}
         </div>
 
         <div class="pb-argument-block">
-          <h3>What happens if you wait</h3>
+          <h3>{t.waitTitle}</h3>
           <ul class="pb-wait-list">
-            <li>
-              <span class="pb-wait-icon" aria-hidden="true">→</span>
-              <span>Your members build operational dependencies on other platforms. Those platforms become harder to displace every month.</span>
-            </li>
-            <li>
-              <span class="pb-wait-icon" aria-hidden="true">→</span>
-              <span>The first competitor in your sector who does this owns the digital layer of your market. You become a supplier to their ecosystem.</span>
-            </li>
-            <li>
-              <span class="pb-wait-icon" aria-hidden="true">→</span>
-              <span>Your most growth-oriented members — the ones who will shape the next decade — platform themselves independently. Without you.</span>
-            </li>
-            <li>
-              <span class="pb-wait-icon" aria-hidden="true">→</span>
-              <span>Every month of inaction is data, transactions, and loyalty accruing to someone else's network.</span>
-            </li>
+            {t.waitItems.map((item) => (
+              <li>
+                <span class="pb-wait-icon" aria-hidden="true">→</span>
+                <span>{item}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
         <blockquote class="pb-why-now-quote">
-          Not deciding is also a decision.<br />
-          And in this market, the most dangerous one.
+          {t.quoteLine1}<br />
+          {t.quoteLine2}
         </blockquote>
       </div>
 
