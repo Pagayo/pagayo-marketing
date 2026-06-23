@@ -9,6 +9,7 @@ Doel: voorkomen dat agents DNS/productie breken, pricing onwaar maken, of market
 - **Nieuwe taal/locale-structuur** (bijv. `/de/` routes, hreflang-strategie, CMS) — `de.json` bestaat maar heeft nog geen routes.
 - **Astro `output` of adapter** wijzigen (nu `static` in `astro.config.mjs`).
 - **KV / middleware / wrangler bindings** toevoegen of wijzigen (`wrangler.toml`, `functions/_middleware.ts`).
+- **Externe systemen** (form-SaaS, analytics, chat, CRM, tracking scripts, nieuwe mail-backends) — **nooit** zonder expliciete toestemming Sjoerd. Contactformulieren blijven **AWS SES** via `/api/contact` (zie `AGENTS.md`).
 - Conflicterende instructies tussen chat, `AGENTS.md`, en `DESIGN-SYSTEM.md` — workspace `AGENTS.md` / expliciete instructie Sjoerd wint.
 - Je marketing wilt koppelen aan **storefront design-keten** (`@pagayo/design`, `copy-design`) — dat hoort hier niet; apart besluit.
 

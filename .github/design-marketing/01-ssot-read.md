@@ -29,7 +29,9 @@ pagayo-marketing/
 │   │   ├── i18n/en.json|nl.json|de.json
 │   │   ├── pricing.json, features.json, …
 │   └── styles/global.css            # Alle styling + :root tokens
-├── functions/_middleware.ts         # Cloudflare Pages: pagayo_country cookie
+├── functions/
+│   ├── api/contact.ts               # Contactformulieren → AWS SES (enige mail-backend)
+│   └── _middleware.ts               # Cloudflare Pages: pagayo_country cookie
 ├── .github/workflows/deploy.yml     # CI → wrangler pages deploy
 ├── wrangler.toml                    # Pages project + KV bindings
 └── astro.config.mjs                 # site URL, static output
@@ -46,6 +48,7 @@ pagayo-marketing/
 | **Nav / footer / sticky CTA** | Globale chrome | `src/components/layout/*` + i18n `nav` |
 | **Styling / tokens** | Kleur, spacing, motion | `global.css` + `DESIGN-SYSTEM.md` |
 | **Deploy / DNS** | Livegang | `05-deploy.md`, `pagayo-vault/cloudflare/CLOUDFLARE-CONFIG.md` |
+| **Contactformulier** | Lead/enquiry capture | Alleen `/api/contact` → AWS SES; zie `AGENTS.md` |
 
 ## Meertaligheid (huidige stand)
 

@@ -1,8 +1,11 @@
 /**
  * Cloudflare Pages Function — Contact Form Handler
  *
- * Accepts POST requests from /contact, validates input, and sends
- * a notification email to Pagayo via AWS SES (eu-north-1, pagayo.email domain).
+ * Accepts POST requests from marketing contact forms:
+ *   /contact, /impact-contact, /powered-by-contact (+ /nl/powered-by-contact)
+ * Validates input, and sends a notification email via AWS SES (eu-north-1, pagayo.email domain).
+ *
+ * Client SSoT: src/scripts/contact-form.ts (initContactForm) and src/scripts/pages/*-contact.ts
  *
  * Secrets required in Cloudflare Pages settings:
  *   AWS_SES_ACCESS_KEY  — AWS access key

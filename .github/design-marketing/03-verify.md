@@ -42,6 +42,12 @@ npm run dev
 - Geen hardcoded hex buiten `:root` (grep op `#` in `.astro` `<style>`).
 - Secties gebruiken bestaande spacing/typography-classes.
 
+## 4b. Contactformulieren
+
+- Elke `<form>` op de site moet via **`fetch('/api/contact')`** (AWS SES) — geen `action="https://formspree.io/..."` of andere externe POST-URL.
+- Snelle check: `rg -i 'formspree|getform|typeform|hubspot' .` → moet **0 hits** zijn.
+- Bekende routes: `/contact`, `/impact-contact`, `/powered-by-contact`, `/nl/powered-by-contact`.
+
 ## 5. Deploy-trigger (bewustzijn)
 
 - **PR naar `main`:** workflow draait validate-job, **geen** deploy (zie `deploy.yml` `if`).
