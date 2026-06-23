@@ -1,11 +1,11 @@
 ---
-import MarketingLayout from '../layouts/Marketing.astro';
-import BuiltOnGiantsPageMain from '../components/built-on-giants/BuiltOnGiantsPageMain.astro';
-import { loadBuiltOnGiants } from '../lib/built-on-giants-page';
-import { SITE_ORIGIN } from '../lib/site-seo';
-import { localizedPath } from '../lib/locale-routes';
+import MarketingLayout from '../../layouts/Marketing.astro';
+import BuiltOnGiantsPageMain from '../../components/built-on-giants/BuiltOnGiantsPageMain.astro';
+import { loadBuiltOnGiants } from '../../lib/built-on-giants-page';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
 
-const locale = 'en';
+const locale = 'nl';
 const content = loadBuiltOnGiants(locale);
 
 const giantsSchema = {
