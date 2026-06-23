@@ -1,11 +1,11 @@
 ---
-import MarketingLayout from '../layouts/Marketing.astro';
-import OneStackPageMain from '../components/one-stack/OneStackPageMain.astro';
-import { loadOneStack } from '../lib/one-stack-page';
-import { SITE_ORIGIN } from '../lib/site-seo';
-import { localizedPath } from '../lib/locale-routes';
+import MarketingLayout from '../../layouts/Marketing.astro';
+import OneStackPageMain from '../../components/one-stack/OneStackPageMain.astro';
+import { loadOneStack } from '../../lib/one-stack-page';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
 
-const locale = 'en';
+const locale = 'nl';
 const content = loadOneStack(locale);
 
 const oneStackSchema = {
