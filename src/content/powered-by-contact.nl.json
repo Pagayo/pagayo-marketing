@@ -63,7 +63,15 @@
       }
     },
     "submit": "Verstuur aanvraag →",
-    "note": "We reageren binnen één werkdag."
+    "submitting": "Versturen…",
+    "note": "We reageren binnen één werkdag.",
+    "privacyPrefix": "Door dit formulier te versturen ga je akkoord met ons",
+    "privacyLink": "Privacybeleid",
+    "privacySuffix": "We gebruiken je gegevens alleen om op je aanvraag te reageren.",
+    "successTitle": "Aanvraag verstuurd!",
+    "successBody": "We nemen binnen één werkdag contact met je op.",
+    "errorBody": "Er ging iets mis. Probeer het opnieuw of mail ons direct op",
+    "errorEmail": "info@pagayo.com"
   },
   "info": {
     "nextSteps": {
@@ -86,6 +94,5 @@
       "link": "Ontdek de founder-ervaring →"
     }
   },
-  "founderRegister": "https://start.pagayo.app/register",
-  "formAction": "https://formspree.io/f/pagayo-powered-by"
+  "founderRegister": "https://start.pagayo.app/register"
 }

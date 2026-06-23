@@ -11445,9 +11445,51 @@ p {
   }
 
   .pbc-form-note {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
+    margin-top: 0.25rem;
+  }
+
+  .pbc-privacy-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
     margin: 0;
+  }
+
+  .pbc-privacy-note a {
+    color: var(--text-secondary);
+    text-decoration: underline;
+  }
+
+  .pbc-status {
+    border-radius: 8px;
+    font-size: 0.875rem;
+    padding: 1rem 1.25rem;
+    line-height: 1.6;
+    margin-top: 0.25rem;
+  }
+
+  .pbc-success {
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: #6ee7b7;
+  }
+
+  .pbc-error {
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    color: #fca5a5;
+  }
+
+  .pbc-error a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .pbc-submit:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
   }
 
   .pbc-info-col {
