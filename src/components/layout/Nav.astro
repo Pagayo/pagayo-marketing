@@ -21,7 +21,7 @@ const nav = t.nav;
     <div class="nav-end">
       <ul class="nav-links" id="nav-links">
         <li><a href={hrefFor('oneStack', locale)}>{nav.oneStack}</a></li>
-        <li><a href="/features">{nav.features}</a></li>
+        <li><a href={hrefFor('features', locale)}>{nav.features}</a></li>
         <li><a href={hrefFor('howWeBuild', locale)}>{nav.howWeBuild}</a></li>
         <li><a href={hrefFor('pricing', locale)}>{nav.pricing}</a></li>
         <NavOrganizationsMegaTrigger t={t} />

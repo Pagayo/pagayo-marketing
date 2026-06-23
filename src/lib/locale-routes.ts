@@ -11,7 +11,8 @@ export type LocalizedPageId =
   | 'poweredByContact'
   | 'howWeBuild'
   | 'oneStack'
-  | 'builtOnGiants';
+  | 'builtOnGiants'
+  | 'features';
 
 const ROUTES: Record<LocalizedPageId, Record<Locale, string | null>> = {
   home: { en: '/', nl: '/nl/', de: null },
@@ -23,6 +24,7 @@ const ROUTES: Record<LocalizedPageId, Record<Locale, string | null>> = {
   howWeBuild: { en: '/how-we-build', nl: '/nl/how-we-build', de: null },
   oneStack: { en: '/one-stack', nl: '/nl/one-stack', de: null },
   builtOnGiants: { en: '/built-on-giants', nl: '/nl/built-on-giants', de: null },
+  features: { en: '/features', nl: '/nl/features', de: null },
 };
 
 export interface AlternateLink {
