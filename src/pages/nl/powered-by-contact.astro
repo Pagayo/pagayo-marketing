@@ -1,10 +1,11 @@
 ---
-import MarketingLayout from '../layouts/Marketing.astro';
-import PoweredByContactMain from '../components/powered-by/PoweredByContactMain.astro';
-import { loadPoweredByContact } from '../lib/powered-by-contact';
-import { SITE_ORIGIN } from '../lib/site-seo';
+import MarketingLayout from '../../layouts/Marketing.astro';
+import PoweredByContactMain from '../../components/powered-by/PoweredByContactMain.astro';
+import { loadPoweredByContact } from '../../lib/powered-by-contact';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
 
-const locale = 'en';
+const locale = 'nl';
 const content = loadPoweredByContact(locale);
 
 const contactSchema = {
@@ -12,7 +13,7 @@ const contactSchema = {
   '@type': 'ContactPage',
   name: content.title,
   description: content.description,
-  url: new URL('/powered-by-contact', SITE_ORIGIN).href,
+  url: new URL(localizedPath('poweredByContact', locale), SITE_ORIGIN).href,
   inLanguage: content.inLanguage,
   isPartOf: {
     '@type': 'WebSite',
