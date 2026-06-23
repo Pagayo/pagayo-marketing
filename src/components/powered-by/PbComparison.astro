@@ -1,34 +1,30 @@
 ---
-const rows = [
-  { traditional: 'Recommend a tool. Client sets it up alone.', powered: 'One invitation. Member is operational on day one.' },
-  { traditional: 'No visibility into client performance', powered: 'Live dashboard across your entire network' },
-  { traditional: 'Client grows → client needs you less', powered: 'Member grows → member is more deeply embedded in your platform' },
-  { traditional: 'You are a vendor. Price determines loyalty.', powered: 'You are a platform. Switching means losing everything.' },
-  { traditional: 'First-line support is your client\'s problem', powered: 'Pagayo handles first-line support for your members directly' },
-  { traditional: 'Network value is static — a list of clients', powered: 'Network value compounds — every active member makes the next easier to convert' },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent['comparison'];
+}
+
+const { content: t } = Astro.props;
 ---
 
 <section class="section pb-comparison fade-in" aria-labelledby="pb-comparison-title">
   <div class="container">
     <div class="section-header center pb-comparison-header">
-      <span class="section-label pb-network-label">Traditional vs Platform</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-comparison-title">
-        Why software alone<br />
-        <span class="pb-headline-accent">doesn't solve this.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p class="text-lg">
-        The instinct is to find a tool and recommend it. That creates another vendor in the chain.
-        What you need is infrastructure — embedded in your existing relationship.
-      </p>
+      <p class="text-lg">{t.intro}</p>
     </div>
 
-    <div class="pb-comparison-table" role="table" aria-label="Traditional distributor compared to Powered by Pagayo">
+    <div class="pb-comparison-table" role="table" aria-label={t.tableAriaLabel}>
       <div class="pb-comparison-row pb-comparison-row--head" role="row">
-        <div role="columnheader" class="pb-col-traditional">Traditional Approach</div>
-        <div role="columnheader" class="pb-col-powered">Powered by Pagayo</div>
+        <div role="columnheader" class="pb-col-traditional">{t.colTraditional}</div>
+        <div role="columnheader" class="pb-col-powered">{t.colPowered}</div>
       </div>
-      {rows.map((row) => (
+      {t.rows.map((row) => (
         <div class="pb-comparison-row" role="row">
           <div role="cell" class="pb-col-traditional">
             <span class="pb-col-x" aria-hidden="true">✕</span>

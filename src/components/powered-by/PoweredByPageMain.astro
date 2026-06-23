@@ -1,0 +1,82 @@
+---
+import PageBackdrop from '../layout/PageBackdrop.astro';
+import PbProblem from './PbProblem.astro';
+import PbWhyNow from './PbWhyNow.astro';
+import PbComparison from './PbComparison.astro';
+import PbSolution from './PbSolution.astro';
+import PbPlatformPower from './PbPlatformPower.astro';
+import PbHowItWorks from './PbHowItWorks.astro';
+import PbDeliverables from './PbDeliverables.astro';
+import PbEcosystem from './PbEcosystem.astro';
+import PbSectors from './PbSectors.astro';
+import PbModel from './PbModel.astro';
+import PbExecBuyer from './PbExecBuyer.astro';
+import PbPricing from './PbPricing.astro';
+import PbFaq from './PbFaq.astro';
+import PbCta from './PbCta.astro';
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent;
+}
+
+const { content } = Astro.props;
+const hero = content.hero;
+const contact = content.contact;
+---
+
+<PageBackdrop variant="powered-by" />
+
+<main class="pb-page">
+  <section class="section pb-hero fade-in" aria-labelledby="pb-page-title">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label pb-network-label">{hero.sectionLabel}</span>
+        <h1 class="headline-xl" id="pb-page-title">
+          {hero.headlineTop}<br />
+          <span class="pb-headline-accent">{hero.headlineAccent}</span>
+        </h1>
+        <p class="pb-hero-tagline">{hero.tagline}</p>
+        <p class="text-lg">{hero.intro}</p>
+        <div class="pb-hero-ctas">
+          <div class="pb-hero-cta-block">
+            <a href={contact.proposal} class="btn btn-pb btn-lg">{hero.ctas.proposal}</a>
+            <span class="pb-hero-cta-hint">{hero.ctas.proposalHint}</span>
+          </div>
+          <div class="pb-hero-cta-block">
+            <a href={contact.demo} class="btn btn-secondary btn-lg">{hero.ctas.demo}</a>
+            <span class="pb-hero-cta-hint">{hero.ctas.demoHint}</span>
+          </div>
+        </div>
+        <p class="pb-hero-tertiary">
+          {hero.ctas.founderExplorePrefix}
+          <a href={contact.founderRegister}>{hero.ctas.founderExplore}</a>
+        </p>
+      </div>
+
+      <div class="pb-mission-points" aria-label={hero.missionAriaLabel}>
+        {hero.missionPoints.map((point) => (
+          <div class="pb-mission-card">
+            <h2>{point.title}</h2>
+            <p>{point.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <PbProblem content={content.problem} />
+  <PbWhyNow content={content.whyNow} />
+  <PbComparison content={content.comparison} />
+  <PbSolution content={content.solution} />
+  <PbPlatformPower content={content.platformPower} />
+  <PbHowItWorks content={content.howItWorks} />
+  <PbDeliverables content={content.deliverables} />
+  <PbEcosystem content={content.ecosystem} />
+  <PbSectors content={content.sectors} />
+  <PbModel content={content.model} />
+  <PbExecBuyer content={content.execBuyer} contactExec={contact.exec} />
+  <PbPricing content={content.pricing} contact={contact} />
+  <PbFaq content={content.faq} />
+  <PbCta content={content.cta} contact={contact} />
+</main>

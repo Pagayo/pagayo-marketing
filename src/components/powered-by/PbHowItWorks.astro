@@ -1,42 +1,26 @@
 ---
-const steps = [
-  {
-    number: '01',
-    title: 'Configure your network',
-    description: 'Set your brand, your sector settings, and your member invitation flow. We set up your partner dashboard. No development required, no IT project, no waiting. Most networks are fully configured within a week.',
-    detail: 'Your configuration: brand identity, sector defaults, pricing structure, dashboard access levels.',
-  },
-  {
-    number: '02',
-    title: 'Invite your members',
-    description: 'Send your members a single invitation link. They register, complete a short onboarding, and launch their commerce presence — webshop, POS, QR ordering, subscriptions — on day one. You see each activation in real time.',
-    detail: 'Your members do not need technical knowledge. The onboarding flow is five minutes.',
-  },
-  {
-    number: '03',
-    title: 'Watch your network grow',
-    description: 'Every transaction, every active member, every new channel — visible in your partner dashboard. You advise based on data. You support with context. Your position in their business deepens with every order they process.',
-    detail: 'Network dashboard: member activation rate, total network GMV, channel mix, top performers.',
-  },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent['howItWorks'];
+}
+
+const { content: t } = Astro.props;
 ---
 
 <section class="section pb-how fade-in" aria-labelledby="pb-how-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">How It Works</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-how-title">
-        Three steps from network<br />
-        <span class="pb-headline-accent">to platform.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p class="text-lg">
-        No IT department. No development timeline. No onboarding marathon.
-        You configure once. Your members activate themselves.
-      </p>
+      <p class="text-lg">{t.intro}</p>
     </div>
 
     <div class="pb-how-steps">
-      {steps.map((step, i) => (
+      {t.steps.map((step, i) => (
         <div class="pb-how-step">
           <div class="pb-how-step-number" aria-hidden="true">{step.number}</div>
           <div class="pb-how-step-content">
@@ -44,7 +28,7 @@ const steps = [
             <p class="pb-how-step-desc">{step.description}</p>
             <p class="pb-how-step-detail">{step.detail}</p>
           </div>
-          {i < steps.length - 1 && (
+          {i < t.steps.length - 1 && (
             <div class="pb-how-connector" aria-hidden="true"></div>
           )}
         </div>
@@ -52,7 +36,7 @@ const steps = [
     </div>
 
     <div class="pb-how-timeline-note">
-      <span class="pb-how-badge">Typical timeline: 2–4 weeks from kick-off to first active members.</span>
+      <span class="pb-how-badge">{t.timelineBadge}</span>
     </div>
   </div>
 </section>

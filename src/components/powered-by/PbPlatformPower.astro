@@ -1,71 +1,32 @@
 ---
-const eras = [
-  {
-    when: '20 years ago',
-    what: 'Distribution won.',
-    detail: 'Whoever controlled the product, the logistics, or the shelf space controlled the market. Access was the moat.',
-    status: 'past',
-  },
-  {
-    when: '10 years ago',
-    what: 'Relationships won.',
-    detail: 'Whoever had the deepest account relationships and the most trusted brand held the position. Personal credibility was the moat.',
-    status: 'past',
-  },
-  {
-    when: 'Today',
-    what: 'Platforms win.',
-    detail: 'Whoever owns the infrastructure that others operate on controls the data, the transactions, and the long-term position. The platform is the moat.',
-    status: 'now',
-  },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
 
-const platformAdvantages = [
-  {
-    icon: '📊',
-    title: 'Data no one else has',
-    description: 'A platform sees every transaction across its entire network. That intelligence — sector-wide, real-time, granular — is not available to anyone who is just a supplier.',
-  },
-  {
-    icon: '🔒',
-    title: 'Switching costs that compound',
-    description: 'A vendor is replaced when someone offers a better price. A platform is not left — because leaving means rebuilding your operational foundation. The longer members are on your platform, the harder it becomes to imagine operating without it.',
-  },
-  {
-    icon: '🌐',
-    title: 'Network effects that protect your position',
-    description: 'Every new member on your platform makes the network more valuable for existing members. Your market position strengthens automatically as the network grows.',
-  },
-  {
-    icon: '📡',
-    title: 'Market intelligence your competitors cannot buy',
-    description: 'When you see aggregate performance across your entire sector, you can see what is working before anyone else can. That intelligence shapes your commercial decisions, your support model, and your product roadmap.',
-  },
-];
+interface Props {
+  content: PoweredByContent['platformPower'];
+}
+
+const { content: t } = Astro.props;
 ---
 
 <section class="section pb-platform-power fade-in" aria-labelledby="pb-platform-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">The Shift</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-platform-title">
-        The market has changed.<br />
-        <span class="pb-headline-accent">Platform owners are winning.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p class="text-lg">
-        Every sector goes through the same transition. The organisations that recognise it early
-        build structural advantages that take a decade to displace.
-      </p>
+      <p class="text-lg">{t.intro}</p>
     </div>
 
     <div class="pb-eras">
-      {eras.map((era) => (
+      {t.eras.map((era) => (
         <div class={`pb-era-card ${era.status === 'now' ? 'pb-era-card--now' : 'pb-era-card--past'}`}>
           <span class="pb-era-when">{era.when}</span>
           <h3>{era.what}</h3>
           <p>{era.detail}</p>
-          {era.status === 'now' && (
-            <span class="pb-era-badge">Where your sector is heading</span>
+          {'badge' in era && era.badge && (
+            <span class="pb-era-badge">{era.badge}</span>
           )}
         </div>
       ))}
@@ -73,12 +34,12 @@ const platformAdvantages = [
 
     <div class="pb-platform-divider" aria-hidden="true">
       <div class="pb-platform-divider-line"></div>
-      <span class="pb-platform-divider-label">What platform ownership actually means</span>
+      <span class="pb-platform-divider-label">{t.dividerLabel}</span>
       <div class="pb-platform-divider-line"></div>
     </div>
 
     <div class="pb-platform-advantages">
-      {platformAdvantages.map((adv) => (
+      {t.advantages.map((adv) => (
         <div class="pb-platform-adv-card">
           <span class="pb-platform-adv-icon" aria-hidden="true">{adv.icon}</span>
           <h3>{adv.title}</h3>
@@ -88,13 +49,8 @@ const platformAdvantages = [
     </div>
 
     <div class="pb-platform-insight">
-      <p class="pb-platform-insight-text">
-        A vendor is someone you pay for value. A platform is something you are embedded in.
-        The difference is not about features. It is about position.
-      </p>
-      <p class="pb-platform-insight-sub">
-        Powered by Pagayo does not make you a better vendor. It makes you the platform your sector operates on.
-      </p>
+      <p class="pb-platform-insight-text">{t.insightText}</p>
+      <p class="pb-platform-insight-sub">{t.insightSub}</p>
     </div>
   </div>
 </section>

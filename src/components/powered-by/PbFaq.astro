@@ -1,49 +1,22 @@
 ---
-const faqs = [
-  {
-    q: 'Is this a white-label product?',
-    a: 'No. Powered by Pagayo is a co-brand model. Your name and identity lead. Pagayo\'s platform powers it. Your members experience your network\'s commerce platform — not Pagayo\'s. We are the engine. You are the face.',
-  },
-  {
-    q: 'Do we need a tech team or IT department?',
-    a: 'No. Configuration takes days, not months. You set your brand identity, your sector settings, and your member invitation flow. There is no development work, no system integration project, and no technical team required on your side.',
-  },
-  {
-    q: 'What support do we need to provide to our members?',
-    a: 'Almost none. Pagayo handles first-line support for your members directly — platform questions, technical issues, payment queries. You have a dedicated partner support line for network-level questions. Your team focuses on the commercial relationship, not the helpdesk.',
-  },
-  {
-    q: 'Can we set our own pricing for members?',
-    a: 'Yes. You can bundle Pagayo access as part of your existing commercial relationship, price it as a separate service, offer it as a retention benefit, or build it into a membership tier. The commercial structure between you and your members is entirely yours to design.',
-  },
-  {
-    q: 'What happens if a member leaves our network?',
-    a: 'They lose access to your network\'s platform configuration and its benefits. They can continue using Pagayo as a standard Pagayo customer — but they lose the network-specific setup, your support context, and the advantages that come from being part of your ecosystem.',
-  },
-  {
-    q: 'How long does it take to go live?',
-    a: 'Most networks complete configuration and activate their first cohort of members within 2–4 weeks. Larger networks with bespoke configuration requirements typically take 6–8 weeks. The member onboarding flow is five minutes per member.',
-  },
-  {
-    q: 'Which sectors does this work for?',
-    a: 'Any sector where your members are engaged in commerce — selling products, taking orders, managing subscriptions, or processing payments. We have experience across beauty and personal care, food and beverage, agriculture, sports and fitness, professional services, and franchise networks. If your members sell, Powered by Pagayo works.',
-  },
-  {
-    q: 'Is this different from your Partner Programme?',
-    a: 'Yes, fundamentally. The Partner Programme is a referral model — you earn a commission for referring businesses that pay for Pagayo themselves. Powered by Pagayo is an infrastructure model — you are the platform for your network. Different commercial logic, different relationship, different strategic value.',
-  },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent['faq'];
+}
+
+const { content: t } = Astro.props;
 ---
 
 <section class="section pb-faq fade-in" aria-labelledby="pb-faq-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">FAQ</span>
-      <h2 class="headline-lg" id="pb-faq-title">Common questions</h2>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
+      <h2 class="headline-lg" id="pb-faq-title">{t.headline}</h2>
     </div>
 
     <div class="pb-faq-list">
-      {faqs.map((item) => (
+      {t.items.map((item) => (
         <details class="pb-faq-item">
           <summary>{item.q}</summary>
           <p>{item.a}</p>

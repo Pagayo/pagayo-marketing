@@ -7,6 +7,7 @@ export type LocalizedPageId =
   | 'pricing'
   | 'organizations'
   | 'impact'
+  | 'poweredBy'
   | 'howWeBuild';
 
 const ROUTES: Record<LocalizedPageId, Record<Locale, string | null>> = {
@@ -14,6 +15,7 @@ const ROUTES: Record<LocalizedPageId, Record<Locale, string | null>> = {
   pricing: { en: '/pricing', nl: '/nl/prijzen', de: null },
   organizations: { en: '/organizations', nl: '/nl/organizations', de: null },
   impact: { en: '/impact', nl: '/nl/impact', de: null },
+  poweredBy: { en: '/powered-by', nl: '/nl/powered-by', de: null },
   howWeBuild: { en: '/how-we-build', nl: '/nl/how-we-build', de: null },
 };
 

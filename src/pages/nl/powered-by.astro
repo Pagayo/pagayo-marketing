@@ -1,12 +1,12 @@
 ---
-import MarketingLayout from '../layouts/Marketing.astro';
-import PoweredByPageMain from '../components/powered-by/PoweredByPageMain.astro';
-import { loadMessages } from '../lib/i18n';
-import { loadPoweredBy } from '../lib/powered-by-page';
-import { SITE_ORIGIN } from '../lib/site-seo';
-import { localizedPath } from '../lib/locale-routes';
+import MarketingLayout from '../../layouts/Marketing.astro';
+import PoweredByPageMain from '../../components/powered-by/PoweredByPageMain.astro';
+import { loadMessages } from '../../lib/i18n';
+import { loadPoweredBy } from '../../lib/powered-by-page';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
 
-const locale = 'en';
+const locale = 'nl';
 const messages = loadMessages(locale);
 const meta = messages.poweredByPage;
 const content = loadPoweredBy(locale);
