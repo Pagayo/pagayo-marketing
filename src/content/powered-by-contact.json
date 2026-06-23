@@ -1,0 +1,91 @@
+{
+  "title": "Build Your Network — Pagayo Powered by",
+  "description": "Request a proposal, book a partner demo, or ask about your sector. Tell us your network size and we will send a concrete outline within 48 hours.",
+  "inLanguage": "en",
+  "hero": {
+    "sectionLabel": "For Networks Ready to Become Platforms",
+    "headlineTop": "Let's build your",
+    "headlineAccent": "network platform.",
+    "intro": "Tell us your sector, network size, and what you want your members to be able to do. We will send a concrete proposal — pricing, setup timeline, and what your partner dashboard would look like."
+  },
+  "form": {
+    "heading": "Get in touch",
+    "subject": "Powered by Pagayo — Network enquiry",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "organisation": {
+        "label": "Organisation",
+        "placeholder": "Your organisation"
+      },
+      "email": {
+        "label": "Work email",
+        "placeholder": "you@yourorganisation.com"
+      },
+      "sector": {
+        "label": "Sector",
+        "placeholder": "Select your sector",
+        "options": [
+          { "value": "beauty", "label": "Beauty / Personal care" },
+          { "value": "food-beverage", "label": "Food & Beverage / Horeca" },
+          { "value": "agriculture", "label": "Agriculture / Farming cooperative" },
+          { "value": "franchise", "label": "Franchise / Retail network" },
+          { "value": "sports", "label": "Sports / Fitness / Clubs" },
+          { "value": "professional", "label": "Professional services / Accountancy" },
+          { "value": "wholesale", "label": "Wholesale / Distribution" },
+          { "value": "other", "label": "Other" }
+        ]
+      },
+      "networkSize": {
+        "label": "Network size (approx.)",
+        "placeholder": "Select network size",
+        "options": [
+          { "value": "under-50", "label": "Under 50 members" },
+          { "value": "50-150", "label": "50–150 members" },
+          { "value": "150-500", "label": "150–500 members" },
+          { "value": "500-plus", "label": "500+ members" }
+        ]
+      },
+      "intent": {
+        "label": "What are you looking for?",
+        "options": [
+          { "value": "proposal", "label": "Full proposal (pricing + timeline)" },
+          { "value": "demo", "label": "Partner dashboard demo" },
+          { "value": "exec", "label": "Executive / leadership conversation" },
+          { "value": "question", "label": "Specific question" }
+        ]
+      },
+      "message": {
+        "label": "Tell us more (optional)",
+        "placeholder": "Your network, your goals, specific questions..."
+      }
+    },
+    "submit": "Send enquiry →",
+    "note": "We respond within one business day."
+  },
+  "info": {
+    "nextSteps": {
+      "title": "What happens next",
+      "items": [
+        "We review your network size and sector",
+        "We send a concrete proposal with pricing tiers and activation scenarios",
+        "We book a partner dashboard demo if you want to see it live",
+        "We confirm your network configuration requirements",
+        "You decide — no obligation at any stage"
+      ]
+    },
+    "notSales": {
+      "title": "Not a sales process",
+      "body": "We do not do discovery calls that turn into product pitches. You tell us what your network needs, we show you what it would look like. Decision is yours."
+    },
+    "explore": {
+      "title": "Want to explore what your members will use?",
+      "body": "The same platform your members will run their business on is available to explore free.",
+      "link": "Explore the founder experience →"
+    }
+  },
+  "founderRegister": "https://start.pagayo.app/register",
+  "formAction": "https://formspree.io/f/pagayo-powered-by"
+}

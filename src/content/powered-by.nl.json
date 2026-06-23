@@ -563,9 +563,9 @@
     "founderExplore": "Start gratis als founder →"
   },
   "contact": {
-    "proposal": "/powered-by-contact?intent=proposal",
-    "demo": "/powered-by-contact?intent=demo",
-    "exec": "/powered-by-contact?intent=exec",
+    "proposal": "/nl/powered-by-contact?intent=proposal",
+    "demo": "/nl/powered-by-contact?intent=demo",
+    "exec": "/nl/powered-by-contact?intent=exec",
     "founderRegister": "https://start.pagayo.app/register"
   }
 }
