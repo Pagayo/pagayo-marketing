@@ -9,6 +9,10 @@
 **Design SSoT:** `DESIGN-SYSTEM.md` + `src/styles/global.css` (alle CSS; `site.css` is enige layout-import).
 **Client JS SSoT:** `src/scripts/` — site-breed via `site.ts`; pagina's via `scripts/pages/<slug>.ts`.
 
+## Local source (verplicht)
+
+Volg [`../AGENTS.md`](../AGENTS.md) § Pagayo Project Source. Gebruik Pagayo Project Source (MCP) voor actuele lokale code, branches, dirty state en repository-context. GitHub is remote state — geen primaire lokale implementatiewaarheid.
+
 ## Leesvolgorde (verplicht)
 Volgt workspace-hiërarchie: WHY → repo-regels (dit bestand) → NIVEAU → taakdocs.
 
