@@ -1,0 +1,571 @@
+{
+  "hero": {
+    "sectionLabel": "Powered by Pagayo",
+    "headlineTop": "Your network already exists.",
+    "headlineAccent": "Give it a platform.",
+    "tagline": "Commerce infrastructure for networks.",
+    "intro": "You have the trust. You have the reach. You have hundreds of clients who depend on you. Powered by Pagayo turns that network into a commerce ecosystem — without building a tech team, without becoming a software company, without disrupting what already works.",
+    "missionAriaLabel": "Powered by Pagayo principles",
+    "missionPoints": [
+      {
+        "title": "Your brand. Their business.",
+        "description": "You stay front and centre. Pagayo powers what is underneath. Your members never see another vendor."
+      },
+      {
+        "title": "Live in days, not months.",
+        "description": "Configure your network once. Your members onboard themselves and launch on day one. No IT project required."
+      },
+      {
+        "title": "Infrastructure that compounds.",
+        "description": "Every member who grows makes your network harder to leave and more valuable to join. The position strengthens automatically."
+      }
+    ],
+    "ctas": {
+      "proposal": "Build Your Network →",
+      "proposalHint": "Tell us your sector and network size — we will send a concrete proposal.",
+      "demo": "Book a Partner Demo",
+      "demoHint": "See the partner dashboard live before committing to anything.",
+      "founderExplorePrefix": "Want to explore the platform your members will use?",
+      "founderExplore": "Start free as a founder →"
+    }
+  },
+  "problem": {
+    "sectionLabel": "The Gap",
+    "headlineTop": "Your clients are already growing.",
+    "headlineBottom": "Just not through you.",
+    "subhead": "That changes.",
+    "problems": [
+      {
+        "icon": "📊",
+        "title": "No visibility into member performance",
+        "description": "Your clients run their businesses on ten different tools. You see none of them. You can't advise on what you can't measure."
+      },
+      {
+        "icon": "🔄",
+        "title": "Retention erodes as clients grow stronger",
+        "description": "The better your clients get at running their business, the less they depend on you. That relationship dynamic is backwards."
+      },
+      {
+        "icon": "💸",
+        "title": "Relationships stay transactional",
+        "description": "You provide products or services. They buy elsewhere when the price is right. There is no platform holding the relationship together."
+      },
+      {
+        "icon": "🏗️",
+        "title": "You cannot deliver on \"digital\"",
+        "description": "Every organisation in every sector promises to help clients go digital. Almost none of them have an actual product to deliver."
+      }
+    ],
+    "solutionLabel": "Pagayo changes that",
+    "solutionHeadline": "Your network becomes the operating layer.",
+    "solutionItems": [
+      "Every member gets a full commerce platform, delivered through you",
+      "You see member performance across the entire network in real time",
+      "Your clients grow on your platform, not someone else's",
+      "Your role shifts from vendor to ecosystem — harder to replace every day",
+      "One dashboard. Every member. Full network visibility."
+    ],
+    "quote": "Your network is your most valuable asset. Right now, it is not working hard enough."
+  },
+  "whyNow": {
+    "sectionLabel": "Why Now",
+    "headlineTop": "Your members are already digitising.",
+    "headlineAccent": "The only question is with who.",
+    "signals": [
+      {
+        "stat": "73%",
+        "label": "of small businesses now sell across at least two channels.",
+        "context": "Up from 38% five years ago. The move to multi-channel is not a trend. It is the baseline."
+      },
+      {
+        "stat": "3× faster",
+        "label": "growth for businesses that operate on digital infrastructure vs those that do not.",
+        "context": "The gap compounds. Businesses that digitalise early pull ahead. The ones that do not become price-sensitive accounts."
+      },
+      {
+        "stat": "Right now",
+        "label": "Shopify, Square, and a dozen category-specific platforms are actively recruiting your members.",
+        "context": "With no-code setup, zero upfront cost, and aggressive onboarding. They are building your network into their platform."
+      }
+    ],
+    "happeningTitle": "What is happening right now, in your sector",
+    "happeningParagraphs": [
+      "Your members are not waiting for permission to go digital. They are onboarding tools, signing up for platforms, and figuring it out themselves — because the pressure to sell online, accept card payments, and manage orders digitally has become unavoidable.",
+      "Some of them are doing it well. Most of them are doing it expensively, inefficiently, and on someone else's platform. A platform that has no relationship with you. A platform that is quietly becoming their most important operational dependency."
+    ],
+    "waitTitle": "What happens if you wait",
+    "waitItems": [
+      "Your members build operational dependencies on other platforms. Those platforms become harder to displace every month.",
+      "The first competitor in your sector who does this owns the digital layer of your market. You become a supplier to their ecosystem.",
+      "Your most growth-oriented members — the ones who will shape the next decade — platform themselves independently. Without you.",
+      "Every month of inaction is data, transactions, and loyalty accruing to someone else's network."
+    ],
+    "quoteLine1": "Not deciding is also a decision.",
+    "quoteLine2": "And in this market, the most dangerous one."
+  },
+  "comparison": {
+    "sectionLabel": "Traditional vs Platform",
+    "headlineTop": "Why software alone",
+    "headlineAccent": "doesn't solve this.",
+    "intro": "The instinct is to find a tool and recommend it. That creates another vendor in the chain. What you need is infrastructure — embedded in your existing relationship.",
+    "tableAriaLabel": "Traditional distributor compared to Powered by Pagayo",
+    "colTraditional": "Traditional Approach",
+    "colPowered": "Powered by Pagayo",
+    "rows": [
+      {
+        "traditional": "Recommend a tool. Client sets it up alone.",
+        "powered": "One invitation. Member is operational on day one."
+      },
+      {
+        "traditional": "No visibility into client performance",
+        "powered": "Live dashboard across your entire network"
+      },
+      {
+        "traditional": "Client grows → client needs you less",
+        "powered": "Member grows → member is more deeply embedded in your platform"
+      },
+      {
+        "traditional": "You are a vendor. Price determines loyalty.",
+        "powered": "You are a platform. Switching means losing everything."
+      },
+      {
+        "traditional": "First-line support is your client's problem",
+        "powered": "Pagayo handles first-line support for your members directly"
+      },
+      {
+        "traditional": "Network value is static — a list of clients",
+        "powered": "Network value compounds — every active member makes the next easier to convert"
+      }
+    ]
+  },
+  "solution": {
+    "sectionLabel": "What it actually is",
+    "headlineTop": "Not another software product.",
+    "headlineAccent": "Infrastructure for your network.",
+    "intro": "The distinction matters. Software is something you sell. Infrastructure is something you own. Powered by Pagayo makes your organisation the platform — not a reseller of ours.",
+    "notThisHeading": "Not this",
+    "butThisHeading": "But this",
+    "notThis": [
+      "A white-label SaaS product you have to sell",
+      "An affiliate programme where you earn a referral fee",
+      "A reseller arrangement with monthly targets",
+      "A tech project that needs an IT department",
+      "A new vendor competing with your existing relationships"
+    ],
+    "butThis": [
+      "Commerce infrastructure, embedded in your existing relationship",
+      "Your brand on top. Pagayo's operating system underneath.",
+      "A platform your members launch on — not a tool you recommend to them",
+      "An ecosystem that makes your network more valuable every week",
+      "Infrastructure you configure once. Members activate themselves."
+    ],
+    "badgeNetwork": "Beauty Commerce Network",
+    "badgePowered": "Powered by Pagayo",
+    "badgeCaption": "Your network. Your brand. Your platform. Pagayo is the infrastructure that runs underneath it."
+  },
+  "platformPower": {
+    "sectionLabel": "The Shift",
+    "headlineTop": "The market has changed.",
+    "headlineAccent": "Platform owners are winning.",
+    "intro": "Every sector goes through the same transition. The organisations that recognise it early build structural advantages that take a decade to displace.",
+    "eras": [
+      {
+        "when": "20 years ago",
+        "what": "Distribution won.",
+        "detail": "Whoever controlled the product, the logistics, or the shelf space controlled the market. Access was the moat.",
+        "status": "past"
+      },
+      {
+        "when": "10 years ago",
+        "what": "Relationships won.",
+        "detail": "Whoever had the deepest account relationships and the most trusted brand held the position. Personal credibility was the moat.",
+        "status": "past"
+      },
+      {
+        "when": "Today",
+        "what": "Platforms win.",
+        "detail": "Whoever owns the infrastructure that others operate on controls the data, the transactions, and the long-term position. The platform is the moat.",
+        "status": "now",
+        "badge": "Where your sector is heading"
+      }
+    ],
+    "dividerLabel": "What platform ownership actually means",
+    "advantages": [
+      {
+        "icon": "📊",
+        "title": "Data no one else has",
+        "description": "A platform sees every transaction across its entire network. That intelligence — sector-wide, real-time, granular — is not available to anyone who is just a supplier."
+      },
+      {
+        "icon": "🔒",
+        "title": "Switching costs that compound",
+        "description": "A vendor is replaced when someone offers a better price. A platform is not left — because leaving means rebuilding your operational foundation. The longer members are on your platform, the harder it becomes to imagine operating without it."
+      },
+      {
+        "icon": "🌐",
+        "title": "Network effects that protect your position",
+        "description": "Every new member on your platform makes the network more valuable for existing members. Your market position strengthens automatically as the network grows."
+      },
+      {
+        "icon": "📡",
+        "title": "Market intelligence your competitors cannot buy",
+        "description": "When you see aggregate performance across your entire sector, you can see what is working before anyone else can. That intelligence shapes your commercial decisions, your support model, and your product roadmap."
+      }
+    ],
+    "insightText": "A vendor is someone you pay for value. A platform is something you are embedded in. The difference is not about features. It is about position.",
+    "insightSub": "Powered by Pagayo does not make you a better vendor. It makes you the platform your sector operates on."
+  },
+  "howItWorks": {
+    "sectionLabel": "How It Works",
+    "headlineTop": "Three steps from network",
+    "headlineAccent": "to platform.",
+    "intro": "No IT department. No development timeline. No onboarding marathon. You configure once. Your members activate themselves.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Configure your network",
+        "description": "Set your brand, your sector settings, and your member invitation flow. We set up your partner dashboard. No development required, no IT project, no waiting. Most networks are fully configured within a week.",
+        "detail": "Your configuration: brand identity, sector defaults, pricing structure, dashboard access levels."
+      },
+      {
+        "number": "02",
+        "title": "Invite your members",
+        "description": "Send your members a single invitation link. They register, complete a short onboarding, and launch their commerce presence — webshop, POS, QR ordering, subscriptions — on day one. You see each activation in real time.",
+        "detail": "Your members do not need technical knowledge. The onboarding flow is five minutes."
+      },
+      {
+        "number": "03",
+        "title": "Watch your network grow",
+        "description": "Every transaction, every active member, every new channel — visible in your partner dashboard. You advise based on data. You support with context. Your position in their business deepens with every order they process.",
+        "detail": "Network dashboard: member activation rate, total network GMV, channel mix, top performers."
+      }
+    ],
+    "timelineBadge": "Typical timeline: 2–4 weeks from kick-off to first active members."
+  },
+  "deliverables": {
+    "members": {
+      "sectionLabel": "For Your Members",
+      "headlineTop": "A full commerce business.",
+      "headlineAccent": "From day one.",
+      "intro": "Your members do not get a trial account or a starter tool. They get a complete commerce platform — every channel, every capability, operational from the moment they activate.",
+      "capabilities": [
+        { "icon": "🛒", "title": "Webshop", "desc": "Their own branded webshop, their own products, their own domain. Live in minutes." },
+        { "icon": "🖥️", "title": "Point of Sale", "desc": "Take payments anywhere — in store, at markets, at events. No separate hardware required." },
+        { "icon": "📱", "title": "QR Ordering", "desc": "Tables, pop-ups, pick-up points, events. Customers scan and order directly." },
+        { "icon": "🔄", "title": "Subscriptions", "desc": "Recurring revenue, membership plans, loyalty programmes. Automated billing, automated renewal." },
+        { "icon": "💳", "title": "Payments", "desc": "Stripe-powered. Every payment method. Every currency. Everything in one dashboard." },
+        { "icon": "📦", "title": "Order Management", "desc": "One view of every order, regardless of channel. Inventory, fulfilment, returns." }
+      ]
+    },
+    "network": {
+      "sectionLabel": "For Your Network",
+      "headlineTop": "The network dashboard",
+      "headlineAccent": "your competitors do not have.",
+      "intro": "Full visibility into your network is the most underestimated commercial advantage in your sector. No one else has it. You will.",
+      "capabilities": [
+        { "icon": "📊", "title": "Network Dashboard", "desc": "Every member, their activity, their growth. One view across the entire network." },
+        { "icon": "✅", "title": "Activation Tracking", "desc": "See who is live, who is not, and what is blocking the ones who are not." },
+        { "icon": "📈", "title": "Network Analytics", "desc": "Aggregate GMV, channel mix, top performers, sector benchmarks. Data your competitors do not have." },
+        { "icon": "🔍", "title": "Retention Intelligence", "desc": "Identify members whose activity is declining before they leave. Intervene early." },
+        { "icon": "🏷️", "title": "Your Brand as the Platform", "desc": "Members experience your network as the platform. Pagayo is the engine underneath." },
+        { "icon": "🔗", "title": "Ecosystem Data", "desc": "More active members means better sector insights. The data flywheel compounds as the network grows." }
+      ]
+    }
+  },
+  "ecosystem": {
+    "sectionLabel": "The Transformation",
+    "headlineTop": "From network",
+    "headlineAccent": "to ecosystem.",
+    "intro": "A network and an ecosystem look similar from the outside. Inside, they are fundamentally different — in how they create value, how they retain it, and how they grow.",
+    "beforeLabel": "Before",
+    "beforeTitle": "Network",
+    "beforeDesc": "A set of relationships you maintain through effort.",
+    "afterLabel": "After",
+    "afterTitle": "Ecosystem",
+    "afterDesc": "An operating layer your members depend on to run their business.",
+    "arrowLabel": "Powered by Pagayo",
+    "propLabels": {
+      "whatItIs": "What it is",
+      "relationships": "Relationships",
+      "valueSource": "Value source",
+      "yourRole": "Your role",
+      "retentionDriver": "Retention driver",
+      "growth": "Growth",
+      "data": "Data",
+      "position": "Position"
+    },
+    "networkProps": [
+      "A list of members",
+      "Maintained by people, one meeting at a time",
+      "The product or service you provide",
+      "Supplier with a relationship advantage",
+      "Price, inertia, personal relationships",
+      "Linear — requires more people and more effort",
+      "What they tell you, when they call you",
+      "Negotiated, renewed, at risk"
+    ],
+    "ecosystemProps": [
+      "Members connected through shared infrastructure",
+      "Reinforced by every transaction, every day",
+      "The platform + the network around it",
+      "The operating layer your sector depends on",
+      "Operational dependency — switching means rebuilding",
+      "Compound — every new member makes the network more valuable",
+      "Every transaction, in real time, across the entire network",
+      "Structural — built into how your sector operates"
+    ],
+    "statementHeadline": "Pagayo does not make you a software company. It makes your organisation the infrastructure your sector operates on.",
+    "statementBody": "The organisations that will define their sector over the next decade are not the ones with the best product catalogue or the most experienced sales team. They are the ones that own the platform their market runs on. That position, once established, compounds automatically. Your members' growth becomes your growth. Their transactions are your intelligence. Their success makes your platform harder to leave.",
+    "transformationToday": "Today",
+    "transformationTodayRole": "Supplier",
+    "transformationWith": "With Powered by Pagayo",
+    "transformationWithRole": "Platform Owner",
+    "transformationSector": "In your sector",
+    "transformationSectorRole": "Category Leader"
+  },
+  "sectors": {
+    "sectionLabel": "Sector Examples",
+    "headlineTop": "Every network has the same problem.",
+    "headlineAccent": "Every sector has the same answer.",
+    "intro": "The specifics differ. The commercial logic does not. You have a network. Your members need commerce infrastructure. Pagayo connects both.",
+    "memberWinLabel": "Member win",
+    "networkWinLabel": "Network win",
+    "items": [
+      {
+        "icon": "✂️",
+        "name": "Beauty Network",
+        "scale": "500 salons",
+        "description": "A hair care wholesaler powers every salon in their distribution network with a webshop, online booking integration, and product subscription capability.",
+        "memberWin": "Salons sell product bundles, appointment packages, and gift vouchers online.",
+        "networkWin": "The wholesaler sees sell-through data, repurchase patterns, and product performance across every salon in real time."
+      },
+      {
+        "icon": "🍽️",
+        "name": "Restaurant Network",
+        "scale": "300 restaurants",
+        "description": "A horeca collective gives every member restaurant a QR ordering system, takeaway webshop, and delivery channel — under the collective's brand.",
+        "memberWin": "Restaurants add online ordering without a separate tech contract. Revenue from channels they did not have before.",
+        "networkWin": "The collective negotiates better supplier terms with verified network GMV data. Every transaction strengthens the collective's position."
+      },
+      {
+        "icon": "🌾",
+        "name": "Farmers Cooperative",
+        "scale": "1,000 producers",
+        "description": "A producer cooperative gives every farm their own farm shop — CSA box subscriptions, market pre-orders, local delivery. The cooperative owns the platform.",
+        "memberWin": "Farmers sell direct to consumers without building their own webshop. Subscription revenue they could not access before.",
+        "networkWin": "The cooperative owns the customer data, the distribution infrastructure, and the brand relationship with end consumers."
+      },
+      {
+        "icon": "🏪",
+        "name": "Franchise Group",
+        "scale": "150 locations",
+        "description": "A franchise group gives every franchisee a localised commerce platform within the brand's framework. The franchisor controls range, pricing floors, and brand compliance centrally.",
+        "memberWin": "Franchisees run their local commerce without building a separate online presence. Everything integrated with their daily operations.",
+        "networkWin": "The franchisor has one view of every location's performance, inventory, and customer behaviour. Compliance enforced by the platform, not by audits."
+      },
+      {
+        "icon": "⚽",
+        "name": "Sports Federation",
+        "scale": "400 clubs",
+        "description": "A sports federation gives every affiliated club a commerce platform for memberships, merchandise, event tickets, and facility access.",
+        "memberWin": "Clubs monetise their community with subscriptions, merchandise, and event ticketing — all in one place, no technical setup required.",
+        "networkWin": "The federation sees aggregate revenue across the sport, identifies underperforming clubs early, and benchmarks commercial best practices across the network."
+      }
+    ]
+  },
+  "model": {
+    "sectionLabel": "The Model",
+    "headlineTop": "Your brand. Their business.",
+    "headlineAccent": "Our infrastructure.",
+    "intro": "Three roles. One platform. No one crossing into the other's domain.",
+    "youBringRole": "You bring",
+    "youBringTitle": "The network",
+    "pagayoBringsRole": "Pagayo brings",
+    "pagayoBringsTitle": "The infrastructure",
+    "membersGetRole": "Members get",
+    "membersGetTitle": "A real business",
+    "youBring": [
+      "The brand your members already trust",
+      "The network you have built over years",
+      "The invitation that makes activation frictionless",
+      "The commercial relationship that drives adoption",
+      "The sector knowledge that makes the platform relevant"
+    ],
+    "weBring": [
+      "Commerce infrastructure — webshop, POS, QR, subscriptions, payments",
+      "The platform your members run their business on",
+      "First-line support for every member, every day",
+      "Security, reliability, and uptime you do not have to manage",
+      "The technical foundation that compounds as the network grows"
+    ],
+    "theyGet": [
+      "A real commerce business, not a starter tool",
+      "Every sales channel — online, in-person, mobile, subscription",
+      "Day-one operational, without technical setup",
+      "Connected to your network's ecosystem and advantages",
+      "A business that grows with your network around it"
+    ],
+    "flywheelTitle": "The flywheel",
+    "flywheelSteps": [
+      "More active members",
+      "Better network data",
+      "Stronger network value",
+      "Easier to attract next member"
+    ],
+    "flywheelCaption": "Every member who activates makes your network harder to leave and easier to join. The position compounds automatically."
+  },
+  "execBuyer": {
+    "sectionLabel": "Leadership Brief",
+    "headlineTop": "The questions boards are asking.",
+    "headlineAccent": "The answers they need to hear.",
+    "intro": "This section is for CEOs, Managing Directors, and Commercial Directors. The ones asking: not what is this product, but what does this do to our market position.",
+    "questions": [
+      {
+        "q": "How do we stay relevant when our members no longer need us to exist?",
+        "a": "Stop competing on the value of your product. Compete on the value of your infrastructure. When your members run their business on your platform, their growth reinforces your relevance rather than eroding it. The stronger they get, the more embedded they become.",
+        "emphasis": "Become infrastructure. Infrastructure is not replaced. It is built around."
+      },
+      {
+        "q": "How do we build a competitive position that takes years to displace?",
+        "a": "Platform trust is built transaction by transaction. The first organisation in a sector to own the operational layer for their members has a compounding advantage. Every month they operate the platform, the switching cost for members increases. The second organisation to do this is always a decade behind.",
+        "emphasis": "First mover in platform infrastructure is the strongest moat in any B2B sector."
+      },
+      {
+        "q": "How do we capture value from the network we have already built?",
+        "a": "Right now, your members are generating thousands of transactions that are completely invisible to you. Every order, every sale, every payment is data about your sector that you do not have. A platform makes that visible — sector-wide, real-time, and commercially actionable.",
+        "emphasis": "Your network is generating intelligence you are not capturing. That changes."
+      },
+      {
+        "q": "What does this look like in three years?",
+        "a": "Your members run their business on your platform. New members enter your sector and naturally onboard through you — because that is where the infrastructure is. Your commercial conversations shift from defending your position to expanding your ecosystem. Your market intelligence is deeper than any competitor can build from the outside.",
+        "emphasis": "In three years, the question is not why you built this. It is how you built it before anyone else."
+      }
+    ],
+    "closeTitle": "The strategic case in one sentence",
+    "closeStatement": "The organisations that define the next decade of their sector are not the ones with the best product. They are the ones who own the platform their sector operates on.",
+    "roles": ["CEO", "Managing Director", "Commercial Director", "Head of Network"],
+    "closeCtaPrefix": "If you want to discuss how this applies to your organisation —",
+    "closeCtaLink": "book a conversation →"
+  },
+  "pricing": {
+    "sectionLabel": "Partnership Model",
+    "headlineTop": "Not a software subscription.",
+    "headlineAccent": "A partnership built around your network.",
+    "intro": "The price is secondary. What matters is what you become. We structure the partnership around your network size, your sector, and how you want to position the platform for your members.",
+    "featuredBadge": "Most common entry point",
+    "tiers": [
+      {
+        "name": "Foundation",
+        "tagline": "Build your platform. Activate your first cohort.",
+        "forWho": "For organisations starting their platform journey — first 50 active members.",
+        "what": [
+          "Full partner dashboard and brand configuration",
+          "Member invitation and onboarding flow",
+          "Network analytics for up to 50 active members",
+          "Partner support line",
+          "Pagayo first-line support for all members"
+        ],
+        "cta": "ideal for first platform launch"
+      },
+      {
+        "name": "Growth",
+        "tagline": "Scale with your network.",
+        "forWho": "For established networks ready to expand — 50 to 250 active members.",
+        "what": [
+          "Everything in Foundation",
+          "Advanced network analytics and sector benchmarks",
+          "Retention intelligence and activation insights",
+          "Dedicated partner success manager",
+          "Custom onboarding flow for your sector"
+        ],
+        "cta": "most common entry point",
+        "featured": true
+      },
+      {
+        "name": "Network Leadership",
+        "tagline": "Own the infrastructure of your sector.",
+        "forWho": "For sector-defining organisations — 250+ active members.",
+        "what": [
+          "Everything in Growth",
+          "White-glove network configuration",
+          "Custom member contract structures",
+          "Executive reporting and board-ready analytics",
+          "Quarterly strategic review with Pagayo leadership"
+        ],
+        "cta": "for organisations building long-term moats"
+      }
+    ],
+    "structureTitle": "How it is structured",
+    "structureItems": [
+      {
+        "label": "Network platform fee",
+        "description": "A monthly base fee for your partner dashboard, configuration, and support. Scales with your network tier."
+      },
+      {
+        "label": "Per active member",
+        "description": "Only members who transact in the billing period count. You choose whether to pass this on or absorb it."
+      }
+    ],
+    "structureNote": "Every partnership is built together. There is no fixed pricing page because every network is different. We build the specifics with you based on your sector, your structure, and what you want your members to pay.",
+    "ctaTitle": "The right conversation to have first",
+    "ctaBody": "Tell us your network size and sector. We will send a proposal — including what the platform would look like for your members, what your partner dashboard covers, and what the commercial structure could look like. No commitment required at this stage.",
+    "ctaProposal": "Get a partnership proposal →",
+    "ctaDemo": "See the dashboard first"
+  },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "headline": "Common questions",
+    "items": [
+      {
+        "q": "Is this a white-label product?",
+        "a": "No. Powered by Pagayo is a co-brand model. Your name and identity lead. Pagayo's platform powers it. Your members experience your network's commerce platform — not Pagayo's. We are the engine. You are the face."
+      },
+      {
+        "q": "Do we need a tech team or IT department?",
+        "a": "No. Configuration takes days, not months. You set your brand identity, your sector settings, and your member invitation flow. There is no development work, no system integration project, and no technical team required on your side."
+      },
+      {
+        "q": "What support do we need to provide to our members?",
+        "a": "Almost none. Pagayo handles first-line support for your members directly — platform questions, technical issues, payment queries. You have a dedicated partner support line for network-level questions. Your team focuses on the commercial relationship, not the helpdesk."
+      },
+      {
+        "q": "Can we set our own pricing for members?",
+        "a": "Yes. You can bundle Pagayo access as part of your existing commercial relationship, price it as a separate service, offer it as a retention benefit, or build it into a membership tier. The commercial structure between you and your members is entirely yours to design."
+      },
+      {
+        "q": "What happens if a member leaves our network?",
+        "a": "They lose access to your network's platform configuration and its benefits. They can continue using Pagayo as a standard Pagayo customer — but they lose the network-specific setup, your support context, and the advantages that come from being part of your ecosystem."
+      },
+      {
+        "q": "How long does it take to go live?",
+        "a": "Most networks complete configuration and activate their first cohort of members within 2–4 weeks. Larger networks with bespoke configuration requirements typically take 6–8 weeks. The member onboarding flow is five minutes per member."
+      },
+      {
+        "q": "Which sectors does this work for?",
+        "a": "Any sector where your members are engaged in commerce — selling products, taking orders, managing subscriptions, or processing payments. We have experience across beauty and personal care, food and beverage, agriculture, sports and fitness, professional services, and franchise networks. If your members sell, Powered by Pagayo works."
+      },
+      {
+        "q": "Is this different from your Partner Programme?",
+        "a": "Yes, fundamentally. The Partner Programme is a referral model — you earn a commission for referring businesses that pay for Pagayo themselves. Powered by Pagayo is an infrastructure model — you are the platform for your network. Different commercial logic, different relationship, different strategic value."
+      }
+    ]
+  },
+  "cta": {
+    "sectionLabel": "Build Your Network",
+    "headlineTop": "You already have a network.",
+    "headlineAccent": "Let's build the platform around it.",
+    "body": "Tell us your sector, your network size, and what you want your members to be able to do. We will send a concrete proposal — including pricing, setup timeline, and what your network dashboard would look like.",
+    "proposal": "Build Your Network →",
+    "proposalHint": "We will send a detailed proposal for your leadership team within 48 hours.",
+    "demo": "Book a Partner Demo",
+    "demoHint": "See the partner dashboard live. No commitment, no sales process.",
+    "founderExplorePrefix": "Want to explore the platform your members will use?",
+    "founderExplore": "Start free as a founder →"
+  },
+  "contact": {
+    "proposal": "/powered-by-contact?intent=proposal",
+    "demo": "/powered-by-contact?intent=demo",
+    "exec": "/powered-by-contact?intent=exec",
+    "founderRegister": "https://start.pagayo.app/register"
+  }
+}

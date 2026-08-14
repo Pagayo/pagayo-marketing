@@ -1,0 +1,37 @@
+---
+import MarketingLayout from '../../layouts/Marketing.astro';
+import PoweredByPageMain from '../../components/powered-by/PoweredByPageMain.astro';
+import { loadMessages } from '../../lib/i18n';
+import { loadPoweredBy } from '../../lib/powered-by-page';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
+
+const locale = 'nl';
+const messages = loadMessages(locale);
+const meta = messages.poweredByPage;
+const content = loadPoweredBy(locale);
+
+const poweredBySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: meta.title,
+  description: meta.description,
+  url: new URL(localizedPath('poweredBy', locale), SITE_ORIGIN).href,
+  inLanguage: meta.inLanguage,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Pagayo',
+    url: SITE_ORIGIN,
+  },
+};
+---
+
+<MarketingLayout
+  locale={locale}
+  alternatePageId="poweredBy"
+  title={meta.title}
+  description={meta.description}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(poweredBySchema)} />
+  <PoweredByPageMain content={content} />
+</MarketingLayout>

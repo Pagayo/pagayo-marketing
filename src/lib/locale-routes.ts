@@ -7,14 +7,24 @@ export type LocalizedPageId =
   | 'pricing'
   | 'organizations'
   | 'impact'
-  | 'howWeBuild';
+  | 'poweredBy'
+  | 'poweredByContact'
+  | 'howWeBuild'
+  | 'oneStack'
+  | 'builtOnGiants'
+  | 'features';
 
 const ROUTES: Record<LocalizedPageId, Record<Locale, string | null>> = {
   home: { en: '/', nl: '/nl/', de: null },
   pricing: { en: '/pricing', nl: '/nl/prijzen', de: null },
   organizations: { en: '/organizations', nl: '/nl/organizations', de: null },
   impact: { en: '/impact', nl: '/nl/impact', de: null },
+  poweredBy: { en: '/powered-by', nl: '/nl/powered-by', de: null },
+  poweredByContact: { en: '/powered-by-contact', nl: '/nl/powered-by-contact', de: null },
   howWeBuild: { en: '/how-we-build', nl: '/nl/how-we-build', de: null },
+  oneStack: { en: '/one-stack', nl: '/nl/one-stack', de: null },
+  builtOnGiants: { en: '/built-on-giants', nl: '/nl/built-on-giants', de: null },
+  features: { en: '/features', nl: '/nl/features', de: null },
 };
 
 export interface AlternateLink {

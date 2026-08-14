@@ -1,62 +1,43 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
-import PageBackdrop from '../components/layout/PageBackdrop.astro';
-import PageHero from '../components/layout/PageHero.astro';
-import FeaturesGrid from '../components/sections/FeaturesGrid.astro';
-import ProductPreview from '../components/sections/ProductPreview.astro';
-import ChannelStrip from '../components/sections/ChannelStrip.astro';
-import CompetitorTable from '../components/sections/CompetitorTable.astro';
-import StepsGrid from '../components/sections/StepsGrid.astro';
-import FinalCta from '../components/sections/FinalCta.astro';
-import i18nEn from '../content/i18n/en.json';
+import FeaturesPageMain from '../components/features/FeaturesPageMain.astro';
+import { loadHome } from '../lib/home';
+import { loadMessages } from '../lib/i18n';
+import { SITE_ORIGIN } from '../lib/site-seo';
+import { localizedPath } from '../lib/locale-routes';
 
-const t = i18nEn.featuresPage;
-const pageTitle = t.title;
-const pageDescription = t.description;
+const locale = 'en';
+const messages = loadMessages(locale);
+const t = messages.featuresPage;
+const home = loadHome(locale);
 
 const featureSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: pageTitle,
-  description: pageDescription,
-  url: 'https://www.pagayo.com/features',
+  name: t.title,
+  description: t.description,
+  url: new URL(localizedPath('features', locale), SITE_ORIGIN).href,
   inLanguage: t.inLanguage,
   about: t.about,
   isPartOf: {
     '@type': 'WebSite',
     name: 'Pagayo',
-    url: 'https://www.pagayo.com'
-  }
+    url: SITE_ORIGIN,
+  },
 };
 ---
-<MarketingLayout title={pageTitle} description={pageDescription}>
+
+<MarketingLayout
+  locale={locale}
+  alternatePageId="features"
+  title={t.title}
+  description={t.description}
+>
   <script type="application/ld+json" set:html={JSON.stringify(featureSchema)} />
-  <PageBackdrop variant="features" />
-
-  <PageHero label={t.sectionLabel} headingId="features-page-title">
-    <Fragment slot="title">
-      {t.headlineTop}<br />
-      <span class="text-gradient">{t.headlineBottom}</span>
-    </Fragment>
-    <p class="text-lg" slot="intro">{t.intro}</p>
-
-    <div class="feature-points" aria-label={t.pointsAriaLabel}>
-      {t.points.map((point) => (
-        <div class="feature-point-card">
-          <h2>{point.title}</h2>
-          <p>{point.description}</p>
-        </div>
-      ))}
-    </div>
-  </PageHero>
-
-  <FeaturesGrid />
-  <ProductPreview />
-  <ChannelStrip />
-
-  <div class="section-divider"></div>
-  <CompetitorTable />
-
-  <StepsGrid />
-  <FinalCta />
+  <FeaturesPageMain
+    locale={locale}
+    featuresPage={t}
+    home={home}
+    homePage={messages.homePage}
+  />
 </MarketingLayout>

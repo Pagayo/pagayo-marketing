@@ -1,143 +1,37 @@
 ---
 import MarketingLayout from '../layouts/Marketing.astro';
-import PageBackdrop from '../components/layout/PageBackdrop.astro';
-import PbProblem from '../components/powered-by/PbProblem.astro';
-import PbWhyNow from '../components/powered-by/PbWhyNow.astro';
-import PbComparison from '../components/powered-by/PbComparison.astro';
-import PbSolution from '../components/powered-by/PbSolution.astro';
-import PbPlatformPower from '../components/powered-by/PbPlatformPower.astro';
-import PbHowItWorks from '../components/powered-by/PbHowItWorks.astro';
-import PbDeliverables from '../components/powered-by/PbDeliverables.astro';
-import PbEcosystem from '../components/powered-by/PbEcosystem.astro';
-import PbSectors from '../components/powered-by/PbSectors.astro';
-import PbModel from '../components/powered-by/PbModel.astro';
-import PbExecBuyer from '../components/powered-by/PbExecBuyer.astro';
-import PbPricing from '../components/powered-by/PbPricing.astro';
-import PbFaq from '../components/powered-by/PbFaq.astro';
-import PbCta from '../components/powered-by/PbCta.astro';
-import i18nEn from '../content/i18n/en.json';
+import PoweredByPageMain from '../components/powered-by/PoweredByPageMain.astro';
+import { loadMessages } from '../lib/i18n';
+import { loadPoweredBy } from '../lib/powered-by-page';
+import { SITE_ORIGIN } from '../lib/site-seo';
+import { localizedPath } from '../lib/locale-routes';
 
-const t = i18nEn.poweredByPage;
-const pageTitle = t.title;
-const pageDescription = t.description;
+const locale = 'en';
+const messages = loadMessages(locale);
+const meta = messages.poweredByPage;
+const content = loadPoweredBy(locale);
 
 const poweredBySchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: pageTitle,
-  description: pageDescription,
-  url: 'https://www.pagayo.com/powered-by',
-  inLanguage: t.inLanguage,
+  name: meta.title,
+  description: meta.description,
+  url: new URL(localizedPath('poweredBy', locale), SITE_ORIGIN).href,
+  inLanguage: meta.inLanguage,
   isPartOf: {
     '@type': 'WebSite',
     name: 'Pagayo',
-    url: 'https://www.pagayo.com'
-  }
+    url: SITE_ORIGIN,
+  },
 };
-
-const missionPoints = [
-  {
-    title: 'Your brand. Their business.',
-    description: 'You stay front and centre. Pagayo powers what is underneath. Your members never see another vendor.',
-  },
-  {
-    title: 'Live in days, not months.',
-    description: 'Configure your network once. Your members onboard themselves and launch on day one. No IT project required.',
-  },
-  {
-    title: 'Infrastructure that compounds.',
-    description: 'Every member who grows makes your network harder to leave and more valuable to join. The position strengthens automatically.',
-  },
-];
 ---
 
-<MarketingLayout title={pageTitle} description={pageDescription}>
+<MarketingLayout
+  locale={locale}
+  alternatePageId="poweredBy"
+  title={meta.title}
+  description={meta.description}
+>
   <script type="application/ld+json" set:html={JSON.stringify(poweredBySchema)} />
-  <PageBackdrop variant="powered-by" />
-
-  <main class="pb-page">
-    <!-- 1. Hero -->
-    <section class="section pb-hero fade-in" aria-labelledby="pb-page-title">
-      <div class="container">
-        <div class="section-header center">
-          <span class="section-label pb-network-label">Powered by Pagayo</span>
-          <h1 class="headline-xl" id="pb-page-title">
-            Your network already exists.<br />
-            <span class="pb-headline-accent">Give it a platform.</span>
-          </h1>
-          <p class="pb-hero-tagline">Commerce infrastructure for networks.</p>
-          <p class="text-lg">
-            You have the trust. You have the reach. You have hundreds of clients who depend on you.
-            Powered by Pagayo turns that network into a commerce ecosystem — without building a tech team,
-            without becoming a software company, without disrupting what already works.
-          </p>
-          <div class="pb-hero-ctas">
-            <div class="pb-hero-cta-block">
-              <a href="/powered-by-contact?intent=proposal" class="btn btn-pb btn-lg">Build Your Network →</a>
-              <span class="pb-hero-cta-hint">Tell us your sector and network size — we will send a concrete proposal.</span>
-            </div>
-            <div class="pb-hero-cta-block">
-              <a href="/powered-by-contact?intent=demo" class="btn btn-secondary btn-lg">Book a Partner Demo</a>
-              <span class="pb-hero-cta-hint">See the partner dashboard live before committing to anything.</span>
-            </div>
-          </div>
-          <p class="pb-hero-tertiary">
-            Want to explore the platform your members will use?
-            <a href="https://start.pagayo.app/register">Start free as a founder →</a>
-          </p>
-        </div>
-
-        <div class="pb-mission-points" aria-label="Powered by Pagayo principles">
-          {missionPoints.map((point) => (
-            <div class="pb-mission-card">
-              <h2>{point.title}</h2>
-              <p>{point.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. The gap — why networks lose value -->
-    <PbProblem />
-
-    <!-- 3. WHY NOW — urgency: members are already digitising -->
-    <PbWhyNow />
-
-    <!-- 4. Why software alone doesn't solve it -->
-    <PbComparison />
-
-    <!-- 5. What Powered by Pagayo actually is -->
-    <PbSolution />
-
-    <!-- 6. THE SHIFT — why platforms win (platform power) -->
-    <PbPlatformPower />
-
-    <!-- 7. How it works — three steps -->
-    <PbHowItWorks />
-
-    <!-- 8. What members get + what the network gets -->
-    <PbDeliverables />
-
-    <!-- 9. Network → Ecosystem transformation -->
-    <PbEcosystem />
-
-    <!-- 10. Sector examples -->
-    <PbSectors />
-
-    <!-- 11. The Powered by model explained -->
-    <PbModel />
-
-    <!-- 12. Leadership brief — executive buyer -->
-    <PbExecBuyer />
-
-    <!-- 13. Partnership model (pricing) -->
-    <PbPricing />
-
-    <!-- 14. FAQ -->
-    <PbFaq />
-
-    <!-- 15. CTA -->
-    <PbCta />
-  </main>
+  <PoweredByPageMain content={content} />
 </MarketingLayout>

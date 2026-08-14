@@ -1,0 +1,141 @@
+---
+import type { PoweredByContactContent } from '../../lib/powered-by-contact';
+
+interface Props {
+  content: PoweredByContactContent;
+  privacyPath?: string;
+}
+
+const { content: t, privacyPath = '/privacy-policy' } = Astro.props;
+const form = t.form;
+---
+
+<main class="pbc-page">
+
+  <section class="pbc-hero section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-label pb-network-label">{t.hero.sectionLabel}</span>
+        <h1 class="headline-lg">
+          {t.hero.headlineTop}<br />
+          <span class="pb-headline-accent">{t.hero.headlineAccent}</span>
+        </h1>
+        <p class="text-lg">{t.hero.intro}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pbc-body section">
+    <div class="container">
+      <div class="pbc-layout">
+
+        <div class="pbc-form-col">
+          <h2>{form.heading}</h2>
+          <form id="pbc-form" class="pbc-form" novalidate>
+            <div style="display:none" aria-hidden="true">
+              <label for="pbc-website">Leave this empty</label>
+              <input type="text" id="pbc-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="pbc-field">
+              <label for="pbc-name">{form.fields.name.label}</label>
+              <input id="pbc-name" name="name" type="text" placeholder={form.fields.name.placeholder} required maxlength="120" autocomplete="name" />
+            </div>
+
+            <div class="pbc-field">
+              <label for="pbc-org">{form.fields.organisation.label}</label>
+              <input id="pbc-org" name="organisation" type="text" placeholder={form.fields.organisation.placeholder} required maxlength="120" autocomplete="organization" />
+            </div>
+
+            <div class="pbc-field">
+              <label for="pbc-email">{form.fields.email.label}</label>
+              <input id="pbc-email" name="email" type="email" placeholder={form.fields.email.placeholder} required maxlength="254" autocomplete="email" />
+            </div>
+
+            <div class="pbc-field">
+              <label for="pbc-sector">{form.fields.sector.label}</label>
+              <select id="pbc-sector" name="sector">
+                <option value="">{form.fields.sector.placeholder}</option>
+                {form.fields.sector.options.map((opt) => (
+                  <option value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            </div>
+
+            <div class="pbc-field">
+              <label for="pbc-size">{form.fields.networkSize.label}</label>
+              <select id="pbc-size" name="network_size">
+                <option value="">{form.fields.networkSize.placeholder}</option>
+                {form.fields.networkSize.options.map((opt) => (
+                  <option value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            </div>
+
+            <div class="pbc-field">
+              <label for="pbc-intent">{form.fields.intent.label}</label>
+              <select id="pbc-intent" name="intent" required>
+                {form.fields.intent.options.map((opt) => (
+                  <option value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+            </div>
+
+            <div class="pbc-field">
+              <label for="pbc-message">{form.fields.message.label}</label>
+              <textarea id="pbc-message" name="message" rows="4" placeholder={form.fields.message.placeholder} maxlength="5000"></textarea>
+            </div>
+
+            <p class="pbc-privacy-note">
+              {form.privacyPrefix}
+              <a href={privacyPath}>{form.privacyLink}</a>.
+              {form.privacySuffix}
+            </p>
+
+            <button type="submit" class="btn btn-pb btn-lg pbc-submit" id="pbc-submit-btn" data-sending-label={form.submitting}>
+              <span class="pbc-submit-label">{form.submit}</span>
+              <span class="pbc-submit-spinner" aria-hidden="true" hidden>…</span>
+            </button>
+            <p class="pbc-form-note">{form.note}</p>
+
+            <div id="pbc-success" class="pbc-status pbc-success" hidden role="status">
+              <strong>{form.successTitle}</strong> {form.successBody}
+            </div>
+            <div id="pbc-error" class="pbc-status pbc-error" hidden role="alert">
+              {form.errorBody}
+              <a href={`mailto:${form.errorEmail}`}>{form.errorEmail}</a>.
+            </div>
+          </form>
+        </div>
+
+        <div class="pbc-info-col">
+          <div class="pbc-info-card">
+            <h3>{t.info.nextSteps.title}</h3>
+            <ol class="pbc-next-steps">
+              {t.info.nextSteps.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ol>
+          </div>
+
+          <div class="pbc-info-card pbc-info-card--highlight">
+            <h3>{t.info.notSales.title}</h3>
+            <p>{t.info.notSales.body}</p>
+          </div>
+
+          <div class="pbc-info-card">
+            <h3>{t.info.explore.title}</h3>
+            <p>{t.info.explore.body}</p>
+            <a href={t.founderRegister} class="pbc-explore-link">
+              {t.info.explore.link}
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="../../scripts/pages/powered-by-contact.ts"></script>

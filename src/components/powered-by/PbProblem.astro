@@ -1,4 +1,11 @@
 ---
+import type { PoweredByContent } from '../../lib/powered-by-page';
+
+interface Props {
+  content: PoweredByContent['problem'];
+}
+
+const { content: t } = Astro.props;
 ---
 
 <section class="section pb-problem fade-in" aria-labelledby="pb-problem-title">
@@ -6,60 +13,39 @@
     <div class="pb-problem-grid">
 
       <div class="pb-problem-left">
-        <span class="section-label pb-problem-label">The Gap</span>
+        <span class="section-label pb-problem-label">{t.sectionLabel}</span>
         <h2 class="headline-lg" id="pb-problem-title">
-          Your clients are already growing.<br />
-          Just not through you.
+          {t.headlineTop}<br />
+          {t.headlineBottom}
         </h2>
 
-        <p class="pb-problem-subhead">That changes.</p>
+        <p class="pb-problem-subhead">{t.subhead}</p>
 
         <ul class="pb-problem-list">
-          <li>
-            <span class="pb-problem-icon">📊</span>
-            <div>
-              <strong>No visibility into member performance</strong>
-              <p>Your clients run their businesses on ten different tools. You see none of them. You can't advise on what you can't measure.</p>
-            </div>
-          </li>
-          <li>
-            <span class="pb-problem-icon">🔄</span>
-            <div>
-              <strong>Retention erodes as clients grow stronger</strong>
-              <p>The better your clients get at running their business, the less they depend on you. That relationship dynamic is backwards.</p>
-            </div>
-          </li>
-          <li>
-            <span class="pb-problem-icon">💸</span>
-            <div>
-              <strong>Relationships stay transactional</strong>
-              <p>You provide products or services. They buy elsewhere when the price is right. There is no platform holding the relationship together.</p>
-            </div>
-          </li>
-          <li>
-            <span class="pb-problem-icon">🏗️</span>
-            <div>
-              <strong>You cannot deliver on "digital"</strong>
-              <p>Every organisation in every sector promises to help clients go digital. Almost none of them have an actual product to deliver.</p>
-            </div>
-          </li>
+          {t.problems.map((item) => (
+            <li>
+              <span class="pb-problem-icon">{item.icon}</span>
+              <div>
+                <strong>{item.title}</strong>
+                <p>{item.description}</p>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div class="pb-problem-solution">
-        <span class="section-label pb-network-label">Pagayo changes that</span>
-        <h3 class="headline-md">Your network becomes the operating layer.</h3>
+        <span class="section-label pb-network-label">{t.solutionLabel}</span>
+        <h3 class="headline-md">{t.solutionHeadline}</h3>
 
         <ul class="pb-solution-list">
-          <li>Every member gets a full commerce platform, delivered through you</li>
-          <li>You see member performance across the entire network in real time</li>
-          <li>Your clients grow on your platform, not someone else's</li>
-          <li>Your role shifts from vendor to ecosystem — harder to replace every day</li>
-          <li>One dashboard. Every member. Full network visibility.</li>
+          {t.solutionItems.map((item) => (
+            <li>{item}</li>
+          ))}
         </ul>
 
         <blockquote class="pb-quote">
-          "Your network is your most valuable asset. Right now, it is not working hard enough."
+          "{t.quote}"
         </blockquote>
       </div>
 

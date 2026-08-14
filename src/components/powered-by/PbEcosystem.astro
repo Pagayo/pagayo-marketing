@@ -1,47 +1,51 @@
 ---
-const networkProps = [
-  { label: 'What it is', value: 'A list of members' },
-  { label: 'Relationships', value: 'Maintained by people, one meeting at a time' },
-  { label: 'Value source', value: 'The product or service you provide' },
-  { label: 'Your role', value: 'Supplier with a relationship advantage' },
-  { label: 'Retention driver', value: 'Price, inertia, personal relationships' },
-  { label: 'Growth', value: 'Linear — requires more people and more effort' },
-  { label: 'Data', value: 'What they tell you, when they call you' },
-  { label: 'Position', value: 'Negotiated, renewed, at risk' },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
 
-const ecosystemProps = [
-  { label: 'What it is', value: 'Members connected through shared infrastructure' },
-  { label: 'Relationships', value: 'Reinforced by every transaction, every day' },
-  { label: 'Value source', value: 'The platform + the network around it' },
-  { label: 'Your role', value: 'The operating layer your sector depends on' },
-  { label: 'Retention driver', value: 'Operational dependency — switching means rebuilding' },
-  { label: 'Growth', value: 'Compound — every new member makes the network more valuable' },
-  { label: 'Data', value: 'Every transaction, in real time, across the entire network' },
-  { label: 'Position', value: 'Structural — built into how your sector operates' },
-];
+interface Props {
+  content: PoweredByContent['ecosystem'];
+}
+
+const { content: t } = Astro.props;
+
+const propLabelKeys = [
+  'whatItIs',
+  'relationships',
+  'valueSource',
+  'yourRole',
+  'retentionDriver',
+  'growth',
+  'data',
+  'position',
+] as const;
+
+const networkProps = propLabelKeys.map((key, i) => ({
+  label: t.propLabels[key],
+  value: t.networkProps[i],
+}));
+
+const ecosystemProps = propLabelKeys.map((key, i) => ({
+  label: t.propLabels[key],
+  value: t.ecosystemProps[i],
+}));
 ---
 
 <section class="section pb-ecosystem fade-in" aria-labelledby="pb-ecosystem-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">The Transformation</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-ecosystem-title">
-        From network<br />
-        <span class="pb-headline-accent">to ecosystem.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p class="text-lg">
-        A network and an ecosystem look similar from the outside.
-        Inside, they are fundamentally different — in how they create value, how they retain it, and how they grow.
-      </p>
+      <p class="text-lg">{t.intro}</p>
     </div>
 
     <div class="pb-ecosystem-compare">
       <div class="pb-ecosystem-col pb-ecosystem-col--network">
         <div class="pb-ecosystem-col-header">
-          <span class="pb-ecosystem-col-state">Before</span>
-          <h3>Network</h3>
-          <p>A set of relationships you maintain through effort.</p>
+          <span class="pb-ecosystem-col-state">{t.beforeLabel}</span>
+          <h3>{t.beforeTitle}</h3>
+          <p>{t.beforeDesc}</p>
         </div>
         <ul class="pb-ecosystem-props">
           {networkProps.map((prop) => (
@@ -55,15 +59,15 @@ const ecosystemProps = [
 
       <div class="pb-ecosystem-arrow" aria-hidden="true">
         <div class="pb-ecosystem-arrow-line"></div>
-        <div class="pb-ecosystem-arrow-label">Powered by Pagayo</div>
+        <div class="pb-ecosystem-arrow-label">{t.arrowLabel}</div>
         <div class="pb-ecosystem-arrow-tip">→</div>
       </div>
 
       <div class="pb-ecosystem-col pb-ecosystem-col--ecosystem">
         <div class="pb-ecosystem-col-header">
-          <span class="pb-ecosystem-col-state pb-ecosystem-col-state--after">After</span>
-          <h3>Ecosystem</h3>
-          <p>An operating layer your members depend on to run their business.</p>
+          <span class="pb-ecosystem-col-state pb-ecosystem-col-state--after">{t.afterLabel}</span>
+          <h3>{t.afterTitle}</h3>
+          <p>{t.afterDesc}</p>
         </div>
         <ul class="pb-ecosystem-props">
           {ecosystemProps.map((prop) => (
@@ -78,33 +82,22 @@ const ecosystemProps = [
 
     <div class="pb-ecosystem-statement">
       <div class="pb-ecosystem-statement-inner">
-        <h3>
-          Pagayo does not make you a software company.<br />
-          It makes your organisation the infrastructure your sector operates on.
-        </h3>
-        <p>
-          The organisations that will define their sector over the next decade are not the ones with
-          the best product catalogue or the most experienced sales team.
-          They are the ones that own the platform their market runs on.
-          That position, once established, compounds automatically.
-          Your members' growth becomes your growth.
-          Their transactions are your intelligence.
-          Their success makes your platform harder to leave.
-        </p>
+        <h3>{t.statementHeadline}</h3>
+        <p>{t.statementBody}</p>
         <div class="pb-ecosystem-transformation">
           <div class="pb-transformation-step">
-            <span class="pb-transformation-label">Today</span>
-            <span class="pb-transformation-role">Supplier</span>
+            <span class="pb-transformation-label">{t.transformationToday}</span>
+            <span class="pb-transformation-role">{t.transformationTodayRole}</span>
           </div>
           <span class="pb-transformation-arrow" aria-hidden="true">→</span>
           <div class="pb-transformation-step">
-            <span class="pb-transformation-label">With Powered by Pagayo</span>
-            <span class="pb-transformation-role pb-transformation-role--platform">Platform Owner</span>
+            <span class="pb-transformation-label">{t.transformationWith}</span>
+            <span class="pb-transformation-role pb-transformation-role--platform">{t.transformationWithRole}</span>
           </div>
           <span class="pb-transformation-arrow" aria-hidden="true">→</span>
           <div class="pb-transformation-step">
-            <span class="pb-transformation-label">In your sector</span>
-            <span class="pb-transformation-role pb-transformation-role--leader">Category Leader</span>
+            <span class="pb-transformation-label">{t.transformationSector}</span>
+            <span class="pb-transformation-role pb-transformation-role--leader">{t.transformationSectorRole}</span>
           </div>
         </div>
       </div>

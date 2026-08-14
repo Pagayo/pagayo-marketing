@@ -1,0 +1,43 @@
+---
+import MarketingLayout from '../../layouts/Marketing.astro';
+import FeaturesPageMain from '../../components/features/FeaturesPageMain.astro';
+import { loadHome } from '../../lib/home';
+import { loadMessages } from '../../lib/i18n';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
+
+const locale = 'nl';
+const messages = loadMessages(locale);
+const t = messages.featuresPage;
+const home = loadHome(locale);
+
+const featureSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: t.title,
+  description: t.description,
+  url: new URL(localizedPath('features', locale), SITE_ORIGIN).href,
+  inLanguage: t.inLanguage,
+  about: t.about,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Pagayo',
+    url: SITE_ORIGIN,
+  },
+};
+---
+
+<MarketingLayout
+  locale={locale}
+  alternatePageId="features"
+  title={t.title}
+  description={t.description}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(featureSchema)} />
+  <FeaturesPageMain
+    locale={locale}
+    featuresPage={t}
+    home={home}
+    homePage={messages.homePage}
+  />
+</MarketingLayout>

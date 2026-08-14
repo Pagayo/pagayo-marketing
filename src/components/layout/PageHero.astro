@@ -29,6 +29,7 @@ const {
   class: extraClass,
 } = Astro.props;
 
+const hasTitle = Astro.slots.has('title');
 const resolvedId = headingId ?? `page-hero-${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 ---
 
@@ -38,10 +39,12 @@ const resolvedId = headingId ?? `page-hero-${label.toLowerCase().replace(/[^a-z0
 >
   <div class="container">
     <div class="section-header center">
-      <span class="section-label"><slot name="label">{label}</slot></span>
-      <h1 class={`headline-${headingSize}`} id={resolvedId}>
-        <slot name="title" />
-      </h1>
+      <span class="section-label" id={hasTitle ? undefined : resolvedId}><slot name="label">{label}</slot></span>
+      {hasTitle && (
+        <h1 class={`headline-${headingSize}`} id={resolvedId}>
+          <slot name="title" />
+        </h1>
+      )}
       <slot name="intro" />
     </div>
     <slot />

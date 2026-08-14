@@ -24,7 +24,7 @@ const f = t.footer;
       <div class="footer-col">
         <h4>{f.productHeading}</h4>
         <ul>
-          <li><a href="/features">{f.features}</a></li>
+          <li><a href={hrefFor('features', locale)}>{f.features}</a></li>
           <li><a href={hrefFor('pricing', locale)}>{f.pricing}</a></li>
           <li><a href={hrefFor('howWeBuild', locale)}>{f.howWeBuild}</a></li>
           <li><a href="/changelog">{f.changelog}</a></li>
@@ -35,7 +35,7 @@ const f = t.footer;
         <h4>{f.programsHeading}</h4>
         <ul>
           <li><a href={hrefFor('impact', locale)}>{f.impactEngine}</a></li>
-          <li><a href="/powered-by">{f.poweredBy}</a></li>
+          <li><a href={hrefFor('poweredBy', locale)}>{f.poweredBy}</a></li>
           <li><a href="/partners">{f.partners}</a></li>
           <li><a href="/success-stories">{f.successStories}</a></li>
           <li><a href="/blog">{f.blog}</a></li>
@@ -48,8 +48,8 @@ const f = t.footer;
           <li><a href="/about">{f.about}</a></li>
           <li><a href={hrefFor('howWeBuild', locale)}>{f.howWeBuildLink}</a></li>
           <li><a href="/build-log">{f.buildLog}</a></li>
-          <li><a href="/built-on-giants">{f.builtOnGiants}</a></li>
-          <li><a href="/one-stack">{f.oneStack}</a></li>
+          <li><a href={hrefFor('builtOnGiants', locale)}>{f.builtOnGiants}</a></li>
+          <li><a href={hrefFor('oneStack', locale)}>{f.oneStack}</a></li>
           <li><a href="/privacy-policy">{f.privacyPolicy}</a></li>
           <li><a href="/terms-of-service">{f.termsOfService}</a></li>
           <li><a href="/contact">{f.contact}</a></li>

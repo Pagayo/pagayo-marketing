@@ -1,43 +1,32 @@
 ---
-const notThis = [
-  'A white-label SaaS product you have to sell',
-  'An affiliate programme where you earn a referral fee',
-  'A reseller arrangement with monthly targets',
-  'A tech project that needs an IT department',
-  'A new vendor competing with your existing relationships',
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
 
-const butThis = [
-  'Commerce infrastructure, embedded in your existing relationship',
-  'Your brand on top. Pagayo\'s operating system underneath.',
-  'A platform your members launch on — not a tool you recommend to them',
-  'An ecosystem that makes your network more valuable every week',
-  'Infrastructure you configure once. Members activate themselves.',
-];
+interface Props {
+  content: PoweredByContent['solution'];
+}
+
+const { content: t } = Astro.props;
 ---
 
 <section class="section pb-solution fade-in" aria-labelledby="pb-solution-title">
   <div class="container">
     <div class="section-header center">
-      <span class="section-label pb-network-label">What it actually is</span>
+      <span class="section-label pb-network-label">{t.sectionLabel}</span>
       <h2 class="headline-lg" id="pb-solution-title">
-        Not another software product.<br />
-        <span class="pb-headline-accent">Infrastructure for your network.</span>
+        {t.headlineTop}<br />
+        <span class="pb-headline-accent">{t.headlineAccent}</span>
       </h2>
-      <p class="text-lg">
-        The distinction matters. Software is something you sell. Infrastructure is something you own.
-        Powered by Pagayo makes your organisation the platform — not a reseller of ours.
-      </p>
+      <p class="text-lg">{t.intro}</p>
     </div>
 
     <div class="pb-solution-grid">
       <div class="pb-solution-card pb-solution-card--not">
         <div class="pb-solution-card-header">
           <span class="pb-solution-icon pb-solution-icon--no">✕</span>
-          <h3>Not this</h3>
+          <h3>{t.notThisHeading}</h3>
         </div>
         <ul>
-          {notThis.map((item) => (
+          {t.notThis.map((item) => (
             <li>
               <span class="pb-solution-marker pb-solution-marker--no" aria-hidden="true">✕</span>
               {item}
@@ -49,10 +38,10 @@ const butThis = [
       <div class="pb-solution-card pb-solution-card--yes">
         <div class="pb-solution-card-header">
           <span class="pb-solution-icon pb-solution-icon--yes">✓</span>
-          <h3>But this</h3>
+          <h3>{t.butThisHeading}</h3>
         </div>
         <ul>
-          {butThis.map((item) => (
+          {t.butThis.map((item) => (
             <li>
               <span class="pb-solution-marker pb-solution-marker--yes" aria-hidden="true">✓</span>
               {item}
@@ -64,13 +53,11 @@ const butThis = [
 
     <div class="pb-solution-badge-wrap">
       <div class="pb-solution-badge">
-        <span class="pb-solution-badge-network">Beauty Commerce Network</span>
+        <span class="pb-solution-badge-network">{t.badgeNetwork}</span>
         <span class="pb-solution-badge-divider" aria-hidden="true">—</span>
-        <span class="pb-solution-badge-powered">Powered by Pagayo</span>
+        <span class="pb-solution-badge-powered">{t.badgePowered}</span>
       </div>
-      <p class="pb-solution-badge-caption">
-        Your network. Your brand. Your platform. Pagayo is the infrastructure that runs underneath it.
-      </p>
+      <p class="pb-solution-badge-caption">{t.badgeCaption}</p>
     </div>
   </div>
 </section>

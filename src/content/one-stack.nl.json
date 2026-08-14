@@ -1,0 +1,241 @@
+{
+  "title": "One stack, geen compromissen — Hoe Pagayo is gebouwd",
+  "description": "Pagayo is snel, betaalbaar en betrouwbaar dankzij één regel: voor elke kritieke functie kiezen we één wereldklasse-tool en gaan we diep. Zo ziet dat eruit — en dit betekent het voor jouw shop.",
+  "inLanguage": "nl",
+  "hero": {
+    "badge": "Hoe Pagayo is gebouwd",
+    "headlineTop": "Eén tool per taak.",
+    "headlineGradient": "De beste.",
+    "intro": "Pagayo is snel, betaalbaar en betrouwbaar door een regel die we nooit breken: voor elke kritieke functie kiezen we één wereldklasse-tool en gaan we diep. Geen mixen. Geen plakwerk. Geen compromissen.",
+    "stats": [
+      { "value": "7", "label": "strategische toolkeuzes" },
+      { "value": "300+", "label": "steden wereldwijd" },
+      { "value": "<50ms", "label": "responstijd, overal" },
+      { "value": "1", "label": "team, één codebase" }
+    ]
+  },
+  "principle": {
+    "sectionLabel": "Het principe",
+    "headline": "Eenvoud is een keuze, geen toeval.",
+    "paragraphs": [
+      "Je bakker heeft één bloemleverancier. Je accountant draait één boekhoudprogramma. Je koffieapparaat neemt één type cup. Niet omdat er geen alternatieven zijn — maar omdat te veel leveranciers mixen de plek is waar dingen breken, waar kosten oplopen, waar niemand weet wie verantwoordelijk is als er iets misgaat.",
+      "Pagayo werkt hetzelfde. Elke laag van het platform heeft precies één wereldklasse-tool erachter. We kozen elk zorgvuldig, integreerden die diep, en keken nooit meer om. Daar komt de betrouwbaarheid vandaan. Daar komt de lagere prijs vandaan. Daar komen de wekelijkse updates vandaan.",
+      "We noemen het de One Stack-regel. Eén infrastructuuraanbieder. Eén betaalverwerker. Eén taal. Eén ORM. Geen uitzonderingen."
+    ]
+  },
+  "pillars": [
+    {
+      "num": "01",
+      "slug": "cloudflare",
+      "category": "Infrastructuur",
+      "name": "Cloudflare",
+      "tagline": "De infrastructuur waar elke feature op draait.",
+      "forYou": "Je shop laadt in milliseconden — in Amsterdam, in Nairobi, overal.",
+      "body": "Elke pagina die je klant opent, elke order die ze plaatsen, elke betalingsbevestiging die ze ontvangen — het draait allemaal op Cloudflare's wereldwijde edge-netwerk. Meer dan 300 steden. Geen servers om te huren. Geen onderhoudsvensters om rekening mee te houden. Als Cloudflare een nieuw datacenter toevoegt, wordt je shop sneller. Automatisch.",
+      "linkSlug": "cloudflare",
+      "accent": "#F38020",
+      "accentSoft": "rgba(243, 128, 32, 0.15)"
+    },
+    {
+      "num": "02",
+      "slug": "stripe",
+      "category": "Betalingen",
+      "name": "Stripe",
+      "tagline": "De enige betaallaag die we ooit nodig hebben.",
+      "forYou": "Je geld komt binnen. Elke keer. Precies op schema.",
+      "body": "Kaarten, iDEAL, SEPA, Apple Pay, Google Pay, abonnementen, refunds, uitbetalingen direct naar de bankrekening van de founder — het loopt allemaal via één integratie met Stripe. Elke nieuwe betaalmethode die Stripe lanceert, is automatisch beschikbaar voor je shop. We koppelen één keer, diep, en het werkt gewoon.",
+      "linkSlug": "stripe",
+      "accent": "#635BFF",
+      "accentSoft": "rgba(99, 91, 255, 0.15)"
+    },
+    {
+      "num": "03",
+      "slug": "github",
+      "category": "Codeveiligheid",
+      "name": "GitHub",
+      "tagline": "Niets gaat live zonder elke check te halen.",
+      "forYou": "Je platform degradeert nooit. Elke update is veiliger dan de vorige.",
+      "body": "Elke wijziging aan Pagayo — van een knopkleur tot een nieuwe betaalmethode — wordt geschreven, gereviewd, getest en gedeployed vanuit GitHub. Geautomatiseerde checks draaien voordat iets productie bereikt. Geen shortcut. Geen \"snelle fix\" die het proces omzeilt. Die discipline houdt het platform stabiel terwijl het groeit.",
+      "linkSlug": "github",
+      "accent": "#8b949e",
+      "accentSoft": "rgba(139, 148, 158, 0.2)"
+    },
+    {
+      "num": "04",
+      "slug": "typescript",
+      "category": "Taal",
+      "name": "TypeScript",
+      "tagline": "Eén taal, van de knop die je klikt tot de database die je order opslaat.",
+      "forYou": "Minder bugs. Snellere fixes. Voorspelbaarder gedrag.",
+      "body": "TypeScript is de taal van het hele Pagayo-platform — de storefront die je klanten browsen, de API die hun orders verwerkt, de databaseschema's die hun data opslaan. Eén taal, van front tot back. Geen vertaallaag. Geen mismatch tussen wat de client stuurt en wat de server verwacht. De meeste bugs worden gevangen voordat de code ooit draait.",
+      "linkSlug": null,
+      "accent": "#3b82f6",
+      "accentSoft": "rgba(59, 130, 246, 0.15)"
+    },
+    {
+      "num": "05",
+      "slug": "drizzle",
+      "category": "Data",
+      "name": "Drizzle",
+      "tagline": "Het geheugen van je shop, gestructureerd en veilig.",
+      "forYou": "Je data staat waar je hem verwacht. Migraties draaien in seconden. Niets gaat verloren.",
+      "body": "Drizzle is de single source of truth voor hoe Pagayo over data denkt — hoe een order eruitziet, wat een product bevat, hoe een klant wordt opgeslagen, wat een betaling vastlegt. Eén schema, één library, consistent over elke database, elke tenant. Geen giswerk over de vorm van je data. Het is één keer gedefinieerd en overal gerespecteerd.",
+      "linkSlug": null,
+      "accent": "#34d399",
+      "accentSoft": "rgba(52, 211, 153, 0.13)"
+    },
+    {
+      "num": "06",
+      "slug": "cursor",
+      "category": "Ontwikkeling",
+      "name": "Cursor",
+      "tagline": "Eén operator, op het tempo van een team.",
+      "forYou": "Nieuwe features elke week. Niet elk kwartaal.",
+      "body": "Pagayo is gebouwd in Cursor — de AI-native ontwikkelomgeving die één engineer de hefboom geeft van vijf. Multi-repo context, parallelle agents, instant refactors over de hele codebase. Features die een team van vier een maand kost, shippen in dagen. Die snelheid komt terug bij jou als meer waarde per euro.",
+      "linkSlug": "cursor",
+      "accent": "#06b6d4",
+      "accentSoft": "rgba(6, 182, 212, 0.15)"
+    },
+    {
+      "num": "07",
+      "slug": "claude",
+      "category": "Intelligentie",
+      "name": "Claude",
+      "tagline": "Het brein achter features die moeiteloos aanvoelen.",
+      "forYou": "Een platform dat slimmer wordt naarmate de tijd vordert. Zonder dat jij iets hoeft te doen.",
+      "body": "Claude leest de volledige codebase, spot problemen voordat ze live gaan, en drijft het soort intelligente features — admin-assistenten, slim zoeken, geautomatiseerde inzichten — dat vroeger een dedicated datateam vereiste. Elke modelrelease maakt Pagayo capabeler. Jij profiteert daarvan zonder iets te doen.",
+      "linkSlug": "claude",
+      "accent": "#d97757",
+      "accentSoft": "rgba(217, 119, 87, 0.15)"
+    }
+  ],
+  "forYourShopLabel": "Voor jouw shop",
+  "pillarLinkTemplate": "Hoe Pagayo {name} gebruikt →",
+  "benefits": {
+    "sectionLabel": "Wat dit voor jou betekent",
+    "headline": "Zeven keuzes. Eén resultaat.",
+    "intro": "Elke beslissing in de One Stack komt terug op dezelfde vier voordelen.",
+    "items": [
+      {
+        "icon": "💶",
+        "title": "Lagere prijzen",
+        "body": "Elke integratie die we vermijden, is overhead die nooit op je factuur belandt. Eén tool per taak betekent dat we engineeringtijd besteden aan features, niet aan leidingen leggen tussen leveranciers."
+      },
+      {
+        "icon": "🟢",
+        "title": "Minder storingen",
+        "body": "Een ketting met zeven sterke schakels is betrouwbaarder dan een ketting met vijftien zwakke. We kennen elke tool van binnen en buiten. Er is geen schuldspel tussen leveranciers als iets traag is."
+      },
+      {
+        "icon": "🚀",
+        "title": "Wekelijkse updates",
+        "body": "Als elke platformpartner een verbetering shipt, pakken we die meteen op. Eén integratie betekent nul frictie tussen \"released\" en \"live in je shop\"."
+      },
+      {
+        "icon": "🔒",
+        "title": "Diepe expertise",
+        "body": "We strijken niet over de oppervlakte van zevenhonderd libraries. We gaan diep op zeven. Die diepte levert de sub-50ms laadtijden, de 99,99% uptime en de schone API op."
+      }
+    ]
+  },
+  "comparison": {
+    "sectionLabel": "Het alternatief",
+    "headline": "De meeste platforms mixen. Wij niet.",
+    "intro": "Zo ziet complexiteit eruit — en waarom we die nooit binnenlaten.",
+    "badLabel": "Typisch platform",
+    "goodLabel": "Pagayo",
+    "rows": [
+      {
+        "category": "Infrastructuur",
+        "bad": "2–3 hostingproviders + een CDN",
+        "good": "Cloudflare — één edge-netwerk"
+      },
+      {
+        "category": "Betalingen",
+        "bad": "Stripe + Mollie + Adyen + fallbacks",
+        "good": "Stripe — één integratie"
+      },
+      {
+        "category": "Code",
+        "bad": "PHP, Python, Node.js, Ruby",
+        "good": "TypeScript — van front tot back"
+      },
+      {
+        "category": "Database",
+        "bad": "SQL + cachelaag + zoekmachine + object store",
+        "good": "Drizzle + D1 — één schemalaag"
+      },
+      {
+        "category": "AI",
+        "bad": "4+ modelproviders, gemixte API's",
+        "good": "Claude — één diepe integratie"
+      },
+      {
+        "category": "Deploys",
+        "bad": "Maatwerk scripts, maandelijkse releasecycli",
+        "good": "GitHub Actions — elke week, geautomatiseerd"
+      },
+      {
+        "category": "Talen",
+        "bad": "Een andere stack per service",
+        "good": "Eén taal. Eén team. Eén codebase."
+      }
+    ],
+    "note": "Complexiteit is geen teken van ambitie. Het is een teken van onopgeloste beslissingen."
+  },
+  "ripple": {
+    "sectionLabel": "Het keteneffect",
+    "headline": "Eén goede beslissing componeert.",
+    "steps": [
+      {
+        "step": "1",
+        "title": "We kiezen Cloudflare.",
+        "body": "Elke service — compute, storage, cache, queues, DNS — leeft op één netwerk. Geen cross-provider latency. Geen egress fees tussen services."
+      },
+      {
+        "step": "2",
+        "title": "Daardoor is Stripe triviaal betrouwbaar.",
+        "body": "Payment webhooks raken een Worker op hetzelfde netwerk. Geen transit. Geen timeout-risico. Stripe-bevestigingen landen in milliseconden."
+      },
+      {
+        "step": "3",
+        "title": "Daardoor is TypeScript de voor de hand liggende taal.",
+        "body": "Eén runtime (V8), één taal (TypeScript), van de storefront tot de Worker tot het Drizzle-schema. Geen polyglot-frictie."
+      },
+      {
+        "step": "4",
+        "title": "Daardoor zijn Cursor en Claude onstuitbaar.",
+        "body": "Eén codebase in één taal geeft AI volledige context. Wijzigingen die 13 repos overspannen, duren uren in plaats van weken. Jij krijgt elke week nieuwe features."
+      }
+    ]
+  },
+  "numbers": {
+    "items": [
+      { "val": "7", "label": "tools in de stack", "sub": "één per categorie, één keer gekozen" },
+      { "val": "300+", "label": "steden wereldwijd", "sub": "allemaal aangedreven door één provider" },
+      { "val": "<50ms", "label": "typische responstijd", "sub": "overal op aarde" },
+      { "val": "99.99%", "label": "uptime", "sub": "geen origin servers die kunnen falen" },
+      { "val": "1", "label": "taal", "sub": "TypeScript, end to end" },
+      { "val": "Wekelijks", "label": "deploy-cadans", "sub": "niet per kwartaal, niet per maand" }
+    ]
+  },
+  "closing": {
+    "sectionLabel": "Genoeg over de stack",
+    "headlineLine1": "De beste infrastructuur is de soort",
+    "headlineLine2": "waar je nooit over na hoeft te denken.",
+    "paragraphs": [
+      "Je opent je shop, je verkoopt, je wordt betaald. Alles onder de motorkap — Cloudflare, Stripe, GitHub, TypeScript, Drizzle, Cursor, Claude — draait zodat jij nooit hoeft te vragen wat er draait.",
+      "Dat is het hele punt."
+    ],
+    "cta": "Open je shop gratis →",
+    "linksPrefix": "Benieuwd hoe het samenhangt?",
+    "linksText": "Lees het volledige giant-verhaal →",
+    "linksHref": "/nl/built-on-giants"
+  },
+  "visuals": {
+    "cloudflareCaption": "300+ steden · nul origin servers",
+    "typescriptComment": "// Typefout gevangen vóór deploy",
+    "cursorAgents": "3 agents · one-stack",
+    "cursorReady": "klaar"
+  }
+}

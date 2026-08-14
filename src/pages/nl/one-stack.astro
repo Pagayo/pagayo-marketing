@@ -1,0 +1,34 @@
+---
+import MarketingLayout from '../../layouts/Marketing.astro';
+import OneStackPageMain from '../../components/one-stack/OneStackPageMain.astro';
+import { loadOneStack } from '../../lib/one-stack-page';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
+
+const locale = 'nl';
+const content = loadOneStack(locale);
+
+const oneStackSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: content.title,
+  description: content.description,
+  url: new URL(localizedPath('oneStack', locale), SITE_ORIGIN).href,
+  inLanguage: content.inLanguage,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Pagayo',
+    url: SITE_ORIGIN,
+  },
+};
+---
+
+<MarketingLayout
+  locale={locale}
+  alternatePageId="oneStack"
+  title={content.title}
+  description={content.description}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(oneStackSchema)} />
+  <OneStackPageMain content={content} locale={locale} />
+</MarketingLayout>

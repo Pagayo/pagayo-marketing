@@ -25,7 +25,7 @@ Canonieke uitvoeringsprotocollen voor **marketing-site-werk in Cursor**: `www.pa
 
 ## SSoT en bronnen (niet dupliceren)
 
-- **Agent-router + harde regels:** `pagayo-marketing/AGENTS.md`
+- **Agent-router + harde regels:** `pagayo-marketing/AGENTS.md` (inclusief contactformulieren → AWS SES; geen externe SaaS zonder Sjoerd)
 - **Design tokens, typografie, sectie-patronen:** `pagayo-marketing/DESIGN-SYSTEM.md`
 - **Implementatie (CSS):** `pagayo-marketing/src/styles/global.css` — wijzig tokens/classes hier; spiegel belangrijke beslissingen in `DESIGN-SYSTEM.md`
 - **Cloudflare Pages/DNS/deploy:** `pagayo-vault/cloudflare/CLOUDFLARE-CONFIG.md` (secties Pages + DNS `pagayo.com`)

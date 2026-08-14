@@ -77,7 +77,7 @@
         "num": "01",
         "title": "Architectuur",
         "body": "Multi-repo, edge-first, Order-First domeinmodel. Duidelijke grenzen zodat agents weten waar een wijziging thuishoort — en waar niet.",
-        "proofHref": "/one-stack",
+        "proofHref": "/nl/one-stack",
         "proofLabel": "One stack — architectuurkeuzes →"
       },
       {
@@ -154,7 +154,7 @@
     "links": [
       { "href": "/build-log", "label": "Build Log" },
       { "href": "/changelog", "label": "Changelog" },
-      { "href": "/one-stack", "label": "One stack" }
+      { "href": "/nl/one-stack", "label": "One stack" }
     ],
     "stats": [
       { "value": "2500+", "label": "gedocumenteerde deploys", "href": "/build-log" },

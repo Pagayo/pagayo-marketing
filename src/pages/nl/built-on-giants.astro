@@ -1,0 +1,34 @@
+---
+import MarketingLayout from '../../layouts/Marketing.astro';
+import BuiltOnGiantsPageMain from '../../components/built-on-giants/BuiltOnGiantsPageMain.astro';
+import { loadBuiltOnGiants } from '../../lib/built-on-giants-page';
+import { SITE_ORIGIN } from '../../lib/site-seo';
+import { localizedPath } from '../../lib/locale-routes';
+
+const locale = 'nl';
+const content = loadBuiltOnGiants(locale);
+
+const giantsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: content.title,
+  description: content.description,
+  url: new URL(localizedPath('builtOnGiants', locale), SITE_ORIGIN).href,
+  inLanguage: content.inLanguage,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Pagayo',
+    url: SITE_ORIGIN,
+  },
+};
+---
+
+<MarketingLayout
+  locale={locale}
+  alternatePageId="builtOnGiants"
+  title={content.title}
+  description={content.description}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(giantsSchema)} />
+  <BuiltOnGiantsPageMain content={content} locale={locale} />
+</MarketingLayout>

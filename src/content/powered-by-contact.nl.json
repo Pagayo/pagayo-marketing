@@ -1,0 +1,98 @@
+{
+  "title": "Bouw je netwerk — Pagayo Powered by",
+  "description": "Vraag een voorstel aan, boek een partner-demo of stel een vraag over je sector. Vertel ons je netwerkgrootte en we sturen binnen 48 uur een concreet overzicht.",
+  "inLanguage": "nl",
+  "hero": {
+    "sectionLabel": "Voor netwerken die platform willen worden",
+    "headlineTop": "Laten we jouw",
+    "headlineAccent": "netwerkplatform bouwen.",
+    "intro": "Vertel ons je sector, netwerkgrootte en wat je leden moeten kunnen doen. We sturen een concreet voorstel — prijs, setup-timeline en hoe je partnerdashboard eruitziet."
+  },
+  "form": {
+    "heading": "Neem contact op",
+    "subject": "Powered by Pagayo — Netwerkaanvraag",
+    "fields": {
+      "name": {
+        "label": "Naam",
+        "placeholder": "Je naam"
+      },
+      "organisation": {
+        "label": "Organisatie",
+        "placeholder": "Je organisatie"
+      },
+      "email": {
+        "label": "Zakelijke e-mail",
+        "placeholder": "jij@jouworganisatie.nl"
+      },
+      "sector": {
+        "label": "Sector",
+        "placeholder": "Selecteer je sector",
+        "options": [
+          { "value": "beauty", "label": "Beauty / Personal care" },
+          { "value": "food-beverage", "label": "Food & Beverage / Horeca" },
+          { "value": "agriculture", "label": "Landbouw / Boeren-coöperatie" },
+          { "value": "franchise", "label": "Franchise / Retailnetwerk" },
+          { "value": "sports", "label": "Sport / Fitness / Clubs" },
+          { "value": "professional", "label": "Professionele diensten / Accountancy" },
+          { "value": "wholesale", "label": "Groothandel / Distributie" },
+          { "value": "other", "label": "Anders" }
+        ]
+      },
+      "networkSize": {
+        "label": "Netwerkgrootte (ca.)",
+        "placeholder": "Selecteer netwerkgrootte",
+        "options": [
+          { "value": "under-50", "label": "Minder dan 50 leden" },
+          { "value": "50-150", "label": "50–150 leden" },
+          { "value": "150-500", "label": "150–500 leden" },
+          { "value": "500-plus", "label": "500+ leden" }
+        ]
+      },
+      "intent": {
+        "label": "Waar ben je naar op zoek?",
+        "options": [
+          { "value": "proposal", "label": "Volledig voorstel (prijs + timeline)" },
+          { "value": "demo", "label": "Partnerdashboard-demo" },
+          { "value": "exec", "label": "Executive / leiderschapsgesprek" },
+          { "value": "question", "label": "Specifieke vraag" }
+        ]
+      },
+      "message": {
+        "label": "Vertel ons meer (optioneel)",
+        "placeholder": "Je netwerk, je doelen, specifieke vragen..."
+      }
+    },
+    "submit": "Verstuur aanvraag →",
+    "submitting": "Versturen…",
+    "note": "We reageren binnen één werkdag.",
+    "privacyPrefix": "Door dit formulier te versturen ga je akkoord met ons",
+    "privacyLink": "Privacybeleid",
+    "privacySuffix": "We gebruiken je gegevens alleen om op je aanvraag te reageren.",
+    "successTitle": "Aanvraag verstuurd!",
+    "successBody": "We nemen binnen één werkdag contact met je op.",
+    "errorBody": "Er ging iets mis. Probeer het opnieuw of mail ons direct op",
+    "errorEmail": "info@pagayo.com"
+  },
+  "info": {
+    "nextSteps": {
+      "title": "Wat er daarna gebeurt",
+      "items": [
+        "We bekijken je netwerkgrootte en sector",
+        "We sturen een concreet voorstel met prijstiers en activatiescenario's",
+        "We plannen een partnerdashboard-demo als je het live wilt zien",
+        "We bevestigen je netwerkconfiguratie-eisen",
+        "Jij beslist — geen verplichting in welk stadium dan ook"
+      ]
+    },
+    "notSales": {
+      "title": "Geen salesproces",
+      "body": "We doen geen discovery calls die uitmonden in productpitches. Jij vertelt wat je netwerk nodig heeft, wij laten zien hoe dat eruitziet. De beslissing is aan jou."
+    },
+    "explore": {
+      "title": "Wil je verkennen wat je leden gaan gebruiken?",
+      "body": "Hetzelfde platform waar je leden hun bedrijf op runnen, kun je gratis verkennen.",
+      "link": "Ontdek de founder-ervaring →"
+    }
+  },
+  "founderRegister": "https://start.pagayo.app/register"
+}

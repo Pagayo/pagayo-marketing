@@ -1,21 +1,13 @@
 ---
-const memberCapabilities = [
-  { icon: '🛒', title: 'Webshop', desc: 'Their own branded webshop, their own products, their own domain. Live in minutes.' },
-  { icon: '🖥️', title: 'Point of Sale', desc: 'Take payments anywhere — in store, at markets, at events. No separate hardware required.' },
-  { icon: '📱', title: 'QR Ordering', desc: 'Tables, pop-ups, pick-up points, events. Customers scan and order directly.' },
-  { icon: '🔄', title: 'Subscriptions', desc: 'Recurring revenue, membership plans, loyalty programmes. Automated billing, automated renewal.' },
-  { icon: '💳', title: 'Payments', desc: 'Stripe-powered. Every payment method. Every currency. Everything in one dashboard.' },
-  { icon: '📦', title: 'Order Management', desc: 'One view of every order, regardless of channel. Inventory, fulfilment, returns.' },
-];
+import type { PoweredByContent } from '../../lib/powered-by-page';
 
-const networkCapabilities = [
-  { icon: '📊', title: 'Network Dashboard', desc: 'Every member, their activity, their growth. One view across the entire network.' },
-  { icon: '✅', title: 'Activation Tracking', desc: 'See who is live, who is not, and what is blocking the ones who are not.' },
-  { icon: '📈', title: 'Network Analytics', desc: 'Aggregate GMV, channel mix, top performers, sector benchmarks. Data your competitors do not have.' },
-  { icon: '🔍', title: 'Retention Intelligence', desc: 'Identify members whose activity is declining before they leave. Intervene early.' },
-  { icon: '🏷️', title: 'Your Brand as the Platform', desc: 'Members experience your network as the platform. Pagayo is the engine underneath.' },
-  { icon: '🔗', title: 'Ecosystem Data', desc: 'More active members means better sector insights. The data flywheel compounds as the network grows.' },
-];
+interface Props {
+  content: PoweredByContent['deliverables'];
+}
+
+const { content: t } = Astro.props;
+const members = t.members;
+const network = t.network;
 ---
 
 <section class="section pb-deliverables fade-in" aria-labelledby="pb-members-title">
@@ -23,19 +15,16 @@ const networkCapabilities = [
 
     <div class="pb-deliverables-block">
       <div class="section-header center">
-        <span class="section-label pb-network-label">For Your Members</span>
+        <span class="section-label pb-network-label">{members.sectionLabel}</span>
         <h2 class="headline-lg" id="pb-members-title">
-          A full commerce business.<br />
-          <span class="pb-headline-accent">From day one.</span>
+          {members.headlineTop}<br />
+          <span class="pb-headline-accent">{members.headlineAccent}</span>
         </h2>
-        <p class="text-lg">
-          Your members do not get a trial account or a starter tool.
-          They get a complete commerce platform — every channel, every capability, operational from the moment they activate.
-        </p>
+        <p class="text-lg">{members.intro}</p>
       </div>
 
       <div class="pb-capabilities-grid">
-        {memberCapabilities.map((cap) => (
+        {members.capabilities.map((cap) => (
           <article class="pb-capability-card">
             <div class="pb-capability-icon" aria-hidden="true">{cap.icon}</div>
             <h3>{cap.title}</h3>
@@ -49,19 +38,16 @@ const networkCapabilities = [
 
     <div class="pb-deliverables-block">
       <div class="section-header center">
-        <span class="section-label pb-network-label">For Your Network</span>
+        <span class="section-label pb-network-label">{network.sectionLabel}</span>
         <h2 class="headline-lg" id="pb-network-title">
-          The network dashboard<br />
-          <span class="pb-headline-accent">your competitors do not have.</span>
+          {network.headlineTop}<br />
+          <span class="pb-headline-accent">{network.headlineAccent}</span>
         </h2>
-        <p class="text-lg">
-          Full visibility into your network is the most underestimated commercial advantage in your sector.
-          No one else has it. You will.
-        </p>
+        <p class="text-lg">{network.intro}</p>
       </div>
 
       <div class="pb-capabilities-grid">
-        {networkCapabilities.map((cap) => (
+        {network.capabilities.map((cap) => (
           <article class="pb-capability-card pb-capability-card--network">
             <div class="pb-capability-icon" aria-hidden="true">{cap.icon}</div>
             <h3>{cap.title}</h3>

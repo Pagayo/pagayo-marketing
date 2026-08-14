@@ -1,0 +1,122 @@
+{
+  "title": "Built on the shoulders of giants — Pagayo",
+  "description": "Pagayo is built on a handful of extraordinary platforms: Cloudflare, Stripe, GitHub, OpenAI, Cursor, and Claude. Here is what each of them does — and why we picked them.",
+  "inLanguage": "en",
+  "hero": {
+    "badge": "With gratitude to the people behind the platforms",
+    "headlineTop": "Built on the shoulders",
+    "headlineGradient": "of giants",
+    "intro": "Pagayo is focused. The platforms it stands on are vast. Six extraordinary tools — built by thousands of people over many years — make everything we do possible. Here they are, and here is why we picked each one."
+  },
+  "giantLinkTemplate": "Read how Pagayo uses {name} →",
+  "giants": [
+    {
+      "slug": "cloudflare",
+      "name": "Cloudflare",
+      "role": "The runtime",
+      "tag": "01",
+      "accent": "#F38020",
+      "accentSoft": "rgba(243, 128, 32, 0.18)",
+      "url": "https://www.cloudflare.com",
+      "tagline": "One network. Everywhere on earth.",
+      "body": "Every page, every API call, every database query, every payment webhook — they all run on Cloudflare's global edge network. Workers, D1, KV, R2, Queues, Workflows, Pages, DNS, Access, WAF. The entire Pagayo platform lives here.",
+      "bullets": [
+        "No origin servers, no maintenance windows",
+        "300+ cities, under 50ms from your customer",
+        "D1, KV, R2 — storage where the request lands"
+      ]
+    },
+    {
+      "slug": "stripe",
+      "name": "Stripe",
+      "role": "The payments",
+      "tag": "02",
+      "accent": "#635BFF",
+      "accentSoft": "rgba(99, 91, 255, 0.18)",
+      "url": "https://stripe.com",
+      "tagline": "The part that absolutely must be right.",
+      "body": "Stripe handles the money. Cards, iDEAL, Bancontact, SEPA, Apple Pay, Google Pay, subscriptions, refunds, invoices, payouts, tax. Pagayo speaks one clean API and the rest is taken care of — every single time.",
+      "bullets": [
+        "Every major payment method, one integration",
+        "Subscriptions, invoices, payouts, tax — handled",
+        "PCI compliance without lifting a finger"
+      ]
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "role": "The workshop",
+      "tag": "03",
+      "accent": "#8b949e",
+      "accentSoft": "rgba(139, 148, 158, 0.22)",
+      "url": "https://github.com",
+      "tagline": "Nothing ships without a green check.",
+      "body": "Every line of Pagayo lives on GitHub. Pull requests, Actions, releases, packages, secrets, environments — the whole build-and-ship pipeline runs there. Every deployment starts with a commit, and ends with a green check. Nothing ever bypasses it.",
+      "bullets": [
+        "Every change reviewed in a pull request",
+        "Staging and production deploys via Actions",
+        "13+ repositories, one consistent workflow"
+      ]
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "role": "The reasoning layer",
+      "tag": "04",
+      "accent": "#10a37f",
+      "accentSoft": "rgba(16, 163, 127, 0.18)",
+      "url": "https://openai.com",
+      "tagline": "The quiet intelligence behind easy features.",
+      "body": "OpenAI powers the parts of Pagayo that need to think — admin assistants, product help, content understanding, search relevance. The features that just feel easier than they should. The models keep getting better; Pagayo gets better with them.",
+      "bullets": [
+        "Admin assistants that understand your shop",
+        "Smarter search, richer product help",
+        "New capabilities ride in on every model release"
+      ]
+    },
+    {
+      "slug": "cursor",
+      "name": "Cursor",
+      "role": "The editor",
+      "tag": "05",
+      "accent": "#06b6d4",
+      "accentSoft": "rgba(6, 182, 212, 0.18)",
+      "url": "https://cursor.com",
+      "tagline": "A single operator, moving like a team.",
+      "body": "Pagayo is built inside Cursor. It's where code is written, refactored, reviewed, and shipped. Multi-agent workflows, deep codebase context, instant edits across repos — Cursor is what turns a single operator into a development team that can move at the speed of the platform itself.",
+      "bullets": [
+        "Multi-repo context across the whole platform",
+        "Parallel agents on independent tasks",
+        "From idea to deploy in the same window"
+      ]
+    },
+    {
+      "slug": "claude",
+      "name": "Claude",
+      "role": "The pair programmer",
+      "tag": "06",
+      "accent": "#d97757",
+      "accentSoft": "rgba(217, 119, 87, 0.18)",
+      "url": "https://www.anthropic.com/claude",
+      "tagline": "The engineer in the chair next to mine.",
+      "body": "Claude reads the codebase, weighs trade-offs, writes careful changes, catches the bugs I would have shipped, and explains its reasoning along the way. Most of what gets built at Pagayo is built in conversation with Claude — and the platform is sharper for it.",
+      "bullets": [
+        "Careful, reviewable code suggestions",
+        "Reasons out loud — no black-box edits",
+        "Long-context understanding of the codebase"
+      ]
+    }
+  ],
+  "closing": {
+    "sectionLabel": "A focused platform, a big thank-you",
+    "headline": "Standing on, not standing in for.",
+    "paragraphs": [
+      "Pagayo is not a thin wrapper over any of these tools. It is its own platform — its own data model, its own architecture, its own opinions about how commerce should work. But it would be foolish to pretend we built any of this alone.",
+      "To every engineer at Cloudflare, Stripe, GitHub, OpenAI, Cursor, and Anthropic: thank you. Pagayo exists because your work exists."
+    ]
+  },
+  "visuals": {
+    "cursorAgents": "3 agents · main",
+    "cursorReady": "ready"
+  }
+}
