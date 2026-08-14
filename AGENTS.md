@@ -9,6 +9,19 @@
 **Design SSoT:** `DESIGN-SYSTEM.md` + `src/styles/global.css` (alle CSS; `site.css` is enige layout-import).
 **Client JS SSoT:** `src/scripts/` — site-breed via `site.ts`; pagina's via `scripts/pages/<slug>.ts`.
 
+## Local source (verplicht)
+
+Volg [`../AGENTS.md`](../AGENTS.md) § Pagayo Project Source. Gebruik Pagayo Project Source (MCP) voor actuele lokale code, branches, dirty state en repository-context. GitHub is remote state — geen primaire lokale implementatiewaarheid.
+
+## Leesvolgorde (verplicht)
+Volgt workspace-hiërarchie: WHY → repo-regels (dit bestand) → NIVEAU → taakdocs.
+
+1. `../AGENTS.md`
+2. `../pagayo-vault/PAGAYO-WHY.md`
+3. Dit bestand + `DESIGN-SYSTEM.md` — marketing site grenzen (geen Workers deploy-pad)
+4. `../pagayo-vault/PAGAYO-NIVEAU.md`
+5. `.github/design-marketing/README.md` (playbooks `01`–`05`; vault-kopie: `pagayo-vault/.github/design-marketing/`)
+
 ## Harde SSOT regels
 
 - Header en footer zijn single source of truth via `src/components/layout/Nav.astro` en `src/components/layout/Footer.astro`.
